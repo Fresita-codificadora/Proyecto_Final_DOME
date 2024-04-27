@@ -1,0 +1,52 @@
+m255
+K4
+z2
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/project/programador/simulation/questa
+Eprogramador
+Z1 w1714155534
+Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 0
+R0
+Z4 8C:/intelFPGA_lite/project/programador/programador.vhd
+Z5 FC:/intelFPGA_lite/project/programador/programador.vhd
+l0
+L4 1
+Ven2OFKW`jUW>CCPAOD_iX3
+!s100 c?f6^Nh7IlBIHDo[5lkIT3
+Z6 OL;C;2023.3;77
+31
+Z7 !s110 1714155860
+!i10b 1
+Z8 !s108 1714155860.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/project/programador/programador.vhd|
+!s107 C:/intelFPGA_lite/project/programador/programador.vhd|
+!i113 0
+Z10 o-93 -work work
+Z11 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+DEx4 work 11 programador 0 22 en2OFKW`jUW>CCPAOD_iX3
+!i122 0
+l31
+L20 91
+VVaa<Xcbkka8O[GnHjO2VA1
+!s100 Cmj30?N[dNKc]`I`1i4E?0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+Z12 !s107 C:/intelFPGA_lite/project/programador/programador.vhd|
+!i113 0
+R10
+R11

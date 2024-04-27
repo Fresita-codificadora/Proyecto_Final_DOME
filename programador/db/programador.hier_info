@@ -1,0 +1,11 @@
+|programador
+clk => clk_div2_int.CLK
+clk_div4 <= clk_div4_int.DB_MAX_OUTPUT_PORT_TYPE
+clk_div2 <= clk_div2_int.DB_MAX_OUTPUT_PORT_TYPE
+start => ~NO_FANOUT~
+stop => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+buisy[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+buisy[1] <= buisy[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

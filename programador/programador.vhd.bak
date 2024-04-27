@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity programador is
+port (
+		clk_glob : in std_logic;
+		clk_out : out std_logic;--SOIC
+		gain : in std_logic_vector [1 downto 0];
+		D_out : out std_logic --SOID
+		);
+
+end programador;
+
+architecture arc of programador is 
+
+end arc;

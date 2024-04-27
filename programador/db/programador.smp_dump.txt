@@ -1,0 +1,7 @@
+
+State Machine - |programador|state
+Name state.hold state.start_2 state.start_1 state.idle 
+state.idle 0 0 0 0 
+state.start_1 0 0 1 1 
+state.start_2 0 1 0 1 
+state.hold 1 0 0 1 

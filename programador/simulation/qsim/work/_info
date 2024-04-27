@@ -1,0 +1,310 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+!s12c _opt2
+R1
+!s12c _opt1
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/intelFPGA_lite/project/programador/simulation/qsim
+T_opt
+Z3 !s12d 2533000
+!s110 1714158699
+V>b_O5k294DVKlLn?]J^D10
+Z4 04 21 14 work serialout_vhd_vec_tst serialout_arch 1
+=1-d481d7ab5ad7-662bfc6a-1c6-2de0
+!s9c 1
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM10U3 
+Z7 o-quiet -sdf -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim -sdfmax serialout_vhd_vec_tst/i1=programador_vhd.sdo -suppress 1948 +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2023.3;77
+T_opt1
+R3
+!s110 1714158367
+V89ciT:H1:0IPS[MnA1WiF0
+R4
+=1-d481d7ab5ad7-662bfb1e-141-d70
+!s9c 1
+R1
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+R2
+T_opt2
+R3
+!s110 1714158564
+VV?JcmlGG^8COhV<>DnS:I0
+R4
+=1-d481d7ab5ad7-662bfbe3-1d3-4428
+!s9c 1
+R1
+R5
+R6
+R7
+R8
+n@_opt2
+R9
+R2
+Ehard_block
+Z10 w1714158694
+Z11 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z12 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
+Z13 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z14 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z15 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z16 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
+!i122 38
+R2
+Z17 8programador.vho
+Z18 Fprogramador.vho
+l0
+L35 1
+VO;cUSklm4Sig<`__bK=J@0
+!s100 0CTYib@dc:ObIVR9DRSK?2
+Z19 OL;C;2023.3;77
+32
+Z20 !s110 1714158697
+!i10b 1
+Z21 !s108 1714158697.000000
+Z22 !s90 -work|work|programador.vho|
+Z23 !s107 programador.vho|
+!i113 0
+Z24 o-work work
+Z25 tExplicit 1 CvgOpt 0
+Astructure
+R11
+R12
+R13
+R14
+R15
+R16
+DEx4 work 10 hard_block 0 22 O;cUSklm4Sig<`__bK=J@0
+!i122 38
+l65
+L51 20
+VGLY:g5RDEe^dIV`12>FYD3
+!s100 6LcB1AebN6j_bAmfc?Z:_0
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Eprogramador
+R10
+R12
+R16
+R11
+Z26 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
+R13
+R14
+R15
+Z27 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+!i122 38
+R2
+R17
+R18
+l0
+Z28 L80 1
+VRQ0A6l>zbhMe?1e_<bBQ<2
+!s100 []c^zl2Db6KF=Y@TJV4TN0
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Astructure
+R12
+R16
+R11
+R26
+R13
+R14
+R15
+R27
+DEx4 work 11 programador 0 22 RQ0A6l>zbhMe?1e_<bBQ<2
+!i122 38
+l141
+L103 226
+VT11gKK``S?lOfHBC7ACM>3
+!s100 ]CC<@Akg48;MdJAH_mUe<2
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Eprogramador_vhd_vec_tst
+Z29 w1714158692
+R14
+R15
+!i122 39
+R2
+Z30 8Waveform.vwf.vht
+Z31 FWaveform.vwf.vht
+l0
+Z32 L32 1
+VE=E9ef^:B]VT`BRQF0NGd3
+!s100 ZGX:h1JNWj8UHl4O^jh5W0
+R19
+32
+R20
+!i10b 1
+R21
+Z33 !s90 -work|work|Waveform.vwf.vht|
+Z34 !s107 Waveform.vwf.vht|
+!i113 0
+R24
+R25
+Aprogramador_arch
+R14
+R15
+DEx4 work 23 programador_vhd_vec_tst 0 22 E=E9ef^:B]VT`BRQF0NGd3
+!i122 39
+l55
+L34 67
+VOnRDL_lnzC[FTVXm_?KU=0
+!s100 CWifc[IT6@0QF]][[7h2]0
+R19
+32
+R20
+!i10b 1
+R21
+R33
+R34
+!i113 0
+R24
+R25
+Eserialout
+Z35 w1713999081
+R12
+R16
+R11
+R26
+R13
+R14
+R15
+R27
+!i122 10
+R2
+R17
+R18
+l0
+R28
+VQ2JK3<zkRANjNL;f<d?jI0
+!s100 a1c^fY5N]z>e1kRDjj3dA2
+R19
+32
+Z36 !s110 1713999083
+!i10b 1
+Z37 !s108 1713999082.000000
+R22
+R23
+!i113 0
+R24
+R25
+Astructure
+R12
+R16
+R11
+R26
+R13
+R14
+R15
+R27
+DEx4 work 9 serialout 0 22 Q2JK3<zkRANjNL;f<d?jI0
+!i122 10
+l159
+L105 596
+VD`RGhK5zlY0zz@i5cFc;;1
+!s100 g=BnF8_70WQn^YGVnB6Lf0
+R19
+32
+R36
+!i10b 1
+R37
+R22
+R23
+!i113 0
+R24
+R25
+Eserialout_vhd_vec_tst
+Z38 w1713999079
+R14
+R15
+!i122 11
+R2
+R30
+R31
+l0
+R32
+VVhLZG?oR6:k`e0KY4eZk73
+!s100 oOYOJ:f0N^[6m48]LHci;1
+R19
+32
+R36
+!i10b 1
+Z39 !s108 1713999083.000000
+R33
+R34
+!i113 0
+R24
+R25
+Aserialout_arch
+R14
+R15
+DEx4 work 21 serialout_vhd_vec_tst 0 22 VhLZG?oR6:k`e0KY4eZk73
+!i122 11
+l51
+L34 200
+VSBT;b=?Z6AAX`dh;>1L7@2
+!s100 V<gDJR_C3Y;ljIRWKF?le3
+R19
+32
+R36
+!i10b 1
+R39
+R33
+R34
+!i113 0
+R24
+R25
