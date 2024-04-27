@@ -12,7 +12,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "buisy[0]",
+					"strict" : false
+				},
+				{
+					"name" : "buisy[1]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "stop",
+					"strict" : false
+				},
+				{
+					"name" : "start",
 					"strict" : false
 				}
 			]

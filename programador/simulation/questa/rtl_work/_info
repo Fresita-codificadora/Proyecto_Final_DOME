@@ -1,52 +1,93 @@
 m255
 K4
 z2
-!s11e vcom 2023.3 2023.07, Jul 17 2023
+!s11e vcom 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/intelFPGA_lite/project/programador/simulation/questa
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa
 Eprogramador
-Z1 w1714155534
-Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z1 w1714238880
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 !i122 0
 R0
-Z4 8C:/intelFPGA_lite/project/programador/programador.vhd
-Z5 FC:/intelFPGA_lite/project/programador/programador.vhd
+Z4 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd
+Z5 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd
 l0
 L4 1
-Ven2OFKW`jUW>CCPAOD_iX3
-!s100 c?f6^Nh7IlBIHDo[5lkIT3
-Z6 OL;C;2023.3;77
+VoKeI1VR`^0hBiFVhWiD;=1
+!s100 QY[mJnaaVdS6k:h[zjh?V0
+Z6 OV;C;2020.1;71
 31
-Z7 !s110 1714155860
+Z7 !s110 1714239033
 !i10b 1
-Z8 !s108 1714155860.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/project/programador/programador.vhd|
-!s107 C:/intelFPGA_lite/project/programador/programador.vhd|
-!i113 0
-Z10 o-93 -work work
-Z11 tExplicit 1 CvgOpt 0
+Z8 !s108 1714239033.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd|
+Z10 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
-DEx4 work 11 programador 0 22 en2OFKW`jUW>CCPAOD_iX3
+DEx4 work 11 programador 0 22 oKeI1VR`^0hBiFVhWiD;=1
 !i122 0
 l31
-L20 91
-VVaa<Xcbkka8O[GnHjO2VA1
-!s100 Cmj30?N[dNKc]`I`1i4E?0
+L21 89
+V?RKTA@h:<hZM6T3h<5HM51
+!s100 UdJ`koD>8S8?<k=OX<gUO0
 R6
 31
 R7
 !i10b 1
 R8
 R9
-Z12 !s107 C:/intelFPGA_lite/project/programador/programador.vhd|
-!i113 0
 R10
+!i113 1
 R11
+R12
+Eprogramador_vhd_vec_tst
+Z13 w1714238964
+R2
+R3
+!i122 1
+R0
+Z14 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
+Z15 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
+l0
+L32 1
+Vm;GUh;bFf4=;N<FKzz[162
+!s100 60^f=Y<2:=He6H8T5i<nP3
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+!s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+!i113 1
+R11
+R12
+Aprogramador_arch
+R2
+R3
+DEx4 work 23 programador_vhd_vec_tst 0 22 m;GUh;bFf4=;N<FKzz[162
+!i122 1
+l55
+L34 81
+VNdJ9gQ9`DIl6JVMW;>og?1
+!s100 5?ho[L9U=XCHH^kIHcgSS3
+R6
+31
+R7
+!i10b 1
+R8
+R16
+Z17 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+!i113 1
+R11
+R12

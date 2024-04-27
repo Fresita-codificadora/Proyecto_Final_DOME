@@ -1,11 +1,26 @@
 |programador
-clk => clk_div2_int.CLK
 clk_div4 <= clk_div4_int.DB_MAX_OUTPUT_PORT_TYPE
 clk_div2 <= clk_div2_int.DB_MAX_OUTPUT_PORT_TYPE
-start => ~NO_FANOUT~
-stop => ~NO_FANOUT~
-reset => ~NO_FANOUT~
-buisy[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-buisy[1] <= buisy[1].DB_MAX_OUTPUT_PORT_TYPE
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count_int[0].CLK
+clk => count_int[1].CLK
+clk => count_int[2].CLK
+clk => clk_div2_int.CLK
+clk => state~5.DATAIN
+start => Selector1.IN3
+start => Selector0.IN0
+stop => Selector0.IN3
+stop => Selector3.IN3
+reset => state~7.DATAIN
+reset => count_int[2].ENA
+reset => count_int[1].ENA
+reset => count_int[0].ENA
+reset => count[1]~reg0.ENA
+reset => count[0]~reg0.ENA
+buisy[0] <= buisy.DB_MAX_OUTPUT_PORT_TYPE
+buisy[1] <= buisy.DB_MAX_OUTPUT_PORT_TYPE
 
 
