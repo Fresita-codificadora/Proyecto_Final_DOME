@@ -24,7 +24,6 @@ entity programador is
 	port(
 		--variables unicamente necesarias para la simulacion 
 		clk_div4,clk_div2 : out std_logic;
-		count : out std_logic_vector (1 downto 0);
 		--variables necesarias		
 		clk		 : in	std_logic;
 		
@@ -45,7 +44,7 @@ architecture rtl of programador is
 
 	-- Build an enumerated type for the state machine
 	--type state_type is (idle, start_1, start_2, hold, stop_1, d_0, d_1, d_2, d_3, d_4, d_5, d_6, d_7, d_end);
-	type state_type is (idle, start_1, start_2, hold);
+	type state_type is (idle, start_1, start_2,start_3,start_4, hold);
 	-- Register to hold the current state
 	signal state   : state_type;
 	
@@ -58,7 +57,6 @@ begin
 	clk_div4 <= clk_div4_int;
 --	-- Logic to advance to the next state
 	process (clk, reset)
-	variable count_int : integer range 0 to 4;
 	begin
 		if reset = '1' then
 			state <= idle;
@@ -71,22 +69,20 @@ begin
 						state <= idle;
 					end if;
 				when start_1=>
-					if clk_div4_int = '1' then 
-						count_int := 0;                  --verificamos que el clk_div4 este en alto para dar el bit start
-																	-- esta cuenta hay que reiniciarla aca adentro si no se rompe el programa
+					if clk_div4_int = '1' then         --verificamos que el clk_div4 este en alto para dar el bit start, primer cuarto de ciclo								
 						state <= start_2;
-						count <= std_logic_vector(to_unsigned(count_int,2));--sim
 					end if;
-				when start_2=> 
-					if count_int < 1 then
-						count_int:= count_int + 1; -- los ciclos que cuenta es uno mas de lo que tenemos marcado, en este caso marca 1 pero cuenta 2 ciclos
-															-- el otro ciclo se lo come el estado, entrar al estado consume 1 ciclo
-						count <= std_logic_vector(to_unsigned(count_int,2));--sim
-					else 
-						state<= hold;
-						count_int :=0;							-- esta cuenta hay que reiniciarla aca adentro si no se rompe el programa
-						count <= std_logic_vector(to_unsigned(count_int,2));--sim
+				when start_2=> -- segundo cuarto de ciclo
+					if clk_div4='1' then 
+						state<= start_2;
+					else --ESTO LO HICE MUY CANSADO NO CREO QUE ESTE BIEN
+						state <= start_3;
 					end if;
+				when start_3=> then --tercer cuarto de ciclo
+				
+				when start_4=> then --cuarto cuarto de ciclo
+				
+				
 				when hold =>
 					if stop = '1' then 
 						state <= idle;
