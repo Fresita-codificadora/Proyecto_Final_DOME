@@ -15,6 +15,8 @@ library ieee;
 --1 verificar el codigo del "curso" con el i2c_master para ver como lo resuelve el, porque me parece
 -- que la solucion del contador es poco optima y propensa a errores
 --preguntarle a lu una posible solucion al tema de los contadores.
+
+--una solucion es agregar mas estados, para que cada estado sea un cuarto de ciclo y listo 
 	
 	
 entity programador is
