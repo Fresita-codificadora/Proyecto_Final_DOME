@@ -1,5 +1,5 @@
 Analysis & Synthesis report for programador
-Sat Apr 27 15:18:41 2024
+Wed May  1 18:58:40 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -16,10 +16,9 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   8. State Machine - |programador|state
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 27 15:18:41 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed May  1 18:58:40 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; programador                                    ;
 ; Top-level Entity Name              ; programador                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 12                                             ;
-;     Total combinational functions  ; 11                                             ;
-;     Dedicated logic registers      ; 8                                              ;
-; Total registers                    ; 8                                              ;
-; Total pins                         ; 10                                             ;
+; Total logic elements               ; 20                                             ;
+;     Total combinational functions  ; 15                                             ;
+;     Dedicated logic registers      ; 13                                             ;
+; Total registers                    ; 13                                             ;
+; Total pins                         ; 17                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -179,30 +178,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 12        ;
+; Estimated Total logic elements              ; 20        ;
 ;                                             ;           ;
-; Total combinational functions               ; 11        ;
+; Total combinational functions               ; 15        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 5         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 6         ;
+;     -- 4 input functions                    ; 4         ;
+;     -- 3 input functions                    ; 7         ;
+;     -- <=2 input functions                  ; 4         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 11        ;
+;     -- normal mode                          ; 15        ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 8         ;
-;     -- Dedicated logic registers            ; 8         ;
+; Total registers                             ; 13        ;
+;     -- Dedicated logic registers            ; 13        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 10        ;
+; I/O pins                                    ; 17        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 7         ;
-; Total fan-out                               ; 67        ;
-; Average fan-out                             ; 1.72      ;
+; Maximum fan-out                             ; 13        ;
+; Total fan-out                               ; 106       ;
+; Average fan-out                             ; 1.68      ;
 +---------------------------------------------+-----------+
 
 
@@ -211,22 +210,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |programador               ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |programador        ; programador ; work         ;
+; |programador               ; 15 (15)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |programador        ; programador ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------+
-; State Machine - |programador|state                                      ;
-+---------------+------------+---------------+---------------+------------+
-; Name          ; state.hold ; state.start_2 ; state.start_1 ; state.idle ;
-+---------------+------------+---------------+---------------+------------+
-; state.idle    ; 0          ; 0             ; 0             ; 0          ;
-; state.start_1 ; 0          ; 0             ; 1             ; 1          ;
-; state.start_2 ; 0          ; 1             ; 0             ; 1          ;
-; state.hold    ; 1          ; 0             ; 0             ; 1          ;
-+---------------+------------+---------------+---------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |programador|state                                                                                                                              ;
++---------------+--------------+--------------+--------------+-------------+-------------+-------------+---------------+---------------+-------------+------------+
+; Name          ; state.stop_2 ; state.stop_1 ; state.idle_2 ; state.error ; state.ack_2 ; state.ack_1 ; state.b_write ; state.b_trans ; state.start ; state.idle ;
++---------------+--------------+--------------+--------------+-------------+-------------+-------------+---------------+---------------+-------------+------------+
+; state.idle    ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0             ; 0             ; 0           ; 0          ;
+; state.start   ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0             ; 0             ; 1           ; 1          ;
+; state.b_trans ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0             ; 1             ; 0           ; 1          ;
+; state.b_write ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 1             ; 0             ; 0           ; 1          ;
+; state.ack_1   ; 0            ; 0            ; 0            ; 0           ; 0           ; 1           ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_2   ; 0            ; 0            ; 0            ; 0           ; 1           ; 0           ; 0             ; 0             ; 0           ; 1          ;
+; state.error   ; 0            ; 0            ; 0            ; 1           ; 0           ; 0           ; 0             ; 0             ; 0           ; 1          ;
+; state.idle_2  ; 0            ; 0            ; 1            ; 0           ; 0           ; 0           ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_1  ; 0            ; 1            ; 0            ; 0           ; 0           ; 0           ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_2  ; 1            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0             ; 0             ; 0           ; 1          ;
++---------------+--------------+--------------+--------------+-------------+-------------+-------------+---------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -234,9 +239,10 @@ Encoding Type:  One-Hot
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; count[1]~reg0                         ; Stuck at GND due to stuck port data_in ;
-; count_int[1,2]                        ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
+; count[1,2]                            ; Merged with count[0]                   ;
+; data[1..6]                            ; Lost fanout                            ;
+; count[3]                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 9 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -245,23 +251,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 3     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |programador|count[0]~reg0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -269,20 +266,20 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 8                           ;
-;     CLR               ; 4                           ;
-;     ENA               ; 2                           ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 14                          ;
-;     normal            ; 14                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 13                          ;
+;     CLR               ; 10                          ;
+;     ENA               ; 3                           ;
+; cycloneiii_io_obuf    ; 2                           ;
+; cycloneiii_lcell_comb ; 16                          ;
+;     normal            ; 16                          ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 4                           ;
-;         4 data inputs ; 5                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.31                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -301,31 +298,39 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Apr 27 15:18:35 2024
+    Info: Processing started: Wed May  1 18:58:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off programador -c programador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Warning (12019): Can't analyze file -- file ../contador/div.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 27
-    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 5
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 33
+    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file serialout.vhd
     Info (12022): Found design unit 1: serialout-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/serialout.vhd Line: 15
     Info (12023): Found entity 1: serialout File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/serialout.vhd Line: 5
+Warning (12019): Can't analyze file -- file programador_2.vhd is missing
 Info (12127): Elaborating entity "programador" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "count[1]" is stuck at GND File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 46
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 13 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Sat Apr 27 15:18:41 2024
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "data_in[1]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+    Warning (15610): No output dependent on input pin "data_in[2]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+    Warning (15610): No output dependent on input pin "data_in[3]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+    Warning (15610): No output dependent on input pin "data_in[4]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+    Warning (15610): No output dependent on input pin "data_in[5]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+    Warning (15610): No output dependent on input pin "data_in[6]" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 23
+Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 20 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Wed May  1 18:58:40 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:13
 
 

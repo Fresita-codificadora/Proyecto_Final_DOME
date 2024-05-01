@@ -1,5 +1,5 @@
 EDA Netlist Writer report for programador
-Sat Apr 27 15:20:09 2024
+Wed May  1 19:03:07 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Apr 27 15:20:09 2024 ;
+; EDA Netlist Writer Status ; Successful - Wed May  1 19:03:07 2024 ;
 ; Revision Name             ; programador                           ;
 ; Top-level Entity Name     ; programador                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -62,21 +62,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Apr 27 15:20:09 2024
+    Info: Processing started: Wed May  1 19:03:07 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source=C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform1.vwf --testbench_file=C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (201005): Ignoring output pin "clk_div4" in vector source file when writing test bench files
 Warning (201005): Ignoring output pin "buisy" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "buisy[1]" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "buisy[0]" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "count" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "count[1]" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "count[0]" in vector source file when writing test bench files
-Warning (201005): Ignoring output pin "clk_div2" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "err" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "sca_o" in vector source file when writing test bench files
 Info (201002): Generated VHDL Test Bench File C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht for simulation
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 9 warnings
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4626 megabytes
-    Info: Processing ended: Sat Apr 27 15:20:09 2024
+    Info: Processing ended: Wed May  1 19:03:07 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
