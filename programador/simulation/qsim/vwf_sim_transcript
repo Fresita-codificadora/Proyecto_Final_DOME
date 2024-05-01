@@ -7,7 +7,7 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source="C:/intelFPGA_lite/project/programador/Waveform.vwf" --testbench_file="C:/intelFPGA_lite/project/programador/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source="C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform2.vwf" --testbench_file="C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/Waveform2.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,15 +26,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Apr 26 16:04:11 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source=C:/intelFPGA_lite/project/programador/Waveform.vwf --testbench_file=C:/intelFPGA_lite/project/programador/simulation/qsim/Waveform.vwf.vht
+    Info: Processing started: Wed May  1 20:26:51 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform2.vwf --testbench_file=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/Waveform2.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/intelFPGA_lite/project/programador/simulation/qsim/" programador -c programador
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/" programador -c programador
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Apr 26 16:04:12 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/project/programador/simulation/qsim/ programador -c programador
+    Info: Processing started: Wed May  1 20:26:52 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/ programador -c programador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file programador.vho in folder "C:/intelFPGA_lite/project/programador/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file programador.vho in folder "C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4631 megabytes
-    Info: Processing ended: Fri Apr 26 16:04:13 2024
+    Info: Peak virtual memory: 4637 megabytes
+    Info: Processing ended: Wed May  1 20:26:53 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -67,7 +67,7 @@ Completed successfully.
 
 **** Generating the ModelSim .do script ****
 
-C:/intelFPGA_lite/project/programador/simulation/qsim/programador.do generated.
+C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/programador.do generated.
 
 Completed successfully. 
 
@@ -84,11 +84,12 @@ Reading pref.tcl
 # do programador.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
+
 # Errors: 0, Warnings: 1
 
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 
-# Start time: 16:04:15 on Apr 26,2024
+# Start time: 20:26:55 on May 01,2024
 # vcom -work work programador.vho 
 
 # -- Loading package STANDARD
@@ -117,14 +118,14 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of programador
 
-# End time: 16:04:15 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 20:26:55 on May 01,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 
-# Start time: 16:04:15 on Apr 26,2024
-# vcom -work work Waveform.vwf.vht 
+# Start time: 20:26:55 on May 01,2024
+# vcom -work work Waveform2.vwf.vht 
 
 # -- Loading package STANDARD
 
@@ -136,13 +137,15 @@ Reading pref.tcl
 
 # -- Compiling architecture programador_arch of programador_vhd_vec_tst
 
-# End time: 16:04:15 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 20:26:55 on May 01,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
-# vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.serialout_vhd_vec_tst 
-# Start time: 16:04:15 on Apr 26,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.programador_vhd_vec_tst 
+# Start time: 20:26:55 on May 01,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2023.3 win64 Jul 17 2023
 # //
@@ -161,26 +164,29 @@ Reading pref.tcl
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.serialout_vhd_vec_tst(serialout_arch)#1
+# Loading work.programador_vhd_vec_tst(programador_arch)#1
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
 # Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.serialout(structure)#1
+# Loading work.programador(structure)#1
 # Loading work.hard_block(structure)#1
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)#1
+# Loading cycloneive.cycloneive_io_obuf(arch)#2
 # Loading cycloneive.cycloneive_io_ibuf(arch)#1
 # Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)#1
 # Loading cycloneive.cycloneive_ena_reg(behave)#1
-# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#1
 # Loading altera.dffeas(vital_dffeas)#1
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#1
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#2
+# Loading altera.dffeas(vital_dffeas)#2
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#3
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#4
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#5
+# Loading altera.dffeas(vital_dffeas)#3
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#6
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#7
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#8
@@ -190,42 +196,32 @@ Reading pref.tcl
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#12
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#13
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#14
+# Loading altera.dffeas(vital_dffeas)#4
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#15
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#16
-# Loading altera.dffeas(vital_dffeas)#2
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#17
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#18
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#19
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#20
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#21
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#22
 
 # after#36
 
-# End time: 16:04:16 on Apr 26,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 20:26:58 on May 01,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/intelFPGA_lite/project/programador/Waveform.vwf...
+Reading C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform2.vwf...
 
-Reading C:/intelFPGA_lite/project/programador/simulation/qsim/programador.msim.vcd...
+Reading C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/programador.msim.vcd...
 
 Processing channel transitions... 
 
-Warning: buisy[1] - signal not found in VCD.
-
-Warning: buisy[0] - signal not found in VCD.
-
-Warning: clk - signal not found in VCD.
-
-Warning: reset - signal not found in VCD.
-
-Warning: start - signal not found in VCD.
-
-Warning: stop - signal not found in VCD.
-
-Warning: clk_div4 - signal not found in VCD.
-
-Warning: clk_div2 - signal not found in VCD.
-
-Writing the resulting VWF to C:/intelFPGA_lite/project/programador/simulation/qsim/programador_20240426160417.sim.vwf
+Writing the resulting VWF to C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/programador_20240501202658.sim.vwf
 
 Finished VCD to VWF conversion.
 

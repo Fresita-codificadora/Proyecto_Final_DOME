@@ -22,10 +22,10 @@ entity programador is
 		reset	 : in	std_logic;
 		data_in : in std_logic_vector (7 downto 0);
 		--salidas
-		sda_o	 : inout	std_logic;
-		sca_o  : out std_logic;
-		err : out std_logic;
-		buisy : out std_logic 
+		sda_o	 : inout	std_logic<= 'Z' ;
+		sca_o  : out std_logic <= 'Z';
+		err : out std_logic <= '0';
+		buisy : out std_logic <= '0' 
 	);
 
 end entity;
@@ -58,7 +58,7 @@ begin
 		if reset = '1' then
 			state <= idle;
 		elsif (rising_edge(clk)) then
-		data <= data_in;
+			data <= data_in;
 			case state is
 				when idle=>
 					if s_t = '1' then
@@ -76,6 +76,7 @@ begin
 				
 				when b_write =>
 					if count-1>=0 then
+						count <= count - 1;
 						state <= b_trans;    --pulso de clk de datos en alto donde escribimos el registro o la direccion
 					else 
 						count <= 7;          -- si ya escribimos los 8 datos , esperamos recibir un ack entonces pasamos al estado ack_1
@@ -116,7 +117,7 @@ begin
 	end process;
 
 	-- Output depends solely on the current state
-	process (state,data,count,sda_o)
+	process (state)
 	begin
 		case state is
 			when idle =>        -- en este estado ambas lineas la de datos y clk deben estar en alto, y la señal de buisy debe estar en bajo

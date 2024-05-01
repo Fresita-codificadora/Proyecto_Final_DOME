@@ -19,7 +19,7 @@ library ieee;
 --una solucion es agregar mas estados, para que cada estado sea un cuarto de ciclo y listo 
 	
 -- otra solucion es hacer 2 maquinas de estados, una que manda pulsos mientras va contando , entonces te marca el primer cuarto el segundo cuarto el tercer cuarto y asi
-entity programador is
+entity programador_2 is
 
 	port(
 		--variables unicamente necesarias para la simulacion 
@@ -40,7 +40,7 @@ entity programador is
 
 end entity;
 
-architecture rtl of programador is
+architecture rtl of programador_2 is
 
 	-- Build an enumerated type for the state machine
 	type state_type is (idle, start_1, start_2,start_3, hold);
@@ -116,9 +116,7 @@ begin
 					else 							--si esta en bajo clk/8 estamos "tarde" o bien ponele y hay que terminar el star en el porximo cuarto
 						state <= b_0;
 					end if;
-				when b_0 =>
-					state
-					
+				when b_0 =>		
 					
 				when hold =>
 					if stop = '1' then 

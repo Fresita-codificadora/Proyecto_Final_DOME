@@ -1,24 +1,38 @@
 m255
 K4
 z2
-!s11e MIXED_VERSIONS
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e MIXED_VERSIONS
+Z2 !s12c _opt
+R1
 !s12c _opt2
 R1
-!s12c _opt1
-R1
 R0
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
+R1
+R2
 R1
 13
 !s112 1.1
@@ -26,286 +40,283 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/intelFPGA_lite/project/programador/simulation/qsim
+Z3 dC:/intelFPGA_lite/project/programador/simulation/qsim
 T_opt
-Z3 !s12d 2533000
+Z4 !s12d 2533000
 !s110 1714158699
 V>b_O5k294DVKlLn?]J^D10
-Z4 04 21 14 work serialout_vhd_vec_tst serialout_arch 1
+Z5 04 21 14 work serialout_vhd_vec_tst serialout_arch 1
 =1-d481d7ab5ad7-662bfc6a-1c6-2de0
 !s9c 1
 R1
-Z5 !s12b OEM100
-Z6 !s124 OEM10U3 
-Z7 o-quiet -sdf -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim -sdfmax serialout_vhd_vec_tst/i1=programador_vhd.sdo -suppress 1948 +acc
-Z8 tCvgOpt 0
+Z6 !s12b OEM100
+Z7 !s124 OEM10U3 
+Z8 o-quiet -sdf -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim -sdfmax serialout_vhd_vec_tst/i1=programador_vhd.sdo -suppress 1948 +acc
+Z9 tCvgOpt 0
 n@_opt
-Z9 OL;O;2023.3;77
-R2
-T_opt1
+Z10 OL;O;2023.3;77
 R3
-!s110 1714158367
-V89ciT:H1:0IPS[MnA1WiF0
-R4
-=1-d481d7ab5ad7-662bfb1e-141-d70
-!s9c 1
+T_opt1
+!s110 1714606017
+V^c8ILfi7^MIz;941zFfbl1
+04 23 16 work programador_vhd_vec_tst programador_arch 1
+=1-d481d7ab5ad7-6632cfc0-19a-2d24
 R1
-R5
 R6
 R7
-R8
-n@_opt1
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
 R9
-R2
+n@_opt1
+R10
 T_opt2
-R3
+R4
 !s110 1714158564
 VV?JcmlGG^8COhV<>DnS:I0
-R4
+R5
 =1-d481d7ab5ad7-662bfbe3-1d3-4428
 !s9c 1
 R1
-R5
 R6
 R7
 R8
-n@_opt2
 R9
-R2
+n@_opt2
+R10
+R3
 Ehard_block
-Z10 w1714241411
-Z11 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z12 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
-Z13 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z15 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-Z16 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 40
-Z17 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim
-Z18 8programador.vho
-Z19 Fprogramador.vho
+Z11 w1714606013
+Z12 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z13 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
+Z14 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z15 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z16 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z17 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
+!i122 59
+Z18 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim
+Z19 8programador.vho
+Z20 Fprogramador.vho
 l0
 L35 1
-VB]0;STalBkCB1_B4BXQDW2
-!s100 >mXi5[`cD`bFC`UBKA<om3
-Z20 OV;C;2020.1;71
+VO;cUSklm4Sig<`__bK=J@0
+!s100 0CTYib@dc:ObIVR9DRSK?2
+Z21 OL;C;2023.3;77
 32
-Z21 !s110 1714241412
+Z22 !s110 1714606015
 !i10b 1
-Z22 !s108 1714241412.000000
-Z23 !s90 -work|work|programador.vho|
-Z24 !s107 programador.vho|
-!i113 1
-Z25 o-work work
-Z26 tExplicit 1 CvgOpt 0
+Z23 !s108 1714606015.000000
+Z24 !s90 -work|work|programador.vho|
+Z25 !s107 programador.vho|
+!i113 0
+Z26 o-work work
+Z27 tExplicit 1 CvgOpt 0
 Astructure
-R11
 R12
 R13
 R14
 R15
 R16
-DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 40
+R17
+DEx4 work 10 hard_block 0 22 O;cUSklm4Sig<`__bK=J@0
+!i122 59
 l65
-Z27 L51 20
-Via>5o7W??azG@W@@eFOTF0
-!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
-R20
-32
+L51 20
+VGLY:g5RDEe^dIV`12>FYD3
+!s100 6LcB1AebN6j_bAmfc?Z:_0
 R21
-!i10b 1
+32
 R22
+!i10b 1
 R23
 R24
-!i113 1
 R25
+!i113 0
 R26
+R27
 Eprogramador
-R10
-R12
-R16
 R11
-Z28 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
 R13
+R17
+R12
+Z28 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
 R14
 R15
-Z29 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 40
-R17
+R16
+Z29 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+!i122 59
 R18
 R19
+R20
 l0
 Z30 L80 1
-V3eNiSoncY[;InZ72LCgnk0
-!s100 lm=z06HS:SMACD9MO?3^Z1
-R20
-32
+V;0Ka86DXP=?9JBo[_K1Sf3
+!s100 Ea?^WZVUZ1iWf[YW1mk423
 R21
-!i10b 1
+32
 R22
+!i10b 1
 R23
 R24
-!i113 1
 R25
+!i113 0
 R26
+R27
 Astructure
-R12
-R16
-R11
-R28
 R13
+R17
+R12
+R28
 R14
 R15
+R16
 R29
-DEx4 work 11 programador 0 22 3eNiSoncY[;InZ72LCgnk0
-!i122 40
-l174
-L106 652
-VM1]h?oYYi<f0fPDOlgQkI1
-!s100 Gg3z>5e^E6=m54HPScM`@0
-R20
-32
+DEx4 work 11 programador 0 22 ;0Ka86DXP=?9JBo[_K1Sf3
+!i122 59
+l203
+L115 1064
+VYb4XkjIhziNfd`HN_:A:=0
+!s100 5NzFkhBJZWGj^DUBlMV2V2
 R21
-!i10b 1
+32
 R22
+!i10b 1
 R23
 R24
-!i113 1
 R25
+!i113 0
 R26
+R27
 Eprogramador_vhd_vec_tst
-Z31 w1714158692
-Z32 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z33 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 39
-R2
-Z34 8Waveform.vwf.vht
-Z35 FWaveform.vwf.vht
+Z31 w1714606012
+R15
+R16
+!i122 60
+R18
+Z32 8Waveform2.vwf.vht
+Z33 FWaveform2.vwf.vht
 l0
-Z36 L32 1
+Z34 L32 1
 VE=E9ef^:B]VT`BRQF0NGd3
 !s100 ZGX:h1JNWj8UHl4O^jh5W0
-Z37 OL;C;2023.3;77
+R21
 32
-Z38 !s110 1714158697
+R22
 !i10b 1
-Z39 !s108 1714158697.000000
-Z40 !s90 -work|work|Waveform.vwf.vht|
-Z41 !s107 Waveform.vwf.vht|
+R23
+Z35 !s90 -work|work|Waveform2.vwf.vht|
+Z36 !s107 Waveform2.vwf.vht|
 !i113 0
-R25
 R26
+R27
 Aprogramador_arch
-R32
-R33
+R15
+R16
 DEx4 work 23 programador_vhd_vec_tst 0 22 E=E9ef^:B]VT`BRQF0NGd3
-!i122 39
-l55
-L34 67
-VOnRDL_lnzC[FTVXm_?KU=0
-!s100 CWifc[IT6@0QF]][[7h2]0
-R37
+!i122 60
+l61
+L34 174
+VZlR26Hf89UDYPdzHm>20Y1
+!s100 9meQ:^ccZ^kmCozPdPlzU3
+R21
 32
-R38
+R22
 !i10b 1
-R39
-R40
-R41
+R23
+R35
+R36
 !i113 0
-R25
 R26
+R27
 Eserialout
-Z42 w1713999081
-Z43 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
-Z44 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
-Z45 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
-Z46 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
-Z47 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
-R32
-R33
-Z48 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+Z37 w1713999081
+R13
+R17
+R12
+R28
+R14
+R15
+R16
+R29
 !i122 10
-R2
-R18
+R3
 R19
+R20
 l0
 R30
 VQ2JK3<zkRANjNL;f<d?jI0
 !s100 a1c^fY5N]z>e1kRDjj3dA2
-R37
+R21
 32
-Z49 !s110 1713999083
+Z38 !s110 1713999083
 !i10b 1
-Z50 !s108 1713999082.000000
-R23
+Z39 !s108 1713999082.000000
 R24
-!i113 0
 R25
+!i113 0
 R26
+R27
 Astructure
-R43
-R44
-R45
-R46
-R47
-R32
-R33
-R48
+R13
+R17
+R12
+R28
+R14
+R15
+R16
+R29
 DEx4 work 9 serialout 0 22 Q2JK3<zkRANjNL;f<d?jI0
 !i122 10
 l159
 L105 596
 VD`RGhK5zlY0zz@i5cFc;;1
 !s100 g=BnF8_70WQn^YGVnB6Lf0
-R37
+R21
 32
-R49
+R38
 !i10b 1
-R50
-R23
+R39
 R24
-!i113 0
 R25
+!i113 0
 R26
+R27
 Eserialout_vhd_vec_tst
-Z51 w1713999079
-R32
-R33
+Z40 w1713999079
+R15
+R16
 !i122 11
-R2
-R34
-R35
+R3
+Z41 8Waveform.vwf.vht
+Z42 FWaveform.vwf.vht
 l0
-R36
+R34
 VVhLZG?oR6:k`e0KY4eZk73
 !s100 oOYOJ:f0N^[6m48]LHci;1
-R37
+R21
 32
-R49
+R38
 !i10b 1
-Z52 !s108 1713999083.000000
-R40
-R41
+Z43 !s108 1713999083.000000
+Z44 !s90 -work|work|Waveform.vwf.vht|
+Z45 !s107 Waveform.vwf.vht|
 !i113 0
-R25
 R26
+R27
 Aserialout_arch
-R32
-R33
+R15
+R16
 DEx4 work 21 serialout_vhd_vec_tst 0 22 VhLZG?oR6:k`e0KY4eZk73
 !i122 11
 l51
 L34 200
 VSBT;b=?Z6AAX`dh;>1L7@2
 !s100 V<gDJR_C3Y;ljIRWKF?le3
-R37
+R21
 32
-R49
+R38
 !i10b 1
-R52
-R40
-R41
+R43
+R44
+R45
 !i113 0
-R25
 R26
+R27

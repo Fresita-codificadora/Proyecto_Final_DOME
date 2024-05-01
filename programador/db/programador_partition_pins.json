@@ -40,11 +40,35 @@
 					"strict" : false
 				},
 				{
+					"name" : "data_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[4]",
+					"strict" : false
+				},
+				{
 					"name" : "data_in[7]",
 					"strict" : false
 				},
 				{
+					"name" : "data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[1]",
+					"strict" : false
+				},
+				{
 					"name" : "data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[3]",
 					"strict" : false
 				}
 			]
