@@ -1,0 +1,122 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity controlador is
+
+	port(
+		clk		 : in	std_logic;
+		input	 : in	std_logic;
+		reset	 : in	std_logic;
+		output	 : out	std_logic_vector(1 downto 0)
+	);
+
+end entity;
+
+architecture rtl of controlador is
+
+	-- Build an enumerated type for the state machine
+	type state_type is (idle, dp_BA,    dp_07,dp_07_int,dw_07,   dp_00, dp_00_int,dw_00,    dp_02, dp_02_int,dw_02    ,stop_1      ,dp_BA_2      ,dp_1E,dp_1E_int,dw_1E     ,dp_81,dp_81_int,dw_81    ,dp_00_2,dp_00_2_int,dw_00_2  ,stop_2,done);
+
+	-- Register to hold the current state
+	signal state   : state_type;
+	
+	signal count : integer range (0 to 255);
+
+begin
+
+	-- Logic to advance to the next state
+	process (clk, reset)
+	begin
+		if reset = '1' then
+			state <= idle;
+		elsif (rising_edge(clk)) then
+			case state is
+				when idle=>
+					if start = '1' then
+						state <= dp_BA;
+					else
+						state <= idle;
+					end if;
+					
+-- escritura 0xBA para operacion de escritura
+				when dp_BA =>
+					if buisy = '0' then
+						state <= dp_07;
+						count :=255;
+					else
+						state <= dp_BA;
+					end if;
+					
+--escritura 0x07 para indicar el registro 07 que maneja el update de los cambios
+				when dp_07=>
+					if count-1 >=0 then
+						count := count - 1;
+						state <= dp_07;
+					else 
+						count :=255;
+						state <= dw_07;
+					end if;
+				when dw_07 =>
+					if buisy = '0' then
+						state <= dp_00;
+					else
+						state <= dw_07;
+					end if;
+					
+-- escritura 0x00 primera parte del registro 0x07					
+				when dp_00=>
+					if count-1 >=0 then
+						count := count - 1;
+						state <= dp_00;
+					else 
+						count :=255;
+						state <= dw_00;
+					end if;
+				when dw_00 =>
+					if buisy = '0' then
+						state <= dp_02;
+					else
+						state <= dw_00;
+					end if;
+-- escritura 0x02 segunda parte del registrol 0x07
+				when dp_02=>
+					if count-1 >=0 then
+						count := count - 1;
+						state <= dp_02;
+					else 
+						count :=255;
+						state <= dw_02;
+					end if;
+				when dw_02 =>
+					if buisy = '0' then
+						state <= stop_1;
+					else
+						state <= dw_02;
+					end if;
+					
+-- primer stop para pasar a otro registro que va a controlar si esta en modo snapshot o continuo
+				when stop_1 => 
+					
+
+
+
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (state)
+	begin
+		case state is
+			when s0 =>
+				output <= "00";
+			when s1 =>
+				output <= "01";
+			when s2 =>
+				output <= "10";
+			when s3 =>
+				output <= "11";
+		end case;
+	end process;
+
+end rtl;
