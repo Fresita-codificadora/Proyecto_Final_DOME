@@ -1,5 +1,5 @@
 EDA Netlist Writer report for programador
-Sun May  5 12:53:44 2024
+Wed May  8 11:56:09 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -8,9 +8,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -37,42 +35,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun May  5 12:53:44 2024 ;
+; EDA Netlist Writer Status ; Successful - Wed May  8 11:56:09 2024 ;
 ; Revision Name             ; programador                           ;
-; Top-level Entity Name     ; programador                           ;
+; Top-level Entity Name     ; controlador                           ;
 ; Family                    ; Cyclone IV E                          ;
-; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                             ;
-+---------------------------------------------------------------------------------------------------+-----------------------------+
-; Option                                                                                            ; Setting                     ;
-+---------------------------------------------------------------------------------------------------+-----------------------------+
-; Tool Name                                                                                         ; Questa Intel FPGA (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                          ;
-; Truncate long hierarchy paths                                                                     ; Off                         ;
-; Map illegal HDL characters                                                                        ; Off                         ;
-; Flatten buses into individual nodes                                                               ; Off                         ;
-; Maintain hierarchy                                                                                ; Off                         ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                         ;
-; Enable glitch filtering                                                                           ; Off                         ;
-; Do not write top level VHDL entity                                                                ; Off                         ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                         ;
-; Architecture name in VHDL output netlist                                                          ; structure                   ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                         ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                         ;
-+---------------------------------------------------------------------------------------------------+-----------------------------+
-
-
-+--------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                       ;
-+--------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                  ;
-+--------------------------------------------------------------------------------------------------+
-; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa/programador.vo ;
-+--------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +48,43 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun May  5 12:53:43 2024
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off programador -c programador
+    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Wed May  8 11:56:08 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source=C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform3.vwf --testbench_file=C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file programador.vo in folder "C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa/" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4628 megabytes
-    Info: Processing ended: Sun May  5 12:53:44 2024
+Warning (201005): Ignoring output pin "clk_o" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[7]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[6]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[5]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[4]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[3]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[2]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[1]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "data[0]" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "done_s" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "r_s" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "s_t" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "stop" in vector source file when writing test bench files
+Warning (201005): Ignoring output pin "w" in vector source file when writing test bench files
+Info (201002): Generated VHDL Test Bench File C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht for simulation
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4626 megabytes
+    Info: Processing ended: Wed May  8 11:56:09 2024
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

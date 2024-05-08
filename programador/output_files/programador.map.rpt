@@ -1,5 +1,5 @@
 Analysis & Synthesis report for programador
-Sun May  5 12:54:24 2024
+Wed May  8 11:55:26 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |controlador|state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +45,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun May  5 12:54:24 2024              ;
+; Analysis & Synthesis Status        ; Successful - Wed May  8 11:55:26 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; programador                                    ;
 ; Top-level Entity Name              ; controlador                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 48                                             ;
+;     Total combinational functions  ; 45                                             ;
+;     Dedicated logic registers      ; 28                                             ;
+; Total registers                    ; 28                                             ;
+; Total pins                         ; 19                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -145,15 +153,153 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; controlador.vhd                  ; yes             ; User VHDL File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 48        ;
+;                                             ;           ;
+; Total combinational functions               ; 45        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 28        ;
+;     -- 3 input functions                    ; 2         ;
+;     -- <=2 input functions                  ; 15        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 37        ;
+;     -- arithmetic mode                      ; 8         ;
+;                                             ;           ;
+; Total registers                             ; 28        ;
+;     -- Dedicated logic registers            ; 28        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 19        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 27        ;
+; Total fan-out                               ; 261       ;
+; Average fan-out                             ; 2.35      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |controlador               ; 45 (45)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |controlador        ; controlador ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |controlador|state                                                                                                                                                                                                                                              ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
+; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
+; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
+; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
+; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 18    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |controlador|count[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 19                          ;
+; cycloneiii_ff         ; 28                          ;
+;     CLR               ; 15                          ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 3                           ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 50                          ;
+;     arith             ; 8                           ;
+;         2 data inputs ; 8                           ;
+;     normal            ; 42                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 28                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.15                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,59 +308,30 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun May  5 12:54:08 2024
+    Info: Processing started: Wed May  8 11:55:20 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off programador -c programador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 33
-    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 11
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 33
+    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 26
-    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 4
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 26
+    Info (12023): Found entity 1: controlador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 4
 Info (12127): Elaborating entity "controlador" for the top level hierarchy
-Error (10818): Can't infer register for "state.done" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.done" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.stop_2" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.stop_2" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_00_2" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_00_2" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_00_2" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_00_2" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_81" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_81" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_81" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_81" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_1E" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_1E" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_1E" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_1E" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_BA_2" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_BA_2" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.stop_1" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.stop_1" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_02" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_02" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_02" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_02" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_00" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_00" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_00" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_00" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dw_07" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dw_07" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_07" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_07" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.dp_BA" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.dp_BA" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10818): Can't infer register for "state.idle" at controlador.vhd(50) because it does not hold its value outside the clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 50
-Info (10041): Inferred latch for "state.idle" at controlador.vhd(202) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 202
-Error (10822): HDL error at controlador.vhd(52): couldn't implement registers for assignments on this clock edge File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 52
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 1 warning
-    Error: Peak virtual memory: 4779 megabytes
-    Error: Processing ended: Sun May  5 12:54:24 2024
-    Error: Elapsed time: 00:00:16
-    Error: Total CPU time (on all processors): 00:00:38
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "data[6]" is stuck at GND File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 21
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 48 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Wed May  8 11:55:26 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 

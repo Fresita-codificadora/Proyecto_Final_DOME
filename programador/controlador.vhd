@@ -46,8 +46,7 @@ begin
 	begin
 		if err= '1' then
 			state <= idle;  --senal de error reinicia la maquina
-		end if;
-		if reset = '1' then
+		elsif reset = '1' then
 			state <= idle;
 		elsif (rising_edge(clk)) then
 			case state is
@@ -62,7 +61,7 @@ begin
 				when dp_BA =>
 					if buisy = '0' then
 						state <= dp_07;
-						count <= 255;
+						count <= 3;
 					else
 						state <= dp_BA;
 					end if;
@@ -73,7 +72,7 @@ begin
 						count <= count - 1;
 						state <= dp_07;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_07;
 					end if;
 				when dw_07 =>
@@ -89,7 +88,7 @@ begin
 						count <= count - 1;
 						state <= dp_00;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_00;
 					end if;
 				when dw_00 =>
@@ -104,7 +103,7 @@ begin
 						count <= count - 1;
 						state <= dp_02;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_02;
 					end if;
 				when dw_02 =>
@@ -131,7 +130,7 @@ begin
 				when dp_BA_2 =>
 					if buisy = '0' then
 						state <= dp_1E;
-						count <=255;
+						count <=3;
 					else
 						state <= dp_BA_2;
 					end if;
@@ -142,7 +141,7 @@ begin
 						count <= count - 1;
 						state <= dp_1E;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_1E;
 					end if;
 				when dw_1E =>
@@ -154,11 +153,11 @@ begin
 					
 -- escritura 0x81 primera parte del registro 0x1E					
 				when dp_81=>
-					if count-1 >=0 then
+					if  count-1 >=0 then
 						count <= count - 1;
 						state <= dp_81;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_81;
 					end if;
 				when dw_81 =>
@@ -173,7 +172,7 @@ begin
 						count <= count - 1;
 						state <= dp_00_2;
 					else 
-						count <=255;
+						count <=3;
 						state <= dw_00_2;
 					end if;
 				when dw_00_2 =>

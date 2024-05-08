@@ -9,39 +9,39 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa
-Eprogramador
-Z1 w1714238880
+Econtrolador
+Z1 w1715180118
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 !i122 0
 R0
-Z4 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd
-Z5 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd
+Z4 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd
+Z5 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd
 l0
 L4 1
-VoKeI1VR`^0hBiFVhWiD;=1
-!s100 QY[mJnaaVdS6k:h[zjh?V0
+V67GlHl7>0m7ehaGFMz0093
+!s100 nhd:dFczA5k=ne2:=Ub??1
 Z6 OV;C;2020.1;71
-31
-Z7 !s110 1714239033
+33
+Z7 !s110 1715180189
 !i10b 1
-Z8 !s108 1714239033.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd|
-Z10 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd|
+Z8 !s108 1715180189.000000
+Z9 !s90 -reportprogress|300|-2008|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd|
+Z10 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd|
 !i113 1
-Z11 o-93 -work work
+Z11 o-2008 -work work
 Z12 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
-DEx4 work 11 programador 0 22 oKeI1VR`^0hBiFVhWiD;=1
+DEx4 work 11 controlador 0 22 67GlHl7>0m7ehaGFMz0093
 !i122 0
-l31
-L21 89
-V?RKTA@h:<hZM6T3h<5HM51
-!s100 UdJ`koD>8S8?<k=OX<gUO0
+l36
+L26 324
+V1;Da:eWIaAEje97PbkSS@3
+!s100 0Ud3j3`D]D4[FUU1[F7U03
 R6
-31
+33
 R7
 !i10b 1
 R8
@@ -50,44 +50,44 @@ R10
 !i113 1
 R11
 R12
-Eprogramador_vhd_vec_tst
-Z13 w1714238964
+Econtrolador_vhd_vec_tst
+Z13 w1715180169
 R2
 R3
 !i122 1
 R0
-Z14 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
-Z15 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
+Z14 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht
+Z15 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht
 l0
 L32 1
-Vm;GUh;bFf4=;N<FKzz[162
-!s100 60^f=Y<2:=He6H8T5i<nP3
+VZmgzODP[mKfojmjL7kgiB2
+!s100 Lo];OBdeY4GhQzM<OEINe1
 R6
-31
+33
 R7
 !i10b 1
 R8
-Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
-!s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+Z16 !s90 -reportprogress|300|-2008|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht|
+!s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht|
 !i113 1
 R11
 R12
-Aprogramador_arch
+Acontrolador_arch
 R2
 R3
-DEx4 work 23 programador_vhd_vec_tst 0 22 m;GUh;bFf4=;N<FKzz[162
+DEx4 work 23 controlador_vhd_vec_tst 0 22 ZmgzODP[mKfojmjL7kgiB2
 !i122 1
-l55
-L34 81
-VNdJ9gQ9`DIl6JVMW;>og?1
-!s100 5?ho[L9U=XCHH^kIHcgSS3
+l65
+L34 104
+VSN:OH[Qc=L`:Bo0VZ0Af^0
+!s100 _eneQbQMK7BnikaJcB1a`0
 R6
-31
+33
 R7
 !i10b 1
 R8
 R16
-Z17 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+Z17 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht|
 !i113 1
 R11
 R12
