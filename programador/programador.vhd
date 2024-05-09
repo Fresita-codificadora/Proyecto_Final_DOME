@@ -22,8 +22,8 @@ entity programador is
 		reset	 : in	std_logic;
 		data_in : in std_logic_vector (7 downto 0);
 		--salidas
-		sda_o	 : inout	std_logic ;
-		sca_o  : out std_logic ;
+		sda_o	 : inout	std_logic := 'Z';
+		sca_o  : out std_logic := 'Z';
 		err : out std_logic ;
 		buisy : out std_logic  
 	);

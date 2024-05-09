@@ -10,38 +10,38 @@
 # Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd}
+# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:29 on May 08,2024
-# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd 
+# Start time: 17:09:17 on May 08,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity controlador
-# -- Compiling architecture rtl of controlador
-# End time: 11:56:29 on May 08,2024, Elapsed time: 0:00:00
+# -- Compiling entity programador
+# -- Compiling architecture rtl of programador
+# End time: 17:09:17 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht}
+# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:56:29 on May 08,2024
-# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform3.vwf.vht 
+# Start time: 17:09:17 on May 08,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity controlador_vhd_vec_tst
-# -- Compiling architecture controlador_arch of controlador_vhd_vec_tst
-# End time: 11:56:29 on May 08,2024, Elapsed time: 0:00:00
+# -- Compiling entity programador_vhd_vec_tst
+# -- Compiling architecture programador_arch of programador_vhd_vec_tst
+# End time: 17:09:17 on May 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  controlador_vhd_vec_tst
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" controlador_vhd_vec_tst 
-# Start time: 11:56:29 on May 08,2024
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  programador_vhd_vec_tst
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" programador_vhd_vec_tst 
+# Start time: 17:09:18 on May 08,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.controlador_vhd_vec_tst(controlador_arch)
-# Loading work.controlador(rtl)
+# Loading work.programador_vhd_vec_tst(programador_arch)
+# Loading work.programador(rtl)
 # 
 # add wave *
 # view structure
@@ -49,5 +49,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 1000 ns
-# End time: 12:01:36 on May 08,2024, Elapsed time: 0:05:07
+run
+# End time: 18:40:29 on May 08,2024, Elapsed time: 1:31:11
 # Errors: 0, Warnings: 0

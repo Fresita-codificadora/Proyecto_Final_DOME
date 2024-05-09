@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Trabajo Final Domé" company="" webLink="http://" view-date="2024-05-01" view-index="0" gantt-divider-location="420" resource-divider-location="278" version="3.3.3307" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Trabajo Final Domé" company="" webLink="http://" view-date="2024-05-01" view-index="0" gantt-divider-location="390" resource-divider-location="278" version="3.3.3307" locale="es_ES">
     <description/>
     <view zooming-state="default:8" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="269" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="66" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="69" order="2"/>
+        <field id="tpd3" name="Nombre" width="249" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="62" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="63" order="2"/>
         <field id="tpd15" name="Notas" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -39,12 +39,12 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="2" uid="7ff5548983284b33b53e853fb9be4eda" name="Profundización en VHDL" meeting="false" start="2024-04-28" duration="143" complete="0" expand="true"/>
+        <task id="2" uid="7ff5548983284b33b53e853fb9be4eda" name="Profundización en VHDL" meeting="false" start="2024-04-28" duration="153" complete="0" expand="true"/>
         <task id="0" uid="eebb9a15487b4ee398a75b77db0809a6" name="Desarrollo controlador camara" meeting="false" start="2024-04-28" duration="27" complete="0" expand="true">
             <task id="1" uid="76a986c910c64e33936caa8d03679407" name="Configurador" meeting="false" start="2024-04-28" duration="13" complete="0" expand="true">
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" uid="5a4b3bf7682b4c7e8a1ec723ede4c6d1" name="Interfaseado con los datos" meeting="false" start="2024-05-11" duration="14" complete="0" expand="true">
+            <task id="3" uid="5a4b3bf7682b4c7e8a1ec723ede4c6d1" name="Interfaz con los datos" meeting="false" start="2024-05-11" duration="14" complete="0" expand="true">
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
             </task>
             <task id="4" uid="08716db0ceed4680b04d8352bade1feb" name="Obtencion primeras fotos" color="#00ff00" meeting="true" start="2024-05-25" duration="0" complete="0" expand="true">
@@ -69,28 +69,28 @@
                 <depend id="12" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="11" uid="08f1a60b378c4a7eb399bd2cfac961d5" name="Desarrollo PCB" meeting="false" start="2024-07-06" duration="60" complete="0" expand="true">
+        <task id="11" uid="08f1a60b378c4a7eb399bd2cfac961d5" name="Desarrollo PCB" meeting="false" start="2024-07-06" duration="69" complete="0" expand="true">
             <task id="12" uid="f52d7bba76ad4535ae6819dc23c19b86" name="Desarrollo PCB" meeting="false" start="2024-07-06" duration="25" complete="0" expand="true">
                 <depend id="13" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="13" uid="d91d9adbda8248f1b92af8ed75fbe748" name="Fabricación" meeting="false" start="2024-07-31" duration="21" complete="0" expand="true">
+            <task id="13" uid="d91d9adbda8248f1b92af8ed75fbe748" name="Fabricación" meeting="false" start="2024-07-31" duration="30" complete="0" expand="true">
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="14" uid="1640dcf69a3a4b97b633f267f2943c7e" name="Testing" meeting="false" start="2024-08-21" duration="14" complete="0" expand="true">
+            <task id="14" uid="1640dcf69a3a4b97b633f267f2943c7e" name="Testing" meeting="false" start="2024-08-30" duration="14" complete="0" expand="true">
                 <depend id="23" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="23" uid="ed978273e53c48a1be6799652d04693e" name="Punto de control" color="#ffff33" meeting="true" start="2024-09-04" duration="0" complete="0" expand="true"/>
+            <task id="23" uid="ed978273e53c48a1be6799652d04693e" name="Punto de control" color="#ffff33" meeting="true" start="2024-09-13" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="16" uid="8ef9623372af4169843902ea412a7eb7" name="Conclusiones" meeting="false" start="2024-04-28" duration="143" complete="0" expand="true">
-            <task id="18" uid="c0e274237ed947fe848d82540957d02e" name="Escritura del informe" meeting="false" start="2024-04-28" duration="130" complete="0" expand="true">
+        <task id="16" uid="8ef9623372af4169843902ea412a7eb7" name="Conclusiones" meeting="false" start="2024-04-28" duration="153" complete="0" expand="true">
+            <task id="18" uid="c0e274237ed947fe848d82540957d02e" name="Escritura del informe" meeting="false" start="2024-04-28" duration="139" complete="0" expand="true">
                 <depend id="22" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="22" uid="df4846e814294fbd9498f8f262eabdd4" name="Informe terminado" color="#33ff33" meeting="true" start="2024-09-05" duration="0" complete="0" expand="true"/>
-            <task id="19" uid="8ae99a452bd648a995732e4283d0315b" name="Corrección del informe" meeting="false" start="2024-08-28" duration="14" complete="0" expand="true"/>
-            <task id="20" uid="a776763f0f9b4900890c5cf20fda0621" name="Revisión y corrección final" meeting="false" start="2024-09-03" duration="8" complete="0" expand="true">
+            <task id="22" uid="df4846e814294fbd9498f8f262eabdd4" name="Informe terminado" color="#33ff33" meeting="true" start="2024-09-14" duration="0" complete="0" expand="true"/>
+            <task id="19" uid="8ae99a452bd648a995732e4283d0315b" name="Corrección del informe" meeting="false" start="2024-09-07" duration="14" complete="0" expand="true"/>
+            <task id="20" uid="a776763f0f9b4900890c5cf20fda0621" name="Revisión y corrección final" meeting="false" start="2024-09-13" duration="8" complete="0" expand="true">
                 <depend id="21" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="21" uid="725af16d013d4743bd5199f1d07fd2dd" name="Defensa del proyecto final" meeting="false" start="2024-09-11" duration="7" complete="0" expand="true"/>
+            <task id="21" uid="725af16d013d4743bd5199f1d07fd2dd" name="Defensa del proyecto final" meeting="false" start="2024-09-21" duration="7" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>

@@ -1,0 +1,31 @@
+library ieee;
+	-- STD_LOGIC and STD_LOGIC_VECTOR types, and relevant functions
+	use ieee.std_logic_1164.all;
+	-- SIGNED and UNSIGNED types, and relevant functions
+	use ieee.numeric_std.all;
+	-- Basic sequential functions and concurrent procedures
+	use ieee.VITAL_Primitives.all;
+
+entity camara is
+port
+	(
+		-- Input ports
+		scl	: in  std_LOGIC;
+		-- Inout ports
+		sdl	: inout std_LOGIC;
+	);
+end entity;
+
+architecture arch of camara is
+
+	-- Declarations (optional)
+	
+begin
+
+process(scl)
+signal count : integer range 0 to 255;
+	begin
+		if count 
+	end process;
+end arch;
+

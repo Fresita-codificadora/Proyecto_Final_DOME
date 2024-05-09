@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed May  8 11:55:26 2024
+Analysis & Synthesis Status : Failed - Wed May  8 19:16:30 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : programador
-Top-level Entity Name : controlador
+Top-level Entity Name : camara
 Family : Cyclone IV E
-Total logic elements : 48
-    Total combinational functions : 45
-    Dedicated logic registers : 28
-Total registers : 28
-Total pins : 19
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
