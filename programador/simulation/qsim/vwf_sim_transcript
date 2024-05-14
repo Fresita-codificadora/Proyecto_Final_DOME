@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed May  1 20:26:51 2024
+    Info: Processing started: Thu May  9 14:22:39 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off programador -c programador --vector_source=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/Waveform2.vwf --testbench_file=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/Waveform2.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed May  1 20:26:52 2024
+    Info: Processing started: Thu May  9 14:22:40 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/ programador -c programador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file programador.vho in folder "C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4637 megabytes
-    Info: Processing ended: Wed May  1 20:26:53 2024
+    Info: Processing ended: Thu May  9 14:22:41 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -89,7 +89,7 @@ Reading pref.tcl
 
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 
-# Start time: 20:26:55 on May 01,2024
+# Start time: 14:22:43 on May 09,2024
 # vcom -work work programador.vho 
 
 # -- Loading package STANDARD
@@ -118,13 +118,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of programador
 
-# End time: 20:26:55 on May 01,2024, Elapsed time: 0:00:00
+# End time: 14:22:43 on May 09,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 
-# Start time: 20:26:55 on May 01,2024
+# Start time: 14:22:43 on May 09,2024
 # vcom -work work Waveform2.vwf.vht 
 
 # -- Loading package STANDARD
@@ -137,12 +137,12 @@ Reading pref.tcl
 
 # -- Compiling architecture programador_arch of programador_vhd_vec_tst
 
-# End time: 20:26:55 on May 01,2024, Elapsed time: 0:00:00
+# End time: 14:22:43 on May 09,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.programador_vhd_vec_tst 
-# Start time: 20:26:55 on May 01,2024
+# Start time: 14:22:44 on May 09,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -208,7 +208,7 @@ Reading pref.tcl
 
 # after#36
 
-# End time: 20:26:58 on May 01,2024, Elapsed time: 0:00:03
+# End time: 14:22:48 on May 09,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -221,7 +221,7 @@ Reading C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulati
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/programador_20240501202658.sim.vwf
+Writing the resulting VWF to C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim/programador_20240509142248.sim.vwf
 
 Finished VCD to VWF conversion.
 

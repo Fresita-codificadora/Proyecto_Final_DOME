@@ -15,6 +15,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 !s11e MIXED_VERSIONS
 Z2 !s12c _opt
 R1
@@ -57,10 +59,10 @@ n@_opt
 Z10 OL;O;2023.3;77
 R3
 T_opt1
-!s110 1714606017
-V^c8ILfi7^MIz;941zFfbl1
+!s110 1715275366
+VclS?j8T5Y?^ooJWhmD@Zd1
 04 23 16 work programador_vhd_vec_tst programador_arch 1
-=1-d481d7ab5ad7-6632cfc0-19a-2d24
+=1-d481d7ab5ad7-663d0664-392-2794
 R1
 R6
 R7
@@ -68,7 +70,6 @@ o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 
 R9
 n@_opt1
 R10
-R3
 T_opt2
 R4
 !s110 1714158564
@@ -155,7 +156,7 @@ R25
 !i10b 1
 Z35 !s108 1715179222.000000
 Z36 !s90 -work|work|Waveform3.vwf.vht|
-!s107 Waveform3.vwf.vht|
+Z37 !s107 Waveform3.vwf.vht|
 !i113 1
 R29
 R30
@@ -174,82 +175,82 @@ R25
 !i10b 1
 R35
 R36
-Z37 !s107 Waveform3.vwf.vht|
+R37
 !i113 1
 R29
 R30
 Ehard_block
-R11
-R14
-R12
-R16
-R17
-R18
-R13
-!i122 61
-R20
+Z38 w1715275361
+Z39 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z40 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
+Z41 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z42 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z43 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z44 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
+!i122 63
+Z45 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim
 R21
 R22
 l0
 L35 1
-VB]0;STalBkCB1_B4BXQDW2
-!s100 >mXi5[`cD`bFC`UBKA<om3
-R24
+VO;cUSklm4Sig<`__bK=J@0
+!s100 0CTYib@dc:ObIVR9DRSK?2
+Z46 OL;C;2023.3;77
 32
-Z38 !s110 1715179221
+Z47 !s110 1715275363
 !i10b 1
-R26
+Z48 !s108 1715275363.000000
 R27
 R28
-!i113 1
+!i113 0
 R29
 R30
 Astructure
-R14
-R12
-R16
-R17
-R18
-R13
-DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 61
+R39
+R40
+R41
+R42
+R43
+R44
+DEx4 work 10 hard_block 0 22 O;cUSklm4Sig<`__bK=J@0
+!i122 63
 l65
 L51 20
-Via>5o7W??azG@W@@eFOTF0
-!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
-R24
+VGLY:g5RDEe^dIV`12>FYD3
+!s100 6LcB1AebN6j_bAmfc?Z:_0
+R46
 32
-R38
+R47
 !i10b 1
-R26
+R48
 R27
 R28
-!i113 1
+!i113 0
 R29
 R30
 Eprogramador
-Z39 w1714606013
-Z40 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
-Z41 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
-Z42 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
-Z43 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
-Z44 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
-Z45 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z46 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-Z47 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
-!i122 59
-Z48 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/qsim
+R38
+R40
+R44
+R39
+Z49 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
+R41
+R42
+R43
+Z50 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+!i122 63
+R45
 R21
 R22
 l0
 R23
-V;0Ka86DXP=?9JBo[_K1Sf3
-!s100 Ea?^WZVUZ1iWf[YW1mk423
-Z49 OL;C;2023.3;77
+VhA>N^CUA?cYz6LFUIV3ie3
+!s100 OUg6=5Y6zg2neE0f4W[UD1
+R46
 32
-Z50 !s110 1714606015
+R47
 !i10b 1
-Z51 !s108 1714606015.000000
+R48
 R27
 R28
 !i113 0
@@ -257,80 +258,80 @@ R29
 R30
 Astructure
 R40
+R44
+R39
+R49
 R41
 R42
 R43
-R44
-R45
-R46
-R47
-DEx4 work 11 programador 0 22 ;0Ka86DXP=?9JBo[_K1Sf3
-!i122 59
-l203
-L115 1064
-VYb4XkjIhziNfd`HN_:A:=0
-!s100 5NzFkhBJZWGj^DUBlMV2V2
-R49
-32
 R50
+DEx4 work 11 programador 0 22 hA>N^CUA?cYz6LFUIV3ie3
+!i122 63
+l204
+L115 1066
+Vl4A5Tb[a8[=II4cXPigQQ2
+!s100 VU:0OhnV=g58z3ol`87kC3
+R46
+32
+R47
 !i10b 1
-R51
+R48
 R27
 R28
 !i113 0
 R29
 R30
 Eprogramador_vhd_vec_tst
-Z52 w1714606012
+Z51 w1715275360
+R42
+R43
+!i122 64
 R45
-R46
-!i122 60
-R48
-Z53 8Waveform2.vwf.vht
-Z54 FWaveform2.vwf.vht
+Z52 8Waveform2.vwf.vht
+Z53 FWaveform2.vwf.vht
 l0
 R34
 VE=E9ef^:B]VT`BRQF0NGd3
 !s100 ZGX:h1JNWj8UHl4O^jh5W0
-R49
+R46
 32
-R50
+R47
 !i10b 1
-R51
-Z55 !s90 -work|work|Waveform2.vwf.vht|
-Z56 !s107 Waveform2.vwf.vht|
+R48
+Z54 !s90 -work|work|Waveform2.vwf.vht|
+Z55 !s107 Waveform2.vwf.vht|
 !i113 0
 R29
 R30
 Aprogramador_arch
-R45
-R46
+R42
+R43
 DEx4 work 23 programador_vhd_vec_tst 0 22 E=E9ef^:B]VT`BRQF0NGd3
-!i122 60
+!i122 64
 l61
 L34 174
-VZlR26Hf89UDYPdzHm>20Y1
-!s100 9meQ:^ccZ^kmCozPdPlzU3
-R49
+VTNU=lXfi@3X5<60T[3gXT3
+!s100 P[oIETA[F<zE`UQhGk^oG0
+R46
 32
-R50
+R47
 !i10b 1
-R51
+R48
+R54
 R55
-R56
 !i113 0
 R29
 R30
 Eserialout
-Z57 w1713999081
+Z56 w1713999081
 R40
+R44
+R39
+R49
 R41
 R42
 R43
-R44
-R45
-R46
-R47
+R50
 !i122 10
 R3
 R21
@@ -339,11 +340,11 @@ l0
 R23
 VQ2JK3<zkRANjNL;f<d?jI0
 !s100 a1c^fY5N]z>e1kRDjj3dA2
-R49
+R46
 32
-Z58 !s110 1713999083
+Z57 !s110 1713999083
 !i10b 1
-Z59 !s108 1713999082.000000
+Z58 !s108 1713999082.000000
 R27
 R28
 !i113 0
@@ -351,67 +352,67 @@ R29
 R30
 Astructure
 R40
+R44
+R39
+R49
 R41
 R42
 R43
-R44
-R45
-R46
-R47
+R50
 DEx4 work 9 serialout 0 22 Q2JK3<zkRANjNL;f<d?jI0
 !i122 10
 l159
 L105 596
 VD`RGhK5zlY0zz@i5cFc;;1
 !s100 g=BnF8_70WQn^YGVnB6Lf0
-R49
+R46
 32
-R58
+R57
 !i10b 1
-R59
+R58
 R27
 R28
 !i113 0
 R29
 R30
 Eserialout_vhd_vec_tst
-Z60 w1713999079
-R45
-R46
+Z59 w1713999079
+R42
+R43
 !i122 11
 R3
-Z61 8Waveform.vwf.vht
-Z62 FWaveform.vwf.vht
+Z60 8Waveform.vwf.vht
+Z61 FWaveform.vwf.vht
 l0
 R34
 VVhLZG?oR6:k`e0KY4eZk73
 !s100 oOYOJ:f0N^[6m48]LHci;1
-R49
+R46
 32
-R58
+R57
 !i10b 1
-Z63 !s108 1713999083.000000
-Z64 !s90 -work|work|Waveform.vwf.vht|
-Z65 !s107 Waveform.vwf.vht|
+Z62 !s108 1713999083.000000
+Z63 !s90 -work|work|Waveform.vwf.vht|
+Z64 !s107 Waveform.vwf.vht|
 !i113 0
 R29
 R30
 Aserialout_arch
-R45
-R46
+R42
+R43
 DEx4 work 21 serialout_vhd_vec_tst 0 22 VhLZG?oR6:k`e0KY4eZk73
 !i122 11
 l51
 L34 200
 VSBT;b=?Z6AAX`dh;>1L7@2
 !s100 V<gDJR_C3Y;ljIRWKF?le3
-R49
+R46
 32
-R58
+R57
 !i10b 1
+R62
 R63
 R64
-R65
 !i113 0
 R29
 R30

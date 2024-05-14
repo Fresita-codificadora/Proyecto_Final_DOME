@@ -11,9 +11,11 @@ port
 	(
 		-- Input ports
 		sca	: in  std_LOGIC;
-		clk   : in std_LOGIC;
+--		clk   : in std_LOGIC;
 		-- Inout ports
-		sda	: inout std_LOGIC
+		sda_o : out std_LOGIC;
+		sda_o_2:out std_LOGIC;
+		sda	: in std_LOGIC
 	);
 end entity;
 
@@ -27,21 +29,23 @@ begin
 
 process(all)
 	begin
-	if rising_edge(clk) then
-		if (sca = '1'and falling_edge(sda) ) then -- condicion de start
+		if falling_edge(sda) then -- condicion de start
 			count <= 0;                    -- en condicion de start reiniciamos la cuenta
-			sda <= 'Z';
-		elsif (rising_edge(sca)) then -- flanco ascendente de sca
-			count <= count + 1;				-- tiene que contar 9 pulsos 
-			sda <= 'Z';
-		elsif (count = 9 and rising_edge(sca)) then
-			sda <= '0';						-- mandamos un ack desp de los 9 pulsos 
-			count <= 0;						-- reiniciamos la cuenta
-		elsif ( falling_edge(sda) and sda = '0') then -- condicion de stop
+			sda_o <= 'Z'; 
+		elsif ( falling_edge(sda)) then -- condicion de stop
 			count <= 0;
-			sda <= 'Z';
+			sda_o <= 'Z';
 		end if; 
-	end if;
+	end process
+process (all)
+	begin
+		if (rising_edge(sca)) then -- flanco ascendente de sca
+			count <= count + 1;				-- tiene que contar 9 pulsos 
+			sda_o_2 <= 'Z';
+		elsif (count = 9 and rising_edge(sca)) then
+			sda_o_2 <= '0';						-- mandamos un ack desp de los 9 pulsos 
+			count <= 0;						-- reiniciamos la cuenta
+		end if;
 	end process;
 end arch;
 

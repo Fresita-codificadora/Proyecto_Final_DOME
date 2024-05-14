@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
 
-// DATE "05/08/2024 17:08:36"
+// DATE "05/09/2024 14:22:12"
 
 // 
 // Device: Altera EP4CE6E22C6 Package TQFP144
@@ -46,7 +46,7 @@ input 	r_w;
 input 	stop;
 input 	reset;
 input 	[7:0] data_in;
-inout 	sda_o;
+output 	sda_o;
 output 	sca_o;
 output 	err;
 output 	buisy;

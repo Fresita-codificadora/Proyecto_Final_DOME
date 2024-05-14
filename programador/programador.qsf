@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY camara
+set_global_assignment -name TOP_LEVEL_ENTITY programador
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:31:34  APRIL 23, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -68,7 +68,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME controlador_vhd_vec_tst -section
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id controlador_vhd_vec_tst
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id controlador_vhd_vec_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME controlador_vhd_vec_tst -section_id controlador_vhd_vec_tst
-set_global_assignment -name VHDL_FILE camara.vhd
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Waveform1.vwf.vht -section_id programador_vhd_vec_tst
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Waveform3.vwf.vht -section_id controlador_vhd_vec_tst
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
