@@ -41,8 +41,8 @@ data_in[5] => data[5].DATAIN
 data_in[6] => data[6].DATAIN
 data_in[7] => data[7].DATAIN
 sda_o <> sda_o
-sca_o <= sca_o.DB_MAX_OUTPUT_PORT_TYPE
-err <= err.DB_MAX_OUTPUT_PORT_TYPE
-buisy <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sca_o << sca_o.DB_MAX_OUTPUT_PORT_TYPE
+err << err.DB_MAX_OUTPUT_PORT_TYPE
+buisy << WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 
 
