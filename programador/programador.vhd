@@ -1,9 +1,28 @@
--- Quartus Prime VHDL Template
--- Four-State Moore State Machine
-
--- A Moore machine's outputs are dependent only on the current state.
--- The output is written only when the state changes.  (State
--- transitions are synchronous.)
+-- ARCHIVO: programador.vhd
+-- DESCRIPCION: maquina de estados, encagada de implementar el protocolo similar al i2c para la camara 
+-- ESTADOS:
+--    idle : Estado inicial donde se espera a la señal start
+--    start : Estado donde se inicia el proceso de envio de datos, mandando el bit start
+--    b_trans : estado de transicion para la escritura donde se cambia el bit a enviar
+--    b_write : estado de escitura del bit donde se pone el clk en alto para que se realice la escritura
+--    ack_1 : estado donde se espera el ack, existen 2 estados de ack por que hay que pulsar el clk para que el esclavo puedda mandar el ack
+--    ack_2 : estado donde se pulsa el clk y se espera eller el bit de ack
+--    error : estado de error cuando no se recibe un ack, hay que reiniciar la maquina de estados
+--    idle_2 : estado de idle donde no hayq que pasar por el estado start, y ya estamos listos para mandar otro byte
+--    stop_1 : estado donde se manda la señal de stop
+--    stop_2 : estado donde se manda la segunda parte de la señal de stop
+-- PUERTOS:
+--    clk: clock de entrada a el doble de la frecuencia que la esperada en el puerto i2c, en mi caso debo tener en cuenta que la restriccion de la camara
+--         me pide que el flanco al menos sea de 5 clk del clk maestro por lo que este clk como maximo es 5 veces menos que el clk maestro
+--    s_t: entrada, señal de start que comienza la maquina de estados
+--    r_w: entrada, señal que le indica a la maquina de estados que puede escribir el proximo byte luego de estar en idle_2, debemos haber cambiado los datos de entrada antes de accionar esta señal
+--    stop: entrada, señal que le indica que comience el proceso de stop
+--   	reset : entrada, señal que reinicia la maquina de estados estas  
+--    data_in : entrada, señal paralela del lato que tiene que enviar
+--    sda_o : salida, señal serie de salida de datos con un buffer tristae
+--    sca_o : salida, señal de salida de clk para la salida de datos serie
+--    err : salida, señal de error cuando no se tiene la señal de ack
+--    buisy : salida, señal que indica que se esta mandando un byte y que se debe mantener los datos
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -11,9 +30,6 @@ use ieee.std_logic_1164.all;
 entity programador is
 
 	port(
-		--variables unicamente necesarias para la simulacion 
-	--	clk_div8_sim : out std_logic;
-		--variables necesarias
 	   -- entradas
 		clk		 : in	std_logic;	
 		s_t	 : in	std_logic; --start input
@@ -38,16 +54,10 @@ architecture rtl of programador is
 	-- Register to hold the current state
 	signal state   : state_type;
 	signal count: integer range 0 to 8;
-	signal clk_div2,clk_div4,clk_div8,sda,sca : std_logic;
 	signal data : std_logic_vector (7 downto 0);
 
 begin
 
---esto por algun motivo no esta andando asi que nos vamos a cagar en todos y vamos a mandarle al clk derecho
---	clk_div2 <= not(clk_div2) when (clk'event and clk='1');
---	clk_div4 <= not(clk_div4) when (clk_div2'event and clk_div2='1');--generador del clk 
---	clk_div8 <= not(clk_div4) when (clk_div4'event and clk_div4='1');
---	clk_div8_sim<=clk_div8;
 	
 	sda_o <= 'Z' when sda = '1' else '0'; -- convierte sda de 0 o 1 a 0 o Z
 	sca_o <= 'Z' when sca = '1' else '0';
@@ -58,11 +68,11 @@ begin
 		if reset = '1' then
 			state <= idle;
 		elsif (rising_edge(clk)) then
-			data <= data_in;
 			case state is
 				when idle=>
 					if s_t = '1' then
 						state <= start;       -- idle ppal donde esperamos la señal de start(s_t) para comenzar a mandar la primera direccion
+						data <= data_in;
 					else
 						state <= idle;
 					end if;
@@ -97,6 +107,7 @@ begin
 				when idle_2 =>
 					if r_w = '1' then      --estado idle donde podemos mandar el proximo dato
 						state <= b_trans;
+						data <= data_in;
 					elsif stop = '1' then      -- si llega la señal de stop lo que hacemos es mandar el stop bit 
 						state <= stop_1;
 					else

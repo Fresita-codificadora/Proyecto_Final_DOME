@@ -1,3 +1,19 @@
+-- ARCHIVO: controlador.vhd
+-- DESCRIPCION: maquina de estados, encargada de controlar al programador.vhd 
+
+-- PUERTOS:
+--    clk: clock de entrada a x MHz
+--    start: entrada, señal de start que comienza la maquina de estados
+--    buisy: entrada, señal que esperamos del bloque controlador para poder cambiar de estado
+--    err : entrada, señal proveniente del programador.vhd para reiniciar la maquina de estados
+--   	reset : entrada, señal que reinicia la maquina de estados estas  
+--    done_s : salida, que le indica a una gerarquia superior que la programacion de la camara termino
+--    clk_o : salida, clk para el bloque programador.vhd
+--    r_s: salida, señal de reset para programador.vhd
+--    s_t : salida, señal para programador.vhd que le indica que inicie su programa 
+--    w : salida, señal para programador.vhd que le indica a la otra maquina de estados que escriba el siguiente byte
+--    stop : salida, señal para programador.vhd que le indica que mande la señal de stop a la camara
+--    data : salida, señal que le presentara los datos a programador.vhd que seran los registros
 library ieee;
 use ieee.std_logic_1164.all;
 

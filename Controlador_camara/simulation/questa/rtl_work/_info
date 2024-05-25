@@ -1,0 +1,93 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/questa
+Ecapture_input_controller
+Z1 w1716498554
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/Capture_Input_Controller.vhd
+Z5 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/Capture_Input_Controller.vhd
+l0
+L20 1
+VW><lF^`4aM1_k_[E`_?bl2
+!s100 3_eWG`658f4zi>=31``lT3
+Z6 OV;C;2020.1;71
+33
+Z7 !s110 1716498695
+!i10b 1
+Z8 !s108 1716498695.000000
+Z9 !s90 -reportprogress|300|-2008|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/Capture_Input_Controller.vhd|
+Z10 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/Capture_Input_Controller.vhd|
+!i113 1
+Z11 o-2008 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+DEx4 work 24 capture_input_controller 0 22 W><lF^`4aM1_k_[E`_?bl2
+!i122 0
+l35
+L31 26
+V5THe=`?DNZ3^?f[l54kS21
+!s100 bFFnM`<329nTWW`<``klB1
+R6
+33
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecapture_input_controller_vhd_vec_tst
+Z13 w1716498684
+R2
+R3
+!i122 1
+R0
+Z14 8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/modelsim/Waveform.vwf.vht
+Z15 FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/modelsim/Waveform.vwf.vht
+l0
+L32 1
+VIUPK>`:0=RiAa6Y<YQ[Td1
+!s100 QjM3JP<CZ3?SEk_mibeb11
+R6
+33
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-2008|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/modelsim/Waveform.vwf.vht|
+!s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R11
+R12
+Acapture_input_controller_arch
+R2
+R3
+DEx4 work 36 capture_input_controller_vhd_vec_tst 0 22 IUPK>`:0=RiAa6Y<YQ[Td1
+!i122 1
+l55
+L34 154
+VQjahz1dUZg[T:mR;?Ha?d3
+!s100 d>GV2RD@QGNg3cJR;^9RA2
+R6
+33
+R7
+!i10b 1
+R8
+R16
+Z17 !s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Controlador_camara/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R11
+R12

@@ -19,29 +19,13 @@
 #
 # Quartus Prime
 # Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-# Date created = 18:28:26  May 23, 2024
-#
-# -------------------------------------------------------------------------- #
-#
-# Notes:
-#
-# 1) The default values for assignments are stored in the file:
-#		programador_assignment_defaults.qdf
-#    If this file doesn't exist, see file:
-#		assignment_defaults.qdf
-#
-# 2) Intel recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus Prime software
-#    and any changes you make may be lost or overwritten.
+# Date created = 19:26:33  May 19, 2024
 #
 # -------------------------------------------------------------------------- #
 
+QUARTUS_VERSION = "23.1"
+DATE = "19:26:33  May 19, 2024"
 
-set_global_assignment -name FAMILY "Cyclone IV E"
-set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY programador
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:28:26  MAY 23, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
-set_global_assignment -name VHDL_FILE controlador.vhd
-set_global_assignment -name VHDL_FILE programador.vhd
+# Revisions
+
+PROJECT_REVISION = "Capture_Input_Controller"

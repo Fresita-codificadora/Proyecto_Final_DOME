@@ -1,0 +1,82 @@
+-- ARCHIVO: Capture_Input_Controller.vhd
+-- DESCRIPCION: maquina de estados, encargada de generar las señales para la lectura de datos en los flancos descendientes 
+--             de la señal pclk proveniente del sensor
+-- ESTADOS:
+--    hold: espera a que se produzca un flanco descendiente de pclk
+--    read: genera la señal de salida IRQ para que se capturen los datos
+-- PUERTOS:
+--    clk: clock de entrada a 100 MHz
+--    enable: entrada, activo alto, señal de habilitación
+--    reset: entrada, activo bajo, señal de reset
+--    frame_valid: entrada, señal de frame_valid del sensor
+--    line_valid: entrada, señal de line_valid del sensor
+--    pclk: entrada, señal de pclk del sensor
+--    IRQ: salida, indica que se guarden los datos del sensor
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Capture_Input_Controller is
+    port(
+        clk, enable: in std_logic;
+        line_valid, pclk: in std_logic;
+        PIX_DATA_VALID: out std_logic
+    );
+end Capture_Input_Controller;
+
+architecture arch3 of Capture_Input_Controller is
+
+    type state_type is (read, hold); 
+    signal state: state_type:=hold; 
+    signal next_state : state_type;
+
+    begin
+       
+    SYNC_PROC : process (clk)
+        begin
+            if rising_edge(clk) then
+                if (enable = '0') then
+                    state <= hold;
+                else
+                    state <= next_state;
+                end if;
+            end if;
+        end process;
+
+    OUTPUT_DECODE : process (state)
+        begin
+            case (state) is
+                when hold =>
+                    PIX_DATA_VALID <= '0';
+                when read =>
+                    PIX_DATA_VALID <= '1';
+                when others =>
+                    PIX_DATA_VALID <= '0';
+            end case;
+        end process;
+
+    NEXT_STATE_DECODE : process (state, pclk, line_valid, frame_valid)
+        begin    
+            case (state) is
+                when hold =>
+                    if (pclk'event and pclk = '0') then
+                        if (line_valid = '1') then
+                            next_state <= read;
+                        else
+                            next_state <= hold;
+                        end if;
+                    end if;
+                when read =>
+                    if (pclk = '1') then
+                        next_state <= hold;
+                    else
+                        next_state <= read;
+                    end if;
+                when others =>
+                    next_state <= state;
+            end case;
+        end process;
+        
+end arch3;
+
