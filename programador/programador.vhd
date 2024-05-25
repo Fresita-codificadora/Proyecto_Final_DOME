@@ -55,7 +55,8 @@ architecture rtl of programador is
 	signal state   : state_type;
 	signal count: integer range 0 to 8;
 	signal data : std_logic_vector (7 downto 0);
-
+	signal sda : std_logic;
+	signal sca :std_logic;
 begin
 
 	
@@ -128,7 +129,7 @@ begin
 	end process;
 
 	-- Output depends solely on the current state
-	process (state)
+	process (state,data,count,sda_o)
 	begin
 		case state is
 			when idle =>        -- en este estado ambas lineas la de datos y clk deben estar en alto, y la señal de buisy debe estar en bajo

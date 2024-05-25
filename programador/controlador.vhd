@@ -46,28 +46,21 @@ architecture rtl of controlador is
 
 	-- Register to hold the current state
 	signal state   : state_type;
-	signal clk_int2,clk_int4 : std_logic;
 	signal count : integer range 0 to 255;
 
 begin
 
-
-	clk_int2 <= not(clk_int2) when (clk'event and clk='1');
-	clk_int4 <= not(clk_int4) when (clk_int2'event and clk_int2='1');--generador del clk 
-	clk_o <= clk_int4;
-	--clk_o <= not(clk_o) when (clk_int4'event and clk_int4='1');
-
 	-- Logic to advance to the next state
-	process (all)
+	process (err,start,buisy,reset)
 	begin
 		if err= '1' then
 			state <= idle;  --senal de error reinicia la maquina
-		elsif reset = '1' then
+		elsif reset = '0' then
 			state <= idle;
 		elsif (rising_edge(clk)) then
 			case state is
 				when idle=>
-					if start = '1' then
+					if start = '0' then
 						state <= dp_BA;
 					else
 						state <= idle;
@@ -217,7 +210,7 @@ begin
 	end process;
 
 	-- Output depends solely on the current state
-	process (all)
+	process (state)
 	begin
 		case state is
 			when idle =>
