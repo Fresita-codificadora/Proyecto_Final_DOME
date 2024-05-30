@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "04/27/2024 15:10:10"
+-- Generated on "05/29/2024 19:25:38"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          programador
+-- Vhdl Test Bench(with test vectors) for design  :          Block1
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,44 +29,89 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY programador_vhd_vec_tst IS
-END programador_vhd_vec_tst;
-ARCHITECTURE programador_arch OF programador_vhd_vec_tst IS
+ENTITY Block1_vhd_vec_tst IS
+END Block1_vhd_vec_tst;
+ARCHITECTURE Block1_arch OF Block1_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL buisy : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL Buisy_int : STD_LOGIC;
 SIGNAL clk : STD_LOGIC;
-SIGNAL clk_div2 : STD_LOGIC;
-SIGNAL clk_div4 : STD_LOGIC;
-SIGNAL count : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL CLK_int : STD_LOGIC;
+SIGNAL clk_out : STD_LOGIC;
+SIGNAL Data : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL DONE : STD_LOGIC;
+SIGNAL ERR_int : STD_LOGIC;
+SIGNAL R_W_iknt : STD_LOGIC;
+SIGNAL Res_int : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
+SIGNAL reset_camara : STD_LOGIC;
+SIGNAL S_T_int : STD_LOGIC;
+SIGNAL sca : STD_LOGIC;
+SIGNAL sda : STD_LOGIC;
 SIGNAL start : STD_LOGIC;
-SIGNAL stop : STD_LOGIC;
-COMPONENT programador
+SIGNAL stop_int : STD_LOGIC;
+SIGNAL trigg : STD_LOGIC;
+COMPONENT Block1
 	PORT (
-	buisy : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	Buisy_int : OUT STD_LOGIC;
 	clk : IN STD_LOGIC;
-	clk_div2 : OUT STD_LOGIC;
-	clk_div4 : OUT STD_LOGIC;
-	count : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	CLK_int : OUT STD_LOGIC;
+	clk_out : OUT STD_LOGIC;
+	Data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	DONE : OUT STD_LOGIC;
+	ERR_int : OUT STD_LOGIC;
+	R_W_iknt : OUT STD_LOGIC;
+	Res_int : OUT STD_LOGIC;
 	reset : IN STD_LOGIC;
+	reset_camara : OUT STD_LOGIC;
+	S_T_int : OUT STD_LOGIC;
+	sca : OUT STD_LOGIC;
+	sda : INOUT STD_LOGIC;
 	start : IN STD_LOGIC;
-	stop : IN STD_LOGIC
+	stop_int : OUT STD_LOGIC;
+	trigg : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : programador
+	i1 : Block1
 	PORT MAP (
 -- list connections between master ports and signals
-	buisy => buisy,
+	Buisy_int => Buisy_int,
 	clk => clk,
-	clk_div2 => clk_div2,
-	clk_div4 => clk_div4,
-	count => count,
+	CLK_int => CLK_int,
+	clk_out => clk_out,
+	Data => Data,
+	DONE => DONE,
+	ERR_int => ERR_int,
+	R_W_iknt => R_W_iknt,
+	Res_int => Res_int,
 	reset => reset,
+	reset_camara => reset_camara,
+	S_T_int => S_T_int,
+	sca => sca,
+	sda => sda,
 	start => start,
-	stop => stop
+	stop_int => stop_int,
+	trigg => trigg
 	);
+
+-- start
+t_prcs_start: PROCESS
+BEGIN
+	start <= '0';
+	WAIT FOR 1040000 ps;
+	start <= '1';
+WAIT;
+END PROCESS t_prcs_start;
+
+-- reset
+t_prcs_reset: PROCESS
+BEGIN
+	reset <= '0';
+	WAIT FOR 410000 ps;
+	reset <= '1';
+WAIT;
+END PROCESS t_prcs_reset;
 
 -- clk
 t_prcs_clk: PROCESS
@@ -76,54 +121,14 @@ LOOP
 	WAIT FOR 5000 ps;
 	clk <= '1';
 	WAIT FOR 5000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+	IF (NOW >= 10000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
--- reset
-t_prcs_reset: PROCESS
+-- sda
+t_prcs_sda: PROCESS
 BEGIN
-	reset <= '1';
-	WAIT FOR 40000 ps;
-	reset <= '0';
-	WAIT FOR 320000 ps;
-	reset <= '1';
-	WAIT FOR 20000 ps;
-	reset <= '0';
+	sda <= 'Z';
 WAIT;
-END PROCESS t_prcs_reset;
-
--- start
-t_prcs_start: PROCESS
-BEGIN
-	start <= '0';
-	WAIT FOR 50000 ps;
-	start <= '1';
-	WAIT FOR 30000 ps;
-	start <= '0';
-	WAIT FOR 220000 ps;
-	start <= '1';
-	WAIT FOR 10000 ps;
-	start <= '0';
-	WAIT FOR 380000 ps;
-	start <= '1';
-	WAIT FOR 20000 ps;
-	start <= '0';
-WAIT;
-END PROCESS t_prcs_start;
-
--- stop
-t_prcs_stop: PROCESS
-BEGIN
-	stop <= '0';
-	WAIT FOR 230000 ps;
-	stop <= '1';
-	WAIT FOR 20000 ps;
-	stop <= '0';
-	WAIT FOR 390000 ps;
-	stop <= '1';
-	WAIT FOR 20000 ps;
-	stop <= '0';
-WAIT;
-END PROCESS t_prcs_stop;
-END programador_arch;
+END PROCESS t_prcs_sda;
+END Block1_arch;

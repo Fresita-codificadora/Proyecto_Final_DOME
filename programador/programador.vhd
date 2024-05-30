@@ -40,8 +40,8 @@ entity programador is
 		--salidas
 		sda_o	 : inout	std_logic := 'Z';
 		sca_o  : out std_logic := 'Z';
-		err : out std_logic ;
-		buisy : out std_logic  
+		err : out std_logic:='0';
+		buisy : out std_logic :='1'  
 	);
 
 end entity;
@@ -57,6 +57,7 @@ architecture rtl of programador is
 	signal data : std_logic_vector (7 downto 0);
 	signal sda : std_logic;
 	signal sca :std_logic;
+	signal ack_lect:std_logic;
 begin
 
 	
@@ -99,7 +100,7 @@ begin
 				
 				when ack_2 =>
 				
-					if sda = '1' then  --estado de no recibir un ack del esclavo
+					if ack_lect = '1' then  --estado de no recibir un ack del esclavo
 						state <= error;
 					else
 						state <= idle_2;
@@ -137,29 +138,35 @@ begin
 				sda <= '1';       --dato= 1
 				buisy <= '0';
 				err <= '0';
+				ack_lect <='1';
 			when start =>
 				sca <='1';
 				sda <= '0';      -- pulsamos dato cuando el clk esta en alto
 				buisy <= '1';
 				err <= '0';
+				ack_lect <='1';
 			when b_trans =>
 				sca <= '0';
 				sda <= data(count);   -- mientras el clk esta en bajo cambiamos a los datos
 				buisy <= '1';
 				err <= '0';
+				ack_lect <='1';
 			when b_write =>         -- el indice se deberia ir cambiando a medida de que count que esta en la otra parte vaya cambiando
 				sca <= '1';
 				sda <= data(count);   -- mantenemos datos mientras el clk esta en alto asi lo puede leer
 				buisy <= '1';
 				err <= '0';
+				ack_lect <='1';
 			when ack_1 =>
 				sca <= '0';
-				sda <= sda_o;           -- pulsamos el clk a ver si recibimos el ack
+				sda <= '1';           -- pulsamos el clk a ver si recibimos el ack
+				ack_lect <= sda_o;
 				buisy <= '1';
 				err <= '0';
 			when ack_2 =>
 				sca <= '1';     --en este estado debe ingresar el ack del esclavo por eso no esta sda
-				sda <= sda_o;
+				sda <= '1';
+				ack_lect <= sda_o;
 				buisy <= '1';
 				err <= '0';
 			when idle_2=>
@@ -167,21 +174,25 @@ begin
 				sda <= '1';
 				buisy <= '0';
 				err <= '0';
+				ack_lect <='1';
 			when stop_1 =>
 				sca <= '0';
 				sda <= '0';
 				buisy <= '1';
 				err <= '0';
+				ack_lect <='1';
 			when stop_2 =>
 				sca <= '1';
 				sda <= '0';
 				buisy <= '1';
 				err <= '0';
+				ack_lect <='1';
 			when error =>
 				sca <= '1';
 				sda <= '1';
-				buisy <= '0';
+				buisy <= '1';
 				err <= '1';
+				ack_lect <='1';
 		end case;
 	end process;
 end rtl;

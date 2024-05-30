@@ -47,8 +47,29 @@ architecture rtl of controlador is
 	-- Register to hold the current state
 	signal state   : state_type;
 	signal count : integer range 0 to 255;
+	signal clk_int,clk_int_2 : std_logic;
 
 begin
+
+	process (clk,clk_int)
+		variable cuenta_int: integer range 0 to 5;
+		variable cuenta_int_2:integer range 0 to 10;
+	begin
+		if rising_edge(clk) then
+			cuenta_int:=cuenta_int+1;
+			cuenta_int_2:=cuenta_int_2+1;
+			if cuenta_int=5 then
+				cuenta_int := 0;
+				clk_int<=not clk_int;
+			end if;
+			if cuenta_int_2=7 then
+				cuenta_int_2:=0;
+				clk_int_2<=not clk_int_2;
+			end if;
+		end if;
+		clk_o<=clk_int;
+	end process;
+	
 
 	-- Logic to advance to the next state
 	process (err,start,buisy,reset)
@@ -57,7 +78,7 @@ begin
 			state <= idle;  --senal de error reinicia la maquina
 		elsif reset = '0' then
 			state <= idle;
-		elsif (rising_edge(clk)) then
+		elsif (rising_edge(clk_int_2)) then
 			case state is
 				when idle=>
 					if start = '0' then

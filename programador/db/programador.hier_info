@@ -12,15 +12,15 @@ reset_camara <= <VCC>
 
 
 |Block1|controlador:inst
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-clk => count[5].CLK
-clk => count[6].CLK
-clk => count[7].CLK
-clk => state~2.DATAIN
+clk => clk_int_2.CLK
+clk => clk_int.CLK
+clk => cuenta_int_2[0].CLK
+clk => cuenta_int_2[1].CLK
+clk => cuenta_int_2[2].CLK
+clk => cuenta_int_2[3].CLK
+clk => cuenta_int[0].CLK
+clk => cuenta_int[1].CLK
+clk => cuenta_int[2].CLK
 start => state.DATAB
 start => Selector0.IN1
 reset => count[0].OUTPUTSELECT
@@ -70,7 +70,7 @@ err => count[2].ENA
 err => count[1].ENA
 err => count[0].ENA
 done_s <= done_s.DB_MAX_OUTPUT_PORT_TYPE
-clk_o <= comb.DB_MAX_OUTPUT_PORT_TYPE
+clk_o <= clk_int.DB_MAX_OUTPUT_PORT_TYPE
 r_s <= r_s.DB_MAX_OUTPUT_PORT_TYPE
 s_t <= s_t.DB_MAX_OUTPUT_PORT_TYPE
 w <= WideOr18.DB_MAX_OUTPUT_PORT_TYPE
@@ -154,6 +154,6 @@ data_in[7] => data.DATAB
 sda_o <> sda_o
 sca_o <= sca_o.DB_MAX_OUTPUT_PORT_TYPE
 err <= err.DB_MAX_OUTPUT_PORT_TYPE
-buisy <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+buisy <= buisy.DB_MAX_OUTPUT_PORT_TYPE
 
 

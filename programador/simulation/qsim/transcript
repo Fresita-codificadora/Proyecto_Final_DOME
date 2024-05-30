@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:22:43 on May 09,2024
+# Start time: 19:25:42 on May 29,2024
 # vcom -work work programador.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,22 +15,22 @@
 # -- Compiling architecture structure of hard_block
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
-# -- Compiling entity programador
-# -- Compiling architecture structure of programador
-# End time: 14:22:43 on May 09,2024, Elapsed time: 0:00:00
+# -- Compiling entity Block1
+# -- Compiling architecture structure of Block1
+# End time: 19:25:43 on May 29,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 14:22:43 on May 09,2024
-# vcom -work work Waveform2.vwf.vht 
+# Start time: 19:25:43 on May 29,2024
+# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity programador_vhd_vec_tst
-# -- Compiling architecture programador_arch of programador_vhd_vec_tst
-# End time: 14:22:43 on May 09,2024, Elapsed time: 0:00:00
+# -- Compiling entity Block1_vhd_vec_tst
+# -- Compiling architecture Block1_arch of Block1_vhd_vec_tst
+# End time: 19:25:43 on May 29,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.programador_vhd_vec_tst 
-# Start time: 14:22:44 on May 09,2024
+# vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Block1_vhd_vec_tst 
+# Start time: 19:25:43 on May 29,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -51,14 +51,14 @@
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.programador_vhd_vec_tst(programador_arch)#1
+# Loading work.block1_vhd_vec_tst(block1_arch)#1
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
 # Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.programador(structure)#1
+# Loading work.block1(structure)#1
 # Loading work.hard_block(structure)#1
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)#1
@@ -66,14 +66,12 @@
 # Loading cycloneive.cycloneive_io_ibuf(arch)#1
 # Loading cycloneive.cycloneive_clkctrl(vital_clkctrl)#1
 # Loading cycloneive.cycloneive_ena_reg(behave)#1
-# Loading altera.dffeas(vital_dffeas)#1
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#1
+# Loading altera.dffeas(vital_dffeas)#1
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#2
-# Loading altera.dffeas(vital_dffeas)#2
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#3
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#4
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#5
-# Loading altera.dffeas(vital_dffeas)#3
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#6
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#7
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#8
@@ -82,16 +80,63 @@
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#11
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#12
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#13
+# Loading altera.dffeas(vital_dffeas)#2
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#14
-# Loading altera.dffeas(vital_dffeas)#4
+# Loading altera.dffeas(vital_dffeas)#3
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#15
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#16
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#17
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#18
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#19
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#20
+# Loading altera.dffeas(vital_dffeas)#4
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#21
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#22
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#23
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#24
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#25
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#26
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#27
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#28
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#29
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#30
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#31
+# Loading altera.dffeas(vital_dffeas)#5
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#32
+# Loading altera.dffeas(vital_dffeas)#6
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#33
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#34
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#35
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#36
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#37
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#38
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#39
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#40
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#41
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#42
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#43
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#44
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#45
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#46
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#47
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#48
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#49
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#50
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#51
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#52
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#53
+# Loading altera.dffeas(vital_dffeas)#7
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#54
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#55
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#56
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#57
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#58
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#59
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#60
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#61
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#62
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#63
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#64
 # after#36
-# End time: 14:22:48 on May 09,2024, Elapsed time: 0:00:04
+# End time: 19:25:48 on May 29,2024, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 1

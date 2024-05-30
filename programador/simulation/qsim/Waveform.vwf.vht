@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "04/26/2024 16:11:32"
+-- Generated on "05/29/2024 17:12:51"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          programador
+-- Vhdl Test Bench(with test vectors) for design  :          controlador
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,58 +29,103 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY programador_vhd_vec_tst IS
-END programador_vhd_vec_tst;
-ARCHITECTURE programador_arch OF programador_vhd_vec_tst IS
+ENTITY controlador_vhd_vec_tst IS
+END controlador_vhd_vec_tst;
+ARCHITECTURE controlador_arch OF controlador_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL buisy : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL buisy : STD_LOGIC;
 SIGNAL clk : STD_LOGIC;
-SIGNAL clk_div2 : STD_LOGIC;
-SIGNAL clk_div4 : STD_LOGIC;
+SIGNAL clk_o : STD_LOGIC;
+SIGNAL data : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL done_s : STD_LOGIC;
+SIGNAL err : STD_LOGIC;
+SIGNAL r_s : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
+SIGNAL s_t : STD_LOGIC;
 SIGNAL start : STD_LOGIC;
 SIGNAL stop : STD_LOGIC;
-COMPONENT programador
+SIGNAL w : STD_LOGIC;
+COMPONENT controlador
 	PORT (
-	buisy : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	buisy : IN STD_LOGIC;
 	clk : IN STD_LOGIC;
-	clk_div2 : OUT STD_LOGIC;
-	clk_div4 : OUT STD_LOGIC;
+	clk_o : OUT STD_LOGIC;
+	data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	done_s : OUT STD_LOGIC;
+	err : IN STD_LOGIC;
+	r_s : OUT STD_LOGIC;
 	reset : IN STD_LOGIC;
+	s_t : OUT STD_LOGIC;
 	start : IN STD_LOGIC;
-	stop : IN STD_LOGIC
+	stop : OUT STD_LOGIC;
+	w : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : programador
+	i1 : controlador
 	PORT MAP (
 -- list connections between master ports and signals
 	buisy => buisy,
 	clk => clk,
-	clk_div2 => clk_div2,
-	clk_div4 => clk_div4,
+	clk_o => clk_o,
+	data => data,
+	done_s => done_s,
+	err => err,
+	r_s => r_s,
 	reset => reset,
+	s_t => s_t,
 	start => start,
-	stop => stop
+	stop => stop,
+	w => w
 	);
+
+-- buisy
+t_prcs_buisy: PROCESS
+BEGIN
+	buisy <= '0';
+	WAIT FOR 100000 ps;
+	buisy <= '1';
+	WAIT FOR 100000 ps;
+	buisy <= '0';
+	WAIT FOR 20000 ps;
+	buisy <= '1';
+	WAIT FOR 180000 ps;
+	FOR i IN 1 TO 48
+	LOOP
+		buisy <= '0';
+		WAIT FOR 20000 ps;
+		buisy <= '1';
+		WAIT FOR 180000 ps;
+	END LOOP;
+WAIT;
+END PROCESS t_prcs_buisy;
 
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
 LOOP
 	clk <= '0';
-	WAIT FOR 10000 ps;
+	WAIT FOR 5000 ps;
 	clk <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+	WAIT FOR 5000 ps;
+	IF (NOW >= 10000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
+
+-- err
+t_prcs_err: PROCESS
+BEGIN
+	err <= '0';
+WAIT;
+END PROCESS t_prcs_err;
 
 -- reset
 t_prcs_reset: PROCESS
 BEGIN
 	reset <= '0';
+	WAIT FOR 20000 ps;
+	reset <= '1';
 WAIT;
 END PROCESS t_prcs_reset;
 
@@ -88,13 +133,8 @@ END PROCESS t_prcs_reset;
 t_prcs_start: PROCESS
 BEGIN
 	start <= '0';
+	WAIT FOR 40000 ps;
+	start <= '1';
 WAIT;
 END PROCESS t_prcs_start;
-
--- stop
-t_prcs_stop: PROCESS
-BEGIN
-	stop <= '0';
-WAIT;
-END PROCESS t_prcs_stop;
-END programador_arch;
+END controlador_arch;
