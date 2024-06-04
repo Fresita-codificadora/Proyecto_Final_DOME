@@ -1,0 +1,12 @@
+
+State Machine - |i2c_fsm_2|state
+Name state.ERROR_STATE state.STOP_BIT state.ACK_CHECK state.SEND_LSB state.SEND_MSB state.SEND_ADDRESS state.SEND_BA state.START_BIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.START_BIT 0 0 0 0 0 0 0 1 1 
+state.SEND_BA 0 0 0 0 0 0 1 0 1 
+state.SEND_ADDRESS 0 0 0 0 0 1 0 0 1 
+state.SEND_MSB 0 0 0 0 1 0 0 0 1 
+state.SEND_LSB 0 0 0 1 0 0 0 0 1 
+state.ACK_CHECK 0 0 1 0 0 0 0 0 1 
+state.STOP_BIT 0 1 0 0 0 0 0 0 1 
+state.ERROR_STATE 1 0 0 0 0 0 0 0 1 

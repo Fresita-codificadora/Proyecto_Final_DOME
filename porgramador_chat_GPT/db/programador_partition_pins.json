@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "busy",
+					"strict" : false
+				},
+				{
+					"name" : "error",
+					"strict" : false
+				},
+				{
+					"name" : "SCA",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_MSB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_LSB[4]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

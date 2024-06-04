@@ -1,0 +1,142 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity i2c_fsm is
+    Port (
+        clk : in std_logic;
+        reset : in std_logic;
+        start : in std_logic;
+        stop : in std_logic;
+        enable : in std_logic;
+        address : in std_logic_vector(7 downto 0);
+        data_MSB : in std_logic_vector(7 downto 0);
+        data_LSB : in std_logic_vector(7 downto 0);
+        SCA : inout std_logic;
+        SDA : inout std_logic;
+        busy : out std_logic;
+        error : out std_logic
+    );
+end i2c_fsm;
+
+architecture Behavioral of i2c_fsm is
+    type state_type is (IDLE, START_BIT, SEND_BA, SEND_ADDRESS, SEND_MSB, SEND_LSB, ACK_CHECK, STOP_BIT, ERROR_STATE);
+    signal state, next_state : state_type;
+    signal clk_enable : std_logic := '0';
+    signal bit_count : integer := 0;
+    signal current_data : std_logic_vector(7 downto 0);
+    signal data_pointer : integer := 0;
+    signal ack_received : std_logic := '0';
+	 signal address_int,data_MSB_int,data_LSB_int: std_logic_vector(7 downto 0);
+
+begin
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            state <= IDLE;
+        elsif rising_edge(clk) then
+            if enable = '1' then
+                state <= next_state;
+            end if;
+        end if;
+    end process;
+		address_int<=address;
+		data_MSB_int<=data_MSB;
+		data_LSB_int<=data_LSB;
+    process(state, start, stop, ack_received, bit_count, data_pointer)
+    begin
+        next_state <= state;
+        case state is
+            when IDLE =>
+                busy <= '0';
+                error <= '0';
+                if start = '1' then
+                    next_state <= START_BIT;
+                end if;
+            when START_BIT =>
+                busy <= '1';
+                SCA <= 'Z'; -- High impedance
+                SDA <= '0'; -- Start condition: SDA goes low
+                next_state <= SEND_BA;
+                bit_count <= 0;
+                current_data <= "10111010"; -- Hex BA
+            when SEND_BA =>
+                if bit_count < 8 then
+                    SCA <= not clk_enable; -- Toggle clock
+                    if clk_enable = '0' then
+                        SDA <= current_data(7);
+                        current_data <= current_data(6 downto 0) & '0';
+                        bit_count <= bit_count + 1;
+                    end if;
+                else
+                    next_state <= ACK_CHECK;
+                end if;
+            when SEND_ADDRESS =>
+                if bit_count < 8 then
+                    SCA <= not clk_enable; -- Toggle clock
+                    if clk_enable = '0' then
+                        SDA <= address_int(7);
+                        address_int <= address_int(6 downto 0) & '0';
+                        bit_count <= bit_count + 1;
+                    end if;
+                else
+                    next_state <= ACK_CHECK;
+                end if;
+            when SEND_MSB =>
+                if bit_count < 8 then
+                    SCA <= not clk_enable; -- Toggle clock
+                    if clk_enable = '0' then
+                        SDA <= data_MSB_int(7);
+                        data_MSB_int <= data_MSB_int(6 downto 0) & '0';
+                        bit_count <= bit_count + 1;
+                    end if;
+                else
+                    next_state <= ACK_CHECK;
+                end if;
+            when SEND_LSB =>
+                if bit_count < 8 then
+                    SCA <= not clk_enable; -- Toggle clock
+                    if clk_enable = '0' then
+                        SDA <= data_LSB_int(7);
+                        data_LSB_int <= data_LSB_int(6 downto 0) & '0';
+                        bit_count <= bit_count + 1;
+                    end if;
+                else
+                    next_state <= ACK_CHECK;
+                end if;
+            when ACK_CHECK =>
+                SCA <= not clk_enable; -- Toggle clock
+                if clk_enable = '1' then
+                    ack_received <= SDA;
+                    if ack_received = '0' then
+                        case data_pointer is
+                            when 0 =>
+                                next_state <= SEND_ADDRESS;
+                                data_pointer <= data_pointer + 1;
+                            when 1 =>
+                                next_state <= SEND_MSB;
+                                data_pointer <= data_pointer + 1;
+                            when 2 =>
+                                next_state <= SEND_LSB;
+                                data_pointer <= data_pointer + 1;
+                            when others =>
+                                next_state <= STOP_BIT;
+                        end case;
+                    else
+                        next_state <= ERROR_STATE;
+                    end if;
+                end if;
+            when STOP_BIT =>
+                SCA <= 'Z'; -- High impedance
+                SDA <= '1'; -- Stop condition: SDA goes high
+                busy <= '0';
+                next_state <= IDLE;
+            when ERROR_STATE =>
+                error <= '1';
+                busy <= '0';
+                next_state <= ERROR_STATE; -- Stay in error state
+        end case;
+    end process;
+
+end Behavioral;

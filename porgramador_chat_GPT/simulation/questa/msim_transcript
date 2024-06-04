@@ -1,0 +1,67 @@
+# Reading pref.tcl
+# do programador_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/i2c_fsm_2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:33:21 on Jun 03,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/i2c_fsm_2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity i2c_fsm_2
+# -- Compiling architecture Behavioral of i2c_fsm_2
+# End time: 12:33:21 on Jun 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -2008 -work work {C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/simulation/modelsim/Waveform.vwf.vht}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:33:21 on Jun 03,2024
+# vcom -reportprogress 300 -2008 -work work C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/simulation/modelsim/Waveform.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity i2c_fsm_2_vhd_vec_tst
+# -- Compiling architecture i2c_fsm_2_arch of i2c_fsm_2_vhd_vec_tst
+# End time: 12:33:21 on Jun 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  i2c_fsm_2_vhd_vec_tst
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" i2c_fsm_2_vhd_vec_tst 
+# Start time: 12:33:21 on Jun 03,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.i2c_fsm_2_vhd_vec_tst(i2c_fsm_2_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.i2c_fsm_2(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 10 us
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 35 ns ###############
+#       Signal: /i2c_fsm_2_vhd_vec_tst/i1/bit_count @ sub-iteration 0 at Value unknown (C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/i2c_fsm_2.vhd:27)
+#   Active process: /i2c_fsm_2_vhd_vec_tst/i1/line__46 @ sub-iteration 1
+#     Source: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/simulation/modelsim/Waveform.vwf.vht:81
+#       Signal: /i2c_fsm_2_vhd_vec_tst/i1/bit_count @ sub-iteration 2 at Value unknown (C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/porgramador_chat_GPT/i2c_fsm_2.vhd:27)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 35 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 35 ns.
+# End time: 12:34:37 on Jun 03,2024, Elapsed time: 0:01:16
+# Errors: 2, Warnings: 0
