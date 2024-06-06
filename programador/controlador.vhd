@@ -52,8 +52,8 @@ architecture rtl of controlador is
 begin
 
 	process (clk,clk_int)
-		variable cuenta_int: integer range 0 to 59;
-		variable cuenta_int_2:integer range 0 to 10;
+		variable cuenta_int: integer range 0 to 100;
+		variable cuenta_int_2:integer range 0 to 100;
 	begin
 		if rising_edge(clk) then
 			cuenta_int:=cuenta_int+1;
