@@ -72,7 +72,7 @@ begin
 	
 
 	-- Logic to advance to the next state
-	process (err,start,buisy,reset)
+	process (err,start,buisy,reset,clk_int_2)
 	begin
 		if err= '1' then
 			state <= idle;  --senal de error reinicia la maquina

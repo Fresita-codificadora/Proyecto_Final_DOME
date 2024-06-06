@@ -49,7 +49,7 @@ end entity;
 architecture rtl of programador is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (idle, start, b_trans, b_write,ack_1,ack_2,ack_3,ack_fin,error,idle_2,stop_1,stop_2);
+	type state_type is (idle, start,start_2, b_trans, b_write_1, b_write_2,b_write_3,ack_1,ack_2,ack_3,ack_fin,error,idle_2,stop_1,stop_2);
 
 	-- Register to hold the current state
 	signal state   : state_type;
@@ -80,13 +80,17 @@ begin
 					end if;
 					
 				when start=>
+					state<=start_2;
+				when start_2=>
 					count <= 7;                 -- recibimos la señal de start y mandamos el start bit
 					state <= b_trans;
-				
 				when b_trans=>                 -- estado intermedio donde pulsamos el clk de datos
-					state <= b_write;
-				
-				when b_write =>
+					state <= b_write_1;
+				when b_write_1=>
+					state <= b_write_2;
+				when b_write_2=>
+					state<=b_write_3;
+				when b_write_3 =>
 					if count-1>=0 then
 						count <= count - 1;
 						state <= b_trans;    --pulso de clk de datos en alto donde escribimos el registro o la direccion
@@ -94,7 +98,6 @@ begin
 						count <= 7;          -- si ya escribimos los 8 datos , esperamos recibir un ack entonces pasamos al estado ack_1
 						state <= ack_1;
 					end if;
-				
 				when ack_1 =>
 					state <= ack_2;      -- estado intermedio donde pulsamos el clk de datos
 				when ack_2=>
@@ -148,15 +151,33 @@ begin
 				buisy <= '1';
 				err <= '0';
 				ack_lect <='1';
+			when start_2 =>
+				sca <='0';
+				sda <= '0';      -- seguimos con datos bajos pero empieza el clk
+				buisy <= '1';
+				err <= '0';
+				ack_lect <='1';
 			when b_trans =>
 				sca <= '0';
 				sda <= data(count);   -- mientras el clk esta en bajo cambiamos a los datos
 				buisy <= '1';
 				err <= '0';
 				ack_lect <='1';
-			when b_write =>         -- el indice se deberia ir cambiando a medida de que count que esta en la otra parte vaya cambiando
+			when b_write_1 =>
 				sca <= '1';
-				sda <= data(count);   -- mantenemos datos mientras el clk esta en alto asi lo puede leer
+				sda <= data(count);   
+				buisy <= '1';				-- mantenemos datos mientras el clk esta en alto asi lo puede leer
+				err <= '0';
+				ack_lect <='1';
+			when b_write_2 =>
+				sca <= '1';
+				sda <= data(count);   	-- mantenemos datos mientras el clk esta en alto asi lo puede leer
+				buisy <= '1';
+				err <= '0';
+				ack_lect <='1';
+			when b_write_3 =>         -- el indice se deberia ir cambiando a medida de que count que esta en la otra parte vaya cambiando
+				sca <= '0';
+				sda <= data(count);   	-- bajamos clk mientras mantenemos los datos
 				buisy <= '1';
 				err <= '0';
 				ack_lect <='1';

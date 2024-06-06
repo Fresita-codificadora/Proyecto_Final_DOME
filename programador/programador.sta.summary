@@ -2,4 +2,160 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -2.699
+TNS   : -22.837
+
+Type  : Slow 1200mV 85C Model Setup 'controlador:inst|clk_int_2'
+Slack : -2.045
+TNS   : -44.131
+
+Type  : Slow 1200mV 85C Model Setup 'controlador:inst|clk_int'
+Slack : -1.719
+TNS   : -17.606
+
+Type  : Slow 1200mV 85C Model Hold 'controlador:inst|clk_int'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'controlador:inst|clk_int_2'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.571
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'controlador:inst|clk_int_2'
+Slack : -1.371
+TNS   : -20.590
+
+Type  : Slow 1200mV 85C Model Recovery 'controlador:inst|clk_int'
+Slack : -0.722
+TNS   : -4.580
+
+Type  : Slow 1200mV 85C Model Removal 'controlador:inst|clk_int'
+Slack : 0.683
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'controlador:inst|clk_int_2'
+Slack : 1.315
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'controlador:inst|clk_int_2'
+Slack : -1.000
+TNS   : -26.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'controlador:inst|clk_int'
+Slack : -1.000
+TNS   : -24.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -2.342
+TNS   : -18.639
+
+Type  : Slow 1200mV 0C Model Setup 'controlador:inst|clk_int_2'
+Slack : -1.758
+TNS   : -36.687
+
+Type  : Slow 1200mV 0C Model Setup 'controlador:inst|clk_int'
+Slack : -1.451
+TNS   : -14.252
+
+Type  : Slow 1200mV 0C Model Hold 'controlador:inst|clk_int'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'controlador:inst|clk_int_2'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'controlador:inst|clk_int_2'
+Slack : -1.137
+TNS   : -16.896
+
+Type  : Slow 1200mV 0C Model Recovery 'controlador:inst|clk_int'
+Slack : -0.534
+TNS   : -2.313
+
+Type  : Slow 1200mV 0C Model Removal 'controlador:inst|clk_int'
+Slack : 0.603
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'controlador:inst|clk_int_2'
+Slack : 1.189
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'controlador:inst|clk_int_2'
+Slack : -1.000
+TNS   : -26.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'controlador:inst|clk_int'
+Slack : -1.000
+TNS   : -24.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.062
+TNS   : -6.463
+
+Type  : Fast 1200mV 0C Model Setup 'controlador:inst|clk_int_2'
+Slack : -0.733
+TNS   : -14.356
+
+Type  : Fast 1200mV 0C Model Setup 'controlador:inst|clk_int'
+Slack : -0.498
+TNS   : -3.576
+
+Type  : Fast 1200mV 0C Model Hold 'controlador:inst|clk_int'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'controlador:inst|clk_int_2'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'controlador:inst|clk_int_2'
+Slack : -0.379
+TNS   : -4.175
+
+Type  : Fast 1200mV 0C Model Recovery 'controlador:inst|clk_int'
+Slack : -0.041
+TNS   : -0.082
+
+Type  : Fast 1200mV 0C Model Removal 'controlador:inst|clk_int'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'controlador:inst|clk_int_2'
+Slack : 0.708
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -20.048
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'controlador:inst|clk_int_2'
+Slack : -1.000
+TNS   : -26.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'controlador:inst|clk_int'
+Slack : -1.000
+TNS   : -24.000
+
 ------------------------------------------------------------

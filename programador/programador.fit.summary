@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Jun  5 18:02:13 2024
+Fitter Status : Successful - Thu Jun  6 14:42:01 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : programador
 Top-level Entity Name : Block1
 Family : Cyclone IV E
 Device : EP4CE6E22C6
 Timing Models : Final
-Total logic elements : 0 / 6,272 ( 0 % )
-    Total combinational functions : 0 / 6,272 ( 0 % )
-    Dedicated logic registers : 0 / 6,272 ( 0 % )
-Total registers : 0
+Total logic elements : 110 / 6,272 ( 2 % )
+    Total combinational functions : 102 / 6,272 ( 2 % )
+    Dedicated logic registers : 66 / 6,272 ( 1 % )
+Total registers : 66
 Total pins : 9 / 92 ( 10 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
