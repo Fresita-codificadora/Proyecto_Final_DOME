@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed May 29 19:27:09 2024
+Analysis & Synthesis Status : Successful - Wed Jun  5 18:02:03 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : programador
 Top-level Entity Name : Block1
 Family : Cyclone IV E
-Total logic elements : 85
-    Total combinational functions : 79
-    Dedicated logic registers : 54
-Total registers : 54
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
 Total pins : 9
 Total virtual pins : 0
 Total memory bits : 0

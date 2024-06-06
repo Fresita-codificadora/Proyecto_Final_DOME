@@ -376,18 +376,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 504 160)
 )
 (connector
-	(pt 432 192)
-	(pt 512 192)
-)
-(connector
-	(pt 520 200)
-	(pt 520 192)
-)
-(connector
-	(pt 528 192)
-	(pt 520 192)
-)
-(connector
 	(pt 704 192)
 	(pt 736 192)
 )
@@ -532,47 +520,8 @@ https://fpgasoftware.intel.com/eula.
 	(pt 224 184)
 )
 (connector
-	(pt 464 368)
-	(pt 464 224)
-	(bus)
-)
-(connector
-	(pt 432 224)
-	(pt 464 224)
-	(bus)
-)
-(connector
-	(pt 464 224)
-	(pt 528 224)
-	(bus)
-)
-(connector
 	(pt 528 208)
 	(pt 488 208)
-)
-(connector
-	(pt 536 368)
-	(pt 536 176)
-)
-(connector
-	(pt 512 176)
-	(pt 528 176)
-)
-(connector
-	(pt 528 176)
-	(pt 536 176)
-)
-(connector
-	(pt 440 176)
-	(pt 440 352)
-)
-(connector
-	(pt 432 176)
-	(pt 440 176)
-)
-(connector
-	(pt 440 176)
-	(pt 504 176)
 )
 (connector
 	(pt 432 160)
@@ -583,67 +532,52 @@ https://fpgasoftware.intel.com/eula.
 	(pt 488 208)
 )
 (connector
-	(pt 488 208)
-	(pt 488 368)
+	(pt 432 176)
+	(pt 504 176)
 )
 (connector
-	(pt 512 176)
+	(pt 432 224)
+	(pt 528 224)
+	(bus)
+)
+(connector
+	(pt 432 192)
 	(pt 512 192)
 )
 (connector
-	(pt 488 0)
-	(pt 488 144)
+	(pt 512 192)
+	(pt 512 176)
+)
+(connector
+	(pt 528 176)
+	(pt 512 176)
+)
+(connector
+	(pt 528 192)
+	(pt 520 192)
+)
+(connector
+	(pt 520 192)
+	(pt 520 200)
+)
+(connector
+	(pt 520 200)
+	(pt 440 200)
+)
+(connector
+	(pt 440 200)
+	(pt 440 208)
+)
+(connector
+	(pt 440 208)
+	(pt 432 208)
 )
 (connector
 	(pt 432 144)
-	(pt 488 144)
-)
-(connector
-	(pt 488 144)
 	(pt 528 144)
 )
 (connector
-	(pt 272 352)
-	(pt 272 296)
-)
-(connector
-	(pt 720 296)
-	(pt 272 296)
-)
-(connector
-	(pt 272 296)
 	(pt 256 296)
-)
-(connector
-	(pt 240 344)
-	(pt 248 304)
-)
-(connector
-	(pt 472 208)
-	(pt 472 200)
-)
-(connector
-	(pt 432 208)
-	(pt 472 208)
-)
-(connector
-	(pt 512 200)
-	(pt 512 368)
-)
-(connector
-	(pt 472 200)
-	(pt 512 200)
-)
-(connector
-	(pt 512 200)
-	(pt 520 200)
+	(pt 720 296)
 )
 (junction (pt 248 128))
-(junction (pt 464 224))
-(junction (pt 488 208))
-(junction (pt 528 176))
-(junction (pt 440 176))
-(junction (pt 488 144))
-(junction (pt 272 296))
-(junction (pt 248 304))
-(junction (pt 512 200))

@@ -49,11 +49,11 @@ end entity;
 architecture rtl of programador is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (idle, start, b_trans, b_write,ack_1,ack_2,error,idle_2,stop_1,stop_2);
+	type state_type is (idle, start, b_trans, b_write,ack_1,ack_2,ack_3,ack_fin,error,idle_2,stop_1,stop_2);
 
 	-- Register to hold the current state
 	signal state   : state_type;
-	signal count: integer range 0 to 8;
+	signal count: integer range 0 to 7;
 	signal data : std_logic_vector (7 downto 0);
 	signal sda : std_logic;
 	signal sca :std_logic;
@@ -97,8 +97,11 @@ begin
 				
 				when ack_1 =>
 					state <= ack_2;      -- estado intermedio donde pulsamos el clk de datos
-				
-				when ack_2 =>
+				when ack_2=>
+					state<=ack_3;
+				when ack_3=>
+					state<=ack_fin;				
+				when ack_fin =>
 				
 					if ack_lect = '1' then  --estado de no recibir un ack del esclavo
 						state <= error;
@@ -164,6 +167,18 @@ begin
 				buisy <= '1';
 				err <= '0';
 			when ack_2 =>
+				sca <= '1';     --en este estado debe ingresar el ack del esclavo por eso no esta sda
+				sda <= '1';
+				ack_lect <= sda_o;
+				buisy <= '1';
+				err <= '0';
+			when ack_3 =>
+				sca <= '0';     --en este estado debe ingresar el ack del esclavo por eso no esta sda
+				sda <= '1';
+				ack_lect <= sda_o;
+				buisy <= '1';
+				err <= '0';
+			when ack_fin =>
 				sca <= '1';     --en este estado debe ingresar el ack del esclavo por eso no esta sda
 				sda <= '1';
 				ack_lect <= sda_o;
