@@ -46,23 +46,23 @@ architecture rtl of controlador is
 
 	-- Register to hold the current state
 	signal state   : state_type;
-	signal count : integer range 0 to 255;
+	signal count : integer range 0 to 3;
 	signal clk_int,clk_int_2 : std_logic;
 
 begin
 
 	process (clk,clk_int)
-		variable cuenta_int: integer range 0 to 100;
-		variable cuenta_int_2:integer range 0 to 100;
+		variable cuenta_int: integer range 0 to 31;
+		variable cuenta_int_2:integer range 0 to 31;
 	begin
 		if rising_edge(clk) then
 			cuenta_int:=cuenta_int+1;
 			cuenta_int_2:=cuenta_int_2+1;
-			if cuenta_int=59 then
+			if cuenta_int=14 then
 				cuenta_int := 0;
 				clk_int<=not clk_int;
 			end if;
-			if cuenta_int_2=70 then
+			if cuenta_int_2=20 then
 				cuenta_int_2:=0;
 				clk_int_2<=not clk_int_2;
 			end if;
