@@ -1,0 +1,95 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Desktop/sram-controller-master/simulation/questa
+Esram
+Z1 w1719763595
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+!i122 0
+R0
+Z5 8C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd
+Z6 FC:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd
+l0
+L6 1
+VW0ccAMi=MaVRNOHHjdJXc0
+!s100 EW@5P68?Tmc@<5DaY88_N0
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1719763996
+!i10b 1
+Z9 !s108 1719763995.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd|
+Z11 !s107 C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehav
+R2
+R3
+R4
+DEx4 work 4 sram 0 22 W0ccAMi=MaVRNOHHjdJXc0
+!i122 0
+l40
+L28 59
+VAL2[Y:[k4IQZ9GNoE_Yzz0
+!s100 @__FY_@<8Y2WP[]G<SFCj2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Esram_vhd_vec_tst
+Z14 w1719763902
+R3
+R2
+!i122 1
+R0
+Z15 8C:/Users/Gaspar/Desktop/sram-controller-master/simulation/modelsim/Waveform.vwf.vht
+Z16 FC:/Users/Gaspar/Desktop/sram-controller-master/simulation/modelsim/Waveform.vwf.vht
+l0
+L32 1
+VSA`R9YVl?;@MKER2<SzJG2
+!s100 d>1D5kIdGzYgSmZACFKo81
+R7
+31
+R8
+!i10b 1
+Z17 !s108 1719763996.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Desktop/sram-controller-master/simulation/modelsim/Waveform.vwf.vht|
+!s107 C:/Users/Gaspar/Desktop/sram-controller-master/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R12
+R13
+Asram_arch
+R3
+R2
+DEx4 work 16 sram_vhd_vec_tst 0 22 SA`R9YVl?;@MKER2<SzJG2
+!i122 1
+l67
+L34 456
+V@ejeLgCc38e>KNg6V`8`O2
+!s100 kIcY?gZoWXD`in[DUfNA21
+R7
+31
+R8
+!i10b 1
+R17
+R18
+Z19 !s107 C:/Users/Gaspar/Desktop/sram-controller-master/simulation/modelsim/Waveform.vwf.vht|
+!i113 1
+R12
+R13

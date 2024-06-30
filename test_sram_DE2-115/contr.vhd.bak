@@ -1,0 +1,85 @@
+-- Quartus Prime VHDL Template
+-- Four-State Moore State Machine
+
+-- A Moore machine's outputs are dependent only on the current state.
+-- The output is written only when the state changes.  (State
+-- transitions are synchronous.)
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity contr is
+
+	port(
+		clk		 : in	std_logic;
+		Start	 : in	std_logic;
+		reset	 : in	std_logic;
+		add : out std_logic_vector(19 downto 0);
+		data : inout std_logic_vector(15 downto 0);
+		reset_o,r_w : out std_logic
+	);
+
+end entity;
+
+architecture rtl of contr is
+
+	-- Build an enumerated type for the state machine
+	type state_type is (s0, s1, s2, s3);
+
+	-- Register to hold the current state
+	signal state   : state_type;
+	signal data_reg : std_logic_vector(15 downto 0);
+	signal clk_int: std_logic;
+
+begin
+	process (clk)
+	begin
+		if rising_edge(clk) then
+			clk_int<= not clk_int;
+		end if;
+	end process;
+	-- Logic to advance to the next state
+	process (clk, reset)
+	begin
+		if reset = '0' then
+			state <= s0;
+		elsif (rising_edge(clk_int)) then
+			case state is
+				when s0=>  -- idle reseteo todoooooooooo
+					if start = '0' then
+						state <= s1; -- vamos al estado idle donde vemos las entradas y hacemos deciciones
+					else
+						state <= s0;
+					end if;
+				when s1=> -- estado donde vemos las entradas, las registramos y vemos si r_w es 0(read) o 1(write)
+					add_reg<=add;
+					data_reg<=data;
+					if r_w = '1' then
+						state <= s2; -- escritura
+					else
+						state <= s3; -- lectura
+					end if;
+				when s2=> -- escitura 
+					state<=s1;
+				when s3 => -- lectura
+					state<=s1;
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (state)
+	begin
+		case state is
+			when s0 =>
+				output <= "00";
+			when s1 =>
+				output <= "01";
+			when s2 =>
+				output <= "10";
+			when s3 =>
+				output <= "11";
+		end case;
+	end process;
+
+end rtl;
