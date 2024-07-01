@@ -1,0 +1,9 @@
+
+State Machine - |Block1|Sram_CIC:inst1|state
+Name state.fin state.address state.escritura state.menos_sig state.mas_sig state.idle 
+state.idle 0 0 0 0 0 0 
+state.mas_sig 0 0 0 0 1 1 
+state.menos_sig 0 0 0 1 0 1 
+state.escritura 0 0 1 0 0 1 
+state.address 0 1 0 0 0 1 
+state.fin 1 0 0 0 0 1 

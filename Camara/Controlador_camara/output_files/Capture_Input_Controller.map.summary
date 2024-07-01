@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Jun 30 18:10:15 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Capture_Input_Controller
+Top-level Entity Name : Capture_Input_Controller
+Family : Cyclone IV E
+Total logic elements : 9
+    Total combinational functions : 1
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 20
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

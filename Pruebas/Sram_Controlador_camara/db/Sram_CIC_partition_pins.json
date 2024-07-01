@@ -1,0 +1,221 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "UB",
+					"strict" : false
+				},
+				{
+					"name" : "LB",
+					"strict" : false
+				},
+				{
+					"name" : "fin_led",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_RAM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "rest",
+					"strict" : false
+				},
+				{
+					"name" : "line_v",
+					"strict" : false
+				},
+				{
+					"name" : "frame_v",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_clk",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_dat[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
