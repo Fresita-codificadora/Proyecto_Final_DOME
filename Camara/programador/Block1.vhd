@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
--- CREATED		"Wed Jun  5 18:05:37 2024"
+-- CREATED		"Fri Jul  5 11:20:15 2024"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -28,6 +28,7 @@ ENTITY Block1 IS
 		clk :  IN  STD_LOGIC;
 		start :  IN  STD_LOGIC;
 		reset :  IN  STD_LOGIC;
+		trigger_btn :  IN  STD_LOGIC;
 		sda :  INOUT  STD_LOGIC;
 		DONE :  OUT  STD_LOGIC;
 		sca :  OUT  STD_LOGIC;
@@ -80,7 +81,7 @@ SIGNAL	SYNTHESIZED_WIRE_7 :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 
 BEGIN 
-trigg <= '0';
+trigg <= trigger_btn;
 clk_out <= clk;
 reset_camara <= '1';
 
@@ -112,7 +113,6 @@ PORT MAP(clk => SYNTHESIZED_WIRE_2,
 		 sca_o => sca,
 		 err => SYNTHESIZED_WIRE_1,
 		 buisy => SYNTHESIZED_WIRE_0);
-
 
 
 
