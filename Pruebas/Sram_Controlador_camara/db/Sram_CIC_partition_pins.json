@@ -4,159 +4,163 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "UB",
+					"name" : "data_o[0]",
 					"strict" : false
 				},
 				{
-					"name" : "LB",
+					"name" : "data_o[1]",
 					"strict" : false
 				},
 				{
-					"name" : "fin_led",
+					"name" : "data_o[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[19]",
+					"name" : "data_o[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[18]",
+					"name" : "data_o[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[17]",
+					"name" : "data_o[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[16]",
+					"name" : "data_o[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[15]",
+					"name" : "data_o[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[14]",
+					"name" : "data_o[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[13]",
+					"name" : "data_o[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[12]",
+					"name" : "data_o[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[11]",
+					"name" : "data_o[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[10]",
+					"name" : "data_o[12]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[9]",
+					"name" : "data_o[13]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[8]",
+					"name" : "data_o[14]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[7]",
+					"name" : "data_o[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[6]",
+					"name" : "add[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[5]",
+					"name" : "add[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[4]",
+					"name" : "add[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[3]",
+					"name" : "add[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[2]",
+					"name" : "add[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[1]",
+					"name" : "add[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_RAM[0]",
+					"name" : "add[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[15]",
+					"name" : "add[7]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[14]",
+					"name" : "add[8]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[13]",
+					"name" : "add[9]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[12]",
+					"name" : "add[10]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[11]",
+					"name" : "add[11]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[10]",
+					"name" : "add[12]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[9]",
+					"name" : "add[13]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[8]",
+					"name" : "add[14]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[7]",
+					"name" : "add[15]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[6]",
+					"name" : "add[16]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[5]",
+					"name" : "add[17]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[4]",
+					"name" : "add[18]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[3]",
+					"name" : "add[19]",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[2]",
+					"name" : "reset_o",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[1]",
+					"name" : "r_w_O",
 					"strict" : false
 				},
 				{
-					"name" : "DQ[0]",
+					"name" : "fin_signal",
+					"strict" : false
+				},
+				{
+					"name" : "data[0]",
 					"strict" : false
 				},
 				{
@@ -164,55 +168,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "start",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "rest",
+					"name" : "leer",
 					"strict" : false
 				},
 				{
-					"name" : "line_v",
+					"name" : "data[1]",
 					"strict" : false
 				},
 				{
-					"name" : "frame_v",
+					"name" : "data[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_dat[7]",
+					"name" : "data[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_clk",
+					"name" : "data[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_dat[6]",
+					"name" : "data[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_dat[5]",
+					"name" : "data[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_dat[4]",
+					"name" : "data[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Pixel_dat[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Pixel_dat[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Pixel_dat[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Pixel_dat[0]",
+					"name" : "Start",
 					"strict" : false
 				}
 			]

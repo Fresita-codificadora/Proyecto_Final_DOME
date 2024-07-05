@@ -66,7 +66,7 @@ begin
 					else
 						state <= idle;
 					end if;
-				when mas_sig=>
+				when mas_sig=> -- escritura de la parte mas significativa del registro
 					
 					if leer_int='1' then --si leimos ya podemos seguir
 						leer_int:='0';
@@ -82,7 +82,7 @@ begin
 						end if;
 					end if;
 				
-				when menos_sig=>
+				when menos_sig=> -- escritura de la parte menos significativa
 					
 					if leer_int='1' then --si leimos ya podemos seguir
 						leer_int:='0';
@@ -152,9 +152,9 @@ begin
 				r_w_O <='1';
 				fin_signal<='0';
 			when fin => -- cambiar salida -- agergar señal de fin
-				add <=std_logic_vector(to_unsigned(add_count,20));
+				add <="Z";
 				data_o <=x"0000";
-				reset_o<='0';
+				reset_o<='Z';
 				r_w_O <='Z';
 				fin_signal<='1';
 		end case;

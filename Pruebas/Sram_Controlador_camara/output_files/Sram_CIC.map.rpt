@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Sram_CIC
-Sun Jun 30 20:07:26 2024
+Thu Jul  4 18:06:00 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,14 +13,12 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Block1|Sram_CIC:inst1|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. State Machine - |Sram_CIC_2|state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 30 20:07:26 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul  4 18:06:00 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
-; Top-level Entity Name              ; Block1                                         ;
+; Top-level Entity Name              ; Sram_CIC_2                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 136                                            ;
-;     Total combinational functions  ; 73                                             ;
-;     Dedicated logic registers      ; 127                                            ;
-; Total registers                    ; 127                                            ;
-; Total pins                         ; 56                                             ;
+; Total logic elements               ; 92                                             ;
+;     Total combinational functions  ; 75                                             ;
+;     Dedicated logic registers      ; 65                                             ;
+; Total registers                    ; 65                                             ;
+; Total pins                         ; 51                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -70,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Block1             ; Sram_CIC           ;
+; Top-level entity name                                            ; Sram_CIC_2         ; Sram_CIC           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
 ; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
@@ -168,86 +166,70 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                      ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; sram.vhd                         ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd                     ;         ;
-; Capture_Input_Controller.vhd     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd ;         ;
-; Sram_CIC.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC.vhd                 ;         ;
-; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Block1.bdf                   ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; Sram_CIC_2.vhd                   ; yes             ; User VHDL File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                          ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Estimated Total logic elements              ; 136                    ;
-;                                             ;                        ;
-; Total combinational functions               ; 73                     ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 7                      ;
-;     -- 3 input functions                    ; 5                      ;
-;     -- <=2 input functions                  ; 61                     ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 35                     ;
-;     -- arithmetic mode                      ; 38                     ;
-;                                             ;                        ;
-; Total registers                             ; 127                    ;
-;     -- Dedicated logic registers            ; 127                    ;
-;     -- I/O registers                        ; 0                      ;
-;                                             ;                        ;
-; I/O pins                                    ; 56                     ;
-;                                             ;                        ;
-; Embedded Multiplier 9-bit elements          ; 0                      ;
-;                                             ;                        ;
-; Maximum fan-out node                        ; Sram_CIC:inst1|clk_int ;
-; Maximum fan-out                             ; 65                     ;
-; Total fan-out                               ; 655                    ;
-; Average fan-out                             ; 2.00                   ;
-+---------------------------------------------+------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 92        ;
+;                                             ;           ;
+; Total combinational functions               ; 75        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 13        ;
+;     -- 3 input functions                    ; 3         ;
+;     -- <=2 input functions                  ; 59        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 37        ;
+;     -- arithmetic mode                      ; 38        ;
+;                                             ;           ;
+; Total registers                             ; 65        ;
+;     -- Dedicated logic registers            ; 65        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 51        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 65        ;
+; Total fan-out                               ; 505       ;
+; Average fan-out                             ; 2.09      ;
++---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name              ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------------+--------------+
-; |Block1                            ; 73 (0)              ; 127 (0)                   ; 0           ; 0            ; 0       ; 0         ; 56   ; 0            ; |Block1                               ; Block1                   ; work         ;
-;    |Capture_Input_Controller:inst| ; 1 (1)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|Capture_Input_Controller:inst ; Capture_Input_Controller ; work         ;
-;    |Sram_CIC:inst1|                ; 72 (72)             ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|Sram_CIC:inst1                ; Sram_CIC                 ; work         ;
-;    |sram:inst2|                    ; 0 (0)               ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|sram:inst2                    ; sram                     ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |Sram_CIC_2                ; 75 (75)             ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 51   ; 0            ; |Sram_CIC_2         ; Sram_CIC_2  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------+
-; State Machine - |Block1|Sram_CIC:inst1|state                                                                 ;
-+-----------------+-----------+---------------+-----------------+-----------------+---------------+------------+
-; Name            ; state.fin ; state.address ; state.escritura ; state.menos_sig ; state.mas_sig ; state.idle ;
-+-----------------+-----------+---------------+-----------------+-----------------+---------------+------------+
-; state.idle      ; 0         ; 0             ; 0               ; 0               ; 0             ; 0          ;
-; state.mas_sig   ; 0         ; 0             ; 0               ; 0               ; 1             ; 1          ;
-; state.menos_sig ; 0         ; 0             ; 0               ; 1               ; 0             ; 1          ;
-; state.escritura ; 0         ; 0             ; 1               ; 0               ; 0             ; 1          ;
-; state.address   ; 0         ; 1             ; 0               ; 0               ; 0             ; 1          ;
-; state.fin       ; 1         ; 0             ; 0               ; 0               ; 0             ; 1          ;
-+-----------------+-----------+---------------+-----------------+-----------------+---------------+------------+
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; sram:inst2|S_ACTION                   ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Sram_CIC_2|state                                                                                 ;
++------------------+-------------+---------------+-----------------+----------------+------------------+------------+
+; Name             ; state.final ; state.memoria ; state.escritura ; state.B_massig ; state.B_menossig ; state.idle ;
++------------------+-------------+---------------+-----------------+----------------+------------------+------------+
+; state.idle       ; 0           ; 0             ; 0               ; 0              ; 0                ; 0          ;
+; state.B_menossig ; 0           ; 0             ; 0               ; 0              ; 1                ; 1          ;
+; state.B_massig   ; 0           ; 0             ; 0               ; 1              ; 0                ; 1          ;
+; state.escritura  ; 0           ; 0             ; 1               ; 0              ; 0                ; 1          ;
+; state.memoria    ; 0           ; 1             ; 0               ; 0              ; 0                ; 1          ;
+; state.final      ; 1           ; 0             ; 0               ; 0              ; 0                ; 1          ;
++------------------+-------------+---------------+-----------------+----------------+------------------+------------+
 
 
 +------------------------------------------------------+
@@ -255,34 +237,23 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 127   ;
+; Total registers                              ; 65    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 65    ;
+; Number of registers using Asynchronous Clear ; 29    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Clock Enable       ; 58    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; sram:inst2|SRAM_UB_N                   ; 1       ;
-; sram:inst2|SRAM_LB_N                   ; 1       ;
-; Total number of inverted registers = 2 ;         ;
-+----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 21 bits   ; 42 LEs        ; 0 LEs                ; 42 LEs                 ; Yes        ; |Block1|Sram_CIC:inst1|pixel_cnt[20] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 21 bits   ; 63 LEs        ; 0 LEs                ; 63 LEs                 ; Yes        ; |Sram_CIC_2|pix_cnt[0]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -290,26 +261,25 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 56                          ;
-; cycloneiii_ff         ; 127                         ;
-;     CLR               ; 25                          ;
-;     ENA               ; 25                          ;
-;     ENA CLR           ; 40                          ;
-;     plain             ; 37                          ;
-; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 77                          ;
+; boundary_port         ; 51                          ;
+; cycloneiii_ff         ; 65                          ;
+;     CLR               ; 6                           ;
+;     ENA               ; 35                          ;
+;     ENA CLR           ; 23                          ;
+;     plain             ; 1                           ;
+; cycloneiii_io_obuf    ; 22                          ;
+; cycloneiii_lcell_comb ; 75                          ;
 ;     arith             ; 38                          ;
 ;         2 data inputs ; 37                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 39                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 7                           ;
+;     normal            ; 37                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 13                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.36                        ;
+; Average LUT depth     ; 1.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -328,7 +298,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Jun 30 20:07:20 2024
+    Info: Processing started: Thu Jul  4 18:05:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sram_CIC -c Sram_CIC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -346,35 +316,27 @@ Info (12021): Found 2 design units, including 1 entities, in source file sram_ci
     Info (12023): Found entity 1: Sram_CIC File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC.vhd Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
     Info (12023): Found entity 1: Block1
-Info (12127): Elaborating entity "Block1" for the top level hierarchy
-Info (12128): Elaborating entity "sram" for hierarchy "sram:inst2"
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
-Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
-Info (12128): Elaborating entity "Sram_CIC" for hierarchy "Sram_CIC:inst1"
-Info (12128): Elaborating entity "Capture_Input_Controller" for hierarchy "Capture_Input_Controller:inst"
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "Sram_CIC:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC.vhd Line: 20
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 22
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "CE" is stuck at GND
-    Warning (13410): Pin "OE" is stuck at VCC
-    Warning (13410): Pin "WE" is stuck at GND
+Info (12021): Found 2 design units, including 1 entities, in source file sram_cic_2.vhd
+    Info (12022): Found design unit 1: Sram_CIC_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 25
+    Info (12023): Found entity 1: Sram_CIC_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 12
+Info (12127): Elaborating entity "Sram_CIC_2" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(114): signal "add_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(120): signal "add_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(126): signal "add_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(132): signal "add_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(133): signal "data_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at Sram_CIC_2.vhd(138): signal "add_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 138
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 192 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 26 output pins
-    Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 136 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Sun Jun 30 20:07:26 2024
+Info (21057): Implemented 143 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 39 output pins
+    Info (21061): Implemented 92 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Thu Jul  4 18:06:00 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 

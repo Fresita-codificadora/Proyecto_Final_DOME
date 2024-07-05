@@ -2,112 +2,40 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'Sram_CIC:inst1|clk_int'
-Slack : -2.002
-TNS   : -102.265
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.831
-TNS   : -17.591
-
-Type  : Slow 1200mV 85C Model Hold 'Sram_CIC:inst1|clk_int'
-Slack : 0.404
-TNS   : 0.000
+Slack : -2.159
+TNS   : -97.853
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.606
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -1.187
-TNS   : -15.518
-
-Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 1.135
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -73.675
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Pixel_clk'
-Slack : -3.000
-TNS   : -13.280
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Sram_CIC:inst1|clk_int'
-Slack : -1.285
-TNS   : -82.240
-
-Type  : Slow 1200mV 0C Model Setup 'Sram_CIC:inst1|clk_int'
-Slack : -1.755
-TNS   : -88.273
+TNS   : -86.525
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.722
-TNS   : -11.407
-
-Type  : Slow 1200mV 0C Model Hold 'Sram_CIC:inst1|clk_int'
-Slack : 0.355
-TNS   : 0.000
+Slack : -1.911
+TNS   : -84.297
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.533
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -0.976
-TNS   : -11.940
-
-Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 0.996
+Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -73.675
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Pixel_clk'
-Slack : -3.000
-TNS   : -13.280
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Sram_CIC:inst1|clk_int'
-Slack : -1.285
-TNS   : -82.240
-
-Type  : Fast 1200mV 0C Model Setup 'Sram_CIC:inst1|clk_int'
-Slack : -0.619
-TNS   : -23.263
+TNS   : -86.525
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.089
-TNS   : -0.089
-
-Type  : Fast 1200mV 0C Model Hold 'Sram_CIC:inst1|clk_int'
-Slack : 0.182
-TNS   : 0.000
+Slack : -0.500
+TNS   : -14.925
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.206
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : -0.025
-TNS   : -0.025
-
-Type  : Fast 1200mV 0C Model Removal 'clk'
-Slack : 0.484
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -61.374
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Pixel_clk'
-Slack : -3.000
-TNS   : -11.824
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Sram_CIC:inst1|clk_int'
-Slack : -1.000
-TNS   : -64.000
+TNS   : -72.664
 
 ------------------------------------------------------------
