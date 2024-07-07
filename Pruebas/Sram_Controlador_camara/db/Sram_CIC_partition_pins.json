@@ -4,23 +4,251 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "trigger_cam",
+					"name" : "clk_camara",
 					"strict" : false
 				},
 				{
-					"name" : "trigger_int",
+					"name" : "DONE_LED",
 					"strict" : false
 				},
 				{
-					"name" : "trigger_in",
+					"name" : "SCA",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "Trigger_camara",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "LED_FIN",
+					"strict" : false
+				},
+				{
+					"name" : "led_leer",
+					"strict" : false
+				},
+				{
+					"name" : "add[19]",
+					"strict" : false
+				},
+				{
+					"name" : "add[18]",
+					"strict" : false
+				},
+				{
+					"name" : "add[17]",
+					"strict" : false
+				},
+				{
+					"name" : "add[16]",
+					"strict" : false
+				},
+				{
+					"name" : "add[15]",
+					"strict" : false
+				},
+				{
+					"name" : "add[14]",
+					"strict" : false
+				},
+				{
+					"name" : "add[13]",
+					"strict" : false
+				},
+				{
+					"name" : "add[12]",
+					"strict" : false
+				},
+				{
+					"name" : "add[11]",
+					"strict" : false
+				},
+				{
+					"name" : "add[10]",
+					"strict" : false
+				},
+				{
+					"name" : "add[9]",
+					"strict" : false
+				},
+				{
+					"name" : "add[8]",
+					"strict" : false
+				},
+				{
+					"name" : "add[7]",
+					"strict" : false
+				},
+				{
+					"name" : "add[6]",
+					"strict" : false
+				},
+				{
+					"name" : "add[5]",
+					"strict" : false
+				},
+				{
+					"name" : "add[4]",
+					"strict" : false
+				},
+				{
+					"name" : "add[3]",
+					"strict" : false
+				},
+				{
+					"name" : "add[2]",
+					"strict" : false
+				},
+				{
+					"name" : "add[1]",
+					"strict" : false
+				},
+				{
+					"name" : "add[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[20]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[19]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[18]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[17]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[16]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[15]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[14]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[13]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[12]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[11]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[10]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[9]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[8]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "siete_seg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SDA",
+					"strict" : false
+				},
+				{
+					"name" : "line_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "Reset_btn",
+					"strict" : false
+				},
+				{
+					"name" : "Trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "Start_btn",
+					"strict" : false
+				},
+				{
+					"name" : "Pixel_clk",
 					"strict" : false
 				}
 			]

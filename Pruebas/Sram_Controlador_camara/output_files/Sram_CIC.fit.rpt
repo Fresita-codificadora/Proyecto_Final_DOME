@@ -1,5 +1,5 @@
 Fitter report for Sram_CIC
-Sun Jul  7 13:11:05 2024
+Sun Jul  7 18:09:21 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -69,17 +69,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Jul  7 13:11:05 2024          ;
+; Fitter Status                      ; Successful - Sun Jul  7 18:09:21 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
 ; Top-level Entity Name              ; Todo_junto                                     ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 178 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 150 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 127 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 127                                            ;
+; Total logic elements               ; 184 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 153 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 133 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 133                                            ;
 ; Total pins                         ; 92 / 529 ( 17 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
@@ -152,15 +152,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.03        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processors 3-12        ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -170,8 +171,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 494 ) ; 0.00 % ( 0 / 494 )         ; 0.00 % ( 0 / 494 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 494 ) ; 0.00 % ( 0 / 494 )         ; 0.00 % ( 0 / 494 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 503 ) ; 0.00 % ( 0 / 503 )         ; 0.00 % ( 0 / 503 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 503 ) ; 0.00 % ( 0 / 503 )         ; 0.00 % ( 0 / 503 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 484 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 493 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -202,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.pin.
+The pin-out file can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -210,26 +211,26 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 178 / 114,480 ( < 1 % ) ;
+; Total logic elements                        ; 184 / 114,480 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 51                      ;
-;     -- Register only                        ; 28                      ;
-;     -- Combinational with a register        ; 99                      ;
+;     -- Register only                        ; 31                      ;
+;     -- Combinational with a register        ; 102                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 67                      ;
-;     -- 3 input functions                    ; 20                      ;
-;     -- <=2 input functions                  ; 63                      ;
-;     -- Register only                        ; 28                      ;
+;     -- 4 input functions                    ; 61                      ;
+;     -- 3 input functions                    ; 27                      ;
+;     -- <=2 input functions                  ; 65                      ;
+;     -- Register only                        ; 31                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 109                     ;
+;     -- normal mode                          ; 112                     ;
 ;     -- arithmetic mode                      ; 41                      ;
 ;                                             ;                         ;
-; Total registers*                            ; 127 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 127 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 133 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 133 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 20 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 16 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 92 / 529 ( 17 % )       ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -247,12 +248,12 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.2% / 0.2% / 0.3%      ;
-; Peak interconnect usage (total/H/V)         ; 1.0% / 1.4% / 1.3%      ;
-; Maximum fan-out                             ; 28                      ;
-; Highest non-global fan-out                  ; 24                      ;
-; Total fan-out                               ; 1012                    ;
-; Average fan-out                             ; 1.95                    ;
+; Average interconnect usage (total/H/V)      ; 0.3% / 0.3% / 0.3%      ;
+; Peak interconnect usage (total/H/V)         ; 2.0% / 1.3% / 3.2%      ;
+; Maximum fan-out                             ; 44                      ;
+; Highest non-global fan-out                  ; 44                      ;
+; Total fan-out                               ; 1046                    ;
+; Average fan-out                             ; 1.99                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -265,26 +266,26 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 178 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total logic elements                        ; 184 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- Combinational with no register       ; 51                     ; 0                              ;
-;     -- Register only                        ; 28                     ; 0                              ;
-;     -- Combinational with a register        ; 99                     ; 0                              ;
+;     -- Register only                        ; 31                     ; 0                              ;
+;     -- Combinational with a register        ; 102                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 67                     ; 0                              ;
-;     -- 3 input functions                    ; 20                     ; 0                              ;
-;     -- <=2 input functions                  ; 63                     ; 0                              ;
-;     -- Register only                        ; 28                     ; 0                              ;
+;     -- 4 input functions                    ; 61                     ; 0                              ;
+;     -- 3 input functions                    ; 27                     ; 0                              ;
+;     -- <=2 input functions                  ; 65                     ; 0                              ;
+;     -- Register only                        ; 31                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 109                    ; 0                              ;
+;     -- normal mode                          ; 112                    ; 0                              ;
 ;     -- arithmetic mode                      ; 41                     ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 127                    ; 0                              ;
-;     -- Dedicated logic registers            ; 127 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 133                    ; 0                              ;
+;     -- Dedicated logic registers            ; 133 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 20 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 16 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 92                     ; 0                              ;
@@ -300,7 +301,7 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 1007                   ; 5                              ;
+;     -- Total Connections                    ; 1041                   ; 5                              ;
 ;     -- Registered Connections               ; 385                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
@@ -345,8 +346,8 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; Pixel_data[7] ; AD22  ; 4        ; 111          ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Reset_btn     ; M23   ; 6        ; 115          ; 40           ; 7            ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Start_btn     ; M21   ; 6        ; 115          ; 53           ; 14           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Trigger_btn   ; N21   ; 6        ; 115          ; 42           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; clk_50        ; Y2    ; 2        ; 0            ; 36           ; 14           ; 28                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Trigger_btn   ; N21   ; 6        ; 115          ; 42           ; 14           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk_50        ; Y2    ; 2        ; 0            ; 36           ; 14           ; 34                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; line_valid    ; AF16  ; 4        ; 65           ; 0            ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -1360,11 +1361,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; DQ[2]             ; Incomplete set of assignments ;
 ; DQ[1]             ; Incomplete set of assignments ;
 ; DQ[0]             ; Incomplete set of assignments ;
-; Trigger_btn       ; Incomplete set of assignments ;
 ; line_valid        ; Incomplete set of assignments ;
 ; Frame_valid       ; Incomplete set of assignments ;
 ; clk_50            ; Incomplete set of assignments ;
 ; Reset_btn         ; Incomplete set of assignments ;
+; Trigger_btn       ; Incomplete set of assignments ;
 ; Start_btn         ; Incomplete set of assignments ;
 ; Pixel_clk         ; Incomplete set of assignments ;
 +-------------------+-------------------------------+
@@ -1375,16 +1376,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node               ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                               ; Entity Name                   ; Library Name ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------+-------------------------------+--------------+
-; |Todo_junto                              ; 178 (0)     ; 127 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 92   ; 0            ; 51 (0)       ; 28 (0)            ; 99 (0)           ; |Todo_junto                                                       ; Todo_junto                    ; work         ;
-;    |CIC_SRAM_BLOCK:inst|                 ; 84 (0)      ; 65 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (0)       ; 22 (0)            ; 43 (0)           ; |Todo_junto|CIC_SRAM_BLOCK:inst                                   ; CIC_SRAM_BLOCK                ; work         ;
-;       |Capture_Input_Controller:inst|    ; 29 (29)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 21 (21)          ; |Todo_junto|CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst     ; Capture_Input_Controller      ; work         ;
-;       |Sram_CIC_2:inst3|                 ; 35 (35)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 2 (2)             ; 22 (22)          ; |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3                  ; Sram_CIC_2                    ; work         ;
+; |Todo_junto                              ; 184 (0)     ; 133 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 92   ; 0            ; 51 (0)       ; 31 (0)            ; 102 (0)          ; |Todo_junto                                                       ; Todo_junto                    ; work         ;
+;    |CIC_SRAM_BLOCK:inst|                 ; 78 (0)      ; 65 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 22 (0)            ; 43 (0)           ; |Todo_junto|CIC_SRAM_BLOCK:inst                                   ; CIC_SRAM_BLOCK                ; work         ;
+;       |Capture_Input_Controller:inst|    ; 22 (22)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 21 (21)          ; |Todo_junto|CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst     ; Capture_Input_Controller      ; work         ;
+;       |Sram_CIC_2:inst3|                 ; 36 (36)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 2 (2)             ; 22 (22)          ; |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3                  ; Sram_CIC_2                    ; work         ;
 ;       |sram:inst2|                       ; 20 (20)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 20 (20)           ; 0 (0)            ; |Todo_junto|CIC_SRAM_BLOCK:inst|sram:inst2                        ; sram                          ; work         ;
-;    |Programador_controlador_block:inst1| ; 82 (0)      ; 55 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 27 (0)       ; 5 (0)             ; 50 (0)           ; |Todo_junto|Programador_controlador_block:inst1                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 52 (52)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 3 (3)             ; 31 (31)          ; |Todo_junto|Programador_controlador_block:inst1|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 34 (34)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 2 (2)             ; 23 (23)          ; |Todo_junto|Programador_controlador_block:inst1|programador:inst1 ; programador                   ; work         ;
+;    |Programador_controlador_block:inst1| ; 86 (0)      ; 55 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 8 (0)             ; 47 (0)           ; |Todo_junto|Programador_controlador_block:inst1                   ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                 ; 54 (54)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 6 (6)             ; 29 (29)          ; |Todo_junto|Programador_controlador_block:inst1|controlador:inst  ; controlador                   ; work         ;
+;       |programador:inst1|                ; 36 (36)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 2 (2)             ; 22 (22)          ; |Todo_junto|Programador_controlador_block:inst1|programador:inst1 ; programador                   ; work         ;
 ;    |decodificador:inst3|                 ; 6 (6)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 2 (2)            ; |Todo_junto|decodificador:inst3                                   ; decodificador                 ; work         ;
 ;    |divisor:inst2|                       ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 4 (4)            ; |Todo_junto|divisor:inst2                                         ; divisor                       ; work         ;
+;    |trigger_handler:inst5|               ; 8 (8)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 6 (6)            ; |Todo_junto|trigger_handler:inst5                                 ; trigger_handler               ; work         ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1462,7 +1464,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Pixel_data[2]     ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; Pixel_data[1]     ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; Pixel_data[0]     ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SDA               ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SDA               ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; DQ[15]            ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; DQ[14]            ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; DQ[13]            ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -1479,13 +1481,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DQ[2]             ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; DQ[1]             ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; DQ[0]             ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; Trigger_btn       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; line_valid        ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Frame_valid       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk_50            ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; Reset_btn         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Reset_btn         ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Trigger_btn       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Start_btn         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Pixel_clk         ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
+; Pixel_clk         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +-------------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1503,8 +1505,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Pixel_data[1]                                                                ;                   ;         ;
 ; Pixel_data[0]                                                                ;                   ;         ;
 ; SDA                                                                          ;                   ;         ;
-;      - Programador_controlador_block:inst1|programador:inst1|Selector3~1     ; 1                 ; 6       ;
-;      - Programador_controlador_block:inst1|programador:inst1|state.error~0   ; 1                 ; 6       ;
+;      - Programador_controlador_block:inst1|programador:inst1|Selector3~1     ; 0                 ; 6       ;
+;      - Programador_controlador_block:inst1|programador:inst1|state.error~0   ; 0                 ; 6       ;
 ; DQ[15]                                                                       ;                   ;         ;
 ; DQ[14]                                                                       ;                   ;         ;
 ; DQ[13]                                                                       ;                   ;         ;
@@ -1521,8 +1523,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DQ[2]                                                                        ;                   ;         ;
 ; DQ[1]                                                                        ;                   ;         ;
 ; DQ[0]                                                                        ;                   ;         ;
-; Trigger_btn                                                                  ;                   ;         ;
-;      - Trigger_camara~output                                                 ; 0                 ; 6       ;
 ; line_valid                                                                   ;                   ;         ;
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|leer~0              ; 0                 ; 6       ;
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0]~60 ; 0                 ; 6       ;
@@ -1531,21 +1531,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0]~60 ; 0                 ; 6       ;
 ; clk_50                                                                       ;                   ;         ;
 ; Reset_btn                                                                    ;                   ;         ;
-;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.final                      ; 0                 ; 6       ;
-;      - Programador_controlador_block:inst1|controlador:inst|count[1]~0       ; 0                 ; 6       ;
-;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.idle                       ; 0                 ; 6       ;
-;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|process_1~0         ; 0                 ; 6       ;
-;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.B_massig                   ; 0                 ; 6       ;
-;      - decodificador:inst3|num_int~0                                         ; 0                 ; 6       ;
-;      - decodificador:inst3|num_int~1                                         ; 0                 ; 6       ;
-;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[19]~57                 ; 0                 ; 6       ;
+;      - trigger_handler:inst5|state.s2                                        ; 1                 ; 6       ;
+;      - Programador_controlador_block:inst1|controlador:inst|count[1]~0       ; 1                 ; 6       ;
+;      - trigger_handler:inst5|state.s1                                        ; 1                 ; 6       ;
+;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|process_1~0                      ; 1                 ; 6       ;
+;      - decodificador:inst3|num_int~0                                         ; 1                 ; 6       ;
+;      - decodificador:inst3|num_int~1                                         ; 1                 ; 6       ;
+;      - trigger_handler:inst5|state.s0                                        ; 1                 ; 6       ;
+;      - trigger_handler:inst5|cuenta[2]~1                                     ; 1                 ; 6       ;
+; Trigger_btn                                                                  ;                   ;         ;
+;      - trigger_handler:inst5|Selector0~1                                     ; 0                 ; 6       ;
+;      - trigger_handler:inst5|state~10                                        ; 0                 ; 6       ;
+;      - trigger_handler:inst5|cuenta[2]~1                                     ; 0                 ; 6       ;
+;      - trigger_handler:inst5|state.s0~0                                      ; 0                 ; 6       ;
 ; Start_btn                                                                    ;                   ;         ;
 ;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|Selector4~0                      ; 0                 ; 6       ;
-;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|Selector0~0                      ; 0                 ; 6       ;
 ;      - Programador_controlador_block:inst1|controlador:inst|state.idle~0     ; 0                 ; 6       ;
 ;      - Programador_controlador_block:inst1|controlador:inst|Selector0~0      ; 0                 ; 6       ;
+;      - CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|Selector0~0                      ; 0                 ; 6       ;
 ; Pixel_clk                                                                    ;                   ;         ;
-;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0]    ; 1                 ; 0       ;
+;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0]    ; 0                 ; 0       ;
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[20]   ; 0                 ; 0       ;
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[19]   ; 0                 ; 0       ;
 ;      - CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[18]   ; 0                 ; 0       ;
@@ -1569,28 +1574,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+-------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                               ;
-+------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                             ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|leer~0         ; LCCOMB_X81_Y4_N18  ; 24      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|process_1~0    ; LCCOMB_X80_Y3_N22  ; 21      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[19]~57            ; LCCOMB_X29_Y4_N22  ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                     ; FF_X114_Y37_N3     ; 23      ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; Pixel_clk                                                        ; PIN_AG26           ; 21      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int     ; FF_X1_Y36_N31      ; 24      ; Clock        ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int_2   ; FF_X1_Y36_N7       ; 20      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|count[1]~0  ; LCCOMB_X108_Y5_N30 ; 19      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|count[1]~1  ; LCCOMB_X108_Y5_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|state.idle  ; FF_X110_Y5_N11     ; 20      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|programador:inst1|buisy~0    ; LCCOMB_X108_Y5_N28 ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|programador:inst1|count[2]~0 ; LCCOMB_X111_Y5_N28 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst1|programador:inst1|data[7]~1  ; LCCOMB_X108_Y5_N22 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Reset_btn                                                        ; PIN_M23            ; 8       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; clk_50                                                           ; PIN_Y2             ; 28      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; divisor:inst2|clk_int                                            ; FF_X57_Y1_N31      ; 11      ; Clock        ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-+------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                ;
++------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                             ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|leer~0         ; LCCOMB_X107_Y36_N22 ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[19]~57            ; LCCOMB_X107_Y36_N24 ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                     ; FF_X114_Y37_N3      ; 23      ; Clock        ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|process_1~0                 ; LCCOMB_X105_Y37_N4  ; 44      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; Pixel_clk                                                        ; PIN_AG26            ; 21      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int     ; FF_X59_Y1_N29       ; 24      ; Clock        ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int_2   ; FF_X58_Y1_N19       ; 20      ; Clock        ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|count[1]~0  ; LCCOMB_X108_Y28_N6  ; 19      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|count[1]~1  ; LCCOMB_X109_Y28_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|state.idle  ; FF_X110_Y28_N13     ; 20      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|programador:inst1|buisy~0    ; LCCOMB_X110_Y28_N10 ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|programador:inst1|count[2]~0 ; LCCOMB_X111_Y28_N6  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst1|programador:inst1|data[7]~1  ; LCCOMB_X108_Y28_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Reset_btn                                                        ; PIN_M23             ; 8       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; clk_50                                                           ; PIN_Y2              ; 34      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; divisor:inst2|clk_int                                            ; FF_X59_Y2_N31       ; 11      ; Clock        ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; trigger_handler:inst5|cuenta[2]~1                                ; LCCOMB_X105_Y37_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
++------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1598,11 +1604,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                           ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                   ; FF_X114_Y37_N3 ; 23      ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int   ; FF_X1_Y36_N31  ; 24      ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int_2 ; FF_X1_Y36_N7   ; 20      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
-; clk_50                                                         ; PIN_Y2         ; 28      ; 1                                    ; Global Clock         ; GCLK4            ; --                        ;
-; divisor:inst2|clk_int                                          ; FF_X57_Y1_N31  ; 11      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                   ; FF_X114_Y37_N3 ; 23      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int   ; FF_X59_Y1_N29  ; 24      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int_2 ; FF_X58_Y1_N19  ; 20      ; 2                                    ; Global Clock         ; GCLK15           ; --                        ;
+; clk_50                                                         ; PIN_Y2         ; 34      ; 1                                    ; Global Clock         ; GCLK4            ; --                        ;
+; divisor:inst2|clk_int                                          ; FF_X59_Y2_N31  ; 11      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
 +----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1611,90 +1617,91 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 236 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 99 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 339 / 209,544 ( < 1 % ) ;
+; Block interconnects   ; 226 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 108 / 10,120 ( 1 % )    ;
+; C4 interconnects      ; 331 / 209,544 ( < 1 % ) ;
 ; Direct links          ; 58 / 342,891 ( < 1 % )  ;
 ; Global clocks         ; 5 / 20 ( 25 % )         ;
-; Local interconnects   ; 115 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 90 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 235 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 121 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 144 / 9,963 ( 1 % )     ;
+; R4 interconnects      ; 217 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 8.90) ; Number of LABs  (Total = 20) ;
-+--------------------------------------------+------------------------------+
-; 1                                          ; 1                            ;
-; 2                                          ; 4                            ;
-; 3                                          ; 1                            ;
-; 4                                          ; 1                            ;
-; 5                                          ; 0                            ;
-; 6                                          ; 1                            ;
-; 7                                          ; 3                            ;
-; 8                                          ; 0                            ;
-; 9                                          ; 0                            ;
-; 10                                         ; 1                            ;
-; 11                                         ; 0                            ;
-; 12                                         ; 0                            ;
-; 13                                         ; 0                            ;
-; 14                                         ; 1                            ;
-; 15                                         ; 1                            ;
-; 16                                         ; 6                            ;
-+--------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Logic Elements                                                         ;
++---------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 11.50) ; Number of LABs  (Total = 16) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 1                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 6                            ;
++---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.65) ; Number of LABs  (Total = 20) ;
+; LAB-wide Signals  (Average = 1.75) ; Number of LABs  (Total = 16) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 8                            ;
-; 1 Clock                            ; 12                           ;
-; 1 Clock enable                     ; 5                            ;
-; 2 Clocks                           ; 8                            ;
+; 1 Async. clear                     ; 9                            ;
+; 1 Clock                            ; 11                           ;
+; 1 Clock enable                     ; 3                            ;
+; 2 Async. clears                    ; 1                            ;
+; 2 Clocks                           ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 15.20) ; Number of LABs  (Total = 20) ;
+; Number of Signals Sourced  (Average = 19.31) ; Number of LABs  (Total = 16) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 3                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 0                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 2                            ;
+; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 2                            ;
-; 27                                           ; 0                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 1                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 0                            ;
+; 29                                           ; 3                            ;
 ; 30                                           ; 0                            ;
-; 31                                           ; 2                            ;
+; 31                                           ; 0                            ;
 ; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
@@ -1702,58 +1709,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.20) ; Number of LABs  (Total = 20) ;
+; Number of Signals Sourced Out  (Average = 7.00) ; Number of LABs  (Total = 16) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 3                            ;
-; 2                                               ; 4                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 0                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 2                            ;
 ; 5                                               ; 0                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 1                            ;
-; 8                                               ; 0                            ;
-; 9                                               ; 2                            ;
-; 10                                              ; 0                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 0                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 1                            ;
 ; 11                                              ; 1                            ;
 ; 12                                              ; 2                            ;
 ; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 0                            ;
-; 17                                              ; 1                            ;
+; 15                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 7.60) ; Number of LABs  (Total = 20) ;
+; Number of Distinct Inputs  (Average = 7.31) ; Number of LABs  (Total = 16) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 2                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 2                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 3                            ;
-; 7                                           ; 2                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 4                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 1                            ;
-; 9                                           ; 3                            ;
-; 10                                          ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
 ; 11                                          ; 1                            ;
-; 12                                          ; 0                            ;
+; 12                                          ; 1                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 0                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 1                            ;
 ; 17                                          ; 0                            ;
 ; 18                                          ; 0                            ;
-; 19                                          ; 1                            ;
+; 19                                          ; 0                            ;
 ; 20                                          ; 0                            ;
 ; 21                                          ; 0                            ;
 ; 22                                          ; 0                            ;
-; 23                                          ; 1                            ;
+; 23                                          ; 0                            ;
+; 24                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1903,11 +1909,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DQ[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; DQ[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; DQ[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; Trigger_btn        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; line_valid         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Frame_valid        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk_50             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Reset_btn          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; Trigger_btn        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Start_btn          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Pixel_clk          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -1954,8 +1960,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-----------------------+-------------------+
 ; Source Clock(s)                              ; Destination Clock(s)  ; Delay Added in ns ;
 +----------------------------------------------+-----------------------+-------------------+
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int ; clk_50                ; 11.5              ;
-; divisor:inst2|clk_int                        ; divisor:inst2|clk_int ; 7.8               ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int ; clk_50                ; 12.3              ;
+; divisor:inst2|clk_int                        ; divisor:inst2|clk_int ; 7.7               ;
 ; clk_50                                       ; clk_50                ; 7.5               ;
 +----------------------------------------------+-----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
@@ -1967,60 +1973,53 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
 ; Source Register                                                      ; Destination Register                                               ; Delay Added in ns ;
 +----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-; divisor:inst2|clk_int                                                ; divisor:inst2|clk_int                                              ; 4.086             ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int         ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 3.923             ;
-; Programador_controlador_block:inst1|controlador:inst|clk_int_2       ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 3.918             ;
+; divisor:inst2|clk_int                                                ; divisor:inst2|clk_int                                              ; 4.095             ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int         ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 3.830             ;
+; Programador_controlador_block:inst1|controlador:inst|clk_int_2       ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 3.827             ;
 ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                         ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int                       ; 3.428             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[4] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.704             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[3] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.704             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[1] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.704             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[2] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.704             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[0] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.704             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int[2]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.065             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int[4]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.065             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int[3]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.065             ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int[1]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.065             ;
-; divisor:inst2|enable                                                 ; divisor:inst2|clk_int                                              ; 1.033             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[0]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[0]                        ; 0.792             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.B_massig                  ; decodificador:inst3|num_int[1]                                     ; 0.759             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.final                     ; decodificador:inst3|num_int[2]                                     ; 0.759             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[18]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[18]                       ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[15]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[15]                       ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[13]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[13]                       ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[10]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[10]                       ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[6]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[6]                        ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[3]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[3]                        ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[2]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[2]                        ; 0.608             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[12]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[12]                       ; 0.458             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[9]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[9]                        ; 0.458             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[7]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[7]                        ; 0.458             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[5]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[5]                        ; 0.458             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[1]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[1]                        ; 0.458             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[16]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[16]                       ; 0.454             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[11]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[11]                       ; 0.447             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[8]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[8]                        ; 0.447             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[19]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[19]                       ; 0.447             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[14]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[14]                       ; 0.295             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[4]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[4]                        ; 0.295             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[17]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[17]                       ; 0.295             ;
-; Programador_controlador_block:inst1|controlador:inst|state.done      ; CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0] ; 0.220             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dp_BA_2   ; Programador_controlador_block:inst1|programador:inst1|state.idle   ; 0.118             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dp_02     ; Programador_controlador_block:inst1|programador:inst1|data[1]      ; 0.083             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dp_BA     ; Programador_controlador_block:inst1|programador:inst1|data[3]      ; 0.066             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dp_1E     ; Programador_controlador_block:inst1|programador:inst1|data[3]      ; 0.038             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dp_81     ; Programador_controlador_block:inst1|programador:inst1|data[7]      ; 0.038             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dw_1E     ; Programador_controlador_block:inst1|programador:inst1|data[3]      ; 0.024             ;
-; Programador_controlador_block:inst1|controlador:inst|state.dw_81     ; Programador_controlador_block:inst1|programador:inst1|data[7]      ; 0.024             ;
-; Programador_controlador_block:inst1|controlador:inst|state.idle      ; Programador_controlador_block:inst1|programador:inst1|data[5]      ; 0.021             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[4] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.739             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[3] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.739             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[1] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.739             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[2] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.739             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[0] ; Programador_controlador_block:inst1|controlador:inst|clk_int_2     ; 1.739             ;
+; divisor:inst2|enable                                                 ; divisor:inst2|clk_int                                              ; 1.496             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int[2]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.045             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int[4]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.045             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int[3]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.045             ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int[1]   ; Programador_controlador_block:inst1|controlador:inst|clk_int       ; 1.045             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.B_massig                  ; decodificador:inst3|num_int[1]                                     ; 0.767             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.final                     ; decodificador:inst3|num_int[2]                                     ; 0.766             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[18]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[18]                       ; 0.645             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[16]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[16]                       ; 0.645             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[15]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[15]                       ; 0.645             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[11]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[11]                       ; 0.645             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[6]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[6]                        ; 0.615             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[4]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[4]                        ; 0.615             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[3]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[3]                        ; 0.615             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[2]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[2]                        ; 0.615             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[0]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[0]                        ; 0.615             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[17]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[17]                       ; 0.495             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[14]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[14]                       ; 0.495             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[13]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[13]                       ; 0.486             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[12]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[12]                       ; 0.486             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[19]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[19]                       ; 0.486             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[9]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[9]                        ; 0.465             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[5]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[5]                        ; 0.465             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[1]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[1]                        ; 0.465             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[8]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[8]                        ; 0.452             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[7]                    ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[7]                        ; 0.452             ;
+; Programador_controlador_block:inst1|controlador:inst|state.done      ; CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst|pix_count_int[0] ; 0.352             ;
+; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add_count[10]                   ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_ADDR[10]                       ; 0.334             ;
+; Programador_controlador_block:inst1|controlador:inst|state.dp_BA     ; Programador_controlador_block:inst1|programador:inst1|state.start  ; 0.087             ;
 +----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 45 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 38 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "Sram_CIC"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2050,40 +2049,40 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk_50~input (placed in PIN Y2 (CLK2, DIFFCLK_1p))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node Programador_controlador_block:inst1|controlador:inst|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
+Info (176353): Automatically promoted node Programador_controlador_block:inst1|controlador:inst|clk_int  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node Programador_controlador_block:inst1|controlador:inst|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
-Info (176353): Automatically promoted node CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 36
+        Info (176357): Destination node Programador_controlador_block:inst1|controlador:inst|clk_int~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
+Info (176353): Automatically promoted node CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 36
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 36
-Info (176353): Automatically promoted node Programador_controlador_block:inst1|controlador:inst|clk_int_2  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
+        Info (176357): Destination node CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 36
+Info (176353): Automatically promoted node Programador_controlador_block:inst1|controlador:inst|clk_int_2  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node Programador_controlador_block:inst1|controlador:inst|clk_int_2~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
-Info (176353): Automatically promoted node divisor:inst2|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
+        Info (176357): Destination node Programador_controlador_block:inst1|controlador:inst|clk_int_2~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
+Info (176353): Automatically promoted node divisor:inst2|clk_int  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node divisor:inst2|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
+        Info (176357): Destination node divisor:inst2|clk_int~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
         Info (176357): Destination node clk_camara~output
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X69_Y0 to location X80_Y11
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X104_Y24 to location X115_Y36
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.58 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.30 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2106,17 +2105,17 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
     Info (169065): Pin DQ[2] has a permanently disabled output enable
     Info (169065): Pin DQ[1] has a permanently disabled output enable
     Info (169065): Pin DQ[0] has a permanently disabled output enable
-Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5430 megabytes
-    Info: Processing ended: Sun Jul  7 13:11:06 2024
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 6299 megabytes
+    Info: Processing ended: Sun Jul  7 18:09:21 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg.
+The suppressed messages can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg.
 
 

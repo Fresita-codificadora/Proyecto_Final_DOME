@@ -1,7 +1,54 @@
 
-State Machine - |trigger_handler|state
+State Machine - |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state
+Name state.final state.escritura state.B_massig state.B_menossig state.idle 
+state.idle 0 0 0 0 0 
+state.B_menossig 0 0 0 1 1 
+state.B_massig 0 0 1 0 1 
+state.escritura 0 1 0 0 1 
+state.final 1 0 0 0 1 
+
+State Machine - |Todo_junto|trigger_handler:inst5|state
 Name state.s3 state.s2 state.s1 state.s0 
 state.s0 0 0 0 0 
 state.s1 0 0 1 1 
 state.s2 0 1 0 1 
 state.s3 1 0 0 1 
+
+State Machine - |Todo_junto|Programador_controlador_block:inst1|programador:inst1|state
+Name state.stop_2 state.stop_1 state.idle_2 state.error state.ack_fin state.ack_3 state.ack_2 state.ack_1 state.b_write_3 state.b_write_2 state.b_write_1 state.b_trans state.start_2 state.start state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.start_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.b_trans 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.b_write_1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.b_write_2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.b_write_3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.ack_1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.ack_2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.ack_3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.ack_fin 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.error 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.idle_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Todo_junto|Programador_controlador_block:inst1|controlador:inst|state
+Name state.done state.stop_2 state.dw_00_2 state.dp_00_2 state.dw_81 state.dp_81 state.dw_1E state.dp_1E state.dp_BA_2 state.stop_1 state.dw_02 state.dp_02 state.dw_00 state.dp_00 state.dw_07 state.dp_07 state.dp_BA state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.dp_BA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.dp_07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.dw_07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.dp_00 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.dw_00 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dp_02 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.dw_02 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.stop_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.dp_BA_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.dp_1E 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.dw_1E 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.dp_81 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dw_81 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dp_00_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dw_00_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.done 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

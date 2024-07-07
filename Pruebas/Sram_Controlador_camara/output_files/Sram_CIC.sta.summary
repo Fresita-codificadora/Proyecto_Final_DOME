@@ -3,80 +3,88 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : -6.425
-TNS   : -138.217
+Slack : -5.558
+TNS   : -122.224
 
 Type  : Slow 1200mV 85C Model Setup 'divisor:inst2|clk_int'
-Slack : -3.123
-TNS   : -14.171
-
-Type  : Slow 1200mV 85C Model Setup 'Pixel_clk'
-Slack : -2.503
-TNS   : -36.307
+Slack : -3.084
+TNS   : -14.086
 
 Type  : Slow 1200mV 85C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -2.361
-TNS   : -26.083
+Slack : -2.080
+TNS   : -25.515
+
+Type  : Slow 1200mV 85C Model Setup 'Pixel_clk'
+Slack : -2.005
+TNS   : -30.015
 
 Type  : Slow 1200mV 85C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -2.257
-TNS   : -27.710
+Slack : -1.706
+TNS   : -27.413
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50'
-Slack : -1.571
-TNS   : -10.515
-
-Type  : Slow 1200mV 85C Model Hold 'clk_50'
-Slack : 0.390
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : 0.402
-TNS   : 0.000
+Slack : -1.589
+TNS   : -12.567
 
 Type  : Slow 1200mV 85C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : 0.402
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50'
+Slack : 0.389
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'divisor:inst2|clk_int'
-Slack : 0.403
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : 0.404
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Pixel_clk'
 Slack : 0.440
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'Pixel_clk'
-Slack : -3.216
-TNS   : -63.353
-
 Type  : Slow 1200mV 85C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -2.026
-TNS   : -25.199
+Slack : -1.708
+TNS   : -21.538
+
+Type  : Slow 1200mV 85C Model Recovery 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : -1.677
+TNS   : -34.920
+
+Type  : Slow 1200mV 85C Model Recovery 'Pixel_clk'
+Slack : -1.655
+TNS   : -30.018
 
 Type  : Slow 1200mV 85C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -0.967
-TNS   : -10.793
+Slack : -0.904
+TNS   : -10.999
 
 Type  : Slow 1200mV 85C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : 0.999
+Slack : 1.090
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : 1.693
+Slack : 1.484
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'Pixel_clk'
-Slack : 2.280
+Slack : 1.629
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : 1.725
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -38.980
+TNS   : -46.690
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Pixel_clk'
 Slack : -3.000
@@ -99,38 +107,42 @@ Slack : -1.285
 TNS   : -14.135
 
 Type  : Slow 1200mV 0C Model Setup 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : -5.937
-TNS   : -127.466
+Slack : -5.073
+TNS   : -111.474
 
 Type  : Slow 1200mV 0C Model Setup 'divisor:inst2|clk_int'
-Slack : -2.803
-TNS   : -12.005
-
-Type  : Slow 1200mV 0C Model Setup 'Pixel_clk'
-Slack : -2.153
-TNS   : -30.550
+Slack : -2.740
+TNS   : -11.838
 
 Type  : Slow 1200mV 0C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -2.062
-TNS   : -21.850
+Slack : -1.815
+TNS   : -21.602
+
+Type  : Slow 1200mV 0C Model Setup 'Pixel_clk'
+Slack : -1.678
+TNS   : -25.477
 
 Type  : Slow 1200mV 0C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -1.971
-TNS   : -23.097
+Slack : -1.437
+TNS   : -22.766
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50'
-Slack : -1.417
-TNS   : -6.137
+Slack : -1.401
+TNS   : -7.704
+
+Type  : Slow 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
+Slack : 0.340
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50'
 Slack : 0.348
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
+Type  : Slow 1200mV 0C Model Hold 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
 Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
+Type  : Slow 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
 Slack : 0.354
 TNS   : 0.000
 
@@ -138,41 +150,45 @@ Type  : Slow 1200mV 0C Model Hold 'divisor:inst2|clk_int'
 Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : 0.355
-TNS   : 0.000
-
 Type  : Slow 1200mV 0C Model Hold 'Pixel_clk'
 Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'Pixel_clk'
-Slack : -2.855
-TNS   : -55.975
+Slack : -1.462
+TNS   : -26.440
 
 Type  : Slow 1200mV 0C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -1.728
-TNS   : -20.899
+Slack : -1.453
+TNS   : -17.750
+
+Type  : Slow 1200mV 0C Model Recovery 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : -1.446
+TNS   : -29.973
 
 Type  : Slow 1200mV 0C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -0.798
-TNS   : -8.224
+Slack : -0.745
+TNS   : -8.458
 
 Type  : Slow 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : 0.910
+Slack : 0.993
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : 1.547
+Slack : 1.360
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'Pixel_clk'
-Slack : 2.055
+Slack : 1.533
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : 1.608
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -38.980
+TNS   : -46.690
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Pixel_clk'
 Slack : -3.000
@@ -195,42 +211,38 @@ Slack : -1.285
 TNS   : -14.135
 
 Type  : Fast 1200mV 0C Model Setup 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : -3.370
-TNS   : -72.601
+Slack : -2.801
+TNS   : -61.509
 
 Type  : Fast 1200mV 0C Model Setup 'divisor:inst2|clk_int'
-Slack : -0.986
-TNS   : -2.871
-
-Type  : Fast 1200mV 0C Model Setup 'clk_50'
-Slack : -0.726
-TNS   : -0.806
+Slack : -1.019
+TNS   : -2.909
 
 Type  : Fast 1200mV 0C Model Setup 'Pixel_clk'
-Slack : -0.705
-TNS   : -7.293
+Slack : -0.500
+TNS   : -3.768
 
 Type  : Fast 1200mV 0C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -0.606
-TNS   : -4.871
+Slack : -0.469
+TNS   : -3.752
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50'
+Slack : -0.465
+TNS   : -0.558
 
 Type  : Fast 1200mV 0C Model Setup 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -0.550
-TNS   : -3.686
+Slack : -0.337
+TNS   : -3.798
+
+Type  : Fast 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
+Slack : 0.174
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_50'
-Slack : 0.179
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
-Slack : 0.181
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : 0.181
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
 Slack : 0.181
 TNS   : 0.000
 
@@ -238,41 +250,53 @@ Type  : Fast 1200mV 0C Model Hold 'divisor:inst2|clk_int'
 Slack : 0.181
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'Programador_controlador_block:inst1|controlador:inst|clk_int'
+Slack : 0.182
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Hold 'Pixel_clk'
 Slack : 0.199
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'Pixel_clk'
-Slack : -1.065
-TNS   : -20.335
+Type  : Fast 1200mV 0C Model Recovery 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : -0.392
+TNS   : -6.924
 
 Type  : Fast 1200mV 0C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : -0.590
-TNS   : -3.795
+Slack : -0.390
+TNS   : -1.771
+
+Type  : Fast 1200mV 0C Model Recovery 'Pixel_clk'
+Slack : -0.294
+TNS   : -3.444
 
 Type  : Fast 1200mV 0C Model Recovery 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : -0.006
-TNS   : -0.018
-
-Type  : Fast 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int'
-Slack : 0.459
+Slack : 0.025
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
-Slack : 0.779
+Type  : Fast 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int'
+Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'Pixel_clk'
-Slack : 1.084
+Slack : 0.651
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'Programador_controlador_block:inst1|controlador:inst|clk_int_2'
+Slack : 0.683
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|clk_int'
+Slack : 0.826
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -32.764
+TNS   : -39.099
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Pixel_clk'
 Slack : -3.000
-TNS   : -30.017
+TNS   : -30.141
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Programador_controlador_block:inst1|controlador:inst|clk_int'
 Slack : -1.000

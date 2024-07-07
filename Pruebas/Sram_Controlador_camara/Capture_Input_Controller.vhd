@@ -39,7 +39,7 @@ begin
 	
 	process(all)
 	begin	
-		if reset = '0' or pix_count_int=1_310_721 then
+		if reset = '0' or trigger='1' then --or pix_count_int=1_310_721
 			pix_count_int<=0;
 		elsif falling_edge(pclk) and enable='1' then
 			if Leer = '1' then

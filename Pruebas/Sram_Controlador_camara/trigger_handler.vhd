@@ -27,7 +27,7 @@ begin
 	process (clk, reset)
 		variable cuenta : integer range 0 to 4;
 	begin
-		if reset = '1' then
+		if reset = '0' then
 			state <= s0;
 		elsif (rising_edge(clk)) then
 			case state is

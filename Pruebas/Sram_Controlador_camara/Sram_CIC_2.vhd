@@ -13,7 +13,7 @@ entity Sram_CIC_2 is
 
 	port(
 		clk: in	std_logic;
-		Start,reset,leer: in	std_logic;
+		Start,reset,leer,trigger: in	std_logic;
 		pix_cnt: in integer range 0 to 1_310_721;
 		data : in std_logic_vector(7 downto 0);
 		data_o : out std_logic_vector(15 downto 0);
@@ -43,12 +43,13 @@ begin
 	end process;
 
 	-- Logic to advance to the next state
-	process (clk_int, reset)
+	process (clk_int, reset, trigger)
 		variable datos_leidos : std_logic:='0';
 	begin
-		if reset = '0' then
+		if reset = '0' or trigger='1' then
 			state <= idle;
 			datos_leidos:='0';
+			add_count<=0;
 		elsif (rising_edge(clk_int)) then
 			case state is
 				when idle=>
@@ -63,31 +64,35 @@ begin
 						state<=final;
 					end if;
 				when B_massig=>
-					if datos_leidos='1' then
-						state<=B_massig;
-						datos_leidos:='0';
-					elsif datos_leidos='0' and (pix_cnt mod 2)=0 then -- si no leimos los datos y el numero de pixeles es par leemos el dato
-						datos_leidos:='1';
-						data_reg(15 downto 8)<=data;
-					elsif pix_cnt=1_310_720 then
-						state<=final;
+					if pix_cnt<1_310_719 then
+						if datos_leidos='1' then
+							state<=B_massig;
+							datos_leidos:='0';
+						elsif datos_leidos='0' and (pix_cnt mod 2)=0 then -- si no leimos los datos y el numero de pixeles es par leemos el dato
+							datos_leidos:='1';
+							data_reg(15 downto 8)<=data;
+						else 
+							state<=B_massig; --volvemos al estado mas_sig a esperar que cambie la señal de datos leidos o que sea par
+						end if;
 					else 
-						state<=B_massig; --volvemos al estado mas_sig a esperar que cambie la señal de datos leidos o que sea par
-					end if;	
-				when B_menossig=>  
-					if datos_leidos='1' then
-						state<=escritura;
-						datos_leidos:='0';
-					elsif datos_leidos='0' and (pix_cnt mod 2)=1 then -- si no leimos los datos y el numero de pixeles es impar leemos el dato
-						datos_leidos:='1';
-						data_reg(7 downto 0)<=data;
-					elsif pix_cnt=1_310_720 then
 						state<=final;
-					else
-						state<=B_menossig; --volvemos al estado menos_sig 
-					end if;	
+					end if;
+				when B_menossig=>
+					if pix_cnt<1_310_719 then
+						if datos_leidos='1' then
+							state<=escritura;
+							datos_leidos:='0';
+						elsif datos_leidos='0' and (pix_cnt mod 2)=1 then -- si no leimos los datos y el numero de pixeles es impar leemos el dato
+							datos_leidos:='1';
+							data_reg(7 downto 0)<=data;
+						else
+							state<=B_menossig; --volvemos al estado menos_sig 
+						end if;
+					else 
+						state<=final;
+					end if;
 				when escritura => -- escribo a la memoria
-					state<=idle;
+						state<=idle;
 				when final =>
 					if start='0' then
 						state<=idle;
