@@ -1,13 +1,13 @@
 |Block1
 DONE <= controlador:inst.done_s
-clk => controlador:inst.clk
-clk => clk_out.DATAIN
+clk => divisor:inst2.clk_in
 start => controlador:inst.start
 reset => controlador:inst.reset
 sda <> programador:inst1.sda_o
 sca <= programador:inst1.sca_o
-trigg <= <GND>
-clk_out <= clk.DB_MAX_OUTPUT_PORT_TYPE
+trigg <= trigger_btn.DB_MAX_OUTPUT_PORT_TYPE
+trigger_btn => trigg.DATAIN
+clk_out <= divisor:inst2.clk_out
 reset_camara <= <VCC>
 
 
@@ -68,6 +68,15 @@ data[4] <= WideOr20.DB_MAX_OUTPUT_PORT_TYPE
 data[5] <= data.DB_MAX_OUTPUT_PORT_TYPE
 data[6] <= <GND>
 data[7] <= WideOr19.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Block1|divisor:inst2
+clk_in => clk_int.CLK
+clk_in => enable.CLK
+clk_in => cuenta[0].CLK
+clk_in => cuenta[1].CLK
+clk_in => cuenta[2].CLK
+clk_out <= clk_int.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Block1|programador:inst1

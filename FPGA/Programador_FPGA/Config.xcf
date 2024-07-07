@@ -17,9 +17,9 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>C:/Users/gazpa/Desktop/para vm/Block1/Block1_Implmnt/sbt/outputs/bitmap/Block1_bitmap.bin</File>
-			<FileTime>05/25/24 18:13:22</FileTime>
-			<JedecChecksum>0x8958</JedecChecksum>
+			<File>C:/Users/gazpa/Desktop/Nueva carpeta/top/top_Implmnt/sbt/outputs/bitmap/Block1_bitmap.bin</File>
+			<FileTime>07/05/24 11:23:03</FileTime>
+			<JedecChecksum>0x4F63</JedecChecksum>
 			<Operation>SPI Flash Erase,Program,Verify</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>
@@ -61,11 +61,11 @@
 					<IDCode>0x12</IDCode>
 					<Package>208mil 8-pin SOIC</Package>
 					<Operation>SPI Flash Erase,Program,Verify</Operation>
-					<File>C:/Users/gazpa/Desktop/para vm/Block1/Block1_Implmnt/sbt/outputs/bitmap/Block1_bitmap.bin</File>
+					<File>C:/Users/gazpa/Desktop/Nueva carpeta/top/top_Implmnt/sbt/outputs/bitmap/Block1_bitmap.bin</File>
 					<AddressBase>0x00000000</AddressBase>
 					<EndAddress>0x00070000</EndAddress>
 					<DeviceSize>4</DeviceSize>
-					<DataSize>135180</DataSize>
+					<DataSize>135179</DataSize>
 					<NumberOfDevices>1</NumberOfDevices>
 					<ReInitialize value="FALSE"/>
 				</Device>

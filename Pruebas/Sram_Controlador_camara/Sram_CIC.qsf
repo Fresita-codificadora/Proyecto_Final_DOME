@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY Sram_CIC_2
+set_global_assignment -name TOP_LEVEL_ENTITY trigger_handler
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:12:38  JUNE 30, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -53,16 +53,115 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VHDL_FILE ../../Camara/programador/programador.vhd
+set_global_assignment -name VHDL_FILE ../../Camara/programador/controlador.vhd
+set_global_assignment -name BDF_FILE ../../Camara/programador/Programador_controlador_block.bdf
 set_global_assignment -name VHDL_FILE sram.vhd
 set_global_assignment -name VHDL_FILE contr.vhd
 set_global_assignment -name VHDL_FILE Capture_Input_Controller.vhd
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE Sram_CIC.vhd
-set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name BDF_FILE Block1.bdf
 set_global_assignment -name VHDL_FILE Sram_CIC_2.vhd
+set_global_assignment -name BDF_FILE CIC_SRAM_BLOCK.bdf
+set_global_assignment -name VHDL_FILE divisor.vhd
+set_global_assignment -name BDF_FILE Todo_junto.bdf
+set_location_assignment PIN_AF8 -to Chip_enable
+set_location_assignment PIN_E21 -to DONE_LED
+set_location_assignment PIN_AH3 -to DQ[0]
+set_location_assignment PIN_AF4 -to DQ[1]
+set_location_assignment PIN_AG4 -to DQ[2]
+set_location_assignment PIN_AH4 -to DQ[3]
+set_location_assignment PIN_AF6 -to DQ[4]
+set_location_assignment PIN_AG6 -to DQ[5]
+set_location_assignment PIN_AH6 -to DQ[6]
+set_location_assignment PIN_AF7 -to DQ[7]
+set_location_assignment PIN_AD1 -to DQ[8]
+set_location_assignment PIN_AD2 -to DQ[9]
+set_location_assignment PIN_AE2 -to DQ[10]
+set_location_assignment PIN_AE1 -to DQ[11]
+set_location_assignment PIN_AE3 -to DQ[12]
+set_location_assignment PIN_AE4 -to DQ[13]
+set_location_assignment PIN_AF3 -to DQ[14]
+set_location_assignment PIN_AG3 -to DQ[15]
+set_location_assignment PIN_AC19 -to Frame_valid
+set_location_assignment PIN_AD4 -to LB
+set_location_assignment PIN_E22 -to LED_FIN
+set_location_assignment PIN_AD5 -to Output_enable
+set_location_assignment PIN_AG26 -to Pixel_clk
+set_location_assignment PIN_AF24 -to Pixel_data[0]
+set_location_assignment PIN_AE21 -to Pixel_data[1]
+set_location_assignment PIN_AF25 -to Pixel_data[2]
+set_location_assignment PIN_AC22 -to Pixel_data[3]
+set_location_assignment PIN_AE22 -to Pixel_data[4]
+set_location_assignment PIN_AF21 -to Pixel_data[5]
+set_location_assignment PIN_AF22 -to Pixel_data[6]
+set_location_assignment PIN_AD22 -to Pixel_data[7]
+set_location_assignment PIN_M23 -to Reset_btn
+set_location_assignment PIN_AC15 -to Reset_camara
+set_location_assignment PIN_AB21 -to SCA
+set_location_assignment PIN_Y17 -to SDA
+set_location_assignment PIN_M21 -to Start_btn
+set_location_assignment PIN_N21 -to Trigger_btn
+set_location_assignment PIN_AC21 -to Trigger_camara
+set_location_assignment PIN_AC4 -to UB
+set_location_assignment PIN_AE8 -to Write_enable
+set_location_assignment PIN_AB7 -to add[0]
+set_location_assignment PIN_AD7 -to add[1]
+set_location_assignment PIN_AE7 -to add[2]
+set_location_assignment PIN_AC7 -to add[3]
+set_location_assignment PIN_AB6 -to add[4]
+set_location_assignment PIN_AE6 -to add[5]
+set_location_assignment PIN_AB5 -to add[6]
+set_location_assignment PIN_AC5 -to add[7]
+set_location_assignment PIN_AF5 -to add[8]
+set_location_assignment PIN_T7 -to add[9]
+set_location_assignment PIN_AF2 -to add[10]
+set_location_assignment PIN_AD3 -to add[11]
+set_location_assignment PIN_AB4 -to add[12]
+set_location_assignment PIN_AC3 -to add[13]
+set_location_assignment PIN_AA4 -to add[14]
+set_location_assignment PIN_AB11 -to add[15]
+set_location_assignment PIN_AC11 -to add[16]
+set_location_assignment PIN_AB9 -to add[17]
+set_location_assignment PIN_AB8 -to add[18]
+set_location_assignment PIN_T8 -to add[19]
+set_location_assignment PIN_Y2 -to clk_50
+set_location_assignment PIN_AB22 -to clk_camara
+set_location_assignment PIN_AF16 -to line_valid
+set_location_assignment PIN_E25 -to led_leer
+set_location_assignment PIN_G20 -to led_pix_count[0]
+set_location_assignment PIN_G22 -to led_pix_count[1]
+set_location_assignment PIN_G21 -to led_pix_count[2]
+set_location_assignment PIN_G19 -to led_pix_count[3]
+set_location_assignment PIN_F19 -to led_pix_count[4]
+set_location_assignment PIN_E19 -to led_pix_count[5]
+set_location_assignment PIN_F21 -to led_pix_count[6]
+set_location_assignment PIN_F18 -to led_pix_count[7]
+set_location_assignment PIN_E18 -to led_pix_count[8]
+set_location_assignment PIN_J19 -to led_pix_count[9]
+set_location_assignment PIN_H19 -to led_pix_count[10]
+set_location_assignment PIN_J17 -to led_pix_count[11]
+set_location_assignment PIN_G17 -to led_pix_count[12]
+set_location_assignment PIN_J15 -to led_pix_count[13]
+set_location_assignment PIN_H16 -to led_pix_count[14]
+set_location_assignment PIN_J16 -to led_pix_count[15]
+set_location_assignment PIN_H17 -to led_pix_count[16]
+set_location_assignment PIN_F15 -to led_pix_count[17]
+set_location_assignment PIN_G15 -to led_pix_count[18]
+set_location_assignment PIN_G16 -to led_pix_count[19]
+set_location_assignment PIN_H15 -to led_pix_count[20]
+set_global_assignment -name VHDL_FILE ../../../../../../../intelFPGA_lite/optativa/Optativa_FPGA/FUNCIONAN/Proyect_3_FSM/decodificador.vhd
+set_location_assignment PIN_G18 -to siete_seg[0]
+set_location_assignment PIN_F22 -to siete_seg[1]
+set_location_assignment PIN_E17 -to siete_seg[2]
+set_location_assignment PIN_L26 -to siete_seg[3]
+set_location_assignment PIN_L25 -to siete_seg[4]
+set_location_assignment PIN_J22 -to siete_seg[5]
+set_location_assignment PIN_H22 -to siete_seg[6]
+set_global_assignment -name VHDL_FILE trigger_handler.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

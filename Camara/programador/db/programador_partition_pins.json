@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "trigg",
+					"strict" : false
+				},
+				{
 					"name" : "clk_out",
 					"strict" : false
 				},
@@ -20,11 +24,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "trigger_btn",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				},
 				{

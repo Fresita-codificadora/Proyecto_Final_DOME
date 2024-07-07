@@ -16,19 +16,21 @@ use ieee.std_logic_1164.all;
 
 entity Capture_Input_Controller is
     port(
-        line_valid,frame_valid,pclk: in std_logic;
+        line_valid,frame_valid,pclk,reset,enable,trigger: in std_logic;
 		  leer : out std_logic;
 		  D_in : in std_logic_vector (7 downto 0);
+		  pix_count : out integer range 0 to 1_310_721;
 		  D_out : out std_logic_vector (7 downto 0)
     );
 end Capture_Input_Controller;
 
 architecture arch of Capture_Input_Controller is
 signal d_buff:std_logic_vector(7 downto 0);
+signal pix_count_int:integer range 0 to 1_310_721:=0;
 begin
 	process(all)
 	begin
-		if frame_valid='1' and line_valid='1' then
+		if frame_valid='1' and line_valid='1' and enable='1' then
 			Leer <= '1';
 		else 
 			leer <='0';
@@ -37,12 +39,16 @@ begin
 	
 	process(all)
 	begin	
-		if falling_edge(pclk) then
+		if reset = '0' or pix_count_int=1_310_721 then
+			pix_count_int<=0;
+		elsif falling_edge(pclk) and enable='1' then
 			if Leer = '1' then
 				d_buff <= D_in;
+				pix_count_int<=pix_count_int+1;
 			end if;
 		end if;
 	end process;
 	D_out<=d_buff;
+	pix_count<=pix_count_int;
 end architecture;
 

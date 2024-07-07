@@ -1,9 +1,7 @@
 
-State Machine - |Sram_CIC_2|state
-Name state.final state.memoria state.escritura state.B_massig state.B_menossig state.idle 
-state.idle 0 0 0 0 0 0 
-state.B_menossig 0 0 0 0 1 1 
-state.B_massig 0 0 0 1 0 1 
-state.escritura 0 0 1 0 0 1 
-state.memoria 0 1 0 0 0 1 
-state.final 1 0 0 0 0 1 
+State Machine - |trigger_handler|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for programador
-Thu Jun  6 17:34:52 2024
+Sun Jul  7 10:34:21 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -47,16 +47,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun  6 17:34:52 2024          ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul  7 10:34:21 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; programador                                    ;
 ; Top-level Entity Name              ; Block1                                         ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 89                                             ;
-;     Total combinational functions  ; 78                                             ;
-;     Dedicated logic registers      ; 55                                             ;
-; Total registers                    ; 55                                             ;
-; Total pins                         ; 9                                              ;
+; Total logic elements               ; 94                                             ;
+;     Total combinational functions  ; 83                                             ;
+;     Dedicated logic registers      ; 60                                             ;
+; Total registers                    ; 60                                             ;
+; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -69,6 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                            ; Block1             ; programador        ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -166,15 +167,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
-; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/Block1.bdf      ;         ;
-; controlador.vhd                  ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd ;         ;
-; programador.vhd                  ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
++---------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                  ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
++---------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; Block1.bdf                                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/Block1.bdf               ;         ;
+; controlador.vhd                                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd          ;         ;
+; programador.vhd                                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd          ;         ;
+; ../../Pruebas/Sram_Controlador_camara/divisor.vhd ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd ;         ;
++---------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------+
@@ -182,30 +184,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 89                       ;
+; Estimated Total logic elements              ; 94                       ;
 ;                                             ;                          ;
-; Total combinational functions               ; 78                       ;
+; Total combinational functions               ; 83                       ;
 ; Logic element usage by number of LUT inputs ;                          ;
 ;     -- 4 input functions                    ; 50                       ;
-;     -- 3 input functions                    ; 13                       ;
-;     -- <=2 input functions                  ; 15                       ;
+;     -- 3 input functions                    ; 16                       ;
+;     -- <=2 input functions                  ; 17                       ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 74                       ;
+;     -- normal mode                          ; 79                       ;
 ;     -- arithmetic mode                      ; 4                        ;
 ;                                             ;                          ;
-; Total registers                             ; 55                       ;
-;     -- Dedicated logic registers            ; 55                       ;
+; Total registers                             ; 60                       ;
+;     -- Dedicated logic registers            ; 60                       ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
-; I/O pins                                    ; 9                        ;
+; I/O pins                                    ; 10                       ;
 ;                                             ;                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; controlador:inst|clk_int ;
 ; Maximum fan-out                             ; 25                       ;
-; Total fan-out                               ; 437                      ;
-; Average fan-out                             ; 2.88                     ;
+; Total fan-out                               ; 461                      ;
+; Average fan-out                             ; 2.81                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -214,8 +216,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
-; |Block1                    ; 78 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |Block1                   ; Block1      ; work         ;
+; |Block1                    ; 83 (0)              ; 60 (0)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |Block1                   ; Block1      ; work         ;
 ;    |controlador:inst|      ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|controlador:inst  ; controlador ; work         ;
+;    |divisor:inst2|         ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|divisor:inst2     ; divisor     ; work         ;
 ;    |programador:inst1|     ; 30 (30)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|programador:inst1 ; programador ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -289,7 +292,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 55    ;
+; Total registers                              ; 60    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 33    ;
@@ -305,7 +308,7 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Block1|programador:inst1|count[2] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |Block1|programador:inst1|data[1]  ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |Block1|programador:inst1|data[0]  ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Block1|controlador:inst|count[0]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 
@@ -315,25 +318,25 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 9                           ;
-; cycloneiii_ff         ; 55                          ;
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 60                          ;
 ;     CLR               ; 30                          ;
 ;     ENA               ; 10                          ;
 ;     ENA CLR           ; 3                           ;
-;     plain             ; 12                          ;
+;     plain             ; 17                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 80                          ;
+; cycloneiii_lcell_comb ; 84                          ;
 ;     arith             ; 4                           ;
 ;         2 data inputs ; 4                           ;
-;     normal            ; 76                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 13                          ;
+;     normal            ; 80                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 16                          ;
 ;         4 data inputs ; 50                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.26                        ;
+; Average LUT depth     ; 2.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -352,36 +355,41 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Jun  6 17:34:33 2024
+    Info: Processing started: Sun Jul  7 10:34:01 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off programador -c programador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
     Info (12023): Found entity 1: Block1
 Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 42
-    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/controlador.vhd Line: 20
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 42
+    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 48
-    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/programador.vhd Line: 30
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 48
+    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file programador_controlador_block.bdf
+    Info (12023): Found entity 1: Programador_controlador_block
+Info (12021): Found 2 design units, including 1 entities, in source file /users/gazpa/documents/github/proyecto_final_dome/pruebas/sram_controlador_camara/divisor.vhd
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 11
+    Info (12023): Found entity 1: divisor File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 4
 Info (12127): Elaborating entity "Block1" for the top level hierarchy
 Info (12128): Elaborating entity "controlador" for hierarchy "controlador:inst"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst2"
 Info (12128): Elaborating entity "programador" for hierarchy "programador:inst1"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "trigg" is stuck at GND
     Warning (13410): Pin "reset_camara" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 100 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 106 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 5 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4780 megabytes
-    Info: Processing ended: Thu Jun  6 17:34:52 2024
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:41
+    Info (21061): Implemented 96 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Sun Jul  7 10:34:21 2024
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:35
 
 

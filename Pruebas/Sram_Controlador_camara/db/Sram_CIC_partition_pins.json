@@ -4,163 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "data_o[0]",
+					"name" : "trigger_cam",
 					"strict" : false
 				},
 				{
-					"name" : "data_o[1]",
+					"name" : "trigger_int",
 					"strict" : false
 				},
 				{
-					"name" : "data_o[2]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[3]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[5]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[6]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[7]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[8]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[9]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[10]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[11]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[12]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[13]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[14]",
-					"strict" : false
-				},
-				{
-					"name" : "data_o[15]",
-					"strict" : false
-				},
-				{
-					"name" : "add[0]",
-					"strict" : false
-				},
-				{
-					"name" : "add[1]",
-					"strict" : false
-				},
-				{
-					"name" : "add[2]",
-					"strict" : false
-				},
-				{
-					"name" : "add[3]",
-					"strict" : false
-				},
-				{
-					"name" : "add[4]",
-					"strict" : false
-				},
-				{
-					"name" : "add[5]",
-					"strict" : false
-				},
-				{
-					"name" : "add[6]",
-					"strict" : false
-				},
-				{
-					"name" : "add[7]",
-					"strict" : false
-				},
-				{
-					"name" : "add[8]",
-					"strict" : false
-				},
-				{
-					"name" : "add[9]",
-					"strict" : false
-				},
-				{
-					"name" : "add[10]",
-					"strict" : false
-				},
-				{
-					"name" : "add[11]",
-					"strict" : false
-				},
-				{
-					"name" : "add[12]",
-					"strict" : false
-				},
-				{
-					"name" : "add[13]",
-					"strict" : false
-				},
-				{
-					"name" : "add[14]",
-					"strict" : false
-				},
-				{
-					"name" : "add[15]",
-					"strict" : false
-				},
-				{
-					"name" : "add[16]",
-					"strict" : false
-				},
-				{
-					"name" : "add[17]",
-					"strict" : false
-				},
-				{
-					"name" : "add[18]",
-					"strict" : false
-				},
-				{
-					"name" : "add[19]",
-					"strict" : false
-				},
-				{
-					"name" : "reset_o",
-					"strict" : false
-				},
-				{
-					"name" : "r_w_O",
-					"strict" : false
-				},
-				{
-					"name" : "fin_signal",
-					"strict" : false
-				},
-				{
-					"name" : "data[0]",
+					"name" : "trigger_in",
 					"strict" : false
 				},
 				{
@@ -169,42 +21,6 @@
 				},
 				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "leer",
-					"strict" : false
-				},
-				{
-					"name" : "data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Start",
 					"strict" : false
 				}
 			]
