@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY Todo_junto
+set_global_assignment -name TOP_LEVEL_ENTITY control_mux
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:12:38  JUNE 30, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -131,39 +131,48 @@ set_location_assignment PIN_T8 -to add[19]
 set_location_assignment PIN_Y2 -to clk_50
 set_location_assignment PIN_AB22 -to clk_camara
 set_location_assignment PIN_AF16 -to line_valid
-set_location_assignment PIN_E25 -to led_leer
-set_location_assignment PIN_G20 -to led_pix_count[0]
-set_location_assignment PIN_G22 -to led_pix_count[1]
-set_location_assignment PIN_G21 -to led_pix_count[2]
-set_location_assignment PIN_G19 -to led_pix_count[3]
-set_location_assignment PIN_F19 -to led_pix_count[4]
-set_location_assignment PIN_E19 -to led_pix_count[5]
-set_location_assignment PIN_F21 -to led_pix_count[6]
-set_location_assignment PIN_F18 -to led_pix_count[7]
-set_location_assignment PIN_E18 -to led_pix_count[8]
-set_location_assignment PIN_J19 -to led_pix_count[9]
-set_location_assignment PIN_H19 -to led_pix_count[10]
-set_location_assignment PIN_J17 -to led_pix_count[11]
-set_location_assignment PIN_G17 -to led_pix_count[12]
-set_location_assignment PIN_J15 -to led_pix_count[13]
-set_location_assignment PIN_H16 -to led_pix_count[14]
-set_location_assignment PIN_J16 -to led_pix_count[15]
-set_location_assignment PIN_H17 -to led_pix_count[16]
-set_location_assignment PIN_F15 -to led_pix_count[17]
-set_location_assignment PIN_G15 -to led_pix_count[18]
-set_location_assignment PIN_G16 -to led_pix_count[19]
-set_location_assignment PIN_H15 -to led_pix_count[20]
 set_global_assignment -name VHDL_FILE ../../../../../../../intelFPGA_lite/optativa/Optativa_FPGA/FUNCIONAN/Proyect_3_FSM/decodificador.vhd
-set_location_assignment PIN_G18 -to siete_seg[0]
-set_location_assignment PIN_F22 -to siete_seg[1]
-set_location_assignment PIN_E17 -to siete_seg[2]
-set_location_assignment PIN_L26 -to siete_seg[3]
-set_location_assignment PIN_L25 -to siete_seg[4]
-set_location_assignment PIN_J22 -to siete_seg[5]
-set_location_assignment PIN_H22 -to siete_seg[6]
 set_global_assignment -name VHDL_FILE trigger_handler.vhd
+set_global_assignment -name VHDL_FILE ../../../optativa_FPGA/Proyect_3_FSM/decodificador.vhd
+set_global_assignment -name VHDL_FILE lector_memoria.vhd
+set_location_assignment PIN_Y23 -to switch[17]
+set_location_assignment PIN_Y24 -to switch[16]
+set_location_assignment PIN_AA22 -to switch[15]
+set_location_assignment PIN_AA23 -to switch[14]
+set_location_assignment PIN_AA24 -to switch[13]
+set_location_assignment PIN_AB23 -to switch[12]
+set_location_assignment PIN_AB24 -to switch[11]
+set_location_assignment PIN_AC24 -to switch[10]
+set_location_assignment PIN_AB25 -to switch[9]
+set_location_assignment PIN_AC25 -to switch[8]
+set_location_assignment PIN_AB26 -to switch[7]
+set_location_assignment PIN_AD26 -to switch[6]
+set_location_assignment PIN_AC26 -to switch[5]
+set_location_assignment PIN_AB27 -to switch[4]
+set_location_assignment PIN_AD27 -to switch[3]
+set_location_assignment PIN_AC27 -to switch[2]
+set_location_assignment PIN_AC28 -to switch[1]
+set_location_assignment PIN_AB28 -to switch[0]
+set_location_assignment PIN_G19 -to Led_salida[0]
+set_location_assignment PIN_F19 -to Led_salida[1]
+set_location_assignment PIN_E19 -to Led_salida[2]
+set_location_assignment PIN_F21 -to Led_salida[3]
+set_location_assignment PIN_F18 -to Led_salida[4]
+set_location_assignment PIN_E18 -to Led_salida[5]
+set_location_assignment PIN_J19 -to Led_salida[6]
+set_location_assignment PIN_H19 -to Led_salida[7]
+set_location_assignment PIN_J17 -to Led_salida[8]
+set_location_assignment PIN_G17 -to Led_salida[9]
+set_location_assignment PIN_J15 -to Led_salida[10]
+set_location_assignment PIN_H16 -to Led_salida[11]
+set_location_assignment PIN_J16 -to Led_salida[12]
+set_location_assignment PIN_H17 -to Led_salida[13]
+set_location_assignment PIN_F15 -to Led_salida[14]
+set_location_assignment PIN_G15 -to Led_salida[15]
+set_global_assignment -name VHDL_FILE mux_sram.vhd
+set_global_assignment -name VHDL_FILE memory_erraser.vhd
+set_global_assignment -name VHDL_FILE control_mux.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE ../../../optativa_FPGA/Proyect_3_FSM/decodificador.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

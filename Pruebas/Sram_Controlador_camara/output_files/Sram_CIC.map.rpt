@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Sram_CIC
-Sun Jul  7 18:09:08 2024
+Mon Jul  8 19:51:51 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,17 +13,10 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state
-  9. State Machine - |Todo_junto|trigger_handler:inst5|state
- 10. State Machine - |Todo_junto|Programador_controlador_block:inst1|programador:inst1|state
- 11. State Machine - |Todo_junto|Programador_controlador_block:inst1|controlador:inst|state
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +43,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul  7 18:09:08 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul  8 19:51:51 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
-; Top-level Entity Name              ; Todo_junto                                     ;
+; Top-level Entity Name              ; control_mux                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 184                                            ;
-;     Total combinational functions  ; 153                                            ;
-;     Dedicated logic registers      ; 133                                            ;
-; Total registers                    ; 133                                            ;
-; Total pins                         ; 92                                             ;
+; Total logic elements               ; 2                                              ;
+;     Total combinational functions  ; 2                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 4                                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -73,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Todo_junto         ; Sram_CIC           ;
+; Top-level entity name                                            ; control_mux        ; Sram_CIC           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
 ; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
@@ -163,265 +156,62 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                          ;
-+------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                           ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                      ; Library ;
-+------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
-; ../../Camara/programador/programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd                           ;         ;
-; ../../Camara/programador/controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd                           ;         ;
-; ../../Camara/programador/Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/Programador_controlador_block.bdf         ;         ;
-; sram.vhd                                                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd                     ;         ;
-; Capture_Input_Controller.vhd                               ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd ;         ;
-; Sram_CIC_2.vhd                                             ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd               ;         ;
-; CIC_SRAM_BLOCK.bdf                                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_BLOCK.bdf           ;         ;
-; divisor.vhd                                                ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd                  ;         ;
-; Todo_junto.bdf                                             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Todo_junto.bdf               ;         ;
-; trigger_handler.vhd                                        ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/trigger_handler.vhd          ;         ;
-; ../../../optativa_FPGA/Proyect_3_FSM/decodificador.vhd     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/optativa_FPGA/Proyect_3_FSM/decodificador.vhd                                    ;         ;
-+------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
+; control_mux.vhd                  ; yes             ; User VHDL File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/control_mux.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                    ;
-+---------------------------------------------+--------------------------------------------------+
-; Resource                                    ; Usage                                            ;
-+---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 184                                              ;
-;                                             ;                                                  ;
-; Total combinational functions               ; 153                                              ;
-; Logic element usage by number of LUT inputs ;                                                  ;
-;     -- 4 input functions                    ; 61                                               ;
-;     -- 3 input functions                    ; 27                                               ;
-;     -- <=2 input functions                  ; 65                                               ;
-;                                             ;                                                  ;
-; Logic elements by mode                      ;                                                  ;
-;     -- normal mode                          ; 112                                              ;
-;     -- arithmetic mode                      ; 41                                               ;
-;                                             ;                                                  ;
-; Total registers                             ; 133                                              ;
-;     -- Dedicated logic registers            ; 133                                              ;
-;     -- I/O registers                        ; 0                                                ;
-;                                             ;                                                  ;
-; I/O pins                                    ; 92                                               ;
-;                                             ;                                                  ;
-; Embedded Multiplier 9-bit elements          ; 0                                                ;
-;                                             ;                                                  ;
-; Maximum fan-out node                        ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|process_1~0 ;
-; Maximum fan-out                             ; 44                                               ;
-; Total fan-out                               ; 1013                                             ;
-; Average fan-out                             ; 2.08                                             ;
-+---------------------------------------------+--------------------------------------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 2           ;
+;                                             ;             ;
+; Total combinational functions               ; 2           ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 0           ;
+;     -- 3 input functions                    ; 0           ;
+;     -- <=2 input functions                  ; 2           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 2           ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 4           ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; fin_2~input ;
+; Maximum fan-out                             ; 2           ;
+; Total fan-out                               ; 10          ;
+; Average fan-out                             ; 1.00        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                    ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Entity Name                   ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------------------------+--------------+
-; |Todo_junto                              ; 153 (0)             ; 133 (0)                   ; 0           ; 0            ; 0       ; 0         ; 92   ; 0            ; |Todo_junto                                                       ; Todo_junto                    ; work         ;
-;    |CIC_SRAM_BLOCK:inst|                 ; 56 (0)              ; 65 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|CIC_SRAM_BLOCK:inst                                   ; CIC_SRAM_BLOCK                ; work         ;
-;       |Capture_Input_Controller:inst|    ; 22 (22)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst     ; Capture_Input_Controller      ; work         ;
-;       |Sram_CIC_2:inst3|                 ; 34 (34)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3                  ; Sram_CIC_2                    ; work         ;
-;       |sram:inst2|                       ; 0 (0)               ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|CIC_SRAM_BLOCK:inst|sram:inst2                        ; sram                          ; work         ;
-;    |Programador_controlador_block:inst1| ; 78 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|Programador_controlador_block:inst1                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|Programador_controlador_block:inst1|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 30 (30)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|Programador_controlador_block:inst1|programador:inst1 ; programador                   ; work         ;
-;    |decodificador:inst3|                 ; 6 (6)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|decodificador:inst3                                   ; decodificador                 ; work         ;
-;    |divisor:inst2|                       ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|divisor:inst2                                         ; divisor                       ; work         ;
-;    |trigger_handler:inst5|               ; 8 (8)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Todo_junto|trigger_handler:inst5                                 ; trigger_handler               ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |control_mux               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |control_mux        ; control_mux ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------+
-; State Machine - |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state                            ;
-+------------------+-------------+-----------------+----------------+------------------+------------+
-; Name             ; state.final ; state.escritura ; state.B_massig ; state.B_menossig ; state.idle ;
-+------------------+-------------+-----------------+----------------+------------------+------------+
-; state.idle       ; 0           ; 0               ; 0              ; 0                ; 0          ;
-; state.B_menossig ; 0           ; 0               ; 0              ; 1                ; 1          ;
-; state.B_massig   ; 0           ; 0               ; 1              ; 0                ; 1          ;
-; state.escritura  ; 0           ; 1               ; 0              ; 0                ; 1          ;
-; state.final      ; 1           ; 0               ; 0              ; 0                ; 1          ;
-+------------------+-------------+-----------------+----------------+------------------+------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------+
-; State Machine - |Todo_junto|trigger_handler:inst5|state ;
-+----------+----------+----------+----------+-------------+
-; Name     ; state.s3 ; state.s2 ; state.s1 ; state.s0    ;
-+----------+----------+----------+----------+-------------+
-; state.s0 ; 0        ; 0        ; 0        ; 0           ;
-; state.s1 ; 0        ; 0        ; 1        ; 1           ;
-; state.s2 ; 0        ; 1        ; 0        ; 1           ;
-; state.s3 ; 1        ; 0        ; 0        ; 1           ;
-+----------+----------+----------+----------+-------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Todo_junto|Programador_controlador_block:inst1|programador:inst1|state                                                                                                                                                               ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-; Name            ; state.stop_2 ; state.stop_1 ; state.idle_2 ; state.error ; state.ack_fin ; state.ack_3 ; state.ack_2 ; state.ack_1 ; state.b_write_3 ; state.b_write_2 ; state.b_write_1 ; state.b_trans ; state.start_2 ; state.start ; state.idle ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-; state.idle      ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 0          ;
-; state.start     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 1           ; 1          ;
-; state.start_2   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 1             ; 0           ; 1          ;
-; state.b_trans   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 1             ; 0             ; 0           ; 1          ;
-; state.b_write_1 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 1               ; 0             ; 0             ; 0           ; 1          ;
-; state.b_write_2 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 1               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.b_write_3 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 1               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_1     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 1           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_2     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 1           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_3     ; 0            ; 0            ; 0            ; 0           ; 0             ; 1           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_fin   ; 0            ; 0            ; 0            ; 0           ; 1             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.error     ; 0            ; 0            ; 0            ; 1           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.idle_2    ; 0            ; 0            ; 1            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.stop_1    ; 0            ; 1            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.stop_2    ; 1            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Todo_junto|Programador_controlador_block:inst1|controlador:inst|state                                                                                                                                                                                          ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
-; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
-; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
-; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
-; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                    ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; Register name                                                      ; Reason for Removal                                                               ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; decodificador:inst3|num_int[3]                                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|S_ACTION                            ; Stuck at VCC due to stuck port data_in                                           ;
-; Programador_controlador_block:inst1|programador:inst1|data[4]      ; Merged with Programador_controlador_block:inst1|programador:inst1|data[3]        ;
-; Programador_controlador_block:inst1|programador:inst1|data[6]      ; Stuck at GND due to stuck port data_in                                           ;
-; trigger_handler:inst5|state.s3                                     ; Lost fanout                                                                      ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.B_menossig              ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.escritura               ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[15]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[14]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[13]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[12]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[11]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[10]~en                      ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[9]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[8]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[7]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[6]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[5]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[4]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[3]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[2]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[1]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[0]~en                       ; Stuck at GND due to stuck port clear                                             ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[0..7]                ; Stuck at GND due to stuck port clock_enable                                      ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_UB_N                           ; Stuck at VCC due to stuck port preset                                            ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_LB_N                           ; Stuck at VCC due to stuck port preset                                            ;
-; decodificador:inst3|num_int[0]                                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[15]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[14]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[13]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[12]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[11]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[10]~reg0                    ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[9]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[8]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[7]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[6]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[5]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[4]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[3]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[2]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[1]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[0]~reg0                     ; Stuck at GND due to stuck port data_in                                           ;
-; Programador_controlador_block:inst1|controlador:inst|cuenta_int[0] ; Merged with Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[0] ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|datos_leidos                  ; Lost fanout                                                                      ;
-; Total Number of Removed Registers = 52                             ;                                                                                  ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                             ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name                                         ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.escritura  ; Stuck at GND              ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[15]~en,                                      ;
-;                                                       ; due to stuck port data_in ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[14]~en,                                      ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[13]~en,                                      ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[12]~en,                                      ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[11]~en,                                      ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[10]~en,                                      ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[9]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[8]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[7]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[6]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[5]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[4]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[3]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[2]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[1]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[0]~en,                                       ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_UB_N, CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_LB_N, ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[15]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[14]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[13]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[12]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[11]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[10]~reg0,                                    ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[9]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[8]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[7]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[6]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[5]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[4]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[3]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[2]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[1]~reg0,                                     ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|sram:inst2|SRAM_DQ[0]~reg0                                      ;
-; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state.B_menossig ; Stuck at GND              ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[7],                                   ;
-;                                                       ; due to stuck port data_in ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[6],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[5],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[4],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[3],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[2],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[1],                                   ;
-;                                                       ;                           ; CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|data_reg[0], decodificador:inst3|num_int[0]    ;
-+-------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -429,26 +219,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 133   ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 80    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 55    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Todo_junto|Programador_controlador_block:inst1|programador:inst1|count[2] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |Todo_junto|Programador_controlador_block:inst1|programador:inst1|data[0]  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Todo_junto|Programador_controlador_block:inst1|controlador:inst|count[1]  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -456,26 +234,14 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 92                          ;
-; cycloneiii_ff         ; 133                         ;
-;     CLR               ; 38                          ;
-;     ENA               ; 13                          ;
-;     ENA CLR           ; 42                          ;
-;     plain             ; 40                          ;
-; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 156                         ;
-;     arith             ; 41                          ;
-;         2 data inputs ; 39                          ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 115                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 61                          ;
+; boundary_port         ; 4                           ;
+; cycloneiii_lcell_comb ; 3                           ;
+;     normal            ; 3                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.14                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -494,7 +260,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Jul  7 18:09:02 2024
+    Info: Processing started: Mon Jul  8 19:51:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sram_CIC -c Sram_CIC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -519,8 +285,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file sram_ci
     Info (12022): Found design unit 1: Sram_CIC-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC.vhd Line: 25
     Info (12023): Found entity 1: Sram_CIC File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file sram_cic_2.vhd
-    Info (12022): Found design unit 1: Sram_CIC_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 27
-    Info (12023): Found entity 1: Sram_CIC_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 12
+    Info (12022): Found design unit 1: Sram_CIC_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 23
+    Info (12023): Found entity 1: Sram_CIC_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file cic_sram_block.bdf
     Info (12023): Found entity 1: CIC_SRAM_BLOCK
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
@@ -535,73 +301,29 @@ Info (12021): Found 2 design units, including 1 entities, in source file trigger
 Info (12021): Found 2 design units, including 1 entities, in source file /users/gaspar/documents/github/optativa_fpga/proyect_3_fsm/decodificador.vhd
     Info (12022): Found design unit 1: decodificador-arch File: C:/Users/Gaspar/Documents/GitHub/optativa_FPGA/Proyect_3_FSM/decodificador.vhd Line: 12
     Info (12023): Found entity 1: decodificador File: C:/Users/Gaspar/Documents/GitHub/optativa_FPGA/Proyect_3_FSM/decodificador.vhd Line: 4
-Info (12127): Elaborating entity "Todo_junto" for the top level hierarchy
-Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst1"
-Info (12128): Elaborating entity "controlador" for hierarchy "Programador_controlador_block:inst1|controlador:inst"
-Info (12128): Elaborating entity "programador" for hierarchy "Programador_controlador_block:inst1|programador:inst1"
-Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst2"
-Info (12128): Elaborating entity "trigger_handler" for hierarchy "trigger_handler:inst5"
-Info (12128): Elaborating entity "CIC_SRAM_BLOCK" for hierarchy "CIC_SRAM_BLOCK:inst"
-Info (12128): Elaborating entity "sram" for hierarchy "CIC_SRAM_BLOCK:inst|sram:inst2"
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
-Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
-Info (12128): Elaborating entity "Sram_CIC_2" for hierarchy "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3"
-Info (12128): Elaborating entity "Capture_Input_Controller" for hierarchy "CIC_SRAM_BLOCK:inst|Capture_Input_Controller:inst"
-Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:inst3"
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[19]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[18]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[17]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[16]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|add[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|reset_o" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 21
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_2.vhd Line: 21
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Reset_camara" is stuck at VCC
-    Warning (13410): Pin "Chip_enable" is stuck at GND
-    Warning (13410): Pin "Output_enable" is stuck at VCC
-    Warning (13410): Pin "Write_enable" is stuck at GND
-    Warning (13410): Pin "UB" is stuck at VCC
-    Warning (13410): Pin "LB" is stuck at VCC
+Info (12021): Found 2 design units, including 1 entities, in source file lector_memoria.vhd
+    Info (12022): Found design unit 1: lector_memoria-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/lector_memoria.vhd Line: 15
+    Info (12023): Found entity 1: lector_memoria File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/lector_memoria.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux_sram.vhd
+    Info (12022): Found design unit 1: mux_sram-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/mux_sram.vhd Line: 23
+    Info (12023): Found entity 1: mux_sram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/mux_sram.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memory_erraser.vhd
+    Info (12022): Found design unit 1: memory_erraser-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/memory_erraser.vhd Line: 13
+    Info (12023): Found entity 1: memory_erraser File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/memory_erraser.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file control_mux.vhd
+    Info (12022): Found design unit 1: control_mux-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/control_mux.vhd Line: 12
+    Info (12023): Found entity 1: control_mux File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/control_mux.vhd Line: 5
+Info (12127): Elaborating entity "control_mux" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Pixel_data[7]"
-    Warning (15610): No output dependent on input pin "Pixel_data[6]"
-    Warning (15610): No output dependent on input pin "Pixel_data[5]"
-    Warning (15610): No output dependent on input pin "Pixel_data[4]"
-    Warning (15610): No output dependent on input pin "Pixel_data[3]"
-    Warning (15610): No output dependent on input pin "Pixel_data[2]"
-    Warning (15610): No output dependent on input pin "Pixel_data[1]"
-    Warning (15610): No output dependent on input pin "Pixel_data[0]"
-Info (21057): Implemented 278 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 60 output pins
-    Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 186 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Sun Jul  7 18:09:08 2024
+Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4812 megabytes
+    Info: Processing ended: Mon Jul  8 19:51:51 2024
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 

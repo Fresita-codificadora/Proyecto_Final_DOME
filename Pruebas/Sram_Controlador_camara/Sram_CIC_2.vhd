@@ -1,9 +1,5 @@
--- Quartus Prime VHDL Template
--- Four-State Moore State Machine
-
--- A Moore machine's outputs are dependent only on the current state.
--- The output is written only when the state changes.  (State
--- transitions are synchronous.)
+--Maquina de estados encargada de tomar los datos del Capture_input_controller y escribirlos en la sram, necesita aparte el trigger_hendler
+-- para recibir la señal de trigger correspondiente y que renicie la maquina de estados previo a recibir un nuevo frame
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -18,8 +14,8 @@ entity Sram_CIC_2 is
 		data : in std_logic_vector(7 downto 0);
 		data_o : out std_logic_vector(15 downto 0);
 		add : out std_logic_vector(19 downto 0);
-		reset_o,r_w_O,fin_signal : out std_logic;
-		estado : out std_logic_vector(3 downto 0)
+		reset_o,r_w_O,fin_signal : out std_logic
+--		estado : out std_logic_vector(3 downto 0) debug
 	);
 
 end entity;
@@ -115,35 +111,35 @@ begin
 				reset_o<='0';
 				r_w_O <='1';
 				fin_signal<='0';
-				estado<="0000";
+--				estado<="0000";
 			when B_menossig =>
 				add <=std_logic_vector(to_unsigned(add_count,20));
 				data_o <=x"0000";
 				reset_o<='0';
 				r_w_O <='1';
 				fin_signal<='0';
-				estado<="0001";
+--				estado<="0001";
 			when B_massig=>
 				add <=std_logic_vector(to_unsigned(add_count,20));
 				data_o <=x"0000";
 				reset_o<='0';
 				r_w_O <='1';
 				fin_signal<='0';
-				estado<="0010";
+--				estado<="0010";
 			when escritura => 
 				add <=std_logic_vector(to_unsigned(add_count,20));
 				data_o <=data_reg;
 				reset_o<='1';
 				r_w_O <='1';
 				fin_signal<='0';
-				estado<="0011";
+--				estado<="0011";
 			when final => 
 				add <="ZZZZZZZZZZZZZZZZZZZZ";
 				data_o <=x"0000";
 				reset_o<='Z';
 				r_w_O <='Z';
 				fin_signal<='1';
-				estado<="0100";
+--				estado<="0100";
 		end case;
 	end process;
 

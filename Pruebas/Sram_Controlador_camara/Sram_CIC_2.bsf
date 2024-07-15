@@ -108,13 +108,6 @@ https://fpgasoftware.intel.com/eula.
 		(text "fin_signal" (rect 151 91 187 103)(font "Arial" ))
 		(line (pt 208 96)(pt 192 96)(line_width 1))
 	)
-	(port
-		(pt 208 112)
-		(output)
-		(text "estado[3..0]" (rect 0 0 46 12)(font "Arial" ))
-		(text "estado[3..0]" (rect 141 107 187 119)(font "Arial" ))
-		(line (pt 208 112)(pt 192 112)(line_width 3))
-	)
 	(drawing
 		(rectangle (rect 16 16 192 160)(line_width 1))
 	)
