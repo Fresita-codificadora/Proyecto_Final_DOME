@@ -40,6 +40,42 @@
 					"strict" : false
 				},
 				{
+					"name" : "Led_SDA",
+					"strict" : false
+				},
+				{
+					"name" : "data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
 					"name" : "Data_sram[15]",
 					"strict" : false
 				},
@@ -101,6 +137,18 @@
 				},
 				{
 					"name" : "Data_sram[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[0]",
 					"strict" : false
 				},
 				{
@@ -256,11 +304,55 @@
 					"strict" : false
 				},
 				{
+					"name" : "Reset",
+					"strict" : false
+				},
+				{
 					"name" : "Trigger",
 					"strict" : false
 				},
 				{
-					"name" : "Reset",
+					"name" : "Pix_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_clk",
+					"strict" : false
+				},
+				{
+					"name" : "Line_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_data[0]",
 					"strict" : false
 				},
 				{
@@ -336,19 +428,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "Line_valid",
-					"strict" : false
-				},
-				{
-					"name" : "Frame_valid",
-					"strict" : false
-				},
-				{
 					"name" : "Start",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_clk",
 					"strict" : false
 				}
 			]

@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -168 136 -112 160))
+	(annotation_block (location)(rect -176 88 -120 112))
 )
 (pin
 	(input)
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -184 160 -120 184))
+	(annotation_block (location)(rect -200 136 -136 160))
 )
 (pin
 	(input)
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -208 192 -144 216))
+	(annotation_block (location)(rect -208 176 -144 200))
 )
 (pin
 	(input)
@@ -103,7 +103,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1000 136 1064 160))
+	(annotation_block (location)(rect 1016 120 1080 144))
 )
 (pin
 	(output)
@@ -120,7 +120,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1000 184 1072 208))
+	(annotation_block (location)(rect 1024 168 1096 192))
 )
 (pin
 	(output)
@@ -137,7 +137,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 992 328 1064 352))
+	(annotation_block (location)(rect 984 288 1056 312))
 )
 (pin
 	(output)
@@ -154,7 +154,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1000 104 1072 128))
+	(annotation_block (location)(rect 1008 80 1080 104))
 )
 (pin
 	(output)
@@ -189,7 +189,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 1000 160 1064 184))
+	(annotation_block (location)(rect 1024 144 1088 168))
 )
 (symbol
 	(rect 720 376 752 392)

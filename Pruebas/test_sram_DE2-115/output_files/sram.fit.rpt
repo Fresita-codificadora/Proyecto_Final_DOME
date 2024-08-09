@@ -1,5 +1,5 @@
 Fitter report for sram
-Sun Jun 30 16:30:07 2024
+Fri Aug  9 13:52:30 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -69,17 +69,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Jun 30 16:30:07 2024          ;
+; Fitter Status                      ; Successful - Fri Aug  9 13:52:30 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram                                           ;
 ; Top-level Entity Name              ; block1                                         ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 149 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 88 / 114,480 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 123 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 123                                            ;
+; Total logic elements               ; 145 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 87 / 114,480 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 122 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 122                                            ;
 ; Total pins                         ; 78 / 529 ( 15 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
@@ -153,16 +153,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
-; Maximum used               ; 12          ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processors 3-12        ;   0.2%      ;
+;     Processor 2            ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -172,8 +171,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 395 ) ; 0.00 % ( 0 / 395 )         ; 0.00 % ( 0 / 395 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 395 ) ; 0.00 % ( 0 / 395 )         ; 0.00 % ( 0 / 395 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 392 ) ; 0.00 % ( 0 / 392 )         ; 0.00 % ( 0 / 392 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 392 ) ; 0.00 % ( 0 / 392 )         ; 0.00 % ( 0 / 392 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -196,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 385 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 382 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -204,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/output_files/sram.pin.
+The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/output_files/sram.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -212,26 +211,26 @@ The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 149 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 26                      ;
-;     -- Register only                        ; 61                      ;
-;     -- Combinational with a register        ; 62                      ;
+; Total logic elements                        ; 145 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 23                      ;
+;     -- Register only                        ; 58                      ;
+;     -- Combinational with a register        ; 64                      ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
 ;     -- 4 input functions                    ; 11                      ;
 ;     -- 3 input functions                    ; 1                       ;
-;     -- <=2 input functions                  ; 76                      ;
-;     -- Register only                        ; 61                      ;
+;     -- <=2 input functions                  ; 75                      ;
+;     -- Register only                        ; 58                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 44                      ;
+;     -- normal mode                          ; 43                      ;
 ;     -- arithmetic mode                      ; 44                      ;
 ;                                             ;                         ;
-; Total registers*                            ; 123 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 123 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 122 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 122 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 15 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 14 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 78 / 529 ( 15 % )       ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -242,19 +241,19 @@ The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/
 ; Total block memory implementation bits      ; 0 / 3,981,312 ( 0 % )   ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )         ;
 ; PLLs                                        ; 0 / 4 ( 0 % )           ;
-; Global signals                              ; 3                       ;
-;     -- Global clocks                        ; 3 / 20 ( 15 % )         ;
+; Global signals                              ; 2                       ;
+;     -- Global clocks                        ; 2 / 20 ( 10 % )         ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )           ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
 ; Average interconnect usage (total/H/V)      ; 0.3% / 0.3% / 0.3%      ;
-; Peak interconnect usage (total/H/V)         ; 2.5% / 2.4% / 2.6%      ;
-; Maximum fan-out                             ; 91                      ;
+; Peak interconnect usage (total/H/V)         ; 2.4% / 2.1% / 2.8%      ;
+; Maximum fan-out                             ; 102                     ;
 ; Highest non-global fan-out                  ; 27                      ;
-; Total fan-out                               ; 749                     ;
-; Average fan-out                             ; 1.68                    ;
+; Total fan-out                               ; 748                     ;
+; Average fan-out                             ; 1.67                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -267,33 +266,33 @@ The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 149 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 26                     ; 0                              ;
-;     -- Register only                        ; 61                     ; 0                              ;
-;     -- Combinational with a register        ; 62                     ; 0                              ;
+; Total logic elements                        ; 145 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 23                     ; 0                              ;
+;     -- Register only                        ; 58                     ; 0                              ;
+;     -- Combinational with a register        ; 64                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
 ;     -- 4 input functions                    ; 11                     ; 0                              ;
 ;     -- 3 input functions                    ; 1                      ; 0                              ;
-;     -- <=2 input functions                  ; 76                     ; 0                              ;
-;     -- Register only                        ; 61                     ; 0                              ;
+;     -- <=2 input functions                  ; 75                     ; 0                              ;
+;     -- Register only                        ; 58                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 44                     ; 0                              ;
+;     -- normal mode                          ; 43                     ; 0                              ;
 ;     -- arithmetic mode                      ; 44                     ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 123                    ; 0                              ;
-;     -- Dedicated logic registers            ; 123 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 122                    ; 0                              ;
+;     -- Dedicated logic registers            ; 122 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 15 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 14 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 78                     ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ; 0 / 532 ( 0 % )                ;
 ; Total memory bits                           ; 0                      ; 0                              ;
 ; Total RAM block bits                        ; 0                      ; 0                              ;
-; Clock control block                         ; 3 / 24 ( 12 % )        ; 0 / 24 ( 0 % )                 ;
+; Clock control block                         ; 2 / 24 ( 8 % )         ; 0 / 24 ( 0 % )                 ;
 ;                                             ;                        ;                                ;
 ; Connections                                 ;                        ;                                ;
 ;     -- Input Connections                    ; 16                     ; 0                              ;
@@ -302,8 +301,8 @@ The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 744                    ; 5                              ;
-;     -- Registered Connections               ; 190                    ; 0                              ;
+;     -- Total Connections                    ; 743                    ; 5                              ;
+;     -- Registered Connections               ; 188                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 32                     ; 0                              ;
@@ -343,7 +342,7 @@ The pin-out file can be found in C:/Users/Gaspar/Desktop/sram-controller-master/
 ; Data_in[5]   ; AC26  ; 5        ; 115          ; 11           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Data_in[6]   ; AD26  ; 5        ; 115          ; 10           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Data_in[7]   ; AB26  ; 5        ; 115          ; 15           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; clk          ; Y2    ; 2        ; 0            ; 36           ; 14           ; 91                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk          ; Y2    ; 2        ; 0            ; 36           ; 14           ; 102                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; count_enable ; R24   ; 5        ; 115          ; 35           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; read_write   ; Y23   ; 5        ; 115          ; 14           ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; reset        ; M23   ; 6        ; 115          ; 40           ; 7            ; 26                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -1349,9 +1348,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
-; |block1                    ; 149 (0)     ; 123 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 78   ; 0            ; 26 (0)       ; 61 (0)            ; 62 (0)           ; |block1             ; block1      ; work         ;
-;    |contr:inst|            ; 93 (93)     ; 60 (60)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (25)      ; 9 (9)             ; 59 (59)          ; |block1|contr:inst  ; contr       ; work         ;
-;    |sram:inst1|            ; 64 (64)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 52 (52)           ; 11 (11)          ; |block1|sram:inst1  ; sram        ; work         ;
+; |block1                    ; 145 (0)     ; 122 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 78   ; 0            ; 23 (0)       ; 58 (0)            ; 64 (0)           ; |block1             ; block1      ; work         ;
+;    |contr:inst|            ; 90 (90)     ; 59 (59)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 7 (7)             ; 60 (60)          ; |block1|contr:inst  ; contr       ; work         ;
+;    |sram:inst1|            ; 63 (63)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 51 (51)           ; 12 (12)          ; |block1|sram:inst1  ; sram        ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1412,7 +1411,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDs[0]       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; dq[15]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dq[14]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dq[13]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dq[13]        ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dq[12]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dq[11]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dq[10]        ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1422,23 +1421,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dq[6]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dq[5]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dq[4]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dq[3]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; dq[3]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dq[2]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dq[1]         ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dq[0]         ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk           ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; reset         ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; reset         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; count_enable  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; read_write    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; start         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Data_in[7]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Data_in[6]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Data_in[5]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Data_in[5]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Data_in[4]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Data_in[3]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Data_in[3]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Data_in[2]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; Data_in[1]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Data_in[0]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Data_in[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +---------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1452,7 +1451,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dq[14]                                ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[14]~feeder ; 0                 ; 6       ;
 ; dq[13]                                ;                   ;         ;
-;      - sram:inst1|DATA_OUT[13]        ; 0                 ; 6       ;
+;      - sram:inst1|DATA_OUT[13]~feeder ; 1                 ; 6       ;
 ; dq[12]                                ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[12]~feeder ; 0                 ; 6       ;
 ; dq[11]                                ;                   ;         ;
@@ -1464,49 +1463,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dq[8]                                 ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[8]~feeder  ; 0                 ; 6       ;
 ; dq[7]                                 ;                   ;         ;
-;      - sram:inst1|DATA_OUT[7]         ; 0                 ; 6       ;
+;      - sram:inst1|DATA_OUT[7]~feeder  ; 0                 ; 6       ;
 ; dq[6]                                 ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[6]         ; 0                 ; 6       ;
 ; dq[5]                                 ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[5]~feeder  ; 1                 ; 6       ;
 ; dq[4]                                 ;                   ;         ;
-;      - sram:inst1|DATA_OUT[4]~feeder  ; 0                 ; 6       ;
+;      - sram:inst1|DATA_OUT[4]         ; 0                 ; 6       ;
 ; dq[3]                                 ;                   ;         ;
-;      - sram:inst1|DATA_OUT[3]         ; 1                 ; 6       ;
+;      - sram:inst1|DATA_OUT[3]~feeder  ; 0                 ; 6       ;
 ; dq[2]                                 ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[2]~feeder  ; 1                 ; 6       ;
 ; dq[1]                                 ;                   ;         ;
-;      - sram:inst1|DATA_OUT[1]         ; 1                 ; 6       ;
+;      - sram:inst1|DATA_OUT[1]~feeder  ; 1                 ; 6       ;
 ; dq[0]                                 ;                   ;         ;
 ;      - sram:inst1|DATA_OUT[0]         ; 0                 ; 6       ;
 ; clk                                   ;                   ;         ;
 ; reset                                 ;                   ;         ;
-;      - contr:inst|state.s0            ; 1                 ; 6       ;
-;      - contr:inst|state.s1            ; 1                 ; 6       ;
-;      - contr:inst|state.s2            ; 1                 ; 6       ;
-;      - contr:inst|add_count[7]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[6]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[5]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[4]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[3]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[2]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[1]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[0]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[19]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[18]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[17]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[16]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[15]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[14]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[13]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[12]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[11]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[10]       ; 1                 ; 6       ;
-;      - contr:inst|add_count[9]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[8]        ; 1                 ; 6       ;
-;      - contr:inst|add_count[10]~36    ; 1                 ; 6       ;
-;      - contr:inst|state.s3            ; 1                 ; 6       ;
-;      - contr:inst|data_reg[7]~0       ; 1                 ; 6       ;
+;      - contr:inst|state.s0            ; 0                 ; 6       ;
+;      - contr:inst|state.s1            ; 0                 ; 6       ;
+;      - contr:inst|state.s2            ; 0                 ; 6       ;
+;      - contr:inst|add_count[7]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[6]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[5]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[4]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[3]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[2]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[1]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[0]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[19]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[18]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[17]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[16]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[15]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[14]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[13]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[12]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[11]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[10]       ; 0                 ; 6       ;
+;      - contr:inst|add_count[9]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[8]        ; 0                 ; 6       ;
+;      - contr:inst|add_count[10]~36    ; 0                 ; 6       ;
+;      - contr:inst|state.s3            ; 0                 ; 6       ;
+;      - contr:inst|data_reg[7]~0       ; 0                 ; 6       ;
 ; count_enable                          ;                   ;         ;
 ;      - contr:inst|add_count[10]~36    ; 0                 ; 6       ;
 ; read_write                            ;                   ;         ;
@@ -1516,57 +1515,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - contr:inst|state.s0~0          ; 0                 ; 6       ;
 ;      - contr:inst|Selector0~0         ; 0                 ; 6       ;
 ; Data_in[7]                            ;                   ;         ;
-;      - contr:inst|data_reg[7]~feeder  ; 0                 ; 6       ;
+;      - contr:inst|data_reg[7]         ; 0                 ; 6       ;
 ; Data_in[6]                            ;                   ;         ;
 ;      - contr:inst|data_reg[6]         ; 0                 ; 6       ;
 ; Data_in[5]                            ;                   ;         ;
-;      - contr:inst|data_reg[5]         ; 1                 ; 6       ;
+;      - contr:inst|data_reg[5]         ; 0                 ; 6       ;
 ; Data_in[4]                            ;                   ;         ;
 ;      - contr:inst|data_reg[4]~feeder  ; 1                 ; 6       ;
 ; Data_in[3]                            ;                   ;         ;
-;      - contr:inst|data_reg[3]~feeder  ; 1                 ; 6       ;
+;      - contr:inst|data_reg[3]~feeder  ; 0                 ; 6       ;
 ; Data_in[2]                            ;                   ;         ;
-;      - contr:inst|data_reg[2]         ; 1                 ; 6       ;
+;      - contr:inst|data_reg[2]~feeder  ; 1                 ; 6       ;
 ; Data_in[1]                            ;                   ;         ;
-;      - contr:inst|data_reg[1]         ; 0                 ; 6       ;
+;      - contr:inst|data_reg[1]~feeder  ; 0                 ; 6       ;
 ; Data_in[0]                            ;                   ;         ;
-;      - contr:inst|data_reg[0]~feeder  ; 1                 ; 6       ;
+;      - contr:inst|data_reg[0]~feeder  ; 0                 ; 6       ;
 +---------------------------------------+-------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                       ;
-+-----------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Name                        ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; clk                         ; PIN_Y2             ; 91      ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; contr:inst|add_count[10]~36 ; LCCOMB_X20_Y17_N20 ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; contr:inst|clk_int          ; FF_X57_Y1_N31      ; 12      ; Clock                     ; yes    ; Global Clock         ; GCLK16           ; --                        ;
-; contr:inst|clk_lento        ; FF_X56_Y70_N15     ; 20      ; Clock                     ; yes    ; Global Clock         ; GCLK12           ; --                        ;
-; contr:inst|data_reg[7]~0    ; LCCOMB_X6_Y4_N28   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; contr:inst|reset_o~0        ; LCCOMB_X6_Y4_N22   ; 18      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; reset                       ; PIN_M23            ; 26      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|DATA_OUT[15]~0   ; LCCOMB_X6_Y4_N20   ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[10]~en   ; FF_X5_Y4_N29       ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[11]~en   ; FF_X5_Y4_N3        ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[12]~en   ; FF_X5_Y4_N15       ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[13]~en   ; FF_X5_Y4_N5        ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[14]~en   ; FF_X4_Y4_N7        ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[15]~en   ; FF_X5_Y4_N19       ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[8]~en    ; FF_X5_Y4_N9        ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-; sram:inst1|SRAM_DQ[9]~en    ; FF_X5_Y4_N7        ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
-+-----------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                     ;
++-----------------------------+------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                        ; Location         ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------+------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; clk                         ; PIN_Y2           ; 102     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; contr:inst|add_count[10]~36 ; LCCOMB_X11_Y4_N6 ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; contr:inst|clk_lento        ; FF_X60_Y71_N1    ; 20      ; Clock                     ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; contr:inst|data_reg[7]~0    ; LCCOMB_X9_Y4_N8  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; contr:inst|reset_o~0        ; LCCOMB_X8_Y4_N0  ; 18      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; reset                       ; PIN_M23          ; 26      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|DATA_OUT[15]~0   ; LCCOMB_X8_Y4_N12 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[10]~en   ; FF_X7_Y4_N7      ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[11]~en   ; FF_X7_Y4_N25     ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[12]~en   ; FF_X7_Y4_N11     ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[13]~en   ; FF_X7_Y4_N21     ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[14]~en   ; FF_X8_Y4_N1      ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[15]~en   ; FF_X7_Y4_N15     ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[8]~en    ; FF_X8_Y4_N23     ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; sram:inst1|SRAM_DQ[9]~en    ; FF_X8_Y4_N9      ; 1       ; Output enable             ; no     ; --                   ; --               ; --                        ;
++-----------------------------+------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                  ;
-+----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                 ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk                  ; PIN_Y2         ; 91      ; 4                                    ; Global Clock         ; GCLK4            ; --                        ;
-; contr:inst|clk_int   ; FF_X57_Y1_N31  ; 12      ; 8                                    ; Global Clock         ; GCLK16           ; --                        ;
-; contr:inst|clk_lento ; FF_X56_Y70_N15 ; 20      ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
-+----------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                 ;
++----------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                 ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk                  ; PIN_Y2        ; 102     ; 18                                   ; Global Clock         ; GCLK4            ; --                        ;
+; contr:inst|clk_lento ; FF_X60_Y71_N1 ; 20      ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
++----------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------+
@@ -1574,49 +1571,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 192 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 115 / 10,120 ( 1 % )    ;
-; C4 interconnects      ; 269 / 209,544 ( < 1 % ) ;
-; Direct links          ; 44 / 342,891 ( < 1 % )  ;
-; Global clocks         ; 3 / 20 ( 15 % )         ;
-; Local interconnects   ; 53 / 119,088 ( < 1 % )  ;
-; R24 interconnects     ; 157 / 9,963 ( 2 % )     ;
-; R4 interconnects      ; 204 / 289,782 ( < 1 % ) ;
+; Block interconnects   ; 185 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 106 / 10,120 ( 1 % )    ;
+; C4 interconnects      ; 304 / 209,544 ( < 1 % ) ;
+; Direct links          ; 46 / 342,891 ( < 1 % )  ;
+; Global clocks         ; 2 / 20 ( 10 % )         ;
+; Local interconnects   ; 59 / 119,088 ( < 1 % )  ;
+; R24 interconnects     ; 151 / 9,963 ( 2 % )     ;
+; R4 interconnects      ; 222 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 9.93) ; Number of LABs  (Total = 15) ;
-+--------------------------------------------+------------------------------+
-; 1                                          ; 3                            ;
-; 2                                          ; 1                            ;
-; 3                                          ; 2                            ;
-; 4                                          ; 0                            ;
-; 5                                          ; 0                            ;
-; 6                                          ; 0                            ;
-; 7                                          ; 0                            ;
-; 8                                          ; 0                            ;
-; 9                                          ; 0                            ;
-; 10                                         ; 0                            ;
-; 11                                         ; 1                            ;
-; 12                                         ; 0                            ;
-; 13                                         ; 0                            ;
-; 14                                         ; 0                            ;
-; 15                                         ; 1                            ;
-; 16                                         ; 7                            ;
-+--------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Logic Elements                                                         ;
++---------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 10.36) ; Number of LABs  (Total = 14) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 3                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 8                            ;
++---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.40) ; Number of LABs  (Total = 15) ;
+; LAB-wide Signals  (Average = 1.64) ; Number of LABs  (Total = 14) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 2                            ;
+; 1 Async. clear                     ; 3                            ;
 ; 1 Clock                            ; 12                           ;
-; 1 Clock enable                     ; 3                            ;
+; 1 Clock enable                     ; 4                            ;
 ; 1 Sync. clear                      ; 2                            ;
 ; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
@@ -1625,20 +1622,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.47) ; Number of LABs  (Total = 15) ;
+; Number of Signals Sourced  (Average = 18.79) ; Number of LABs  (Total = 14) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 3                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 0                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
@@ -1649,16 +1646,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 2                            ;
-; 28                                           ; 0                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 0                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 1                            ;
 ; 32                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
@@ -1666,54 +1663,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.07) ; Number of LABs  (Total = 15) ;
+; Number of Signals Sourced Out  (Average = 8.21) ; Number of LABs  (Total = 14) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 4                            ;
+; 1                                               ; 3                            ;
 ; 2                                               ; 0                            ;
-; 3                                               ; 2                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 0                            ;
 ; 5                                               ; 1                            ;
-; 6                                               ; 0                            ;
-; 7                                               ; 0                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 1                            ;
 ; 8                                               ; 0                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 2                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 0                            ;
 ; 14                                              ; 2                            ;
 ; 15                                              ; 0                            ;
-; 16                                              ; 2                            ;
+; 16                                              ; 1                            ;
+; 17                                              ; 0                            ;
+; 18                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 6.93) ; Number of LABs  (Total = 15) ;
+; Number of Distinct Inputs  (Average = 7.43) ; Number of LABs  (Total = 14) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 1                            ;
-; 2                                           ; 3                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 3                            ;
-; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 2                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 2                            ;
+; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
+; 8                                           ; 2                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
+; 15                                          ; 1                            ;
 ; 16                                          ; 0                            ;
 ; 17                                          ; 0                            ;
-; 18                                          ; 1                            ;
+; 18                                          ; 0                            ;
 ; 19                                          ; 0                            ;
-; 20                                          ; 1                            ;
+; 20                                          ; 0                            ;
+; 21                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1900,85 +1900,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------+----------------------+-------------------+
 ; Source Clock(s)      ; Destination Clock(s) ; Delay Added in ns ;
 +----------------------+----------------------+-------------------+
-; clk                  ; clk                  ; 6.9               ;
-; contr:inst|clk_lento ; clk                  ; 6.7               ;
-; contr:inst|clk_int   ; clk                  ; 2.9               ;
+; clk                  ; clk                  ; 3.6               ;
+; contr:inst|clk_lento ; clk                  ; 1.2               ;
 +----------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+----------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                              ;
-+--------------------------+-----------------------------+-------------------+
-; Source Register          ; Destination Register        ; Delay Added in ns ;
-+--------------------------+-----------------------------+-------------------+
-; contr:inst|clk_lento     ; contr:inst|clk_lento        ; 3.504             ;
-; contr:inst|clk_int       ; contr:inst|clk_int          ; 3.419             ;
-; contr:inst|cont_int[25]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[24]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[23]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[22]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[21]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[20]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[19]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[18]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[17]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[16]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[15]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[14]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[13]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[12]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[11]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[10]  ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[9]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[8]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[7]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[6]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[5]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[4]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[3]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[2]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[1]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|cont_int[0]   ; contr:inst|clk_lento        ; 0.818             ;
-; contr:inst|add_count[18] ; sram:inst1|SRAM_ADDR[18]    ; 0.484             ;
-; contr:inst|add_count[16] ; sram:inst1|SRAM_ADDR[16]    ; 0.484             ;
-; contr:inst|add_count[11] ; sram:inst1|SRAM_ADDR[11]    ; 0.484             ;
-; contr:inst|add_count[10] ; sram:inst1|SRAM_ADDR[10]    ; 0.484             ;
-; contr:inst|add_count[19] ; sram:inst1|SRAM_ADDR[19]    ; 0.484             ;
-; contr:inst|add_count[8]  ; sram:inst1|SRAM_ADDR[8]     ; 0.483             ;
-; contr:inst|add_count[6]  ; sram:inst1|SRAM_ADDR[6]     ; 0.483             ;
-; contr:inst|add_count[4]  ; sram:inst1|SRAM_ADDR[4]     ; 0.483             ;
-; contr:inst|data_reg[7]   ; sram:inst1|SRAM_DQ[15]~reg0 ; 0.343             ;
-; contr:inst|add_count[9]  ; sram:inst1|SRAM_ADDR[9]     ; 0.334             ;
-; contr:inst|add_count[1]  ; sram:inst1|SRAM_ADDR[1]     ; 0.334             ;
-; contr:inst|add_count[7]  ; sram:inst1|SRAM_ADDR[7]     ; 0.334             ;
-; contr:inst|add_count[12] ; sram:inst1|SRAM_ADDR[12]    ; 0.333             ;
-; contr:inst|state.s2      ; sram:inst1|SRAM_DQ[15]~reg0 ; 0.247             ;
-; contr:inst|add_count[15] ; sram:inst1|SRAM_ADDR[15]    ; 0.238             ;
-; contr:inst|add_count[3]  ; sram:inst1|SRAM_ADDR[3]     ; 0.237             ;
-; contr:inst|add_count[0]  ; sram:inst1|SRAM_ADDR[0]     ; 0.237             ;
-; contr:inst|add_count[13] ; sram:inst1|SRAM_ADDR[13]    ; 0.231             ;
-; contr:inst|add_count[5]  ; sram:inst1|SRAM_ADDR[5]     ; 0.230             ;
-; contr:inst|data_reg[0]   ; sram:inst1|SRAM_DQ[8]~reg0  ; 0.128             ;
-; contr:inst|data_reg[2]   ; sram:inst1|SRAM_DQ[10]~reg0 ; 0.128             ;
-; contr:inst|data_reg[4]   ; sram:inst1|SRAM_DQ[12]~reg0 ; 0.128             ;
-; contr:inst|data_reg[6]   ; sram:inst1|SRAM_DQ[14]~reg0 ; 0.128             ;
-; contr:inst|add_count[2]  ; sram:inst1|SRAM_ADDR[2]     ; 0.127             ;
-; contr:inst|data_reg[1]   ; sram:inst1|SRAM_DQ[9]~reg0  ; 0.125             ;
-; contr:inst|data_reg[3]   ; sram:inst1|SRAM_DQ[11]~reg0 ; 0.125             ;
-; contr:inst|data_reg[5]   ; sram:inst1|SRAM_DQ[13]~reg0 ; 0.125             ;
-; contr:inst|add_count[14] ; sram:inst1|SRAM_ADDR[14]    ; 0.081             ;
-; contr:inst|add_count[17] ; sram:inst1|SRAM_ADDR[17]    ; 0.079             ;
-+--------------------------+-----------------------------+-------------------+
-Note: This table only shows the top 57 path(s) that have the largest delay added for hold.
++-------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                           ;
++--------------------------+--------------------------+-------------------+
+; Source Register          ; Destination Register     ; Delay Added in ns ;
++--------------------------+--------------------------+-------------------+
+; contr:inst|clk_lento     ; contr:inst|clk_lento     ; 3.644             ;
+; contr:inst|cont_int[25]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[24]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[23]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[22]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[21]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[20]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[19]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[18]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[17]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[16]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[15]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[14]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[13]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[12]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[11]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[10]  ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[9]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[8]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[7]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[6]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[5]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[4]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[3]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[2]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[1]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|cont_int[0]   ; contr:inst|clk_lento     ; 0.910             ;
+; contr:inst|add_count[18] ; sram:inst1|SRAM_ADDR[18] ; 0.151             ;
+; contr:inst|add_count[13] ; sram:inst1|SRAM_ADDR[13] ; 0.151             ;
+; contr:inst|add_count[10] ; sram:inst1|SRAM_ADDR[10] ; 0.151             ;
+; contr:inst|add_count[8]  ; sram:inst1|SRAM_ADDR[8]  ; 0.151             ;
+; contr:inst|add_count[19] ; sram:inst1|SRAM_ADDR[19] ; 0.151             ;
+; contr:inst|add_count[6]  ; sram:inst1|SRAM_ADDR[6]  ; 0.151             ;
+; contr:inst|add_count[3]  ; sram:inst1|SRAM_ADDR[3]  ; 0.151             ;
+; contr:inst|add_count[2]  ; sram:inst1|SRAM_ADDR[2]  ; 0.151             ;
++--------------------------+--------------------------+-------------------+
+Note: This table only shows the top 35 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "sram"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2008,47 +1985,43 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DIFFCLK_1p))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node contr:inst|clk_lento  File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 35
+Info (176353): Automatically promoted node contr:inst|clk_lento  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd Line: 35
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node contr:inst|clk_lento~0 File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 35
-Info (176353): Automatically promoted node contr:inst|clk_int  File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 35
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node contr:inst|clk_int~0 File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 35
+        Info (176357): Destination node contr:inst|clk_lento~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd Line: 35
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X0_Y0 to location X10_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.31 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file C:/Users/Gaspar/Desktop/sram-controller-master/output_files/sram.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/output_files/sram.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 6312 megabytes
-    Info: Processing ended: Sun Jun 30 16:30:07 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 5423 megabytes
+    Info: Processing ended: Fri Aug  9 13:52:30 2024
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/Gaspar/Desktop/sram-controller-master/output_files/sram.fit.smsg.
+The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/output_files/sram.fit.smsg.
 
 

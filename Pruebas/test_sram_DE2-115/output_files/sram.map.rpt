@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sram
-Sun Jun 30 16:29:54 2024
+Fri Aug  9 13:52:03 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -47,15 +47,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 30 16:29:54 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug  9 13:52:03 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram                                           ;
 ; Top-level Entity Name              ; block1                                         ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 148                                            ;
-;     Total combinational functions  ; 86                                             ;
-;     Dedicated logic registers      ; 123                                            ;
-; Total registers                    ; 123                                            ;
+; Total logic elements               ; 147                                            ;
+;     Total combinational functions  ; 85                                             ;
+;     Dedicated logic registers      ; 122                                            ;
+; Total registers                    ; 122                                            ;
 ; Total pins                         ; 78                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -155,27 +155,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
-; sram.vhd                         ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd   ;         ;
-; contr.vhd                        ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd  ;         ;
-; block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Desktop/sram-controller-master/block1.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------+---------+
+; sram.vhd                         ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd   ;         ;
+; contr.vhd                        ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd  ;         ;
+; block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/block1.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -183,20 +183,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 148       ;
+; Estimated Total logic elements              ; 147       ;
 ;                                             ;           ;
-; Total combinational functions               ; 86        ;
+; Total combinational functions               ; 85        ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 11        ;
 ;     -- 3 input functions                    ; 1         ;
-;     -- <=2 input functions                  ; 74        ;
+;     -- <=2 input functions                  ; 73        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 42        ;
+;     -- normal mode                          ; 41        ;
 ;     -- arithmetic mode                      ; 44        ;
 ;                                             ;           ;
-; Total registers                             ; 123       ;
-;     -- Dedicated logic registers            ; 123       ;
+; Total registers                             ; 122       ;
+;     -- Dedicated logic registers            ; 122       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 78        ;
@@ -204,8 +204,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 91        ;
-; Total fan-out                               ; 688       ;
+; Maximum fan-out                             ; 102       ;
+; Total fan-out                               ; 685       ;
 ; Average fan-out                             ; 1.81      ;
 +---------------------------------------------+-----------+
 
@@ -215,8 +215,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |block1                    ; 86 (0)              ; 123 (0)                   ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |block1             ; block1      ; work         ;
-;    |contr:inst|            ; 84 (84)             ; 60 (60)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block1|contr:inst  ; contr       ; work         ;
+; |block1                    ; 85 (0)              ; 122 (0)                   ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |block1             ; block1      ; work         ;
+;    |contr:inst|            ; 83 (83)             ; 59 (59)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block1|contr:inst  ; contr       ; work         ;
 ;    |sram:inst1|            ; 2 (2)               ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block1|sram:inst1  ; sram        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -257,7 +257,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 123   ;
+; Total registers                              ; 122   ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 22    ;
@@ -293,24 +293,24 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 78                          ;
-; cycloneiii_ff         ; 123                         ;
+; cycloneiii_ff         ; 122                         ;
 ;     CLR               ; 22                          ;
 ;     ENA               ; 24                          ;
 ;     ENA SCLR          ; 20                          ;
-;     plain             ; 57                          ;
+;     plain             ; 56                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 90                          ;
+; cycloneiii_lcell_comb ; 89                          ;
 ;     arith             ; 44                          ;
 ;         2 data inputs ; 44                          ;
-;     normal            ; 46                          ;
+;     normal            ; 45                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
+;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 27                          ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 11                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.10                        ;
-; Average LUT depth     ; 2.89                        ;
+; Average LUT depth     ; 2.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -329,42 +329,43 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Jun 30 16:29:48 2024
+    Info: Processing started: Fri Aug  9 13:51:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram -c sram
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
-    Info (12022): Found design unit 1: sram-behav File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 28
-    Info (12023): Found entity 1: sram File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 6
+    Info (12022): Found design unit 1: sram-behav File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 28
+    Info (12023): Found entity 1: sram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file contr.vhd
-    Info (12022): Found design unit 1: contr-rtl File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 27
-    Info (12023): Found entity 1: contr File: C:/Users/Gaspar/Desktop/sram-controller-master/contr.vhd Line: 12
+    Info (12022): Found design unit 1: contr-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd Line: 27
+    Info (12023): Found entity 1: contr File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
     Info (12023): Found entity 1: block1
 Info (12127): Elaborating entity "block1" for the top level hierarchy
 Info (12128): Elaborating entity "sram" for hierarchy "sram:inst1"
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 43
-Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 43
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 43
+Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 43
 Info (12128): Elaborating entity "contr" for hierarchy "contr:inst"
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Desktop/sram-controller-master/sram.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at contr.vhd(68): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/contr.vhd Line: 68
+Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/sram.vhd Line: 22
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "CHIP_ENABLE" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 240 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 239 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 49 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 162 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Sun Jun 30 16:29:54 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info (21061): Implemented 161 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Fri Aug  9 13:52:03 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:40
 
 

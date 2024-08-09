@@ -21,9 +21,9 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 224)
+	(rect 16 16 256 256)
 	(text "CIC_SRAM_controller" (rect 5 0 99 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -164,7 +164,14 @@ https://fpgasoftware.intel.com/eula.
 		(text "trigger_cam" (rect 171 171 219 183)(font "Arial" ))
 		(line (pt 240 176)(pt 224 176)(line_width 1))
 	)
+	(port
+		(pt 240 192)
+		(output)
+		(text "estado[2..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "estado[2..0]" (rect 173 187 219 199)(font "Arial" ))
+		(line (pt 240 192)(pt 224 192)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 224 192)(line_width 1))
+		(rectangle (rect 16 16 224 224)(line_width 1))
 	)
 )

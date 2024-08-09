@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/Gaspar/Desktop/sram-controller-master/output_files/") File("sram.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sram_DE2-115/output_files/") File("sram.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Jun 30 16:29:54 2024
+Analysis & Synthesis Status : Successful - Fri Aug  9 13:52:03 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : sram
 Top-level Entity Name : block1
 Family : Cyclone IV E
-Total logic elements : 148
-    Total combinational functions : 86
-    Dedicated logic registers : 123
-Total registers : 123
+Total logic elements : 147
+    Total combinational functions : 85
+    Dedicated logic registers : 122
+Total registers : 122
 Total pins : 78
 Total virtual pins : 0
 Total memory bits : 0
