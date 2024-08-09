@@ -4,19 +4,351 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "selec[0]",
+					"name" : "Clk_camara",
 					"strict" : false
 				},
 				{
-					"name" : "selec[1]",
+					"name" : "Sca",
 					"strict" : false
 				},
 				{
-					"name" : "fin_2",
+					"name" : "SRAM_OE",
 					"strict" : false
 				},
 				{
-					"name" : "fin_1",
+					"name" : "SRAM_WE",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_UB",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_LB",
+					"strict" : false
+				},
+				{
+					"name" : "led_errase",
+					"strict" : false
+				},
+				{
+					"name" : "led_lectura",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_camara",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_sram[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[19]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[18]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[17]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[16]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[15]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[14]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[13]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[12]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[11]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[10]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_add[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sda",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SRAM_DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "Trigger",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Line_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
+					"strict" : false
+				},
+				{
+					"name" : "Pix_clk",
 					"strict" : false
 				}
 			]

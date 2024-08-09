@@ -1,5 +1,5 @@
 
-State Machine - |Todo_junto|CIC_SRAM_BLOCK:inst|Sram_CIC_2:inst3|state
+State Machine - |todo_junto_optimizado|Sram_CIC_2:inst1|state
 Name state.final state.escritura state.B_massig state.B_menossig state.idle 
 state.idle 0 0 0 0 0 
 state.B_menossig 0 0 0 1 1 
@@ -7,14 +7,17 @@ state.B_massig 0 0 1 0 1
 state.escritura 0 1 0 0 1 
 state.final 1 0 0 0 1 
 
-State Machine - |Todo_junto|trigger_handler:inst5|state
-Name state.s3 state.s2 state.s1 state.s0 
-state.s0 0 0 0 0 
-state.s1 0 0 1 1 
-state.s2 0 1 0 1 
-state.s3 1 0 0 1 
+State Machine - |todo_junto_optimizado|CIC_SRAM_controller:inst|state
+Name state.lectura state.escritura state.trigger_camara state.trigger_interno state.trigger_wait state.wait_done state.errase 
+state.errase 0 0 0 0 0 0 0 
+state.wait_done 0 0 0 0 0 1 1 
+state.trigger_wait 0 0 0 0 1 0 1 
+state.trigger_interno 0 0 0 1 0 0 1 
+state.trigger_camara 0 0 1 0 0 0 1 
+state.escritura 0 1 0 0 0 0 1 
+state.lectura 1 0 0 0 0 0 1 
 
-State Machine - |Todo_junto|Programador_controlador_block:inst1|programador:inst1|state
+State Machine - |todo_junto_optimizado|Programador_controlador_block:inst5|programador:inst1|state
 Name state.stop_2 state.stop_1 state.idle_2 state.error state.ack_fin state.ack_3 state.ack_2 state.ack_1 state.b_write_3 state.b_write_2 state.b_write_1 state.b_trans state.start_2 state.start state.idle 
 state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -32,7 +35,7 @@ state.idle_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 state.stop_1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.stop_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |Todo_junto|Programador_controlador_block:inst1|controlador:inst|state
+State Machine - |todo_junto_optimizado|Programador_controlador_block:inst5|controlador:inst|state
 Name state.done state.stop_2 state.dw_00_2 state.dp_00_2 state.dw_81 state.dp_81 state.dw_1E state.dp_1E state.dp_BA_2 state.stop_1 state.dw_02 state.dp_02 state.dw_00 state.dp_00 state.dw_07 state.dp_07 state.dp_BA state.idle 
 state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.dp_BA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
