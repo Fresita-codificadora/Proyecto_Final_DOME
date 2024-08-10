@@ -1,23 +1,33 @@
 
-State Machine - |todo_junto_optimizado|Sram_CIC_3:inst1|state
+State Machine - |todo_junto_UART|Sram_CIC_3:inst1|state
 Name state.fin state.escritura state.espero_proximo state.idle 
 state.idle 0 0 0 0 
 state.espero_proximo 0 0 1 1 
 state.escritura 0 1 0 1 
 state.fin 1 0 0 1 
 
-State Machine - |todo_junto_optimizado|CIC_SRAM_controller:inst|state
-Name state.lectura state.escritura state.trigger_camara state.trigger_interno state.trigger_wait state.wait_done state.errase state.reset_state 
-state.reset_state 0 0 0 0 0 0 0 0 
-state.errase 0 0 0 0 0 0 1 1 
-state.wait_done 0 0 0 0 0 1 0 1 
-state.trigger_wait 0 0 0 0 1 0 0 1 
-state.trigger_interno 0 0 0 1 0 0 0 1 
-state.trigger_camara 0 0 1 0 0 0 0 1 
-state.escritura 0 1 0 0 0 0 0 1 
-state.lectura 1 0 0 0 0 0 0 1 
+State Machine - |todo_junto_UART|UART_TX:inst6|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_TX_Stop_Bit r_SM_Main.s_TX_Data_Bits r_SM_Main.s_TX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_TX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_TX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_TX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
 
-State Machine - |todo_junto_optimizado|Programador_controlador_block:inst5|programador:inst1|state
+State Machine - |todo_junto_UART|CIC_SRAM_controller_UART:inst|state
+Name state.UART_mandando state.UART_send_start state.UART_terminado state.escritura state.trigger_camara state.trigger_interno state.trigger_wait state.wait_done state.errase state.reset_state 
+state.reset_state 0 0 0 0 0 0 0 0 0 0 
+state.errase 0 0 0 0 0 0 0 0 1 1 
+state.wait_done 0 0 0 0 0 0 0 1 0 1 
+state.trigger_wait 0 0 0 0 0 0 1 0 0 1 
+state.trigger_interno 0 0 0 0 0 1 0 0 0 1 
+state.trigger_camara 0 0 0 0 1 0 0 0 0 1 
+state.escritura 0 0 0 1 0 0 0 0 0 1 
+state.UART_terminado 0 0 1 0 0 0 0 0 0 1 
+state.UART_send_start 0 1 0 0 0 0 0 0 0 1 
+state.UART_mandando 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|state
 Name state.stop_2 state.stop_1 state.idle_2 state.error state.ack_fin state.ack_3 state.ack_2 state.ack_1 state.b_write_3 state.b_write_2 state.b_write_1 state.b_trans state.start_2 state.start state.idle 
 state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -35,7 +45,7 @@ state.idle_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 state.stop_1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.stop_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |todo_junto_optimizado|Programador_controlador_block:inst5|controlador:inst|state
+State Machine - |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst|state
 Name state.done state.stop_2 state.dw_00_2 state.dp_00_2 state.dw_81 state.dp_81 state.dw_1E state.dp_1E state.dp_BA_2 state.stop_1 state.dw_02 state.dp_02 state.dw_00 state.dp_00 state.dw_07 state.dp_07 state.dp_BA state.idle 
 state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.dp_BA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

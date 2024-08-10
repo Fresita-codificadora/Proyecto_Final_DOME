@@ -44,6 +44,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "UART_TX",
+					"strict" : false
+				},
+				{
 					"name" : "data[7]",
 					"strict" : false
 				},
@@ -137,6 +141,10 @@
 				},
 				{
 					"name" : "Data_sram[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[3]",
 					"strict" : false
 				},
 				{
@@ -308,10 +316,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "Trigger",
-					"strict" : false
-				},
-				{
 					"name" : "Pix_data[7]",
 					"strict" : false
 				},
@@ -356,75 +360,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "Sw[17]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[16]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[13]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[10]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Sw[0]",
+					"name" : "Trigger",
 					"strict" : false
 				},
 				{
