@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY todo_junto_UART
+set_global_assignment -name TOP_LEVEL_ENTITY todo_junto_optimizado
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:12:38  JUNE 30, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -140,6 +140,24 @@ set_location_assignment PIN_T8 -to SRAM_add[19]
 set_location_assignment PIN_AB21 -to Sca
 set_location_assignment PIN_Y17 -to Sda
 set_location_assignment PIN_M21 -to Start
+set_location_assignment PIN_AB28 -to Sw[0]
+set_location_assignment PIN_AC28 -to Sw[1]
+set_location_assignment PIN_AC27 -to Sw[2]
+set_location_assignment PIN_AD27 -to Sw[3]
+set_location_assignment PIN_AB27 -to Sw[4]
+set_location_assignment PIN_AC26 -to Sw[5]
+set_location_assignment PIN_AD26 -to Sw[6]
+set_location_assignment PIN_AB26 -to Sw[7]
+set_location_assignment PIN_AC25 -to Sw[8]
+set_location_assignment PIN_AB25 -to Sw[9]
+set_location_assignment PIN_AC24 -to Sw[10]
+set_location_assignment PIN_AB24 -to Sw[11]
+set_location_assignment PIN_AB23 -to Sw[12]
+set_location_assignment PIN_AA24 -to Sw[13]
+set_location_assignment PIN_AA23 -to Sw[14]
+set_location_assignment PIN_AA22 -to Sw[15]
+set_location_assignment PIN_Y24 -to Sw[16]
+set_location_assignment PIN_Y23 -to Sw[17]
 set_location_assignment PIN_N21 -to Trigger
 set_location_assignment PIN_G16 -to led_errase
 set_location_assignment PIN_H15 -to led_lectura

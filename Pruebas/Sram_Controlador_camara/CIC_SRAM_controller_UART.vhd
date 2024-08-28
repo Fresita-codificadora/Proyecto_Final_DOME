@@ -114,26 +114,41 @@ begin
 						state<=escritura; -- si todavia no me mandaron la señal de fin me quedo en escritura
 					end if;
 				when UART_terminado=>    --deberiamos reconocer el UART_DONE
-					if UART_done='1' then
-						state<=UART_send_start;
-						count_mem<= count_mem+1;			--uso el count_mem como señal para la memoria asi puedo barrer las direcciones 
+					if count_mem < 1_048_570 then
+						if UART_done='1' then
+							state<=UART_send_start;
+							count_mem<= count_mem+1;			--uso el count_mem como señal para la memoria asi puedo barrer las direcciones 
+						end if;
+					else							-- si ya barrimos toda la memoria ya terminamos y vamos a borrarla y a mandar otra imgen si corresponde
+						count_mem<=0;
+						start_CIC<='0';
+						state<=reset_state;
 					end if;
 				when UART_send_start =>   --debemos mandar el UART_START y ya dejarle la info que necesita la UART
-					if cuenta_trigger_camara<3 then -- como el reloj de la UART es mas lento me quedo 4 ciclos de reloj aca para asegurarme que lea el start
-						state<=uart_send_start;
-					else
-						state<=UART_mandando;
-					end if;
-					if count_mem=2**20-1 then  -- si ya barrimos toda la memoria ya terminamos y vamos a borrarla y a mandar otra imgen si corresponde
+					if count_mem < 1_048_570 then
+						if cuenta_trigger_camara<3 then -- como el reloj de la UART es mas lento me quedo 4 ciclos de reloj aca para asegurarme que lea el start
+							state<=uart_send_start;
+							cuenta_trigger_camara:=cuenta_trigger_camara+1;
+						else
+							state<=UART_mandando;
+							cuenta_trigger_camara:=0;
+						end if;
+					else  -- si ya barrimos toda la memoria ya terminamos y vamos a borrarla y a mandar otra imgen si corresponde
 						count_mem<=0;
 						start_CIC<='0';
 						state<=reset_state;
 					end if;
 				when UART_mandando =>   --le seguimos mandando la info hasta que termine la UART de mandar los datos
-					if UART_enviando='1' then -- si la uart esta mandando, nos quedamos en el estado mandando si no bamos a uart terminado
-						state<=UART_mandando;
+					if count_mem < 1_048_570 then
+						if UART_enviando='1' then -- si la uart esta mandando, nos quedamos en el estado mandando si no bamos a uart terminado
+							state<=UART_mandando;
+						else
+							state<=UART_terminado;
+						end if;
 					else
-						state<=UART_terminado;
+						count_mem<=0;
+						start_CIC<='0';
+						state<=reset_state;
 					end if;
 			end case;
 			start_CIC<='1';  -- esto esta para que entodos los casos me mande un 1 en start_CIC, exepto en el caso de lectura
