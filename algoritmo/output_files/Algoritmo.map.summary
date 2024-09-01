@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Aug 31 12:02:03 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Algoritmo
+Top-level Entity Name : Algoritmo
+Family : Cyclone IV E
+Total logic elements : 472
+    Total combinational functions : 368
+    Dedicated logic registers : 207
+Total registers : 207
+Total pins : 132
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

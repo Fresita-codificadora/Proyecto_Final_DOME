@@ -1,0 +1,19 @@
+
+State Machine - |Algoritmo|state
+Name state.decremento_indice_FIFO state.escritura state.escritura_energia_cantidad state.lectura_energia_cantidad state.casos state.lectura_ancho_3 state.dir_ancho_3 state.dir_ancho_2 state.dir_ancho_1 state.dir_anterior state.nuevo_pix state.trigger_camara state.trigger_interno state.trigger_wait state.wait_done state.errase 
+state.errase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.wait_done 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.trigger_wait 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.trigger_interno 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.trigger_camara 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.nuevo_pix 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dir_anterior 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.dir_ancho_1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.dir_ancho_2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.dir_ancho_3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.lectura_ancho_3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.casos 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.lectura_energia_cantidad 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_energia_cantidad 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.decremento_indice_FIFO 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
