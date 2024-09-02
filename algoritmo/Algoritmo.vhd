@@ -15,8 +15,8 @@ entity Algoritmo is
 	);
 	port(
 		-- entradas generales--
-		clk_i											: in	std_logic;
-		Start_i,reset_i,trigger_i				: in	std_logic;								--leer y trigger son senales externas que le avisan que debe leer los pixeles o reiniciar todo para un nueva img
+		clk_i										: in	std_logic;
+		Start_i,reset_i								: in	std_logic;								--leer y trigger son senales externas que le avisan que debe leer los pixeles o reiniciar todo para un nueva img
 		-- habilitaciones --
 		enable_done									: in std_logic;
 		-- entrada de trigger -- 				

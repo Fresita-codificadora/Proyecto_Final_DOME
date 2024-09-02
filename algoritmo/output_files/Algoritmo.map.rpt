@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Algoritmo
-Sat Aug 31 12:02:03 2024
+Sun Sep  1 22:10:03 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,19 +10,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Algoritmo|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |Algoritmo
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -49,20 +37,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 31 12:02:03 2024          ;
+; Analysis & Synthesis Status        ; Failed - Sun Sep  1 22:10:03 2024              ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Algoritmo                                      ;
-; Top-level Entity Name              ; Algoritmo                                      ;
+; Top-level Entity Name              ; algorimo_tb                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 472                                            ;
-;     Total combinational functions  ; 368                                            ;
-;     Dedicated logic registers      ; 207                                            ;
-; Total registers                    ; 207                                            ;
-; Total pins                         ; 132                                            ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -72,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Algoritmo          ; Algoritmo          ;
+; Top-level entity name                                            ; algorimo_tb        ; Algoritmo          ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,200 +149,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-; Algoritmo.vhd                    ; yes             ; User VHDL File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/Algoritmo.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 472         ;
-;                                             ;             ;
-; Total combinational functions               ; 368         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 136         ;
-;     -- 3 input functions                    ; 89          ;
-;     -- <=2 input functions                  ; 143         ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 231         ;
-;     -- arithmetic mode                      ; 137         ;
-;                                             ;             ;
-; Total registers                             ; 207         ;
-;     -- Dedicated logic registers            ; 207         ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 132         ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clk_i~input ;
-; Maximum fan-out                             ; 207         ;
-; Total fan-out                               ; 2014        ;
-; Average fan-out                             ; 2.40        ;
-+---------------------------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |Algoritmo                 ; 368 (368)           ; 207 (207)                 ; 0           ; 0            ; 0       ; 0         ; 132  ; 0            ; |Algoritmo          ; Algoritmo   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Algoritmo|state                                                                                                                                                                                                                                                                                                                                                                    ;
-+----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-------------------+-------------------+--------------------+-----------------+----------------------+-----------------------+--------------------+-----------------+--------------+
-; Name                             ; state.decremento_indice_FIFO ; state.escritura ; state.escritura_energia_cantidad ; state.lectura_energia_cantidad ; state.casos ; state.lectura_ancho_3 ; state.dir_ancho_3 ; state.dir_ancho_2 ; state.dir_ancho_1 ; state.dir_anterior ; state.nuevo_pix ; state.trigger_camara ; state.trigger_interno ; state.trigger_wait ; state.wait_done ; state.errase ;
-+----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-------------------+-------------------+--------------------+-----------------+----------------------+-----------------------+--------------------+-----------------+--------------+
-; state.errase                     ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 0            ;
-; state.wait_done                  ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 1               ; 1            ;
-; state.trigger_wait               ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 1                  ; 0               ; 1            ;
-; state.trigger_interno            ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 1                     ; 0                  ; 0               ; 1            ;
-; state.trigger_camara             ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 1                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.nuevo_pix                  ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 1               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.dir_anterior               ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 1                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.dir_ancho_1                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 1                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.dir_ancho_2                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 1                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.dir_ancho_3                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 1                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.lectura_ancho_3            ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 1                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.casos                      ; 0                            ; 0               ; 0                                ; 0                              ; 1           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.lectura_energia_cantidad   ; 0                            ; 0               ; 0                                ; 1                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.escritura_energia_cantidad ; 0                            ; 0               ; 1                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.escritura                  ; 0                            ; 1               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-; state.decremento_indice_FIFO     ; 1                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                 ; 0                 ; 0                  ; 0               ; 0                    ; 0                     ; 0                  ; 0               ; 1            ;
-+----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-------------------+-------------------+--------------------+-----------------+----------------------+-----------------------+--------------------+-----------------+--------------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; cuenta_trigger_camara[0,1]            ; Lost fanout        ;
-; Total Number of Removed Registers = 2 ;                    ;
-+---------------------------------------+--------------------+
-
-
-+----------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                            ;
-+--------------------------+--------------------+----------------------------------------+
-; Register name            ; Reason for Removal ; Registers Removed due to This Register ;
-+--------------------------+--------------------+----------------------------------------+
-; cuenta_trigger_camara[1] ; Lost Fanouts       ; cuenta_trigger_camara[0]               ;
-+--------------------------+--------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 207   ;
-; Number of registers using Synchronous Clear  ; 36    ;
-; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 68    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 190   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; indice_FIFO[10]                        ; 7       ;
-; indice_FIFO[8]                         ; 9       ;
-; indice_FIFO[1]                         ; 17      ;
-; Total number of inverted registers = 3 ;         ;
-+----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Algoritmo|indice_FIFO[0]      ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |Algoritmo|FIFO_0[6]           ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |Algoritmo|indice[11]          ;
-; 5:1                ; 21 bits   ; 63 LEs        ; 21 LEs               ; 42 LEs                 ; Yes        ; |Algoritmo|pix_previo[8]       ;
-; 8:1                ; 12 bits   ; 60 LEs        ; 36 LEs               ; 24 LEs                 ; Yes        ; |Algoritmo|maximo[1]           ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |Algoritmo|FIFO_dir_o[5]~reg0  ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Algoritmo|FIFO_dir_o[10]~reg0 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Algoritmo|indice_FIFO[1]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Algoritmo ;
-+------------------+-------+------------------------------------------------+
-; Parameter Name   ; Value ; Type                                           ;
-+------------------+-------+------------------------------------------------+
-; umbral           ; 0     ; Signed Integer                                 ;
-; cantidad_eventos ; 4096  ; Signed Integer                                 ;
-+------------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 132                         ;
-; cycloneiii_ff         ; 207                         ;
-;     CLR               ; 16                          ;
-;     ENA               ; 114                         ;
-;     ENA CLR           ; 29                          ;
-;     ENA CLR SCLR      ; 12                          ;
-;     ENA CLR SLD       ; 11                          ;
-;     ENA SCLR          ; 24                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 369                         ;
-;     arith             ; 137                         ;
-;         2 data inputs ; 93                          ;
-;         3 data inputs ; 44                          ;
-;     normal            ; 232                         ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 40                          ;
-;         3 data inputs ; 45                          ;
-;         4 data inputs ; 136                         ;
-;                       ;                             ;
-; Max LUT depth         ; 7.50                        ;
-; Average LUT depth     ; 3.77                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -363,29 +162,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Aug 31 12:01:57 2024
+    Info: Processing started: Sun Sep  1 22:09:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Algoritmo -c Algoritmo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file algoritmo.vhd
     Info (12022): Found design unit 1: Algoritmo-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/Algoritmo.vhd Line: 52
     Info (12023): Found entity 1: Algoritmo File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/Algoritmo.vhd Line: 11
-Info (12127): Elaborating entity "Algoritmo" for the top level hierarchy
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Start_i" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/Algoritmo.vhd Line: 19
-    Warning (15610): No output dependent on input pin "trigger_i" File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/Algoritmo.vhd Line: 19
-Info (21057): Implemented 605 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 63 input pins
-    Info (21059): Implemented 69 output pins
-    Info (21061): Implemented 473 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Sat Aug 31 12:02:03 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+Info (12021): Found 2 design units, including 1 entities, in source file algorimo_tb.vhd
+    Info (12022): Found design unit 1: algorimo_tb-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/algorimo_tb.vhd Line: 11
+    Info (12023): Found entity 1: algorimo_tb File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/algorimo_tb.vhd Line: 7
+Error (10405): VHDL error at algorimo_tb.vhd(167): can't determine type of object at or near identifier "read" -- found 0 possible types File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/algoritmo/algorimo_tb.vhd Line: 167
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4783 megabytes
+    Error: Processing ended: Sun Sep  1 22:10:03 2024
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:06
 
 
