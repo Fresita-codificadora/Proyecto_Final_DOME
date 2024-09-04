@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Sram_CIC
-Thu Aug 22 16:47:15 2024
+Tue Sep  3 17:56:53 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -53,15 +53,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 22 16:47:15 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep  3 17:56:53 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
 ; Top-level Entity Name              ; todo_junto_UART                                ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Total logic elements               ; 417                                            ;
 ;     Total combinational functions  ; 327                                            ;
-;     Dedicated logic registers      ; 266                                            ;
-; Total registers                    ; 266                                            ;
+;     Dedicated logic registers      ; 269                                            ;
+; Total registers                    ; 269                                            ;
 ; Total pins                         ; 93                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -201,16 +201,16 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Total combinational functions               ; 327          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 170          ;
-;     -- 3 input functions                    ; 59           ;
-;     -- <=2 input functions                  ; 98           ;
+;     -- 4 input functions                    ; 166          ;
+;     -- 3 input functions                    ; 61           ;
+;     -- <=2 input functions                  ; 100          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 261          ;
-;     -- arithmetic mode                      ; 66           ;
+;     -- normal mode                          ; 258          ;
+;     -- arithmetic mode                      ; 69           ;
 ;                                             ;              ;
-; Total registers                             ; 266          ;
-;     -- Dedicated logic registers            ; 266          ;
+; Total registers                             ; 269          ;
+;     -- Dedicated logic registers            ; 269          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 93           ;
@@ -219,7 +219,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; Clk_50~input ;
 ; Maximum fan-out                             ; 70           ;
-; Total fan-out                               ; 2036         ;
+; Total fan-out                               ; 2043         ;
 ; Average fan-out                             ; 2.56         ;
 +---------------------------------------------+--------------+
 
@@ -229,14 +229,14 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name                   ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
-; |todo_junto_UART                         ; 327 (0)             ; 266 (0)                   ; 0           ; 0            ; 0       ; 0         ; 93   ; 0            ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
+; |todo_junto_UART                         ; 327 (0)             ; 269 (0)                   ; 0           ; 0            ; 0       ; 0         ; 93   ; 0            ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
 ;    |CIC_SRAM_controller_UART:inst|       ; 132 (132)           ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|CIC_SRAM_controller_UART:inst                         ; CIC_SRAM_controller_UART      ; work         ;
 ;    |Capture_Input_Controller:inst4|      ; 24 (24)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Capture_Input_Controller:inst4                        ; Capture_Input_Controller      ; work         ;
-;    |Programador_controlador_block:inst5| ; 80 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
+;    |Programador_controlador_block:inst5| ; 78 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                 ; 47 (47)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
+;       |programador:inst1|                ; 31 (31)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
 ;    |Sram_CIC_3:inst1|                    ; 51 (51)             ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Sram_CIC_3:inst1                                      ; Sram_CIC_3                    ; work         ;
-;    |UART_TX:inst6|                       ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|UART_TX:inst6                                         ; UART_TX                       ; work         ;
+;    |UART_TX:inst6|                       ; 36 (36)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|UART_TX:inst6                                         ; UART_TX                       ; work         ;
 ;    |divisor:inst2|                       ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|divisor:inst2                                         ; divisor                       ; work         ;
 ;    |sram:inst3|                          ; 1 (1)               ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|sram:inst3                                            ; sram                          ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
@@ -379,12 +379,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 266   ;
-; Number of registers using Synchronous Clear  ; 7     ;
+; Total registers                              ; 269   ;
+; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 137   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 124   ;
+; Number of registers using Clock Enable       ; 127   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -407,8 +407,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|count[0] ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|data[1]  ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |todo_junto_UART|UART_TX:inst6|r_Clk_Count[6]                                   ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[3]         ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |todo_junto_UART|UART_TX:inst6|r_Clk_Count[9]                                   ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[2]         ;
 ; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|count_mem[2]                     ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst|count[1]  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|state                            ;
@@ -421,7 +421,7 @@ Encoding Type:  One-Hot
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; g_clks_per_bit ; 87    ; Signed Integer                    ;
+; g_clks_per_bit ; 521   ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -432,26 +432,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 93                          ;
-; cycloneiii_ff         ; 266                         ;
+; cycloneiii_ff         ; 269                         ;
 ;     CLR               ; 84                          ;
 ;     ENA               ; 64                          ;
 ;     ENA CLR           ; 53                          ;
-;     ENA SCLR          ; 7                           ;
+;     ENA SCLR          ; 10                          ;
 ;     plain             ; 58                          ;
 ; cycloneiii_io_obuf    ; 18                          ;
 ; cycloneiii_lcell_comb ; 335                         ;
-;     arith             ; 66                          ;
-;         2 data inputs ; 64                          ;
+;     arith             ; 69                          ;
+;         2 data inputs ; 67                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 269                         ;
+;     normal            ; 266                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 15                          ;
+;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 25                          ;
-;         3 data inputs ; 57                          ;
-;         4 data inputs ; 170                         ;
+;         3 data inputs ; 59                          ;
+;         4 data inputs ; 166                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.60                        ;
+; Average LUT depth     ; 2.58                        ;
 +-----------------------+-----------------------------+
 
 
@@ -470,7 +470,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Aug 22 16:46:52 2024
+    Info: Processing started: Tue Sep  3 17:56:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sram_CIC -c Sram_CIC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -592,8 +592,8 @@ Info (21057): Implemented 514 device resources after synthesis - the final resou
     Info (21061): Implemented 421 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
     Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Thu Aug 22 16:47:15 2024
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:47
+    Info: Processing ended: Tue Sep  3 17:56:53 2024
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:40
 
 

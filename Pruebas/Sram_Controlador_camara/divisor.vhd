@@ -16,7 +16,7 @@ begin
 		variable cuenta : integer range 0 to 5:=0;
 	begin
 		if rising_edge(clk_in) then
-			if cuenta=5 then
+			if cuenta=4 then
 				cuenta:=0;
 				enable<='1';
 			else

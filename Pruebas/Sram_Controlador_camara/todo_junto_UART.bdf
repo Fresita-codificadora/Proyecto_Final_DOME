@@ -837,62 +837,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 928 624 1152 736)
-	(text "UART_TX" (rect 5 0 52 12)(font "Arial" ))
-	(text "inst6" (rect 8 96 30 113)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "i_Clk" (rect 0 0 24 12)(font "Arial" ))
-		(text "i_Clk" (rect 21 27 45 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "i_TX_DV" (rect 0 0 42 12)(font "Arial" ))
-		(text "i_TX_DV" (rect 21 43 63 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "i_TX_Byte[7..0]" (rect 0 0 75 12)(font "Arial" ))
-		(text "i_TX_Byte[7..0]" (rect 21 59 96 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "o_TX_Active" (rect 0 0 61 12)(font "Arial" ))
-		(text "o_TX_Active" (rect 152 27 213 39)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32))
-	)
-	(port
-		(pt 224 48)
-		(output)
-		(text "o_TX_Serial" (rect 0 0 56 12)(font "Arial" ))
-		(text "o_TX_Serial" (rect 156 43 212 55)(font "Arial" ))
-		(line (pt 224 48)(pt 208 48))
-	)
-	(port
-		(pt 224 64)
-		(output)
-		(text "o_TX_Done" (rect 0 0 55 12)(font "Arial" ))
-		(text "o_TX_Done" (rect 157 59 212 71)(font "Arial" ))
-		(line (pt 224 64)(pt 208 64))
-	)
-	(parameter
-		"g_CLKS_PER_BIT"
-		"87"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 208 96))
-	)
-	(annotation_block (parameter)(rect 1152 584 1360 624))
-)
-(symbol
 	(rect 696 72 944 312)
 	(text "CIC_SRAM_controller_UART" (rect 5 0 147 12)(font "Arial" ))
 	(text "inst" (rect 8 224 25 236)(font "Arial" ))
@@ -1060,6 +1004,62 @@ https://fpgasoftware.intel.com/eula.
 	(drawing
 		(rectangle (rect 16 16 232 224))
 	)
+)
+(symbol
+	(rect 928 624 1152 736)
+	(text "UART_TX" (rect 5 0 52 12)(font "Arial" ))
+	(text "inst6" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "i_Clk" (rect 0 0 24 12)(font "Arial" ))
+		(text "i_Clk" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "i_TX_DV" (rect 0 0 42 12)(font "Arial" ))
+		(text "i_TX_DV" (rect 21 43 63 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "i_TX_Byte[7..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "i_TX_Byte[7..0]" (rect 21 59 96 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "o_TX_Active" (rect 0 0 61 12)(font "Arial" ))
+		(text "o_TX_Active" (rect 152 27 213 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "o_TX_Serial" (rect 0 0 56 12)(font "Arial" ))
+		(text "o_TX_Serial" (rect 156 43 212 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "o_TX_Done" (rect 0 0 55 12)(font "Arial" ))
+		(text "o_TX_Done" (rect 157 59 212 71)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64))
+	)
+	(parameter
+		"g_CLKS_PER_BIT"
+		"521"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 208 96))
+	)
+	(annotation_block (parameter)(rect 1152 584 1357 622))
 )
 (connector
 	(pt 1040 480)
