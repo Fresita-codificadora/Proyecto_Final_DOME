@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Sep  3 17:56:53 2024
+Analysis & Synthesis Status : Successful - Thu Sep  5 12:57:43 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : Sram_CIC
 Top-level Entity Name : todo_junto_UART
 Family : Cyclone IV E
-Total logic elements : 417
-    Total combinational functions : 327
-    Dedicated logic registers : 269
-Total registers : 269
+Total logic elements : 454
+    Total combinational functions : 335
+    Dedicated logic registers : 307
+Total registers : 307
 Total pins : 93
 Total virtual pins : 0
 Total memory bits : 0

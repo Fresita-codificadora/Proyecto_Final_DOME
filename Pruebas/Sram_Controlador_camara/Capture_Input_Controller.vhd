@@ -13,20 +13,23 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity Capture_Input_Controller is
     port(
-        line_valid,frame_valid,pclk,reset,enable,trigger: in std_logic;
-		  leer : out std_logic;
-		  D_in : in std_logic_vector (7 downto 0);
-		  pix_count : out integer range 0 to 1_310_721;
-		  D_out : out std_logic_vector (7 downto 0)
+			clk_gnral : in std_logic;
+			line_valid,frame_valid,pclk,reset,enable,trigger: in std_logic;
+			leer : out std_logic;
+			D_in : in std_logic_vector (7 downto 0);
+			pix_count : out integer range 0 to 1_310_721;
+			D_out : out std_logic_vector (7 downto 0)
     );
 end Capture_Input_Controller;
 
 architecture arch of Capture_Input_Controller is
-signal d_buff:std_logic_vector(7 downto 0);
-signal pix_count_int:integer range 0 to 1_310_721:=0;
+signal d_buff, intermed_buff:std_logic_vector(7 downto 0);
+signal pix_count_int,pix_count_intermed:integer range 0 to 1_310_721:=0;
+signal contador : integer range 0 to 255;
 begin
 	process(all)
 	begin
@@ -41,14 +44,21 @@ begin
 	begin	
 		if reset = '0' or trigger='1' then --or pix_count_int=1_310_721
 			pix_count_int<=0;
+			contador <=0;
 		elsif falling_edge(pclk) and enable='1' then
 			if Leer = '1' then
-				d_buff <= D_in;
+				contador<= contador+1;
+				if contador = 255 then
+					contador <=0;
+				end if;
+				d_buff <= std_logic_vector(to_unsigned(contador,8));
+				--d_buff <=D_in;
 				pix_count_int<=pix_count_int+1;
 			end if;
 		end if;
 	end process;
-	D_out<=d_buff;
+	D_out <=d_buff;
 	pix_count<=pix_count_int;
+
 end architecture;
 

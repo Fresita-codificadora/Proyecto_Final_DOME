@@ -13,7 +13,7 @@ architecture arch of divisor is
 	signal clk_int:std_logic;
 begin
 	process(clk_in)
-		variable cuenta : integer range 0 to 5:=0;
+		variable cuenta : integer range 0 to 4:=0;
 	begin
 		if rising_edge(clk_in) then
 			if cuenta=4 then

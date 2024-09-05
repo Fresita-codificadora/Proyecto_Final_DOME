@@ -17,7 +17,7 @@ library ieee;
  
 entity UART_TX is
   generic (
-    g_CLKS_PER_BIT : integer := 521     -- Needs to be set correctly
+    g_CLKS_PER_BIT : integer := 43     -- Needs to be set correctly
     );
   port (
     i_Clk       : in  std_logic;
