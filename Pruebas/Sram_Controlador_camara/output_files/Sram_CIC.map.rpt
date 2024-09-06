@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Sram_CIC
-Tue Sep  3 17:56:53 2024
+Fri Sep  6 12:33:46 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -53,15 +53,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep  3 17:56:53 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  6 12:33:46 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
 ; Top-level Entity Name              ; todo_junto_UART                                ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 417                                            ;
-;     Total combinational functions  ; 327                                            ;
-;     Dedicated logic registers      ; 269                                            ;
-; Total registers                    ; 269                                            ;
+; Total logic elements               ; 465                                            ;
+;     Total combinational functions  ; 316                                            ;
+;     Dedicated logic registers      ; 334                                            ;
+; Total registers                    ; 334                                            ;
 ; Total pins                         ; 93                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -162,34 +162,35 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                         ;
-+------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                           ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                     ; Library ;
-+------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
-; ../../Camara/programador/programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd                           ;         ;
-; ../../Camara/programador/controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd                           ;         ;
-; ../../Camara/programador/Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/Programador_controlador_block.bdf         ;         ;
-; sram.vhd                                                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd                     ;         ;
-; Capture_Input_Controller.vhd                               ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd ;         ;
-; divisor.vhd                                                ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd                  ;         ;
-; Sram_CIC_3.vhd                                             ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd               ;         ;
-; UART_TX.vhd                                                ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd                  ;         ;
-; todo_junto_UART.bdf                                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/todo_junto_UART.bdf          ;         ;
-; CIC_SRAM_controller_UART.vhd                               ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd ;         ;
-+------------------------------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                          ;
++------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                           ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                      ; Library ;
++------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
+; ../../Camara/programador/programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd                           ;         ;
+; ../../Camara/programador/controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd                           ;         ;
+; ../../Camara/programador/Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/Programador_controlador_block.bdf         ;         ;
+; sram.vhd                                                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd                     ;         ;
+; divisor.vhd                                                ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd                  ;         ;
+; Sram_CIC_3.vhd                                             ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd               ;         ;
+; UART_TX.vhd                                                ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd                  ;         ;
+; todo_junto_UART.bdf                                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/todo_junto_UART.bdf          ;         ;
+; CIC_SRAM_controller_UART.vhd                               ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd ;         ;
+; ../sram_cic_v2/captura_pixeles.vhd                         ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd                      ;         ;
++------------------------------------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -197,20 +198,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 417          ;
+; Estimated Total logic elements              ; 465          ;
 ;                                             ;              ;
-; Total combinational functions               ; 327          ;
+; Total combinational functions               ; 316          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 166          ;
-;     -- 3 input functions                    ; 61           ;
-;     -- <=2 input functions                  ; 100          ;
+;     -- 4 input functions                    ; 170          ;
+;     -- 3 input functions                    ; 33           ;
+;     -- <=2 input functions                  ; 113          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 258          ;
-;     -- arithmetic mode                      ; 69           ;
+;     -- normal mode                          ; 240          ;
+;     -- arithmetic mode                      ; 76           ;
 ;                                             ;              ;
-; Total registers                             ; 269          ;
-;     -- Dedicated logic registers            ; 269          ;
+; Total registers                             ; 334          ;
+;     -- Dedicated logic registers            ; 334          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 93           ;
@@ -218,9 +219,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; Clk_50~input ;
-; Maximum fan-out                             ; 70           ;
-; Total fan-out                               ; 2043         ;
-; Average fan-out                             ; 2.56         ;
+; Maximum fan-out                             ; 180          ;
+; Total fan-out                               ; 2204         ;
+; Average fan-out                             ; 2.58         ;
 +---------------------------------------------+--------------+
 
 
@@ -229,14 +230,14 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name                   ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
-; |todo_junto_UART                         ; 327 (0)             ; 269 (0)                   ; 0           ; 0            ; 0       ; 0         ; 93   ; 0            ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
-;    |CIC_SRAM_controller_UART:inst|       ; 132 (132)           ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|CIC_SRAM_controller_UART:inst                         ; CIC_SRAM_controller_UART      ; work         ;
-;    |Capture_Input_Controller:inst4|      ; 24 (24)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Capture_Input_Controller:inst4                        ; Capture_Input_Controller      ; work         ;
-;    |Programador_controlador_block:inst5| ; 78 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 47 (47)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 31 (31)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
-;    |Sram_CIC_3:inst1|                    ; 51 (51)             ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Sram_CIC_3:inst1                                      ; Sram_CIC_3                    ; work         ;
+; |todo_junto_UART                         ; 316 (0)             ; 334 (0)                   ; 0           ; 0            ; 0       ; 0         ; 93   ; 0            ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
+;    |CIC_SRAM_controller_UART:inst|       ; 114 (114)           ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|CIC_SRAM_controller_UART:inst                         ; CIC_SRAM_controller_UART      ; work         ;
+;    |Programador_controlador_block:inst5| ; 80 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                 ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
+;       |programador:inst1|                ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
+;    |Sram_CIC_3:inst1|                    ; 49 (49)             ; 53 (53)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|Sram_CIC_3:inst1                                      ; Sram_CIC_3                    ; work         ;
 ;    |UART_TX:inst6|                       ; 36 (36)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|UART_TX:inst6                                         ; UART_TX                       ; work         ;
+;    |captura_pixeles:inst4|               ; 31 (31)             ; 95 (95)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|captura_pixeles:inst4                                 ; captura_pixeles               ; work         ;
 ;    |divisor:inst2|                       ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|divisor:inst2                                         ; divisor                       ; work         ;
 ;    |sram:inst3|                          ; 1 (1)               ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |todo_junto_UART|sram:inst3                                            ; sram                          ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+-------------------------------+--------------+
@@ -379,12 +380,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 269   ;
+; Total registers                              ; 334   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 137   ;
+; Number of registers using Asynchronous Clear ; 203   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Clock Enable       ; 136   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -405,11 +406,11 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|count[0] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|data[1]  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|count[2] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1|data[0]  ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |todo_junto_UART|UART_TX:inst6|r_Clk_Count[9]                                   ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[2]         ;
-; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|count_mem[2]                     ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[0]         ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|count_mem[13]                    ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst|count[1]  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |todo_junto_UART|CIC_SRAM_controller_UART:inst|state                            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |todo_junto_UART|UART_TX:inst6|r_Bit_Index                                      ;
@@ -432,26 +433,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 93                          ;
-; cycloneiii_ff         ; 269                         ;
-;     CLR               ; 84                          ;
+; cycloneiii_ff         ; 334                         ;
+;     CLR               ; 141                         ;
 ;     ENA               ; 64                          ;
-;     ENA CLR           ; 53                          ;
+;     ENA CLR           ; 62                          ;
 ;     ENA SCLR          ; 10                          ;
-;     plain             ; 58                          ;
+;     plain             ; 57                          ;
 ; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 335                         ;
-;     arith             ; 69                          ;
-;         2 data inputs ; 67                          ;
+; cycloneiii_lcell_comb ; 325                         ;
+;     arith             ; 76                          ;
+;         2 data inputs ; 74                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 266                         ;
+;     normal            ; 249                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 59                          ;
-;         4 data inputs ; 166                         ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 31                          ;
+;         4 data inputs ; 170                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 2.58                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -460,7 +461,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -470,114 +471,128 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Sep  3 17:56:32 2024
+    Info: Processing started: Fri Sep  6 12:33:40 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Sram_CIC -c Sram_CIC
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gazpa/documents/github/proyecto_final_dome/camara/programador/programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 48
-    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 30
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gazpa/documents/github/proyecto_final_dome/camara/programador/controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 42
-    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 20
-Info (12021): Found 1 design units, including 1 entities, in source file /users/gazpa/documents/github/proyecto_final_dome/camara/programador/programador_controlador_block.bdf
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/gaspar/documents/github/proyecto_final_dome/camara/programador/programador.vhd
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 48
+    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/programador.vhd Line: 30
+Info (12021): Found 2 design units, including 1 entities, in source file /users/gaspar/documents/github/proyecto_final_dome/camara/programador/controlador.vhd
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 42
+    Info (12023): Found entity 1: controlador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /users/gaspar/documents/github/proyecto_final_dome/camara/programador/programador_controlador_block.bdf
     Info (12023): Found entity 1: Programador_controlador_block
 Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
-    Info (12022): Found design unit 1: sram-behav File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 28
-    Info (12023): Found entity 1: sram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 6
+    Info (12022): Found design unit 1: sram-behav File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 28
+    Info (12023): Found entity 1: sram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file capture_input_controller.vhd
-    Info (12022): Found design unit 1: Capture_Input_Controller-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd Line: 27
-    Info (12023): Found entity 1: Capture_Input_Controller File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd Line: 17
+    Info (12022): Found design unit 1: Capture_Input_Controller-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd Line: 29
+    Info (12023): Found entity 1: Capture_Input_Controller File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Capture_Input_Controller.vhd Line: 18
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
-    Info (12022): Found design unit 1: divisor-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 11
-    Info (12023): Found entity 1: divisor File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 4
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 11
+    Info (12023): Found entity 1: divisor File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file cic_sram_controller.vhd
-    Info (12022): Found design unit 1: CIC_SRAM_controller-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller.vhd Line: 44
-    Info (12023): Found entity 1: CIC_SRAM_controller File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller.vhd Line: 13
+    Info (12022): Found design unit 1: CIC_SRAM_controller-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller.vhd Line: 44
+    Info (12023): Found entity 1: CIC_SRAM_controller File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller.vhd Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file todo_junto_optimizado.bdf
     Info (12023): Found entity 1: todo_junto_optimizado
 Info (12021): Found 2 design units, including 1 entities, in source file sram_cic_3.vhd
-    Info (12022): Found design unit 1: Sram_CIC_3-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 26
-    Info (12023): Found entity 1: Sram_CIC_3 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 12
+    Info (12022): Found design unit 1: Sram_CIC_3-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 26
+    Info (12023): Found entity 1: Sram_CIC_3 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file uart_tx.vhd
-    Info (12022): Found design unit 1: UART_TX-RTL File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd Line: 33
-    Info (12023): Found entity 1: UART_TX File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd Line: 18
+    Info (12022): Found design unit 1: UART_TX-RTL File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd Line: 33
+    Info (12023): Found entity 1: UART_TX File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/UART_TX.vhd Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file todo_junto_uart.bdf
     Info (12023): Found entity 1: todo_junto_UART
 Info (12021): Found 2 design units, including 1 entities, in source file cic_sram_controller_uart.vhd
-    Info (12022): Found design unit 1: CIC_SRAM_controller_UART-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 47
-    Info (12023): Found entity 1: CIC_SRAM_controller_UART File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 15
+    Info (12022): Found design unit 1: CIC_SRAM_controller_UART-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 47
+    Info (12023): Found entity 1: CIC_SRAM_controller_UART File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file sram_cic_completo.vhd
+    Info (12022): Found design unit 1: sram_CIC_completo-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram_cic_completo.vhd Line: 26
+    Info (12023): Found entity 1: sram_CIC_completo File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram_cic_completo.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file cic_sram_controller_uart_mod.vhd
+    Info (12022): Found design unit 1: CIC_SRAM_controller_UART_mod-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART_mod.vhd Line: 51
+    Info (12023): Found entity 1: CIC_SRAM_controller_UART_mod File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART_mod.vhd Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file todo_junto_uart_2.bdf
+    Info (12023): Found entity 1: todo_junto_UART_2
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_intermed.vhd
+    Info (12022): Found design unit 1: buffer_intermed-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/buffer_intermed.vhd Line: 17
+    Info (12023): Found entity 1: buffer_intermed File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/buffer_intermed.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/gaspar/documents/github/proyecto_final_dome/pruebas/sram_cic_v2/captura_pixeles.vhd
+    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 21
+    Info (12023): Found entity 1: captura_pixeles File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 5
 Info (12127): Elaborating entity "todo_junto_UART" for the top level hierarchy
 Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst5"
 Info (12128): Elaborating entity "controlador" for hierarchy "Programador_controlador_block:inst5|controlador:inst"
 Info (12128): Elaborating entity "programador" for hierarchy "Programador_controlador_block:inst5|programador:inst1"
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst2"
 Info (12128): Elaborating entity "sram" for hierarchy "sram:inst3"
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
-Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
+Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 43
 Info (12128): Elaborating entity "CIC_SRAM_controller_UART" for hierarchy "CIC_SRAM_controller_UART:inst"
 Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:inst6"
 Info (12128): Elaborating entity "Sram_CIC_3" for hierarchy "Sram_CIC_3:inst1"
-Info (12128): Elaborating entity "Capture_Input_Controller" for hierarchy "Capture_Input_Controller:inst4"
+Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst4"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|reset_o" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 21
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 21
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[16]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[17]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[18]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[19]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
-Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 22
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|data_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|reset_o" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 21
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 21
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[16]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[17]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[18]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "Sram_CIC_3:inst1|add[19]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 20
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "CIC_SRAM_controller_UART:inst|data[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 34
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/sram.vhd Line: 22
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Reset_camara" is stuck at VCC
@@ -585,15 +600,24 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 514 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Pix_data[7]"
+    Warning (15610): No output dependent on input pin "Pix_data[6]"
+    Warning (15610): No output dependent on input pin "Pix_data[5]"
+    Warning (15610): No output dependent on input pin "Pix_data[4]"
+    Warning (15610): No output dependent on input pin "Pix_data[3]"
+    Warning (15610): No output dependent on input pin "Pix_data[2]"
+    Warning (15610): No output dependent on input pin "Pix_data[1]"
+    Warning (15610): No output dependent on input pin "Pix_data[0]"
+Info (21057): Implemented 562 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 61 output pins
     Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 421 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Tue Sep  3 17:56:53 2024
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:40
+    Info (21061): Implemented 469 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Fri Sep  6 12:33:46 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 

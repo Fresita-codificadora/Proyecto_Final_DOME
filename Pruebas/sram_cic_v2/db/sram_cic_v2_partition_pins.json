@@ -1,0 +1,381 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sca",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_camara",
+					"strict" : false
+				},
+				{
+					"name" : "clk_camara",
+					"strict" : false
+				},
+				{
+					"name" : "led_prog",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_OE",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_WE",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_UB",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_LB",
+					"strict" : false
+				},
+				{
+					"name" : "Uart_tx",
+					"strict" : false
+				},
+				{
+					"name" : "led_errase",
+					"strict" : false
+				},
+				{
+					"name" : "led_lectura",
+					"strict" : false
+				},
+				{
+					"name" : "led_active",
+					"strict" : false
+				},
+				{
+					"name" : "uart_send_led",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[15]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[14]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[13]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[12]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[11]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[10]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[9]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[8]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[7]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[6]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addrs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "estado_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "estado_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "estado_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "estado_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sram_DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "start_btn",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_clk",
+					"strict" : false
+				},
+				{
+					"name" : "line_valid",
+					"strict" : false
+				},
+				{
+					"name" : "frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

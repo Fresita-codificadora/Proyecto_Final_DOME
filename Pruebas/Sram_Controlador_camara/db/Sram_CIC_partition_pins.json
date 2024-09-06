@@ -316,7 +316,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Pix_data[7]",
+					"name" : "Trigger",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
 					"strict" : false
 				},
 				{
@@ -329,42 +333,6 @@
 				},
 				{
 					"name" : "Frame_valid",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Pix_data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Trigger",
-					"strict" : false
-				},
-				{
-					"name" : "Start",
 					"strict" : false
 				}
 			]
