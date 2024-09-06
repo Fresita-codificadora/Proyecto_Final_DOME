@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sram_cic_v2
-Fri Sep  6 19:01:46 2024
+Fri Sep  6 19:31:14 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,9 +13,9 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |sram_cic_v2_2|DUT:inst1|state
+  8. State Machine - |sram_cic_v2_2|sram_CIC:inst1|state
   9. State Machine - |sram_cic_v2_2|uart_tx:inst6|fsm_state
- 10. State Machine - |sram_cic_v2_2|DUT_2:inst9|state
+ 10. State Machine - |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|state
  11. State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|state
  12. State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst|state
  13. Registers Removed During Synthesis
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep  6 19:01:46 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  6 19:31:14 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram_cic_v2                                    ;
 ; Top-level Entity Name              ; sram_cic_v2_2                                  ;
@@ -182,14 +182,14 @@ https://fpgasoftware.intel.com/eula.
 ; captura_pixeles.vhd               ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd               ;         ;
 ; prueba_1.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd                      ;         ;
 ; uart_tx.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v                         ;         ;
-; DUT.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd                           ;         ;
 ; sram_cic_v2_2.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_cic_v2_2.bdf                 ;         ;
-; DUT_2.vhd                         ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd                         ;         ;
 ; divisor.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd                       ;         ;
 ; sram.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd                          ;         ;
 ; Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Programador_controlador_block.bdf ;         ;
 ; controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd                   ;         ;
 ; programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd                   ;         ;
+; sram_CIC.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd                      ;         ;
+; Controlador_sram_CIC_UART.vhd     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd     ;         ;
 +-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -231,8 +231,7 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name                   ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------------------------+--------------+
 ; |sram_cic_v2_2                           ; 330 (1)             ; 346 (0)                   ; 0           ; 0            ; 0       ; 0         ; 94   ; 0            ; |sram_cic_v2_2                                                       ; sram_cic_v2_2                 ; work         ;
-;    |DUT:inst1|                           ; 52 (52)             ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|DUT:inst1                                             ; DUT                           ; work         ;
-;    |DUT_2:inst9|                         ; 106 (106)           ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|DUT_2:inst9                                           ; DUT_2                         ; work         ;
+;    |Controlador_sram_CIC_UART:inst7|     ; 106 (106)           ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7                       ; Controlador_sram_CIC_UART     ; work         ;
 ;    |Programador_controlador_block:inst3| ; 81 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3                   ; Programador_controlador_block ; work         ;
 ;       |controlador:inst|                 ; 49 (49)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst  ; controlador                   ; work         ;
 ;       |programador:inst1|                ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1 ; programador                   ; work         ;
@@ -240,6 +239,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |divisor:inst4|                       ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|divisor:inst4                                         ; divisor                       ; work         ;
 ;    |prueba_1:inst2|                      ; 13 (13)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|prueba_1:inst2                                        ; prueba_1                      ; work         ;
 ;    |sram:inst8|                          ; 1 (1)               ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|sram:inst8                                            ; sram                          ; work         ;
+;    |sram_CIC:inst1|                      ; 52 (52)             ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|sram_CIC:inst1                                        ; sram_CIC                      ; work         ;
 ;    |uart_tx:inst6|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|uart_tx:inst6                                         ; uart_tx                       ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -247,7 +247,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|DUT:inst1|state                                                                            ;
+; State Machine - |sram_cic_v2_2|sram_CIC:inst1|state                                                                       ;
 +----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
 ; Name                 ; state.fin ; state.escritura_msb ; state.escritura_lsb ; state.add_increment ; state.espero_proximo ;
 +----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
@@ -274,7 +274,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|DUT_2:inst9|state                                                                                                                                       ;
+; State Machine - |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|state                                                                                                                   ;
 +-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
 ; Name                  ; state.UART_mandando ; state.UART_send_start ; state.UART_terminado ; state.escritura ; state.wait_done ; state.errase ; state.trigger_wait ; state.reset_state ;
 +-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
@@ -347,7 +347,7 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 ; Programador_controlador_block:inst3|programador:inst1|data[4]      ; Merged with Programador_controlador_block:inst3|programador:inst1|data[3]        ;
 ; Programador_controlador_block:inst3|programador:inst1|data[6]      ; Stuck at GND due to stuck port data_in                                           ;
-; DUT_2:inst9|cuenta_vueltas[1]                                      ; Stuck at GND due to stuck port data_in                                           ;
+; Controlador_sram_CIC_UART:inst7|cuenta_vueltas[1]                  ; Stuck at GND due to stuck port data_in                                           ;
 ; uart_tx:inst6|fsm_state~2                                          ; Lost fanout                                                                      ;
 ; uart_tx:inst6|fsm_state~3                                          ; Lost fanout                                                                      ;
 ; uart_tx:inst6|fsm_state~4                                          ; Lost fanout                                                                      ;
@@ -392,11 +392,11 @@ Encoding Type:  One-Hot
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |sram_cic_v2_2|uart_tx:inst6|cycle_counter[6]                                 ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|count[2] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |sram_cic_v2_2|uart_tx:inst6|bit_counter[3]                                   ;
-; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |sram_cic_v2_2|DUT:inst1|add_count[16]                                        ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |sram_cic_v2_2|sram_CIC:inst1|add_count[16]                                   ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|data[2]  ;
-; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |sram_cic_v2_2|DUT_2:inst9|count_mem[7]                                       ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|count_mem[7]                   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst|count[1]  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |sram_cic_v2_2|DUT:inst1|state                                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |sram_cic_v2_2|sram_CIC:inst1|state                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -461,7 +461,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Sep  6 19:01:40 2024
+    Info: Processing started: Fri Sep  6 19:31:07 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram_cic_v2 -c sram_cic_v2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -484,7 +484,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file dut.vhd
 Info (12021): Found 1 design units, including 1 entities, in source file sram_cic_v2_2.bdf
     Info (12023): Found entity 1: sram_cic_v2_2
 Info (12021): Found 2 design units, including 1 entities, in source file dut_2.vhd
-    Info (12022): Found design unit 1: DUT_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 48
+    Info (12022): Found design unit 1: DUT_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 44
     Info (12023): Found entity 1: DUT_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
     Info (12022): Found design unit 1: divisor-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd Line: 11
@@ -500,6 +500,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
 Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
     Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 48
     Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 30
+Info (12021): Found 2 design units, including 1 entities, in source file sram_cic.vhd
+    Info (12022): Found design unit 1: sram_CIC-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 31
+    Info (12023): Found entity 1: sram_CIC File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file controlador_sram_cic_uart.vhd
+    Info (12022): Found design unit 1: Controlador_sram_CIC_UART-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 43
+    Info (12023): Found entity 1: Controlador_sram_CIC_UART File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 15
 Info (12127): Elaborating entity "sram_cic_v2_2" for the top level hierarchy
 Warning (275011): Block or symbol "sram" of instance "inst8" overlaps another block or symbol
 Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst3"
@@ -513,69 +519,67 @@ Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" as
 Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 45
 Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 43
 Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 43
-Info (12128): Elaborating entity "DUT_2" for hierarchy "DUT_2:inst9"
-Warning (10036): Verilog HDL or VHDL warning at DUT_2.vhd(69): object "cuenta_trigger_camara" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at DUT_2.vhd(75): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 75
+Info (12128): Elaborating entity "Controlador_sram_CIC_UART" for hierarchy "Controlador_sram_CIC_UART:inst7"
 Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst6"
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(134): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 134
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(136): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 136
-Info (12128): Elaborating entity "DUT" for hierarchy "DUT:inst1"
+Info (12128): Elaborating entity "sram_CIC" for hierarchy "sram_CIC:inst1"
 Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|data_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 19
-    Warning (13049): Converted tri-state buffer "DUT:inst1|reset_o" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 21
-    Warning (13049): Converted tri-state buffer "DUT:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 21
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[16]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[17]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[18]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT:inst1|add[19]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
-    Warning (13049): Converted tri-state buffer "DUT_2:inst9|data[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|reset_o" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[16]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[17]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[18]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[19]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
 Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 22
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -589,10 +593,10 @@ Info (21057): Implemented 576 device resources after synthesis - the final resou
     Info (21059): Implemented 62 output pins
     Info (21060): Implemented 17 bidirectional pins
     Info (21061): Implemented 482 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4881 megabytes
-    Info: Processing ended: Fri Sep  6 19:01:46 2024
-    Info: Elapsed time: 00:00:06
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Fri Sep  6 19:31:14 2024
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
 
 

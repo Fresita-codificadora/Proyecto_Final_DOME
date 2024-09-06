@@ -156,12 +156,14 @@ set_location_assignment PIN_G22 -to addrs[19]
 set_global_assignment -name VHDL_FILE DUT.vhd
 set_global_assignment -name BDF_FILE sram_cic_v2_2.bdf
 set_global_assignment -name VHDL_FILE DUT_2.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE divisor.vhd
 set_global_assignment -name VHDL_FILE sram.vhd
 set_global_assignment -name BDF_FILE Programador_controlador_block.bdf
 set_global_assignment -name VHDL_FILE controlador.vhd
 set_global_assignment -name VHDL_FILE programador.vhd
+set_global_assignment -name VHDL_FILE sram_CIC.vhd
+set_global_assignment -name VHDL_FILE Controlador_sram_CIC_UART.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -2,9 +2,9 @@
 -- internas que se encargan de recibir los pixeles y escribirlos en la sram despues se los manda a la UART para que se lo mande 
 -- con suerte a una PC
 -- este archivo deberia ir de la mano de un .bdf donde se deberian encontrar los archivos 
--- SRAm
--- Sram_CIC
--- Captura_pixeles
+-- SRAM
+-- Sram_CIC_2
+-- Capture_input_controller
 -- Programador_controlador_block
 -- divisor
 -- UART_TX
@@ -12,7 +12,7 @@ library ieee;
 	use ieee.std_logic_1164.all;
 	use ieee.numeric_std.all;
 
-entity DUT_2 is
+entity Controlador_sram_CIC_UART is
 	port(
 	-- entradas-----
 		data_sram_i : in std_logic_vector(15 downto 0);
@@ -26,6 +26,8 @@ entity DUT_2 is
 		add_Sram_CIC : in std_logic_vector(19 downto 0);
 		reset_Sram,r_w_Sram,fin_Sram : in std_logic;
 	-- salidas internas --
+--		trigger_CIC : out std_logic;  -- este es el trigger que va a SRAM_CIC_2 y a capture_input_controller 
+--		enable_CIC : out std_logic;   -- enable para el CIC
 		UART_send : out std_logic;    -- señal para que envie la UART
 		UART_data : out std_logic_vector(7 downto 0);
 		-- SRAM --
@@ -33,15 +35,17 @@ entity DUT_2 is
 		data : out std_logic_vector(15 downto 0);   --señales que necesita el bloque SRAM para escribir la SRAM
 		addrs : out std_logic_vector (19 downto 0);
 		action : out std_logic;
+		-- salidas Sram_CIC_2 --
+--		start_CIC : out std_logic;		-- señal que usa sram_CIC_2 para reiniciar sin la señal de reset
 	-- salidas externas--
 		led_errase,led_lectura: out std_logic;      -- señales para marcar la finalizacion de ciertos procesos 
-
+--		trigger_cam : out std_logic;					-- trigger que le tengo que mandar a la camara
 		estado : out integer range 0 to 9
 	);
 
 end entity;
 
-architecture rtl of DUT_2 is
+architecture rtl of Controlador_sram_CIC_UART is
 
 	-- Build an enumerated type for the state machine
 	type state_type is (reset_state, trigger_wait, errase, wait_done, escritura, UART_terminado, UART_send_start,UART_mandando);
@@ -51,15 +55,23 @@ architecture rtl of DUT_2 is
 
 	-- signal internas --
 	signal count_mem : integer range 0 to 2**20-1:=0;
+	signal clk_25	: std_logic;
 	signal cuenta_vueltas : integer range 0 to 3;
 begin
-
+--	clk_interno:process(clk)
+--	begin
+--		if rising_edge(clk) then
+--			clk_25<= not clk_25;
+--		end if;
+--	end process;
 	-- Logic to advance to the next state
-	process (clk, reset)
+	process (clk_25, reset)
+		variable cuenta_trigger_camara : integer range 0 to 9;
 	begin
 		if reset = '0' then
 			state <= reset_state;
 			count_mem<=0;
+			cuenta_trigger_camara:=0;
 		elsif (rising_edge(clk)) then
 			case state is
 				when reset_state =>

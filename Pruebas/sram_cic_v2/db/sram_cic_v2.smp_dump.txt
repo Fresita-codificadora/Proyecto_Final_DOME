@@ -1,5 +1,5 @@
 
-State Machine - |sram_cic_v2_2|DUT:inst1|state
+State Machine - |sram_cic_v2_2|sram_CIC:inst1|state
 Name state.fin state.escritura_msb state.escritura_lsb state.add_increment state.espero_proximo 
 state.espero_proximo 0 0 0 0 0 
 state.add_increment 0 0 0 1 1 
@@ -14,7 +14,7 @@ fsm_state.FSM_START 0 0 1 1
 fsm_state.FSM_SEND 0 1 0 1 
 fsm_state.FSM_STOP 1 0 0 1 
 
-State Machine - |sram_cic_v2_2|DUT_2:inst9|state
+State Machine - |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|state
 Name state.UART_mandando state.UART_send_start state.UART_terminado state.escritura state.wait_done state.errase state.trigger_wait state.reset_state 
 state.reset_state 0 0 0 0 0 0 0 0 
 state.trigger_wait 0 0 0 0 0 0 1 1 

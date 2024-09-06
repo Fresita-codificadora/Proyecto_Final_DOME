@@ -12,7 +12,7 @@ library ieee;
 	use ieee.std_logic_1164.all;
 	use ieee.numeric_std.all;
 
-entity DUT_2 is
+entity Controlador_sram_CIC_UART is
 	port(
 	-- entradas-----
 		data_sram_i : in std_logic_vector(15 downto 0);
@@ -20,7 +20,7 @@ entity DUT_2 is
 		reset	 : in	std_logic;
 		trigger : in std_logic;		-- señal de trigger proveniente de un boton
 		enable_done : in std_logic; -- esta señal deberia venir de programador_controlador_block
-		UART_enviando,UART_done : in std_logic; --señales que marcan en que estado esta la UART
+		UART_enviando : in std_logic; --señales que marcan en que estado esta la UART
 		-- entrada de Sram_CIC_2--
 		data_Sram_CIC : in std_logic_vector(15 downto 0);  -- estas son las señales provenientes de SRAM_CIC_2
 		add_Sram_CIC : in std_logic_vector(19 downto 0);
@@ -35,13 +35,12 @@ entity DUT_2 is
 		action : out std_logic;
 	-- salidas externas--
 		led_errase,led_lectura: out std_logic;      -- señales para marcar la finalizacion de ciertos procesos 
-
 		estado : out integer range 0 to 9
 	);
 
 end entity;
 
-architecture rtl of DUT_2 is
+architecture rtl of Controlador_sram_CIC_UART is
 
 	-- Build an enumerated type for the state machine
 	type state_type is (reset_state, trigger_wait, errase, wait_done, escritura, UART_terminado, UART_send_start,UART_mandando);
@@ -53,8 +52,8 @@ architecture rtl of DUT_2 is
 	signal count_mem : integer range 0 to 2**20-1:=0;
 	signal cuenta_vueltas : integer range 0 to 3;
 begin
-
 	-- Logic to advance to the next state
+	
 	process (clk, reset)
 	begin
 		if reset = '0' then
@@ -100,7 +99,6 @@ begin
 						end if;
 					else							-- si ya barrimos toda la memoria ya terminamos y vamos a borrarla y a mandar otra imgen si corresponde
 						count_mem<=0;
---						start_CIC<='0';
 						state<=reset_state;
 					end if;
 				when UART_send_start =>   --debemos mandar el UART_START y ya dejarle la info que necesita la UART
@@ -108,7 +106,6 @@ begin
 						state<=UART_mandando;
 					else  -- si ya barrimos toda la memoria ya terminamos y vamos a borrarla y a mandar otra imgen si corresponde
 						count_mem<=0;
---						start_CIC<='0';
 						state<=reset_state;
 					end if;
 				when UART_mandando =>   --le seguimos mandando la info hasta que termine la UART de mandar los datos
@@ -120,11 +117,9 @@ begin
 						end if;
 					else
 						count_mem<=0;
---						start_CIC<='0';
 						state<=reset_state;
 					end if;
 			end case;
---			start_CIC<='1';  -- esto esta para que entodos los casos me mande un 1 en start_CIC, exepto en el caso de lectura
 		end if;
 	end process;
 
@@ -132,9 +127,7 @@ begin
 	process (all)
 	begin
 		case state is
-			when reset_state=>
---				trigger_CIC <= '0';
---				enable_CIC <= '0';  
+			when reset_state=> 
 				-- SRAM --
 				reset_n <= '0'; --reseteamos la sram
 				data <= (others=>'0');   -- todo en cero
@@ -143,13 +136,10 @@ begin
 			-- salidas externas--
 				led_errase <='0';
 				led_lectura<='0';
---				trigger_cam <='0';
 				estado<=0;
 				UART_send<='0';
 				UART_data<=(others=>'0');
 			when errase =>
---				trigger_CIC <= '0';
---				enable_CIC <= '0';  
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'0');   -- todo en cero
@@ -158,13 +148,10 @@ begin
 			-- salidas externas--
 				led_errase <='0';
 				led_lectura<='0';
---				trigger_cam <='0';
 				estado<=1;
 				UART_send<='0';
 				UART_data<=(others=>'0');
-			when wait_done =>
---				trigger_CIC <= '0';
---				enable_CIC <= '0';  
+			when wait_done => 
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'0');   -- todo en cero
@@ -173,13 +160,10 @@ begin
 			-- salidas externas--
 				led_errase <='1'; -- el errase ya se hizo se mantiene prendido
 				led_lectura<='0';
---				trigger_cam <='0';
 				estado<=2;
 				UART_send<='0';
 				UART_data<=(others=>'0');
-			when trigger_wait =>
---				trigger_CIC <= '0';
---				enable_CIC <= '0';  
+			when trigger_wait => 
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'0');   
@@ -188,41 +172,10 @@ begin
 			-- salidas externas--
 				led_errase <='1';   -- el errase ya se hizo se mantiene prendido
 				led_lectura<='0';
---				trigger_cam <='0';
 				estado<=3;
 				UART_send<='0';
 				UART_data<=(others=>'0');
---			when trigger_interno =>
---				trigger_CIC <= '1'; -- mandamos trigger interno
---				enable_CIC <= '1';  -- habilitamos
---				-- SRAM --
---				reset_n <= '1';
---				data <= (others=>'0');  
---				addrs <= (others=>'0');
---				action <='1';				-- modo escritura sram
---			-- salidas externas--
---				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
---				led_lectura<='0';
---				trigger_cam <='0';
---				estado<=4;
---				UART_send<='0';
---			when trigger_camara =>
---				trigger_CIC <= '0'; -- listo con el trigger interno
---				enable_CIC <= '1';  -- seguimos hablitando
---				-- SRAM --
---				reset_n <= reset_Sram;
---				data <= data_Sram_CIC;         -- ahora sram es un bypass a las entradas de CIC
---				addrs <= add_Sram_CIC;
---				action <=r_w_Sram;      
---			-- salidas externas--
---				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
---				led_lectura<='0';
---				trigger_cam <='1';      -- mandamos el trigger a la camara
---				estado<=5;
---				UART_send<='0';
 			when escritura =>
---				trigger_CIC <= '0'; -- listo con el trigger interno
---				enable_CIC <= '1';  -- seguimos hablitando
 				-- SRAM --
 				reset_n <= reset_Sram;
 				data <= data_Sram_CIC;         -- ahora sram es un bypass a las entradas de CIC
@@ -231,13 +184,10 @@ begin
 			-- salidas externas--
 				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
 				led_lectura<='0';
---				trigger_cam <='0';      -- listo con el trigger a la camara
 				estado<=6;
 				UART_send<='0';
 				UART_data<=(others=>'0');
 			when UART_terminado =>
---				trigger_CIC <= '0'; -- listo con el trigger interno
---				enable_CIC <= '1';  -- seguimos hablitando
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'Z');         
@@ -246,13 +196,10 @@ begin
 			-- salidas externas--
 				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
 				led_lectura<='1';			-- prendemos por que esta hablitada la lectura
---				trigger_cam <='0';      -- listo con el trigger a la camara
 				estado<=7;
 				UART_send<='0';
 				UART_data<=(others=>'0');		
 			when UART_send_start =>
---				trigger_CIC <= '0'; -- listo con el trigger interno
---				enable_CIC <= '1';  -- seguimos hablitando
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'Z');         
@@ -261,7 +208,6 @@ begin
 			-- salidas externas--
 				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
 				led_lectura<='1';			-- prendemos por que esta hablitada la lectura
---				trigger_cam <='0';      -- listo con el trigger a la camara
 				estado<=8;
 				UART_send<='1';         -- mandamos el start
 				if cuenta_vueltas<1 then
@@ -270,8 +216,6 @@ begin
 					Uart_data<=data_sram_i(15 downto 8);
 				end if;
 			when UART_mandando =>
---				trigger_CIC <= '0'; -- listo con el trigger interno
---				enable_CIC <= '1';  -- seguimos hablitando
 				-- SRAM --
 				reset_n <= '1';
 				data <= (others=>'Z');         
@@ -280,7 +224,6 @@ begin
 			-- salidas externas--
 				led_errase <='1';			-- el errase ya se hizo se mantiene prendido
 				led_lectura<='1';			-- prendemos por que esta hablitada la lectura
---				trigger_cam <='0';      -- listo con el trigger a la camara
 				estado<=9;
 				UART_send<='0';         -- dejamos de mandar el start
 				if cuenta_vueltas<1 then

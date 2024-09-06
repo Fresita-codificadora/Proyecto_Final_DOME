@@ -1,5 +1,5 @@
 Fitter report for sram_cic_v2
-Fri Sep  6 19:02:00 2024
+Fri Sep  6 19:31:27 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep  6 19:02:00 2024          ;
+; Fitter Status                      ; Successful - Fri Sep  6 19:31:27 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram_cic_v2                                    ;
 ; Top-level Entity Name              ; sram_cic_v2_2                                  ;
@@ -163,7 +163,7 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.5%      ;
-;     Processors 3-12        ;   0.4%      ;
+;     Processors 3-12        ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -1405,8 +1405,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Compilation Hierarchy Node               ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                  ; Entity Name                   ; Library Name ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------+-------------------------------+--------------+
 ; |sram_cic_v2_2                           ; 452 (1)     ; 346 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 94   ; 0            ; 106 (1)      ; 120 (0)           ; 226 (0)          ; |sram_cic_v2_2                                                       ; sram_cic_v2_2                 ; work         ;
-;    |DUT:inst1|                           ; 75 (75)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 23 (23)           ; 43 (43)          ; |sram_cic_v2_2|DUT:inst1                                             ; DUT                           ; work         ;
-;    |DUT_2:inst9|                         ; 106 (106)   ; 29 (29)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 0 (0)             ; 68 (68)          ; |sram_cic_v2_2|DUT_2:inst9                                           ; DUT_2                         ; work         ;
+;    |Controlador_sram_CIC_UART:inst7|     ; 106 (106)   ; 29 (29)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 0 (0)             ; 68 (68)          ; |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7                       ; Controlador_sram_CIC_UART     ; work         ;
 ;    |Programador_controlador_block:inst3| ; 91 (0)      ; 55 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (0)       ; 10 (0)            ; 45 (0)           ; |sram_cic_v2_2|Programador_controlador_block:inst3                   ; Programador_controlador_block ; work         ;
 ;       |controlador:inst|                 ; 55 (55)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 5 (5)             ; 30 (30)          ; |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst  ; controlador                   ; work         ;
 ;       |programador:inst1|                ; 41 (41)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 5 (5)             ; 20 (20)          ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1 ; programador                   ; work         ;
@@ -1414,6 +1413,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;    |divisor:inst4|                       ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 4 (4)            ; |sram_cic_v2_2|divisor:inst4                                         ; divisor                       ; work         ;
 ;    |prueba_1:inst2|                      ; 13 (13)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 9 (9)            ; |sram_cic_v2_2|prueba_1:inst2                                        ; prueba_1                      ; work         ;
 ;    |sram:inst8|                          ; 72 (72)     ; 71 (71)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 22 (22)           ; 49 (49)          ; |sram_cic_v2_2|sram:inst8                                            ; sram                          ; work         ;
+;    |sram_CIC:inst1|                      ; 75 (75)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 23 (23)           ; 43 (43)          ; |sram_cic_v2_2|sram_CIC:inst1                                        ; sram_CIC                      ; work         ;
 ;    |uart_tx:inst6|                       ; 48 (48)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 35 (35)          ; |sram_cic_v2_2|uart_tx:inst6                                         ; uart_tx                       ; work         ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1572,13 +1572,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - uart_tx:inst6|data_to_send[5]                                       ; 1                 ; 6       ;
 ;      - uart_tx:inst6|data_to_send[6]                                       ; 1                 ; 6       ;
 ;      - uart_tx:inst6|data_to_send[7]                                       ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.reset_state                                       ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.errase                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.wait_done                                         ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.escritura                                         ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.UART_terminado                                    ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.UART_send_start                                   ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.UART_mandando                                     ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.reset_state                   ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.errase                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.wait_done                     ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.escritura                     ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.UART_terminado                ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.UART_send_start               ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.UART_mandando                 ; 1                 ; 6       ;
 ;      - uart_tx:inst6|fsm_state.FSM_STOP                                    ; 1                 ; 6       ;
 ;      - uart_tx:inst6|fsm_state.FSM_SEND                                    ; 1                 ; 6       ;
 ;      - uart_tx:inst6|fsm_state.FSM_START                                   ; 1                 ; 6       ;
@@ -1593,32 +1593,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - uart_tx:inst6|cycle_counter[8]                                      ; 1                 ; 6       ;
 ;      - uart_tx:inst6|cycle_counter[9]                                      ; 1                 ; 6       ;
 ;      - Programador_controlador_block:inst3|controlador:inst|count[1]~0     ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[3]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[19]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[18]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[17]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[16]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[15]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[14]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[13]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[12]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[11]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[10]                                           ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[9]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[8]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[7]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[6]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[5]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[4]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[2]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[1]                                            ; 1                 ; 6       ;
-;      - DUT_2:inst9|count_mem[0]                                            ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[3]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[19]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[18]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[17]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[16]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[15]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[14]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[13]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[12]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[11]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[10]                       ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[9]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[8]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[7]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[6]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[5]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[4]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[2]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[1]                        ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|count_mem[0]                        ; 1                 ; 6       ;
 ;      - uart_tx:inst6|fsm_state~9                                           ; 1                 ; 6       ;
 ;      - captura_pixeles:inst|clk_rapido~0                                   ; 1                 ; 6       ;
-;      - DUT_2:inst9|state.trigger_wait                                      ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|state.trigger_wait                  ; 1                 ; 6       ;
 ;      - uart_tx:inst6|data_to_send[0]~17                                    ; 1                 ; 6       ;
 ;      - uart_tx:inst6|bit_counter[0]~0                                      ; 1                 ; 6       ;
-;      - DUT_2:inst9|cuenta_vueltas[0]~0                                     ; 1                 ; 6       ;
+;      - Controlador_sram_CIC_UART:inst7|cuenta_vueltas[0]~0                 ; 1                 ; 6       ;
 ; trigger_btn                                                                ;                   ;         ;
 ;      - prueba_1:inst2|inicio~0                                             ; 0                 ; 6       ;
 ;      - prueba_1:inst2|trigger_prev~0                                       ; 0                 ; 6       ;
@@ -1683,12 +1683,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                             ; Location            ; Fan-Out ; Usage                                 ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
-; DUT:inst1|add_count[16]~60                                       ; LCCOMB_X81_Y5_N4    ; 20      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; DUT:inst1|pix_previo[20]~0                                       ; LCCOMB_X80_Y5_N20   ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; DUT:inst1|pix_previo[20]~1                                       ; LCCOMB_X82_Y5_N10   ; 21      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; DUT:inst1|state.fin                                              ; FF_X81_Y5_N1        ; 25      ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
-; DUT:inst1|vec_salida_lsb[7]~0                                    ; LCCOMB_X80_Y5_N28   ; 9       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; DUT_2:inst9|state.reset_state                                    ; FF_X74_Y8_N13       ; 25      ; Async. clear, Clock enable            ; no     ; --                   ; --               ; --                        ;
+; Controlador_sram_CIC_UART:inst7|state.reset_state                ; FF_X74_Y8_N13       ; 25      ; Async. clear, Clock enable            ; no     ; --                   ; --               ; --                        ;
 ; Programador_controlador_block:inst3|controlador:inst|clk_int     ; FF_X56_Y72_N5       ; 24      ; Clock                                 ; yes    ; Global Clock         ; GCLK10           ; --                        ;
 ; Programador_controlador_block:inst3|controlador:inst|clk_int_2   ; FF_X55_Y72_N5       ; 20      ; Clock                                 ; yes    ; Global Clock         ; GCLK11           ; --                        ;
 ; Programador_controlador_block:inst3|controlador:inst|count[1]~0  ; LCCOMB_X102_Y21_N26 ; 19      ; Async. clear                          ; no     ; --                   ; --               ; --                        ;
@@ -1721,6 +1716,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sram:inst8|SRAM_DQ[7]~en                                         ; FF_X73_Y8_N3        ; 1       ; Output enable                         ; no     ; --                   ; --               ; --                        ;
 ; sram:inst8|SRAM_DQ[8]~en                                         ; FF_X74_Y8_N1        ; 1       ; Output enable                         ; no     ; --                   ; --               ; --                        ;
 ; sram:inst8|SRAM_DQ[9]~en                                         ; FF_X74_Y8_N7        ; 1       ; Output enable                         ; no     ; --                   ; --               ; --                        ;
+; sram_CIC:inst1|add_count[16]~60                                  ; LCCOMB_X81_Y5_N4    ; 20      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; sram_CIC:inst1|pix_previo[20]~0                                  ; LCCOMB_X80_Y5_N20   ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; sram_CIC:inst1|pix_previo[20]~1                                  ; LCCOMB_X82_Y5_N10   ; 21      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; sram_CIC:inst1|state.fin                                         ; FF_X81_Y5_N1        ; 25      ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
+; sram_CIC:inst1|vec_salida_lsb[7]~0                               ; LCCOMB_X80_Y5_N28   ; 9       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
 ; uart_tx:inst6|Equal0~2                                           ; LCCOMB_X73_Y5_N4    ; 15      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
 ; uart_tx:inst6|data_to_send[0]~17                                 ; LCCOMB_X73_Y8_N10   ; 7       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
@@ -2188,7 +2188,7 @@ Info (176353): Automatically promoted node divisor:inst4|clk_int  File: C:/Users
 Info (176353): Automatically promoted node captura_pixeles:inst|clk_rapido~0 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node DUT:inst1|pix_previo[20]~1 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 48
+        Info (176357): Destination node sram_CIC:inst1|pix_previo[20]~1 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 53
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -2223,18 +2223,18 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.43 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.44 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/output_files/sram_cic_v2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 6322 megabytes
-    Info: Processing ended: Fri Sep  6 19:02:00 2024
-    Info: Elapsed time: 00:00:13
+    Info: Peak virtual memory: 6312 megabytes
+    Info: Processing ended: Fri Sep  6 19:31:27 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:09
 
 
