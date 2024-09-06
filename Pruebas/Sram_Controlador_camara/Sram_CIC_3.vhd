@@ -35,12 +35,12 @@ architecture rtl of Sram_CIC_3 is
 	signal add_count : integer range 0 to 2**20-1:=0;
 	signal pix_previo : integer range 0 to 1_310_721;
 begin
-	div_clk:process (clk) -- no se si lo necesito
-	begin
-		if rising_edge(clk) then
-			clk_int<= not clk_int;
-		end if;
-	end process;
+--	div_clk:process (clk) -- no se si lo necesito
+--	begin
+--		if rising_edge(clk) then
+--			clk_int<= not clk_int;
+--		end if;
+--	end process;
 	-- Logic to advance to the next state
 	process (all)
 	begin
@@ -48,15 +48,16 @@ begin
 			state <= idle;
 			data_reg <=x"00";
 			add_count <=0;
-		elsif (rising_edge(clk_int)) then
+		elsif (rising_edge(clk)) then
 			case state is
 				when idle=>
 					if pix_cnt<1_310_719 then
-						if leer = '1' then
-							state <= espero_proximo;
-						else
-							state <= idle;
-						end if;
+						state<= espero_proximo;
+--						if leer = '1' then
+--							state <= espero_proximo;
+--						else
+--							state <= idle;
+--						end if;
 					else
 						state<=fin;
 					end if;

@@ -217,13 +217,13 @@ SRAM_add[2]                  : AE7       : output : 2.5 V             :         
 SRAM_WE                      : AE8       : output : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE10      :        :                   :         : 3         :                
-led_estado[0]                : AE11      : output : 2.5 V             :         : 3         : N              
-led_estado[3]                : AE12      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE11      :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE15      :        :                   :         : 4         :                
+UART_TX                      : AE15      : output : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4         :                
+led_estado[0]                : AE17      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE18      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE19      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE20      :        :                   :         : 4         :                
@@ -245,13 +245,13 @@ SRAM_DQ[7]                   : AF7       : bidir  : 2.5 V             :         
 SRAM_CE                      : AF8       : output : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3         :                
-led_estado[1]                : AF11      : output : 2.5 V             :         : 3         : N              
-led_estado[2]                : AF12      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF12      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 4         :                
 Line_valid                   : AF16      : input  : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF17      :        :                   :         : 4         :                
+led_estado[3]                : AF17      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4         :                
@@ -280,7 +280,7 @@ GND+                         : AG14      :        :                   :         
 GND+                         : AG15      :        :                   :         : 4         :                
 GND                          : AG16      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG17      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG18      :        :                   :         : 4         :                
+led_estado[2]                : AG18      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG19      :        :                   :         : 4         :                
 GND                          : AG20      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4         :                
@@ -310,9 +310,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AH17      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH18      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH19      :        :                   :         : 4         :                
 VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH21      :        :                   :         : 4         :                
+led_estado[1]                : AH21      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4         :                
-UART_TX                      : AH23      : output : 2.5 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4         :                
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH25      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 4         :                

@@ -316,6 +316,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "Trigger",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
+					"strict" : false
+				},
+				{
 					"name" : "Pix_clk",
 					"strict" : false
 				},
@@ -325,14 +333,6 @@
 				},
 				{
 					"name" : "Frame_valid",
-					"strict" : false
-				},
-				{
-					"name" : "Trigger",
-					"strict" : false
-				},
-				{
-					"name" : "Start",
 					"strict" : false
 				}
 			]

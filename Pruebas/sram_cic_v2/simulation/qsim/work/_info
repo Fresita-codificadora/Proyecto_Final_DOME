@@ -1,0 +1,248 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/simulation/qsim
+Ehard_block
+Z1 w1725567370
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+!i122 12
+R0
+Z8 8sram_cic_v2.vho
+Z9 Fsram_cic_v2.vho
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1725567371
+!i10b 1
+Z12 !s108 1725567371.000000
+Z13 !s90 -work|work|sram_cic_v2.vho|
+Z14 !s107 sram_cic_v2.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 12
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eprueba_1
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 12
+R0
+R8
+R9
+l0
+Z19 L80 1
+VTn6Io1N^;LLWHZjHG7N9g2
+!s100 6_[Y3FmeJhO6ze]C7EkcO2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 8 prueba_1 0 22 Tn6Io1N^;LLWHZjHG7N9g2
+!i122 12
+l148
+L96 511
+V3bE6Q`^2c2VMl8[Ra[EMe0
+!s100 F`d3bhaFNED6baQaQmTRY0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eprueba_1_vhd_vec_tst
+R1
+R5
+R6
+!i122 13
+R0
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
+l0
+Z22 L32 1
+VZ4S?DRnBQF_PEM9;KVcg?1
+!s100 <AIV?S;9RRRfzBc;bV4KB0
+R10
+32
+R11
+!i10b 1
+R12
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Aprueba_1_arch
+R5
+R6
+Z25 DEx4 work 20 prueba_1_vhd_vec_tst 0 22 Z4S?DRnBQF_PEM9;KVcg?1
+!i122 13
+l49
+L34 48
+VAOz`WodV46KM7E9L?2Z<H0
+!s100 MX130H?VCKVnQkO=bESH;0
+R10
+32
+R11
+!i10b 1
+R12
+R23
+R24
+!i113 1
+R15
+R16
+Esram_cic_v2
+Z26 w1725567194
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+!i122 6
+R0
+R8
+R9
+l0
+R19
+VjR8ADXK_DIh[6M]kd0A;i2
+!s100 @nf@h3=0h_XRfTNLEHaVe2
+R10
+32
+Z27 !s110 1725567195
+!i10b 1
+Z28 !s108 1725567194.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 11 sram_cic_v2 0 22 jR8ADXK_DIh[6M]kd0A;i2
+!i122 6
+l519
+L152 6517
+V9l?HJ9l4KJ1`@z=KSRA_60
+!s100 Ie@ij?oz8iAY4nTJG[ZhP1
+R10
+32
+R27
+!i10b 1
+R28
+R13
+R14
+!i113 1
+R15
+R16
+Esram_cic_v2_vhd_vec_tst
+Z29 w1725567193
+R5
+R6
+!i122 7
+R0
+R20
+R21
+l0
+R22
+V6N24X1`DDS:JOMz9Bg9HO2
+!s100 nRZJj1j^RQnIcJFIafBGk1
+R10
+32
+R27
+!i10b 1
+Z30 !s108 1725567195.000000
+R23
+R24
+!i113 1
+R15
+R16
+Asram_cic_v2_arch
+R5
+R6
+DEx4 work 23 sram_cic_v2_vhd_vec_tst 0 22 6N24X1`DDS:JOMz9Bg9HO2
+!i122 7
+l71
+L34 70
+Vbm0dlif@XhGC4Qe<2jj_X3
+!s100 nANCze=33=@M?S_SzGFWL2
+R10
+32
+R27
+!i10b 1
+R30
+R23
+R24
+!i113 1
+R15
+R16

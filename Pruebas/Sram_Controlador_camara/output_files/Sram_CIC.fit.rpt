@@ -1,5 +1,5 @@
 Fitter report for Sram_CIC
-Thu Sep  5 12:58:11 2024
+Fri Sep  6 12:33:59 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -69,17 +69,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep  5 12:58:11 2024          ;
+; Fitter Status                      ; Successful - Fri Sep  6 12:33:59 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Sram_CIC                                       ;
 ; Top-level Entity Name              ; todo_junto_UART                                ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 440 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 337 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 307 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 307                                            ;
+; Total logic elements               ; 447 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 319 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 334 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 334                                            ;
 ; Total pins                         ; 93 / 529 ( 18 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
@@ -152,15 +152,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.05        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processors 3-12        ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -170,8 +171,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 862 ) ; 0.00 % ( 0 / 862 )         ; 0.00 % ( 0 / 862 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 862 ) ; 0.00 % ( 0 / 862 )         ; 0.00 % ( 0 / 862 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 869 ) ; 0.00 % ( 0 / 869 )         ; 0.00 % ( 0 / 869 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 869 ) ; 0.00 % ( 0 / 869 )         ; 0.00 % ( 0 / 869 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 852 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 859 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -202,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.pin.
+The pin-out file can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.pin.
 
 
 +-----------------------------------------------------------------------+
@@ -210,26 +211,26 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 440 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 133                     ;
-;     -- Register only                        ; 103                     ;
-;     -- Combinational with a register        ; 204                     ;
+; Total logic elements                        ; 447 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 113                     ;
+;     -- Register only                        ; 128                     ;
+;     -- Combinational with a register        ; 206                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 167                     ;
-;     -- 3 input functions                    ; 60                      ;
-;     -- <=2 input functions                  ; 110                     ;
-;     -- Register only                        ; 103                     ;
+;     -- 4 input functions                    ; 170                     ;
+;     -- 3 input functions                    ; 33                      ;
+;     -- <=2 input functions                  ; 116                     ;
+;     -- Register only                        ; 128                     ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 261                     ;
+;     -- normal mode                          ; 243                     ;
 ;     -- arithmetic mode                      ; 76                      ;
 ;                                             ;                         ;
-; Total registers*                            ; 307 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 307 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 334 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 334 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 37 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 43 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 93 / 529 ( 18 % )       ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -240,18 +241,18 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; Total block memory implementation bits      ; 0 / 3,981,312 ( 0 % )   ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )         ;
 ; PLLs                                        ; 0 / 4 ( 0 % )           ;
-; Global signals                              ; 6                       ;
-;     -- Global clocks                        ; 6 / 20 ( 30 % )         ;
+; Global signals                              ; 5                       ;
+;     -- Global clocks                        ; 5 / 20 ( 25 % )         ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )           ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.4% / 0.4% / 0.4%      ;
-; Peak interconnect usage (total/H/V)         ; 4.1% / 4.9% / 3.7%      ;
-; Maximum fan-out                             ; 100                     ;
-; Highest non-global fan-out                  ; 63                      ;
-; Total fan-out                               ; 2259                    ;
+; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.4%      ;
+; Peak interconnect usage (total/H/V)         ; 4.4% / 5.2% / 3.7%      ;
+; Maximum fan-out                             ; 180                     ;
+; Highest non-global fan-out                  ; 119                     ;
+; Total fan-out                               ; 2337                    ;
 ; Average fan-out                             ; 2.36                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -265,33 +266,33 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 440 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 133                    ; 0                              ;
-;     -- Register only                        ; 103                    ; 0                              ;
-;     -- Combinational with a register        ; 204                    ; 0                              ;
+; Total logic elements                        ; 447 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 113                    ; 0                              ;
+;     -- Register only                        ; 128                    ; 0                              ;
+;     -- Combinational with a register        ; 206                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 167                    ; 0                              ;
-;     -- 3 input functions                    ; 60                     ; 0                              ;
-;     -- <=2 input functions                  ; 110                    ; 0                              ;
-;     -- Register only                        ; 103                    ; 0                              ;
+;     -- 4 input functions                    ; 170                    ; 0                              ;
+;     -- 3 input functions                    ; 33                     ; 0                              ;
+;     -- <=2 input functions                  ; 116                    ; 0                              ;
+;     -- Register only                        ; 128                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 261                    ; 0                              ;
+;     -- normal mode                          ; 243                    ; 0                              ;
 ;     -- arithmetic mode                      ; 76                     ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 307                    ; 0                              ;
-;     -- Dedicated logic registers            ; 307 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 334                    ; 0                              ;
+;     -- Dedicated logic registers            ; 334 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 37 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 43 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 93                     ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ; 0 / 532 ( 0 % )                ;
 ; Total memory bits                           ; 0                      ; 0                              ;
 ; Total RAM block bits                        ; 0                      ; 0                              ;
-; Clock control block                         ; 6 / 24 ( 25 % )        ; 0 / 24 ( 0 % )                 ;
+; Clock control block                         ; 5 / 24 ( 20 % )        ; 0 / 24 ( 0 % )                 ;
 ;                                             ;                        ;                                ;
 ; Connections                                 ;                        ;                                ;
 ;     -- Input Connections                    ; 17                     ; 0                              ;
@@ -300,8 +301,8 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 2254                   ; 5                              ;
-;     -- Registered Connections               ; 903                    ; 0                              ;
+;     -- Total Connections                    ; 2332                   ; 5                              ;
+;     -- Registered Connections               ; 870                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 34                     ; 0                              ;
@@ -333,9 +334,9 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; Clk_50      ; Y2    ; 2        ; 0            ; 36           ; 14           ; 100                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Frame_valid ; AC19  ; 4        ; 94           ; 0            ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Line_valid  ; AF16  ; 4        ; 65           ; 0            ; 14           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Clk_50      ; Y2    ; 2        ; 0            ; 36           ; 14           ; 180                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Frame_valid ; AC19  ; 4        ; 94           ; 0            ; 7            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Line_valid  ; AF16  ; 4        ; 65           ; 0            ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Pix_clk     ; AG26  ; 4        ; 113          ; 0            ; 7            ; 37                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Pix_data[0] ; AF24  ; 4        ; 83           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Pix_data[1] ; AE21  ; 4        ; 85           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -345,7 +346,7 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; Pix_data[5] ; AF21  ; 4        ; 87           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Pix_data[6] ; AF22  ; 4        ; 96           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Pix_data[7] ; AD22  ; 4        ; 111          ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; Reset       ; M23   ; 6        ; 115          ; 40           ; 7            ; 35                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; Reset       ; M23   ; 6        ; 115          ; 40           ; 7            ; 37                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Start       ; M21   ; 6        ; 115          ; 53           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; Trigger     ; N21   ; 6        ; 115          ; 42           ; 14           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
@@ -401,7 +402,7 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; SRAM_add[8]    ; AF5   ; 3        ; 5            ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; SRAM_add[9]    ; T7    ; 2        ; 0            ; 31           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; Sca            ; AB21  ; 4        ; 109          ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; yes        ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; UART_TX        ; AH23  ; 4        ; 81           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
+; UART_TX        ; AE15  ; 4        ; 60           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; data[0]        ; E21   ; 7        ; 107          ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; data[1]        ; E22   ; 7        ; 111          ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; data[2]        ; E25   ; 7        ; 83           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -411,10 +412,10 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; data[6]        ; G22   ; 7        ; 72           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; data[7]        ; G21   ; 7        ; 74           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; led_errase     ; G16   ; 7        ; 67           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; led_estado[0]  ; AE11  ; 3        ; 35           ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; led_estado[1]  ; AF11  ; 3        ; 35           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; led_estado[2]  ; AF12  ; 3        ; 33           ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; led_estado[3]  ; AE12  ; 3        ; 33           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; led_estado[0]  ; AE17  ; 4        ; 67           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; led_estado[1]  ; AH21  ; 4        ; 74           ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; led_estado[2]  ; AG18  ; 4        ; 69           ; 0            ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; led_estado[3]  ; AF17  ; 4        ; 67           ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; led_lectura    ; H15   ; 7        ; 60           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; trigger_camara ; AC21  ; 4        ; 102          ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +----------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
@@ -473,8 +474,8 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 +----------+------------------+---------------+--------------+
 ; 1        ; 4 / 56 ( 7 % )   ; 2.5V          ; --           ;
 ; 2        ; 17 / 63 ( 27 % ) ; 2.5V          ; --           ;
-; 3        ; 29 / 73 ( 40 % ) ; 2.5V          ; --           ;
-; 4        ; 17 / 71 ( 24 % ) ; 2.5V          ; --           ;
+; 3        ; 25 / 73 ( 34 % ) ; 2.5V          ; --           ;
+; 4        ; 21 / 71 ( 30 % ) ; 2.5V          ; --           ;
 ; 5        ; 0 / 65 ( 0 % )   ; 2.5V          ; --           ;
 ; 6        ; 4 / 58 ( 7 % )   ; 2.5V          ; --           ;
 ; 7        ; 27 / 72 ( 38 % ) ; 2.5V          ; --           ;
@@ -635,13 +636,13 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; AE8      ; 161        ; 3        ; SRAM_WE                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AE9      ; 163        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE10     ; 165        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE11     ; 171        ; 3        ; led_estado[0]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; AE12     ; 169        ; 3        ; led_estado[3]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE11     ; 171        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AE12     ; 169        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE13     ; 177        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE14     ; 183        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE15     ; 205        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AE15     ; 205        ; 4        ; UART_TX                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AE16     ; 209        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE17     ; 215        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AE17     ; 215        ; 4        ; led_estado[0]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE18     ; 225        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE19     ; 231        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE20     ; 235        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -663,13 +664,13 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; AF8      ; 162        ; 3        ; SRAM_CE                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF9      ; 160        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF10     ; 166        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF11     ; 172        ; 3        ; led_estado[1]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; AF12     ; 170        ; 3        ; led_estado[2]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF11     ; 172        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AF12     ; 170        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF13     ; 178        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF14     ; 184        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF15     ; 206        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF16     ; 210        ; 4        ; Line_valid                                                ; input  ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; AF17     ; 216        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AF17     ; 216        ; 4        ; led_estado[3]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF18     ; 226        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF19     ; 232        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF20     ; 236        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -698,7 +699,7 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; AG15     ; 201        ; 4        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AG16     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG17     ; 207        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG18     ; 217        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AG18     ; 217        ; 4        ; led_estado[2]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AG19     ; 219        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG20     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG21     ; 223        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -728,9 +729,9 @@ The pin-out file can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_
 ; AH18     ; 218        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH19     ; 220        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH20     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AH21     ; 224        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AH21     ; 224        ; 4        ; led_estado[1]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AH22     ; 228        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AH23     ; 230        ; 4        ; UART_TX                                                   ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
+; AH23     ; 230        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH24     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AH25     ; 246        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH26     ; 271        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1364,11 +1365,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; SRAM_DQ[0]     ; Incomplete set of assignments ;
 ; Clk_50         ; Incomplete set of assignments ;
 ; Reset          ; Incomplete set of assignments ;
+; Trigger        ; Incomplete set of assignments ;
+; Start          ; Incomplete set of assignments ;
 ; Pix_clk        ; Incomplete set of assignments ;
 ; Line_valid     ; Incomplete set of assignments ;
 ; Frame_valid    ; Incomplete set of assignments ;
-; Trigger        ; Incomplete set of assignments ;
-; Start          ; Incomplete set of assignments ;
 ; led_estado[3]  ; Missing location assignment   ;
 ; led_estado[2]  ; Missing location assignment   ;
 ; led_estado[1]  ; Missing location assignment   ;
@@ -1381,17 +1382,16 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node               ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                    ; Entity Name                   ; Library Name ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+-------------------------------+--------------+
-; |todo_junto_UART                         ; 440 (0)     ; 307 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 93   ; 0            ; 133 (0)      ; 103 (0)           ; 204 (0)          ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
-;    |CIC_SRAM_controller_UART:inst|       ; 133 (133)   ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 73 (73)      ; 1 (1)             ; 59 (59)          ; |todo_junto_UART|CIC_SRAM_controller_UART:inst                         ; CIC_SRAM_controller_UART      ; work         ;
-;    |Capture_Input_Controller:inst4|      ; 41 (41)     ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 9 (9)             ; 28 (28)          ; |todo_junto_UART|Capture_Input_Controller:inst4                        ; Capture_Input_Controller      ; work         ;
-;    |Programador_controlador_block:inst5| ; 85 (0)      ; 55 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (0)       ; 6 (0)             ; 49 (0)           ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 52 (52)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 4 (4)             ; 31 (31)          ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 38 (38)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 2 (2)             ; 23 (23)          ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
-;    |Sram_CIC_3:inst1|                    ; 67 (67)     ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 17 (17)           ; 37 (37)          ; |todo_junto_UART|Sram_CIC_3:inst1                                      ; Sram_CIC_3                    ; work         ;
-;    |UART_TX:inst6|                       ; 40 (40)     ; 29 (29)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 2 (2)             ; 27 (27)          ; |todo_junto_UART|UART_TX:inst6                                         ; UART_TX                       ; work         ;
-;    |buffer_intermed:inst7|               ; 30 (30)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 29 (29)           ; 1 (1)            ; |todo_junto_UART|buffer_intermed:inst7                                 ; buffer_intermed               ; work         ;
+; |todo_junto_UART                         ; 447 (0)     ; 334 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 93   ; 0            ; 113 (0)      ; 128 (0)           ; 206 (0)          ; |todo_junto_UART                                                       ; todo_junto_UART               ; work         ;
+;    |CIC_SRAM_controller_UART:inst|       ; 115 (115)   ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 57 (57)      ; 1 (1)             ; 57 (57)          ; |todo_junto_UART|CIC_SRAM_controller_UART:inst                         ; CIC_SRAM_controller_UART      ; work         ;
+;    |Programador_controlador_block:inst5| ; 86 (0)      ; 55 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 6 (0)             ; 49 (0)           ; |todo_junto_UART|Programador_controlador_block:inst5                   ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                 ; 52 (52)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 3 (3)             ; 32 (32)          ; |todo_junto_UART|Programador_controlador_block:inst5|controlador:inst  ; controlador                   ; work         ;
+;       |programador:inst1|                ; 39 (39)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 3 (3)             ; 22 (22)          ; |todo_junto_UART|Programador_controlador_block:inst5|programador:inst1 ; programador                   ; work         ;
+;    |Sram_CIC_3:inst1|                    ; 65 (65)     ; 53 (53)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 12 (12)           ; 43 (43)          ; |todo_junto_UART|Sram_CIC_3:inst1                                      ; Sram_CIC_3                    ; work         ;
+;    |UART_TX:inst6|                       ; 40 (40)     ; 29 (29)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 4 (4)             ; 25 (25)          ; |todo_junto_UART|UART_TX:inst6                                         ; UART_TX                       ; work         ;
+;    |captura_pixeles:inst4|               ; 97 (97)     ; 95 (95)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 65 (65)           ; 30 (30)          ; |todo_junto_UART|captura_pixeles:inst4                                 ; captura_pixeles               ; work         ;
 ;    |divisor:inst2|                       ; 6 (6)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 4 (4)            ; |todo_junto_UART|divisor:inst2                                         ; divisor                       ; work         ;
-;    |sram:inst3|                          ; 64 (64)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 38 (38)           ; 25 (25)          ; |todo_junto_UART|sram:inst3                                            ; sram                          ; work         ;
+;    |sram:inst3|                          ; 64 (64)     ; 63 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 39 (39)           ; 24 (24)          ; |todo_junto_UART|sram:inst3                                            ; sram                          ; work         ;
 +------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1471,15 +1471,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_add[1]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; SRAM_add[0]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; Sda            ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SRAM_DQ[15]    ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SRAM_DQ[15]    ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[14]    ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[13]    ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[12]    ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SRAM_DQ[11]    ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[10]    ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SRAM_DQ[10]    ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[9]     ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SRAM_DQ[8]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[7]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[7]     ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SRAM_DQ[6]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[5]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[4]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1488,12 +1488,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[1]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SRAM_DQ[0]     ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; Clk_50         ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; Reset          ; Input    ; (6) 1314 ps   ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Pix_clk        ; Input    ; --            ; (0) 0 ps      ; --                    ; --  ; --   ;
-; Line_valid     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; Frame_valid    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; Trigger        ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Reset          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; Trigger        ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; Start          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Pix_clk        ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; Line_valid     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; Frame_valid    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1514,23 +1514,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Programador_controlador_block:inst5|programador:inst1|Selector3~3   ; 1                 ; 6       ;
 ;      - Programador_controlador_block:inst5|programador:inst1|state.error~0 ; 1                 ; 6       ;
 ; SRAM_DQ[15]                                                                ;                   ;         ;
-;      - sram:inst3|DATA_OUT[15]                                             ; 1                 ; 6       ;
+;      - sram:inst3|DATA_OUT[15]~feeder                                      ; 0                 ; 6       ;
 ; SRAM_DQ[14]                                                                ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[14]~feeder                                      ; 0                 ; 6       ;
 ; SRAM_DQ[13]                                                                ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[13]                                             ; 0                 ; 6       ;
 ; SRAM_DQ[12]                                                                ;                   ;         ;
-;      - sram:inst3|DATA_OUT[12]                                             ; 1                 ; 6       ;
+;      - sram:inst3|DATA_OUT[12]~feeder                                      ; 1                 ; 6       ;
 ; SRAM_DQ[11]                                                                ;                   ;         ;
-;      - sram:inst3|DATA_OUT[11]~feeder                                      ; 0                 ; 6       ;
+;      - sram:inst3|DATA_OUT[11]                                             ; 0                 ; 6       ;
 ; SRAM_DQ[10]                                                                ;                   ;         ;
-;      - sram:inst3|DATA_OUT[10]~feeder                                      ; 1                 ; 6       ;
+;      - sram:inst3|DATA_OUT[10]                                             ; 0                 ; 6       ;
 ; SRAM_DQ[9]                                                                 ;                   ;         ;
-;      - sram:inst3|DATA_OUT[9]~feeder                                       ; 1                 ; 6       ;
+;      - sram:inst3|DATA_OUT[9]                                              ; 1                 ; 6       ;
 ; SRAM_DQ[8]                                                                 ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[8]                                              ; 0                 ; 6       ;
 ; SRAM_DQ[7]                                                                 ;                   ;         ;
-;      - sram:inst3|DATA_OUT[7]                                              ; 0                 ; 6       ;
+;      - sram:inst3|DATA_OUT[7]~feeder                                       ; 1                 ; 6       ;
 ; SRAM_DQ[6]                                                                 ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[6]                                              ; 0                 ; 6       ;
 ; SRAM_DQ[5]                                                                 ;                   ;         ;
@@ -1538,160 +1538,158 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[4]                                                                 ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[4]~feeder                                       ; 0                 ; 6       ;
 ; SRAM_DQ[3]                                                                 ;                   ;         ;
-;      - sram:inst3|DATA_OUT[3]                                              ; 0                 ; 6       ;
+;      - sram:inst3|DATA_OUT[3]~feeder                                       ; 0                 ; 6       ;
 ; SRAM_DQ[2]                                                                 ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[2]~feeder                                       ; 1                 ; 6       ;
 ; SRAM_DQ[1]                                                                 ;                   ;         ;
 ;      - sram:inst3|DATA_OUT[1]~feeder                                       ; 0                 ; 6       ;
 ; SRAM_DQ[0]                                                                 ;                   ;         ;
-;      - sram:inst3|DATA_OUT[0]~feeder                                       ; 0                 ; 6       ;
+;      - sram:inst3|DATA_OUT[0]                                              ; 0                 ; 6       ;
 ; Clk_50                                                                     ;                   ;         ;
 ; Reset                                                                      ;                   ;         ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[1]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[2]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[3]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[4]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[5]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[6]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[7]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[8]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[9]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[10]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[11]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[12]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[13]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[14]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[15]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[16]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[17]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[18]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[19]                         ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.reset_state                     ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.errase                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.wait_done                       ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.trigger_wait                    ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.trigger_interno                 ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.trigger_camara                  ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.escritura                       ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.UART_terminado                  ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.UART_send_start                 ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|state.UART_mandando                   ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|count_mem[0]                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[1]              ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[0]              ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[2]              ; 0                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[0]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[1]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[2]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[3]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[4]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[5]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[6]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[7]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[8]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[9]                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[10]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[11]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[12]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[13]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[14]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[15]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[16]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[17]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[18]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|count_mem[19]                         ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.reset_state                     ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.errase                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.wait_done                       ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.trigger_wait                    ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.trigger_interno                 ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.trigger_camara                  ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.escritura                       ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.UART_terminado                  ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.UART_send_start                 ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|state.UART_mandando                   ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[1]              ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[0]              ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[2]              ; 1                 ; 6       ;
 ;      - Programador_controlador_block:inst5|controlador:inst|count[1]~0     ; 1                 ; 6       ;
-;      - Sram_CIC_3:inst1|process_1~0                                        ; 0                 ; 6       ;
-; Pix_clk                                                                    ;                   ;         ;
-;      - Capture_Input_Controller:inst4|d_buff[0]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[1]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[2]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[3]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[4]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[5]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[6]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|d_buff[7]                            ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[7]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[6]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[5]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[4]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[3]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[2]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[1]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|contador[0]                          ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[20]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[18]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[19]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[1]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[2]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[3]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[4]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[5]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[6]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[7]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[8]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[9]                     ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[10]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[11]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[12]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[13]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[14]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[15]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[16]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[17]                    ; 1                 ; 0       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[0]                     ; 1                 ; 0       ;
-; Line_valid                                                                 ;                   ;         ;
-;      - Capture_Input_Controller:inst4|d_buff[7]~0                          ; 0                 ; 6       ;
-;      - Capture_Input_Controller:inst4|contador[7]~25                       ; 0                 ; 6       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[0]~60                  ; 0                 ; 6       ;
-; Frame_valid                                                                ;                   ;         ;
-;      - Capture_Input_Controller:inst4|d_buff[7]~0                          ; 1                 ; 6       ;
-;      - Capture_Input_Controller:inst4|contador[7]~25                       ; 1                 ; 6       ;
-;      - Capture_Input_Controller:inst4|pix_count_int[0]~60                  ; 1                 ; 6       ;
+;      - Sram_CIC_3:inst1|process_0~0                                        ; 1                 ; 6       ;
+;      - captura_pixeles:inst4|contador[7]~24                                ; 1                 ; 6       ;
+;      - Sram_CIC_3:inst1|pix_previo[20]~1                                   ; 1                 ; 6       ;
 ; Trigger                                                                    ;                   ;         ;
-;      - CIC_SRAM_controller_UART:inst|Selector13~0                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|Selector15~0                          ; 0                 ; 6       ;
-;      - CIC_SRAM_controller_UART:inst|Selector12~0                          ; 0                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|Selector13~0                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|Selector15~0                          ; 1                 ; 6       ;
+;      - CIC_SRAM_controller_UART:inst|Selector12~0                          ; 1                 ; 6       ;
 ; Start                                                                      ;                   ;         ;
 ;      - Programador_controlador_block:inst5|controlador:inst|state.idle~0   ; 0                 ; 6       ;
 ;      - Programador_controlador_block:inst5|controlador:inst|Selector0~0    ; 0                 ; 6       ;
+; Pix_clk                                                                    ;                   ;         ;
+;      - captura_pixeles:inst4|register_0[0]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[1]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[2]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[3]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[4]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[5]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[6]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|register_0[7]                                 ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[7]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[6]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[5]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[4]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[3]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[2]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[1]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|contador[0]                                   ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[20]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[19]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[18]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[17]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[16]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[15]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[14]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[13]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[12]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[11]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[10]                       ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[9]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[8]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[7]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[6]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[5]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[4]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[3]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[2]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[1]                        ; 0                 ; 0       ;
+;      - captura_pixeles:inst4|pix_count_interno_0[0]                        ; 0                 ; 0       ;
+; Line_valid                                                                 ;                   ;         ;
+;      - captura_pixeles:inst4|leer                                          ; 0                 ; 6       ;
+;      - captura_pixeles:inst4|contador[7]~24                                ; 0                 ; 6       ;
+; Frame_valid                                                                ;                   ;         ;
+;      - captura_pixeles:inst4|leer                                          ; 0                 ; 6       ;
+;      - captura_pixeles:inst4|contador[7]~24                                ; 0                 ; 6       ;
 +----------------------------------------------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                             ;
-+------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                                             ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CIC_SRAM_controller_UART:inst|clk_25                             ; FF_X58_Y1_N19      ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[0]~0         ; LCCOMB_X36_Y9_N12  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CIC_SRAM_controller_UART:inst|state.reset_state                  ; FF_X34_Y9_N1       ; 24      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; Capture_Input_Controller:inst4|contador[7]~25                    ; LCCOMB_X35_Y6_N10  ; 29      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Capture_Input_Controller:inst4|d_buff[7]~0                       ; LCCOMB_X36_Y6_N28  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Clk_50                                                           ; PIN_Y2             ; 100     ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; Pix_clk                                                          ; PIN_AG26           ; 37      ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int     ; FF_X55_Y71_N13     ; 24      ; Clock                      ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int_2   ; FF_X56_Y71_N25     ; 20      ; Clock                      ; yes    ; Global Clock         ; GCLK14           ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|count[1]~0  ; LCCOMB_X108_Y5_N26 ; 19      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|count[1]~1  ; LCCOMB_X108_Y5_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|state.idle  ; FF_X107_Y5_N27     ; 20      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|programador:inst1|buisy~0    ; LCCOMB_X108_Y5_N6  ; 17      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|programador:inst1|count[2]~0 ; LCCOMB_X106_Y5_N12 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Programador_controlador_block:inst5|programador:inst1|data[7]~1  ; LCCOMB_X108_Y5_N20 ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Reset                                                            ; PIN_M23            ; 35      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; Sram_CIC_3:inst1|add_count[19]~57                                ; LCCOMB_X32_Y5_N30  ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Sram_CIC_3:inst1|clk_int                                         ; FF_X59_Y1_N27      ; 53      ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; Sram_CIC_3:inst1|pix_previo[20]~0                                ; LCCOMB_X32_Y5_N2   ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Sram_CIC_3:inst1|pix_previo[20]~1                                ; LCCOMB_X32_Y5_N6   ; 21      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Sram_CIC_3:inst1|process_1~0                                     ; LCCOMB_X35_Y5_N0   ; 63      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; UART_TX:inst6|Selector17~0                                       ; LCCOMB_X40_Y9_N18  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; UART_TX:inst6|r_Clk_Count[9]~18                                  ; LCCOMB_X42_Y9_N30  ; 10      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; UART_TX:inst6|r_SM_Main.s_Cleanup                                ; FF_X42_Y9_N1       ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; divisor:inst2|clk_int                                            ; FF_X60_Y1_N29      ; 40      ; Clock                      ; yes    ; Global Clock         ; GCLK17           ; --                        ;
-; sram:inst3|DATA_OUT[0]~0                                         ; LCCOMB_X35_Y9_N30  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[0]~en                                         ; FF_X34_Y9_N27      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[1]~en                                         ; FF_X34_Y9_N29      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[2]~en                                         ; FF_X34_Y9_N23      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[3]~en                                         ; FF_X34_Y9_N21      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[4]~en                                         ; FF_X34_Y9_N3       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[5]~en                                         ; FF_X33_Y9_N7       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[6]~en                                         ; FF_X34_Y9_N31      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; sram:inst3|SRAM_DQ[7]~en                                         ; FF_X34_Y9_N25      ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-+------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                              ;
++------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                             ; Location            ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; CIC_SRAM_controller_UART:inst|clk_25                             ; FF_X1_Y36_N13       ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; CIC_SRAM_controller_UART:inst|cuenta_trigger_camara[0]~0         ; LCCOMB_X70_Y11_N18  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CIC_SRAM_controller_UART:inst|state.reset_state                  ; FF_X66_Y7_N17       ; 23      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; Clk_50                                                           ; PIN_Y2              ; 180     ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; Pix_clk                                                          ; PIN_AG26            ; 37      ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int     ; FF_X58_Y1_N21       ; 24      ; Clock                      ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int_2   ; FF_X59_Y1_N29       ; 20      ; Clock                      ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|count[1]~0  ; LCCOMB_X108_Y33_N30 ; 19      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|count[1]~1  ; LCCOMB_X108_Y33_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|state.idle  ; FF_X107_Y33_N7      ; 20      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|programador:inst1|buisy~0    ; LCCOMB_X108_Y33_N28 ; 17      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|programador:inst1|count[2]~0 ; LCCOMB_X107_Y33_N0  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Programador_controlador_block:inst5|programador:inst1|data[7]~1  ; LCCOMB_X110_Y33_N20 ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Reset                                                            ; PIN_M23             ; 37      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; Sram_CIC_3:inst1|add_count[19]~57                                ; LCCOMB_X74_Y11_N8   ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Sram_CIC_3:inst1|pix_previo[20]~0                                ; LCCOMB_X75_Y11_N2   ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Sram_CIC_3:inst1|pix_previo[20]~2                                ; LCCOMB_X74_Y11_N22  ; 21      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Sram_CIC_3:inst1|process_0~0                                     ; LCCOMB_X74_Y9_N10   ; 119     ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; UART_TX:inst6|Selector17~0                                       ; LCCOMB_X67_Y7_N28   ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; UART_TX:inst6|r_Clk_Count[9]~18                                  ; LCCOMB_X67_Y7_N2    ; 10      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; UART_TX:inst6|r_SM_Main.s_Cleanup                                ; FF_X67_Y7_N31       ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; captura_pixeles:inst4|contador[7]~24                             ; LCCOMB_X74_Y9_N8    ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; captura_pixeles:inst4|leer                                       ; LCCOMB_X74_Y9_N6    ; 29      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; divisor:inst2|clk_int                                            ; FF_X114_Y36_N17     ; 40      ; Clock                      ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; sram:inst3|DATA_OUT[0]~0                                         ; LCCOMB_X66_Y7_N24   ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[0]~en                                         ; FF_X66_Y7_N3        ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[1]~en                                         ; FF_X66_Y7_N27       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[2]~en                                         ; FF_X65_Y7_N5        ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[3]~en                                         ; FF_X66_Y7_N21       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[4]~en                                         ; FF_X66_Y7_N15       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[5]~en                                         ; FF_X66_Y7_N13       ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[6]~en                                         ; FF_X66_Y7_N7        ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; sram:inst3|SRAM_DQ[7]~en                                         ; FF_X66_Y7_N9        ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
++------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                                            ;
-+----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                                           ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CIC_SRAM_controller_UART:inst|clk_25                           ; FF_X58_Y1_N19  ; 33      ; 5                                    ; Global Clock         ; GCLK15           ; --                        ;
-; Clk_50                                                         ; PIN_Y2         ; 100     ; 17                                   ; Global Clock         ; GCLK4            ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int   ; FF_X55_Y71_N13 ; 24      ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; FF_X56_Y71_N25 ; 20      ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
-; Sram_CIC_3:inst1|clk_int                                       ; FF_X59_Y1_N27  ; 53      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; divisor:inst2|clk_int                                          ; FF_X60_Y1_N29  ; 40      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
-+----------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                             ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                           ; Location        ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CIC_SRAM_controller_UART:inst|clk_25                           ; FF_X1_Y36_N13   ; 33      ; 7                                    ; Global Clock         ; GCLK2            ; --                        ;
+; Clk_50                                                         ; PIN_Y2          ; 180     ; 8                                    ; Global Clock         ; GCLK4            ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int   ; FF_X58_Y1_N21   ; 24      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; FF_X59_Y1_N29   ; 20      ; 2                                    ; Global Clock         ; GCLK17           ; --                        ;
+; divisor:inst2|clk_int                                          ; FF_X114_Y36_N17 ; 40      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
++----------------------------------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------+
@@ -1700,115 +1698,117 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
 ; Block interconnects   ; 583 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 128 / 10,120 ( 1 % )    ;
-; C4 interconnects      ; 546 / 209,544 ( < 1 % ) ;
-; Direct links          ; 143 / 342,891 ( < 1 % ) ;
-; Global clocks         ; 6 / 20 ( 30 % )         ;
-; Local interconnects   ; 255 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 172 / 9,963 ( 2 % )     ;
-; R4 interconnects      ; 501 / 289,782 ( < 1 % ) ;
+; C16 interconnects     ; 134 / 10,120 ( 1 % )    ;
+; C4 interconnects      ; 601 / 209,544 ( < 1 % ) ;
+; Direct links          ; 130 / 342,891 ( < 1 % ) ;
+; Global clocks         ; 5 / 20 ( 25 % )         ;
+; Local interconnects   ; 259 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 197 / 9,963 ( 2 % )     ;
+; R4 interconnects      ; 591 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.89) ; Number of LABs  (Total = 37) ;
+; Number of Logic Elements  (Average = 10.40) ; Number of LABs  (Total = 43) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
+; 1                                           ; 5                            ;
 ; 2                                           ; 3                            ;
-; 3                                           ; 0                            ;
+; 3                                           ; 1                            ;
 ; 4                                           ; 1                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 2                            ;
-; 7                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 4                            ;
 ; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 9                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 15                           ;
+; 9                                           ; 2                            ;
+; 10                                          ; 3                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 17                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.73) ; Number of LABs  (Total = 37) ;
+; LAB-wide Signals  (Average = 1.88) ; Number of LABs  (Total = 43) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 19                           ;
-; 1 Clock                            ; 18                           ;
-; 1 Clock enable                     ; 10                           ;
-; 2 Clocks                           ; 17                           ;
+; 1 Async. clear                     ; 25                           ;
+; 1 Clock                            ; 27                           ;
+; 1 Clock enable                     ; 13                           ;
+; 2 Async. clears                    ; 2                            ;
+; 2 Clock enables                    ; 1                            ;
+; 2 Clocks                           ; 13                           ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 19.97) ; Number of LABs  (Total = 37) ;
+; Number of Signals Sourced  (Average = 17.98) ; Number of LABs  (Total = 43) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 2                            ;
+; 1                                            ; 2                            ;
+; 2                                            ; 4                            ;
 ; 3                                            ; 2                            ;
-; 4                                            ; 1                            ;
+; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 2                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 2                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 3                            ;
+; 14                                           ; 4                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 0                            ;
+; 16                                           ; 1                            ;
 ; 17                                           ; 1                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 2                            ;
-; 23                                           ; 2                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 3                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 0                            ;
 ; 24                                           ; 1                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 2                            ;
-; 30                                           ; 2                            ;
-; 31                                           ; 4                            ;
-; 32                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 2                            ;
+; 29                                           ; 3                            ;
+; 30                                           ; 4                            ;
+; 31                                           ; 1                            ;
+; 32                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.81) ; Number of LABs  (Total = 37) ;
+; Number of Signals Sourced Out  (Average = 7.07) ; Number of LABs  (Total = 43) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 6                            ;
-; 2                                               ; 2                            ;
+; 1                                               ; 8                            ;
+; 2                                               ; 4                            ;
 ; 3                                               ; 1                            ;
-; 4                                               ; 3                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 3                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 1                            ;
-; 10                                              ; 7                            ;
-; 11                                              ; 4                            ;
-; 12                                              ; 1                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 2                            ;
+; 7                                               ; 4                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 3                            ;
+; 10                                              ; 8                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 2                            ;
 ; 13                                              ; 1                            ;
-; 14                                              ; 2                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 1                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 2                            ;
 ; 17                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
@@ -1816,37 +1816,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.46) ; Number of LABs  (Total = 37) ;
+; Number of Distinct Inputs  (Average = 10.44) ; Number of LABs  (Total = 43) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 4                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 1                            ;
+; 1                                            ; 3                            ;
+; 2                                            ; 3                            ;
+; 3                                            ; 3                            ;
+; 4                                            ; 3                            ;
+; 5                                            ; 4                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 2                            ;
-; 9                                            ; 3                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 2                            ;
-; 11                                           ; 6                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 2                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 2                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 4                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 1                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
-; 28                                           ; 1                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 2                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 0                            ;
+; 35                                           ; 0                            ;
+; 36                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1999,11 +2007,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[0]         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Clk_50             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Reset              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; Trigger            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; Start              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Pix_clk            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Line_valid         ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; Frame_valid        ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; Trigger            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; Start              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -2043,91 +2051,83 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                                                                     ;
-+----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
-; Source Clock(s)                                                ; Destination Clock(s)                                         ; Delay Added in ns ;
-+----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
-; Clk_50                                                         ; Clk_50                                                       ; 11.0              ;
-; divisor:inst2|clk_int                                          ; divisor:inst2|clk_int                                        ; 7.4               ;
-; Sram_CIC_3:inst1|clk_int                                       ; Clk_50                                                       ; 3.3               ;
-; CIC_SRAM_controller_UART:inst|clk_25,I/O                       ; Pix_clk                                                      ; 1.7               ;
-; CIC_SRAM_controller_UART:inst|clk_25                           ; Clk_50                                                       ; 1.3               ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; Programador_controlador_block:inst5|controlador:inst|clk_int ; 1.1               ;
-+----------------------------------------------------------------+--------------------------------------------------------------+-------------------+
++----------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                    ;
++--------------------------------------+-----------------------+-------------------+
+; Source Clock(s)                      ; Destination Clock(s)  ; Delay Added in ns ;
++--------------------------------------+-----------------------+-------------------+
+; CIC_SRAM_controller_UART:inst|clk_25 ; Clk_50                ; 11.6              ;
+; divisor:inst2|clk_int                ; divisor:inst2|clk_int ; 8.1               ;
+; Clk_50                               ; Clk_50                ; 7.5               ;
++--------------------------------------+-----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                 ;
-+----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-; Source Register                                                      ; Destination Register                                               ; Delay Added in ns ;
-+----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-; divisor:inst2|clk_int                                                ; divisor:inst2|clk_int                                              ; 4.095             ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int         ; Programador_controlador_block:inst5|controlador:inst|clk_int       ; 3.779             ;
-; Programador_controlador_block:inst5|controlador:inst|clk_int_2       ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 3.607             ;
-; CIC_SRAM_controller_UART:inst|clk_25                                 ; CIC_SRAM_controller_UART:inst|clk_25                               ; 3.444             ;
-; Sram_CIC_3:inst1|clk_int                                             ; Sram_CIC_3:inst1|clk_int                                           ; 3.440             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[4] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 1.649             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[3] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 1.649             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[1] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 1.649             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[0] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 1.649             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[2] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2     ; 1.649             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int[2]   ; Programador_controlador_block:inst5|controlador:inst|clk_int       ; 1.036             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int[4]   ; Programador_controlador_block:inst5|controlador:inst|clk_int       ; 1.036             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int[3]   ; Programador_controlador_block:inst5|controlador:inst|clk_int       ; 1.036             ;
-; Programador_controlador_block:inst5|controlador:inst|cuenta_int[1]   ; Programador_controlador_block:inst5|controlador:inst|clk_int       ; 1.036             ;
-; divisor:inst2|enable                                                 ; divisor:inst2|clk_int                                              ; 1.034             ;
-; CIC_SRAM_controller_UART:inst|state.wait_done                        ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 1.021             ;
-; CIC_SRAM_controller_UART:inst|state.trigger_interno                  ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.885             ;
-; CIC_SRAM_controller_UART:inst|state.reset_state                      ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.859             ;
-; CIC_SRAM_controller_UART:inst|state.errase                           ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.790             ;
-; CIC_SRAM_controller_UART:inst|state.trigger_wait                     ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.790             ;
-; Reset                                                                ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.542             ;
-; Capture_Input_Controller:inst4|pix_count_int[0]                      ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.395             ;
-; Line_valid                                                           ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.395             ;
-; Frame_valid                                                          ; Capture_Input_Controller:inst4|pix_count_int[0]                    ; 0.395             ;
-; Sram_CIC_3:inst1|data_reg[2]                                         ; sram:inst3|SRAM_DQ[2]~reg0                                         ; 0.378             ;
-; Sram_CIC_3:inst1|data_reg[4]                                         ; sram:inst3|SRAM_DQ[4]~reg0                                         ; 0.378             ;
-; Sram_CIC_3:inst1|data_reg[6]                                         ; sram:inst3|SRAM_DQ[6]~reg0                                         ; 0.378             ;
-; Sram_CIC_3:inst1|data_reg[7]                                         ; sram:inst3|SRAM_DQ[7]~reg0                                         ; 0.378             ;
-; Sram_CIC_3:inst1|data_reg[0]                                         ; sram:inst3|SRAM_DQ[0]~reg0                                         ; 0.377             ;
-; Sram_CIC_3:inst1|data_reg[1]                                         ; sram:inst3|SRAM_DQ[1]~reg0                                         ; 0.377             ;
-; Sram_CIC_3:inst1|data_reg[3]                                         ; sram:inst3|SRAM_DQ[3]~reg0                                         ; 0.377             ;
-; Sram_CIC_3:inst1|data_reg[5]                                         ; sram:inst3|SRAM_DQ[5]~reg0                                         ; 0.377             ;
-; Sram_CIC_3:inst1|add_count[7]                                        ; sram:inst3|SRAM_ADDR[7]                                            ; 0.369             ;
-; Sram_CIC_3:inst1|add_count[4]                                        ; sram:inst3|SRAM_ADDR[4]                                            ; 0.340             ;
-; Sram_CIC_3:inst1|add_count[9]                                        ; sram:inst3|SRAM_ADDR[9]                                            ; 0.187             ;
-; Sram_CIC_3:inst1|add_count[5]                                        ; sram:inst3|SRAM_ADDR[5]                                            ; 0.187             ;
-; CIC_SRAM_controller_UART:inst|state.escritura                        ; sram:inst3|SRAM_ADDR[4]                                            ; 0.170             ;
-; CIC_SRAM_controller_UART:inst|state.trigger_camara                   ; sram:inst3|SRAM_ADDR[4]                                            ; 0.170             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dw_02     ; Programador_controlador_block:inst5|programador:inst1|data[1]      ; 0.126             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dp_02     ; Programador_controlador_block:inst5|programador:inst1|data[1]      ; 0.117             ;
-; Sram_CIC_3:inst1|state.escritura                                     ; sram:inst3|SRAM_DQ[2]~reg0                                         ; 0.115             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dp_81     ; Programador_controlador_block:inst5|programador:inst1|data[0]      ; 0.107             ;
-; Programador_controlador_block:inst5|controlador:inst|state.stop_1    ; Programador_controlador_block:inst5|programador:inst1|state.stop_1 ; 0.104             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dp_07     ; Programador_controlador_block:inst5|programador:inst1|data[0]      ; 0.101             ;
-; Programador_controlador_block:inst5|controlador:inst|state.stop_2    ; Programador_controlador_block:inst5|programador:inst1|state.stop_1 ; 0.100             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dw_07     ; Programador_controlador_block:inst5|programador:inst1|data[0]      ; 0.075             ;
-; Sram_CIC_3:inst1|add_count[6]                                        ; sram:inst3|SRAM_ADDR[6]                                            ; 0.072             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dw_1E     ; Programador_controlador_block:inst5|programador:inst1|data[3]      ; 0.062             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dw_81     ; Programador_controlador_block:inst5|programador:inst1|data[0]      ; 0.062             ;
-; Pix_clk                                                              ; Capture_Input_Controller:inst4|pix_count_int[11]                   ; 0.058             ;
-; Programador_controlador_block:inst5|controlador:inst|state.dp_BA_2   ; Programador_controlador_block:inst5|programador:inst1|state.start  ; 0.057             ;
-; Sram_CIC_3:inst1|add_count[2]                                        ; sram:inst3|SRAM_ADDR[2]                                            ; 0.041             ;
-; Sram_CIC_3:inst1|add_count[13]                                       ; sram:inst3|SRAM_ADDR[13]                                           ; 0.035             ;
-; Sram_CIC_3:inst1|add_count[12]                                       ; sram:inst3|SRAM_ADDR[12]                                           ; 0.035             ;
-; Sram_CIC_3:inst1|add_count[11]                                       ; sram:inst3|SRAM_ADDR[11]                                           ; 0.035             ;
-+----------------------------------------------------------------------+--------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 55 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                             ;
++----------------------------------------------------------------------+----------------------------------------------------------------+-------------------+
+; Source Register                                                      ; Destination Register                                           ; Delay Added in ns ;
++----------------------------------------------------------------------+----------------------------------------------------------------+-------------------+
+; divisor:inst2|clk_int                                                ; divisor:inst2|clk_int                                          ; 4.082             ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int         ; Programador_controlador_block:inst5|controlador:inst|clk_int   ; 4.045             ;
+; Programador_controlador_block:inst5|controlador:inst|clk_int_2       ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 4.042             ;
+; CIC_SRAM_controller_UART:inst|clk_25                                 ; CIC_SRAM_controller_UART:inst|clk_25                           ; 3.452             ;
+; divisor:inst2|enable                                                 ; divisor:inst2|clk_int                                          ; 2.041             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[4] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 1.826             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[3] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 1.826             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[1] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 1.826             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[0] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 1.826             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int_2[2] ; Programador_controlador_block:inst5|controlador:inst|clk_int_2 ; 1.826             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int[4]   ; Programador_controlador_block:inst5|controlador:inst|clk_int   ; 1.089             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int[2]   ; Programador_controlador_block:inst5|controlador:inst|clk_int   ; 1.089             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int[3]   ; Programador_controlador_block:inst5|controlador:inst|clk_int   ; 1.089             ;
+; Programador_controlador_block:inst5|controlador:inst|cuenta_int[1]   ; Programador_controlador_block:inst5|controlador:inst|clk_int   ; 1.089             ;
+; CIC_SRAM_controller_UART:inst|count_mem[7]                           ; sram:inst3|SRAM_ADDR[7]                                        ; 0.759             ;
+; CIC_SRAM_controller_UART:inst|count_mem[6]                           ; sram:inst3|SRAM_ADDR[6]                                        ; 0.759             ;
+; CIC_SRAM_controller_UART:inst|count_mem[9]                           ; sram:inst3|SRAM_ADDR[9]                                        ; 0.643             ;
+; CIC_SRAM_controller_UART:inst|count_mem[19]                          ; sram:inst3|SRAM_ADDR[19]                                       ; 0.603             ;
+; CIC_SRAM_controller_UART:inst|count_mem[11]                          ; sram:inst3|SRAM_ADDR[11]                                       ; 0.603             ;
+; CIC_SRAM_controller_UART:inst|state.UART_send_start                  ; UART_TX:inst6|r_SM_Main.s_Idle                                 ; 0.412             ;
+; CIC_SRAM_controller_UART:inst|state.UART_terminado                   ; sram:inst3|SRAM_DQ[0]~en                                       ; 0.411             ;
+; CIC_SRAM_controller_UART:inst|state.UART_mandando                    ; sram:inst3|SRAM_DQ[0]~en                                       ; 0.373             ;
+; CIC_SRAM_controller_UART:inst|count_mem[10]                          ; sram:inst3|SRAM_ADDR[10]                                       ; 0.362             ;
+; CIC_SRAM_controller_UART:inst|count_mem[15]                          ; sram:inst3|SRAM_ADDR[15]                                       ; 0.357             ;
+; CIC_SRAM_controller_UART:inst|count_mem[13]                          ; sram:inst3|SRAM_ADDR[13]                                       ; 0.357             ;
+; CIC_SRAM_controller_UART:inst|count_mem[12]                          ; sram:inst3|SRAM_ADDR[12]                                       ; 0.311             ;
+; CIC_SRAM_controller_UART:inst|count_mem[0]                           ; sram:inst3|SRAM_ADDR[0]                                        ; 0.308             ;
+; CIC_SRAM_controller_UART:inst|state.errase                           ; sram:inst3|SRAM_ADDR[3]                                        ; 0.306             ;
+; CIC_SRAM_controller_UART:inst|count_mem[2]                           ; sram:inst3|SRAM_ADDR[2]                                        ; 0.300             ;
+; CIC_SRAM_controller_UART:inst|count_mem[1]                           ; sram:inst3|SRAM_ADDR[1]                                        ; 0.300             ;
+; CIC_SRAM_controller_UART:inst|count_mem[17]                          ; sram:inst3|SRAM_ADDR[17]                                       ; 0.253             ;
+; CIC_SRAM_controller_UART:inst|count_mem[5]                           ; sram:inst3|SRAM_ADDR[5]                                        ; 0.253             ;
+; CIC_SRAM_controller_UART:inst|count_mem[18]                          ; sram:inst3|SRAM_ADDR[18]                                       ; 0.221             ;
+; CIC_SRAM_controller_UART:inst|count_mem[8]                           ; sram:inst3|SRAM_ADDR[8]                                        ; 0.211             ;
+; CIC_SRAM_controller_UART:inst|count_mem[4]                           ; sram:inst3|SRAM_ADDR[4]                                        ; 0.211             ;
+; CIC_SRAM_controller_UART:inst|count_mem[3]                           ; sram:inst3|SRAM_ADDR[3]                                        ; 0.201             ;
+; CIC_SRAM_controller_UART:inst|count_mem[14]                          ; sram:inst3|SRAM_ADDR[14]                                       ; 0.197             ;
+; CIC_SRAM_controller_UART:inst|count_mem[16]                          ; sram:inst3|SRAM_ADDR[16]                                       ; 0.185             ;
+; CIC_SRAM_controller_UART:inst|state.reset_state                      ; sram:inst3|SRAM_DQ[9]~en                                       ; 0.172             ;
+; CIC_SRAM_controller_UART:inst|state.trigger_camara                   ; sram:inst3|SRAM_DQ[0]~reg0                                     ; 0.112             ;
+; CIC_SRAM_controller_UART:inst|state.escritura                        ; sram:inst3|SRAM_DQ[0]~reg0                                     ; 0.103             ;
+; Pix_clk                                                              ; captura_pixeles:inst4|register_0[6]                            ; 0.075             ;
+; CIC_SRAM_controller_UART:inst|state.trigger_interno                  ; captura_pixeles:inst4|contador[7]                              ; 0.060             ;
+; Sram_CIC_3:inst1|data_reg[0]                                         ; sram:inst3|SRAM_DQ[0]~reg0                                     ; 0.056             ;
+; Sram_CIC_3:inst1|state.escritura                                     ; sram:inst3|SRAM_DQ[0]~reg0                                     ; 0.056             ;
+; Line_valid                                                           ; captura_pixeles:inst4|contador[7]                              ; 0.030             ;
+; Frame_valid                                                          ; captura_pixeles:inst4|contador[7]                              ; 0.030             ;
+; Reset                                                                ; captura_pixeles:inst4|contador[7]                              ; 0.030             ;
+; Programador_controlador_block:inst5|controlador:inst|state.dp_81     ; Programador_controlador_block:inst5|programador:inst1|data[0]  ; 0.028             ;
+; Programador_controlador_block:inst5|controlador:inst|state.dp_1E     ; Programador_controlador_block:inst5|programador:inst1|data[3]  ; 0.022             ;
++----------------------------------------------------------------------+----------------------------------------------------------------+-------------------+
+Note: This table only shows the top 50 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "Sram_CIC"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2158,27 +2158,23 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node Clk_50~input (placed in PIN Y2 (CLK2, DIFFCLK_1p))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node Sram_CIC_3:inst1|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 33
+Info (176353): Automatically promoted node divisor:inst2|clk_int  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node Sram_CIC_3:inst1|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/Sram_CIC_3.vhd Line: 33
-Info (176353): Automatically promoted node divisor:inst2|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node divisor:inst2|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
+        Info (176357): Destination node divisor:inst2|clk_int~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/divisor.vhd Line: 18
         Info (176357): Destination node Clk_camara~output
-Info (176353): Automatically promoted node CIC_SRAM_controller_UART:inst|clk_25  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 58
+Info (176353): Automatically promoted node CIC_SRAM_controller_UART:inst|clk_25  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 58
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node CIC_SRAM_controller_UART:inst|clk_25~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 58
-Info (176353): Automatically promoted node Programador_controlador_block:inst5|controlador:inst|clk_int  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
+        Info (176357): Destination node CIC_SRAM_controller_UART:inst|clk_25~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/CIC_SRAM_controller_UART.vhd Line: 58
+Info (176353): Automatically promoted node Programador_controlador_block:inst5|controlador:inst|clk_int  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node Programador_controlador_block:inst5|controlador:inst|clk_int~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
-Info (176353): Automatically promoted node Programador_controlador_block:inst5|controlador:inst|clk_int_2  File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
+        Info (176357): Destination node Programador_controlador_block:inst5|controlador:inst|clk_int~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 58
+Info (176353): Automatically promoted node Programador_controlador_block:inst5|controlador:inst|clk_int_2  File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node Programador_controlador_block:inst5|controlador:inst|clk_int_2~0 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
+        Info (176357): Destination node Programador_controlador_block:inst5|controlador:inst|clk_int_2~0 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Camara/programador/controlador.vhd Line: 50
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -2195,36 +2191,36 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  54 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 27 total pin(s) used --  45 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:09
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X23_Y0 to location X33_Y11
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X58_Y0 to location X68_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.91 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5433 megabytes
-    Info: Processing ended: Thu Sep  5 12:58:12 2024
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 6313 megabytes
+    Info: Processing ended: Fri Sep  6 12:33:59 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg.
+The suppressed messages can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Sram_Controlador_camara/output_files/Sram_CIC.fit.smsg.
 
 

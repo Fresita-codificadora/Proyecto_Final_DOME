@@ -157,7 +157,7 @@ set_global_assignment -name VHDL_FILE Sram_CIC_3.vhd
 set_global_assignment -name VHDL_FILE UART_TX.vhd
 set_global_assignment -name BDF_FILE todo_junto_UART.bdf
 set_global_assignment -name VHDL_FILE CIC_SRAM_controller_UART.vhd
-set_location_assignment PIN_AH23 -to UART_TX
+set_location_assignment PIN_AE15 -to UART_TX
 set_global_assignment -name VHDL_FILE sram_cic_completo.vhd
 set_global_assignment -name VHDL_FILE CIC_SRAM_controller_UART_mod.vhd
 set_global_assignment -name BDF_FILE todo_junto_UART_2.bdf
@@ -165,4 +165,5 @@ set_global_assignment -name VHDL_FILE buffer_intermed.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../sram_cic_v2/captura_pixeles.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
