@@ -1,12 +1,12 @@
 % Configuración del puerto serie
-serialPort = 'COM12';  % Cambia esto por el puerto serie adecuado
-baudRate = 9600;      % Configura la velocidad en baudios según corresponda
+serialPort = 'COM15';  % Cambia esto por el puerto serie adecuado
+baudRate = 115200;      % Configura la velocidad en baudios según corresponda
 
 % Crear el objeto de puerto serie
 s = serial(serialPort, 'BaudRate', baudRate);
 
 % Ajustar el tamaño del buffer según las capacidades del hardware
-s.InputBufferSize = 1024; % Ajusta a un valor razonable si es necesario
+s.InputBufferSize = 2048; % Ajusta a un valor razonable si es necesario
 
 % Abrir el puerto serie
 fopen(s);
