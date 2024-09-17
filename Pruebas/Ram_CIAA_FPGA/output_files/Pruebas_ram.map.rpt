@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pruebas_ram
-Tue Sep 17 14:48:38 2024
+Tue Sep 17 16:34:18 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -19,16 +19,14 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  11. General Register Statistics
  12. Registers Packed Into Inferred Megafunctions
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
- 15. Parameter Settings for User Entity Instance: Ram_grande_rtl:inst1
- 16. Parameter Settings for User Entity Instance: Ram_grande_rtl:inst1|Syncore_ram:U1
- 17. Parameter Settings for Inferred Entity Instance: Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "Ram_grande_rtl:inst1|Syncore_ram:U1"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 14. Source assignments for ram:inst|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
+ 15. Parameter Settings for User Entity Instance: ram:inst
+ 16. Parameter Settings for Inferred Entity Instance: ram:inst|altsyncram:mem_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,16 +53,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 17 14:48:38 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 17 16:34:18 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Pruebas_ram                                    ;
 ; Top-level Entity Name              ; Pruebas_ram                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 48                                             ;
-;     Total combinational functions  ; 48                                             ;
+; Total logic elements               ; 46                                             ;
+;     Total combinational functions  ; 46                                             ;
 ;     Dedicated logic registers      ; 28                                             ;
 ; Total registers                    ; 28                                             ;
-; Total pins                         ; 28                                             ;
+; Total pins                         ; 25                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 22,528                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -176,26 +174,25 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                              ;
-+----------------------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                               ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                      ; Library ;
-+----------------------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; ../../../../../Desktop/test_ram/test_ram/ip_core/syncore_ram.v ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/syncore_ram.v                                   ;         ;
-; ../../../../../Desktop/test_ram/test_ram/ip_core/Ram_grande.v  ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/Ram_grande.v                                    ;         ;
-; Pruebas_ram.bdf                                                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/Pruebas_ram.bdf        ;         ;
-; escritura_lectura.vhd                                          ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura.vhd  ;         ;
-; altsyncram.tdf                                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
-; stratix_ram_block.inc                                          ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
-; lpm_mux.inc                                                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
-; lpm_decode.inc                                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
-; aglobal231.inc                                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                          ;         ;
-; a_rdenreg.inc                                                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
-; altrom.inc                                                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                              ;         ;
-; altram.inc                                                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                              ;         ;
-; altdpram.inc                                                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_jg81.tdf                                         ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/db/altsyncram_jg81.tdf ;         ;
-+----------------------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; ram.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/ram.v                  ;         ;
+; Pruebas_ram.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/Pruebas_ram.bdf        ;         ;
+; escritura_lectura.vhd            ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura.vhd  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                              ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
+; db/altsyncram_jg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/db/altsyncram_jg81.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -203,56 +200,55 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 48        ;
+; Estimated Total logic elements              ; 46        ;
 ;                                             ;           ;
-; Total combinational functions               ; 48        ;
+; Total combinational functions               ; 46        ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 8         ;
 ;     -- 3 input functions                    ; 16        ;
-;     -- <=2 input functions                  ; 24        ;
+;     -- <=2 input functions                  ; 22        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 29        ;
+;     -- normal mode                          ; 27        ;
 ;     -- arithmetic mode                      ; 19        ;
 ;                                             ;           ;
 ; Total registers                             ; 28        ;
 ;     -- Dedicated logic registers            ; 28        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 28        ;
+; I/O pins                                    ; 25        ;
 ; Total memory bits                           ; 22528     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 39        ;
-; Total fan-out                               ; 447       ;
-; Average fan-out                             ; 3.13      ;
+; Total fan-out                               ; 437       ;
+; Average fan-out                             ; 3.24      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name       ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; |Pruebas_ram                                 ; 48 (0)              ; 28 (0)                    ; 22528       ; 0            ; 0       ; 0         ; 28   ; 0            ; |Pruebas_ram                                                                                         ; Pruebas_ram       ; work         ;
-;    |Ram_grande_rtl:inst1|                    ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|Ram_grande_rtl:inst1                                                                    ; Ram_grande_rtl    ; work         ;
-;       |Syncore_ram:U1|                       ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|Ram_grande_rtl:inst1|Syncore_ram:U1                                                     ; Syncore_ram       ; work         ;
-;          |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0                                ; altsyncram        ; work         ;
-;             |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81   ; work         ;
-;    |escritura_lectura:inst2|                 ; 48 (48)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|escritura_lectura:inst2                                                                 ; escritura_lectura ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name       ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+-------------------+--------------+
+; |Pruebas_ram                              ; 46 (0)              ; 28 (0)                    ; 22528       ; 0            ; 0       ; 0         ; 25   ; 0            ; |Pruebas_ram                                                              ; Pruebas_ram       ; work         ;
+;    |escritura_lectura:inst2|              ; 46 (46)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|escritura_lectura:inst2                                      ; escritura_lectura ; work         ;
+;    |ram:inst|                             ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|ram:inst                                                     ; ram               ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|ram:inst|altsyncram:mem_rtl_0                                ; altsyncram        ; work         ;
+;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pruebas_ram|ram:inst|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81   ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
-; Name                                                                                               ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
-+----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
-; Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 11           ; --           ; --           ; 22528 ; None ;
-+----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                        ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                    ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; ram:inst|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 11           ; --           ; --           ; 22528 ; None ;
++-------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 Encoding Type:  One-Hot
@@ -269,15 +265,14 @@ Encoding Type:  One-Hot
 +--------------------+-------------------+------------------+---------------+-----------------+--------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                          ;
-+--------------------------------------------------------+--------------------+
-; Register name                                          ; Reason for Removal ;
-+--------------------------------------------------------+--------------------+
-; Ram_grande_rtl:inst1|Syncore_ram:U1|AddrRegPort[0..10] ; Lost fanout        ;
-; escritura_lectura:inst2|contador_dato[11]              ; Lost fanout        ;
-; Total Number of Removed Registers = 12                 ;                    ;
-+--------------------------------------------------------+--------------------+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++-------------------------------------------+--------------------+
+; Register name                             ; Reason for Removal ;
++-------------------------------------------+--------------------+
+; escritura_lectura:inst2|contador_dato[11] ; Lost fanout        ;
+; Total Number of Removed Registers = 1     ;                    ;
++-------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -295,14 +290,13 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                                     ;
-+-----------------------------------------------------------+-----------------------------------------------+------+
-; Register Name                                             ; Megafunction                                  ; Type ;
-+-----------------------------------------------------------+-----------------------------------------------+------+
-; Ram_grande_rtl:inst1|Syncore_ram:U1|DataOutRegPort[0..10] ; Ram_grande_rtl:inst1|Syncore_ram:U1|mem_rtl_0 ; RAM  ;
-; Ram_grande_rtl:inst1|Syncore_ram:U1|mem[0..2047][0..10]   ; Ram_grande_rtl:inst1|Syncore_ram:U1|mem_rtl_0 ; RAM  ;
-+-----------------------------------------------------------+-----------------------------------------------+------+
++--------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions     ;
++----------------------+--------------------+------+
+; Register Name        ; Megafunction       ; Type ;
++----------------------+--------------------+------+
+; ram:inst|dout[0..10] ; ram:inst|mem_rtl_0 ; RAM  ;
++----------------------+--------------------+------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -314,162 +308,105 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Source assignments for Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                               ;
-+---------------------------------+--------------------+------+--------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
-+---------------------------------+--------------------+------+--------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Source assignments for ram:inst|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Ram_grande_rtl:inst1 ;
-+-------------------------+-------+---------------------------------+
-; Parameter Name          ; Value ; Type                            ;
-+-------------------------+-------+---------------------------------+
-; DATAWIDTH               ; 11    ; Signed Integer                  ;
-; ADDRWIDTH               ; 11    ; Signed Integer                  ;
-; MEMDEPTH                ; 2048  ; Signed Integer                  ;
-; SPRAM                   ; 1     ; Signed Integer                  ;
-; READ_MODE_A             ; 1     ; Signed Integer                  ;
-; READ_WRITE_A            ; 1     ; Signed Integer                  ;
-; ENABLE_WR_PORTA         ; 1     ; Signed Integer                  ;
-; REGISTER_RD_ADDR_PORTA  ; 0     ; Signed Integer                  ;
-; REGISTER_OUTPUT_PORTA   ; 1     ; Signed Integer                  ;
-; ENABLE_OUTPUT_REG_PORTA ; 0     ; Signed Integer                  ;
-; RESET_OUTPUT_REG_PORTA  ; 0     ; Signed Integer                  ;
-; READ_MODE_B             ; 1     ; Signed Integer                  ;
-; READ_WRITE_B            ; 1     ; Signed Integer                  ;
-; ENABLE_WR_PORTB         ; 0     ; Signed Integer                  ;
-; REGISTER_RD_ADDR_PORTB  ; 0     ; Signed Integer                  ;
-; REGISTER_OUTPUT_PORTB   ; 0     ; Signed Integer                  ;
-; ENABLE_OUTPUT_REG_PORTB ; 0     ; Signed Integer                  ;
-; RESET_OUTPUT_REG_PORTB  ; 0     ; Signed Integer                  ;
-+-------------------------+-------+---------------------------------+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; addr_width     ; 11    ; Signed Integer               ;
+; data_width     ; 11    ; Signed Integer               ;
++----------------+-------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Ram_grande_rtl:inst1|Syncore_ram:U1 ;
-+-------------------------+-------+------------------------------------------------+
-; Parameter Name          ; Value ; Type                                           ;
-+-------------------------+-------+------------------------------------------------+
-; DATAWIDTH               ; 11    ; Signed Integer                                 ;
-; ADDRWIDTH               ; 11    ; Signed Integer                                 ;
-; MEMDEPTH                ; 2048  ; Signed Integer                                 ;
-; SPRAM                   ; 1     ; Signed Integer                                 ;
-; READ_MODE_A             ; 1     ; Signed Integer                                 ;
-; READ_WRITE_A            ; 1     ; Signed Integer                                 ;
-; ENABLE_WR_PORTA         ; 1     ; Signed Integer                                 ;
-; REGISTER_RD_ADDR_PORTA  ; 0     ; Signed Integer                                 ;
-; REGISTER_OUTPUT_PORTA   ; 1     ; Signed Integer                                 ;
-; ENABLE_OUTPUT_REG_PORTA ; 0     ; Signed Integer                                 ;
-; RESET_OUTPUT_REG_PORTA  ; 0     ; Signed Integer                                 ;
-; READ_MODE_B             ; 1     ; Signed Integer                                 ;
-; READ_WRITE_B            ; 1     ; Signed Integer                                 ;
-; ENABLE_WR_PORTB         ; 0     ; Signed Integer                                 ;
-; REGISTER_RD_ADDR_PORTB  ; 0     ; Signed Integer                                 ;
-; REGISTER_OUTPUT_PORTB   ; 0     ; Signed Integer                                 ;
-; ENABLE_OUTPUT_REG_PORTB ; 0     ; Signed Integer                                 ;
-; RESET_OUTPUT_REG_PORTB  ; 0     ; Signed Integer                                 ;
-; TWO                     ; 2     ; Signed Integer                                 ;
-; Rd_Iterations           ; 1     ; Signed Integer                                 ;
-; Wr_Iterations           ; 1     ; Signed Integer                                 ;
-; rd_inc                  ; 0     ; Signed Integer                                 ;
-; wr_inc                  ; 0     ; Signed Integer                                 ;
-+-------------------------+-------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+--------------------+
+; Parameter Name                     ; Value                ; Type               ;
++------------------------------------+----------------------+--------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped            ;
+; WIDTH_A                            ; 11                   ; Untyped            ;
+; WIDTHAD_A                          ; 11                   ; Untyped            ;
+; NUMWORDS_A                         ; 2048                 ; Untyped            ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped            ;
+; WIDTH_B                            ; 1                    ; Untyped            ;
+; WIDTHAD_B                          ; 1                    ; Untyped            ;
+; NUMWORDS_B                         ; 1                    ; Untyped            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped            ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped            ;
+; BYTE_SIZE                          ; 8                    ; Untyped            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped            ;
+; INIT_FILE                          ; UNUSED               ; Untyped            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped            ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped            ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped            ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped            ;
+; CBXI_PARAMETER                     ; altsyncram_jg81      ; Untyped            ;
++------------------------------------+----------------------+--------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0 ;
-+------------------------------------+----------------------+-----------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                          ;
-+------------------------------------+----------------------+-----------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                       ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                    ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                  ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                  ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                       ;
-; WIDTH_A                            ; 11                   ; Untyped                                       ;
-; WIDTHAD_A                          ; 11                   ; Untyped                                       ;
-; NUMWORDS_A                         ; 2048                 ; Untyped                                       ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                       ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                       ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                       ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                       ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                       ;
-; WIDTH_B                            ; 1                    ; Untyped                                       ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                       ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                       ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                       ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                       ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                       ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                       ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                       ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                       ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                       ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                       ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                       ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                       ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                       ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                       ;
-; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped                                       ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                       ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                       ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                       ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                       ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                       ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                       ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                       ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                       ;
-; CBXI_PARAMETER                     ; altsyncram_jg81      ; Untyped                                       ;
-+------------------------------------+----------------------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                     ;
-+-------------------------------------------+----------------------------------------------------------+
-; Name                                      ; Value                                                    ;
-+-------------------------------------------+----------------------------------------------------------+
-; Number of entity instances                ; 1                                                        ;
-; Entity Instance                           ; Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0 ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                              ;
-;     -- WIDTH_A                            ; 11                                                       ;
-;     -- NUMWORDS_A                         ; 2048                                                     ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                             ;
-;     -- WIDTH_B                            ; 1                                                        ;
-;     -- NUMWORDS_B                         ; 1                                                        ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                   ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                             ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                     ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ;
-+-------------------------------------------+----------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Ram_grande_rtl:inst1|Syncore_ram:U1"                                                               ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                ; Type   ; Severity ; Details                                                                             ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
-; PortDataOut[21..11] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                          ;
++-------------------------------------------+-------------------------------+
+; Name                                      ; Value                         ;
++-------------------------------------------+-------------------------------+
+; Number of entity instances                ; 1                             ;
+; Entity Instance                           ; ram:inst|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                   ;
+;     -- WIDTH_A                            ; 11                            ;
+;     -- NUMWORDS_A                         ; 2048                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                  ;
+;     -- WIDTH_B                            ; 1                             ;
+;     -- NUMWORDS_B                         ; 1                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ;
++-------------------------------------------+-------------------------------+
 
 
 +-----------------------------------------------------+
@@ -477,25 +414,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 28                          ;
+; boundary_port         ; 25                          ;
 ; cycloneiii_ff         ; 28                          ;
 ;     CLR               ; 6                           ;
 ;     ENA CLR           ; 10                          ;
 ;     ENA CLR SCLR      ; 11                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 48                          ;
+; cycloneiii_lcell_comb ; 46                          ;
 ;     arith             ; 19                          ;
 ;         2 data inputs ; 18                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 29                          ;
+;     normal            ; 27                          ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 15                          ;
 ;         4 data inputs ; 8                           ;
 ; cycloneiii_ram_block  ; 11                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.61                        ;
+; Average LUT depth     ; 1.63                        ;
 +-----------------------+-----------------------------+
 
 
@@ -504,7 +441,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -514,14 +451,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Sep 17 14:48:25 2024
+    Info: Processing started: Tue Sep 17 16:34:11 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pruebas_ram -c Pruebas_ram
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/gaspar/desktop/test_ram/test_ram/ip_core/syncore_ram.v
-    Info (12023): Found entity 1: Syncore_ram File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/syncore_ram.v Line: 34
-Info (12021): Found 1 design units, including 1 entities, in source file /users/gaspar/desktop/test_ram/test_ram/ip_core/ram_grande.v
-    Info (12023): Found entity 1: Ram_grande_rtl File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/Ram_grande.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file syncore_ram.v
+    Info (12023): Found entity 1: Syncore_ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/syncore_ram.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file ram_grande.v
+    Info (12023): Found entity 1: Ram_grande_rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/Ram_grande.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file ram.v
     Info (12023): Found entity 1: ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/ram.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pruebas_ram.bdf
@@ -529,15 +466,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file pruebas
 Info (12021): Found 2 design units, including 1 entities, in source file escritura_lectura.vhd
     Info (12022): Found design unit 1: escritura_lectura-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura.vhd Line: 22
     Info (12023): Found entity 1: escritura_lectura File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file escritura_lectura_chico.vhd
+    Info (12022): Found design unit 1: escritura_lectura_chico-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura_chico.vhd Line: 22
+    Info (12023): Found entity 1: escritura_lectura_chico File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/escritura_lectura_chico.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file pruebas_ram_chico.bdf
+    Info (12023): Found entity 1: Pruebas_ram_chico
 Info (12127): Elaborating entity "Pruebas_ram" for the top level hierarchy
 Info (12128): Elaborating entity "escritura_lectura" for hierarchy "escritura_lectura:inst2"
-Info (12128): Elaborating entity "Ram_grande_rtl" for hierarchy "Ram_grande_rtl:inst1"
-Info (12128): Elaborating entity "Syncore_ram" for hierarchy "Ram_grande_rtl:inst1|Syncore_ram:U1" File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/Ram_grande.v Line: 143
-Warning (10036): Verilog HDL or VHDL warning at syncore_ram.v(108): object "Prm_READ_FIRST" assigned a value but never read File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/syncore_ram.v Line: 108
-Warning (10230): Verilog HDL assignment warning at syncore_ram.v(182): truncated value with size 22 to match size of target (11) File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/syncore_ram.v Line: 182
-Warning (10034): Output port "PortDataOut[21..11]" at syncore_ram.v(81) has no driver File: C:/Users/Gaspar/Desktop/test_ram/test_ram/ip_core/syncore_ram.v Line: 81
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst"
 Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "Ram_grande_rtl:inst1|Syncore_ram:U1|mem_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 11
         Info (286033): Parameter WIDTHAD_A set to 11
@@ -548,8 +486,8 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "Ram_grande_rtl:inst1|Syncore_ram:U1|altsyncram:mem_rtl_0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "ram:inst|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
     Info (12134): Parameter "WIDTH_A" = "11"
     Info (12134): Parameter "WIDTHAD_A" = "11"
@@ -563,20 +501,20 @@ Info (12133): Instantiated megafunction "Ram_grande_rtl:inst1|Syncore_ram:U1|alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
     Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/db/altsyncram_jg81.tdf Line: 28
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/output_files/Pruebas_ram.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 25 output pins
-    Info (21061): Implemented 49 logic cells
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 47 logic cells
     Info (21064): Implemented 11 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4999 megabytes
-    Info: Processing ended: Tue Sep 17 14:48:38 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:10
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4877 megabytes
+    Info: Processing ended: Tue Sep 17 16:34:18 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

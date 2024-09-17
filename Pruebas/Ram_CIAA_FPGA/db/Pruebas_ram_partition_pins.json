@@ -48,18 +48,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "led_estado[2]",
-					"strict" : false
-				},
-				{
-					"name" : "led_estado[1]",
-					"strict" : false
-				},
-				{
-					"name" : "led_estado[0]",
-					"strict" : false
-				},
-				{
 					"name" : "leds[10]",
 					"strict" : false
 				},

@@ -12,9 +12,9 @@ entity escritura_lectura is
 		--salidas
 		dir_o			: out 	std_logic_vector(10 downto 0);
 		data_o		: out 	std_logic_vector(10 downto 0);
-		write_en 	: out 	std_logic;
-		estado		: out 	integer range 0 to 4;
-		led_salida 	: out	std_logic_vector(10 downto 0)
+		write_en 	: out 	std_logic
+--		estado		: out 	integer range 0 to 4;
+--		led_salida 	: out	std_logic_vector(10 downto 0)
 	);
 
 end entity;
@@ -79,35 +79,35 @@ begin
 	begin
 		case state is
 			when dir_y_enable =>
-				write_en 	<= '0'; 	
+				write_en 	<= '0'; 	--no habilito la escitura
 				dir_o			<= std_logic_vector(to_unsigned(dir_interna,11));			
 				data_o		<= std_logic_vector(to_unsigned(contador_dato,11));
-				led_salida 	<= (others => '0');
-				estado		<= 0;
+--				led_salida 	<= (others => '0');
+--				estado		<= 0;
 			when escritura =>
-				write_en 	<= '1'; 	
+				write_en 	<= '1'; 	--habilito la escritura
 				dir_o			<= std_logic_vector(to_unsigned(dir_interna,11));			
 				data_o		<= std_logic_vector(to_unsigned(contador_dato,11));
-				led_salida 	<= (others => '0');
-				estado		<= 1;
+--				led_salida 	<= (others => '0');
+--				estado		<= 1;
 			when lectura =>
 				write_en 	<= '0'; 	
 				dir_o		<= std_logic_vector(to_unsigned(dir_interna,11));			
 				data_o		<= (others => '0');
-				led_salida 	<= (others => '0');
-				estado		<= 2;
+--				led_salida 	<= (others => '0');
+--				estado		<= 2;
 			when cambio_dir =>
 				write_en 	<= '0'; 	
 				dir_o		<= std_logic_vector(to_unsigned(dir_interna,11));			
 				data_o		<= (others => '0');
-				led_salida 	<= data_i;
-				estado		<= 3;
+--				led_salida 	<= data_i;
+--				estado		<= 3;
 			when boton_press=>
 				write_en 	<= '0'; 	
 				dir_o			<= std_logic_vector(to_unsigned(dir_interna,11));			
 				data_o		<= (others => '0');
-				led_salida 	<= data_i;
-				estado		<= 4;
+--				led_salida 	<= data_i;
+--				estado		<= 4;
 		end case;
 	end process;
 

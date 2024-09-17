@@ -1,5 +1,5 @@
 Flow report for Pruebas_ram
-Tue Sep 17 14:48:53 2024
+Tue Sep 17 16:34:18 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 17 14:48:53 2024          ;
+; Flow Status                        ; Successful - Tue Sep 17 16:34:18 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Pruebas_ram                                    ;
 ; Top-level Entity Name              ; Pruebas_ram                                    ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 48 / 114,480 ( < 1 % )                         ;
-;     Total combinational functions  ; 48 / 114,480 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 28 / 114,480 ( < 1 % )                         ;
+; Total logic elements               ; 46                                             ;
+;     Total combinational functions  ; 46                                             ;
+;     Dedicated logic registers      ; 28                                             ;
 ; Total registers                    ; 28                                             ;
-; Total pins                         ; 28 / 529 ( 5 % )                               ;
+; Total pins                         ; 25                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 22,528 / 3,981,312 ( < 1 % )                   ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
+; Total memory bits                  ; 22,528                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/17/2024 14:48:25 ;
+; Start date & time ; 09/17/2024 16:34:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pruebas_ram         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 238300918768197.172659530506348        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 238300918768197.172660165117340        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -102,12 +102,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4999 MB             ; 00:00:10                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 6293 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4696 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4918 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
-; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4877 MB             ; 00:00:06                           ;
+; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,10 +113,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -128,10 +120,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Pruebas_ram -c Pruebas_ram
-quartus_fit --read_settings_files=off --write_settings_files=off Pruebas_ram -c Pruebas_ram
-quartus_asm --read_settings_files=off --write_settings_files=off Pruebas_ram -c Pruebas_ram
-quartus_sta Pruebas_ram -c Pruebas_ram
-quartus_eda --read_settings_files=off --write_settings_files=off Pruebas_ram -c Pruebas_ram
 
 
 

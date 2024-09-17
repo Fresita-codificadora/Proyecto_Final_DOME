@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
--- CREATED		"Tue Sep 17 14:52:55 2024"
+-- CREATED		"Tue Sep 17 16:34:30 2024"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -29,37 +29,21 @@ ENTITY Pruebas_ram IS
 		btn :  IN  STD_LOGIC;
 		reset :  IN  STD_LOGIC;
 		led_dir :  OUT  STD_LOGIC_VECTOR(10 DOWNTO 0);
-		led_estado :  OUT  STD_LOGIC_VECTOR(2 DOWNTO 0);
 		leds :  OUT  STD_LOGIC_VECTOR(10 DOWNTO 0)
 	);
 END Pruebas_ram;
 
 ARCHITECTURE bdf_type OF Pruebas_ram IS 
 
-COMPONENT ram_grande_rtl
-GENERIC (ADDRWIDTH : INTEGER;
-			DATAWIDTH : INTEGER;
-			ENABLE_OUTPUT_REG_PORTA : INTEGER;
-			ENABLE_OUTPUT_REG_PORTB : INTEGER;
-			ENABLE_WR_PORTA : INTEGER;
-			ENABLE_WR_PORTB : INTEGER;
-			READ_MODE_A : INTEGER;
-			READ_MODE_B : INTEGER;
-			READ_WRITE_A : INTEGER;
-			READ_WRITE_B : INTEGER;
-			REGISTER_OUTPUT_PORTA : INTEGER;
-			REGISTER_OUTPUT_PORTB : INTEGER;
-			REGISTER_RD_ADDR_PORTA : INTEGER;
-			REGISTER_RD_ADDR_PORTB : INTEGER;
-			RESET_OUTPUT_REG_PORTA : INTEGER;
-			RESET_OUTPUT_REG_PORTB : INTEGER;
-			SPRAM : INTEGER
+COMPONENT ram
+GENERIC (addr_width : INTEGER;
+			data_width : INTEGER
 			);
-	PORT(PortAClk : IN STD_LOGIC;
-		 PortAWriteEnable : IN STD_LOGIC;
-		 PortAAddr : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
-		 PortADataIn : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
-		 PortADataOut : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
+	PORT(write_en : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 addr : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+		 din : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+		 dout : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -70,9 +54,7 @@ COMPONENT escritura_lectura
 		 data_i : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
 		 write_en : OUT STD_LOGIC;
 		 data_o : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
-		 dir_o : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
-		 estado : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-		 led_salida : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
+		 dir_o : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -88,30 +70,15 @@ leds <= SYNTHESIZED_WIRE_3;
 
 
 
-b2v_inst1 : ram_grande_rtl
-GENERIC MAP(ADDRWIDTH => 11,
-			DATAWIDTH => 11,
-			ENABLE_OUTPUT_REG_PORTA => 0,
-			ENABLE_OUTPUT_REG_PORTB => 0,
-			ENABLE_WR_PORTA => 1,
-			ENABLE_WR_PORTB => 0,
-			READ_MODE_A => 1,
-			READ_MODE_B => 1,
-			READ_WRITE_A => 1,
-			READ_WRITE_B => 1,
-			REGISTER_OUTPUT_PORTA => 1,
-			REGISTER_OUTPUT_PORTB => 0,
-			REGISTER_RD_ADDR_PORTA => 0,
-			REGISTER_RD_ADDR_PORTB => 0,
-			RESET_OUTPUT_REG_PORTA => 0,
-			RESET_OUTPUT_REG_PORTB => 0,
-			SPRAM => 1
+b2v_inst : ram
+GENERIC MAP(addr_width => 11,
+			data_width => 11
 			)
-PORT MAP(PortAClk => clk,
-		 PortAWriteEnable => SYNTHESIZED_WIRE_0,
-		 PortAAddr => SYNTHESIZED_WIRE_1,
-		 PortADataIn => SYNTHESIZED_WIRE_2,
-		 PortADataOut => SYNTHESIZED_WIRE_3);
+PORT MAP(write_en => SYNTHESIZED_WIRE_0,
+		 clk => clk,
+		 addr => SYNTHESIZED_WIRE_1,
+		 din => SYNTHESIZED_WIRE_2,
+		 dout => SYNTHESIZED_WIRE_3);
 
 
 b2v_inst2 : escritura_lectura
@@ -121,8 +88,7 @@ PORT MAP(clk => clk,
 		 data_i => SYNTHESIZED_WIRE_3,
 		 write_en => SYNTHESIZED_WIRE_0,
 		 data_o => SYNTHESIZED_WIRE_2,
-		 dir_o => SYNTHESIZED_WIRE_1,
-		 estado => led_estado);
+		 dir_o => SYNTHESIZED_WIRE_1);
 
 
 END bdf_type;
