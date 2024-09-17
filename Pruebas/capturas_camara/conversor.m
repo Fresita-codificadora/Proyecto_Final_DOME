@@ -2,7 +2,7 @@
 % dataMatrix = ... (cargar o capturar los datos previamente)
 
 % Definir el ancho de la imagen
-imageWidth = 640;
+imageWidth = 1280;
 
 % Calcular la cantidad de píxeles disponibles
 numPixels = length(dataMatrix);
@@ -22,4 +22,4 @@ imshow(imageMatrix, [0 255]); % Mostrar la imagen con valores de 0 a 255
 title('Imagen Capturada');
 
 % Guardar la imagen como un archivo si es necesario
-imwrite(uint8(imageMatrix), 'captured_image_2.png'); % Guardar como PNG
+imwrite(uint8(imageMatrix), 'captured_image_3.png'); % Guardar como PNG
