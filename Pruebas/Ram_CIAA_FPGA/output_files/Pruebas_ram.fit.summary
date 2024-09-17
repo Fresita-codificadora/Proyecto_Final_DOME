@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Sep 17 14:48:46 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Pruebas_ram
+Top-level Entity Name : Pruebas_ram
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 48 / 114,480 ( < 1 % )
+    Total combinational functions : 48 / 114,480 ( < 1 % )
+    Dedicated logic registers : 28 / 114,480 ( < 1 % )
+Total registers : 28
+Total pins : 28 / 529 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 22,528 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

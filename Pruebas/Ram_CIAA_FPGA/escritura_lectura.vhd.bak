@@ -1,0 +1,96 @@
+library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
+entity four_state_moore_state_machine is
+
+	port(
+		--entradas
+		clk		 	: in	std_logic;
+		btn		 	: in	std_logic;
+		reset	 	: in	std_logic;
+		data_i		: in 	std_logic_vector(7 downto 0);
+		--salidas
+		write_en 	: out 	std_logic;
+		dir_o		: out 	std_logic_vector(8 downto 0);
+		data_o		: out 	std_logic_vector(7 downto 0);
+		led_salida 	: out	std_logic_vector(7 downto 0)
+	);
+
+end entity;
+
+architecture rtl of four_state_moore_state_machine is
+
+	-- Build an enumerated type for the state machine
+	type state_type is (dir_y_enable, escritura, lectura, cambio_dir);
+
+	-- Register to hold the current state
+	signal state   : state_type;
+
+	-- señales internas
+	signal dir_interna : integer range 0 to 2**9-1;
+	signal contador_dato : integer range 0 to 255;
+	signal registro_entrada : std_logic_vector(7 downto 0);
+begin
+
+	-- Logic to advance to the next state
+	process (clk, reset)
+	begin
+		if reset = '0' then					--la edu ciaa tiene resistencias de pull_up
+			state <= dir_y_enable;
+			dir_interna <= 0;
+			contador_dato <= 0;
+		elsif (rising_edge(clk)) then
+			case state is
+				when dir_y_enable=>
+					state <= escritura;
+					dir_interna<=dir_interna+1;
+					contador_dato <= contador_dato + 1;
+				when escritura=>
+					if dir_interna < 2**9-1  then --si todavia no termine de barrer vamos a dir_y_enable
+						state <= dir_y_enable;
+					else
+						dir_interna <= 0;							--si ya barrimos toda la memoria escribiendo el contador
+						state <= lectura;
+					end if;
+				when lectura=>
+					state <= cambio_dir;
+					registro_entrada <= data_i;
+				when cambio_dir =>
+					if btn = '0' then
+						state <= lectura;
+						dir_interna <= dir_interna + 1;
+					else
+						state <= cambio_dir;
+					end if;
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (state)
+	begin
+		case state is
+			when dir_y_enable =>
+				write_en 	<= '1'; 	
+				dir_o		<= std_logic_vector(to_unsigned(dir_interna));			
+				data_o		<= std_logic_vector(to_unsigned(contador_dato));
+				led_salida 	<= x"00";
+			when escritura =>
+				write_en 	<= '1'; 	
+				dir_o		<= std_logic_vector(to_unsigned(dir_interna));			
+				data_o		<= std_logic_vector(to_unsigned(contador_dato));
+				led_salida 	<= x"00";
+			when lectura =>
+				write_en 	<= '0'; 	
+				dir_o		<= std_logic_vector(to_unsigned(dir_interna));			
+				data_o		<= x"00"";
+				led_salida 	<= x"00";
+			when cambio_dir =>
+				write_en 	<= '0'; 	
+				dir_o		<= std_logic_vector(to_unsigned(dir_interna));			
+				data_o		<= std_logic_vector(to_unsigned(contador_dato));
+				led_salida 	<= registro_entrada;
+		end case;
+	end process;
+
+end rtl;

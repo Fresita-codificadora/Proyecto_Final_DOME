@@ -1,0 +1,8 @@
+
+State Machine - |Pruebas_ram|escritura_lectura:inst2|state
+Name state.boton_press state.cambio_dir state.lectura state.escritura state.dir_y_enable 
+state.dir_y_enable 0 0 0 0 0 
+state.escritura 0 0 0 1 1 
+state.lectura 0 0 1 0 1 
+state.cambio_dir 0 1 0 0 1 
+state.boton_press 1 0 0 0 1 

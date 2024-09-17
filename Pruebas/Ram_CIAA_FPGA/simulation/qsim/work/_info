@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/Ram_CIAA_FPGA/simulation/qsim
+vescritura_lectura
+Z1 !s110 1726413714
+!i10b 1
+!s100 4[2EEF?I@mKO3f9ZDBj733
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>JLiAlPaIzJGRn<6JI>d_2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1726413713
+Z5 8Pruebas_ram.vo
+Z6 FPruebas_ram.vo
+!i122 2
+L0 32 2002
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1726413714.000000
+Z9 !s107 Pruebas_ram.vo|
+Z10 !s90 -work|work|Pruebas_ram.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vescritura_lectura_vlg_vec_tst
+R1
+!i10b 1
+!s100 Ei8=ZOf;IN2=?Y1z`hG[e0
+R2
+IMl6XFMT:[P3R]J@MW3QXY0
+R3
+R0
+w1726413712
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 3
+L0 30 92
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+R1
+!i10b 1
+!s100 CCCB?1]Qi?nF8nA7I<gTD2
+R2
+I:m@1ZaWC^STfRYASCPIP11
+R3
+R0
+R4
+R5
+R6
+!i122 2
+L0 2035 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
