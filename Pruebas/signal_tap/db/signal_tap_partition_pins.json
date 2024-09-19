@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "trigger_cam",
+					"strict" : false
+				},
+				{
+					"name" : "done_led",
+					"strict" : false
+				},
+				{
+					"name" : "sca",
+					"strict" : false
+				},
+				{
+					"name" : "clk_cam",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset_btn",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "start_btn",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_clk",
+					"strict" : false
+				},
+				{
+					"name" : "Line_valid",
+					"strict" : false
+				},
+				{
+					"name" : "Frame_valid",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

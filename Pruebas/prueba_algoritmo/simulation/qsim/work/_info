@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/simulation/qsim
+vhard_block
+Z1 !s110 1726763346
+!i10b 1
+!s100 iSDGD8QW>J9;nmX0fPE]c0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IcKLR7YSFh^UeoAM0VjJoj2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1726763345
+Z5 8pruebas_algoritmo.vo
+Z6 Fpruebas_algoritmo.vo
+!i122 30
+L0 1525 34
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1726763346.000000
+Z9 !s107 pruebas_algoritmo.vo|
+Z10 !s90 -work|work|pruebas_algoritmo.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vtest_uart_tx_rx
+R1
+!i10b 1
+!s100 aj;Lc001OFk1N[e8OTAbT0
+R2
+I?UBUP_UJmco@9cam_AYJm0
+R3
+R0
+R4
+R5
+R6
+!i122 30
+L0 32 1492
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vtest_uart_tx_rx_vlg_vec_tst
+R1
+!i10b 1
+!s100 iM]O=S[UQJajm8WFbFh5F1
+R2
+I?DS9oa6aECPB[^e[TaP0Y2
+R3
+R0
+R4
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 31
+L0 30 119
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12

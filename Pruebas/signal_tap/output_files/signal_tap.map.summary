@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Sep 18 11:18:15 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : signal_tap
+Top-level Entity Name : signal_tap
+Family : Cyclone IV E
+Total logic elements : 1,465
+    Total combinational functions : 889
+    Dedicated logic registers : 1,054
+Total registers : 1054
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 1,966,080
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Sep 19 13:40:34 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : pruebas_algoritmo
+Top-level Entity Name : top
+Family : Cyclone IV E
+Total logic elements : 125
+    Total combinational functions : 115
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
