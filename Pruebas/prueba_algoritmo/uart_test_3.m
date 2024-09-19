@@ -14,17 +14,18 @@ configureTerminator(serial_port, "LF");  % Línea de finalización (line feed)
 %datos_a_enviar = [100, 150, 200, 255, 0, 32, 64];  % Puedes cambiar estos valores
 datos_a_enviar = uint8(255*rand(1,100));
 % Llamada a la función para enviar y recibir datos
-enviar_y_recibir_datos(serial_port, datos_a_enviar);
+vector=enviar_y_recibir_datos(serial_port, datos_a_enviar);
 
 % Cerrar el puerto serie
 clear serial_port;
 
-function enviar_y_recibir_datos(serial_port, datos)
+function[vector_recibido]= enviar_y_recibir_datos(serial_port, datos)
     % Función para enviar datos por puerto serie y esperar una respuesta
     % serial_port: objeto del puerto serie
     % datos: vector de datos a enviar (máximo 255 cada uno)
     
     % Recorre el vector de datos
+    vector_recibido=zeros(1,length(datos),'uint8');
     for i = 1:length(datos)
         dato_a_enviar = datos(i);  % Obtener el dato a enviar
         
@@ -38,8 +39,10 @@ function enviar_y_recibir_datos(serial_port, datos)
                 % Leer el dato recibido
                 dato_recibido = read(serial_port, 1, 'uint8');
                 disp(['Dato recibido: ', num2str(dato_recibido)]);
+                vector_recibido(i)=dato_recibido;
                 break;  % Salir del bucle y enviar el siguiente dato
             end
-        end
+        end    
     end
+    
 end
