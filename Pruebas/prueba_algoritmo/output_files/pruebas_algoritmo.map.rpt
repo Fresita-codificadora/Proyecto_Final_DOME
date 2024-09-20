@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebas_algoritmo
-Thu Sep 19 13:40:34 2024
+Thu Sep 19 20:52:09 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,16 +13,27 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top|UART_RX:inst|r_SM_Main
-  9. State Machine - |top|uart_tx:inst2|fsm_state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: uart_tx:inst2
- 14. Parameter Settings for User Entity Instance: UART_RX:inst
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |top_2|UART_RX:inst4|r_SM_Main
+ 10. State Machine - |top_2|Algoritmo_2:inst|state
+ 11. State Machine - |top_2|uart_tx:inst5|fsm_state
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Registers Packed Into Inferred Megafunctions
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for ram:inst1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
+ 18. Parameter Settings for User Entity Instance: uart_tx:inst5
+ 19. Parameter Settings for User Entity Instance: Algoritmo_2:inst
+ 20. Parameter Settings for User Entity Instance: ram:inst1
+ 21. Parameter Settings for User Entity Instance: uart_algo:inst8
+ 22. Parameter Settings for User Entity Instance: UART_RX:inst4
+ 23. Parameter Settings for Inferred Entity Instance: ram:inst1|altsyncram:mem_rtl_0
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,18 +60,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 19 13:40:34 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 19 20:52:09 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; pruebas_algoritmo                              ;
-; Top-level Entity Name              ; top                                            ;
+; Top-level Entity Name              ; top_2                                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 125                                            ;
-;     Total combinational functions  ; 115                                            ;
-;     Dedicated logic registers      ; 80                                             ;
-; Total registers                    ; 80                                             ;
-; Total pins                         ; 4                                              ;
+; Total logic elements               ; 424                                            ;
+;     Total combinational functions  ; 400                                            ;
+;     Dedicated logic registers      ; 172                                            ;
+; Total registers                    ; 172                                            ;
+; Total pins                         ; 19                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 22,528                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -72,8 +83,10 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; top                ; pruebas_algoritmo  ;
+; Top-level entity name                                            ; top_2              ; pruebas_algoritmo  ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                      ; Off                ; Off                ;
@@ -82,7 +95,6 @@ https://fpgasoftware.intel.com/eula.
 ; Preserve fewer node names                                        ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
 ; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                         ; Auto               ; Auto               ;
 ; Safe State Machine                                               ; Off                ; Off                ;
 ; Extract Verilog State Machines                                   ; On                 ; On                 ;
@@ -169,16 +181,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; test_uart_tx_rx.v                ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/test_uart_tx_rx.v ;         ;
-; uart_tx.v                        ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v         ;         ;
-; UART_RX.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd       ;         ;
-; top.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/top.bdf           ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; ram.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v                  ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v              ;         ;
+; UART_RX.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd            ;         ;
+; top_2.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/top_2.bdf              ;         ;
+; uart_algo.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd          ;         ;
+; Algoritmo_2.vhd                  ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                             ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                      ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                             ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                             ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                              ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                 ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                 ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                               ;         ;
+; db/altsyncram_jg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -186,49 +210,63 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 125       ;
+; Estimated Total logic elements              ; 424       ;
 ;                                             ;           ;
-; Total combinational functions               ; 115       ;
+; Total combinational functions               ; 400       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 57        ;
-;     -- 3 input functions                    ; 27        ;
-;     -- <=2 input functions                  ; 31        ;
+;     -- 4 input functions                    ; 181       ;
+;     -- 3 input functions                    ; 59        ;
+;     -- <=2 input functions                  ; 160       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 92        ;
-;     -- arithmetic mode                      ; 23        ;
+;     -- normal mode                          ; 289       ;
+;     -- arithmetic mode                      ; 111       ;
 ;                                             ;           ;
-; Total registers                             ; 80        ;
-;     -- Dedicated logic registers            ; 80        ;
+; Total registers                             ; 172       ;
+;     -- Dedicated logic registers            ; 172       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 4         ;
+; I/O pins                                    ; 19        ;
+; Total memory bits                           ; 22528     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 80        ;
-; Total fan-out                               ; 637       ;
-; Average fan-out                             ; 3.14      ;
+; Maximum fan-out                             ; 183       ;
+; Total fan-out                               ; 2013      ;
+; Average fan-out                             ; 3.24      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-----------------+--------------+
-; |top                       ; 115 (1)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |top                       ; top             ; work         ;
-;    |UART_RX:inst|          ; 50 (50)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|UART_RX:inst          ; UART_RX         ; work         ;
-;    |test_uart_tx_rx:inst1| ; 24 (24)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|test_uart_tx_rx:inst1 ; test_uart_tx_rx ; work         ;
-;    |uart_tx:inst2|         ; 40 (40)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|uart_tx:inst2         ; uart_tx         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-----------------+--------------+
+; |top_2                                    ; 400 (1)             ; 172 (0)                   ; 22528       ; 0            ; 0       ; 0         ; 19   ; 0            ; |top_2                                                               ; top_2           ; work         ;
+;    |Algoritmo_2:inst|                     ; 278 (278)           ; 87 (87)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|Algoritmo_2:inst                                              ; Algoritmo_2     ; work         ;
+;    |UART_RX:inst4|                        ; 51 (51)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|UART_RX:inst4                                                 ; UART_RX         ; work         ;
+;    |ram:inst1|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|ram:inst1                                                     ; ram             ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|ram:inst1|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|ram:inst1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81 ; work         ;
+;    |uart_algo:inst8|                      ; 30 (30)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|uart_algo:inst8                                               ; uart_algo       ; work         ;
+;    |uart_tx:inst5|                        ; 40 (40)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_2|uart_tx:inst5                                                 ; uart_tx         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                         ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                     ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; ram:inst1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 11           ; --           ; --           ; 22528 ; None ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |top|UART_RX:inst|r_SM_Main                                                                                                       ;
+; State Machine - |top_2|UART_RX:inst4|r_SM_Main                                                                                                    ;
 +--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
 ; Name                     ; r_SM_Main.s_Cleanup ; r_SM_Main.s_RX_Stop_Bit ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_Idle ;
 +--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
@@ -241,8 +279,34 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_2|Algoritmo_2:inst|state                                                                                                                                                                                                                                                                                                                                                                               ;
++----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+----------------------+--------------------+-----------------+--------------------+-----------------+--------------+
+; Name                             ; state.decremento_indice_FIFO ; state.escritura ; state.escritura_energia_cantidad ; state.lectura_energia_cantidad ; state.casos ; state.lectura_ancho_3 ; state.dir_ancho_3 ; state.lectura_ancho_2 ; state.dir_ancho_2 ; state.lectura_ancho_1 ; state.dir_ancho_1 ; state.lectura_FIFO_1 ; state.dir_anterior ; state.nuevo_pix ; state.trigger_wait ; state.wait_done ; state.errase ;
++----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+----------------------+--------------------+-----------------+--------------------+-----------------+--------------+
+; state.errase                     ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 0            ;
+; state.wait_done                  ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 1               ; 1            ;
+; state.trigger_wait               ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 1                  ; 0               ; 1            ;
+; state.nuevo_pix                  ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 1               ; 0                  ; 0               ; 1            ;
+; state.dir_anterior               ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 1                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.lectura_FIFO_1             ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 1                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.dir_ancho_1                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 1                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.lectura_ancho_1            ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 1                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.dir_ancho_2                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 1                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.lectura_ancho_2            ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 1                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.dir_ancho_3                ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 1                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.lectura_ancho_3            ; 0                            ; 0               ; 0                                ; 0                              ; 0           ; 1                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.casos                      ; 0                            ; 0               ; 0                                ; 0                              ; 1           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.lectura_energia_cantidad   ; 0                            ; 0               ; 0                                ; 1                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.escritura_energia_cantidad ; 0                            ; 0               ; 1                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.escritura                  ; 0                            ; 1               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
+; state.decremento_indice_FIFO     ; 1                            ; 0               ; 0                                ; 0                              ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                    ; 0                  ; 0               ; 0                  ; 0               ; 1            ;
++----------------------------------+------------------------------+-----------------+----------------------------------+--------------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+----------------------+--------------------+-----------------+--------------------+-----------------+--------------+
+
+
+Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------+
-; State Machine - |top|uart_tx:inst2|fsm_state                                                             ;
+; State Machine - |top_2|uart_tx:inst5|fsm_state                                                           ;
 +---------------------+--------------------+--------------------+---------------------+--------------------+
 ; Name                ; fsm_state.FSM_STOP ; fsm_state.FSM_SEND ; fsm_state.FSM_START ; fsm_state.FSM_IDLE ;
 +---------------------+--------------------+--------------------+---------------------+--------------------+
@@ -258,9 +322,9 @@ Encoding Type:  One-Hot
 +---------------------------------------+--------------------+
 ; Register name                         ; Reason for Removal ;
 +---------------------------------------+--------------------+
-; uart_tx:inst2|fsm_state~2             ; Lost fanout        ;
-; uart_tx:inst2|fsm_state~3             ; Lost fanout        ;
-; uart_tx:inst2|fsm_state~4             ; Lost fanout        ;
+; uart_tx:inst5|fsm_state~2             ; Lost fanout        ;
+; uart_tx:inst5|fsm_state~3             ; Lost fanout        ;
+; uart_tx:inst5|fsm_state~4             ; Lost fanout        ;
 ; Total Number of Removed Registers = 3 ;                    ;
 +---------------------------------------+--------------------+
 
@@ -270,32 +334,70 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 80    ;
-; Number of registers using Synchronous Clear  ; 37    ;
+; Total registers                              ; 172   ;
+; Number of registers using Synchronous Clear  ; 56    ;
 ; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 17    ;
+; Number of registers using Asynchronous Clear ; 79    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 114   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|test_uart_tx_rx:inst1|tx_out[2] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|uart_tx:inst2|data_to_send[4]   ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|uart_tx:inst2|cycle_counter[3]  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top|uart_tx:inst2|bit_counter[0]    ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |top|UART_RX:inst|r_Clk_Count[2]     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|UART_RX:inst|r_Bit_Index        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Algoritmo_2:inst|pix_previo[4]         ; 2       ;
+; Algoritmo_2:inst|indice_FIFO[10]       ; 10      ;
+; Algoritmo_2:inst|indice_FIFO[8]        ; 12      ;
+; Algoritmo_2:inst|indice_FIFO[1]        ; 12      ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions       ;
++-----------------------+---------------------+------+
+; Register Name         ; Megafunction        ; Type ;
++-----------------------+---------------------+------+
+; ram:inst1|dout[0..10] ; ram:inst1|mem_rtl_0 ; RAM  ;
++-----------------------+---------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |top_2|uart_algo:inst8|pix_count_int[15] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top_2|uart_tx:inst5|data_to_send[1]     ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_2|uart_tx:inst5|cycle_counter[0]    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |top_2|uart_tx:inst5|bit_counter[1]      ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top_2|Algoritmo_2:inst|FIFO_0[0]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_2|Algoritmo_2:inst|indice_FIFO[6]   ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |top_2|Algoritmo_2:inst|pix_previo[16]   ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |top_2|UART_RX:inst4|r_Clk_Count[3]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |top_2|Algoritmo_2:inst|cuenta[0]        ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |top_2|Algoritmo_2:inst|FIFO_dir_o[5]    ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |top_2|Algoritmo_2:inst|FIFO_dir_o[10]   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top_2|Algoritmo_2:inst|indice_FIFO[1]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top_2|UART_RX:inst4|r_Bit_Index         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst1|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
 
 
 +------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: uart_tx:inst2 ;
+; Parameter Settings for User Entity Instance: uart_tx:inst5 ;
 +----------------+----------+--------------------------------+
 ; Parameter Name ; Value    ; Type                           ;
 +----------------+----------+--------------------------------+
@@ -307,14 +409,129 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: UART_RX:inst ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; g_clks_per_bit ; 434   ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Algoritmo_2:inst ;
++------------------+---------+----------------------------------+
+; Parameter Name   ; Value   ; Type                             ;
++------------------+---------+----------------------------------+
+; umbral           ; 0       ; Signed Integer                   ;
+; cantidad_eventos ; 2048    ; Signed Integer                   ;
+; ancho            ; 1280    ; Signed Integer                   ;
+; pixels           ; 1310720 ; Signed Integer                   ;
++------------------+---------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst1 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 11    ; Signed Integer                ;
+; data_width     ; 11    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_algo:inst8 ;
++----------------+---------+-----------------------------------+
+; Parameter Name ; Value   ; Type                              ;
++----------------+---------+-----------------------------------+
+; pixels         ; 1310720 ; Signed Integer                    ;
++----------------+---------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_RX:inst4 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; g_clks_per_bit ; 434   ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst1|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 11                   ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_jg81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                           ;
++-------------------------------------------+--------------------------------+
+; Name                                      ; Value                          ;
++-------------------------------------------+--------------------------------+
+; Number of entity instances                ; 1                              ;
+; Entity Instance                           ; ram:inst1|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 11                             ;
+;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
++-------------------------------------------+--------------------------------+
 
 
 +-----------------------------------------------------+
@@ -322,28 +539,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 80                          ;
-;     CLR               ; 9                           ;
-;     ENA CLR           ; 8                           ;
-;     ENA SCLR          ; 23                          ;
+; boundary_port         ; 19                          ;
+; cycloneiii_ff         ; 172                         ;
+;     CLR               ; 19                          ;
+;     ENA               ; 33                          ;
+;     ENA CLR           ; 39                          ;
+;     ENA CLR SCLR      ; 21                          ;
+;     ENA SCLR          ; 21                          ;
 ;     SCLR              ; 4                           ;
 ;     SCLR SLD          ; 10                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 25                          ;
-; cycloneiii_lcell_comb ; 115                         ;
-;     arith             ; 23                          ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 92                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 57                          ;
+;     plain             ; 24                          ;
+; cycloneiii_lcell_comb ; 401                         ;
+;     arith             ; 111                         ;
+;         2 data inputs ; 104                         ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 290                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 181                         ;
+; cycloneiii_ram_block  ; 11                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.66                        ;
+; Max LUT depth         ; 8.30                        ;
+; Average LUT depth     ; 3.73                        ;
 +-----------------------+-----------------------------+
 
 
@@ -362,10 +582,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Sep 19 13:40:28 2024
+    Info: Processing started: Thu Sep 19 20:52:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebas_algoritmo -c pruebas_algoritmo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file algoritmo.vhd
+    Info (12022): Found design unit 1: Algoritmo-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo.vhd Line: 53
+    Info (12023): Found entity 1: Algoritmo File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file test_uart_tx_rx.v
     Info (12023): Found entity 1: test_uart_tx_rx File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/test_uart_tx_rx.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
@@ -375,24 +600,71 @@ Info (12021): Found 2 design units, including 1 entities, in source file uart_rx
     Info (12023): Found entity 1: UART_RX File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file top.bdf
     Info (12023): Found entity 1: top
-Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst2"
+Info (12021): Found 1 design units, including 1 entities, in source file top_2.bdf
+    Info (12023): Found entity 1: top_2
+Info (12021): Found 2 design units, including 1 entities, in source file uart_algo.vhd
+    Info (12022): Found design unit 1: uart_algo-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 26
+    Info (12023): Found entity 1: uart_algo File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file algoritmo_2.vhd
+    Info (12022): Found design unit 1: Algoritmo_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 53
+    Info (12023): Found entity 1: Algoritmo_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 11
+Info (12127): Elaborating entity "top_2" for the top level hierarchy
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst5"
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(134): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 134
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(136): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 136
-Info (12128): Elaborating entity "test_uart_tx_rx" for hierarchy "test_uart_tx_rx:inst1"
-Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst"
+Info (12128): Elaborating entity "Algoritmo_2" for hierarchy "Algoritmo_2:inst"
+Warning (10541): VHDL Signal Declaration warning at Algoritmo_2.vhd(64): used implicit default value for signal "reg_ancho_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 64
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst1"
+Info (12128): Elaborating entity "uart_algo" for hierarchy "uart_algo:inst8"
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst4"
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst1|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 11
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "ram:inst1|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst1|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "11"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
+    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 78
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/pruebas_algoritmo.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 456 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 126 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4869 megabytes
-    Info: Processing ended: Thu Sep 19 13:40:34 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 426 logic cells
+    Info (21064): Implemented 11 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Thu Sep 19 20:52:09 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/pruebas_algoritmo.map.smsg.
 
 

@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name TOP_LEVEL_ENTITY top_2
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:00:42  SEPTEMBER 19, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -57,16 +57,39 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_Y2 -to clk
+set_location_assignment PIN_AE16 -to rx_uart
+set_location_assignment PIN_AE15 -to tx_uart
+set_location_assignment PIN_M23 -to reset
+set_global_assignment -name VERILOG_FILE ram.v
+set_global_assignment -name VHDL_FILE Algoritmo.vhd
 set_global_assignment -name VERILOG_FILE test_uart_tx_rx.v
 set_global_assignment -name VERILOG_FILE uart_tx.v
 set_global_assignment -name VHDL_FILE UART_RX.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name BDF_FILE top.bdf
+set_global_assignment -name BDF_FILE top_2.bdf
+set_global_assignment -name VHDL_FILE uart_algo.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_location_assignment PIN_G19 -to led_estado[3]
+set_location_assignment PIN_F19 -to led_estado[2]
+set_location_assignment PIN_E19 -to led_estado[1]
+set_location_assignment PIN_F21 -to led_estado[0]
+set_location_assignment PIN_H15 -to fifo_led[10]
+set_location_assignment PIN_G16 -to fifo_led[9]
+set_location_assignment PIN_G15 -to fifo_led[8]
+set_location_assignment PIN_F15 -to fifo_led[7]
+set_location_assignment PIN_H17 -to fifo_led[6]
+set_location_assignment PIN_J16 -to fifo_led[5]
+set_location_assignment PIN_H16 -to fifo_led[4]
+set_location_assignment PIN_J15 -to fifo_led[3]
+set_location_assignment PIN_G17 -to fifo_led[2]
+set_location_assignment PIN_J17 -to fifo_led[1]
+set_location_assignment PIN_H19 -to fifo_led[0]
+set_global_assignment -name VHDL_FILE Algoritmo_2.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_Y2 -to clk
-set_location_assignment PIN_AE16 -to rx_uart
-set_location_assignment PIN_AE15 -to tx_uart
-set_location_assignment PIN_M23 -to reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
