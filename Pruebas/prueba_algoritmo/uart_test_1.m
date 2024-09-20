@@ -1,5 +1,5 @@
 % Configuración del puerto serie
-port_name = 'COM3';  % Cambia este valor por el puerto serie correcto en tu sistema
+port_name = 'COM13';  % Cambia este valor por el puerto serie correcto en tu sistema
 baud_rate = 115200;    % Asegúrate de que coincida con la configuración del dispositivo
 
 % Crear objeto de puerto serie
@@ -9,7 +9,7 @@ serial_port = serialport(port_name, baud_rate, 'Timeout', 10);  % Timeout de 10 
 configureTerminator(serial_port, "LF");  % Línea de finalización (line feed)
 
 % Número a enviar (entre 0 y 255)
-numero_a_enviar = 150;  % Cambia este número como desees (debe ser <= 255)
+numero_a_enviar = 200;  % Cambia este número como desees (debe ser <= 255)
 
 % Enviar número por puerto serie
 write(serial_port, numero_a_enviar, 'uint8');
@@ -26,6 +26,6 @@ while true
     end
 end
 
-fclose(serial_port);
+
 % Cerrar el puerto serie
 clear serial_port;
