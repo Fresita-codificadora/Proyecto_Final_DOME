@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Sep 19 20:52:09 2024
+Analysis & Elaboration Status : Successful - Sun Sep 22 20:23:31 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : pruebas_algoritmo
-Top-level Entity Name : top_2
+Top-level Entity Name : Algoritmo_2
 Family : Cyclone IV E
-Total logic elements : 424
-    Total combinational functions : 400
-    Dedicated logic registers : 172
-Total registers : 172
-Total pins : 19
-Total virtual pins : 0
-Total memory bits : 22,528
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

@@ -4,79 +4,287 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "tx_uart",
+					"name" : "FIFO_data_o[0]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[10]",
+					"name" : "FIFO_data_o[1]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[9]",
+					"name" : "FIFO_data_o[2]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[8]",
+					"name" : "FIFO_data_o[3]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[7]",
+					"name" : "FIFO_data_o[4]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[6]",
+					"name" : "FIFO_data_o[5]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[5]",
+					"name" : "FIFO_data_o[6]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[4]",
+					"name" : "FIFO_data_o[7]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[3]",
+					"name" : "FIFO_data_o[8]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[2]",
+					"name" : "FIFO_data_o[9]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[1]",
+					"name" : "FIFO_data_o[10]",
 					"strict" : false
 				},
 				{
-					"name" : "fifo_led[0]",
+					"name" : "FIFO_dir_o[0]",
 					"strict" : false
 				},
 				{
-					"name" : "led_estado[3]",
+					"name" : "FIFO_dir_o[1]",
 					"strict" : false
 				},
 				{
-					"name" : "led_estado[2]",
+					"name" : "FIFO_dir_o[2]",
 					"strict" : false
 				},
 				{
-					"name" : "led_estado[1]",
+					"name" : "FIFO_dir_o[3]",
 					"strict" : false
 				},
 				{
-					"name" : "led_estado[0]",
+					"name" : "FIFO_dir_o[4]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "FIFO_dir_o[5]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "FIFO_dir_o[6]",
 					"strict" : false
 				},
 				{
-					"name" : "rx_uart",
+					"name" : "FIFO_dir_o[7]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_dir_o[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_dir_o[9]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_dir_o[10]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_RW_o",
+					"strict" : false
+				},
+				{
+					"name" : "estado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "reset_i",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[18]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[19]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[20]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[17]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_cnt_i[16]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "trigger",
+					"strict" : false
+				},
+				{
+					"name" : "enable_done",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[10]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[9]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[7]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FIFO_data_i[1]",
 					"strict" : false
 				}
 			]

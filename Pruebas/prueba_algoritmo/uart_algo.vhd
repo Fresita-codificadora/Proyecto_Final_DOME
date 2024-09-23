@@ -7,6 +7,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity uart_algo is
 	generic(
@@ -17,7 +18,7 @@ entity uart_algo is
 		reset	 		: in	std_logic;
 		rx_dv	 		: in std_logic;
 		rx_byte 		: in std_logic_vector (7 downto 0);
-		pix_count	: out integer range 0 to 1_310_720;
+		pix_count	: out std_logic_vector(20 downto 0);
 		byte_o	: out std_logic_vector(7 downto 0)
 	);
 
@@ -66,10 +67,10 @@ begin
 	begin
 		case state is
 			when idle =>
-				pix_count	<=	pix_count_int;
+				pix_count	<=	std_logic_vector(to_unsigned(pix_count_int, 21));
 				byte_o		<= reg_data;
 			when envio=>
-				pix_count	<=	pix_count_int;
+				pix_count	<=	std_logic_vector(to_unsigned(pix_count_int, 21));
 				byte_o		<= reg_data;
 		end case;
 	end process;

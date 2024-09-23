@@ -1,6 +1,49 @@
 m255
 K4
 z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s12c _opt1
+R1
+!s12c _opt
+R1
+!s11e MIXED_VERSIONS
 !s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
@@ -8,119 +51,348 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/simulation/qsim
-vhard_block
-Z1 !s110 1726781700
-!i10b 1
-!s100 XM2=Q92fiE2DS[`PkfGOd2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IMOD4ejCGG7]AhO5`VJ_1A2
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z4 w1726781699
-Z5 8pruebas_algoritmo.vo
-Z6 Fpruebas_algoritmo.vo
-!i122 34
-L0 1987 34
-Z7 OV;L;2020.1;71
-r1
-!s85 0
-31
-Z8 !s108 1726781700.000000
-Z9 !s107 pruebas_algoritmo.vo|
-Z10 !s90 -work|work|pruebas_algoritmo.vo|
-!i113 1
-Z11 o-work work
-Z12 tCvgOpt 0
-vtest_uart_tx_rx
-Z13 !s110 1726763346
-!i10b 1
-!s100 aj;Lc001OFk1N[e8OTAbT0
+Z2 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/simulation/qsim
+T_opt
+!s110 1726963560
+VTU<>0jNEGI9A_<lRiHGln2
+04 21 14 work uart_algo_vhd_vec_tst uart_algo_arch 1
+=1-d481d7ab5ad7-66ef5f67-a5-1bc8
+R1
+Z3 !s12b OEM100
+Z4 !s124 OEM10U3 
+Z5 o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim
+Z6 tCvgOpt 0
+n@_opt
+Z7 OL;O;2023.3;77
 R2
-I?UBUP_UJmco@9cam_AYJm0
+T_opt1
+!s110 1727015388
+VEY9b]>MeVb4ChbWClNh>z1
+Z8 04 25 18 work test_algo_sim_vhd_vec_tst test_algo_sim_arch 1
+=1-d481d7ab5ad7-66f029da-390-57c
+R1
 R3
-R0
-Z14 w1726763345
+R4
+o-quiet +acc -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim
+R6
+n@_opt1
+R7
+R2
+T_opt2
+!s110 1727021658
+Vn`WEf]d;G:GW^Afd9HVkb1
+R8
+=1-d481d7ab5ad7-66f04259-53-13dc
+R1
+R3
+R4
 R5
 R6
+n@_opt2
+R7
+Ehard_block
+Z9 w1727021653
+Z10 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z11 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
+Z12 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z13 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z14 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z15 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
+!i122 91
+Z16 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/simulation/qsim
+Z17 8pruebas_algoritmo.vho
+Z18 Fpruebas_algoritmo.vho
+l0
+L35 1
+VO;cUSklm4Sig<`__bK=J@0
+!s100 0CTYib@dc:ObIVR9DRSK?2
+Z19 OL;C;2023.3;77
+32
+Z20 !s110 1727021655
+!i10b 1
+Z21 !s108 1727021655.000000
+Z22 !s90 -work|work|pruebas_algoritmo.vho|
+Z23 !s107 pruebas_algoritmo.vho|
+!i113 0
+Z24 o-work work
+Z25 tExplicit 1 CvgOpt 0
+Astructure
+R10
+R11
+R12
+R13
+R14
+R15
+DEx4 work 10 hard_block 0 22 O;cUSklm4Sig<`__bK=J@0
+!i122 91
+l65
+L51 20
+VGLY:g5RDEe^dIV`12>FYD3
+!s100 6LcB1AebN6j_bAmfc?Z:_0
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Etest_algo_sim
+R9
+R11
+R15
+R10
+Z26 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
+R12
+R13
+R14
+Z27 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+!i122 91
+R16
+R17
+R18
+l0
+Z28 L80 1
+V=YR6f@Dj4_eY=Gg?J4G[M2
+!s100 mnMJn_3<]m1T;YWBOk8EH2
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Astructure
+R11
+R15
+R10
+R26
+R12
+R13
+R14
+R27
+DEx4 work 13 test_algo_sim 0 22 =YR6f@Dj4_eY=Gg?J4G[M2
+!i122 91
+l760
+L150 10443
+VoOniVQ4Fm@GfigFG]:`g52
+!s100 I9O@XZE[iQhg3fUa2]YMA1
+R19
+32
+Z29 !s110 1727021656
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Etest_algo_sim_vhd_vec_tst
+Z30 w1727021652
+R13
+R14
+!i122 92
+R16
+Z31 8Waveform3.vwf.vht
+Z32 FWaveform3.vwf.vht
+l0
+Z33 L32 1
+V93_I]eKC;UUeMS@A7j0X61
+!s100 hRX6Maa=4=H?bog4fF:BT3
+R19
+32
+R29
+!i10b 1
+Z34 !s108 1727021656.000000
+Z35 !s90 -work|work|Waveform3.vwf.vht|
+Z36 !s107 Waveform3.vwf.vht|
+!i113 0
+R24
+R25
+Atest_algo_sim_arch
+R13
+R14
+DEx4 work 25 test_algo_sim_vhd_vec_tst 0 22 93_I]eKC;UUeMS@A7j0X61
+!i122 92
+l63
+L34 226
+VfLlKbGD?i=BAFThh3fFZo1
+!s100 N`=f@f=;ejeYiz<@QWk8Q1
+R19
+32
+R29
+!i10b 1
+R34
+R35
+R36
+!i113 0
+R24
+R25
+vtest_uart_tx_rx
+Z37 !s110 1726763346
+!i10b 1
+!s100 aj;Lc001OFk1N[e8OTAbT0
+Z38 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?UBUP_UJmco@9cam_AYJm0
+Z39 VDg1SIo80bB@j0V0VzS_@n1
+R2
+Z40 w1726763345
+8pruebas_algoritmo.vo
+Fpruebas_algoritmo.vo
 !i122 30
 L0 32 1492
-R7
+Z41 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z15 !s108 1726763346.000000
-R9
-R10
+Z42 !s108 1726763346.000000
+!s107 pruebas_algoritmo.vo|
+!s90 -work|work|pruebas_algoritmo.vo|
 !i113 1
-R11
-R12
+R24
+R6
 vtest_uart_tx_rx_vlg_vec_tst
-R13
+R37
 !i10b 1
 !s100 iM]O=S[UQJajm8WFbFh5F1
-R2
+R38
 I?DS9oa6aECPB[^e[TaP0Y2
-R3
-R0
-R14
+R39
+R2
+R40
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 !i122 31
 L0 30 119
-R7
+R41
 r1
 !s85 0
 31
-R15
+R42
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R11
-R12
-vuart_algo
-R1
-!i10b 1
-!s100 mz4RzYMF4>_k2CBek`]<m1
-R2
-IIDY80PV=dkfDbk:>@]EAO3
-R3
-R0
-R4
-R5
+R24
 R6
-!i122 34
-L0 32 1954
-R7
-r1
-!s85 0
-31
-R8
-R9
-R10
-!i113 1
+Euart_algo
+Z43 w1726963553
 R11
+R15
+R10
+R26
 R12
+R13
+R14
+R27
+!i122 44
+R16
+R17
+R18
+l0
+R28
+VdQ`Lm5QdUM71[2^RQNFJo3
+!s100 gVCX9EiZ4NCfKXQliGS3J3
+R19
+32
+Z44 !s110 1726963557
+!i10b 1
+Z45 !s108 1726963557.000000
+R22
+R23
+!i113 0
+R24
+R25
+Astructure
+R11
+R15
+R10
+R26
+R12
+R13
+R14
+R27
+DEx4 work 9 uart_algo 0 22 dQ`Lm5QdUM71[2^RQNFJo3
+!i122 44
+l261
+L134 1811
+VfX<CGgRdQZE:4Vk40714I2
+!s100 NY?J1Sz=Pg[10_F4JR?f01
+R19
+32
+R44
+!i10b 1
+R45
+R22
+R23
+!i113 0
+R24
+R25
+Euart_algo_vhd_vec_tst
+Z46 w1726963552
+R13
+R14
+!i122 45
+R16
+Z47 8Waveform2.vwf.vht
+Z48 FWaveform2.vwf.vht
+l0
+R33
+Vk4?RcN<J2;Oj3?nQXMo980
+!s100 HP>aG1OHUW3XoeShKZ5>?1
+R19
+32
+R44
+!i10b 1
+R45
+Z49 !s90 -work|work|Waveform2.vwf.vht|
+Z50 !s107 Waveform2.vwf.vht|
+!i113 0
+R24
+R25
+Auart_algo_arch
+R13
+R14
+DEx4 work 21 uart_algo_vhd_vec_tst 0 22 k4?RcN<J2;Oj3?nQXMo980
+!i122 45
+l53
+L34 147
+VL=MDWGhaZn:hK8ZT`OWCP3
+!s100 oJGbj@a60BLOKDhIn8llG2
+R19
+32
+R44
+!i10b 1
+R45
+R49
+R50
+!i113 0
+R24
+R25
 vuart_algo_vlg_vec_tst
-R1
+!s110 1726781700
 !i10b 1
 !s100 P5gJKURX6FM@j:ZX^Mjnn2
-R2
+R38
 I73f<`QF>nKTN824OO0AX20
-R3
-R0
-R4
+R39
+R2
+w1726781699
 8Waveform1.vwf.vt
 FWaveform1.vwf.vt
 !i122 35
 L0 30 118
-R7
+R41
 r1
 !s85 0
 31
-R8
+!s108 1726781700.000000
 !s107 Waveform1.vwf.vt|
 !s90 -work|work|Waveform1.vwf.vt|
 !i113 1
-R11
-R12
+R24
+R6
