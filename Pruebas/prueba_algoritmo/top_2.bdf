@@ -424,6 +424,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "uart_tx_busy" (rect 0 0 64 12)(font "Arial" ))
+		(text "uart_tx_busy" (rect 21 139 85 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "FIFO_data_o[10..0]" (rect 0 0 96 12)(font "Arial" ))
@@ -658,6 +665,26 @@ https://fpgasoftware.intel.com/eula.
 	(pt 984 416)
 	(pt 1128 416)
 	(bus)
+)
+(connector
+	(pt 1440 384)
+	(pt 1496 384)
+)
+(connector
+	(pt 1496 464)
+	(pt 1496 384)
+)
+(connector
+	(pt 1496 464)
+	(pt 488 464)
+)
+(connector
+	(pt 600 264)
+	(pt 488 264)
+)
+(connector
+	(pt 488 464)
+	(pt 488 264)
 )
 (junction (pt 416 168))
 (junction (pt 432 152))

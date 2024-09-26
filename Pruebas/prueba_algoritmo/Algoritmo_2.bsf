@@ -74,6 +74,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "uart_tx_busy" (rect 0 0 54 12)(font "Arial" ))
+		(text "uart_tx_busy" (rect 21 139 75 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
 		(pt 256 32)
 		(output)
 		(text "FIFO_data_o[10..0]" (rect 0 0 77 12)(font "Arial" ))
@@ -103,7 +110,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"umbral"
-		"0"
+		"10"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -113,12 +120,12 @@ https://fpgasoftware.intel.com/eula.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"ancho"
-		"1280"
+		"97"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"pixels"
-		"1310720"
+		"7081"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

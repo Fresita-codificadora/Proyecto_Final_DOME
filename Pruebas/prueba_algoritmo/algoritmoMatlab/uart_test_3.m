@@ -2,7 +2,7 @@
 clear
 clc
 % Configuración del puerto serie
-port_name = 'COM13';  % Cambia este valor por el puerto serie correcto en tu sistema
+port_name = 'COM14';  % Cambia este valor por el puerto serie correcto en tu sistema
 baud_rate = 115200;    % Asegúrate de que coincida con la configuración del dispositivo
 
 % Crear objeto de puerto serie
@@ -15,12 +15,17 @@ configureTerminator(serial_port, "LF");  % Línea de finalización (line feed)
 
 % Llamada a la función para enviar y recibir datos
 %%enviar_y_recibir_datos(serial_port, datos_a_enviar);
-datos_a_enviar = [100, 100, 100, 0,0,0, 100, 100, 0, 0, 0, 1 ,1, 0, 0,0 ,1 ,1,0,1,1,0,0,0,1,1,0,0,0,1,1,1, 1, 1, 0,0,0, 1, 1, 0, 0, 0, 1 ,1, 0, 0,0 ,1 ,1,0,1,1,0,0,0,1,1,0,0,0,1,1];  % Puedes cambiar estos valores
+%%datos_a_enviar = [1,2,0,3,4,0,5,6,0,7,8,0,0,0,9,10];
+%%datos_a_enviar = [100, 100, 100, 0,0,0, 100, 100, 0, 0, 0, 100 ,100, 0, 0,0 ,100 ,100,0,100,100,0,0,0,100,100,0,0,0,1,1,1, 1, 1, 0,0,0, 1, 1, 0, 0, 0, 1 ,1, 0, 0,0 ,1 ,1,0,1,1,0,0,0,1,1,0,0,0,1,1];  % Puedes cambiar estos valores
 %datos_a_enviar = [1,0];
-%%datos_a_enviar = uint8(255*rand(1,100));
+%%datos_a_enviar = uint8(rand(1,100));
+datos_a_enviar = imagen_a_vector('testPulenta.png');
 % Llamada a la función para enviar y recibir datos
 vector_recibido=enviar_y_recibir_datos(serial_port, datos_a_enviar);
-
+%vector_recibido = imagen_a_vector('testPulenta.png');
+imgTest=vector_a_imagen(vector_recibido,97);
+imshow(imgTest);
+colormap colorcube
 
 % Cerrar el puerto serie
 clear serial_port;
