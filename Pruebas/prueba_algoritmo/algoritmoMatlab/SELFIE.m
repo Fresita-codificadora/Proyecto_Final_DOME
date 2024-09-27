@@ -60,78 +60,12 @@ for i = 1:alto %Voy barriendo filas
             if ~eventFIFO(2) && ~eventFIFO(ancho + 1) && ~eventFIFO(ancho + 2) && ~eventFIFO(ancho + 3) %Si los tres de arriba y el anterior son cero
                 eventFIFO(1) = nextEvent; %Asigna siguiente evento (pareciera que esto es k)
                 nextEvent = nextEvent +1; %Incrementa el siguiente evento
-                %%%%%%PARA DEBUGEAR%%%%%%
-                %eventos(i, j) = eventFIFO(1);
-                %%%%%%%%%%%%%%%%%%%%%%%%%
-            % elseif ~eventFIFO(2) && eventFIFO(ancho + 1) && ~eventFIFO(ancho + 2) && eventFIFO(ancho + 3) %En caso de que el pixel actual conecte dos eventos (caso 1)
-            %     cantidad(eventFIFO(ancho + 3)) = cantidad(eventFIFO(ancho + 3)) + cantidad(eventFIFO(ancho + 1)); %Paso todo lo que hab�a en ancho + 1 a ancho + 3
-            %     energias(eventFIFO(ancho + 3)) = energias(eventFIFO(ancho + 3)) + energias(eventFIFO(ancho + 1)); %Paso todo lo que hab�a en ancho + 1 a ancho + 3
-            %     for indexFifo = 3:ancho %Recorre la fifo para cambiar las etiquetas de esos eventos, esquiva el �ndice ancho + 1, si sobreescribe ese a esta altura cagamos
-            %         if eventFIFO(indexFifo) == eventFIFO(ancho + 1)%%re etiquetado
-            %             eventFIFO(indexFifo) =  eventFIFO(ancho + 3);
-            %         end
-            %     end
-            %     cantidad(ancho + 1) = 0;
-            %     energias(ancho + 1) = 0;
-            %     eventFIFO(ancho + 1) =  eventFIFO(ancho + 3); %Ahora ya lo puede escribir
-            %     eventFIFO(1) =  eventFIFO(ancho + 3); %Asigna el evento nuevo (le asigna la etiqueta de +3 al nuevo evento)
-            %     %%%%%%PARA DEBUGEAR%%%%%%
-            %     %eventos(i, j) = eventFIFO(1);
-            %     %%%%%%%%%%%%%%%%%%%%%%%%%
-            % elseif eventFIFO(2) && eventFIFO(ancho + 1) && ~eventFIFO(ancho + 2) && ~eventFIFO(ancho + 3) %En caso de que el pixel actual conecte dos eventos (caso 2)
-            %     cantidad(eventFIFO(ancho + 1)) = cantidad(eventFIFO(ancho + 1)) + cantidad(eventFIFO(2)); %Paso todo lo que hab�a en 2 a ancho + 1
-            %     energias(eventFIFO(ancho + 1)) = energias(eventFIFO(ancho + 1)) + energias(eventFIFO(2)); %Paso todo lo que hab�a en 2 a ancho + 1
-            %     for indexFifo = 3:ancho %Recorre la fifo para cambiar las etiquetas de esos eventos, esquiva el �ndice ancho + 1, si sobreescribe ese a esta altura cagamos
-            %         if eventFIFO(indexFifo) == eventFIFO(2)
-            %             eventFIFO(indexFifo) =  eventFIFO(ancho + 1);
-            %         end
-            %     end
-            %     cantidad(2) = 0;
-            %     energias(2) = 0;
-            %     eventFIFO(2) =  eventFIFO(ancho + 1); %Ahora ya lo puede escribir
-            %     eventFIFO(1) =  eventFIFO(ancho + 1); %Asigna el evento nuevo
-            %     %%%%%%PARA DEBUGEAR%%%%%%
-            %     %eventos(i, j) = eventFIFO(1);
-            %     %%%%%%%%%%%%%%%%%%%%%%%%%
-            % elseif eventFIFO(2) && ~eventFIFO(ancho + 1) && eventFIFO(ancho + 2) && ~eventFIFO(ancho + 3) %En caso de que el pixel actual conecte dos eventos (caso 3)
-            %     cantidad(eventFIFO(ancho + 2)) = cantidad(eventFIFO(ancho + 2)) + cantidad(eventFIFO(2)); %Paso todo lo que hab�a en 2 a ancho + 2
-            %     energias(eventFIFO(ancho + 2)) = energias(eventFIFO(ancho + 2)) + energias(eventFIFO(2)); %Paso todo lo que hab�a en 2 a ancho + 2
-            %     for indexFifo = 3:ancho %Recorre la fifo para cambiar las etiquetas de esos eventos, esquiva el �ndice ancho + 1, si sobreescribe ese a esta altura cagamos
-            %         if eventFIFO(indexFifo) == eventFIFO(2)
-            %             eventFIFO(indexFifo) =  eventFIFO(ancho + 2);
-            %         end
-            %     end
-            %     cantidad(2) = 0;
-            %     energias(2) = 0;
-            %     eventFIFO(2) =  eventFIFO(ancho + 2);
-            %     eventFIFO(1) = eventFIFO(ancho + 2);
-            %     %%%%%%PARA DEBUGEAR%%%%%%
-            %     %eventos(i, j) = eventFIFO(1);
-            %     %%%%%%%%%%%%%%%%%%%%%%%%%
-            % elseif eventFIFO(2) && eventFIFO(ancho + 1) && ~eventFIFO(ancho + 2) && eventFIFO(ancho + 3) %En caso de que el pixel actual conecte dos eventos (caso 4)
-            %     cantidad(eventFIFO(ancho + 1)) = cantidad(eventFIFO(ancho + 1)) + cantidad(eventFIFO(2)); %Paso todo lo que hab�a en ancho + 1 a ancho + 3
-            %     energias(eventFIFO(ancho + 1)) = energias(eventFIFO(ancho + 1)) + energias(eventFIFO(2)); %Paso todo lo que hab�a en ancho + 1 a ancho + 3
-            %     for indexFifo = 3:ancho %Recorre la fifo para cambiar las etiquetas de esos eventos, esquiva el �ndice ancho + 1, si sobreescribe ese a esta altura cagamos
-            %         if eventFIFO(indexFifo) == eventFIFO(2)
-            %             eventFIFO(indexFifo) =  eventFIFO(ancho + 1);
-            %         end
-            %     end
-            %     cantidad(2) = 0;
-            %     energias(2) = 0;
-            %     eventFIFO(2) =  eventFIFO(ancho + 1); %Ahora ya lo puede escribir
-            %     eventFIFO(1) =  eventFIFO(ancho + 1); %Asigna el evento nuevo
-            %     %%%%%%PARA DEBUGEAR%%%%%%
-            %     %eventos(i, j) = eventFIFO(1);
-            %     %%%%%%%%%%%%%%%%%%%%%%%%%
+
             else %Para p�xeles conexos o solo un pixel
                 eventFIFO(1) = max([eventFIFO(2) eventFIFO(ancho + 1) eventFIFO(ancho + 2) eventFIFO(ancho + 3)]);
-                %%%%%%PARA DEBUGEAR%%%%%%
-                %eventos(i, j) = eventFIFO(1);
-                %%%%%%%%%%%%%%%%%%%%%%%%%
             end
             cantidad(eventFIFO(1)) = cantidad(eventFIFO(1)) + 1; %Incremento la cantidad de p�xeles del evento resultante
             energias(eventFIFO(1)) = energias(eventFIFO(1)) + pixel; %Incremento la energ�a del evento resultante
-            imgTest(i,j) = eventFIFO(1);
         end
     end
 end

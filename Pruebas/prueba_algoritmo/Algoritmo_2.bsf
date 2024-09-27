@@ -108,6 +108,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "estado[3..0]" (rect 189 75 235 87)(font "Arial" ))
 		(line (pt 256 80)(pt 240 80)(line_width 3))
 	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "captura" (rect 0 0 29 12)(font "Arial" ))
+		(text "captura" (rect 206 91 235 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 1))
+	)
 	(parameter
 		"umbral"
 		"10"

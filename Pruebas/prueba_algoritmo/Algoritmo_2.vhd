@@ -45,7 +45,8 @@ entity Algoritmo_2 is
 --		indice_energias_o 		: out std_logic_vector (10 downto 0);
 --		--r_w_energia 				: out std_logic;
 		uart_tx_busy				: in std_logic;
-		estado 						: out std_logic_vector(3 downto 0)
+		estado 						: out std_logic_vector(3 downto 0);
+		captura 						: out std_LOGIC
 	);
 
 end entity;
@@ -53,7 +54,7 @@ end entity;
 architecture rtl of Algoritmo_2 is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (otro_ancho_2,errase, wait_done, trigger_wait, nuevo_pix, dir_anterior, lectura_anterior_1,lectura_anterior_2, dir_ancho_1, lectura_ancho_1_1,lectura_ancho_1_2, dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3,lectura_ancho_3_1, casos, lectura_energia_cantidad, escritura_energia_cantidad, escritura ,escritura_2 ,incremento_indice_FIFO);
+	type state_type is (otro_ancho_2, incremento_indice,errase, wait_done, trigger_wait, nuevo_pix, dir_anterior, lectura_anterior_1,lectura_anterior_2, dir_ancho_1, lectura_ancho_1_1,lectura_ancho_1_2, dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3,lectura_ancho_3_1, casos, lectura_energia_cantidad, escritura_energia_cantidad, escritura ,escritura_2 ,incremento_indice_FIFO);
 
 	-- Register to hold the current state
 	signal state   		: state_type;
@@ -123,9 +124,14 @@ begin
 			reg_ancho_3<=(others =>'0');
 			borrado <= '0';
 		elsif (rising_edge(clk_i)) then
+			if state /= errase then
+				captura<= '1';
+			else
+				captura <= '0';
+			end if;
 			case state is
 				when errase=>                   		--este estado deberia borrar toda la memoria ram de la fifo
-					if indice_FIFO <= ancho+1 then
+					if indice_FIFO <= ancho+3 then
 						indice_FIFO<=indice_FIFO+1;  	-- esto es el addrs que le mando para borrar todo
 						state <= escritura;
 						FIFO_0 <= 0;
@@ -192,13 +198,13 @@ begin
 					FIFO_dir_o <= fifo_reg;
 					reg_FIFO_1 <= FIFO_data_i;		--leemos el anterior
 				when dir_ancho_1 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+1 y lectura pixel anterior
-					if indice_FIFO + 3 >= (ancho+1) then
+					if indice_FIFO + 4 >= (ancho+1) then
 						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+1-(ancho),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
 						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+1-(ancho),11));																					-- despues el dato lo leemos en el proximo estado
 																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
 					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+4,11));
+						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+4,11));
 					end if;
 					state <= lectura_ancho_1_1;
 				when lectura_ancho_1_1 =>
@@ -209,13 +215,13 @@ begin
 					FIFO_dir_o <= fifo_reg;
 					reg_ancho_1 <= FIFO_data_i;    --leemos ancho+1
 				when dir_ancho_2 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+2 y lectura pixel ancho + 1
-					if indice_FIFO + 2 >= (ancho+1) then
+					if indice_FIFO + 3 >= (ancho+1) then
 						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-(ancho),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
 						fifo_reg <=	std_logic_vector(to_unsigned(indice_FIFO-(ancho),11));																				-- despues el dato lo leemos en el proximo estado
 																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
 					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
+						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
 					end if;
 					state <= otro_ancho_2;
 				when otro_ancho_2 =>
@@ -226,13 +232,13 @@ begin
 					FIFO_dir_o <= fifo_reg;
 					reg_ancho_2 <= FIFO_data_i;    --leemos ancho+2
 				when dir_ancho_3 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+3 y lectura pixel ancho + 2
-					if indice_FIFO + 1 >= (ancho+1) then
+					if indice_FIFO + 2 >= (ancho+1) then
 						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-(ancho+1),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
 						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO-(ancho+1),11));																					-- despues el dato lo leemos en el proximo estado
 																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
 					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+1,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+1,11));
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
+						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
 					end if;
 					state <= lectura_ancho_3_1;
 				when lectura_ancho_3_1 =>
@@ -245,11 +251,15 @@ begin
 				when casos=>											--EN ESTE ESTADO VEMOS EL INDICE que son los datos dentro de la FIFO
 					if to_integer(unsigned(reg_FIFO_1))=0 and to_integer(unsigned(reg_ancho_1))=0 and to_integer(unsigned(reg_ancho_2))=0 and to_integer(unsigned(reg_ancho_3))=0  then --nuevo evento
 						FIFO_0 <= indice;
-						indice <= indice + 1;			-- le asignamos el num de indice(evento) al FIFO_0 y lo aumentamos
+						state <= incremento_indice;
 					else
 						encontrar_maximo(reg_FIFO_1, reg_ancho_1, reg_ancho_2, reg_ancho_3, FIFO_0);
+						state<= escritura;
 						--FIFO_0 <= to_integer(unsigned(reg_ancho_2));
 					end if;
+					
+				when incremento_indice =>
+					indice <= indice + 1;			-- le asignamos el num de indice(evento) al FIFO_0 y lo aumentamos
 					state<= escritura;
 --				when lectura_energia_cantidad =>								-- EN ESTE ESTADO ESCRIBIMOS LAS MEMORIAS RAM
 --					indice_energias_o <= std_logic_vector(to_unsigned(FIFO_0,num_bits));

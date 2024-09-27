@@ -4,287 +4,163 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "FIFO_data_o[0]",
+					"name" : "tx_uart",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[1]",
+					"name" : "clk_signal_tap",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[2]",
+					"name" : "addr_ram[8]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[3]",
+					"name" : "addr_ram[7]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[4]",
+					"name" : "addr_ram[6]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[5]",
+					"name" : "addr_ram[5]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[6]",
+					"name" : "addr_ram[4]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[7]",
+					"name" : "addr_ram[3]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[8]",
+					"name" : "addr_ram[2]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[9]",
+					"name" : "addr_ram[1]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_data_o[10]",
+					"name" : "addr_ram[0]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[0]",
+					"name" : "data_ram[10]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[1]",
+					"name" : "data_ram[9]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[2]",
+					"name" : "data_ram[8]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[3]",
+					"name" : "data_ram[7]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[4]",
+					"name" : "data_ram[6]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[5]",
+					"name" : "data_ram[5]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[6]",
+					"name" : "data_ram[4]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[7]",
+					"name" : "data_ram[3]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[8]",
+					"name" : "data_ram[2]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[9]",
+					"name" : "data_ram[1]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_dir_o[10]",
+					"name" : "data_ram[0]",
 					"strict" : false
 				},
 				{
-					"name" : "FIFO_RW_o",
+					"name" : "fifo_led[10]",
 					"strict" : false
 				},
 				{
-					"name" : "estado[0]",
+					"name" : "fifo_led[9]",
 					"strict" : false
 				},
 				{
-					"name" : "estado[1]",
+					"name" : "fifo_led[8]",
 					"strict" : false
 				},
 				{
-					"name" : "estado[2]",
+					"name" : "fifo_led[7]",
 					"strict" : false
 				},
 				{
-					"name" : "estado[3]",
+					"name" : "fifo_led[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_i",
+					"name" : "fifo_led[5]",
 					"strict" : false
 				},
 				{
-					"name" : "reset_i",
+					"name" : "fifo_led[4]",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[18]",
+					"name" : "fifo_led[3]",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[19]",
+					"name" : "fifo_led[2]",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[20]",
+					"name" : "fifo_led[1]",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[1]",
+					"name" : "fifo_led[0]",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[0]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[3]",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[2]",
+					"name" : "rx_uart",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[5]",
+					"name" : "altera_reserved_tms",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[4]",
+					"name" : "altera_reserved_tck",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[7]",
+					"name" : "altera_reserved_tdi",
 					"strict" : false
 				},
 				{
-					"name" : "pix_cnt_i[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[9]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[8]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[11]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[10]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[13]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[12]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[15]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[14]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[17]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_cnt_i[16]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[0]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pix_data_i[7]",
-					"strict" : false
-				},
-				{
-					"name" : "trigger",
-					"strict" : false
-				},
-				{
-					"name" : "enable_done",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[0]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[10]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[9]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[8]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[6]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[5]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[4]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[3]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[2]",
-					"strict" : false
-				},
-				{
-					"name" : "FIFO_data_i[1]",
+					"name" : "altera_reserved_tdo",
 					"strict" : false
 				}
 			]

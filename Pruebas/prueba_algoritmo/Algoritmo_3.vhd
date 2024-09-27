@@ -1,0 +1,290 @@
+library ieee;
+	use ieee.std_logic_1164.all;
+	use IEEE.NUMERIC_STD.ALL; 		--libreria para cambios entre formatos
+	use IEEE.MATH_REAL.ALL; 		--libreria para log2 y ceil
+
+entity algoritmo_3 is
+	generic(
+		umbral	: integer :=0;
+		ancho 	: integer :=10;
+		pixels  : integer := 90
+	);
+port(
+	clk_i			: in std_LOGIC;
+	reset_i			: in std_LOGIC;
+	pix_cnt_i		: in std_logic_vector(20 downto 0);
+	pix_data_i		: in std_logic_vector(7  downto 0);
+	mem_data_i 		: in std_logic_vector(10 downto 0);
+	uart_tx_busy	: in std_logic;
+	--salidas
+	mem_data_o		: out std_logic_vector(10 downto 0);
+	mem_addr_o		: out std_logic_vector(10 downto 0);
+	mem_R_W			: out std_logic;
+	envio			: out std_logic		--señal para enviar la memoria por uart
+);
+end entity;
+
+architecture arch of algoritmo_3 is
+	type state_type is (errase, nuevo_pixel, pix_prev, lect_pix_prev, anch_1,lect_anch_1,
+						anch_2,lect_anch_2, anch_3, lect_anch_3, casos, escritura_1,escritura_2,
+						descarga_mem, lectura_descarga, incremento_mem);
+
+	signal state : state_type :=errase;
+		--señales
+	signal reg_anterior			: integer range 0 to 2047;
+	signal reg_10_1			: integer range 0 to 2047;
+	signal reg_10_2			: integer range 0 to 2047;
+	signal reg_10_3			: integer range 0 to 2047;
+	signal indice				: integer range 0 to 2047;
+	signal fifo_pos				: integer range 0 to pixels + 3;
+	signal mem_addr_int			: integer range 0 to 2047;
+	signal fifo_data_escr		: integer range 0 to 2047;
+	signal borrado				: std_logic;
+	signal pix_cnt_int,pix_ant	: integer range 0 to 1_310_720;
+	signal dir_reg				: integer range 0 to 2047;
+	signal fifo_pos_descarga	: integer range 0 to pixels + 3; 
+	-- Declaramos el procedimiento para encontrar el máximo
+	procedure encontrar_maximo(
+    signal reg1   : in integer range 0 to 2047;
+    signal reg2   : in integer range 0 to 2047;
+    signal reg3   : in integer range 0 to 2047;
+    signal reg4   : in integer range 0 to 2047;
+    signal maximo : out integer range 0 to 2047
+	) is
+    	variable valor_max1, valor_max2, valor_max_final : integer range 0 to 2047;
+	begin
+    	-- Inicializar las variables con los primeros valores
+    	valor_max1 := reg1;
+    	valor_max2 := reg3;
+
+    	-- Comparar reg1 y reg2
+    	if reg1 < reg2 then
+    	    valor_max1 := reg2;
+    	end if;
+
+    	-- Comparar reg3 y reg4
+    	if reg3 < reg4 then
+    	    valor_max2 := reg4;
+    	end if;
+
+    	-- Comparar los dos máximos anteriores
+    	if valor_max1 > valor_max2 then
+    	    valor_max_final := valor_max1;
+    	else
+    	    valor_max_final := valor_max2;
+    	end if;
+
+    	-- Asignar el valor máximo final a la salida
+    	maximo <= valor_max_final;
+	end procedure encontrar_maximo;
+
+
+begin
+	pix_cnt_int <= to_integer(unsigned(pix_cnt_i)); 
+	process(all)
+	begin
+		if reset_i = '0' then
+			state <= errase;
+			reg_anterior 	<= 0;
+			reg_10_1 	<= 0;
+			reg_10_2 	<= 0;
+			reg_10_3 	<= 0;
+			indice <= 1;
+			fifo_pos <= 0;
+			mem_addr_int <= 0;
+			fifo_data_escr <= 0;
+			fifo_pos_descarga <= 0;
+			borrado <= '0';
+			pix_ant <= 16;
+		elsif rising_edge(clk_i) then
+			case state is
+				when errase =>
+					if fifo_pos<10+3 then
+						fifo_pos <= fifo_pos + 1;
+						state <= escritura_1;
+						fifo_data_escr <= 0;
+						borrado <= '0';
+					else
+						state <= nuevo_pixel;
+						borrado <= '1';
+					end if;
+					mem_data_o	<= std_logic_vector(to_unsigned(fifo_data_escr,11));	
+					mem_addr_o	<= std_logic_vector(to_unsigned(fifo_pos,11));
+					mem_R_W		<= '1' ;--escritura	
+					envio <= '0';				
+				when nuevo_pixel =>
+					if pix_cnt_int = pix_ant then
+						state <= nuevo_pixel;
+					else
+						pix_ant <= pix_cnt_int;
+						if to_integer(unsigned(pix_data_i)) > umbral then
+							state <= pix_prev;
+							mem_R_W		<= '0' ;--lectura
+						else
+							state<= escritura_1;
+							fifo_data_escr <= 0;
+							mem_R_W		<= '1' ;--escritura
+						end if ;
+					end if;
+					mem_data_o	<= (others=>'0');	
+					mem_addr_o	<= (others=>'0');	
+					envio <= '0';	
+				when pix_prev =>
+					state <= lect_pix_prev;
+					if fifo_pos = 0 then
+						mem_addr_int <= 10 + 2;
+					else
+						mem_addr_int <= fifo_pos-1;
+					end if;
+					reg_anterior <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when lect_pix_prev =>
+					state <= anch_1;
+					reg_anterior <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when anch_1 =>
+					state <= lect_anch_1;
+					if fifo_pos + 4 > 10 +2 then
+						mem_addr_int <= fifo_pos-(10 - 1);
+					else
+						mem_addr_int <= fifo_pos+4;
+					end if;
+					reg_10_1 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when lect_anch_1 =>
+					state <= anch_2;
+					reg_10_1 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when anch_2 =>
+					state <= lect_anch_2;
+					if fifo_pos + 3 > 10 + 2 then
+						mem_addr_int <= fifo_pos-(10);
+					else
+						mem_addr_int <= fifo_pos+3;
+					end if;
+					reg_10_2 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when lect_anch_2 =>
+					state <= anch_3;
+					reg_10_2 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when anch_3 =>
+					state <= lect_anch_3;
+					if fifo_pos + 2 > 10 + 2 then
+						mem_addr_int <= fifo_pos-(10+1);
+					else
+						mem_addr_int <= fifo_pos + 2;
+					end if;
+					reg_10_3 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when lect_anch_3 =>
+					state <= casos;
+					reg_10_3 <= to_integer(unsigned(mem_data_i));
+					mem_addr_o <= std_logic_vector(to_unsigned(mem_addr_int,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when casos =>
+					if reg_anterior=0 and reg_10_1=0 and reg_10_2=0 and reg_10_3=0 then
+						fifo_data_escr <= indice;
+						indice <= indice + 1 ;
+					else
+						encontrar_maximo(reg_anterior,reg_10_1,reg_10_2,reg_10_3,fifo_data_escr);
+					end if;
+					mem_addr_o <= std_logic_vector(to_unsigned(fifo_pos,11));	
+					mem_data_o	<= std_logic_vector(to_unsigned(fifo_data_escr,11));
+					mem_R_W		<= '1' ;--escritura	
+					envio <= '0';
+					state <= escritura_1;
+				when escritura_1 =>
+					state <= escritura_2;
+					mem_addr_o <= std_logic_vector(to_unsigned(fifo_pos,11));	
+					mem_data_o	<= std_logic_vector(to_unsigned(fifo_data_escr,11));
+					mem_R_W		<= '1' ;--escritura	
+					envio <= '0';
+				when escritura_2 =>
+					if borrado = '0' then
+						state <= errase;
+					else
+						state <= incremento_mem;
+						fifo_pos_descarga <= 0;
+					end if;
+					mem_addr_o <= std_logic_vector(to_unsigned(fifo_pos,11));	
+					mem_data_o	<= std_logic_vector(to_unsigned(fifo_data_escr,11));
+					mem_R_W		<= '1' ;--escritura	
+					envio <= '1';
+				when descarga_mem =>
+					if uart_tx_busy = '0' then
+						if fifo_pos_descarga < 10 + 10 then
+							state <= lectura_descarga;
+							fifo_pos_descarga <= fifo_pos_descarga + 1; 
+						else
+							state <= incremento_mem;
+						end if;
+					else
+						state <= descarga_mem;
+					end if;
+					mem_addr_o <= std_logic_vector(to_unsigned(fifo_pos_descarga,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';
+				when lectura_descarga =>
+					state <= descarga_mem;
+					mem_addr_o <= std_logic_vector(to_unsigned(fifo_pos_descarga,11));	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '1';
+				when incremento_mem =>
+					if uart_tx_busy = '0' then
+						if fifo_pos < 10+2 then
+							fifo_pos <= fifo_pos + 1;
+							state <= nuevo_pixel;
+						else 
+							fifo_pos <= 0;
+							state <= nuevo_pixel;
+						end if ;
+					else
+						state <= incremento_mem;
+					end if;
+					
+--					state <= nuevo_pixel;
+--					if fifo_pos < 10 + 2 then
+--						fifo_pos <= fifo_pos + 1;
+--					else
+--						fifo_pos <= 0;
+--					end if;	
+					mem_addr_o <= (others =>'0');	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';	
+				when others =>
+					state <= nuevo_pixel;
+					mem_addr_o <= (others =>'0');	
+					mem_data_o	<= (others=>'0');
+					mem_R_W		<= '0' ;--lectura	
+					envio <= '0';	
+			end case;
+		end if;
+	end process;
+end architecture;

@@ -52,7 +52,7 @@ begin
 						reg_data <= rx_byte;
 					else
 						state <= idle;
-						if pix_count_int = 1_310_720 then
+						if pix_count_int = pixels-1 then
 							pix_count_int <= 0;
 						end if;
 					end if;
