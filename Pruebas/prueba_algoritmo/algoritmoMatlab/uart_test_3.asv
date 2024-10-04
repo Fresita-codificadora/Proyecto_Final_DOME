@@ -5,7 +5,7 @@
 port_name = 'COM13';  % Cambia este valor por el puerto serie correcto en tu sistema
 baud_rate = 115200;    % Asegúrate de que coincida con la configuración del dispositivo
 % Crear objeto de puerto serie
-serial_port = serialport(port_name, baud_rate, 'Timeout', 10);  % Timeout de 10 segundos
+serial_port = serialpo.rt(port_name, baud_rate, 'Timeout', 10);  % Timeout de 10 segundos
 
 % Configurar el tamaño de la trama de datos
 configureTerminator(serial_port, "LF");  % Línea de finalización (line feed)

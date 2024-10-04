@@ -60,12 +60,12 @@ for i = 1:alto %Voy barriendo filas
             if ~eventFIFO(2) && ~eventFIFO(ancho + 1) && ~eventFIFO(ancho + 2) && ~eventFIFO(ancho + 3) %Si los tres de arriba y el anterior son cero
                 eventFIFO(1) = nextEvent; %Asigna siguiente evento (pareciera que esto es k)
                 nextEvent = nextEvent +1; %Incrementa el siguiente evento
-
             else %Para p�xeles conexos o solo un pixel
                 eventFIFO(1) = max([eventFIFO(2) eventFIFO(ancho + 1) eventFIFO(ancho + 2) eventFIFO(ancho + 3)]);
             end
             cantidad(eventFIFO(1)) = cantidad(eventFIFO(1)) + 1; %Incremento la cantidad de p�xeles del evento resultante
             energias(eventFIFO(1)) = energias(eventFIFO(1)) + pixel; %Incremento la energ�a del evento resultante
+            imgTest(i,j) = eventFIFO(1);
         end
     end
 end
