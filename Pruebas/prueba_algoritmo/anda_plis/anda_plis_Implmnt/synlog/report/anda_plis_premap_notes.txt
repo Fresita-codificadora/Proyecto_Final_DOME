@@ -1,0 +1,4 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: BN225 |Writing default property annotation file C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap.
+@N: MO225 :"c:\users\gaspar\desktop\prog_fpga\uart_tx.v":163:0:163:5|There are no possible illegal states for state machine fsm_state[3:0] (in view: work.uart_tx_Z1_layer1(verilog)); safe FSM implementation is not required.

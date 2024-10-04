@@ -32,7 +32,7 @@ architecture rtl of uart_algo is
 	-- Register to hold the current state
 	signal state   : state_type;
 	
-	signal pix_count_int : integer range 0 to pixels;
+	signal pix_count_int : integer range 0 to pixels:=0;
 	signal reg_data : std_logic_vector (7 downto 0);
 begin
 	
@@ -52,7 +52,7 @@ begin
 						reg_data <= rx_byte;
 					else
 						state <= idle;
-						if pix_count_int = pixels-1 then
+						if pix_count_int = pixels then
 							pix_count_int <= 0;
 						end if;
 					end if;

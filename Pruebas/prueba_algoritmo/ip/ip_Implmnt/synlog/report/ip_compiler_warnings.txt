@@ -1,0 +1,7 @@
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh_assert on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh_negate on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh_assert on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh_negate on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+

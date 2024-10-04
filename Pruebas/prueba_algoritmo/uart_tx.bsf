@@ -67,23 +67,8 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 312 48)(pt 296 48)(line_width 1))
 	)
 	(parameter
-		"BIT_RATE"
-		"115200"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"CLK_HZ"
-		"50000000"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
 		"PAYLOAD_BITS"
 		"8"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"STOP_BITS"
-		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

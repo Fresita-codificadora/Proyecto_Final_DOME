@@ -1,0 +1,78 @@
+Running in Lattice mode
+
+
+Starting:    E:\programas\iCEcube2\synpbase\bin64\mbin\synbatch.exe
+Install:     E:\programas\iCEcube2\synpbase
+Hostname:    DESKTOP-M6HRPVT
+Date:        Sat Sep 28 16:22:17 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch ip_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srr"
+Running: ip_Implmnt in foreground
+
+Running ip_syn|ip_Implmnt
+
+Running: compile (Compile) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:17 2024
+
+Running: compile_flow (Compile Process) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:17 2024
+
+Running: compiler (Compile Input) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:17 2024
+Copied C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_comp.srs to C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srs
+
+compiler completed
+# Sat Sep 28 16:22:20 2024
+
+Return Code: 0
+Run Time:00h:00m:03s
+
+Running: multi_srs_gen (Multi-srs Generator) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:20 2024
+
+multi_srs_gen completed
+# Sat Sep 28 16:22:21 2024
+
+Return Code: 0
+Run Time:00h:00m:01s
+Copied C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_mult.srs to C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srs
+Complete: Compile Process on ip_syn|ip_Implmnt
+
+Running: premap (Pre-mapping) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:21 2024
+
+premap completed with warnings
+# Sat Sep 28 16:22:22 2024
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Compile on ip_syn|ip_Implmnt
+
+Running: map (Map) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:22 2024
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on ip_syn|ip_Implmnt
+# Sat Sep 28 16:22:22 2024
+Copied C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_m.srm to C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srm
+
+fpga_mapper completed with warnings
+# Sat Sep 28 16:22:26 2024
+
+Return Code: 1
+Run Time:00h:00m:04s
+Complete: Map on ip_syn|ip_Implmnt
+Complete: Logic Synthesis on ip_syn|ip_Implmnt
+
+exit status=0
+
+exit status=0
+

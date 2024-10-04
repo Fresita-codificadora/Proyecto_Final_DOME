@@ -1,0 +1,8 @@
+[VIC]
+U1.N_7_0_cascade_=ltout:in1
+U1.Sync_rd_pointer_inst.g0_0_0_cascade_=ltout:in2
+U1.Sync_rd_pointer_inst.g3_1_cascade_=ltout:in2
+U1.Sync_wr_ctrl_inst.N_10_cascade_=ltout:in0
+U1.Sync_wr_ctrl_inst.m19_0_cascade_=ltout:in3
+U1.Sync_wr_ctrl_inst.m9_ns_1_cascade_=ltout:in3
+U1.valid_read_cascade_=ltout:in0

@@ -1,0 +1,14 @@
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+File C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs changed - recompiling
+@N: NF107 :"C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis.vhd":25:7:25:15|Selected library: work cell: anda_plis view bdf_type as top level
+@N: NF107 :"C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis.vhd":25:7:25:15|Selected library: work cell: anda_plis view bdf_type as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Oct 03 21:23:59 2024
+
+###########################################################]

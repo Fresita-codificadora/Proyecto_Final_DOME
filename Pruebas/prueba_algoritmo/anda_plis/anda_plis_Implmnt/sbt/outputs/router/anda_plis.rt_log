@@ -1,0 +1,31 @@
+* ******************************************************************************
+
+* iCEcube Router
+
+* Version:            2020.12.27943
+
+* Build Date:         Dec  9 2020 17:45:10
+
+* File Generated:     Oct 3 2024 21:30:12
+
+* Purpose:            Router runtime info
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Executing : D:\Programador_fpga\iCEcube2\sbt_backend\bin\win32\opt\sbrouter.exe D:\Programador_fpga\iCEcube2\sbt_backend\devices\ICE40P04.dev C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\sbt\netlist\oadb-anda_plis D:\Programador_fpga\iCEcube2\sbt_backend\devices\ice40HX8K.lib C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\sbt\outputs\packer\anda_plis_pk.sdc --outdir C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\sbt\outputs\router --sdf_file C:/Users/Gaspar/Desktop/prog_FPGA/anda_plis/anda_plis_Implmnt\sbt\outputs\simulation_netlist\anda_plis_sbt.sdf --pin_permutation 
+I1203: Reading Design anda_plis
+I1202: Reading Architecture of device iCE40HX4K
+I1209: Started routing
+I1223: Total Nets : 722 
+I1212: Iteration  1 :   110 unrouted : 1 seconds
+I1212: Iteration  2 :    13 unrouted : 1 seconds
+I1212: Iteration  3 :     2 unrouted : 0 seconds
+I1212: Iteration  4 :     0 unrouted : 0 seconds
+I1215: Routing is successful
+I1206: Completed routing
+I1204: Writing Design anda_plis
+I1210: Writing routes
+I1218: Exiting the router
+I1224: Router run-time : 8 seconds

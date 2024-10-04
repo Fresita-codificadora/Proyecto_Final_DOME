@@ -1,0 +1,66 @@
+
+fsm_encoding {11872871} onehot
+
+fsm_state_encoding {11872871} errase {000000000000000001}
+
+fsm_state_encoding {11872871} nuevo_pix {000000000000000010}
+
+fsm_state_encoding {11872871} dir_anterior {000000000000000100}
+
+fsm_state_encoding {11872871} lectura_anterior {000000000000001000}
+
+fsm_state_encoding {11872871} dir_ancho_1 {000000000000010000}
+
+fsm_state_encoding {11872871} lectura_ancho_1 {000000000000100000}
+
+fsm_state_encoding {11872871} dir_ancho_2 {000000000001000000}
+
+fsm_state_encoding {11872871} lectura_ancho_2 {000000000010000000}
+
+fsm_state_encoding {11872871} dir_ancho_3 {000000000100000000}
+
+fsm_state_encoding {11872871} lectura_ancho_3 {000000001000000000}
+
+fsm_state_encoding {11872871} casos {000000010000000000}
+
+fsm_state_encoding {11872871} escritura_1 {000000100000000000}
+
+fsm_state_encoding {11872871} escritura_2 {000001000000000000}
+
+fsm_state_encoding {11872871} envio_uart_1 {000010000000000000}
+
+fsm_state_encoding {11872871} envio_uart_2 {000100000000000000}
+
+fsm_state_encoding {11872871} incremento_indice {001000000000000000}
+
+fsm_state_encoding {11872871} escritura_intermedia {010000000000000000}
+
+fsm_state_encoding {11872871} escritura_intermedia_2 {100000000000000000}
+
+fsm_registers {11872871} {state[0]}  {state[1]}  {state[2]}  {state[3]}  {state[4]}  {state[5]}  {state[6]}  {state[7]}  {state[8]}  {state[9]}  {state[10]}  {state[11]}  {state[12]}  {state[13]}  {state[14]}  {state[15]}  {state[16]}  {state[17]} 
+
+fsm_encoding {9614612} sequential
+
+fsm_state_encoding {9614612} s_idle {000}
+
+fsm_state_encoding {9614612} s_rx_start_bit {001}
+
+fsm_state_encoding {9614612} s_rx_data_bits {010}
+
+fsm_state_encoding {9614612} s_rx_stop_bit {011}
+
+fsm_state_encoding {9614612} s_cleanup {100}
+
+fsm_registers {9614612} {r_SM_Main[2]}  {r_SM_Main[1]}  {r_SM_Main[0]} 
+
+fsm_encoding {616301631} sequential
+
+fsm_state_encoding {616301631} 000 {00}
+
+fsm_state_encoding {616301631} 001 {01}
+
+fsm_state_encoding {616301631} 010 {10}
+
+fsm_state_encoding {616301631} 011 {11}
+
+fsm_registers {616301631} {fsm_state[1]}  {fsm_state[0]} 

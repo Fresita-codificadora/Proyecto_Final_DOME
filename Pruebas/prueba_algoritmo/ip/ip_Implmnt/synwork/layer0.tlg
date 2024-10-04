@@ -1,0 +1,103 @@
+Selecting top level module fifo_test
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":531:7:531:21|Synthesizing module Sync_tdp_memory in library work.
+
+	WIDTH=32'b00000000000000000000000000001011
+	DEPTH=32'b00000000000000000000000000001101
+	ADDR_WIDTH=32'b00000000000000000000000000000100
+   Generated name = Sync_tdp_memory_11s_13s_4
+
+@N: CL134 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":565:1:565:6|Found RAM mem, depth=13, width=11
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":311:7:311:14|Synthesizing module Sync_inc in library work.
+
+	ADDR_WIDTH=32'b00000000000000000000000000000100
+   Generated name = Sync_inc_4
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":278:7:278:19|Synthesizing module Sync_data_cnt in library work.
+
+	CNT_WIDTH=32'b00000000000000000000000000000101
+   Generated name = Sync_data_cnt_5
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":584:7:584:18|Synthesizing module Sync_wr_ctrl in library work.
+
+	CNT_WIDTH=32'b00000000000000000000000000000101
+	DEPTH=32'b00000000000000000000000000001101
+	FULL_FLAG_SENSE=32'b00000000000000000000000000000001
+   Generated name = Sync_wr_ctrl_5_13s_1s
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":627:7:627:25|Synthesizing module Sync_wr_status_flag in library work.
+
+	CNT_WIDTH=32'b00000000000000000000000000000101
+	DEPTH=32'b00000000000000000000000000001101
+	AFULL_FLAG_SENSE=32'b00000000000000000000000000000001
+	WACK_FLAG_SENSE=32'b00000000000000000000000000000001
+	PGM_FULL_TYPE=32'b00000000000000000000000000000001
+	PGM_FULL_THRESH=32'b00000000000000000000000000001110
+	PGM_FULL_ATHRESH=32'b00000000000000000000000000001110
+	PGM_FULL_NTHRESH=32'b00000000000000000000000000000011
+	OVERFLOW_FLAG_SENSE=32'b00000000000000000000000000000001
+	PFULL_FLAG_SENSE=32'b00000000000000000000000000000001
+	PGM_FLAG_LATENCY=32'b00000000000000000000000000000000
+   Generated name = Sync_wr_status_flag_Z1
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":339:7:339:18|Synthesizing module Sync_rd_ctrl in library work.
+
+	CNT_WIDTH=32'b00000000000000000000000000000101
+	EMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+   Generated name = Sync_rd_ctrl_5_1s
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":379:7:379:25|Synthesizing module Sync_rd_status_flag in library work.
+
+	CNT_WIDTH=32'b00000000000000000000000000000101
+	AEMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+	RACK_FLAG_SENSE=32'b00000000000000000000000000000001
+	UNDERFLW_FLAG_SENSE=32'b00000000000000000000000000000001
+	PEMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+	PGM_EMPTY_TYPE=32'b00000000000000000000000000000001
+	PGM_EMPTY_THRESH=32'b00000000000000000000000000000011
+	PGM_EMPTY_ATHRESH=32'b00000000000000000000000000000011
+	PGM_EMPTY_NTHRESH=32'b00000000000000000000000000000011
+	PGM_FLAG_LATENCY=32'b00000000000000000000000000000000
+   Generated name = Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":33:7:33:19|Synthesizing module syncore_sfifo in library work.
+
+	WIDTH=32'b00000000000000000000000000001011
+	DEPTH=32'b00000000000000000000000000001101
+	FULL_FLAG_SENSE=32'b00000000000000000000000000000001
+	AFULL_FLAG_SENSE=32'b00000000000000000000000000000001
+	WACK_FLAG_SENSE=32'b00000000000000000000000000000001
+	OVERFLOW_FLAG_SENSE=32'b00000000000000000000000000000001
+	PFULL_FLAG_SENSE=32'b00000000000000000000000000000001
+	EMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+	AEMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+	RACK_FLAG_SENSE=32'b00000000000000000000000000000001
+	UNDERFLW_FLAG_SENSE=32'b00000000000000000000000000000001
+	PEMPTY_FLAG_SENSE=32'b00000000000000000000000000000001
+	PGM_FULL_TYPE=32'b00000000000000000000000000000001
+	PGM_FULL_THRESH=32'b00000000000000000000000000001110
+	PGM_FULL_ATHRESH=32'b00000000000000000000000000001110
+	PGM_FULL_NTHRESH=32'b00000000000000000000000000000011
+	PGM_EMPTY_TYPE=32'b00000000000000000000000000000001
+	PGM_EMPTY_THRESH=32'b00000000000000000000000000000011
+	PGM_EMPTY_ATHRESH=32'b00000000000000000000000000000011
+	PGM_EMPTY_NTHRESH=32'b00000000000000000000000000000011
+	PGM_FLAG_LATENCY=32'b00000000000000000000000000000000
+	ADDR_WIDTH=32'b00000000000000000000000000000100
+	CNT_WIDTH=32'b00000000000000000000000000000101
+	DATA_CNT_WIDTH=32'b00000000000000000000000000000100
+   Generated name = syncore_sfifo_Z2
+
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Synthesizing module fifo_test in library work.
+
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh_assert on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_full_thresh_negate on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh_assert on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":54:1:54:2|Input Prog_empty_thresh_negate on instance U1 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":416:23:416:39|Input Prog_empty_thresh is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":417:23:417:46|Input Prog_empty_thresh_assert is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":418:23:418:46|Input Prog_empty_thresh_negate is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":663:26:663:41|Input Prog_full_thresh is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":664:26:664:48|Input Prog_full_thresh_assert is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":665:26:665:48|Input Prog_full_thresh_negate is unused.

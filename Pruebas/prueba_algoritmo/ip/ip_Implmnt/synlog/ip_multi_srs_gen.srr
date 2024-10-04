@@ -1,0 +1,13 @@
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+@N: NF107 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Selected library: work cell: fifo_test view verilog as top level
+@N: NF107 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Selected library: work cell: fifo_test view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Sat Sep 28 16:22:20 2024
+
+###########################################################]

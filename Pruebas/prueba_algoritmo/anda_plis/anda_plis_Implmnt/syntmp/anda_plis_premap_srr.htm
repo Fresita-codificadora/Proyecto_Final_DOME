@@ -1,0 +1,98 @@
+<html><body><samp><pre>
+<!@TC:1727579466>
+# Sun Sep 29 00:11:04 2024
+
+<a name=mapperReport6></a>Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39</a>
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+@A:<a href="@A:MF827:@XP_HELP">MF827</a> : <!@TM:1727579466> | No constraint file specified. 
+Linked File: <a href="C:\Users\gazpa\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis_scck.rpt:@XP_FILE">anda_plis_scck.rpt</a>
+Printing clock  summary report in "C:\Users\gazpa\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis_scck.rpt" file 
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1727579466> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1727579466> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 103MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 103MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 104MB)
+
+ICG Latch Removal Summary:
+Number of ICG latches removed:	0
+Number of ICG latches not removed:	0
+syn_allowed_resources : blockrams=20  set on top level netlist anda_plis
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+
+<a name=mapperReport7></a>Clock Summary</a>
+*****************
+
+Start             Requested     Requested     Clock        Clock                     Clock
+Clock             Frequency     Period        Type         Group                     Load 
+------------------------------------------------------------------------------------------
+anda_plis|clk     112.9 MHz     8.858         inferred     Autoconstr_clkgroup_0     199  
+==========================================================================================
+
+<font color=#A52A2A>@W:<a href="@W:MT529:@XP_HELP">MT529</a> : <a href="c:\users\gazpa\desktop\prog_fpga\algoritmo_2.vhd:117:2:117:4:@W:MT529:@XP_MSG">algoritmo_2.vhd(117)</a><!@TM:1727579466> | Found inferred clock anda_plis|clk which controls 199 sequential elements including b2v_inst.FIFO_dir_o[8:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </font>
+
+Finished Pre Mapping Phase.
+@N:<a href="@N:BN225:@XP_HELP">BN225</a> : <!@TM:1727579466> | Writing default property annotation file C:\Users\gazpa\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap. 
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+Encoding state machine state[0:14] (in view: work.Algoritmo_2_10_0_2048_97_7081(rtl))
+original code -> new code
+   0000000000000000000010 -> 000000000000001
+   0000000000000000001000 -> 000000000000010
+   0000000000000000010000 -> 000000000000100
+   0000000000000000100000 -> 000000000001000
+   0000000000000001000000 -> 000000000010000
+   0000000000000100000000 -> 000000000100000
+   0000000000001000000000 -> 000000001000000
+   0000000000100000000000 -> 000000010000000
+   0000000001000000000000 -> 000000100000000
+   0000000010000000000000 -> 000001000000000
+   0000000100000000000000 -> 000010000000000
+   0000010000000000000000 -> 000100000000000
+   0010000000000000000000 -> 001000000000000
+   0100000000000000000000 -> 010000000000000
+   1000000000000000000000 -> 100000000000000
+Encoding state machine r_SM_Main[0:4] (in view: work.UART_RX_104(rtl))
+original code -> new code
+   00001 -> 000
+   00010 -> 001
+   00100 -> 010
+   01000 -> 011
+   10000 -> 100
+Encoding state machine fsm_state[3:0] (in view: work.uart_tx_Z1_layer1(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   011 -> 11
+@N:<a href="@N:MO225:@XP_HELP">MO225</a> : <a href="c:\users\gazpa\desktop\prog_fpga\uart_tx.v:163:0:163:6:@N:MO225:@XP_MSG">uart_tx.v(163)</a><!@TM:1727579466> | There are no possible illegal states for state machine fsm_state[3:0] (in view: work.uart_tx_Z1_layer1(verilog)); safe FSM implementation is not required.
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 135MB peak: 142MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 48MB peak: 142MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Sep 29 00:11:06 2024
+
+###########################################################]
+
+</pre></samp></body></html>

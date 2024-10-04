@@ -1,0 +1,109 @@
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[0] 2 10 0 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.data_cnt[0]_LC_0)
+set_location U1.Sync_data_counter_inst.data_cnt[0] 2 10 0 # SB_DFFSR (LogicCell: U1.Sync_data_counter_inst.data_cnt[0]_LC_0)
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[1] 1 12 1 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.data_cnt[1]_LC_1)
+set_location U1.Sync_data_counter_inst.data_cnt[1] 1 12 1 # SB_DFFSR (LogicCell: U1.Sync_data_counter_inst.data_cnt[1]_LC_1)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_1_0_c 1 12 1 # SB_CARRY (LogicCell: U1.Sync_data_counter_inst.data_cnt[1]_LC_1)
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[2] 1 12 2 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.data_cnt[2]_LC_2)
+set_location U1.Sync_data_counter_inst.data_cnt[2] 1 12 2 # SB_DFFSR (LogicCell: U1.Sync_data_counter_inst.data_cnt[2]_LC_2)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_2_0_c 1 12 2 # SB_CARRY (LogicCell: U1.Sync_data_counter_inst.data_cnt[2]_LC_2)
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[3] 1 12 3 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.data_cnt[3]_LC_3)
+set_location U1.Sync_data_counter_inst.data_cnt[3] 1 12 3 # SB_DFFSR (LogicCell: U1.Sync_data_counter_inst.data_cnt[3]_LC_3)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_3_0_c 1 12 3 # SB_CARRY (LogicCell: U1.Sync_data_counter_inst.data_cnt[3]_LC_3)
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[4] 1 12 4 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.data_cnt[4]_LC_4)
+set_location U1.Sync_data_counter_inst.data_cnt[4] 1 12 4 # SB_DFFSR (LogicCell: U1.Sync_data_counter_inst.data_cnt[4]_LC_4)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c_RNO 1 11 1 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c_RNO_LC_5)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_1_ma 2 11 5 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.un1_data_cnt_cry_1_ma_LC_6)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_2_ma 1 11 2 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.un1_data_cnt_cry_2_ma_LC_7)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_3_ma 1 11 3 # SB_LUT4 (LogicCell: U1.Sync_data_counter_inst.un1_data_cnt_cry_3_ma_LC_8)
+set_location U1.Sync_rd_pointer_inst.count_RNI55N31[0] 3 10 0 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNI55N31[0]_LC_9)
+set_location U1.Sync_rd_pointer_inst.count_RNI5JRU[1] 3 10 2 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNI5JRU[1]_LC_10)
+set_location U1.Sync_rd_pointer_inst.count_RNI8V4J1[1] 3 10 5 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNI8V4J1[1]_LC_11)
+set_location U1.Sync_rd_pointer_inst.count_RNI9E9E1[2] 3 10 6 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNI9E9E1[2]_LC_12)
+set_location U1.Sync_rd_pointer_inst.count_RNICQI22[2] 3 10 3 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNICQI22[2]_LC_13)
+set_location U1.Sync_rd_pointer_inst.count_RNIHM0I2[3] 3 10 7 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count_RNIHM0I2[3]_LC_14)
+set_location U1.Sync_wr_ctrl_inst.full_RNI6PI21 1 11 0 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNI6PI21_LC_15)
+set_location U1.Sync_wr_ctrl_inst.full_RNI7A4U1 2 12 4 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNI7A4U1_LC_16)
+set_location U1.Sync_wr_ctrl_inst.full_RNI9QTP2 2 12 5 # SB_LUT4 (LogicCell: U1.Sync_rd_ctrl_inst.empty_LC_17)
+set_location U1.Sync_rd_ctrl_inst.empty 2 12 5 # SB_DFF (LogicCell: U1.Sync_rd_ctrl_inst.empty_LC_17)
+set_location U1.Sync_wr_ctrl_inst.full_RNISNC31 2 12 3 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNISNC31_LC_18)
+set_location U1.Sync_wr_ctrl_inst.full_RNIUQEU 2 12 6 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNIUQEU_LC_19)
+set_location U1.Sync_wr_ctrl_inst.full_RNIUQEU_0 3 11 1 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNIUQEU_0_LC_20)
+set_location U1.Sync_wr_ctrl_inst.full_RNO 2 12 2 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_LC_21)
+set_location U1.Sync_wr_ctrl_inst.full 2 12 2 # SB_DFF (LogicCell: U1.Sync_wr_ctrl_inst.full_LC_21)
+set_location U1.Sync_wr_ctrl_inst.full_RNO_0 2 12 1 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.full_RNO_0_LC_22)
+set_location U1.Sync_wr_ctrl_inst.m1 2 11 4 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.m1_LC_23)
+set_location U1.Sync_wr_ctrl_inst.m11_e 2 12 0 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.m11_e_LC_24)
+set_location U1.Sync_wr_ctrl_inst.m14_e_1 2 12 7 # SB_LUT4 (LogicCell: U1.Sync_wr_ctrl_inst.m14_e_1_LC_25)
+set_location U1.Sync_wr_pointer_inst.count_RNO[0] 3 11 2 # SB_LUT4 (LogicCell: U1.Sync_wr_pointer_inst.count[0]_LC_26)
+set_location U1.Sync_wr_pointer_inst.count[0] 3 11 2 # SB_DFF (LogicCell: U1.Sync_wr_pointer_inst.count[0]_LC_26)
+set_location U1.Sync_wr_pointer_inst.count_RNO_0[3] 3 11 3 # SB_LUT4 (LogicCell: U1.Sync_wr_pointer_inst.count_RNO_0[3]_LC_27)
+set_location U1.Sync_wr_pointer_inst.count_RNO[1] 3 11 6 # SB_LUT4 (LogicCell: U1.Sync_wr_pointer_inst.count[1]_LC_28)
+set_location U1.Sync_wr_pointer_inst.count[1] 3 11 6 # SB_DFF (LogicCell: U1.Sync_wr_pointer_inst.count[1]_LC_28)
+set_location U1.Sync_wr_pointer_inst.count_RNO[2] 3 12 5 # SB_LUT4 (LogicCell: U1.Sync_wr_pointer_inst.count[2]_LC_29)
+set_location U1.Sync_wr_pointer_inst.count[2] 3 12 5 # SB_DFFSR (LogicCell: U1.Sync_wr_pointer_inst.count[2]_LC_29)
+set_location U1.Sync_wr_pointer_inst.count_RNO[3] 3 12 0 # SB_LUT4 (LogicCell: U1.Sync_wr_pointer_inst.count[3]_LC_30)
+set_location U1.Sync_wr_pointer_inst.count[3] 3 12 0 # SB_DFFSR (LogicCell: U1.Sync_wr_pointer_inst.count[3]_LC_30)
+set_location U1.fifo_mem_inst.dout_esr_ctle[0] 2 10 2 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr_ctle[0]_LC_31)
+set_location Write_enable_ibuf_RNIMUP 2 11 0 # SB_LUT4 (LogicCell: Write_enable_ibuf_RNIMUP_LC_32)
+set_location U1.Sync_rd_pointer_inst.count_RNI55N31_0_U1.Sync_rd_pointer_inst.count_0_REP_LUT4_0 3 11 5 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count[0]_LC_33)
+set_location U1.Sync_rd_pointer_inst.count[0] 3 11 5 # SB_DFF (LogicCell: U1.Sync_rd_pointer_inst.count[0]_LC_33)
+set_location U1.Sync_rd_pointer_inst.count_RNI8V4J1_1_U1.Sync_rd_pointer_inst.count_1_REP_LUT4_0 3 11 0 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count[1]_LC_34)
+set_location U1.Sync_rd_pointer_inst.count[1] 3 11 0 # SB_DFF (LogicCell: U1.Sync_rd_pointer_inst.count[1]_LC_34)
+set_location U1.Sync_rd_pointer_inst.count_RNICQI22_2_U1.Sync_rd_pointer_inst.count_2_REP_LUT4_0 3 10 1 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count[2]_LC_35)
+set_location U1.Sync_rd_pointer_inst.count[2] 3 10 1 # SB_DFF (LogicCell: U1.Sync_rd_pointer_inst.count[2]_LC_35)
+set_location U1.Sync_rd_pointer_inst.count_RNIHM0I2_3_U1.Sync_rd_pointer_inst.count_3_REP_LUT4_0 3 10 4 # SB_LUT4 (LogicCell: U1.Sync_rd_pointer_inst.count[3]_LC_36)
+set_location U1.Sync_rd_pointer_inst.count[3] 3 10 4 # SB_DFF (LogicCell: U1.Sync_rd_pointer_inst.count[3]_LC_36)
+set_location U1.fifo_mem_inst.dout_esr_0_THRU_LUT4_0 3 9 0 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[0]_LC_37)
+set_location U1.fifo_mem_inst.dout_esr[0] 3 9 0 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[0]_LC_37)
+set_location U1.fifo_mem_inst.dout_esr_1_THRU_LUT4_0 3 9 1 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[1]_LC_38)
+set_location U1.fifo_mem_inst.dout_esr[1] 3 9 1 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[1]_LC_38)
+set_location U1.fifo_mem_inst.dout_esr_10_THRU_LUT4_0 2 9 5 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[10]_LC_39)
+set_location U1.fifo_mem_inst.dout_esr[10] 2 9 5 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[10]_LC_39)
+set_location U1.fifo_mem_inst.dout_esr_2_THRU_LUT4_0 3 9 3 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[2]_LC_40)
+set_location U1.fifo_mem_inst.dout_esr[2] 3 9 3 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[2]_LC_40)
+set_location U1.fifo_mem_inst.dout_esr_3_THRU_LUT4_0 3 9 4 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[3]_LC_41)
+set_location U1.fifo_mem_inst.dout_esr[3] 3 9 4 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[3]_LC_41)
+set_location U1.fifo_mem_inst.dout_esr_4_THRU_LUT4_0 3 9 5 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[4]_LC_42)
+set_location U1.fifo_mem_inst.dout_esr[4] 3 9 5 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[4]_LC_42)
+set_location U1.fifo_mem_inst.dout_esr_5_THRU_LUT4_0 1 9 4 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[5]_LC_43)
+set_location U1.fifo_mem_inst.dout_esr[5] 1 9 4 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[5]_LC_43)
+set_location U1.fifo_mem_inst.dout_esr_6_THRU_LUT4_0 3 9 2 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[6]_LC_44)
+set_location U1.fifo_mem_inst.dout_esr[6] 3 9 2 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[6]_LC_44)
+set_location U1.fifo_mem_inst.dout_esr_7_THRU_LUT4_0 2 9 0 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[7]_LC_45)
+set_location U1.fifo_mem_inst.dout_esr[7] 2 9 0 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[7]_LC_45)
+set_location U1.fifo_mem_inst.dout_esr_8_THRU_LUT4_0 2 9 1 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[8]_LC_46)
+set_location U1.fifo_mem_inst.dout_esr[8] 2 9 1 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[8]_LC_46)
+set_location U1.fifo_mem_inst.dout_esr_9_THRU_LUT4_0 3 9 7 # SB_LUT4 (LogicCell: U1.fifo_mem_inst.dout_esr[9]_LC_47)
+set_location U1.fifo_mem_inst.dout_esr[9] 3 9 7 # SB_DFFESR (LogicCell: U1.fifo_mem_inst.dout_esr[9]_LC_47)
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c 1 12 0 # SB_CARRY (LogicCell: U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c_LC_48)
+set_io Clock_ibuf_gb_io 0 11 0 # ICE_GB_IO
+set_io Din_ibuf[0] 0 1 0 # ICE_IO
+set_io Din_ibuf[1] 0 10 0 # ICE_IO
+set_io Din_ibuf[10] 0 7 1 # ICE_IO
+set_io Din_ibuf[2] 0 7 0 # ICE_IO
+set_io Din_ibuf[3] 0 6 1 # ICE_IO
+set_io Din_ibuf[4] 0 6 0 # ICE_IO
+set_io Din_ibuf[5] 0 3 1 # ICE_IO
+set_io Din_ibuf[6] 0 3 0 # ICE_IO
+set_io Din_ibuf[7] 0 2 1 # ICE_IO
+set_io Din_ibuf[8] 0 2 0 # ICE_IO
+set_io Din_ibuf[9] 0 1 1 # ICE_IO
+set_io Dout_obuf[0] 2 21 1 # ICE_IO
+set_io Dout_obuf[1] 0 20 1 # ICE_IO
+set_io Dout_obuf[10] 0 20 0 # ICE_IO
+set_io Dout_obuf[2] 0 19 1 # ICE_IO
+set_io Dout_obuf[3] 0 19 0 # ICE_IO
+set_io Dout_obuf[4] 0 18 1 # ICE_IO
+set_io Dout_obuf[5] 0 18 0 # ICE_IO
+set_io Dout_obuf[6] 0 17 1 # ICE_IO
+set_io Dout_obuf[7] 0 17 0 # ICE_IO
+set_io Dout_obuf[8] 0 15 1 # ICE_IO
+set_io Dout_obuf[9] 0 10 1 # ICE_IO
+set_io Empty_obuf 0 12 1 # ICE_IO
+set_io Full_obuf 0 12 0 # ICE_IO
+set_location GND -1 -1 -1 # GND
+set_io Read_enable_ibuf 0 15 0 # ICE_IO
+set_io Reset_ibuf 0 11 1 # ICE_IO
+set_location U1.fifo_mem_inst.mem_mem_0_0 4 9 0 # SB_RAM40_4K
+set_io Write_enable_ibuf 0 13 1 # ICE_IO
+set_location CONSTANT_ONE_LUT4 5 9 1 # SB_LUT4 (LogicCell: LC_49)

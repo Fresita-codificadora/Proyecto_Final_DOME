@@ -11,6 +11,7 @@ library ieee;
 entity Algoritmo_2 is
 	generic(
 		umbral 				: integer :=10;
+		offset				: integer := 0;
 		cantidad_eventos 	: integer :=2**11;
 		ancho 				: integer := 97;
 		pixels 				: integer := 7081
@@ -30,11 +31,11 @@ entity Algoritmo_2 is
 --		energia_i 					: in std_logic_vector (13 downto 0);
 --		cantidad_i 					: in std_logic_vector(5 downto 0);
 		--entrada FIFO
-		FIFO_data_i									: in std_logic_vector(10 downto 0);
+		FIFO_data_i									: in std_logic_vector(7 downto 0);
 
 		--salida hacia la FIFO--
-		FIFO_data_o									: out std_logic_vector (10 downto 0);
-		FIFO_dir_o									: out std_logic_vector (10 downto 0); 	--las direcciones necesarias para las 1283 posiciones de memoria
+		FIFO_data_o									: out std_logic_vector (7 downto 0);
+		FIFO_dir_o									: out std_logic_vector (8 downto 0); 	--las direcciones necesarias para las 1283 posiciones de memoria
 		FIFO_RW_o									: out std_logic;								--señal para lectura y escritura de la ram FIFO
 --		-- salida hacia ram cantidad --
 --		cantidad_o 					: out std_logic_vector (5 downto 0);
@@ -45,8 +46,9 @@ entity Algoritmo_2 is
 --		indice_energias_o 		: out std_logic_vector (10 downto 0);
 --		--r_w_energia 				: out std_logic;
 		uart_tx_busy				: in std_logic;
-		estado 						: out std_logic_vector(3 downto 0);
-		captura 						: out std_LOGIC
+		uart_send					: out std_logic;
+		uart_tx_data				: out STD_LOGIC_VECTOR(7 downto 0);
+		estado 						: out std_logic_vector(3 downto 0)
 	);
 
 end entity;
@@ -54,7 +56,7 @@ end entity;
 architecture rtl of Algoritmo_2 is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (otro_ancho_2, incremento_indice,errase, wait_done, trigger_wait, nuevo_pix, dir_anterior, lectura_anterior_1,lectura_anterior_2, dir_ancho_1, lectura_ancho_1_1,lectura_ancho_1_2, dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3,lectura_ancho_3_1, casos, lectura_energia_cantidad, escritura_energia_cantidad, escritura ,escritura_2 ,incremento_indice_FIFO);
+	type state_type is (lectura_uart,envio_uart,errase, wait_done, trigger_wait, nuevo_pix, dir_anterior, lectura_anterior,lectura_anterior_2, dir_ancho_1, lectura_ancho_1,lectura_ancho_1_2, dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3,lectura_ancho_3_1, casos, lectura_energia_cantidad, escritura_energia_cantidad, escritura ,escritura_2 ,incremento_indice_FIFO);
 
 	-- Register to hold the current state
 	signal state   		: state_type;
@@ -62,23 +64,26 @@ architecture rtl of Algoritmo_2 is
 	constant num_bits : integer := integer(ceil(log2(real(cantidad_eventos))));
 	constant cant_pixeles : integer := pixels;
 	-- senales internas
-	signal reg_FIFO_1, reg_ancho_1, reg_ancho_2 ,reg_ancho_3 : std_logic_vector(num_bits-1 downto 0);
+	signal reg_FIFO_1, reg_ancho_1, reg_ancho_2 ,reg_ancho_3 : std_logic_vector(7 downto 0);
 	signal indice_FIFO 													: integer range 0 to 2**11-1:=0; 
 	signal data_reg 														: std_logic_vector(7 downto 0):=x"00";
-	signal indice 															: integer range 0 to cantidad_eventos-1:=1;
-	signal FIFO_0 															: integer range 0 to cantidad_eventos-1;
+	signal indice 															: integer range 0 to 2047:=1;
+	signal FIFO_0 															: integer range 0 to 2047;
 	signal pix_previo 													: integer range 0 to cant_pixeles := 16;
 	signal temp_energia 													: std_logic_vector(13 downto 0):="00000000000000";
 	signal temp_cantidad  												: std_logic_vector(5 downto 0):="000000";	
 	signal pix_cnt_int													: integer range 0 to 1_310_720;
 	signal borrado 														: STD_LOGIC := '0';
-	signal fifo_reg														: STD_LOGIC_VECTOR(10 downto 0);
-		    -- Declaramos el procedimiento para encontrar el máximo
+	signal fifo_reg														: STD_LOGIC_VECTOR(7 downto 0);
+	signal contador_pixel												: integer range 0 to 1280;
+	signal flag_ignorar, flag_ignorar_1									: BOOLEAN := false;
+	signal reg_uart														: std_logic_vector(7 downto 0):=x"00";
+	-- Declaramos el procedimiento para encontrar el máximo
 		procedure encontrar_maximo(
-			signal reg1 : in std_logic_vector(10 downto 0);
-			signal reg2 : in std_logic_vector(10 downto 0);
-			signal reg3 : in std_logic_vector(10 downto 0);
-			signal reg4 : in std_logic_vector(10 downto 0);
+			signal reg1 : in std_logic_vector(7 downto 0);
+			signal reg2 : in std_logic_vector(7 downto 0);
+			signal reg3 : in std_logic_vector(7 downto 0);
+			signal reg4 : in std_logic_vector(7 downto 0);
 			signal maximo : out integer
 		) is
 			variable valor_max1, valor_max2, valor_max_final : integer range 0 to 2047;
@@ -111,32 +116,30 @@ begin
 	pix_cnt_int <= to_integer(unsigned(pix_cnt_i));
 	-- Logic to advance to the next state
 	process (all)
+		variable contador : integer range 0 to 15:=0;
 	begin
 		if reset_i = '0' then
 			state <= errase;
-			pix_previo <= 16;
+			pix_previo <= 1;
 			data_reg <= (others => '0' );
 			indice<= 1;
+			contador_pixel <= 0;
 			indice_FIFO <= 0;
 			reg_FIFO_1<=(others =>'0');
 			reg_ancho_1<=(others =>'0');
 			reg_ancho_2<=(others =>'0');
 			reg_ancho_3<=(others =>'0');
 			borrado <= '0';
+			reg_uart<=(others => '0');
 		elsif (rising_edge(clk_i)) then
-			if state /= errase then
-				captura<= '1';
-			else
-				captura <= '0';
-			end if;
 			case state is
 				when errase=>                   		--este estado deberia borrar toda la memoria ram de la fifo
-					if indice_FIFO <= ancho+3 then
+					if indice_FIFO <= ancho+4 then
 						indice_FIFO<=indice_FIFO+1;  	-- esto es el addrs que le mando para borrar todo
 						state <= escritura;
 						FIFO_0 <= 0;
 					else
-						state <= wait_done;   				--aca ya deberia haber borrado toda la memora 
+						state <= nuevo_pix;   				--aca ya deberia haber borrado toda la memora 
 						indice_FIFO <= 0;
 						borrado <= '1';
 					end if;
@@ -165,7 +168,18 @@ begin
 				when nuevo_pix=>
 					if pix_cnt_int < cant_pixeles then
 						if pix_cnt_int /= pix_previo then  								-- si el la cuenta de pixel es distinta a la cuenta anterior, el pixel es nuevo
-							pix_previo<=pix_cnt_int;											-- actualizamos el pixel_previo
+							pix_previo<=pix_cnt_int;
+							contador_pixel <= contador_pixel + 1;
+							indice_FIFO <= indice_FIFO + 1;
+							if indice_FIFO = 99 then
+								indice_FIFO <= 1;
+							end if ;
+							if contador_pixel = 97 then
+								flag_ignorar_1 <= true;
+							elsif contador_pixel = 98 then
+								contador_pixel <= 1;
+								flag_ignorar <= true;
+							end if; 											-- actualizamos el pixel_previo
 							if to_integer(unsigned(pix_data_i)) > umbral then 		--comparacion con el umbral
 								data_reg<=pix_data_i;										-- si supera el umbral guardamos la data del pixel
 								state<=dir_anterior;											-- tenemos que rescatar los valores de al rededor del nuevo pixel, ancho+1,ancho+2,ancho+3 ...
@@ -180,86 +194,92 @@ begin
 					else
 						state <= trigger_wait;
 					end if;
-				when dir_anterior =>														--presentacion de la dir de memoria que contiene el pixel anterior
-					if indice_FIFO = 0 then		
-						FIFO_dir_o <= std_logic_vector(to_unsigned(ancho+1,11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direccion +1 entonces completo
-						fifo_reg <= std_logic_vector(to_unsigned(ancho+1,11));																					-- seria indice_FIFO+1-1283=indice_FIFO-1282 , despues el dato lo leemos en el proximo estado
-																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
-					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-1,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO-1,11));
+				when dir_anterior =>
+					if flag_ignorar then
+						reg_FIFO_1 <= (others => '0');
+						state <= dir_ancho_1;
+					else														--presentacion de la dir de memoria que contiene el pixel anterior
+						if indice_FIFO = 1 then		
+							FIFO_dir_o <= std_logic_vector(to_unsigned(98,9)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direccion +1 entonces completo
+																												-- seria indice_FIFO+1-1283=indice_FIFO-1282 , despues el dato lo leemos en el proximo estado
+																												-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
+						else
+							FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-1,9));
+						end if;
+						state <= lectura_anterior;
 					end if;
-					state <= lectura_anterior_1;
-				when lectura_anterior_1 =>
-					state<= lectura_anterior_2;
-					FIFO_dir_o <= fifo_reg;
-				when lectura_anterior_2 =>
+				when lectura_anterior =>
 					state <= dir_ancho_1;
-					FIFO_dir_o <= fifo_reg;
 					reg_FIFO_1 <= FIFO_data_i;		--leemos el anterior
 				when dir_ancho_1 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+1 y lectura pixel anterior
-					if indice_FIFO + 4 >= (ancho+1) then
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+1-(ancho),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+1-(ancho),11));																					-- despues el dato lo leemos en el proximo estado
-																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
-					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+4,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+4,11));
+					if flag_ignorar_1 then
+						reg_ancho_1 <=(others => '0');
+						state <=dir_ancho_2;
+					else 
+						if indice_FIFO + 2 + offset > 99 then
+							FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-96,9)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
+																												-- despues el dato lo leemos en el proximo estado
+																												-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
+						else
+							FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO + 2 + offset,9));
+							
+						end if;
+						state <= lectura_ancho_1;
 					end if;
-					state <= lectura_ancho_1_1;
-				when lectura_ancho_1_1 =>
-					state <= lectura_ancho_1_2;
-					FIFO_dir_o <= fifo_reg;
-				when lectura_ancho_1_2 =>
-					state<= dir_ancho_2;
-					FIFO_dir_o <= fifo_reg;
-					reg_ancho_1 <= FIFO_data_i;    --leemos ancho+1
+				when lectura_ancho_1 =>
+					if contador < 14 then
+						contador := contador + 1;
+						state <= lectura_ancho_1;
+					else  
+						state<= dir_ancho_2;
+						reg_ancho_1 <= FIFO_data_i;    --leemos ancho+1
+						contador := 0;
+					end if;
 				when dir_ancho_2 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+2 y lectura pixel ancho + 1
-					if indice_FIFO + 3 >= (ancho+1) then
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-(ancho),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
-						fifo_reg <=	std_logic_vector(to_unsigned(indice_FIFO-(ancho),11));																				-- despues el dato lo leemos en el proximo estado
+					if indice_FIFO + 1 + offset > 99 then
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO - (ancho) + offset,9)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
+																										-- despues el dato lo leemos en el proximo estado
 																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
 					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+3,11));
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO + 1 +offset,9));
+						
 					end if;
-					state <= otro_ancho_2;
-				when otro_ancho_2 =>
-					state<= lectura_ancho_2;
-					FIFO_dir_o <= fifo_reg;
+					state <= lectura_ancho_2;
 				when lectura_ancho_2 =>
-					state<= dir_ancho_3;
-					FIFO_dir_o <= fifo_reg;
-					reg_ancho_2 <= FIFO_data_i;    --leemos ancho+2
-				when dir_ancho_3 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+3 y lectura pixel ancho + 2
-					if indice_FIFO + 2 >= (ancho+1) then
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO-(ancho+1),11)); 	-- si es mayor a 1283 entonces le tengo que restar 1283 a la direcion + 1280
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO-(ancho+1),11));																					-- despues el dato lo leemos en el proximo estado
-																											-- asi le damos 1 ciclo de reloj para responder a la memoria																					-- reloj para que me pueda dar la data;
-					else
-						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
-						fifo_reg <= std_logic_vector(to_unsigned(indice_FIFO+2,11));
+					if contador < 14 then
+						contador := contador + 1;
+						state <= lectura_ancho_2;
+					else  
+						state<= dir_ancho_3;
+						reg_ancho_2 <= FIFO_data_i;    --leemos ancho+2
+						contador := 0;
 					end if;
-					state <= lectura_ancho_3_1;
-				when lectura_ancho_3_1 =>
-					state <= lectura_ancho_3;
-					FIFO_dir_o <= fifo_reg;
+				when dir_ancho_3 =>								--presentacion de la dir de memoria que tiene el pixel en ancho+3 y lectura pixel ancho + 2
+					if flag_ignorar then
+						reg_ancho_3 <= (others => '0') ;
+						state <= casos;
+					else
+						FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO+1,9));
+						state <= lectura_ancho_3;
+					end if;
 				when lectura_ancho_3 => 						-- en este estado leemos la info que esta en ancho +3 no deberia hacer nada mas
-					state<= casos;
-					FIFO_dir_o <= fifo_reg;	
-					reg_ancho_3 <= FiFO_data_i;							-- con el dato anterior, ancho+1, ancho+2 y ancho+3 ya podemos ver los casos
+					if contador < 14 then
+						contador := contador + 1;
+						state <= lectura_ancho_3;
+					else  
+						state<= casos;	
+						reg_ancho_3 <= FiFO_data_i;	
+						contador := 0;
+					end if;
+																		-- con el dato anterior, ancho+1, ancho+2 y ancho+3 ya podemos ver los casos
 				when casos=>											--EN ESTE ESTADO VEMOS EL INDICE que son los datos dentro de la FIFO
 					if to_integer(unsigned(reg_FIFO_1))=0 and to_integer(unsigned(reg_ancho_1))=0 and to_integer(unsigned(reg_ancho_2))=0 and to_integer(unsigned(reg_ancho_3))=0  then --nuevo evento
 						FIFO_0 <= indice;
-						state <= incremento_indice;
+						indice <= indice + 1;			-- le asignamos el num de indice(evento) al FIFO_0 y lo aumentamos
 					else
 						encontrar_maximo(reg_FIFO_1, reg_ancho_1, reg_ancho_2, reg_ancho_3, FIFO_0);
-						state<= escritura;
 						--FIFO_0 <= to_integer(unsigned(reg_ancho_2));
 					end if;
-					
-				when incremento_indice =>
-					indice <= indice + 1;			-- le asignamos el num de indice(evento) al FIFO_0 y lo aumentamos
 					state<= escritura;
 --				when lectura_energia_cantidad =>								-- EN ESTE ESTADO ESCRIBIMOS LAS MEMORIAS RAM
 --					indice_energias_o <= std_logic_vector(to_unsigned(FIFO_0,num_bits));
@@ -274,31 +294,45 @@ begin
 --					cantidad_o <= std_logic_vector(unsigned(temp_cantidad) + 1) ;				-- le sumamos 1 a la cantidad de pixeles que tiene la mancha
 --					state <= escritura;
 				when escritura =>								--estado encargado de escribir la RAM FIFO
-					FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO,11));
+					FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO,9));
 					state<=escritura_2;
 				when escritura_2 =>
 					if borrado='0' then
 						state <= errase;
 					else 
-						state<=incremento_indice_FIFO;
+						state<=lectura_uart;
 					end if;
-					FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO,11));
+					FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO,9));
+				when lectura_uart =>
+					FIFO_dir_o <= std_logic_vector(to_unsigned(indice_FIFO,9));
+					if contador < 14 then
+						contador := contador + 1;
+						state <= lectura_uart;
+					else  
+						state<= envio_uart;	
+						reg_uart <= FiFO_data_i;	
+						contador := 0;
+					end if;
+				when envio_uart =>
+					if contador < 2 then
+						contador := contador + 1;
+						state <= envio_uart;
+					else  
+						state <= incremento_indice_FIFO;		
+						contador := 0;
+					end if;	
 				when incremento_indice_FIFO =>
 					if 	uart_tx_busy = '0' then
-						if indice_FIFO < ancho+1 then
-							indice_FIFO <= indice_FIFO + 1;
-							reg_FIFO_1<=(others =>'0');
-							reg_ancho_1<=(others =>'0');
-							reg_ancho_2<=(others =>'0');
-							reg_ancho_3<=(others =>'0');
-							state <= nuevo_pix;
-						else 
-							indice_FIFO <= 0;
-							state <= nuevo_pix;
-						end if ;
+						reg_FIFO_1<=(others =>'0');
+						reg_ancho_1<=(others =>'0');
+						reg_ancho_2<=(others =>'0');
+						reg_ancho_3<=(others =>'0');
+						state <= nuevo_pix;
 					else
 						state <= incremento_indice_FIFO;
 					end if;
+					flag_ignorar <= FALSE;
+					flag_ignorar_1 <= FALSE;
 				when others =>
 					state<= nuevo_pix;
 			end case;
@@ -316,6 +350,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"0";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when wait_done =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -323,6 +359,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"1";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when trigger_wait =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -330,6 +368,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"2";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when nuevo_pix =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -337,6 +377,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"3";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when dir_anterior =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -344,13 +386,26 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"4";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when dir_ancho_1 =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
 				--salida control ram de energias y cantidad
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
-			   estado <= x"5";	
+			   estado <= x"5";
+			   uart_send 		<=	'0';
+			   uart_tx_data 	<=(others => '0');
+			when lectura_ancho_1 =>
+			   FIFO_data_o	<=	(others => '0');
+			   FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
+			   --salida control ram de energias y cantidad
+			   --r_w_energia <='0';
+			   --r_w_cantidad<='0';
+			  estado <= x"8";
+			  uart_send 		<=	'0';
+			  uart_tx_data 	<=(others => '0');		
 			when dir_ancho_2 =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -358,6 +413,17 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"6";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
+			when lectura_ancho_2 =>
+				FIFO_data_o	<=	(others => '0');
+				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
+				--salida control ram de energias y cantidad
+				--r_w_energia <='0';
+				--r_w_cantidad<='0';
+			   estado <= x"8";
+			   uart_send 		<=	'0';
+			   uart_tx_data 	<=(others => '0');	
 			when dir_ancho_3 =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -365,13 +431,17 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"7";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when lectura_ancho_3 =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
 				--salida control ram de energias y cantidad
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
-			   estado <= x"8";	
+			   estado <= x"8";
+			   uart_send 		<=	'0';
+			   uart_tx_data 	<=(others => '0');	
 			when casos =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -379,6 +449,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"9";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when lectura_energia_cantidad =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -386,6 +458,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"0";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when escritura_energia_cantidad =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -393,27 +467,53 @@ begin
 				--r_w_energia <='1';--escrituras de las otras rams
 				--r_w_cantidad<='1';
 				estado <= x"0";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when escritura =>
-				FIFO_data_o	<=	std_logic_vector(to_unsigned(FIFO_0,11));
+				FIFO_data_o	<=	std_logic_vector(to_unsigned(FIFO_0,8));
 				FIFO_RW_o	<= '1' ;--la verdad que no se si debe ser cero o uno pero debe ser para escritura
 				--salida control ram de energias y cantidad
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"A";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when escritura_2 =>
-				FIFO_data_o	<=	std_logic_vector(to_unsigned(FIFO_0,11));
+				FIFO_data_o	<=	std_logic_vector(to_unsigned(FIFO_0,8));
 				FIFO_RW_o	<= '1' ;--la verdad que no se si debe ser cero o uno pero debe ser para escritura
 				--salida control ram de energias y cantidad
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"A";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 			when incremento_indice_FIFO =>
-				FIFO_data_o	<=	std_logic_vector(to_unsigned(FIFO_0,11));
+				FIFO_data_o	<=	(others => '0') ;
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
 				--salida control ram de energias y cantidad
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"B";
+				uart_send 		<=	'1';
+				uart_tx_data 	<=reg_uart;
+			when lectura_uart =>
+				FIFO_data_o	<=	(others => '0') ;
+				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
+				--salida control ram de energias y cantidad
+				--r_w_energia <='0';
+				--r_w_cantidad<='0';
+				estado <= x"B";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
+			when envio_uart =>
+				FIFO_data_o	<=	(others => '0') ;
+				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
+				--salida control ram de energias y cantidad
+				--r_w_energia <='0';
+				--r_w_cantidad<='0';
+				estado <= x"B";
+				uart_send 		<=	'1';
+				uart_tx_data 	<=reg_uart;	
 			when others =>
 				FIFO_data_o	<=	(others => '0');
 				FIFO_RW_o	<= '0' ;--la verdad que no se si debe ser cero o uno pero debe ser para lectura
@@ -421,6 +521,8 @@ begin
 				--r_w_energia <='0';
 				--r_w_cantidad<='0';
 				estado <= x"4";
+				uart_send 		<=	'0';
+				uart_tx_data 	<=(others => '0');
 		end case;
 	end process;
 

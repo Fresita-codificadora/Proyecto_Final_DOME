@@ -1,0 +1,32 @@
+---------------------------------------
+Resource Usage Report for fifo_test 
+
+Mapping to part: ice40hx4ktq144
+Cell usage:
+GND             7 uses
+SB_CARRY        4 uses
+SB_DFF          8 uses
+SB_DFFESR       11 uses
+SB_DFFSR        7 uses
+SB_RAM256x16    1 use
+VCC             7 uses
+SB_LUT4         33 uses
+
+I/O ports: 28
+I/O primitives: 28
+SB_GB_IO       1 use
+SB_IO          27 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   26 (0%)
+
+RAM/ROM usage summary
+Block Rams : 1 of 20 (5%)
+
+
+@S |Mapping Summary:
+Total  LUTs: 33 (0%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 33 = 33 
+

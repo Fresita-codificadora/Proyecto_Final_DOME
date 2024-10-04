@@ -1,0 +1,2 @@
+@W: CL249 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":61:4:61:5|Initial value is not supported on state machine r_SM_Main
+

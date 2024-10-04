@@ -1,0 +1,79 @@
+Running in Lattice mode
+
+
+Starting:    D:\Programador_fpga\iCEcube2\synpbase\bin64\mbin\synbatch.exe
+Install:     D:\Programador_fpga\iCEcube2\synpbase
+Hostname:    DESKTOP-7HK4TPK
+Date:        Thu Oct 03 21:23:58 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch anda_plis_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+auto_infer_blackbox is not supported in current product.
+log file: "C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srr"
+Running: anda_plis_Implmnt in foreground
+
+Running anda_plis_syn|anda_plis_Implmnt
+
+Running: compile (Compile) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:23:58 2024
+
+Running: compile_flow (Compile Process) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:23:58 2024
+
+Running: compiler (Compile Input) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:23:58 2024
+Copied C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs to C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srs
+
+compiler completed
+# Thu Oct 03 21:23:59 2024
+
+Return Code: 0
+Run Time:00h:00m:01s
+
+Running: multi_srs_gen (Multi-srs Generator) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:23:59 2024
+
+multi_srs_gen completed
+# Thu Oct 03 21:24:00 2024
+
+Return Code: 0
+Run Time:00h:00m:01s
+Copied C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_mult.srs to C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srs
+Complete: Compile Process on anda_plis_syn|anda_plis_Implmnt
+
+Running: premap (Pre-mapping) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:24:00 2024
+
+premap completed with warnings
+# Thu Oct 03 21:24:00 2024
+
+Return Code: 1
+Run Time:00h:00m:00s
+Complete: Compile on anda_plis_syn|anda_plis_Implmnt
+
+Running: map (Map) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:24:00 2024
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 03 21:24:00 2024
+Copied C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_m.srm to C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srm
+
+fpga_mapper completed with warnings
+# Thu Oct 03 21:24:03 2024
+
+Return Code: 1
+Run Time:00h:00m:03s
+Complete: Map on anda_plis_syn|anda_plis_Implmnt
+Complete: Logic Synthesis on anda_plis_syn|anda_plis_Implmnt
+
+exit status=0
+
+exit status=0
+

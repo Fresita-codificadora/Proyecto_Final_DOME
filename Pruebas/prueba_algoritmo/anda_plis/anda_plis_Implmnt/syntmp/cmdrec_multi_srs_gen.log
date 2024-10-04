@@ -1,0 +1,7 @@
+D:\Programador_fpga\iCEcube2\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs  -osyn  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_mult.srs  -log  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_multi_srs_gen.srr 
+rc:0 success:1 runtime:1
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs|io:i|time:1728001438|size:20225|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_mult.srs|io:o|time:1728001439|size:4716|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_multi_srs_gen.srr|io:o|time:1728001439|size:804|exec:0
+file:D:\Programador_fpga\iCEcube2\synpbase\bin\syn_nfilter.exe|io:i|time:1716683687|size:3128320|exec:1
+file:D:\Programador_fpga\iCEcube2\synpbase\bin64\syn_nfilter.exe|io:i|time:1716683688|size:3947520|exec:1

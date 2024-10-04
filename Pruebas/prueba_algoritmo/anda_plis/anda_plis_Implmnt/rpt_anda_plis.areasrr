@@ -1,0 +1,155 @@
+#### START OF AREA REPORT #####[
+
+Part:			ICE40HX4KTQ144 (Lattice)
+
+-------------------------------------------------------------------------
+########   Utilization report for  Top level view:   anda_plis   ########
+=========================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     223                100 %                
+==================================================
+Total SEQUENTIAL ELEMENTS in the block anda_plis:	223 (24.86 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       569                100 %                
+CARRYS     89                 100 %                
+===================================================
+Total COMBINATIONAL LOGIC in the block anda_plis:	658 (73.36 % Utilization)
+
+
+MEMORY ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+RAMS     1                  100 %                
+=================================================
+Total MEMORY ELEMENTS in the block anda_plis:	1 (0.11 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     3                  100 %                
+=================================================
+Total IO PADS in the block anda_plis:	3 (0.33 % Utilization)
+
+-----------------------------------------------------------------
+########   Utilization report for  cell:   UART_RX_104   ########
+Instance path:   anda_plis.UART_RX_104                           
+=================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     24                 10.8 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block anda_plis.UART_RX_104:	24 (2.68 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     89                 15.6 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block anda_plis.UART_RX_104:	89 (9.92 % Utilization)
+
+------------------------------------------------------------
+########   Utilization report for  cell:   algo_3   ########
+Instance path:   anda_plis.algo_3                           
+============================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     154                69.1 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block anda_plis.algo_3:	154 (17.17 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       412                72.4 %               
+CARRYS     77                 86.5 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block anda_plis.algo_3:	489 (54.52 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     2                  66.7 %               
+=================================================
+Total IO PADS in the block anda_plis.algo_3:	2 (0.22 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   ram_9s_8s   ########
+Instance path:   anda_plis.ram_9s_8s                           
+===============================================================
+
+MEMORY ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+RAMS     1                  100 %                
+=================================================
+Total MEMORY ELEMENTS in the block anda_plis.ram_9s_8s:	1 (0.11 % Utilization)
+
+--------------------------------------------------------------------
+########   Utilization report for  cell:   uart_algo_7081   ########
+Instance path:   anda_plis.uart_algo_7081                           
+====================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     22                 9.87 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block anda_plis.uart_algo_7081:	22 (2.45 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       26                 4.57 %               
+CARRYS     12                 13.5 %               
+===================================================
+Total COMBINATIONAL LOGIC in the block anda_plis.uart_algo_7081:	38 (4.24 % Utilization)
+
+-----------------------------------------------------------------------
+########   Utilization report for  cell:   uart_tx_Z1_layer1   ########
+Instance path:   anda_plis.uart_tx_Z1_layer1                           
+=======================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     23                 10.3 %               
+==================================================
+Total SEQUENTIAL ELEMENTS in the block anda_plis.uart_tx_Z1_layer1:	23 (2.56 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     42                 7.38 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block anda_plis.uart_tx_Z1_layer1:	42 (4.68 % Utilization)
+
+#### START OF Block RAM DETAILED REPORT ####
+
+Total Block RAMs: 1
+
+b2v_inst2.mem_0_mem_0_0_0
+----------------------------
+----------------------------
+
+#### END OF  Block RAM DETAILED REPORT ####
+
+
+##### END OF AREA REPORT #####]
+

@@ -1,0 +1,2 @@
+@W: FX107 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":565:1:565:6|RAM U1.fifo_mem_inst.mem[10:0] (in view: work.fifo_test(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
+@W: MT420 |Found inferred clock fifo_test|Clock with period 7.89ns. Please declare a user-defined clock on object "p:Clock"

@@ -1,0 +1,18 @@
+     // The following must be inserted into your Verilog file for this
+     // core to be instantiated. Change the instance name and port connections
+     // (in parentheses) to your own signal names.
+
+
+     //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
+
+
+fifo_test <InstanceName> ( 
+                             .Reset(Reset) 
+                            ,.Clock(Clock) 
+                            ,.Din(Din) 
+                            ,.Write_enable(Write_enable) 
+                            ,.Read_enable(Read_enable) 
+                            ,.Dout(Dout) 
+                            ,.Full(Full) 
+                            ,.Empty(Empty) 
+	                       ); 

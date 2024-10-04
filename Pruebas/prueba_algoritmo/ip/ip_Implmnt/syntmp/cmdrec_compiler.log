@@ -1,0 +1,9 @@
+E:\programas\iCEcube2\synpbase\bin64\c_hdl.exe  -osyn  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_comp.srs  -hdllog  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synlog\ip_compiler.srr  -encrypt  -mp  4  -verification_mode 0  -verilog  -prodtype  synplify_pro  -primux -fixsmult -infer_seqShift -ice -sdff_counter -nram -divnmod -nostructver   -I C:\Users\gazpa\Desktop\prog_FPGA\ip\  -I E:\programas\iCEcube2\synpbase\lib   -v2001  -devicelib  E:\programas\iCEcube2\synpbase\lib\generic\sb_ice40.v  -encrypt  -pro  -dmgen  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\dm  -ui -fid2 -ram -sharing on -ll 2000 -autosm  -lib work C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v -lib work C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v 
+rc:0 success:1 runtime:3
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_comp.srs|io:o|time:1727551339|size:16865|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synlog\ip_compiler.srr|io:o|time:1727551339|size:9613|exec:0
+file:E:\programas\iCEcube2\synpbase\lib\generic\sb_ice40.v|io:i|time:1712704988|size:224837|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v|io:i|time:1727550778|size:2545|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v|io:i|time:1712704990|size:23357|exec:0
+file:E:\programas\iCEcube2\synpbase\bin\c_hdl.exe|io:i|time:1712704979|size:1338368|exec:1
+file:E:\programas\iCEcube2\synpbase\bin64\c_hdl.exe|io:i|time:1712704981|size:1754112|exec:1

@@ -1,0 +1,110 @@
+set_location IN_MUX_bfv_1_12_0_ 1 12 0 #ICE_CARRY_IN_MUX
+set_location CONSTANT_ONE_LUT4 5 9 1 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_9_THRU_LUT4_0 3 9 7 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_8_THRU_LUT4_0 2 9 1 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_7_THRU_LUT4_0 2 9 0 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_6_THRU_LUT4_0 3 9 2 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_5_THRU_LUT4_0 1 9 4 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_4_THRU_LUT4_0 3 9 5 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_3_THRU_LUT4_0 3 9 4 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_2_THRU_LUT4_0 3 9 3 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_10_THRU_LUT4_0 2 9 5 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_1_THRU_LUT4_0 3 9 1 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_0_THRU_LUT4_0 3 9 0 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNIHM0I2_3_U1.Sync_rd_pointer_inst.count_3_REP_LUT4_0 3 10 4 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNICQI22_2_U1.Sync_rd_pointer_inst.count_2_REP_LUT4_0 3 10 1 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNI8V4J1_1_U1.Sync_rd_pointer_inst.count_1_REP_LUT4_0 3 11 0 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNI55N31_0_U1.Sync_rd_pointer_inst.count_0_REP_LUT4_0 3 11 5 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr[5] 1 9 4 #SB_DFFESR
+set_location U1.Sync_wr_ctrl_inst.full_RNO 2 12 2 #SB_LUT4
+set_location U1.Sync_wr_ctrl_inst.full_RNI6PI21 1 11 0 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNI55N31[0] 3 10 0 #SB_LUT4
+set_location U1.Sync_wr_ctrl_inst.full 2 12 2 #SB_DFF
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c_RNO 1 11 1 #SB_LUT4
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[3] 1 12 3 #SB_LUT4
+set_location U1.Sync_wr_ctrl_inst.full_RNISNC31 2 12 3 #SB_LUT4
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_0_c 1 12 0 #SB_CARRY
+set_location U1.fifo_mem_inst.dout_esr[0] 3 9 0 #SB_DFFESR
+set_location U1.Sync_wr_pointer_inst.count_RNO[1] 3 11 6 #SB_LUT4
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_1_0_c 1 12 1 #SB_CARRY
+set_location U1.Sync_data_counter_inst.data_cnt[3] 1 12 3 #SB_DFFSR
+set_location U1.Sync_wr_pointer_inst.count[2] 3 12 5 #SB_DFFSR
+set_location U1.fifo_mem_inst.dout_esr[4] 3 9 5 #SB_DFFESR
+set_location U1.Sync_wr_ctrl_inst.full_RNI9QTP2 2 12 5 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNICQI22[2] 3 10 3 #SB_LUT4
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[2] 1 12 2 #SB_LUT4
+set_location U1.Sync_wr_ctrl_inst.full_RNO_0 2 12 1 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count[1] 3 11 0 #SB_DFF
+set_location U1.fifo_mem_inst.mem_mem_0_0 4 9 0 #SB_RAM40_4K
+set_location U1.fifo_mem_inst.dout_esr[3] 3 9 4 #SB_DFFESR
+set_location U1.Sync_wr_ctrl_inst.full_RNIUQEU_0 3 11 1 #SB_LUT4
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_2_ma 1 11 2 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr[8] 2 9 1 #SB_DFFESR
+set_location U1.Sync_wr_pointer_inst.count_RNO[2] 3 12 5 #SB_LUT4
+set_location U1.Sync_wr_pointer_inst.count[1] 3 11 6 #SB_DFF
+set_location U1.Sync_wr_ctrl_inst.m1 2 11 4 #SB_LUT4
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_2_0_c 1 12 2 #SB_CARRY
+set_location U1.Sync_data_counter_inst.data_cnt[2] 1 12 2 #SB_DFFSR
+set_location U1.fifo_mem_inst.dout_esr[1] 3 9 1 #SB_DFFESR
+set_location U1.Sync_wr_ctrl_inst.full_RNIUQEU 2 12 6 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNI8V4J1[1] 3 10 5 #SB_LUT4
+set_location Write_enable_ibuf_RNIMUP 2 11 0 #SB_LUT4
+set_location U1.Sync_wr_pointer_inst.count_RNO[0] 3 11 2 #SB_LUT4
+set_location U1.Sync_wr_pointer_inst.count[3] 3 12 0 #SB_DFFSR
+set_location U1.Sync_data_counter_inst.data_cnt[0] 2 10 0 #SB_DFFSR
+set_location U1.fifo_mem_inst.dout_esr[7] 2 9 0 #SB_DFFESR
+set_location U1.Sync_rd_pointer_inst.count[2] 3 10 1 #SB_DFF
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_3_ma 1 11 3 #SB_LUT4
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[1] 1 12 1 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count[0] 3 11 5 #SB_DFF
+set_location U1.fifo_mem_inst.dout_esr[2] 3 9 3 #SB_DFFESR
+set_location U1.Sync_rd_pointer_inst.count_RNI9E9E1[2] 3 10 6 #SB_LUT4
+set_location U1.Sync_wr_pointer_inst.count_RNO[3] 3 12 0 #SB_LUT4
+set_location U1.Sync_rd_ctrl_inst.empty 2 12 5 #SB_DFF
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[4] 1 12 4 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr_ctle[0] 2 10 2 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count_RNIHM0I2[3] 3 10 7 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr[9] 3 9 7 #SB_DFFESR
+set_location U1.Sync_wr_pointer_inst.count[0] 3 11 2 #SB_DFF
+set_location U1.fifo_mem_inst.dout_esr[6] 3 9 2 #SB_DFFESR
+set_location U1.Sync_wr_ctrl_inst.m14_e_1 2 12 7 #SB_LUT4
+set_location U1.Sync_wr_ctrl_inst.m11_e 2 12 0 #SB_LUT4
+set_location U1.Sync_data_counter_inst.data_cnt_RNO[0] 2 10 0 #SB_LUT4
+set_location U1.Sync_data_counter_inst.data_cnt[1] 1 12 1 #SB_DFFSR
+set_location U1.Sync_wr_ctrl_inst.full_RNI7A4U1 2 12 4 #SB_LUT4
+set_location U1.Sync_rd_pointer_inst.count[3] 3 10 4 #SB_DFF
+set_location GND -1 -1 -1 #GND
+set_location U1.Sync_rd_pointer_inst.count_RNI5JRU[1] 3 10 2 #SB_LUT4
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_1_ma 2 11 5 #SB_LUT4
+set_location U1.fifo_mem_inst.dout_esr[10] 2 9 5 #SB_DFFESR
+set_location U1.Sync_data_counter_inst.un1_data_cnt_cry_3_0_c 1 12 3 #SB_CARRY
+set_location U1.Sync_data_counter_inst.data_cnt[4] 1 12 4 #SB_DFFSR
+set_location U1.Sync_wr_pointer_inst.count_RNO_0[3] 3 11 3 #SB_LUT4
+set_io Dout[5] 8
+set_io Din[6] 29
+set_io Reset 19
+set_io Read_enable 12
+set_io Dout[6] 9
+set_io Dout[10] 2
+set_io Din[5] 28
+set_io Full 18
+set_io Dout[7] 10
+set_io Din[4] 26
+set_io Empty 17
+set_io Dout[8] 11
+set_io Dout[4] 7
+set_io Dout[0] 144
+set_io Din[7] 31
+set_io Din[3] 25
+set_io Din[10] 23
+set_io Clock 20
+set_io Dout[9] 21
+set_io Dout[1] 1
+set_io Din[2] 24
+set_io Write_enable 15
+set_io Dout[2] 3
+set_io Din[9] 33
+set_io Din[1] 22
+set_io Dout[3] 4
+set_io Din[8] 32
+set_io Din[0] 34

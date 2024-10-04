@@ -1,0 +1,14 @@
+E:\programas\iCEcube2\synpbase\bin64\m_generic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt   -part iCE40HX4K  -package TQ144    -maxfan 10000 -RWCheckOnRam 0 -pipe -fixgatedclocks 1 -fixgeneratedclocks 1 -summaryfile C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synlog\report\ip_fpga_mapper.xml  -flow mapping  -multisrs  -oedif  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.edf   -autoconstraint  -freq 1.000   C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_prem.srd  -sap  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.sap  -otap  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.tap  -omap  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.map  -devicelib  E:\programas\iCEcube2\synpbase\lib\generic\sb_ice40.v  -sap  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.sap  -ologparam  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\syntmp\ip.plg  -osyn  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srm  -prjdir  C:\Users\gazpa\Desktop\prog_FPGA\ip\  -prjname  ip_syn  -log  C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synlog\ip_fpga_mapper.srr 
+rc:1 success:1 runtime:4
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.edf|io:o|time:1727551345|size:82708|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synwork\ip_prem.srd|io:i|time:1727551342|size:14713|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.sap|io:o|time:1727551342|size:971|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.tap|io:o|time:0|size:0|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.map|io:o|time:1727551345|size:28|exec:0
+file:E:\programas\iCEcube2\synpbase\lib\generic\sb_ice40.v|io:i|time:1712704988|size:224837|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.sap|io:o|time:1727551342|size:971|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\syntmp\ip.plg|io:o|time:1727551345|size:539|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.srm|io:o|time:1727551344|size:11914|exec:0
+file:C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\synlog\ip_fpga_mapper.srr|io:o|time:1727551345|size:30331|exec:0
+file:E:\programas\iCEcube2\synpbase\bin\m_generic.exe|io:i|time:1712704980|size:17853440|exec:1
+file:E:\programas\iCEcube2\synpbase\bin64\m_generic.exe|io:i|time:1712704982|size:32355840|exec:1

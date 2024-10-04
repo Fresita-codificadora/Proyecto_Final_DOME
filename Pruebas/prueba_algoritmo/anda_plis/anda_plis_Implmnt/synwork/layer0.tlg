@@ -1,0 +1,48 @@
+@N: CD231 :"D:\Programador_fpga\iCEcube2\synpbase\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N: CD630 :"C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis.vhd":25:7:25:15|Synthesizing work.anda_plis.bdf_type.
+@N: CD630 :"C:\Users\Gaspar\Desktop\prog_FPGA\uart_algo.vhd":12:7:12:15|Synthesizing work.uart_algo.rtl.
+@N: CD233 :"C:\Users\Gaspar\Desktop\prog_FPGA\uart_algo.vhd":30:17:30:18|Using sequential encoding for type state_type.
+Post processing for work.uart_algo.rtl
+@N: CD630 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":18:7:18:13|Synthesizing work.uart_rx.rtl.
+@N: CD231 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":33:17:33:18|Using onehot encoding for type t_sm_main. For example, enumeration s_idle is mapped to "10000".
+@N: CD604 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":123:4:123:17|OTHERS clause is not synthesized.
+Post processing for work.uart_rx.rtl
+@N: CD630 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":7:7:7:12|Synthesizing work.algo_3.rtl.
+@N: CD231 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":28:17:28:18|Using onehot encoding for type state_type. For example, enumeration errase is mapped to "100000000000000000".
+Post processing for work.algo_3.rtl
+@A: CL282 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Feedback mux created for signal data_a_escribir[7:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Feedback mux created for signal dir_mem_3[7:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Feedback mux created for signal dir_mem_2[7:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Feedback mux created for signal dir_mem_1[7:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+@A: CL282 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Feedback mux created for signal dir_mem[7:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
+Post processing for work.anda_plis.bdf_type
+@N: CL201 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":87:2:87:3|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 18 reachable states with original encodings of:
+   000000000000000001
+   000000000000000010
+   000000000000000100
+   000000000000001000
+   000000000000010000
+   000000000000100000
+   000000000001000000
+   000000000010000000
+   000000000100000000
+   000000001000000000
+   000000010000000000
+   000000100000000000
+   000001000000000000
+   000010000000000000
+   000100000000000000
+   001000000000000000
+   010000000000000000
+   100000000000000000
+@N: CL201 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":61:4:61:5|Trying to extract state machine for register r_SM_Main.
+Extracted state machine for register r_SM_Main
+State machine has 5 reachable states with original encodings of:
+   00001
+   00010
+   00100
+   01000
+   10000
+@W: CL249 :"C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd":61:4:61:5|Initial value is not supported on state machine r_SM_Main

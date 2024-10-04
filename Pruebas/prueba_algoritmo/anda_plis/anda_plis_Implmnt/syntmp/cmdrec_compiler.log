@@ -1,0 +1,13 @@
+D:\Programador_fpga\iCEcube2\synpbase\bin64\c_hdl.exe  -osyn  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs  -hdllog  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_compiler.srr  -encrypt  -mp  4  -verification_mode 0  -vhdl  -prodtype  synplify_pro  -primux -fixsmult -infer_seqShift -ice -sdff_counter -nram -divnmod -nostructver  -encrypt  -pro  -dmgen  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\dm  -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm  -vhdl2008  -ignore_undefined_lib  -lib work C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd -lib work C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis.vhd -lib work C:\Users\Gaspar\Desktop\prog_FPGA\uart_algo.vhd -lib work C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd  -verilog  -prodtype  synplify_pro  -primux -fixsmult -infer_seqShift -ice -sdff_counter -nram -divnmod -nostructver   -I C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\  -I D:\Programador_fpga\iCEcube2\synpbase\lib   -v2001  -devicelib  D:\Programador_fpga\iCEcube2\synpbase\lib\generic\sb_ice40.v  -encrypt  -pro  -dmgen  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\dm  -ui -fid2 -ram -sharing on -ll 2000 -autosm  -lib work C:\Users\Gaspar\Desktop\prog_FPGA\ram.v -lib work C:\Users\Gaspar\Desktop\prog_FPGA\uart_tx.v 
+rc:0 success:1 runtime:1
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs|io:o|time:1728001438|size:20225|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_compiler.srr|io:o|time:1728001438|size:11846|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\UART_RX.vhd|io:i|time:1727884111|size:4267|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis.vhd|io:i|time:1727904416|size:4819|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\uart_algo.vhd|io:i|time:1727300612|size:1864|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd|io:i|time:1728001356|size:12734|exec:0
+file:D:\Programador_fpga\iCEcube2\synpbase\lib\generic\sb_ice40.v|io:i|time:1716683697|size:224837|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\ram.v|io:i|time:1726962468|size:673|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\uart_tx.v|io:i|time:1728001414|size:5490|exec:0
+file:D:\Programador_fpga\iCEcube2\synpbase\bin\c_hdl.exe|io:i|time:1716683686|size:1338368|exec:1
+file:D:\Programador_fpga\iCEcube2\synpbase\bin64\c_hdl.exe|io:i|time:1716683687|size:1754112|exec:1

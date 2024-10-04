@@ -1,0 +1,22 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":531:7:531:21|Synthesizing module Sync_tdp_memory in library work.
+@N: CL134 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":565:1:565:6|Found RAM mem, depth=13, width=11
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":311:7:311:14|Synthesizing module Sync_inc in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":278:7:278:19|Synthesizing module Sync_data_cnt in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":584:7:584:18|Synthesizing module Sync_wr_ctrl in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":627:7:627:25|Synthesizing module Sync_wr_status_flag in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":339:7:339:18|Synthesizing module Sync_rd_ctrl in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":379:7:379:25|Synthesizing module Sync_rd_status_flag in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":33:7:33:19|Synthesizing module syncore_sfifo in library work.
+@N: CG364 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Synthesizing module fifo_test in library work.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":416:23:416:39|Input Prog_empty_thresh is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":417:23:417:46|Input Prog_empty_thresh_assert is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":418:23:418:46|Input Prog_empty_thresh_negate is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":663:26:663:41|Input Prog_full_thresh is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":664:26:664:48|Input Prog_full_thresh_assert is unused.
+@N: CL159 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\syncore_sfifo.v":665:26:665:48|Input Prog_full_thresh_negate is unused.
+@N|Running in 64-bit mode
+@N: NF107 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Selected library: work cell: fifo_test view verilog as top level
+@N: NF107 :"C:\Users\gazpa\Desktop\prog_FPGA\ip\fifo_test.v":17:8:17:16|Selected library: work cell: fifo_test view verilog as top level
+

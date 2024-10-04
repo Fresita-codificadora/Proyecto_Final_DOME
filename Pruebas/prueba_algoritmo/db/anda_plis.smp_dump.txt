@@ -1,0 +1,36 @@
+
+State Machine - |anda_plis|UART_RX:inst1|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_RX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
+
+State Machine - |anda_plis|algo_3:inst|state
+Name state.escritura_intermedia_2 state.escritura_intermedia state.incremento_indice state.envio_uart_2 state.envio_uart_1 state.escritura_2 state.escritura_1 state.casos state.lectura_ancho_3 state.dir_ancho_3 state.lectura_ancho_2 state.dir_ancho_2 state.lectura_ancho_1 state.dir_ancho_1 state.lectura_anterior state.dir_anterior state.nuevo_pix state.errase 
+state.errase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.nuevo_pix 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.dir_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.lectura_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.dir_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.lectura_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dir_ancho_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.lectura_ancho_2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.dir_ancho_3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.lectura_ancho_3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.casos 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.escritura_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_indice 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_intermedia 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_intermedia_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |anda_plis|uart_tx:inst3|fsm_state
+Name fsm_state.FSM_STOP fsm_state.FSM_SEND fsm_state.FSM_START fsm_state.FSM_IDLE 
+fsm_state.FSM_IDLE 0 0 0 0 
+fsm_state.FSM_START 0 0 1 1 
+fsm_state.FSM_SEND 0 1 0 1 
+fsm_state.FSM_STOP 1 0 0 1 

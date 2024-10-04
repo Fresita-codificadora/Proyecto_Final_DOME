@@ -1,0 +1,73 @@
+# Sat Sep 28 16:22:21 2024
+
+Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+@A: MF827 |No constraint file specified.
+@L: C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip_scck.rpt 
+Printing clock  summary report in "C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 102MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 102MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 102MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+@N: BN115 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":214:3:214:26|Removing instance Sync_wr_status_flag_inst (in view: work.syncore_sfifo_Z2(verilog)) of type view:work.Sync_wr_status_flag_Z1(verilog) because it does not drive other instances.
+@N: BN115 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":257:3:257:26|Removing instance Sync_rd_status_flag_inst (in view: work.syncore_sfifo_Z2(verilog)) of type view:work.Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s(verilog) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":675:1:675:6|Removing sequential instance Almost_full (in view: work.Sync_wr_status_flag_Z1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":688:4:688:9|Removing sequential instance Write_ack (in view: work.Sync_wr_status_flag_Z1(verilog)) of type view:PrimLib.sdffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":697:4:697:9|Removing sequential instance Overflow (in view: work.Sync_wr_status_flag_Z1(verilog)) of type view:PrimLib.sdffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":747:1:747:6|Removing sequential instance genblk2\.genblk1\.Prog_full (in view: work.Sync_wr_status_flag_Z1(verilog)) of type view:PrimLib.sdffrse(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":426:2:426:7|Removing sequential instance Almost_empty (in view: work.Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":438:4:438:9|Removing sequential instance Read_ack (in view: work.Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s(verilog)) of type view:PrimLib.sdffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":446:4:446:9|Removing sequential instance Underflow (in view: work.Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s(verilog)) of type view:PrimLib.sdffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":494:1:494:6|Removing sequential instance genblk2\.genblk1\.Prog_empty (in view: work.Sync_rd_status_flag_5_1s_1s_1s_1s_1s_3s_3s_3s_0s(verilog)) of type view:PrimLib.sdffse(prim) because it does not drive other instances.
+ICG Latch Removal Summary:
+Number of ICG latches removed:	0
+Number of ICG latches not removed:	0
+syn_allowed_resources : blockrams=20  set on top level netlist fifo_test
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 133MB)
+
+
+
+Clock Summary
+*****************
+
+Start               Requested     Requested     Clock        Clock                     Clock
+Clock               Frequency     Period        Type         Group                     Load 
+--------------------------------------------------------------------------------------------
+fifo_test|Clock     202.5 MHz     4.938         inferred     Autoconstr_clkgroup_0     37   
+============================================================================================
+
+@W: MT529 :"c:\users\gazpa\desktop\prog_fpga\ip\syncore_sfifo.v":572:1:572:6|Found inferred clock fifo_test|Clock which controls 37 sequential elements including U1.fifo_mem_inst.dout[10:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file C:\Users\gazpa\Desktop\prog_FPGA\ip\ip_Implmnt\ip.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 133MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 133MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 47MB peak: 133MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sat Sep 28 16:22:22 2024
+
+###########################################################]

@@ -7,7 +7,10 @@
 // - UART transmitter module.
 //
 
-module uart_tx (
+module uart_tx #(
+	parameter   PAYLOAD_BITS    = 8
+)
+(
 input  wire         clk         , // Top level system clock input.
 input  wire         resetn      , // Asynchronous active low reset.
 output wire         uart_txd    , // UART transmit pin.
@@ -31,8 +34,6 @@ parameter   CLK_HZ          =    50_000_000;
 localparam  CLK_P           = 1_000_000_000 * 1/CLK_HZ; // nanoseconds
 
 //
-// Number of data bits recieved per UART packet.
-parameter   PAYLOAD_BITS    = 8;
 
 //
 // Number of stop bits indicating the end of a packet.

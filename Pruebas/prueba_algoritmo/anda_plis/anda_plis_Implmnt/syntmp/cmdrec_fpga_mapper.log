@@ -1,0 +1,14 @@
+D:\Programador_fpga\iCEcube2\synpbase\bin64\m_generic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt   -part iCE40HX4K  -package TQ144    -maxfan 10000 -RWCheckOnRam 0 -block -pipe -fixgatedclocks 1 -fixgeneratedclocks 1 -summaryfile C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\report\anda_plis_fpga_mapper.xml  -flow mapping  -multisrs  -oedif  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.edf   -autoconstraint  -freq 1.000   C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_prem.srd  -sap  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap  -otap  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.tap  -omap  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.map  -devicelib  D:\Programador_fpga\iCEcube2\synpbase\lib\generic\sb_ice40.v  -sap  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap  -ologparam  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\syntmp\anda_plis.plg  -osyn  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srm  -prjdir  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\  -prjname  anda_plis_syn  -log  C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_fpga_mapper.srr 
+rc:1 success:1 runtime:3
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.edf|io:o|time:1728001443|size:505396|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synwork\anda_plis_prem.srd|io:i|time:1728001440|size:28918|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap|io:o|time:1728001440|size:1573|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.tap|io:o|time:0|size:0|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.map|io:o|time:1728001443|size:28|exec:0
+file:D:\Programador_fpga\iCEcube2\synpbase\lib\generic\sb_ice40.v|io:i|time:1716683697|size:224837|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.sap|io:o|time:1728001440|size:1573|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\syntmp\anda_plis.plg|io:o|time:1728001443|size:497|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\anda_plis.srm|io:o|time:1728001443|size:7668|exec:0
+file:C:\Users\Gaspar\Desktop\prog_FPGA\anda_plis\anda_plis_Implmnt\synlog\anda_plis_fpga_mapper.srr|io:o|time:1728001443|size:111182|exec:0
+file:D:\Programador_fpga\iCEcube2\synpbase\bin\m_generic.exe|io:i|time:1716683686|size:17853440|exec:1
+file:D:\Programador_fpga\iCEcube2\synpbase\bin64\m_generic.exe|io:i|time:1716683687|size:32355840|exec:1
