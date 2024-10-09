@@ -20,7 +20,7 @@ vector_recibido = enviar_y_recibir_datos(serial_port, datos_a_enviar);
 cantidad = recibir_vector(serial_port, 250);
 
 % Recibir las palabras de 16 bits después de los datos de 'cantidad'
-num_palabras = 249;  % Suponiendo que vamos a recibir 100 palabras de 16 bits
+num_palabras = 250;  % Suponiendo que vamos a recibir 100 palabras de 16 bits
 palabras_16_bits = recibir_palabras_16bits(serial_port, num_palabras);
 
 % Mostrar imagen recibida
@@ -71,7 +71,9 @@ function cantidad = recibir_vector(serial_port, num_datos)
 end
 
 % Función para recibir palabras de 16 bits (2 bytes cada una)
-function palabras_16_bits = recibir_palabras_16bits(serial_port, num_palabras)
+% num_palabras ahora se refiere al número de palabras de 8 bits
+function palabras_16_bits = recibir_palabras_16bits(serial_port, num_bytes)
+    num_palabras = floor(num_bytes / 2);  % Calcula cuántas palabras de 16 bits se pueden formar
     palabras_16_bits = zeros(1, num_palabras);  % Inicializar el vector para las palabras de 16 bits
     disp('Recibiendo palabras de 16 bits...');
 
@@ -84,7 +86,7 @@ function palabras_16_bits = recibir_palabras_16bits(serial_port, num_palabras)
                 % Combinar los dos bytes para formar una palabra de 16 bits
                 palabras_16_bits(i) = bitor(bitshift(byte_high, 8), byte_low);  % (byte alto << 8) | byte bajo
                 
-                disp(['Palabra recibida (', num2str(i), '): ', num2str(palabras_16_bits(i))]);
+                disp(['Palabra de 16 bits recibida (', num2str(i), '): ', num2str(palabras_16_bits(i))]);
                 break;  % Salir del bucle
             end
         end
@@ -92,3 +94,4 @@ function palabras_16_bits = recibir_palabras_16bits(serial_port, num_palabras)
     
     disp('Recepción de palabras de 16 bits completa.');
 end
+
