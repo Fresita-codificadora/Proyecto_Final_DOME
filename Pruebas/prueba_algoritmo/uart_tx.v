@@ -8,7 +8,8 @@
 //
 
 module uart_tx #(
-	parameter   PAYLOAD_BITS    = 8
+	parameter   PAYLOAD_BITS    = 8;
+	parameter   CLK_HZ          =    50_000_000	
 )
 (
 input  wire         clk         , // Top level system clock input.
@@ -30,7 +31,7 @@ localparam  BIT_P           = 1_000_000_000 * 1/BIT_RATE; // nanoseconds
 
 //
 // Clock frequency in hertz.
-parameter   CLK_HZ          =    50_000_000;
+
 localparam  CLK_P           = 1_000_000_000 * 1/CLK_HZ; // nanoseconds
 
 //

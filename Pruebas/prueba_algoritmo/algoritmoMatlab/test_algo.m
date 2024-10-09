@@ -1,5 +1,5 @@
-clear
-clc
+%clear
+%clc
 offset=-2;
 
 
@@ -7,7 +7,9 @@ vectordatos=imagen_a_vector('testPulenta.png');
 len=length(vectordatos);
 indice = 1;
 contador_pixel = 0;
-fifo=zeros(99);
+fifo=zeros(1,99);
+energia=zeros(1,255);
+cantidad=zeros(1,255);
 eventos=1;
 datos_salida=[];
 flag_ignorar = false;
@@ -45,12 +47,12 @@ for i=1:len
                 dato_ancho_1 = fifo(indice+4+offset);
             end
         end
-        dato_ancho_2=0;
-        %if indice + 2 > 99
-         %  dato_ancho_2 = fifo(indice-97);
-        %else
-         %  dato_ancho_2 = fifo(indice+3+offset);
-        %end
+        %%dato_ancho_2=0;
+        if indice + 2 > 99
+          dato_ancho_2 = fifo(indice-97);
+        else
+          dato_ancho_2 = fifo(indice+3+offset);
+        end
         %dato_ancho_3=0;
         if flag_ignorar
            dato_ancho_3 = 0;
@@ -74,6 +76,10 @@ for i=1:len
    flag_ignorar= false;
    flag_ignorar_1 = false;
    fifo(indice) = fifo_0;
+   if fifo_0 ~= 0    
+        energia(fifo_0)=energia(fifo_0)+uint16(dato);
+        cantidad(fifo_0)=cantidad(fifo_0)+1;
+   end
    datos_salida(i)=fifo_0;
    indice = indice + 1;
    if indice == 99 
@@ -84,3 +90,7 @@ figure
 imgTest=vector_a_imagen(datos_salida,97);
 imshow(imgTest);
 colormap colorcube
+figure
+bar(energia);
+figure
+bar(cantidad);

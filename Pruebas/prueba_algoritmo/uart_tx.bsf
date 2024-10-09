@@ -71,6 +71,11 @@ https://fpgasoftware.intel.com/eula.
 		"8"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CLK_HZ"
+		"50000000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 296 96)(line_width 1))
 	)

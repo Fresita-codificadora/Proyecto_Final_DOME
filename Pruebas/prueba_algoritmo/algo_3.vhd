@@ -5,7 +5,12 @@ library ieee;
 	use IEEE.NUMERIC_STD.ALL; 		--libreria para cambios entre formatos
 
 entity algo_3 is
+	generic(
+		umbral 			: integer := 0;
+		pixels			: integer := 7081;
+		ancho			: integer := 97;
 
+	)
 	port(
 		clk		 		: in	std_logic;
 		reset	 		: in	std_logic;
@@ -17,7 +22,14 @@ entity algo_3 is
 		addr_ram		: out std_logic_vector(8 downto 0);
 		we				: out std_logic;
 		data_uart		: out std_logic_vector(7 downto 0);
-		enable_uart		: out std_logic
+		enable_uart		: out std_logic;
+		--otras memorias
+		data_ram_energia_i		: in std_logic_vector	(15 downto 0);
+		data_ram_energia_o		: out std_logic_vector	(15 downto 0);
+		addr_ram_energia		: out std_logic_vector	(8 downto 0);
+		data_ram_cantidad_i		: in std_logic_vector	(7 downto 0);
+		data_ram_cantidad_o		: out std_logic_vector	(7 downto 0);
+		addr_ram_cantidad		: out std_logic_vector	(8 downto 0)
 	);
 
 end entity;
@@ -25,9 +37,10 @@ end entity;
 architecture rtl of algo_3 is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (errase, nuevo_pix, dir_anterior, lectura_anterior, dir_ancho_1, lectura_ancho_1
-						,dir_ancho_2 , lectura_ancho_2, dir_ancho_3, lectura_ancho_3, casos, escritura_1,
-						escritura_2, envio_uart_1,envio_uart_2, incremento_indice);
+	type state_type is (erase, escritura_erase_1, escritura_erase_2, nuevo_pix, dir_anterior, lectura_anterior, dir_ancho_1, lectura_ancho_1
+						,dir_ancho_2 , lectura_ancho_2, dir_ancho_3, lectura_ancho_3, casos, dir_cantidad_energia, lectura_cantidad_energia, escritura_1,
+						escritura_2, envio_uart_1,envio_uart_2, incremento_indice,envio_mem_1,envio_mem_2,envio_mem_3,envio_mem_4,
+						envio_mem_5,envio_mem_6,envio_mem_7,envio_mem_8,envio_mem_9,envio_mem_10);
 
 	-- Register to hold the current state
 	signal state   : state_type;
@@ -38,7 +51,12 @@ architecture rtl of algo_3 is
 	signal reg_anterior,reg_ancho_1,reg_ancho_2,reg_ancho_3 : integer range 0 to 255 		:=0;
 	signal ignorar_ancho_1 									: BOOLEAN 						:= false;
 	signal ignorar_anterior									: BOOLEAN 						:= false;
-	signal indice											: integer range 0 to 255			:=1; 
+	signal indice											: integer range 0 to 255		:=1;
+	-- señales para las otras memorias
+	signal pix_data_reg										: integer range 0 to 255		:=0;
+	signal dir_energia										: integer range-1 to 255		:=1;
+	signal cantidad_temp									: integer range 0 to 255		:=0;
+	signal energia_temp										: integer range 0 to 65535		:=0;--son 16 bits
 
 	procedure encontrar_maximo(
 		signal reg1 : in integer;
@@ -78,55 +96,63 @@ begin
 	pix_count_int <= to_integer(unsigned(pix_count));
 	-- Logic to advance to the next state
 	process (all)
-		variable borrado 			: BOOLEAN := false;
 		variable cuenta  			: integer range 0 to 255 := 0;
 		variable cuenta_pixel		: integer range 0 to 255 := 0;
 		variable eventos 			: integer range 0 to 255 := 1;
 	begin
 		if reset = '0' then
-			state <= errase;
-			borrado :=false;
+			state <= erase;
 			cuenta :=0;
 			cuenta_pixel := 0;
 			pix_count_anterior <= 0;
 			eventos := 1;
-			indice <= 1;
+			indice <= 0;
 			ignorar_ancho_1 <= false;
 			ignorar_anterior <= false;
+			dir_mem	<= 0;
+			dir_energia	<= 0;
 		elsif (rising_edge(clk)) then
 			case state is
-				when errase=>
+				when erase=>
 					if cuenta < 250 then
 						cuenta := cuenta + 1; 
-						state <= escritura_1;			--voy a escribir ceros
-						dir_mem <= dir_mem + 1;			--aumento la direccion a escribir
+						state <= escritura_erase_1;			--voy a escribir ceros
+						indice <= indice + 1;			--aumento la direccion a escribir
 						data_a_escribir <= 0;			-- la data a escribir es siempre cero
 					else
-						dir_mem <= 1;					-- reinicio el direccionamiento de memoria
+						indice <= 1;					-- reinicio el direccionamiento de memoria
 						cuenta := 1; 
 						state <= nuevo_pix;				-- voy a esperar un nuevo pixel
-						borrado := true;				--levanto la bandera de que ya borramos es para escritura_2
 					end if;
+				when escritura_erase_1 =>
+					state <= escritura_erase_2;
+				when escritura_erase_2 =>
+					state <= erase;
 				when nuevo_pix=>
-					if pix_count_int /= pix_count_anterior then --me llego un nuevo pixel
-						pix_count_anterior <= pix_count_int;
-						
-						if to_integer(unsigned(pix_data)) > 0 then
-							state <= dir_ancho_2;
-						else 
-							data_a_escribir <= 0;
-							state <= escritura_1;
-						end if;
+					if pix_count_int < 7081 then	
+						if pix_count_int /= pix_count_anterior then --me llego un nuevo pixel
+							pix_count_anterior <= pix_count_int;
 
-						cuenta_pixel:=cuenta_pixel + 1;						--esta cuenta la voy a usar como la cantidad de pixeles que me llegan para activar unas flags
-						if cuenta_pixel = 97 then
-							ignorar_ancho_1 <= true;
-						elsif cuenta_pixel = 98 then
-							ignorar_anterior <= true;
-							cuenta_pixel := 1;
-						end if ;
+							if to_integer(unsigned(pix_data)) > 0 then
+								state <= dir_ancho_2;
+							else 
+								data_a_escribir <= 0;
+								state <= escritura_1;
+							end if;
+
+							cuenta_pixel:=cuenta_pixel + 1;						--esta cuenta la voy a usar como la cantidad de pixeles que me llegan para activar unas flags
+							if cuenta_pixel = 97 then
+								ignorar_ancho_1 <= true;
+							elsif cuenta_pixel = 98 then
+								ignorar_anterior <= true;
+								cuenta_pixel := 1;
+							end if ;
+						else
+							state <= nuevo_pix;
+						end if;
 					else
-						state <= nuevo_pix;
+						dir_energia <= -1;
+						state <= envio_mem_1;
 					end if;
 				when dir_ancho_2=>
 					if indice + 2 > 99 then
@@ -195,15 +221,22 @@ begin
 						data_a_escribir <= eventos;
 						eventos := eventos + 1;
 					end if;
-					state <= escritura_1;
+					state <= dir_cantidad_energia;
+				when dir_cantidad_energia =>
+					dir_energia <= data_a_escribir; --data a escribir es el indice que me interesa, tal vez un mal nombre
+					state <= lectura_cantidad_energia;
+				when lectura_cantidad_energia =>
+					cuenta := cuenta + 1;
+					if cuenta < 3 then
+						state <= lectura_cantidad_energia;
+					else
+						cuenta := 1;
+						state <= escritura_1;
+					end if ;
 				when escritura_1 =>
 					state <= escritura_2;
 				when escritura_2 =>
-					if borrado then
-						state <= envio_uart_1;
-					else
-						state <= errase;
-					end if;
+					state <= envio_uart_1;
 				when envio_uart_1 =>
 					state <= envio_uart_2;
 				when envio_uart_2 =>
@@ -220,6 +253,61 @@ begin
 					ignorar_ancho_1 <= false;
 					ignorar_anterior <= false;
 					state <= nuevo_pix;
+				when envio_mem_1 =>		--equivalente a direccion
+					if dir_energia < 250 then
+						dir_energia <= dir_energia + 1;
+						state <= envio_mem_2;
+					else
+						state <= envio_mem_5;
+						dir_energia <= 0;
+					end if;
+				when envio_mem_2 =>		--equivalente a lectura
+					cuenta := cuenta + 1;
+					if cuenta < 3 then
+						state <= envio_mem_2;
+					else
+						cuenta := 1;
+						state <= envio_mem_3;
+					end if ;
+				when envio_mem_3 =>		--equivalente a envio uart 1
+					state <= envio_mem_4;
+				when envio_mem_4 =>		--equivalente a envio uart 2
+					if uart_sending = '1' then
+						state <= envio_mem_4;
+					else
+						state <= envio_mem_1;
+					end if;
+					when envio_mem_5 =>		--equivalente a direccion
+					if dir_energia < 250 then
+						dir_energia <= dir_energia + 1;
+						state <= envio_mem_6;
+					else
+						state <= erase;
+					end if;
+				when envio_mem_6 =>		--equivalente a lectura
+					cuenta := cuenta + 1;
+					if cuenta < 3 then
+						state <= envio_mem_6;
+					else
+						cuenta := 1;
+						state <= envio_mem_7;
+					end if ;
+				when envio_mem_7 =>		--equivalente a envio uart 1 para enviar los 16 bit parte baja
+					state <= envio_mem_8;
+				when envio_mem_8 =>		--equivalente a envio uart 2
+					if uart_sending = '1' then
+						state <= envio_mem_8;
+					else
+						state <= envio_mem_9;
+					end if;
+				when envio_mem_9 =>		--equivalente a envio uart 1 para enviar los 16 bit parte baja
+					state <= envio_mem_10;
+				when envio_mem_10 =>		--equivalente a envio uart 2
+					if uart_sending = '1' then
+						state <= envio_mem_10;
+					else
+						state <= envio_mem_5;
+					end if;
 			end case;
 		end if;
 	end process;
@@ -228,12 +316,38 @@ begin
 	process (all)
 	begin
 		case state is
-			when errase =>
+			when erase =>
+				data_ram_o			<= std_logic_vector(to_unsigned(data_a_escribir,8));
+				addr_ram			<= std_logic_vector(to_unsigned(indice,9));
+				we					<= '1';  --escritura
+				data_uart			<= (others => '0');
+				enable_uart			<= '0';
+				data_ram_energia_o	<= std_logic_vector(to_unsigned(data_a_escribir,16));
+				addr_ram_energia	<= std_logic_vector(to_unsigned(indice,9));
+				data_ram_cantidad_o	<= std_logic_vector(to_unsigned(data_a_escribir,8)); --data a escribir :=0;
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(indice,9));
+			--	estado			<= "0";	
+			when escritura_erase_1 =>
 				data_ram_o		<= std_logic_vector(to_unsigned(data_a_escribir,8));
-				addr_ram		<= std_logic_vector(to_unsigned(dir_mem,9));
+				addr_ram		<= std_logic_vector(to_unsigned(indice,9));
 				we				<= '1';  --escritura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= std_logic_vector(to_unsigned(data_a_escribir,16)); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(indice,9)); 
+				data_ram_cantidad_o	<= std_logic_vector(to_unsigned(data_a_escribir,8)); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(indice,9));
+			--	estado			<= "0";	 			
+			when escritura_erase_2 =>
+				data_ram_o		<= std_logic_vector(to_unsigned(data_a_escribir,8));
+				addr_ram		<= std_logic_vector(to_unsigned(indice,9));
+				we				<= '1';  --escritura
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= std_logic_vector(to_unsigned(data_a_escribir,16)); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(indice,9)); 
+				data_ram_cantidad_o	<= std_logic_vector(to_unsigned(data_a_escribir,8)); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(indice,9));
 			--	estado			<= "0";	
 			when nuevo_pix =>
 				data_ram_o		<= (others => '0');
@@ -241,6 +355,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0'); 
 			--	estado			<= "0";
 			when dir_ancho_2 =>
 				data_ram_o		<= (others => '0');
@@ -248,6 +366,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when lectura_ancho_2 =>
 				data_ram_o		<= (others => '0');
@@ -255,6 +377,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when dir_ancho_1 =>
 				data_ram_o		<= (others => '0');
@@ -262,6 +388,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when lectura_ancho_1 =>
 				data_ram_o		<= (others => '0');
@@ -269,6 +399,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";		
 			when dir_ancho_3 =>
 				data_ram_o		<= (others => '0');
@@ -276,6 +410,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when lectura_ancho_3 =>
 				data_ram_o		<= (others => '0');
@@ -283,6 +421,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";	
 			when dir_anterior =>
 				data_ram_o		<= (others => '0');
@@ -290,6 +432,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when lectura_anterior =>
 				data_ram_o		<= (others => '0');
@@ -297,6 +443,10 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when casos =>
 				data_ram_o		<= (others => '0');
@@ -304,13 +454,41 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
+			when dir_cantidad_energia =>
+				data_ram_o		<= (others => '0');
+				addr_ram		<= std_logic_vector(to_unsigned(indice,9));
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));
+			when lectura_cantidad_energia =>
+				data_ram_o		<= (others => '0');
+				addr_ram		<= std_logic_vector(to_unsigned(indice,9));
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));				
 			when escritura_1 =>
 				data_ram_o		<= std_logic_vector(to_unsigned(data_a_escribir,8));
 				addr_ram		<= std_logic_vector(to_unsigned(indice,9));
 				we				<= '1';  --escritura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= std_logic_vector(to_unsigned(energia_temp + pix_data_reg,16)); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= std_logic_vector(to_unsigned(cantidad_temp + 1,8)); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));
 			--	estado			<= "0";	 			
 			when escritura_2 =>
 				data_ram_o		<= std_logic_vector(to_unsigned(data_a_escribir,8));
@@ -318,6 +496,10 @@ begin
 				we				<= '1';  --escritura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
+				data_ram_energia_o	<= std_logic_vector(to_unsigned(energia_temp + pix_data_reg,16)); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= std_logic_vector(to_unsigned(cantidad_temp + 1,8)); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));
 			--	estado			<= "0";			
 			when envio_uart_1 =>
 				data_ram_o		<= (others => '0');
@@ -325,6 +507,10 @@ begin
 				we				<= '0';  --escritura
 				data_uart		<= std_logic_vector(to_unsigned(data_a_escribir,8));
 				enable_uart		<= '1';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when envio_uart_2 =>
 				data_ram_o		<= (others => '0');
@@ -332,6 +518,10 @@ begin
 				we				<= '0';  --escritura
 				data_uart		<= std_logic_vector(to_unsigned(data_a_escribir,8));
 				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
 			--	estado			<= "0";
 			when incremento_indice =>
 				data_ram_o		<= (others => '0');
@@ -339,15 +529,130 @@ begin
 				we				<= '0';  --lectura
 				data_uart		<= (others => '0');
 				enable_uart		<= '0';
-			--	estado			<= "0";		 			
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_1 =>		--equivalente a dir
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));
+			when envio_mem_2 =>		--equivalente a lectura
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= std_logic_vector(to_unsigned(dir_energia,9));	
+			when envio_mem_3 =>		--equivalente a uart 1
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= std_logic_vector(to_unsigned(cantidad_temp,8));
+				enable_uart		<= '1';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_4 =>			--equivalente a uart 2
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= std_logic_vector(to_unsigned(cantidad_temp,8));
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_5 =>		--equivalente a dir
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			when envio_mem_6 =>		--equivalente a lectura
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= (others => '0');
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= std_logic_vector(to_unsigned(dir_energia,9)); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');	
+			when envio_mem_7 =>		--equivalente a uart 1	parte alta
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= std_logic_vector(to_unsigned(energia_temp,16)(15 downto 8));
+				enable_uart		<= '1';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_8 =>			--equivalente a uart 2
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  
+				data_uart		<= std_logic_vector(to_unsigned(energia_temp,16)(15 downto 8));
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_9 =>		--equivalente a uart 1 parte baja
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  --escritura
+				data_uart		<= std_logic_vector(to_unsigned(energia_temp,16)(7 downto 0));
+				enable_uart		<= '1';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";
+			when envio_mem_10 =>			--equivalente a uart 2
+				data_ram_o		<= (others => '0');
+				addr_ram		<= (others => '0');
+				we				<= '0';  --escritura
+				data_uart		<= std_logic_vector(to_unsigned(energia_temp,16)(7 downto 0));
+				enable_uart		<= '0';
+				data_ram_energia_o	<= (others => '0'); 
+				addr_ram_energia	<= (others => '0'); 
+				data_ram_cantidad_o	<= (others => '0'); 
+				addr_ram_cantidad	<= (others => '0');
+			--	estado			<= "0";			 					 			
 		end case;
 		if reset = '0' then
 			reg_ancho_1<= 0;
 			reg_ancho_2<= 0;
 			reg_ancho_3<= 0;
 			reg_anterior<= 0;
+			pix_data_reg <= 0;
+			energia_temp <= 0;
+			cantidad_temp <= 0;
 		elsif rising_edge(clk) then
-			case state is 
+			case state is
+				when dir_ancho_2 =>  --testeado, gracias a esto funciona*
+					pix_data_reg <= to_integer(unsigned(pix_data)); --guardo la informacion del nuevo pixel(puede traer problemas)
 				when lectura_ancho_2 =>
 					--reg_ancho_2 <= 0;--debug
 					reg_ancho_2 	<= to_integer(unsigned(data_ram_i));
@@ -369,6 +674,13 @@ begin
 					else
 						reg_anterior 	<= to_integer(unsigned(data_ram_i));
 					end if;
+				when lectura_cantidad_energia =>
+					energia_temp <= to_integer(unsigned(data_ram_energia_i));
+					cantidad_temp <= to_integer(unsigned(data_ram_cantidad_i));
+				when envio_mem_2 =>
+					cantidad_temp <= to_integer(unsigned(data_ram_cantidad_i));
+				when envio_mem_6 =>
+					energia_temp <= to_integer(unsigned(data_ram_energia_i));
 				when others =>
 					
 			end case;
