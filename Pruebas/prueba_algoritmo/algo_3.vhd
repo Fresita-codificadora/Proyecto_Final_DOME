@@ -8,9 +8,8 @@ entity algo_3 is
 	generic(
 		umbral 			: integer := 0;
 		pixels			: integer := 7081;
-		ancho			: integer := 97;
-
-	)
+		ancho			: integer := 97
+	);
 	port(
 		clk		 		: in	std_logic;
 		reset	 		: in	std_logic;
@@ -129,11 +128,11 @@ begin
 				when escritura_erase_2 =>
 					state <= erase;
 				when nuevo_pix=>
-					if pix_count_int < 7081 then	
+					if pix_count_int < pixels then	
 						if pix_count_int /= pix_count_anterior then --me llego un nuevo pixel
 							pix_count_anterior <= pix_count_int;
 
-							if to_integer(unsigned(pix_data)) > 0 then
+							if to_integer(unsigned(pix_data)) > umbral then
 								state <= dir_ancho_2;
 							else 
 								data_a_escribir <= 0;
@@ -141,9 +140,9 @@ begin
 							end if;
 
 							cuenta_pixel:=cuenta_pixel + 1;						--esta cuenta la voy a usar como la cantidad de pixeles que me llegan para activar unas flags
-							if cuenta_pixel = 97 then
+							if cuenta_pixel = ancho then
 								ignorar_ancho_1 <= true;
-							elsif cuenta_pixel = 98 then
+							elsif cuenta_pixel = (ancho + 1) then
 								ignorar_anterior <= true;
 								cuenta_pixel := 1;
 							end if ;
@@ -155,8 +154,8 @@ begin
 						state <= envio_mem_1;
 					end if;
 				when dir_ancho_2=>
-					if indice + 2 > 99 then
-						dir_mem_2 <= indice - 97;
+					if indice + 2 > (ancho + 2) then
+						dir_mem_2 <= indice - ancho;
 					else
 						dir_mem_2 <= indice + 2;
 					end if;
@@ -170,8 +169,8 @@ begin
 						state <= dir_ancho_1;
 					end if ;
 				when dir_ancho_1 =>
-					if indice + 3 > 99 then
-						dir_mem_1 <= indice - 96;
+					if indice + 3 > (ancho + 2) then
+						dir_mem_1 <= indice - (ancho - 1);
 					else
 						dir_mem_1 <= indice + 3;
 					end if;
@@ -185,8 +184,8 @@ begin
 						state <= dir_ancho_3;
 					end if ;
 				when dir_ancho_3 =>
-					if indice + 1 > 99 then
-						dir_mem_3 <= indice - 98;
+					if indice + 1 > (ancho + 2) then
+						dir_mem_3 <= indice - (ancho + 1);
 					else
 						dir_mem_3 <= indice + 1;
 					end if;
@@ -201,7 +200,7 @@ begin
 					end if ;
 				when dir_anterior =>
 					if indice = 1 then
-						dir_mem <= 98;
+						dir_mem <= (ancho + 1);
 					else
 						dir_mem <= indice - 1;
 					end if;
@@ -247,7 +246,7 @@ begin
 					end if;
 				when incremento_indice =>
 					indice <= indice + 1;					--este seria el equivalente a la direccion de memoria que quiero usar 
-					if indice = 99 then
+					if indice = (ancho + 2) then
 						indice <= 1;
 					end if;
 					ignorar_ancho_1 <= false;
