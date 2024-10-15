@@ -143,7 +143,23 @@ https://fpgasoftware.intel.com/eula.
 		(text "addr_ram_cantidad[8..0]" (rect 194 155 291 167)(font "Arial" ))
 		(line (pt 312 160)(pt 296 160)(line_width 3))
 	)
+	(parameter
+		"umbral"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"pixels"
+		"7081"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ancho"
+		"97"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 296 192)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 328 -64 428 16))
 )
