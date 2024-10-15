@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at ram.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v Line: 11
+Warning (10268): Verilog HDL information at ram.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/Gaspar/Desktop/prog_FPGA/ram.v Line: 11

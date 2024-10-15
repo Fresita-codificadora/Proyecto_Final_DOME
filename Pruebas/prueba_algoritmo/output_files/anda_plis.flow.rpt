@@ -1,5 +1,5 @@
 Flow report for anda_plis
-Thu Oct 10 10:51:42 2024
+Wed Oct  9 12:12:36 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Oct 10 10:51:42 2024          ;
+; Flow Status                        ; Successful - Wed Oct  9 12:12:36 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; anda_plis                                      ;
-; Top-level Entity Name              ; anda_plis_2                                    ;
+; Top-level Entity Name              ; anda_plis                                      ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 689 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 675 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 301 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 301                                            ;
+; Total logic elements               ; 571 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 557 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 243 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 243                                            ;
 ; Total pins                         ; 4 / 529 ( < 1 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 63,488 / 3,981,312 ( 2 % )                     ;
+; Total memory bits                  ; 14,336 / 3,981,312 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/10/2024 10:51:18 ;
+; Start date & time ; 10/09/2024 12:12:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; anda_plis           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 238300918768197.172856827806964        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 238300918768197.172848673313140        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -87,13 +87,12 @@ https://fpgasoftware.intel.com/eula.
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; anda_plis_2 ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; anda_plis_2 ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; anda_plis_2 ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; anda_plis_2                            ; anda_plis     ; --          ; --                                ;
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --          ; --                                ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
@@ -104,12 +103,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4878 MB             ; 00:00:08                           ;
-; Fitter               ; 00:00:11     ; 1.1                     ; 6344 MB             ; 00:00:10                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4705 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.2                     ; 4957 MB             ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4886 MB             ; 00:00:07                           ;
+; Fitter               ; 00:00:10     ; 1.1                     ; 6325 MB             ; 00:00:10                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4708 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 4958 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4655 MB             ; 00:00:00                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:21                           ;
+; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
