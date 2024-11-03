@@ -1,0 +1,32 @@
+
+State Machine - |Block2|UART_RX:inst3|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_RX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
+
+State Machine - |Block2|uart_algo:inst1|state
+Name state.recv_second_byte state.recv_first_byte state.idle 
+state.idle 0 0 0 
+state.recv_first_byte 0 1 1 
+state.recv_second_byte 1 0 1 
+
+State Machine - |Block2|Histograma_2:inst|state
+Name state.envio_4 state.envio_3 state.envio_2 state.envio_1 state.envio_ok_2 state.envio_ok_1 state.histograma state.idle 
+state.idle 0 0 0 0 0 0 0 0 
+state.histograma 0 0 0 0 0 0 1 1 
+state.envio_ok_1 0 0 0 0 0 1 0 1 
+state.envio_ok_2 0 0 0 0 1 0 0 1 
+state.envio_1 0 0 0 1 0 0 0 1 
+state.envio_2 0 0 1 0 0 0 0 1 
+state.envio_3 0 1 0 0 0 0 0 1 
+state.envio_4 1 0 0 0 0 0 0 1 
+
+State Machine - |Block2|uart_tx:inst2|fsm_state
+Name fsm_state.FSM_STOP fsm_state.FSM_SEND fsm_state.FSM_START fsm_state.FSM_IDLE 
+fsm_state.FSM_IDLE 0 0 0 0 
+fsm_state.FSM_START 0 0 1 1 
+fsm_state.FSM_SEND 0 1 0 1 
+fsm_state.FSM_STOP 1 0 0 1 

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Nov  2 10:30:30 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Histograma
+Top-level Entity Name : Block2
+Family : Cyclone IV E
+Total logic elements : 1,004
+    Total combinational functions : 973
+    Dedicated logic registers : 572
+Total registers : 572
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,3 +1,0 @@
-work.syn_hyper_connect work.syn_hyper_connect 
-: 1 work.ram "C:\Users\Gaspar\Desktop\prog_FPGA\ram.v" 2 4 
-: 1 work.uart_tx "C:\Users\Gaspar\Desktop\prog_FPGA\uart_tx.v" 28 0 

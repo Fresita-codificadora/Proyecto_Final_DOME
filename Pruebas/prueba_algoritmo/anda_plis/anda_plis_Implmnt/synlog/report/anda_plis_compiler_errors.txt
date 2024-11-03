@@ -1,4 +1,0 @@
-@E: CD255 :"C:\Users\Gaspar\Desktop\prog_FPGA\algo_3.vhd":148:36:148:36|No identifier "escritura_intermedia_2" in scope
-@E: Parse errors encountered - exiting
-@E::VHDL compiler failed
-

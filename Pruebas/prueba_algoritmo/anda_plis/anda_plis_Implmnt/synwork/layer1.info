@@ -1,2 +1,0 @@
-|work.ram|parameter addr_width 9;,parameter data_width 8;|
-|work.uart_tx|parameter PAYLOAD_BITS 8;|

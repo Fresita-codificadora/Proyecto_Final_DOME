@@ -1,0 +1,108 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2020.12.27943
+
+* Build Date:         Dec  9 2020 17:31:51
+
+* File Generated:     Oct 31 2024 19:51:08
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 1 seconds
+
+Device Info:
+------------
+    Device Family: iCE40
+    Device:        iCE40HX4K
+    Package:       TQ144
+
+Design statistics:
+------------------
+    FFs:                  321
+    LUTs:                 863
+    RAMs:                 16
+    IOBs:                 29
+    GBs:                  3
+    PLLs:                 0
+    Warm Boots:           0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 930/3520
+        Combinational Logic Cells: 609      out of   3520      17.3011%
+        Sequential Logic Cells:    321      out of   3520      9.11932%
+        Logic Tiles:               208      out of   440       47.2727%
+    Registers: 
+        Logic Registers:           321      out of   3520      9.11932%
+        IO Registers:              0        out of   880       0
+    Block RAMs:                    16       out of   20        80%
+    Warm Boots:                    0        out of   1         0%
+    Pins:
+        Input Pins:                14       out of   107       13.0841%
+        Output Pins:               15       out of   107       14.0187%
+        InOut Pins:                0        out of   107       0%
+    Global Buffers:                3        out of   8         37.5%
+    PLLs:                          0        out of   2         0%
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 11       out of   28        39.2857%
+    Bank 1: 4        out of   29        13.7931%
+    Bank 0: 14       out of   27        51.8519%
+    Bank 2: 0        out of   23        0%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name
+    ----------  ---------  -----------  -------  -------  -----------    -----------
+    31          Input      SB_LVCMOS    No       3        Simple Input   reset      
+    94          Input      SB_LVCMOS    No       1        Simple Input   clk        
+    102         Input      SB_LVCMOS    No       1        Simple Input   swit[8]    
+    104         Input      SB_LVCMOS    No       1        Simple Input   swit[1]    
+    107         Input      SB_LVCMOS    No       1        Simple Input   swit[10]   
+    110         Input      SB_LVCMOS    No       0        Simple Input   swit[2]    
+    114         Input      SB_LVCMOS    No       0        Simple Input   swit[7]    
+    117         Input      SB_LVCMOS    No       0        Simple Input   swit[6]    
+    120         Input      SB_LVCMOS    No       0        Simple Input   swit[5]    
+    121         Input      SB_LVCMOS    No       0        Simple Input   swit[9]    
+    122         Input      SB_LVCMOS    No       0        Simple Input   uart_rx_i  
+    125         Input      SB_LVCMOS    No       0        Simple Input   swit[3]    
+    129         Input      SB_LVCMOS    No       0        Simple Input   swit[0]    
+    130         Input      SB_LVCMOS    No       0        Simple Input   swit[4]    
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name
+    ----------  ---------  -----------  -------  -------  -----------    -----------
+    2           Output     SB_LVCMOS    No       3        Simple Output  leds[10]   
+    7           Output     SB_LVCMOS    No       3        Simple Output  leds[13]   
+    10          Output     SB_LVCMOS    No       3        Simple Output  leds[12]   
+    12          Output     SB_LVCMOS    No       3        Simple Output  leds[9]    
+    16          Output     SB_LVCMOS    No       3        Simple Output  leds[8]    
+    19          Output     SB_LVCMOS    No       3        Simple Output  leds[3]    
+    22          Output     SB_LVCMOS    No       3        Simple Output  leds[2]    
+    26          Output     SB_LVCMOS    No       3        Simple Output  leds[7]    
+    29          Output     SB_LVCMOS    No       3        Simple Output  leds[6]    
+    34          Output     SB_LVCMOS    No       3        Simple Output  leds[1]    
+    135         Output     SB_LVCMOS    No       0        Simple Output  leds[0]    
+    136         Output     SB_LVCMOS    No       0        Simple Output  leds[5]    
+    139         Output     SB_LVCMOS    No       0        Simple Output  leds[4]    
+    141         Output     SB_LVCMOS    No       0        Simple Output  uart_tx_o  
+    144         Output     SB_LVCMOS    No       0        Simple Output  leds[11]   
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name         
+    -------------  -------  ---------  ------  -----------         
+    5              1        IO         353     clk_c_g             
+    3              3                   31      b2v_inst.N_305_1_g  
+    6              3                   251     reset_c_i_g         

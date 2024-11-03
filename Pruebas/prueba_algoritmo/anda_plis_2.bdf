@@ -72,6 +72,22 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (location)(rect -424 304 -352 328))
 )
 (pin
+	(input)
+	(rect -8 384 160 400)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "swit[10..0]" (rect 5 0 56 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 1624 680 1800 696)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -88,108 +104,22 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(annotation_block (location)(rect 1800 696 1872 720))
 )
-(symbol
-	(rect -120 248 96 328)
-	(text "UART_RX" (rect 5 0 54 12)(font "Arial" ))
-	(text "inst1" (rect 8 64 30 81)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "i_Clk" (rect 0 0 24 12)(font "Arial" ))
-		(text "i_Clk" (rect 21 27 45 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "i_RX_Serial" (rect 0 0 55 12)(font "Arial" ))
-		(text "i_RX_Serial" (rect 21 43 76 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "o_RX_DV" (rect 0 0 48 12)(font "Arial" ))
-		(text "o_RX_DV" (rect 155 27 203 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "o_RX_Byte[7..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "o_RX_Byte[7..0]" (rect 127 43 208 55)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
-	)
-	(parameter
-		"g_CLKS_PER_BIT"
-		"434"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
+(pin
+	(output)
+	(rect 1696 224 1712 400)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "leds[15..0]" (rect 0 5 17 55)(font "Intel Clear" )(vertical))
+	(pt 8 176)
 	(drawing
-		(rectangle (rect 16 16 200 64))
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
 	)
-	(annotation_block (parameter)(rect -120 208 88 248))
-)
-(symbol
-	(rect 1192 656 1504 768)
-	(text "uart_tx" (rect 5 0 39 12)(font "Arial" ))
-	(text "inst9" (rect 8 96 30 113)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetn" (rect 0 0 30 12)(font "Arial" ))
-		(text "resetn" (rect 21 43 51 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "uart_tx_en" (rect 0 0 51 12)(font "Arial" ))
-		(text "uart_tx_en" (rect 21 59 72 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 0 0 179 12)(font "Arial" ))
-		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 21 75 200 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 312 32)
-		(output)
-		(text "uart_txd" (rect 0 0 40 12)(font "Arial" ))
-		(text "uart_txd" (rect 258 27 298 39)(font "Arial" ))
-		(line (pt 312 32)(pt 296 32))
-	)
-	(port
-		(pt 312 48)
-		(output)
-		(text "uart_tx_busy" (rect 0 0 64 12)(font "Arial" ))
-		(text "uart_tx_busy" (rect 237 43 301 55)(font "Arial" ))
-		(line (pt 312 48)(pt 296 48))
-	)
-	(parameter
-		"PAYLOAD_BITS"
-		"8"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"CLK_HZ"
-		"50000000"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 296 96))
-	)
-	(annotation_block (parameter)(rect 1504 592 1728 656))
+	(rotate90)
 )
 (symbol
 	(rect 1184 184 1464 296)
@@ -291,7 +221,7 @@ https://fpgasoftware.intel.com/eula.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"data_width"
-		"14"
+		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
@@ -345,13 +275,121 @@ https://fpgasoftware.intel.com/eula.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"data_width"
-		"6"
+		"8"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 264 96))
 	)
 	(annotation_block (parameter)(rect 1256 480 1432 537))
+)
+(symbol
+	(rect -120 248 96 328)
+	(text "UART_RX" (rect 5 0 54 12)(font "Arial" ))
+	(text "inst1" (rect 8 64 30 81)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "i_Clk" (rect 0 0 24 12)(font "Arial" ))
+		(text "i_Clk" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "i_RX_Serial" (rect 0 0 55 12)(font "Arial" ))
+		(text "i_RX_Serial" (rect 21 43 76 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "o_RX_DV" (rect 0 0 48 12)(font "Arial" ))
+		(text "o_RX_DV" (rect 155 27 203 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "o_RX_Byte[7..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "o_RX_Byte[7..0]" (rect 127 43 208 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
+	(parameter
+		"g_CLKS_PER_BIT"
+		"25"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 200 64))
+	)
+	(annotation_block (parameter)(rect -120 208 85 246))
+)
+(symbol
+	(rect 1192 656 1504 768)
+	(text "uart_tx" (rect 5 0 39 12)(font "Arial" ))
+	(text "inst9" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetn" (rect 0 0 30 12)(font "Arial" ))
+		(text "resetn" (rect 21 43 51 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "uart_tx_en" (rect 0 0 51 12)(font "Arial" ))
+		(text "uart_tx_en" (rect 21 59 72 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 0 0 179 12)(font "Arial" ))
+		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 21 75 200 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 312 32)
+		(output)
+		(text "uart_txd" (rect 0 0 40 12)(font "Arial" ))
+		(text "uart_txd" (rect 258 27 298 39)(font "Arial" ))
+		(line (pt 312 32)(pt 296 32))
+	)
+	(port
+		(pt 312 48)
+		(output)
+		(text "uart_tx_busy" (rect 0 0 64 12)(font "Arial" ))
+		(text "uart_tx_busy" (rect 237 43 301 55)(font "Arial" ))
+		(line (pt 312 48)(pt 296 48))
+	)
+	(parameter
+		"PAYLOAD_BITS"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CLK_HZ"
+		"50000000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"BIT_RATE"
+		"2000000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 296 96))
+	)
+	(annotation_block (parameter)(rect 1504 592 1727 668))
 )
 (symbol
 	(rect 144 216 360 328)
@@ -458,78 +496,85 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 128)
 		(input)
-		(text "data_ram_energia_i[13..0]" (rect 0 0 127 12)(font "Arial" ))
-		(text "data_ram_energia_i[13..0]" (rect 21 123 148 135)(font "Arial" ))
+		(text "data_ram_energia_i[15..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "data_ram_energia_i[15..0]" (rect 21 123 148 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 0 144)
 		(input)
-		(text "data_ram_cantidad_i[5..0]" (rect 0 0 127 12)(font "Arial" ))
-		(text "data_ram_cantidad_i[5..0]" (rect 21 139 148 151)(font "Arial" ))
+		(text "data_ram_cantidad_i[7..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "data_ram_cantidad_i[7..0]" (rect 21 139 148 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "sw[10..0]" (rect 0 0 44 12)(font "Arial" ))
+		(text "sw[10..0]" (rect 21 155 65 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 312 32)
 		(output)
 		(text "data_ram_o[10..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "data_ram_o[10..0]" (rect 216 27 305 39)(font "Arial" ))
+		(text "data_ram_o[10..0]" (rect 216 27 291 39)(font "Arial" ))
 		(line (pt 312 32)(pt 296 32)(line_width 3))
 	)
 	(port
 		(pt 312 48)
 		(output)
 		(text "addr_ram[10..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "addr_ram[10..0]" (rect 226 43 303 55)(font "Arial" ))
+		(text "addr_ram[10..0]" (rect 226 43 291 55)(font "Arial" ))
 		(line (pt 312 48)(pt 296 48)(line_width 3))
 	)
 	(port
 		(pt 312 64)
 		(output)
 		(text "we" (rect 0 0 12 12)(font "Arial" ))
-		(text "we" (rect 281 59 293 71)(font "Arial" ))
+		(text "we" (rect 281 59 291 71)(font "Arial" ))
 		(line (pt 312 64)(pt 296 64))
 	)
 	(port
 		(pt 312 80)
 		(output)
 		(text "data_uart[7..0]" (rect 0 0 71 12)(font "Arial" ))
-		(text "data_uart[7..0]" (rect 231 75 302 87)(font "Arial" ))
+		(text "data_uart[7..0]" (rect 231 75 291 87)(font "Arial" ))
 		(line (pt 312 80)(pt 296 80)(line_width 3))
 	)
 	(port
 		(pt 312 96)
 		(output)
 		(text "enable_uart" (rect 0 0 56 12)(font "Arial" ))
-		(text "enable_uart" (rect 244 91 300 103)(font "Arial" ))
+		(text "enable_uart" (rect 244 91 291 103)(font "Arial" ))
 		(line (pt 312 96)(pt 296 96))
 	)
 	(port
 		(pt 312 112)
 		(output)
-		(text "data_ram_energia_o[13..0]" (rect 0 0 130 12)(font "Arial" ))
-		(text "data_ram_energia_o[13..0]" (rect 181 107 311 119)(font "Arial" ))
+		(text "data_ram_energia_o[15..0]" (rect 0 0 130 12)(font "Arial" ))
+		(text "data_ram_energia_o[15..0]" (rect 181 107 291 119)(font "Arial" ))
 		(line (pt 312 112)(pt 296 112)(line_width 3))
 	)
 	(port
 		(pt 312 128)
 		(output)
 		(text "addr_ram_energia[10..0]" (rect 0 0 119 12)(font "Arial" ))
-		(text "addr_ram_energia[10..0]" (rect 191 123 310 135)(font "Arial" ))
+		(text "addr_ram_energia[10..0]" (rect 191 123 291 135)(font "Arial" ))
 		(line (pt 312 128)(pt 296 128)(line_width 3))
 	)
 	(port
 		(pt 312 144)
 		(output)
-		(text "data_ram_cantidad_o[5..0]" (rect 0 0 130 12)(font "Arial" ))
-		(text "data_ram_cantidad_o[5..0]" (rect 181 139 311 151)(font "Arial" ))
+		(text "data_ram_cantidad_o[7..0]" (rect 0 0 130 12)(font "Arial" ))
+		(text "data_ram_cantidad_o[7..0]" (rect 181 139 291 151)(font "Arial" ))
 		(line (pt 312 144)(pt 296 144)(line_width 3))
 	)
 	(port
 		(pt 312 160)
 		(output)
 		(text "addr_ram_cantidad[10..0]" (rect 0 0 125 12)(font "Arial" ))
-		(text "addr_ram_cantidad[10..0]" (rect 186 155 311 167)(font "Arial" ))
+		(text "addr_ram_cantidad[10..0]" (rect 186 155 291 167)(font "Arial" ))
 		(line (pt 312 160)(pt 296 160)(line_width 3))
 	)
 	(parameter
@@ -870,11 +915,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 1464 400)
-	(pt 1944 400)
-	(bus)
-)
-(connector
 	(pt 1944 872)
 	(pt 1944 400)
 	(bus)
@@ -899,6 +939,31 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1528 64)
 	(bus)
 )
+(connector
+	(pt 1464 400)
+	(pt 1704 400)
+	(bus)
+)
+(connector
+	(pt 1704 400)
+	(pt 1944 400)
+	(bus)
+)
+(connector
+	(pt 160 392)
+	(pt 456 392)
+	(bus)
+)
+(connector
+	(pt 456 392)
+	(pt 456 344)
+	(bus)
+)
+(connector
+	(pt 464 344)
+	(pt 456 344)
+	(bus)
+)
 (junction (pt -144 136))
 (junction (pt 128 136))
 (junction (pt 112 160))
@@ -909,3 +974,4 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1168 448))
 (junction (pt 1128 248))
 (junction (pt 1128 432))
+(junction (pt 1704 400))

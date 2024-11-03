@@ -1,0 +1,53 @@
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+Could not match passed parameter, trying a case insensitive search ...
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v":10:7:10:13|Synthesizing module uart_tx in library work.
+
+	PAYLOAD_BITS=32'b00000000000000000000000000001000
+	CLK_HZ=32'b00000000101101110001101100000000
+	BIT_RATE=32'b00000000000111101000010010000000
+	BIT_P=32'b00000000000000000000000111110100
+	CLK_P=32'b00000000000000000000000001010011
+	STOP_BITS=32'b00000000000000000000000000000001
+	CYCLES_PER_BIT=32'b00000000000000000000000000000110
+	COUNT_REG_LEN=32'b00000000000000000000000000000100
+	FSM_IDLE=32'b00000000000000000000000000000000
+	FSM_START=32'b00000000000000000000000000000001
+	FSM_SEND=32'b00000000000000000000000000000010
+	FSM_STOP=32'b00000000000000000000000000000011
+   Generated name = uart_tx_Z1_layer1
+
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+
+	addr_width=32'b00000000000000000000000000001011
+	data_width=32'b00000000000000000000000000000110
+   Generated name = ram_11s_6s
+
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=6
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+
+	addr_width=32'b00000000000000000000000000001011
+	data_width=32'b00000000000000000000000000001110
+   Generated name = ram_11s_14s
+
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=14
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+
+	addr_width=32'b00000000000000000000000000001011
+	data_width=32'b00000000000000000000000000001011
+   Generated name = ram_11s_11s
+
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=11
+@N: CL201 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v":165:0:165:5|Trying to extract state machine for register fsm_state.
+Extracted state machine for register fsm_state
+State machine has 4 reachable states with original encodings of:
+   000
+   001
+   010
+   011

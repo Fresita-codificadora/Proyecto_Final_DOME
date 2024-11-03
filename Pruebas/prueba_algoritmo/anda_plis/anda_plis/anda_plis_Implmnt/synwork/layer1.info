@@ -1,0 +1,4 @@
+|work.ram|parameter addr_width 11;,parameter data_width 11;|
+|work.ram|parameter addr_width 11;,parameter data_width 14;|
+|work.ram|parameter addr_width 11;,parameter data_width 6;|
+|work.uart_tx|parameter BIT_RATE 2000000;,parameter CLK_HZ 12000000;,parameter PAYLOAD_BITS 8;|

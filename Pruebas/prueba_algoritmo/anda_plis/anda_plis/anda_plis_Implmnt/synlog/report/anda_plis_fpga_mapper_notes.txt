@@ -1,0 +1,27 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MT206 |Auto Constrain mode is enabled
+@N: MO231 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":103:2:103:3|Found counter in view:work.algo_3_final_80_596333_863(rtl) instance eventos[10:0] 
+@N: MO231 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":103:2:103:3|Found counter in view:work.algo_3_final_80_596333_863(rtl) instance dir_energia[11:0] 
+@N: MF179 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":133:9:133:43|Found 21 by 21 bit equality operator ('==') un7_pix_count_int (in view: work.algo_3_final_80_596333_863(rtl))
+@N: MO225 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_tx.v":165:0:165:5|There are no possible illegal states for state machine fsm_state[3:0] (in view: work.uart_tx_Z1_layer1(verilog)); safe FSM implementation is not required.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[1] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[0] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[3] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[2] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[11] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[12] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[9] (in view: work.anda_plis_2(bdf_type)) with 12 loads 2 times to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[10] (in view: work.anda_plis_2(bdf_type)) with 12 loads 2 times to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[5] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":42:2:42:3|Replicating instance b2v_inst4.pix_count_int[6] (in view: work.anda_plis_2(bdf_type)) with 9 loads 1 time to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":103:2:103:3|Replicating instance b2v_inst.state[32] (in view: work.anda_plis_2(bdf_type)) with 24 loads 2 times to improve timing.
+@N: FX271 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":103:2:103:3|Replicating instance b2v_inst.state[19] (in view: work.anda_plis_2(bdf_type)) with 17 loads 1 time to improve timing.
+@N: FX1016 :"c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":28:2:28:4|SB_GB_IO inserted on the port clk.
+@N: FX1017 :|SB_GB inserted on the net reset_c_i.
+@N: FX1017 :|SB_GB inserted on the net N_305_1.
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: FX1056 |Writing EDF file: C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.edf
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

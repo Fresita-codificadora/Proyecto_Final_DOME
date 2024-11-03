@@ -1,0 +1,47 @@
+|uart_process
+clk => tx_en~reg0.CLK
+clk => tx_data[0]~reg0.CLK
+clk => tx_data[1]~reg0.CLK
+clk => tx_data[2]~reg0.CLK
+clk => tx_data[3]~reg0.CLK
+clk => tx_data[4]~reg0.CLK
+clk => tx_data[5]~reg0.CLK
+clk => tx_data[6]~reg0.CLK
+clk => tx_data[7]~reg0.CLK
+resetn => tx_en~reg0.ACLR
+resetn => tx_data[0]~reg0.ACLR
+resetn => tx_data[1]~reg0.ACLR
+resetn => tx_data[2]~reg0.ACLR
+resetn => tx_data[3]~reg0.ACLR
+resetn => tx_data[4]~reg0.ACLR
+resetn => tx_data[5]~reg0.ACLR
+resetn => tx_data[6]~reg0.ACLR
+resetn => tx_data[7]~reg0.ACLR
+rx_data[0] => tx_data[0]~reg0.DATAIN
+rx_data[1] => Add0.IN14
+rx_data[2] => Add0.IN13
+rx_data[3] => Add0.IN12
+rx_data[4] => Add0.IN11
+rx_data[5] => Add0.IN10
+rx_data[6] => Add0.IN9
+rx_data[7] => Add0.IN8
+rx_data_valid => tx_en~reg0.DATAIN
+rx_data_valid => tx_data[7]~reg0.ENA
+rx_data_valid => tx_data[6]~reg0.ENA
+rx_data_valid => tx_data[5]~reg0.ENA
+rx_data_valid => tx_data[4]~reg0.ENA
+rx_data_valid => tx_data[3]~reg0.ENA
+rx_data_valid => tx_data[2]~reg0.ENA
+rx_data_valid => tx_data[1]~reg0.ENA
+rx_data_valid => tx_data[0]~reg0.ENA
+tx_data[0] <= tx_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[1] <= tx_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[2] <= tx_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[3] <= tx_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[4] <= tx_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[5] <= tx_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[6] <= tx_data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[7] <= tx_data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_en <= tx_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

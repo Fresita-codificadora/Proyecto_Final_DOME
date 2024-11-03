@@ -1,0 +1,47 @@
+#defaultlanguage:vhdl
+#OPTIONS:"|-autotop|-mixedhdl|-top|work.anda_plis_2|-layerid|0|-orig_srs|C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\anda_plis_Implmnt\\synwork\\anda_plis_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\bin64\\c_vhdl.exe":1712704981
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\location.map":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\std.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd\\snps_haps_pkg.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\std1164.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\std_textio.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\numeric.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd\\umr_capim.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\arith.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd2008\\unsigned.vhd":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vhd\\hyperents.vhd":1712704990
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\algo_3_final.vhd":1730383071
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis_2.vhd":1730383256
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\uart_algo.vhd":1728055024
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\UART_RX.vhd":1728055022
+0 "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd" vhdl
+1 "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd" vhdl
+2 "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd" vhdl
+3 "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\UART_RX.vhd" vhdl
+
+# Dependency Lists (Uses list)
+0 -1
+1 0 3 2 
+2 -1
+3 -1
+
+# Dependency Lists (Users Of)
+0 1 
+1 -1
+2 1 
+3 1 
+
+# Design Unit to File Association
+arch work algo_3_final rtl 0
+module work algo_3_final 0
+arch work anda_plis_2 bdf_type 1
+module work anda_plis_2 1
+arch work uart_algo rtl 2
+module work uart_algo 2
+arch work uart_rx rtl 3
+module work uart_rx 3
+
+# Unbound Instances to File Association
+inst work anda_plis_2 uart_tx 1
+inst work anda_plis_2 ram 1

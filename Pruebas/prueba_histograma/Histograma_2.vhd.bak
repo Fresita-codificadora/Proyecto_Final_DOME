@@ -1,0 +1,205 @@
+-- Quartus Prime VHDL Template
+-- Four-State Moore State Machine
+
+-- A Moore machine's outputs are dependent only on the current state.
+-- The output is written only when the state changes.  (State
+-- transitions are synchronous.)
+
+library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
+
+entity Histograma_2 is
+
+	port(
+		clk		 					: in	std_logic;
+		reset	 					: in	std_logic;
+		data_ener					: in	std_logic_vector(13 downto 0);
+		data_count					: in 	Std_Logic_Vector(20 downto 0); --esto va a contar cuantos datos le van mandando es para control de flujo
+		uart_sending 				: in 	std_logic;
+		--salidas
+		data_uart					: out std_logic_vector(7 downto 0);
+		r_w_hist	 				: out std_logic
+	);
+
+end entity;
+
+architecture rtl of Histograma_2 is
+
+	-- Build an enumerated type for the state machine
+	type state_type is (idle, histograma, envio_ok_1, envio_ok_2, envio_1, envio_2, envio_3, envio_4);
+
+	-- Register to hold the current state
+	signal state   : state_type;
+
+	signal dir_mem : integer range 0 to 2047 	:= 0;
+	signal indice_hist : integer range 0 to 32 	:=1;
+	signal dir_escritura : integer range 0 to 1023 :=0;
+	signal reg_cantidad									: integer range 0 to 64		:=0;
+	signal reg_energia									: integer range 0 to 16384	:=0;--son 14 bits
+	signal dato_count_int, dato_ant								: integer range 0 to 2**20-1;
+
+		-- Definimos el histograma como un arreglo de 32 bins de 14 bits.
+	type hist_array is array (1 to 32) of integer range 0 to (2**14-1);
+	signal histogram : hist_array := (others => 0); --lo iniciamos en cero
+begin
+	dato_count_int <= to_integer(unsigned(data_count));--transformamos el dato de la cuenta
+	-- Logic to advance to the next state
+	process (all)
+		variable cuenta : integer range 0 to 2047 :=1;
+	begin
+		if reset = '0' then
+			state <= idle;
+			dir_mem <= 0;
+			cuenta := 1;
+			histogram <= (others => 0) ;
+			dato_ant <= 100;
+			reg_energia <= 0;
+		elsif (rising_edge(clk)) then
+			case state is
+				when idle=>
+					if dato_count_int /= dato_ant then
+						dato_ant <= dato_count_int;
+						reg_energia <= to_integer(unsigned(data_ener)); 
+						if TO_INTEGER(unsigned(data_ener))>0 then --si el dato de energia es mayor a cero entonces hacemos el histograma
+							state <= histograma
+						else
+							envio_1;
+							indice_hist <= 1;
+						end if;
+					else
+						state <= idle;
+					end if;
+				when histograma =>
+					if (reg_energia >= 0 and reg_energia < 256) then
+						histogram(1) <= histogram(1) + 1;
+					elsif (reg_energia >= 256 and reg_energia < 512) then
+						histogram(2) <= histogram(2) + 1;
+					elsif (reg_energia >= 512 and reg_energia < 768) then
+						histogram(3) <= histogram(3) + 1;
+					elsif (reg_energia >= 768 and reg_energia < 1024) then
+						histogram(4) <= histogram(4) + 1;
+					elsif (reg_energia >= 1024 and reg_energia < 1280) then
+						histogram(5) <= histogram(5) + 1;
+					elsif (reg_energia >= 1280 and reg_energia < 1536) then
+						histogram(6) <= histogram(6) + 1;
+					elsif (reg_energia >= 1536 and reg_energia < 1792) then
+						histogram(7) <= histogram(7) + 1;
+					elsif (reg_energia >= 1792 and reg_energia < 2048) then
+						histogram(8) <= histogram(8) + 1;
+					elsif (reg_energia >= 2048 and reg_energia < 2304) then
+						histogram(9) <= histogram(9) + 1;
+					elsif (reg_energia >= 2304 and reg_energia < 2560) then
+						histogram(10) <= histogram(10) + 1;
+					elsif (reg_energia >= 2560 and reg_energia < 2816) then
+						histogram(11) <= histogram(11) + 1;
+					elsif (reg_energia >= 2816 and reg_energia < 3072) then
+						histogram(12) <= histogram(12) + 1;
+					elsif (reg_energia >= 3072 and reg_energia < 3328) then
+						histogram(13) <= histogram(13) + 1;
+					elsif (reg_energia >= 3328 and reg_energia < 3584) then
+						histogram(14) <= histogram(14) + 1;
+					elsif (reg_energia >= 3584 and reg_energia < 3840) then
+						histogram(15) <= histogram(15) + 1;
+					elsif (reg_energia >= 3840 and reg_energia < 4096) then
+						histogram(16) <= histogram(16) + 1;
+					elsif (reg_energia >= 4096 and reg_energia < 4352) then
+						histogram(17) <= histogram(17) + 1;
+					elsif (reg_energia >= 4352 and reg_energia < 4608) then
+						histogram(18) <= histogram(18) + 1;
+					elsif (reg_energia >= 4608 and reg_energia < 4864) then
+						histogram(19) <= histogram(19) + 1;
+					elsif (reg_energia >= 4864 and reg_energia < 5120) then
+						histogram(20) <= histogram(20) + 1;
+					elsif (reg_energia >= 5120 and reg_energia < 5376) then
+						histogram(21) <= histogram(21) + 1;
+					elsif (reg_energia >= 5376 and reg_energia < 5632) then
+						histogram(22) <= histogram(22) + 1;
+					elsif (reg_energia >= 5632 and reg_energia < 5888) then
+						histogram(23) <= histogram(23) + 1;
+					elsif (reg_energia >= 5888 and reg_energia < 6144) then
+						histogram(24) <= histogram(24) + 1;
+					elsif (reg_energia >= 6144 and reg_energia < 6400) then
+						histogram(25) <= histogram(25) + 1;
+					elsif (reg_energia >= 6400 and reg_energia < 6656) then
+						histogram(26) <= histogram(26) + 1;
+					elsif (reg_energia >= 6656 and reg_energia < 6912) then
+						histogram(27) <= histogram(27) + 1;
+					elsif (reg_energia >= 6912 and reg_energia < 7168) then
+						histogram(28) <= histogram(28) + 1;
+					elsif (reg_energia >= 7168 and reg_energia < 7424) then
+						histogram(29) <= histogram(29) + 1;
+					elsif (reg_energia >= 7424 and reg_energia < 7680) then
+						histogram(30) <= histogram(30) + 1;
+					elsif (reg_energia >= 7680 and reg_energia < 7936) then
+						histogram(31) <= histogram(31) + 1;
+					elsif (reg_energia >= 7936 and reg_energia <= 8192) then
+						histogram(32) <= histogram(32) + 1;
+					else
+					end if;
+					state <= envio_ok_1;	
+				when envio_ok_1 =>
+					state <= envio_ok_2;
+				when envio_ok_2 =>
+					if uart_sending = '1' then
+						state <= envio_ok_2;
+					else
+						state <= idle;
+					end if;
+				when envio_1 =>
+					state <= envio_2;
+				when envio_2 =>
+					if uart_sending = '1' then
+						state <= envio_2;
+					else
+						state <= envio_3;
+					end if;
+				when envio_3 =>
+					state <= envio_4;
+				when envio_4 =>
+					if uart_sending = '1' then
+						state <= envio_4;
+					else
+						indice_hist <= indice_hist + 1;
+						if indice_hist <= 32 then
+							state <= envio_1;
+						else
+							state <= idle;
+						end if;
+					end if;
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (all)
+	begin
+		case state is
+			when idle =>
+				data_uart	<=	(others => '0'); 
+				r_w_hist	<=	(others => '0');  						
+			when histograma =>
+				data_uart	<=	(others => '0');
+				r_w_hist	<=	(others => '0');
+			when envio_ok_1 =>
+				data_uart 	<= "10000000";
+				r_w_hist 	<= '1';
+			when envio_ok_2 =>
+				data_uart 	<= "10000000";
+				r_w_hist 	<= '0';
+			when envio_1 =>
+				data_uart 	<= "00" & std_logic_vector(to_unsigned(histogram(indice_hist),14))(14 downto 8);
+				r_w_hist 	<= '1';
+			when envio_2 =>
+				data_uart 	<= "00" & std_logic_vector(to_unsigned(histogram(indice_hist),14))(14 downto 8);
+				r_w_hist 	<= '0';
+			when envio_3 =>
+				data_uart 	<= std_logic_vector(to_unsigned(histogram(indice_hist),14))(7 downto 0);
+				r_w_hist 	<= '1';
+			when envio_4 =>
+				data_uart 	<= std_logic_vector(to_unsigned(histogram(indice_hist),14))(7 downto 0);
+				r_w_hist 	<= '0';
+		end case;	
+	end process;
+
+end rtl;

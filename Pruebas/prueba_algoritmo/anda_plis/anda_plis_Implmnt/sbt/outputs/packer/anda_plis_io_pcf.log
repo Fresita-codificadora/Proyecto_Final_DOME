@@ -1,4 +1,0 @@
-OUTPUT uart_tx_o 	 location (4, 21, 0) 	 141 	 
-INPUT  uart_rx_i 	 location (14, 21, 1) 	 125 	 
-INPUT  reset 	 location (0, 1, 0) 	 34 	 
-INPUT  clk 	 location (25, 11, 0) 	 94 	 

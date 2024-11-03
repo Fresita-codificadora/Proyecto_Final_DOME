@@ -15,7 +15,7 @@ function img = vector_a_imagen(vector, ancho)
     
     % Convertir la matriz a uint8
     %%img = uint32(img);
-    
+    img=double(img);
     % Mostrar información sobre la imagen
     fprintf('La imagen reconstruida tiene un tamaño de %dx%d\n', size(img,1), size(img,2));
 end

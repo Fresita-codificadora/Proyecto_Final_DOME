@@ -1,0 +1,24 @@
+#OPTIONS:"|-autotop|-mixedhdl|-modhint|C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\anda_plis_Implmnt\\synwork\\_verilog_hintfile|-top|work.uart_tx|-top|work.ram|-top|work.ram|-top|work.ram|-mpparams|C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\anda_plis_Implmnt\\synwork\\_mh_params|-layerid|1|-orig_srs|C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\anda_plis_Implmnt\\synwork\\anda_plis_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\|-I|E:\\programas\\iCEcube2\\synpbase\\lib|-v2001|-devicelib|E:\\programas\\iCEcube2\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work"
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\bin64\\c_ver.exe":1712704981
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\anda_plis\\anda_plis_Implmnt\\synwork\\_verilog_hintfile":1730383259
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\generic\\sb_ice40.v":1712704988
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vlog\\hypermods.v":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vlog\\umr_capim.v":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vlog\\scemi_objects.v":1712704990
+#CUR:"E:\\programas\\iCEcube2\\synpbase\\lib\\vlog\\scemi_pipes.svh":1712704990
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\ram.v":1726962466
+#CUR:"C:\\Users\\gazpa\\Documents\\GitHub\\Proyecto_Final_DOME\\Pruebas\\prueba_algoritmo\\anda_plis\\uart_tx.v":1729126061
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v" verilog
+1			"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+#Dependency Lists(Users Of)
+0 -1
+1 -1
+#Design Unit to File Association
+module work ram 0
+module work uart_tx 1
+#Unbound instances to file Association.

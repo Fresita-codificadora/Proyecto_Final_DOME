@@ -1,1 +1,0 @@
-@W: MT529 :"c:\users\gaspar\desktop\prog_fpga\algo_3.vhd":87:2:87:3|Found inferred clock anda_plis|clk which controls 235 sequential elements including b2v_inst.dir_mem[7:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

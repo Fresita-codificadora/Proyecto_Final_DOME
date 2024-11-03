@@ -3,18 +3,17 @@ clc
 close all
 offset=-2;
 
-ancho = 863;
-umbral=80;
-
-vectordatos=imagen_a_vector('image.png');
+ancho = 1280;
+umbral=100;
+vectordatos=imagen_a_vector('C:\Users\gazpa\Desktop\imagenes video martin\prueba2\images\frame-23.png');
 len=length(vectordatos);
 indice = 1;
 contador_pixel = 0;
 fifo=uint32(zeros(1,ancho+2));
-energia=zeros(1,1000);
-cantidad=zeros(1,1000);
+energia=zeros(1,2047);
+cantidad=zeros(1,2047);
 eventos=1;
-datos_salida=zeros(1,596333,'uint16');
+datos_salida=zeros(1,1310720,'uint16');
 flag_ignorar = false;
 flag_ignorar_1 = false;
 entro = 0;
@@ -91,7 +90,7 @@ for i=1:len
 end
 figure
 imgTest=vector_a_imagen(datos_salida,ancho);
-imshow(imgTest);
+imshow(imgTest,[]);
 colormap colorcube
 figure
 bar(energia);
@@ -99,3 +98,20 @@ ylim([0,16000]);
 figure
 bar(cantidad);
 ylim([0,64]);
+ind=0;
+for i=1:length(cantidad)
+    if (cantidad(i)>1 & energia(i)<4400)
+        ind=ind+1;
+        energia2(ind)=energia(i);
+    end;
+end;
+figure;
+hist(energia,2^16);
+figure;
+hist(energia,32);
+figure;
+hist(energia2,2^10);
+figure;
+hist(energia2,32);
+figure
+histogram(energia2,'binwidth',32)

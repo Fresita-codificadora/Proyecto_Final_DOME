@@ -1,0 +1,13 @@
+@P:  Worst Slack : -1.958
+@P:  anda_plis_2|clk - Estimated Frequency : 76.6 MHz
+@P:  anda_plis_2|clk - Requested Frequency : 90.1 MHz
+@P:  anda_plis_2|clk - Estimated Period : 13.051
+@P:  anda_plis_2|clk - Requested Period : 11.094
+@P:  anda_plis_2|clk - Slack : -1.958
+@P: anda_plis_2 Part : ice40hx4ktq144
+@P: anda_plis_2 I/O primitives : 29
+@P: anda_plis_2 I/O Register bits : 0
+@P: anda_plis_2 Register bits (Non I/O) : 321 (9%)
+@P: anda_plis_2 Block Rams : 16 of 20 (80%)
+@P: anda_plis_2 Total Luts : 750 (21%)
+@P:  CPU Time : 0h:00m:06s

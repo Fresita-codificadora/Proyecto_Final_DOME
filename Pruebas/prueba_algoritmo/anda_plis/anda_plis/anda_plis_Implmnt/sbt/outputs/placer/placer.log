@@ -1,0 +1,152 @@
+* ******************************************************************************
+
+* iCEcube Placer
+
+* Version:            2020.12.27943
+
+* Build Date:         Dec  9 2020 17:55:50
+
+* File Generated:     Oct 31 2024 19:50:02
+
+* Purpose:            
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Executing : E:\programas\iCEcube2\sbt_backend\bin\win32\opt\sbtplacer.exe --des-lib C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\netlist\oadb-anda_plis_2 --outdir C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\outputs\placer --device-file E:\programas\iCEcube2\sbt_backend\devices\ICE40P04.dev --package TQ144 --deviceMarketName iCE40HX4K --sdc-file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\Temp/sbt_temp.sdc --lib-file E:\programas\iCEcube2\sbt_backend\devices\ice40HX8K.lib --effort_level std --out-sdc-file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\outputs\placer\anda_plis_2_pl.sdc
+I2004: Option and Settings Summary
+=============================================================
+Device file          - E:\programas\iCEcube2\sbt_backend\devices\ICE40P04.dev
+Package              - TQ144
+Design database      - C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\netlist\oadb-anda_plis_2
+SDC file             - C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\Temp/sbt_temp.sdc
+Output directory     - C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\outputs\placer
+Timing library       - E:\programas\iCEcube2\sbt_backend\devices\ice40HX8K.lib
+Effort level         - std
+
+I2050: Starting reading inputs for placer
+=============================================================
+I2100: Reading design library: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis/anda_plis/anda_plis_Implmnt\sbt\netlist\oadb-anda_plis_2/BFPGA_DESIGN_ep
+I2065: Reading device file : E:\programas\iCEcube2\sbt_backend\devices\ICE40P04.dev
+I2051: Reading of inputs for placer completed successfully
+
+I2053: Starting placement of the design
+=============================================================
+
+Input Design Statistics
+    Number of LUTs      	:	750
+    Number of DFFs      	:	321
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	232
+    Number of RAMs      	:	16
+    Number of ROMs      	:	0
+    Number of IOs       	:	28
+    Number of GBIOs     	:	1
+    Number of GBs       	:	2
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+
+Phase 1
+I2077: Start design legalization
+
+Design Legalization Statistics
+    Number of feedthru LUTs inserted to legalize input of DFFs     	:	73
+    Number of feedthru LUTs inserted for LUTs driving multiple DFFs	:	14
+    Number of LUTs replicated for LUTs driving multiple DFFs       	:	13
+    Number of feedthru LUTs inserted to legalize output of CARRYs  	:	12
+    Number of feedthru LUTs inserted to legalize global signals    	:	0
+    Number of feedthru CARRYs inserted to legalize input of CARRYs 	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 01xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 10xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 11xxxx  	:	0
+    Total LUTs inserted                                            	:	112
+    Total CARRYs inserted                                          	:	0
+
+
+I2078: Design legalization is completed successfully
+I2088: Phase 1, elapsed time : 0.0 (sec)
+
+
+Phase 2
+I2088: Phase 2, elapsed time : 0.1 (sec)
+
+Phase 3
+
+Design Statistics after Packing
+    Number of LUTs      	:	863
+    Number of DFFs      	:	321
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	232
+
+Device Utilization Summary after Packing
+    Sequential LogicCells
+        LUT and DFF      	:	294
+        LUT, DFF and CARRY	:	27
+    Combinational LogicCells
+        Only LUT         	:	404
+        CARRY Only       	:	67
+        LUT with CARRY   	:	138
+    LogicCells                  :	930/3520
+    PLBs                        :	137/440
+    BRAMs                       :	16/20
+    IOs and GBIOs               :	29/107
+    PLLs                        :	0/2
+
+
+I2088: Phase 3, elapsed time : 1.7 (sec)
+
+Phase 4
+I2088: Phase 4, elapsed time : 0.2 (sec)
+
+Phase 5
+I2088: Phase 5, elapsed time : 7.6 (sec)
+
+Phase 6
+I2088: Phase 6, elapsed time : 51.5 (sec)
+
+Final Design Statistics
+    Number of LUTs      	:	863
+    Number of DFFs      	:	321
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	232
+    Number of RAMs      	:	16
+    Number of ROMs      	:	0
+    Number of IOs       	:	28
+    Number of GBIOs     	:	1
+    Number of GBs       	:	2
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+Device Utilization Summary
+    LogicCells                  :	930/3520
+    PLBs                        :	208/440
+    BRAMs                       :	16/20
+    IOs and GBIOs               :	29/107
+    PLLs                        :	0/2
+
+
+
+#####################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+=====================================================================
+
+#####################################################################
+                     Clock Summary 
+=====================================================================
+Number of clocks: 1
+Clock: anda_plis_2|clk | Frequency: 79.92 MHz | Target: 90.17 MHz
+
+=====================================================================
+                     End of Clock Summary
+#####################################################################
+
+I2054: Placement of design completed successfully
+
+I2076: Placer run-time: 62.6 sec.
+

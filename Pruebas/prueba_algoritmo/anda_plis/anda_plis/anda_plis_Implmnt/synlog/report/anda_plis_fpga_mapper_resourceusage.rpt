@@ -1,0 +1,38 @@
+---------------------------------------
+Resource Usage Report for anda_plis_2 
+
+Mapping to part: ice40hx4ktq144
+Cell usage:
+GND             7 uses
+SB_CARRY        232 uses
+SB_DFF          30 uses
+SB_DFFE         44 uses
+SB_DFFER        162 uses
+SB_DFFES        1 use
+SB_DFFESR       8 uses
+SB_DFFR         72 uses
+SB_DFFS         3 uses
+SB_DFFSS        1 use
+SB_GB           2 uses
+SB_RAM2048x2    16 uses
+VCC             7 uses
+SB_LUT4         750 uses
+
+I/O ports: 29
+I/O primitives: 29
+SB_GB_IO       1 use
+SB_IO          28 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   321 (9%)
+
+RAM/ROM usage summary
+Block Rams : 16 of 20 (80%)
+
+
+@S |Mapping Summary:
+Total  LUTs: 750 (21%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 750 = 750 
+

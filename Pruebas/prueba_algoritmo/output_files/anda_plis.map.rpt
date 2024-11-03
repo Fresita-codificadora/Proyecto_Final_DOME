@@ -1,5 +1,5 @@
 Analysis & Synthesis report for anda_plis
-Thu Oct 10 10:51:24 2024
+Wed Oct 16 11:11:14 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -22,8 +22,8 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  14. Inverted Register Statistics
  15. Registers Packed Into Inferred Megafunctions
  16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for ram:inst8|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
- 18. Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated
+ 17. Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_og81:auto_generated
+ 18. Source assignments for ram:inst8|altsyncram:mem_rtl_0|altsyncram_9f81:auto_generated
  19. Source assignments for ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
  20. Parameter Settings for User Entity Instance: uart_tx:inst9
  21. Parameter Settings for User Entity Instance: algo_3_final:inst
@@ -32,8 +32,8 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  24. Parameter Settings for User Entity Instance: ram:inst2
  25. Parameter Settings for User Entity Instance: uart_algo:inst4
  26. Parameter Settings for User Entity Instance: UART_RX:inst1
- 27. Parameter Settings for Inferred Entity Instance: ram:inst8|altsyncram:mem_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0
+ 27. Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: ram:inst8|altsyncram:mem_rtl_0
  29. Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0
  30. altsyncram Parameter Settings by Entity Instance
  31. Post-Synthesis Netlist Statistics for Top Partition
@@ -66,18 +66,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 10 10:51:24 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 16 11:11:14 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; anda_plis                                      ;
 ; Top-level Entity Name              ; anda_plis_2                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 759                                            ;
-;     Total combinational functions  ; 675                                            ;
-;     Dedicated logic registers      ; 321                                            ;
-; Total registers                    ; 321                                            ;
-; Total pins                         ; 4                                              ;
+; Total logic elements               ; 776                                            ;
+;     Total combinational functions  ; 688                                            ;
+;     Dedicated logic registers      ; 318                                            ;
+; Total registers                    ; 318                                            ;
+; Total pins                         ; 31                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 63,488                                         ;
+; Total memory bits                  ; 71,680                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -175,49 +175,42 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                         ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
-; algo_3_final.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd       ;         ;
-; uart_tx.v                        ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v              ;         ;
-; UART_RX.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd            ;         ;
-; uart_algo.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd          ;         ;
-; ram.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v                  ;         ;
-; anda_plis_2.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis_2.bdf        ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                             ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                      ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                             ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                             ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                              ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                 ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                 ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                               ;         ;
-; db/altsyncram_7f81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_7f81.tdf ;         ;
-; db/altsyncram_mg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_mg81.tdf ;         ;
-; db/altsyncram_jg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; algo_3_final.vhd                 ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd       ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v              ;         ;
+; UART_RX.vhd                      ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd            ;         ;
+; uart_algo.vhd                    ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd          ;         ;
+; ram.v                            ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v                  ;         ;
+; anda_plis_2.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/anda_plis_2.bdf        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_og81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_og81.tdf ;         ;
+; db/altsyncram_9f81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_9f81.tdf ;         ;
+; db/altsyncram_jg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -225,31 +218,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 759       ;
+; Estimated Total logic elements              ; 776       ;
 ;                                             ;           ;
-; Total combinational functions               ; 675       ;
+; Total combinational functions               ; 688       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 281       ;
-;     -- 3 input functions                    ; 154       ;
-;     -- <=2 input functions                  ; 240       ;
+;     -- 4 input functions                    ; 289       ;
+;     -- 3 input functions                    ; 165       ;
+;     -- <=2 input functions                  ; 234       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 485       ;
-;     -- arithmetic mode                      ; 190       ;
+;     -- normal mode                          ; 502       ;
+;     -- arithmetic mode                      ; 186       ;
 ;                                             ;           ;
-; Total registers                             ; 321       ;
-;     -- Dedicated logic registers            ; 321       ;
+; Total registers                             ; 318       ;
+;     -- Dedicated logic registers            ; 318       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 4         ;
-; Total memory bits                           ; 63488     ;
+; I/O pins                                    ; 31        ;
+; Total memory bits                           ; 71680     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 352       ;
-; Total fan-out                               ; 3712      ;
-; Average fan-out                             ; 3.59      ;
+; Maximum fan-out                             ; 353       ;
+; Total fan-out                               ; 3843      ;
+; Average fan-out                             ; 3.48      ;
 +---------------------------------------------+-----------+
 
 
@@ -258,20 +251,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+-----------------+--------------+
-; |anda_plis_2                              ; 675 (1)             ; 321 (0)                   ; 63488       ; 0            ; 0       ; 0         ; 4    ; 0            ; |anda_plis_2                                                               ; anda_plis_2     ; work         ;
-;    |UART_RX:inst1|                        ; 51 (51)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|UART_RX:inst1                                                 ; UART_RX         ; work         ;
-;    |algo_3_final:inst|                    ; 534 (534)           ; 237 (237)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|algo_3_final:inst                                             ; algo_3_final    ; work         ;
+; |anda_plis_2                              ; 688 (1)             ; 318 (0)                   ; 71680       ; 0            ; 0       ; 0         ; 31   ; 0            ; |anda_plis_2                                                               ; anda_plis_2     ; work         ;
+;    |UART_RX:inst1|                        ; 44 (44)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|UART_RX:inst1                                                 ; UART_RX         ; work         ;
+;    |algo_3_final:inst|                    ; 556 (556)           ; 242 (242)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|algo_3_final:inst                                             ; algo_3_final    ; work         ;
 ;    |ram:inst2|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst2                                                     ; ram             ; work         ;
 ;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst2|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
 ;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81 ; work         ;
-;    |ram:inst7|                            ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7                                                     ; ram             ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_mg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ; altsyncram_mg81 ; work         ;
-;    |ram:inst8|                            ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8                                                     ; ram             ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_7f81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ; altsyncram_7f81 ; work         ;
+;    |ram:inst7|                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7                                                     ; ram             ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_og81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst7|altsyncram:mem_rtl_0|altsyncram_og81:auto_generated ; altsyncram_og81 ; work         ;
+;    |ram:inst8|                            ; 0 (0)               ; 0 (0)                     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8                                                     ; ram             ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_9f81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|ram:inst8|altsyncram:mem_rtl_0|altsyncram_9f81:auto_generated ; altsyncram_9f81 ; work         ;
 ;    |uart_algo:inst4|                      ; 27 (27)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|uart_algo:inst4                                               ; uart_algo       ; work         ;
-;    |uart_tx:inst9|                        ; 62 (62)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|uart_tx:inst9                                                 ; uart_tx         ; work         ;
+;    |uart_tx:inst9|                        ; 60 (60)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |anda_plis_2|uart_tx:inst9                                                 ; uart_tx         ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -282,8 +275,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                     ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
 +--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
 ; ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 11           ; --           ; --           ; 22528 ; None ;
-; ram:inst7|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 14           ; --           ; --           ; 28672 ; None ;
-; ram:inst8|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 6            ; --           ; --           ; 12288 ; None ;
+; ram:inst7|altsyncram:mem_rtl_0|altsyncram_og81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; None ;
+; ram:inst8|altsyncram:mem_rtl_0|altsyncram_9f81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; None ;
 +--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
 
 
@@ -302,44 +295,45 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |anda_plis_2|algo_3_final:inst|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
-+--------------------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
-; Name                           ; state.envio_mem_10 ; state.envio_mem_9 ; state.envio_mem_8 ; state.envio_mem_7 ; state.envio_mem_6 ; state.envio_mem_5 ; state.envio_mem_4 ; state.envio_mem_3 ; state.envio_mem_2 ; state.envio_mem_1 ; state.incremento_indice ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.escritura_2 ; state.escritura_1 ; state.lectura_cantidad_energia ; state.dir_cantidad_energia ; state.casos ; state.lectura_ancho_3 ; state.dir_ancho_3 ; state.lectura_ancho_2 ; state.dir_ancho_2 ; state.lectura_ancho_1 ; state.dir_ancho_1 ; state.lectura_anterior ; state.dir_anterior ; state.nuevo_pix ; state.escritura_erase_2 ; state.escritura_erase_1 ; state.erase ;
-+--------------------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
-; state.erase                    ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 0           ;
-; state.escritura_erase_1        ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 1                       ; 1           ;
-; state.escritura_erase_2        ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 1                       ; 0                       ; 1           ;
-; state.nuevo_pix                ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 1               ; 0                       ; 0                       ; 1           ;
-; state.dir_anterior             ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 1                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.lectura_anterior         ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 1                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.dir_ancho_1              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 1                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.lectura_ancho_1          ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 1                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.dir_ancho_2              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 1                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.lectura_ancho_2          ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 1                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.dir_ancho_3              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 1                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.lectura_ancho_3          ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 1                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.casos                    ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 1           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.dir_cantidad_energia     ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 1                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.lectura_cantidad_energia ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 1                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.escritura_1              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.escritura_2              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 1                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_uart_1             ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 1                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_uart_2             ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 1                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_uart_3             ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 1                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_uart_4             ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 1                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.incremento_indice        ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_1              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_2              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_3              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_4              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_5              ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_6              ; 0                  ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_7              ; 0                  ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_8              ; 0                  ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_9              ; 0                  ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-; state.envio_mem_10             ; 1                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
-+--------------------------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |anda_plis_2|algo_3_final:inst|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------------------------------+--------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
+; Name                           ; state.switch ; state.envio_mem_10 ; state.envio_mem_9 ; state.envio_mem_8 ; state.envio_mem_7 ; state.envio_mem_6 ; state.envio_mem_5 ; state.envio_mem_4 ; state.envio_mem_3 ; state.envio_mem_2 ; state.envio_mem_1 ; state.incremento_indice ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.escritura_2 ; state.escritura_1 ; state.lectura_cantidad_energia ; state.dir_cantidad_energia ; state.casos ; state.lectura_ancho_3 ; state.dir_ancho_3 ; state.lectura_ancho_2 ; state.dir_ancho_2 ; state.lectura_ancho_1 ; state.dir_ancho_1 ; state.lectura_anterior ; state.dir_anterior ; state.nuevo_pix ; state.escritura_erase_2 ; state.escritura_erase_1 ; state.erase ;
++--------------------------------+--------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
+; state.erase                    ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 0           ;
+; state.escritura_erase_1        ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 1                       ; 1           ;
+; state.escritura_erase_2        ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 1                       ; 0                       ; 1           ;
+; state.nuevo_pix                ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 1               ; 0                       ; 0                       ; 1           ;
+; state.dir_anterior             ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 1                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_anterior         ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 1                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_1              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 1                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_1          ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 1                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_2              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 1                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_2          ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 1                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_3              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 1                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_3          ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 1                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.casos                    ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 1           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_cantidad_energia     ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 1                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_cantidad_energia ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 1                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_1              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_2              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 1                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_uart_1             ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 1                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_uart_2             ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 1                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_uart_3             ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 1                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_uart_4             ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 1                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.incremento_indice        ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_1              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_2              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_3              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_4              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_5              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_6              ; 0            ; 0                  ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_7              ; 0            ; 0                  ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_8              ; 0            ; 0                  ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_9              ; 0            ; 0                  ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.envio_mem_10             ; 0            ; 1                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.switch                   ; 1            ; 0                  ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                       ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
++--------------------------------+--------------+--------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------------+--------------------+--------------------+--------------------+--------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
 
 
 Encoding Type:  One-Hot
@@ -361,13 +355,11 @@ Encoding Type:  One-Hot
 ; Register name                            ; Reason for Removal                     ;
 +------------------------------------------+----------------------------------------+
 ; algo_3_final:inst|pix_data_reg[8..10]    ; Stuck at GND due to stuck port data_in ;
-; algo_3_final:inst|energia_temp[14,15]    ; Stuck at GND due to stuck port data_in ;
-; algo_3_final:inst|cantidad_temp[6,7]     ; Stuck at GND due to stuck port data_in ;
 ; algo_3_final:inst|pix_count_anterior[20] ; Stuck at GND due to stuck port data_in ;
 ; uart_tx:inst9|fsm_state~2                ; Lost fanout                            ;
 ; uart_tx:inst9|fsm_state~3                ; Lost fanout                            ;
 ; uart_tx:inst9|fsm_state~4                ; Lost fanout                            ;
-; Total Number of Removed Registers = 11   ;                                        ;
+; Total Number of Removed Registers = 7    ;                                        ;
 +------------------------------------------+----------------------------------------+
 
 
@@ -376,12 +368,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 321   ;
-; Number of registers using Synchronous Clear  ; 60    ;
-; Number of registers using Synchronous Load   ; 37    ;
-; Number of registers using Asynchronous Clear ; 222   ;
+; Total registers                              ; 318   ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 33    ;
+; Number of registers using Asynchronous Clear ; 227   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 231   ;
+; Number of registers using Clock Enable       ; 232   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -404,8 +396,8 @@ Encoding Type:  One-Hot
 +-----------------------+---------------------+------+
 ; Register Name         ; Megafunction        ; Type ;
 +-----------------------+---------------------+------+
-; ram:inst8|dout[0..5]  ; ram:inst8|mem_rtl_0 ; RAM  ;
-; ram:inst7|dout[0..13] ; ram:inst7|mem_rtl_0 ; RAM  ;
+; ram:inst7|dout[0..15] ; ram:inst7|mem_rtl_0 ; RAM  ;
+; ram:inst8|dout[0..7]  ; ram:inst8|mem_rtl_0 ; RAM  ;
 ; ram:inst2|dout[0..10] ; ram:inst2|mem_rtl_0 ; RAM  ;
 +-----------------------+---------------------+------+
 
@@ -415,24 +407,25 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |anda_plis_2|uart_algo:inst4|pix_count_int[14]    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |anda_plis_2|uart_tx:inst9|cycle_counter[2]       ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|bit_counter[2]         ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |anda_plis_2|uart_algo:inst4|pix_count_int[3]     ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|cycle_counter[0]       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|bit_counter[1]         ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|indice[6]          ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|data_to_send[3]        ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|data_a_escribir[3] ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |anda_plis_2|UART_RX:inst1|r_Clk_Count[2]         ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|dir_energia[6]     ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|data_to_send[1]        ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|data_to_send[4]        ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|data_a_escribir[9] ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |anda_plis_2|UART_RX:inst1|r_Clk_Count[2]         ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|dir_energia[5]     ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |anda_plis_2|uart_tx:inst9|data_to_send[0]        ;
 ; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |anda_plis_2|algo_3_final:inst|cuenta[1]          ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |anda_plis_2|UART_RX:inst1|r_Bit_Index            ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |anda_plis_2|algo_3_final:inst|Selector90         ;
-; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |anda_plis_2|algo_3_final:inst|Selector64         ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |anda_plis_2|algo_3_final:inst|Selector114        ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |anda_plis_2|algo_3_final:inst|Selector103        ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |anda_plis_2|algo_3_final:inst|Selector66         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
-; Source assignments for ram:inst8|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ;
+; Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_og81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
 +---------------------------------+--------------------+------+------------------------+
@@ -441,7 +434,7 @@ Encoding Type:  One-Hot
 
 
 +--------------------------------------------------------------------------------------+
-; Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ;
+; Source assignments for ram:inst8|altsyncram:mem_rtl_0|altsyncram_9f81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
 +---------------------------------+--------------------+------+------------------------+
@@ -465,6 +458,7 @@ Encoding Type:  One-Hot
 +----------------+----------+--------------------------------+
 ; PAYLOAD_BITS   ; 8        ; Signed Integer                 ;
 ; CLK_HZ         ; 50000000 ; Signed Integer                 ;
+; BIT_RATE       ; 2000000  ; Signed Integer                 ;
 +----------------+----------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -487,7 +481,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                          ;
 +----------------+-------+-------------------------------+
 ; addr_width     ; 11    ; Signed Integer                ;
-; data_width     ; 6     ; Signed Integer                ;
+; data_width     ; 8     ; Signed Integer                ;
 +----------------+-------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -498,7 +492,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                          ;
 +----------------+-------+-------------------------------+
 ; addr_width     ; 11    ; Signed Integer                ;
-; data_width     ; 14    ; Signed Integer                ;
+; data_width     ; 16    ; Signed Integer                ;
 +----------------+-------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -529,69 +523,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------+
 ; Parameter Name ; Value ; Type                              ;
 +----------------+-------+-----------------------------------+
-; g_clks_per_bit ; 434   ; Signed Integer                    ;
+; g_clks_per_bit ; 25    ; Signed Integer                    ;
 +----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ram:inst8|altsyncram:mem_rtl_0 ;
-+------------------------------------+----------------------+---------------------+
-; Parameter Name                     ; Value                ; Type                ;
-+------------------------------------+----------------------+---------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
-; WIDTH_A                            ; 6                    ; Untyped             ;
-; WIDTHAD_A                          ; 11                   ; Untyped             ;
-; NUMWORDS_A                         ; 2048                 ; Untyped             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
-; WIDTH_B                            ; 1                    ; Untyped             ;
-; WIDTHAD_B                          ; 1                    ; Untyped             ;
-; NUMWORDS_B                         ; 1                    ; Untyped             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
-; BYTE_SIZE                          ; 8                    ; Untyped             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
-; INIT_FILE                          ; UNUSED               ; Untyped             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_7f81      ; Untyped             ;
-+------------------------------------+----------------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -607,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
-; WIDTH_A                            ; 14                   ; Untyped             ;
+; WIDTH_A                            ; 16                   ; Untyped             ;
 ; WIDTHAD_A                          ; 11                   ; Untyped             ;
 ; NUMWORDS_A                         ; 2048                 ; Untyped             ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
@@ -651,7 +584,68 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_mg81      ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_og81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst8|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 8                    ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_9f81      ; Untyped             ;
 +------------------------------------+----------------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -723,9 +717,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                          ;
 +-------------------------------------------+--------------------------------+
 ; Number of entity instances                ; 3                              ;
-; Entity Instance                           ; ram:inst8|altsyncram:mem_rtl_0 ;
+; Entity Instance                           ; ram:inst7|altsyncram:mem_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
-;     -- WIDTH_A                            ; 6                              ;
+;     -- WIDTH_A                            ; 16                             ;
 ;     -- NUMWORDS_A                         ; 2048                           ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
 ;     -- WIDTH_B                            ; 1                              ;
@@ -734,9 +728,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
-; Entity Instance                           ; ram:inst7|altsyncram:mem_rtl_0 ;
+; Entity Instance                           ; ram:inst8|altsyncram:mem_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
-;     -- WIDTH_A                            ; 14                             ;
+;     -- WIDTH_A                            ; 8                              ;
 ;     -- NUMWORDS_A                         ; 2048                           ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
 ;     -- WIDTH_B                            ; 1                              ;
@@ -764,30 +758,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 321                         ;
-;     CLR               ; 49                          ;
-;     ENA               ; 17                          ;
-;     ENA CLR           ; 153                         ;
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 318                         ;
+;     CLR               ; 50                          ;
+;     ENA               ; 21                          ;
+;     ENA CLR           ; 157                         ;
 ;     ENA CLR SCLR      ; 20                          ;
-;     ENA SCLR          ; 15                          ;
+;     ENA SCLR          ; 8                           ;
 ;     ENA SCLR SLD      ; 10                          ;
 ;     ENA SLD           ; 16                          ;
-;     SCLR              ; 5                           ;
-;     SCLR SLD          ; 10                          ;
+;     SCLR              ; 4                           ;
+;     SCLR SLD          ; 6                           ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 25                          ;
-; cycloneiii_lcell_comb ; 675                         ;
-;     arith             ; 190                         ;
-;         2 data inputs ; 150                         ;
+; cycloneiii_lcell_comb ; 688                         ;
+;     arith             ; 186                         ;
+;         2 data inputs ; 146                         ;
 ;         3 data inputs ; 40                          ;
-;     normal            ; 485                         ;
+;     normal            ; 502                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 73                          ;
-;         3 data inputs ; 114                         ;
-;         4 data inputs ; 281                         ;
-; cycloneiii_ram_block  ; 31                          ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 70                          ;
+;         3 data inputs ; 125                         ;
+;         4 data inputs ; 289                         ;
+; cycloneiii_ram_block  ; 35                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
 ; Average LUT depth     ; 3.75                        ;
@@ -799,7 +793,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -809,39 +803,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Oct 10 10:51:17 2024
+    Info: Processing started: Wed Oct 16 11:10:41 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off anda_plis -c anda_plis
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file algo_3_final.vhd
-    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 36
-    Info (12023): Found entity 1: algo_3_final File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 7
+    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 37
+    Info (12023): Found entity 1: algo_3_final File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
-    Info (12023): Found entity 1: uart_tx File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 10
+    Info (12023): Found entity 1: uart_tx File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file uart_rx.vhd
-    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd Line: 31
-    Info (12023): Found entity 1: UART_RX File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd Line: 18
+    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd Line: 31
+    Info (12023): Found entity 1: UART_RX File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/UART_RX.vhd Line: 18
 Info (12021): Found 2 design units, including 1 entities, in source file uart_algo.vhd
-    Info (12022): Found design unit 1: uart_algo-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 27
-    Info (12023): Found entity 1: uart_algo File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 12
+    Info (12022): Found design unit 1: uart_algo-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 27
+    Info (12023): Found entity 1: uart_algo File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_algo.vhd Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file ram.v
-    Info (12023): Found entity 1: ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v Line: 1
+    Info (12023): Found entity 1: ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/ram.v Line: 1
 Info (12021): Found 2 design units, including 1 entities, in source file algoritmo_2.vhd
-    Info (12022): Found design unit 1: Algoritmo_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 56
-    Info (12023): Found entity 1: Algoritmo_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 11
+    Info (12022): Found design unit 1: Algoritmo_2-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 56
+    Info (12023): Found entity 1: Algoritmo_2 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/Algoritmo_2.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file anda_plis.bdf
     Info (12023): Found entity 1: anda_plis
 Info (12021): Found 2 design units, including 1 entities, in source file algo_3.vhd
-    Info (12022): Found design unit 1: algo_3-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3.vhd Line: 36
-    Info (12023): Found entity 1: algo_3 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3.vhd Line: 7
+    Info (12022): Found design unit 1: algo_3-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3.vhd Line: 36
+    Info (12023): Found entity 1: algo_3 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3.vhd Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file anda_plis_2.bdf
     Info (12023): Found entity 1: anda_plis_2
-Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(29): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 29
-Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(41): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 41
+Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 42
 Info (12127): Elaborating entity "anda_plis_2" for the top level hierarchy
 Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst9"
-Warning (10230): Verilog HDL assignment warning at uart_tx.v(136): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 136
-Warning (10230): Verilog HDL assignment warning at uart_tx.v(138): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 138
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(137): truncated value with size 6 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 137
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(139): truncated value with size 6 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/uart_tx.v Line: 139
 Info (12128): Elaborating entity "algo_3_final" for hierarchy "algo_3_final:inst"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst8"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst7"
@@ -849,9 +842,9 @@ Info (12128): Elaborating entity "ram" for hierarchy "ram:inst2"
 Info (12128): Elaborating entity "uart_algo" for hierarchy "uart_algo:inst4"
 Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst1"
 Info (19000): Inferred 3 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst8|mem_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst7|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 6
+        Info (286033): Parameter WIDTH_A set to 16
         Info (286033): Parameter WIDTHAD_A set to 11
         Info (286033): Parameter NUMWORDS_A set to 2048
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
@@ -860,9 +853,9 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst7|mem_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst8|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 14
+        Info (286033): Parameter WIDTH_A set to 8
         Info (286033): Parameter WIDTHAD_A set to 11
         Info (286033): Parameter NUMWORDS_A set to 2048
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
@@ -882,24 +875,10 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "ram:inst8|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "ram:inst8|altsyncram:mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "6"
-    Info (12134): Parameter "WIDTHAD_A" = "11"
-    Info (12134): Parameter "NUMWORDS_A" = "2048"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7f81.tdf
-    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_7f81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst7|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst7|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "14"
+    Info (12134): Parameter "WIDTH_A" = "16"
     Info (12134): Parameter "WIDTHAD_A" = "11"
     Info (12134): Parameter "NUMWORDS_A" = "2048"
     Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
@@ -908,8 +887,22 @@ Info (12133): Instantiated megafunction "ram:inst7|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mg81.tdf
-    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_mg81.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_og81.tdf
+    Info (12023): Found entity 1: altsyncram_og81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_og81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst8|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst8|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9f81.tdf
+    Info (12023): Found entity 1: altsyncram_9f81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_9f81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst2|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst2|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -923,33 +916,33 @@ Info (12133): Instantiated megafunction "ram:inst2|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
-    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf Line: 28
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 102
+    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/db/altsyncram_jg81.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 103
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register algo_3_final:inst|dir_energia[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 102
-    Critical Warning (18010): Register algo_3_final:inst|indice[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 102
-    Critical Warning (18010): Register algo_3_final:inst|dir_mem[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 102
+    Critical Warning (18010): Register algo_3_final:inst|dir_energia[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 103
+    Critical Warning (18010): Register algo_3_final:inst|indice[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 103
+    Critical Warning (18010): Register algo_3_final:inst|dir_mem[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/algo_3_final.vhd Line: 103
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/anda_plis.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/anda_plis.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 813 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 778 logic cells
-    Info (21064): Implemented 31 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Thu Oct 10 10:51:24 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:08
+Info (21057): Implemented 861 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 795 logic cells
+    Info (21064): Implemented 35 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4811 megabytes
+    Info: Processing ended: Wed Oct 16 11:11:14 2024
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:53
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/anda_plis.map.smsg.
+The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/prueba_algoritmo/output_files/anda_plis.map.smsg.
 
 

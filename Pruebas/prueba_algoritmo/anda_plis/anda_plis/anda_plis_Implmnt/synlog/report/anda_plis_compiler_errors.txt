@@ -1,0 +1,3 @@
+@E: CD297 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":133:5:133:6|Width mismatch, location has width 16, value 14
+@E::Errors while synthesizing top module work.anda_plis_2.
+

@@ -1,0 +1,3 @@
+work.syn_hyper_connect work.syn_hyper_connect 
+: 1 work.ram "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v" 2 4 
+: 1 work.uart_tx "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v" 31 0 

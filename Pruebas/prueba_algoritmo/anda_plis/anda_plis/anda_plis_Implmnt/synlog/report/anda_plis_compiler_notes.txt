@@ -1,0 +1,32 @@
+@N|Running in 64-bit mode
+@N:Top-level is not specified. Trying to extract automatically...
+@N|Running in 64-bit mode
+@N: CD720 :"E:\programas\iCEcube2\synpbase\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
+@N:"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":25:7:25:17|Top entity is set to anda_plis_2.
+@N: CD231 :"E:\programas\iCEcube2\synpbase\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N|Running in 64-bit mode
+@N:"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":25:7:25:22|Top-level entity is set to work.anda_plis_2
+@N: CD720 :"E:\programas\iCEcube2\synpbase\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
+@N:"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":25:7:25:17|Top entity is set to anda_plis_2.
+@N: CD231 :"E:\programas\iCEcube2\synpbase\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N: CD630 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":25:7:25:17|Synthesizing work.anda_plis_2.bdf_type.
+@N: CD630 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":12:7:12:15|Synthesizing work.uart_algo.rtl.
+@N: CD233 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_algo.vhd":30:17:30:18|Using sequential encoding for type state_type.
+@N: CD630 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\UART_RX.vhd":18:7:18:13|Synthesizing work.uart_rx.rtl.
+@N: CD231 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\UART_RX.vhd":33:17:33:18|Using onehot encoding for type t_sm_main. For example, enumeration s_idle is mapped to "10000".
+@N: CD604 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\UART_RX.vhd":123:4:123:17|OTHERS clause is not synthesized.
+@N: CD630 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":7:7:7:18|Synthesizing work.algo_3_final.rtl.
+@N: CD231 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":40:17:40:18|Using onehot encoding for type state_type. For example, enumeration erase is mapped to "100000000000000000000000000000000".
+@N: CL201 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\algo_3_final.vhd":103:2:103:3|Trying to extract state machine for register state.
+@N: CL201 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\UART_RX.vhd":61:4:61:5|Trying to extract state machine for register r_SM_Main.
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v":10:7:10:13|Synthesizing module uart_tx in library work.
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=6
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=14
+@N: CG364 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":1:7:1:9|Synthesizing module ram in library work.
+@N: CL134 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\ram.v":11:8:11:13|Found RAM mem, depth=2048, width=11
+@N: CL201 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\uart_tx.v":165:0:165:5|Trying to extract state machine for register fsm_state.
+@N|Running in 64-bit mode
+@N: NF117 :"C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd":215:0:215:8|Number of passed parameters/generics from instance b2v_inst9 does not match cell uart_tx_Z1_layer1 
+

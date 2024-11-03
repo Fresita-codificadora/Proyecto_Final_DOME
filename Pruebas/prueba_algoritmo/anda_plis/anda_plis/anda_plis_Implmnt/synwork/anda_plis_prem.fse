@@ -1,0 +1,96 @@
+
+fsm_encoding {910321031} onehot
+
+fsm_state_encoding {910321031} erase {000000000000000000000000000000001}
+
+fsm_state_encoding {910321031} escritura_erase_1 {000000000000000000000000000000010}
+
+fsm_state_encoding {910321031} escritura_erase_2 {000000000000000000000000000000100}
+
+fsm_state_encoding {910321031} nuevo_pix {000000000000000000000000000001000}
+
+fsm_state_encoding {910321031} dir_anterior {000000000000000000000000000010000}
+
+fsm_state_encoding {910321031} lectura_anterior {000000000000000000000000000100000}
+
+fsm_state_encoding {910321031} dir_ancho_1 {000000000000000000000000001000000}
+
+fsm_state_encoding {910321031} lectura_ancho_1 {000000000000000000000000010000000}
+
+fsm_state_encoding {910321031} dir_ancho_2 {000000000000000000000000100000000}
+
+fsm_state_encoding {910321031} lectura_ancho_2 {000000000000000000000001000000000}
+
+fsm_state_encoding {910321031} dir_ancho_3 {000000000000000000000010000000000}
+
+fsm_state_encoding {910321031} lectura_ancho_3 {000000000000000000000100000000000}
+
+fsm_state_encoding {910321031} casos {000000000000000000001000000000000}
+
+fsm_state_encoding {910321031} dir_cantidad_energia {000000000000000000010000000000000}
+
+fsm_state_encoding {910321031} lectura_cantidad_energia {000000000000000000100000000000000}
+
+fsm_state_encoding {910321031} escritura_1 {000000000000000001000000000000000}
+
+fsm_state_encoding {910321031} escritura_2 {000000000000000010000000000000000}
+
+fsm_state_encoding {910321031} envio_uart_1 {000000000000000100000000000000000}
+
+fsm_state_encoding {910321031} envio_uart_2 {000000000000001000000000000000000}
+
+fsm_state_encoding {910321031} envio_uart_3 {000000000000010000000000000000000}
+
+fsm_state_encoding {910321031} envio_uart_4 {000000000000100000000000000000000}
+
+fsm_state_encoding {910321031} incremento_indice {000000000001000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_1 {000000000010000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_2 {000000000100000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_3 {000000001000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_4 {000000010000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_5 {000000100000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_6 {000001000000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_7 {000010000000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_8 {000100000000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_9 {001000000000000000000000000000000}
+
+fsm_state_encoding {910321031} envio_mem_10 {010000000000000000000000000000000}
+
+fsm_state_encoding {910321031} switch {100000000000000000000000000000000}
+
+fsm_registers {910321031} {state[0]}  {state[1]}  {state[2]}  {state[3]}  {state[4]}  {state[5]}  {state[6]}  {state[7]}  {state[8]}  {state[9]}  {state[10]}  {state[11]}  {state[12]}  {state[13]}  {state[14]}  {state[15]}  {state[16]}  {state[17]}  {state[18]}  {state[19]}  {state[20]}  {state[21]}  {state[22]}  {state[23]}  {state[24]}  {state[25]}  {state[26]}  {state[27]}  {state[28]}  {state[29]}  {state[30]}  {state[31]}  {state[32]} 
+
+fsm_encoding {11614612} sequential
+
+fsm_state_encoding {11614612} s_idle {000}
+
+fsm_state_encoding {11614612} s_rx_start_bit {001}
+
+fsm_state_encoding {11614612} s_rx_data_bits {010}
+
+fsm_state_encoding {11614612} s_rx_stop_bit {011}
+
+fsm_state_encoding {11614612} s_cleanup {100}
+
+fsm_registers {11614612} {r_SM_Main[2]}  {r_SM_Main[1]}  {r_SM_Main[0]} 
+
+fsm_encoding {616501651} sequential
+
+fsm_state_encoding {616501651} 000 {00}
+
+fsm_state_encoding {616501651} 001 {01}
+
+fsm_state_encoding {616501651} 010 {10}
+
+fsm_state_encoding {616501651} 011 {11}
+
+fsm_registers {616501651} {fsm_state[1]}  {fsm_state[0]} 

@@ -1,0 +1,128 @@
+Running in Lattice mode
+
+Starting:    E:\programas\iCEcube2\synpbase\bin64\mbin\synplify.exe
+Install:     E:\programas\iCEcube2\synpbase
+Hostname:    DESKTOP-M6HRPVT
+Date:        Thu Oct 31 10:58:21 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro anda_plis_syn.prj
+ProductType: synplify_pro
+
+
+
+
+auto_infer_blackbox is not supported in current product.
+log file: "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srr"
+Running: anda_plis_Implmnt in foreground
+
+Running anda_plis_syn|anda_plis_Implmnt
+
+Running: compile (Compile) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 10:58:21 2024
+
+Running: compile_flow (Compile Process) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 10:58:21 2024
+
+Running: compiler (Compile Input) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 10:58:21 2024
+compiler exited with errors
+Job failed on: anda_plis_syn|anda_plis_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\synlog\anda_plis_compiler.srr"
+# Thu Oct 31 10:58:22 2024
+
+Return Code: 2
+Run Time:00h:00m:01s
+Complete: Compile Process on anda_plis_syn|anda_plis_Implmnt
+Complete: Compile on anda_plis_syn|anda_plis_Implmnt
+Complete: Logic Synthesis on anda_plis_syn|anda_plis_Implmnt
+New HDL Analyst: enabled
+Opening object source file c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_implmnt\anda_plis.srr
+Opening object source file c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_implmnt\anda_plis.srr
+Opening object source file c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd
+Opening object source file c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd
+log file: "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srr"
+Running: anda_plis_Implmnt in foreground
+
+Running anda_plis_syn|anda_plis_Implmnt
+
+Running: compile (Compile) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:14 2024
+
+Running: compile_flow (Compile Process) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:14 2024
+
+Running: compiler (Compile Input) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:14 2024
+compiler exited with errors
+Job failed on: anda_plis_syn|anda_plis_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\synlog\anda_plis_compiler.srr"
+# Thu Oct 31 11:00:14 2024
+
+Return Code: 2
+Run Time:00h:00m:00s
+Complete: Compile Process on anda_plis_syn|anda_plis_Implmnt
+Complete: Compile on anda_plis_syn|anda_plis_Implmnt
+Complete: Logic Synthesis on anda_plis_syn|anda_plis_Implmnt
+Opening object source file c:\users\gazpa\documents\github\proyecto_final_dome\pruebas\prueba_algoritmo\anda_plis\anda_plis_2.vhd
+log file: "C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srr"
+Running: anda_plis_Implmnt in foreground
+
+Running anda_plis_syn|anda_plis_Implmnt
+
+Running: compile (Compile) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:59 2024
+
+Running: compile_flow (Compile Process) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:59 2024
+
+Running: compiler (Compile Input) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:00:59 2024
+Copied C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\synwork\anda_plis_comp.srs to C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srs
+
+compiler completed
+# Thu Oct 31 11:01:02 2024
+
+Return Code: 0
+Run Time:00h:00m:03s
+
+Running: multi_srs_gen (Multi-srs Generator) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:01:03 2024
+
+multi_srs_gen completed
+# Thu Oct 31 11:01:03 2024
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\synwork\anda_plis_mult.srs to C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srs
+Complete: Compile Process on anda_plis_syn|anda_plis_Implmnt
+
+Running: premap (Pre-mapping) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:01:03 2024
+
+premap completed with warnings
+# Thu Oct 31 11:01:07 2024
+
+Return Code: 1
+Run Time:00h:00m:04s
+Complete: Compile on anda_plis_syn|anda_plis_Implmnt
+
+Running: map (Map) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:01:07 2024
+
+Running: fpga_mapper (Map & Optimize) on anda_plis_syn|anda_plis_Implmnt
+# Thu Oct 31 11:01:07 2024
+Copied C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\synwork\anda_plis_m.srm to C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\anda_plis\anda_plis\anda_plis_Implmnt\anda_plis.srm
+
+fpga_mapper completed with warnings
+# Thu Oct 31 11:01:15 2024
+
+Return Code: 1
+Run Time:00h:00m:08s
+Complete: Map on anda_plis_syn|anda_plis_Implmnt
+Complete: Logic Synthesis on anda_plis_syn|anda_plis_Implmnt
+exit status=2

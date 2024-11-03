@@ -1,0 +1,90 @@
+# Synopsys Constraint Checker, version maplat, Build 1612R, built Dec  5 2016
+# Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+# Written on Thu Oct 31 11:01:31 2024
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "anda_plis_2"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting            Ending              |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+---------------------------------------------------------------------------------------------------------------------------------------------------
+anda_plis_2|clk     anda_plis_2|clk     |     8.373            |     No paths         |     No paths         |     No paths                         
+===================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:leds[0]
+p:leds[1]
+p:leds[2]
+p:leds[3]
+p:leds[4]
+p:leds[5]
+p:leds[6]
+p:leds[7]
+p:leds[8]
+p:leds[9]
+p:leds[10]
+p:leds[11]
+p:leds[12]
+p:leds[13]
+p:reset
+p:swit[0]
+p:swit[1]
+p:swit[2]
+p:swit[3]
+p:swit[4]
+p:swit[5]
+p:swit[6]
+p:swit[7]
+p:swit[8]
+p:swit[9]
+p:swit[10]
+p:uart_rx_i
+p:uart_tx_o
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

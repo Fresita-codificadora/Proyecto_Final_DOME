@@ -69,16 +69,23 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 128)
 		(input)
-		(text "data_ram_energia_i[13..0]" (rect 0 0 103 12)(font "Arial" ))
-		(text "data_ram_energia_i[13..0]" (rect 21 123 124 135)(font "Arial" ))
+		(text "data_ram_energia_i[15..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "data_ram_energia_i[15..0]" (rect 21 123 124 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 0 144)
 		(input)
-		(text "data_ram_cantidad_i[5..0]" (rect 0 0 103 12)(font "Arial" ))
-		(text "data_ram_cantidad_i[5..0]" (rect 21 139 124 151)(font "Arial" ))
+		(text "data_ram_cantidad_i[7..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "data_ram_cantidad_i[7..0]" (rect 21 139 124 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "sw[10..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "sw[10..0]" (rect 21 155 55 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 312 32)
@@ -118,8 +125,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 312 112)
 		(output)
-		(text "data_ram_energia_o[13..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "data_ram_energia_o[13..0]" (rect 184 107 291 119)(font "Arial" ))
+		(text "data_ram_energia_o[15..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "data_ram_energia_o[15..0]" (rect 184 107 291 119)(font "Arial" ))
 		(line (pt 312 112)(pt 296 112)(line_width 3))
 	)
 	(port
@@ -132,8 +139,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 312 144)
 		(output)
-		(text "data_ram_cantidad_o[5..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "data_ram_cantidad_o[5..0]" (rect 184 139 291 151)(font "Arial" ))
+		(text "data_ram_cantidad_o[7..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "data_ram_cantidad_o[7..0]" (rect 184 139 291 151)(font "Arial" ))
 		(line (pt 312 144)(pt 296 144)(line_width 3))
 	)
 	(port

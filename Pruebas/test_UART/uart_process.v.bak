@@ -1,0 +1,31 @@
+module uart_process(
+    input wire          clk,          // Reloj del sistema
+    input wire          resetn,       // Reset activo en bajo
+    input wire          rx_dv,        // Señal de dato recibido
+    input wire  [7:0]   rx_byte,      // Byte recibido desde UART_RX
+    output wire         tx_en,        // Señal de habilitación para enviar dato
+    output wire [7:0]   tx_byte       // Byte que se enviará al UART_TX
+);
+
+    reg [7:0] processed_data;
+    reg tx_en_reg;
+
+    assign tx_en = tx_en_reg;
+    assign tx_byte = processed_data;
+
+    always @(posedge clk or negedge resetn) begin
+        if (!resetn) begin
+            processed_data <= 8'b0;
+            tx_en_reg <= 1'b0;
+        end else if (rx_dv) begin
+            // Suma 10 al dato recibido y lo almacena
+            processed_data <= rx_byte + 8'd10;
+            // Activa la señal de habilitación para transmitir el dato
+            tx_en_reg <= 1'b1;
+        end else begin
+            // Desactiva la señal de habilitación para la siguiente transmisión
+            tx_en_reg <= 1'b0;
+        end
+    end
+
+endmodule
