@@ -3,7 +3,7 @@ clc
 %close all
 % Ruta base de las imágenes
 %%rutaBase ='C:\Users\gazpa\Desktop\imagenes video martin\prueba2\images\'
-rutaBase = 'C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\algoritmoMatlab\images\';
+rutaBase = 'C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_histograma\matlab_code\images\';
 umbral = 100;
 ancho = 1280;
 

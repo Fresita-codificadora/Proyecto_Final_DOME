@@ -73,7 +73,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "r_w_hist" (rect 169 43 203 55)(font "Arial" ))
 		(line (pt 224 48)(pt 208 48)(line_width 1))
 	)
+	(parameter
+		"num_bits"
+		"13"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 208 128)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 240 -64 340 16))
 )

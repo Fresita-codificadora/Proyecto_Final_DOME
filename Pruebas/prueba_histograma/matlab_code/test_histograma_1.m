@@ -1,6 +1,6 @@
 % Configura la comunicación serial
-s = serialport('COM13', 115200); % Cambia 'COM3' por el puerto adecuado
-s.Timeout = 10; % Tiempo de espera en segundos, ajusta si es necesario
+s = serialport('COM9', 115200); % Cambia 'COM3' por el puerto adecuado
+s.Timeout = 1; % Tiempo de espera en segundos, ajusta si es necesario
 
 % Define el vector de datos a enviar
 data_vector = energia2; % Reemplaza con tus valores

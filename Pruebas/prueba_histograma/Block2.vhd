@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
--- CREATED		"Sat Nov  2 10:32:34 2024"
+-- CREATED		"Sat Nov  2 22:41:51 2024"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -35,6 +35,8 @@ END Block2;
 ARCHITECTURE bdf_type OF Block2 IS 
 
 COMPONENT histograma_2
+GENERIC (num_bits : INTEGER
+			);
 	PORT(clk : IN STD_LOGIC;
 		 reset : IN STD_LOGIC;
 		 uart_sending : IN STD_LOGIC;
@@ -95,6 +97,8 @@ BEGIN
 
 
 b2v_inst : histograma_2
+GENERIC MAP(num_bits => 10
+			)
 PORT MAP(clk => clk,
 		 reset => reset,
 		 uart_sending => SYNTHESIZED_WIRE_0,

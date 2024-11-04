@@ -1,15 +1,19 @@
--- Quartus Prime VHDL Template
--- Four-State Moore State Machine
-
--- A Moore machine's outputs are dependent only on the current state.
--- The output is written only when the state changes.  (State
--- transitions are synchronous.)
+-- la variable num_bits define el ancho de los bines siendo el maximo 2**14/32=512
+--2**13/32=256;
+--2**12/32=128;
+--...
+--2**10/32=32; 
+--ademas esto define el maximo admitido del histograma ya que es 2**num_bits, asi que esto
+--debe definirse segun las necesidades del usuario final
 
 library ieee;
 	use ieee.std_logic_1164.all;
 	use ieee.numeric_std.all;
 
 entity Histograma is
+	generic(
+				num_bits : integer :=13
+				);
 
 	port(
 		clk		 					: in	std_logic;
@@ -40,6 +44,7 @@ architecture rtl of Histograma is
 	signal dir_escritura : integer range 0 to 1023 :=0;
 	signal reg_cantidad									: integer range 0 to 64		:=0;
 	signal reg_energia									: integer range 0 to 16384	:=0;--son 14 bits
+	constant ancho_bin : integer := (2**num_bits)/32;
 
 		-- Definimos el histograma como un arreglo de 32 bins de 14 bits.
 	type hist_array is array (1 to 32) of integer range 0 to (2**14-1);
@@ -89,71 +94,71 @@ begin
 						state <= direccion;
 					end if;
 				when histograma =>
-					if (reg_energia >= 0 and reg_energia < 256) then
-						histogram(1) <= histogram(1) + 1;
-					elsif (reg_energia >= 256 and reg_energia < 512) then
-						histogram(2) <= histogram(2) + 1;
-					elsif (reg_energia >= 512 and reg_energia < 768) then
-						histogram(3) <= histogram(3) + 1;
-					elsif (reg_energia >= 768 and reg_energia < 1024) then
-						histogram(4) <= histogram(4) + 1;
-					elsif (reg_energia >= 1024 and reg_energia < 1280) then
-						histogram(5) <= histogram(5) + 1;
-					elsif (reg_energia >= 1280 and reg_energia < 1536) then
-						histogram(6) <= histogram(6) + 1;
-					elsif (reg_energia >= 1536 and reg_energia < 1792) then
-						histogram(7) <= histogram(7) + 1;
-					elsif (reg_energia >= 1792 and reg_energia < 2048) then
-						histogram(8) <= histogram(8) + 1;
-					elsif (reg_energia >= 2048 and reg_energia < 2304) then
-						histogram(9) <= histogram(9) + 1;
-					elsif (reg_energia >= 2304 and reg_energia < 2560) then
-						histogram(10) <= histogram(10) + 1;
-					elsif (reg_energia >= 2560 and reg_energia < 2816) then
-						histogram(11) <= histogram(11) + 1;
-					elsif (reg_energia >= 2816 and reg_energia < 3072) then
-						histogram(12) <= histogram(12) + 1;
-					elsif (reg_energia >= 3072 and reg_energia < 3328) then
-						histogram(13) <= histogram(13) + 1;
-					elsif (reg_energia >= 3328 and reg_energia < 3584) then
-						histogram(14) <= histogram(14) + 1;
-					elsif (reg_energia >= 3584 and reg_energia < 3840) then
-						histogram(15) <= histogram(15) + 1;
-					elsif (reg_energia >= 3840 and reg_energia < 4096) then
-						histogram(16) <= histogram(16) + 1;
-					elsif (reg_energia >= 4096 and reg_energia < 4352) then
-						histogram(17) <= histogram(17) + 1;
-					elsif (reg_energia >= 4352 and reg_energia < 4608) then
-						histogram(18) <= histogram(18) + 1;
-					elsif (reg_energia >= 4608 and reg_energia < 4864) then
-						histogram(19) <= histogram(19) + 1;
-					elsif (reg_energia >= 4864 and reg_energia < 5120) then
-						histogram(20) <= histogram(20) + 1;
-					elsif (reg_energia >= 5120 and reg_energia < 5376) then
-						histogram(21) <= histogram(21) + 1;
-					elsif (reg_energia >= 5376 and reg_energia < 5632) then
-						histogram(22) <= histogram(22) + 1;
-					elsif (reg_energia >= 5632 and reg_energia < 5888) then
-						histogram(23) <= histogram(23) + 1;
-					elsif (reg_energia >= 5888 and reg_energia < 6144) then
-						histogram(24) <= histogram(24) + 1;
-					elsif (reg_energia >= 6144 and reg_energia < 6400) then
-						histogram(25) <= histogram(25) + 1;
-					elsif (reg_energia >= 6400 and reg_energia < 6656) then
-						histogram(26) <= histogram(26) + 1;
-					elsif (reg_energia >= 6656 and reg_energia < 6912) then
-						histogram(27) <= histogram(27) + 1;
-					elsif (reg_energia >= 6912 and reg_energia < 7168) then
-						histogram(28) <= histogram(28) + 1;
-					elsif (reg_energia >= 7168 and reg_energia < 7424) then
-						histogram(29) <= histogram(29) + 1;
-					elsif (reg_energia >= 7424 and reg_energia < 7680) then
-						histogram(30) <= histogram(30) + 1;
-					elsif (reg_energia >= 7680 and reg_energia < 7936) then
-						histogram(31) <= histogram(31) + 1;
-					elsif (reg_energia >= 7936 and reg_energia <= 8192) then
-						histogram(32) <= histogram(32) + 1;
-					else
+					if (reg_energia >= 0 and reg_energia < ancho_bin) then
+					    histogram(1) <= histogram(1) + 1;
+					elsif (reg_energia >= ancho_bin and reg_energia < 2 * ancho_bin) then
+					    histogram(2) <= histogram(2) + 1;
+					elsif (reg_energia >= 2 * ancho_bin and reg_energia < 3 * ancho_bin) then
+					    histogram(3) <= histogram(3) + 1;
+					elsif (reg_energia >= 3 * ancho_bin and reg_energia < 4 * ancho_bin) then
+					    histogram(4) <= histogram(4) + 1;
+					elsif (reg_energia >= 4 * ancho_bin and reg_energia < 5 * ancho_bin) then
+					    histogram(5) <= histogram(5) + 1;
+					elsif (reg_energia >= 5 * ancho_bin and reg_energia < 6 * ancho_bin) then
+					    histogram(6) <= histogram(6) + 1;
+					elsif (reg_energia >= 6 * ancho_bin and reg_energia < 7 * ancho_bin) then
+					    histogram(7) <= histogram(7) + 1;
+					elsif (reg_energia >= 7 * ancho_bin and reg_energia < 8 * ancho_bin) then
+					    histogram(8) <= histogram(8) + 1;
+					elsif (reg_energia >= 8 * ancho_bin and reg_energia < 9 * ancho_bin) then
+					    histogram(9) <= histogram(9) + 1;
+					elsif (reg_energia >= 9 * ancho_bin and reg_energia < 10 * ancho_bin) then
+					    histogram(10) <= histogram(10) + 1;
+					elsif (reg_energia >= 10 * ancho_bin and reg_energia < 11 * ancho_bin) then
+					    histogram(11) <= histogram(11) + 1;
+					elsif (reg_energia >= 11 * ancho_bin and reg_energia < 12 * ancho_bin) then
+					    histogram(12) <= histogram(12) + 1;
+					elsif (reg_energia >= 12 * ancho_bin and reg_energia < 13 * ancho_bin) then
+					    histogram(13) <= histogram(13) + 1;
+					elsif (reg_energia >= 13 * ancho_bin and reg_energia < 14 * ancho_bin) then
+					    histogram(14) <= histogram(14) + 1;
+					elsif (reg_energia >= 14 * ancho_bin and reg_energia < 15 * ancho_bin) then
+					    histogram(15) <= histogram(15) + 1;
+					elsif (reg_energia >= 15 * ancho_bin and reg_energia < 16 * ancho_bin) then
+					    histogram(16) <= histogram(16) + 1;
+					elsif (reg_energia >= 16 * ancho_bin and reg_energia < 17 * ancho_bin) then
+					    histogram(17) <= histogram(17) + 1;
+					elsif (reg_energia >= 17 * ancho_bin and reg_energia < 18 * ancho_bin) then
+					    histogram(18) <= histogram(18) + 1;
+					elsif (reg_energia >= 18 * ancho_bin and reg_energia < 19 * ancho_bin) then
+					    histogram(19) <= histogram(19) + 1;
+					elsif (reg_energia >= 19 * ancho_bin and reg_energia < 20 * ancho_bin) then
+					    histogram(20) <= histogram(20) + 1;
+					elsif (reg_energia >= 20 * ancho_bin and reg_energia < 21 * ancho_bin) then
+					    histogram(21) <= histogram(21) + 1;
+					elsif (reg_energia >= 21 * ancho_bin and reg_energia < 22 * ancho_bin) then
+					    histogram(22) <= histogram(22) + 1;
+					elsif (reg_energia >= 22 * ancho_bin and reg_energia < 23 * ancho_bin) then
+					    histogram(23) <= histogram(23) + 1;
+					elsif (reg_energia >= 23 * ancho_bin and reg_energia < 24 * ancho_bin) then
+					    histogram(24) <= histogram(24) + 1;
+					elsif (reg_energia >= 24 * ancho_bin and reg_energia < 25 * ancho_bin) then
+					    histogram(25) <= histogram(25) + 1;
+					elsif (reg_energia >= 25 * ancho_bin and reg_energia < 26 * ancho_bin) then
+					    histogram(26) <= histogram(26) + 1;
+					elsif (reg_energia >= 26 * ancho_bin and reg_energia < 27 * ancho_bin) then
+					    histogram(27) <= histogram(27) + 1;
+					elsif (reg_energia >= 27 * ancho_bin and reg_energia < 28 * ancho_bin) then
+					    histogram(28) <= histogram(28) + 1;
+					elsif (reg_energia >= 28 * ancho_bin and reg_energia < 29 * ancho_bin) then
+					    histogram(29) <= histogram(29) + 1;
+					elsif (reg_energia >= 29 * ancho_bin and reg_energia < 30 * ancho_bin) then
+					    histogram(30) <= histogram(30) + 1;
+					elsif (reg_energia >= 30 * ancho_bin and reg_energia < 31 * ancho_bin) then
+					    histogram(31) <= histogram(31) + 1;
+					elsif (reg_energia >= 31 * ancho_bin and reg_energia < 32 * ancho_bin) then
+					    histogram(32) <= histogram(32) + 1;
+					else 
 					end if;
 					state <= direccion;	
 				when escritura_1 =>

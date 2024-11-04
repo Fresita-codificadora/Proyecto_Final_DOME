@@ -98,7 +98,7 @@ for i=1:length(cantidad)
     if (cantidad(i)>1 & energia(i)>0)
         ind=ind+1;
         energia2(ind)=energia(i);
-        histo_8192 = histo_8192 + histograma_manopla_8192(energia(i));
+        histo_8192 = histo_8192 + histograma_manopla_1024(energia(i));
     end;
 end;
 
@@ -117,4 +117,4 @@ end;
 % xlim([umbral max(energia2)])
 figure
 bar(histo_8192);
-title('histograma con paso 256');
+title('histograma con paso 32');
