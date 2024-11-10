@@ -1,0 +1,35 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa
+Ecamara
+w1715273760
+DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 0
+R0
+8C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/camara.vhd
+FC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/camara.vhd
+l0
+L9 1
+V@PShVk:0LlHg:jGW5OUgK0
+!s100 H12zOISiRYbadC_?_COZi2
+OL;C;2023.3;77
+33
+!s110 1715273827
+!i10b 1
+!s108 1715273827.000000
+!s90 -reportprogress|300|-2008|-work|work|C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/camara.vhd|
+!s107 C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/programador/camara.vhd|
+!i113 0
+o-2008 -work work
+tExplicit 1 CvgOpt 0

@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/questa
+vhard_block
+Z1 !s110 1715198737
+!i10b 1
+!s100 >0F1@D3=;QWCM8DK_S^641
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I?ChEBXl<HB_J7D`<BRnbV0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1715198626
+Z5 8programador.vo
+Z6 Fprogramador.vo
+!i122 0
+L0 1183 34
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1715198737.000000
+Z9 !s107 programador.vo|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|programador.vo|
+!i113 1
+Z11 o-vlog01compat -work work
+Z12 !s92 -vlog01compat -work work +incdir+.
+Z13 tCvgOpt 0
+vprogramador
+R1
+!i10b 1
+!s100 oKnjHJ7O]Sl6zQ58eob7U1
+R2
+I>o7g1O1cJ^=MPH5hZRbk11
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 32 1150
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+Eprogramador_vhd_vec_tst
+w1715198707
+DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+8C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
+FC:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht
+l0
+L32 1
+Vm;GUh;bFf4=;N<FKzz[162
+!s100 60^f=Y<2:=He6H8T5i<nP3
+OV;C;2020.1;71
+31
+R1
+!i10b 1
+R8
+!s90 -reportprogress|300|-93|-work|work|C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+!s107 C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/programador/simulation/modelsim/Waveform1.vwf.vht|
+!i113 1
+o-93 -work work
+tExplicit 1 CvgOpt 0
