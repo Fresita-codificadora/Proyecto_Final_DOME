@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_sistema_completo
-Tue Nov  5 16:12:26 2024
+Sat Nov 16 09:36:06 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -14,33 +14,43 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |test_sistema_completo|algo_3_final:inst2|state
+  9. State Machine - |test_sistema_completo|uart_tx:inst10|fsm_state
  10. State Machine - |test_sistema_completo|Histograma:inst1|state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Registers Packed Into Inferred Megafunctions
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
- 18. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated
- 19. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
- 20. Source assignments for ram:inst4|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
- 21. Parameter Settings for User Entity Instance: ram:inst7
- 22. Parameter Settings for User Entity Instance: Histograma:inst1
- 23. Parameter Settings for User Entity Instance: ram:inst6
- 24. Parameter Settings for User Entity Instance: algo_3_final:inst2
- 25. Parameter Settings for User Entity Instance: ram:inst5
- 26. Parameter Settings for User Entity Instance: ram:inst4
- 27. Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
- 29. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
- 30. Parameter Settings for Inferred Entity Instance: ram:inst4|altsyncram:mem_rtl_0
- 31. altsyncram Parameter Settings by Entity Instance
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 11. State Machine - |test_sistema_completo|algo_3_final:inst2|state
+ 12. State Machine - |test_sistema_completo|UART_RX:inst9|r_SM_Main
+ 13. State Machine - |test_sistema_completo|coordinador_mod_tes:inst8|state
+ 14. State Machine - |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1|state
+ 15. State Machine - |test_sistema_completo|Programador_controlador_block:inst11|controlador:inst|state
+ 16. Registers Removed During Synthesis
+ 17. Removed Registers Triggering Further Register Optimizations
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Registers Packed Into Inferred Megafunctions
+ 21. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 22. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated
+ 23. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
+ 24. Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
+ 25. Source assignments for ram:inst4|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
+ 26. Parameter Settings for User Entity Instance: UART_RX:inst9
+ 27. Parameter Settings for User Entity Instance: algo_3_final:inst2
+ 28. Parameter Settings for User Entity Instance: ram:inst6
+ 29. Parameter Settings for User Entity Instance: access_ram:inst20
+ 30. Parameter Settings for User Entity Instance: Histograma:inst1
+ 31. Parameter Settings for User Entity Instance: ram:inst5
+ 32. Parameter Settings for User Entity Instance: access_ram:inst18
+ 33. Parameter Settings for User Entity Instance: ram:inst4
+ 34. Parameter Settings for User Entity Instance: uart_tx:inst10
+ 35. Parameter Settings for User Entity Instance: ram:inst7
+ 36. Parameter Settings for User Entity Instance: access_ram:inst13
+ 37. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
+ 38. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
+ 39. Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0
+ 40. Parameter Settings for Inferred Entity Instance: ram:inst4|altsyncram:mem_rtl_0
+ 41. altsyncram Parameter Settings by Entity Instance
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
+ 45. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,16 +77,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov  5 16:12:26 2024          ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 16 09:36:06 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; test_sistema_completo                          ;
 ; Top-level Entity Name              ; test_sistema_completo                          ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 1,541                                          ;
-;     Total combinational functions  ; 1,370                                          ;
-;     Dedicated logic registers      ; 813                                            ;
-; Total registers                    ; 813                                            ;
-; Total pins                         ; 41                                             ;
+; Total logic elements               ; 1,932                                          ;
+;     Total combinational functions  ; 1,734                                          ;
+;     Dedicated logic registers      ; 1,033                                          ;
+; Total registers                    ; 1033                                           ;
+; Total pins                         ; 31                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 77,824                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -176,42 +186,58 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                         ;
-+----------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path             ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                   ; Library ;
-+----------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
-; Histograma/Histograma.vhd                    ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd                    ;         ;
-; Capture_Input_controller/captura_pixeles.vhd ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd ;         ;
-; algoritmo/ram.v                              ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v                              ;         ;
-; algoritmo/algo_3_final.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd                   ;         ;
-; test_sistema_completo.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/test_sistema_completo.bdf                    ;         ;
-; altsyncram.tdf                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                       ;         ;
-; stratix_ram_block.inc                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                ;         ;
-; lpm_mux.inc                                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                          ;         ;
-; lpm_decode.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                       ;         ;
-; aglobal231.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                       ;         ;
-; a_rdenreg.inc                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                        ;         ;
-; altrom.inc                                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                           ;         ;
-; altram.inc                                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                           ;         ;
-; altdpram.inc                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                         ;         ;
-; db/altsyncram_eg81.tdf                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_eg81.tdf                       ;         ;
-; db/altsyncram_mg81.tdf                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_mg81.tdf                       ;         ;
-; db/altsyncram_7f81.tdf                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_7f81.tdf                       ;         ;
-; db/altsyncram_jg81.tdf                       ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_jg81.tdf                       ;         ;
-+----------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                            ;
++-----------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path              ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                     ; Library ;
++-----------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
+; coordinador/access_ram.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/access_ram.vhd                    ;         ;
+; divisor_frecuencia/divisor.vhd                ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/divisor_frecuencia/divisor.vhd                ;         ;
+; coordinador/coordinador_mod_tes.vhd           ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd           ;         ;
+; UART/uart_tx.v                                ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/uart_tx.v                                ;         ;
+; UART/UART_RX.vhd                              ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/UART_RX.vhd                              ;         ;
+; coordinador/decod_control.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/decod_control.vhd                 ;         ;
+; programador/Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/Programador_controlador_block.bdf ;         ;
+; programador/programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/programador.vhd                   ;         ;
+; programador/controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/controlador.vhd                   ;         ;
+; Histograma/Histograma.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd                     ;         ;
+; Capture_Input_controller/captura_pixeles.vhd  ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd  ;         ;
+; algoritmo/ram.v                               ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v                               ;         ;
+; algoritmo/algo_3_final.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd                    ;         ;
+; test_sistema_completo.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/test_sistema_completo.bdf                     ;         ;
+; altsyncram.tdf                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                         ;         ;
+; stratix_ram_block.inc                         ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                  ;         ;
+; lpm_mux.inc                                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                            ;         ;
+; lpm_decode.inc                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                         ;         ;
+; aglobal231.inc                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                         ;         ;
+; a_rdenreg.inc                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                          ;         ;
+; altrom.inc                                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                             ;         ;
+; altram.inc                                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                             ;         ;
+; altdpram.inc                                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                           ;         ;
+; db/altsyncram_mg81.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_mg81.tdf                        ;         ;
+; db/altsyncram_7f81.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_7f81.tdf                        ;         ;
+; db/altsyncram_eg81.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_eg81.tdf                        ;         ;
+; db/altsyncram_jg81.tdf                        ; yes             ; Auto-Generated Megafunction        ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_jg81.tdf                        ;         ;
++-----------------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -219,56 +245,66 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,541     ;
+; Estimated Total logic elements              ; 1,932     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1370      ;
+; Total combinational functions               ; 1734      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 561       ;
-;     -- 3 input functions                    ; 177       ;
-;     -- <=2 input functions                  ; 632       ;
+;     -- 4 input functions                    ; 752       ;
+;     -- 3 input functions                    ; 239       ;
+;     -- <=2 input functions                  ; 743       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 788       ;
-;     -- arithmetic mode                      ; 582       ;
+;     -- normal mode                          ; 1084      ;
+;     -- arithmetic mode                      ; 650       ;
 ;                                             ;           ;
-; Total registers                             ; 813       ;
-;     -- Dedicated logic registers            ; 813       ;
+; Total registers                             ; 1033      ;
+;     -- Dedicated logic registers            ; 1033      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 41        ;
+; I/O pins                                    ; 31        ;
 ; Total memory bits                           ; 77824     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 829       ;
-; Total fan-out                               ; 7804      ;
+; Maximum fan-out                             ; 994       ;
+; Total fan-out                               ; 9721      ;
 ; Average fan-out                             ; 3.38      ;
 +---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name           ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------------+--------------+
-; |test_sistema_completo                    ; 1370 (26)           ; 813 (0)                   ; 77824       ; 0            ; 0       ; 0         ; 41   ; 0            ; |test_sistema_completo                                                               ; test_sistema_completo ; work         ;
-;    |Histograma:inst1|                     ; 875 (875)           ; 504 (504)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|Histograma:inst1                                              ; Histograma            ; work         ;
-;    |algo_3_final:inst2|                   ; 447 (447)           ; 222 (222)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|algo_3_final:inst2                                            ; algo_3_final          ; work         ;
-;    |captura_pixeles:inst3|                ; 22 (22)             ; 87 (87)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|captura_pixeles:inst3                                         ; captura_pixeles       ; work         ;
-;    |ram:inst4|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4                                                     ; ram                   ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4|altsyncram:mem_rtl_0                                ; altsyncram            ; work         ;
-;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81       ; work         ;
-;    |ram:inst5|                            ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5                                                     ; ram                   ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5|altsyncram:mem_rtl_0                                ; altsyncram            ; work         ;
-;          |altsyncram_mg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ; altsyncram_mg81       ; work         ;
-;    |ram:inst6|                            ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6                                                     ; ram                   ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6|altsyncram:mem_rtl_0                                ; altsyncram            ; work         ;
-;          |altsyncram_7f81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ; altsyncram_7f81       ; work         ;
-;    |ram:inst7|                            ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7                                                     ; ram                   ; work         ;
-;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7|altsyncram:mem_rtl_0                                ; altsyncram            ; work         ;
-;          |altsyncram_eg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ; altsyncram_eg81       ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-----------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                        ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-------------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name                   ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-------------------------------+--------------+
+; |test_sistema_completo                    ; 1734 (1)            ; 1033 (0)                  ; 77824       ; 0            ; 0       ; 0         ; 31   ; 0            ; |test_sistema_completo                                                               ; test_sistema_completo         ; work         ;
+;    |Histograma:inst1|                     ; 839 (839)           ; 504 (504)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|Histograma:inst1                                              ; Histograma                    ; work         ;
+;    |Programador_controlador_block:inst11| ; 80 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|Programador_controlador_block:inst11                          ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                  ; 48 (48)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|Programador_controlador_block:inst11|controlador:inst         ; controlador                   ; work         ;
+;       |programador:inst1|                 ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1        ; programador                   ; work         ;
+;    |UART_RX:inst9|                        ; 46 (46)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|UART_RX:inst9                                                 ; UART_RX                       ; work         ;
+;    |access_ram:inst13|                    ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|access_ram:inst13                                             ; access_ram                    ; work         ;
+;    |access_ram:inst18|                    ; 39 (39)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|access_ram:inst18                                             ; access_ram                    ; work         ;
+;    |algo_3_final:inst2|                   ; 433 (433)           ; 222 (222)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|algo_3_final:inst2                                            ; algo_3_final                  ; work         ;
+;    |captura_pixeles:inst3|                ; 22 (22)             ; 87 (87)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|captura_pixeles:inst3                                         ; captura_pixeles               ; work         ;
+;    |coordinador_mod_tes:inst8|            ; 140 (140)           ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes           ; work         ;
+;    |decod_control:inst|                   ; 46 (46)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|decod_control:inst                                            ; decod_control                 ; work         ;
+;    |divisor:inst14|                       ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|divisor:inst14                                                ; divisor                       ; work         ;
+;    |ram:inst4|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst4|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81               ; work         ;
+;    |ram:inst5|                            ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_mg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst5|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ; altsyncram_mg81               ; work         ;
+;    |ram:inst6|                            ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_7f81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst6|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ; altsyncram_7f81               ; work         ;
+;    |ram:inst7|                            ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_eg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ; altsyncram_eg81               ; work         ;
+;    |uart_tx:inst10|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo|uart_tx:inst10                                                ; uart_tx                       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -282,6 +318,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ram:inst6|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 6            ; --           ; --           ; 12288 ; None ;
 ; ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 1024         ; 14           ; --           ; --           ; 14336 ; None ;
 +--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|uart_tx:inst10|fsm_state                                          ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; Name                ; fsm_state.FSM_STOP ; fsm_state.FSM_SEND ; fsm_state.FSM_START ; fsm_state.FSM_IDLE ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; fsm_state.FSM_IDLE  ; 0                  ; 0                  ; 0                   ; 0                  ;
+; fsm_state.FSM_START ; 0                  ; 0                  ; 1                   ; 1                  ;
+; fsm_state.FSM_SEND  ; 0                  ; 1                  ; 0                   ; 1                  ;
+; fsm_state.FSM_STOP  ; 1                  ; 0                  ; 0                   ; 1                  ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|Histograma:inst1|state                                                                                                                                ;
++----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
+; Name                       ; state.fin ; state.cambio_dir_escritura ; state.escritura_2 ; state.escritura_1 ; state.histograma ; state.filtro ; state.lectura ; state.direccion ; state.idle ;
++----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
+; state.idle                 ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 0          ;
+; state.direccion            ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 1               ; 1          ;
+; state.lectura              ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 1             ; 0               ; 1          ;
+; state.filtro               ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 1            ; 0             ; 0               ; 1          ;
+; state.histograma           ; 0         ; 0                          ; 0                 ; 0                 ; 1                ; 0            ; 0             ; 0               ; 1          ;
+; state.escritura_1          ; 0         ; 0                          ; 0                 ; 1                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
+; state.escritura_2          ; 0         ; 0                          ; 1                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
+; state.cambio_dir_escritura ; 0         ; 1                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
+; state.fin                  ; 1         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
++----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -313,46 +380,132 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |test_sistema_completo|Histograma:inst1|state                                                                                                                                ;
-+----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
-; Name                       ; state.fin ; state.cambio_dir_escritura ; state.escritura_2 ; state.escritura_1 ; state.histograma ; state.filtro ; state.lectura ; state.direccion ; state.idle ;
-+----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
-; state.idle                 ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 0          ;
-; state.direccion            ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 1               ; 1          ;
-; state.lectura              ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 1             ; 0               ; 1          ;
-; state.filtro               ; 0         ; 0                          ; 0                 ; 0                 ; 0                ; 1            ; 0             ; 0               ; 1          ;
-; state.histograma           ; 0         ; 0                          ; 0                 ; 0                 ; 1                ; 0            ; 0             ; 0               ; 1          ;
-; state.escritura_1          ; 0         ; 0                          ; 0                 ; 1                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
-; state.escritura_2          ; 0         ; 0                          ; 1                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
-; state.cambio_dir_escritura ; 0         ; 1                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
-; state.fin                  ; 1         ; 0                          ; 0                 ; 0                 ; 0                ; 0            ; 0             ; 0               ; 1          ;
-+----------------------------+-----------+----------------------------+-------------------+-------------------+------------------+--------------+---------------+-----------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|UART_RX:inst9|r_SM_Main                                                                                    ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; Name                     ; r_SM_Main.s_Cleanup ; r_SM_Main.s_RX_Stop_Bit ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_Idle ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; r_SM_Main.s_Idle         ; 0                   ; 0                       ; 0                        ; 0                        ; 0                ;
+; r_SM_Main.s_RX_Start_Bit ; 0                   ; 0                       ; 0                        ; 1                        ; 1                ;
+; r_SM_Main.s_RX_Data_Bits ; 0                   ; 0                       ; 1                        ; 0                        ; 1                ;
+; r_SM_Main.s_RX_Stop_Bit  ; 0                   ; 1                       ; 0                        ; 0                        ; 1                ;
+; r_SM_Main.s_Cleanup      ; 1                   ; 0                       ; 0                        ; 0                        ; 1                ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+----------------------------------------------+----------------------------------------+
-; Register name                                ; Reason for Removal                     ;
-+----------------------------------------------+----------------------------------------+
-; algo_3_final:inst2|pix_data_reg[8..10]       ; Stuck at GND due to stuck port data_in ;
-; Histograma:inst1|reg_cantidad[0]             ; Lost fanout                            ;
-; Histograma:inst1|cuenta[5..10]               ; Stuck at GND due to stuck port data_in ;
-; algo_3_final:inst2|pix_count_anterior[19,20] ; Stuck at GND due to stuck port data_in ;
-; Histograma:inst1|indice_hist[5]              ; Lost fanout                            ;
-; Histograma:inst1|cuenta[2..4]                ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 16       ;                                        ;
-+----------------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|coordinador_mod_tes:inst8|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+---------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------------+------------------------+-------------------+---------------------+------------------------+--------------------+----------------+---------------------+------------------+
+; Name                                   ; state.incremento_addr_histograma_envio ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.lectura_histograma ; state.check_lectura ; state.reset_histograma ; state.esp_fin_escritura ; state.enable_histograma_escritura ; state.esp_fin_histograma ; state.enable_histograma ; state.esp_fin_algorimo ; state.trigger_cam ; state.esp_borrado_2 ; state.trigger_algorimo ; state.trigger_wait ; state.fin_prog ; state.esp_borrado_1 ; state.reset_todo ;
++----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+---------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------------+------------------------+-------------------+---------------------+------------------------+--------------------+----------------+---------------------+------------------+
+; state.reset_todo                       ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 0                ;
+; state.esp_borrado_1                    ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 1                   ; 1                ;
+; state.fin_prog                         ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 1              ; 0                   ; 1                ;
+; state.trigger_wait                     ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 1                  ; 0              ; 0                   ; 1                ;
+; state.trigger_algorimo                 ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 1                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.esp_borrado_2                    ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 1                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.trigger_cam                      ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 1                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.esp_fin_algorimo                 ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 1                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.enable_histograma                ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 1                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.esp_fin_histograma               ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 1                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.enable_histograma_escritura      ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 1                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.esp_fin_escritura                ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 1                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.reset_histograma                 ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 1                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.check_lectura                    ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 1                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.lectura_histograma               ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 1                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.envio_uart_1                     ; 0                                      ; 0                  ; 0                  ; 0                  ; 1                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.envio_uart_2                     ; 0                                      ; 0                  ; 0                  ; 1                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.envio_uart_3                     ; 0                                      ; 0                  ; 1                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.envio_uart_4                     ; 0                                      ; 1                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
+; state.incremento_addr_histograma_envio ; 1                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                   ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                       ; 0                      ; 0                 ; 0                   ; 0                      ; 0                  ; 0              ; 0                   ; 1                ;
++----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+---------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------------+------------------------+-------------------+---------------------+------------------------+--------------------+----------------+---------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                 ;
-+----------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name              ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+----------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Histograma:inst1|cuenta[7] ; Stuck at GND              ; Histograma:inst1|cuenta[2], Histograma:inst1|cuenta[3], Histograma:inst1|cuenta[4] ;
-;                            ; due to stuck port data_in ;                                                                                    ;
-+----------------------------+---------------------------+------------------------------------------------------------------------------------+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1|state                                                                                                                                                   ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+; Name            ; state.stop_2 ; state.stop_1 ; state.idle_2 ; state.error ; state.ack_fin ; state.ack_3 ; state.ack_2 ; state.ack_1 ; state.b_write_3 ; state.b_write_2 ; state.b_write_1 ; state.b_trans ; state.start_2 ; state.start ; state.idle ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+; state.idle      ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 0          ;
+; state.start     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 1           ; 1          ;
+; state.start_2   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 1             ; 0           ; 1          ;
+; state.b_trans   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 1             ; 0             ; 0           ; 1          ;
+; state.b_write_1 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 1               ; 0             ; 0             ; 0           ; 1          ;
+; state.b_write_2 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 1               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.b_write_3 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 1               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_1     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 1           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_2     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 1           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_3     ; 0            ; 0            ; 0            ; 0           ; 0             ; 1           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_fin   ; 0            ; 0            ; 0            ; 0           ; 1             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.error     ; 0            ; 0            ; 0            ; 1           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.idle_2    ; 0            ; 0            ; 1            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_1    ; 0            ; 1            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_2    ; 1            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo|Programador_controlador_block:inst11|controlador:inst|state                                                                                                                                                                              ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
+; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
+; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
+; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
+; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                      ;
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+; Register name                                                         ; Reason for Removal                                                              ;
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+; algo_3_final:inst2|pix_data_reg[8..10]                                ; Stuck at GND due to stuck port data_in                                          ;
+; coordinador_mod_tes:inst8|dir_mem_hist_int[1..4]                      ; Merged with coordinador_mod_tes:inst8|dir_mem_hist_int[0]                       ;
+; Programador_controlador_block:inst11|programador:inst1|data[4]        ; Merged with Programador_controlador_block:inst11|programador:inst1|data[3]      ;
+; Histograma:inst1|reg_cantidad[0]                                      ; Lost fanout                                                                     ;
+; coordinador_mod_tes:inst8|dir_mem_hist_int[0]                         ; Stuck at GND due to stuck port data_in                                          ;
+; Programador_controlador_block:inst11|programador:inst1|data[6]        ; Stuck at GND due to stuck port data_in                                          ;
+; Histograma:inst1|cuenta[10]                                           ; Stuck at GND due to stuck port data_in                                          ;
+; algo_3_final:inst2|pix_count_anterior[19,20]                          ; Stuck at GND due to stuck port data_in                                          ;
+; Histograma:inst1|cuenta[7,8]                                          ; Merged with Histograma:inst1|cuenta[9]                                          ;
+; uart_tx:inst10|fsm_state~2                                            ; Lost fanout                                                                     ;
+; uart_tx:inst10|fsm_state~3                                            ; Lost fanout                                                                     ;
+; uart_tx:inst10|fsm_state~4                                            ; Lost fanout                                                                     ;
+; Programador_controlador_block:inst11|controlador:inst|cuenta_int_2[0] ; Merged with Programador_controlador_block:inst11|controlador:inst|cuenta_int[0] ;
+; Histograma:inst1|cuenta[9]                                            ; Stuck at GND due to stuck port data_in                                          ;
+; Histograma:inst1|indice_hist[5]                                       ; Lost fanout                                                                     ;
+; Histograma:inst1|cuenta[2..6]                                         ; Stuck at GND due to stuck port data_in                                          ;
+; Total Number of Removed Registers = 27                                ;                                                                                 ;
++-----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Histograma:inst1|cuenta[10] ; Stuck at GND              ; Histograma:inst1|cuenta[2], Histograma:inst1|cuenta[3], Histograma:inst1|cuenta[4], ;
+;                             ; due to stuck port data_in ; Histograma:inst1|cuenta[5], Histograma:inst1|cuenta[6]                              ;
++-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -360,12 +513,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 813   ;
-; Number of registers using Synchronous Clear  ; 21    ;
-; Number of registers using Synchronous Load   ; 26    ;
-; Number of registers using Asynchronous Clear ; 764   ;
+; Total registers                              ; 1033  ;
+; Number of registers using Synchronous Clear  ; 81    ;
+; Number of registers using Synchronous Load   ; 52    ;
+; Number of registers using Asynchronous Clear ; 901   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 689   ;
+; Number of registers using Clock Enable       ; 762   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -375,13 +528,14 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; coordinador_mod_tes:inst8|img[0]       ; 2       ;
 ; Histograma:inst1|indice_hist[0]        ; 106     ;
-; Histograma:inst1|cuenta[0]             ; 2       ;
+; Histograma:inst1|cuenta[0]             ; 1       ;
 ; algo_3_final:inst2|eventos[0]          ; 3       ;
 ; algo_3_final:inst2|dir_mem_3[0]        ; 2       ;
 ; algo_3_final:inst2|dir_mem_1[0]        ; 1       ;
 ; algo_3_final:inst2|dir_mem_2[0]        ; 1       ;
-; Total number of inverted registers = 6 ;         ;
+; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
 
 
@@ -390,38 +544,41 @@ Encoding Type:  One-Hot
 +-----------------------+---------------------+------+
 ; Register Name         ; Megafunction        ; Type ;
 +-----------------------+---------------------+------+
-; ram:inst7|dout[0..13] ; ram:inst7|mem_rtl_0 ; RAM  ;
 ; ram:inst5|dout[0..13] ; ram:inst5|mem_rtl_0 ; RAM  ;
 ; ram:inst6|dout[0..5]  ; ram:inst6|mem_rtl_0 ; RAM  ;
+; ram:inst7|dout[0..13] ; ram:inst7|mem_rtl_0 ; RAM  ;
 ; ram:inst4|dout[0..10] ; ram:inst4|mem_rtl_0 ; RAM  ;
 +-----------------------+---------------------+------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |test_sistema_completo|Histograma:inst1|dir_escritura[8]     ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|indice[1]          ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |test_sistema_completo|Histograma:inst1|dir_mem[7]           ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo|Histograma:inst1|cuenta[10]           ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|data_a_escribir[7] ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|cuenta[8]          ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|algo_3_final:inst2|Selector68         ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|gdfx_temp0[7]                         ;
-; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |test_sistema_completo|Histograma:inst1|Mux6                 ;
-; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|algo_3_final:inst2|Selector84         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------+
-; Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ;
-+---------------------------------+--------------------+------+------------------------+
-; Assignment                      ; Value              ; From ; To                     ;
-+---------------------------------+--------------------+------+------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
-+---------------------------------+--------------------+------+------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |test_sistema_completo|uart_tx:inst10|data_to_send[4]                                  ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |test_sistema_completo|uart_tx:inst10|cycle_counter[9]                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |test_sistema_completo|Histograma:inst1|dir_escritura[5]                               ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1|count[2] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |test_sistema_completo|uart_tx:inst10|bit_counter[2]                                   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |test_sistema_completo|Histograma:inst1|dir_mem[2]                                     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1|data[1]  ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|indice[8]                                    ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|data_a_escribir[10]                          ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |test_sistema_completo|UART_RX:inst9|r_Clk_Count[6]                                    ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |test_sistema_completo|algo_3_final:inst2|cuenta[6]                                    ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 12 LEs               ; 60 LEs                 ; Yes        ; |test_sistema_completo|coordinador_mod_tes:inst8|cuenta[11]                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |test_sistema_completo|Programador_controlador_block:inst11|controlador:inst|count[1]  ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo|coordinador_mod_tes:inst8|addr_histograma_int[6]                ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |test_sistema_completo|coordinador_mod_tes:inst8|state                                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|coordinador_mod_tes:inst8|img                                   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|Histograma:inst1|cuenta                                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |test_sistema_completo|UART_RX:inst9|r_Bit_Index                                       ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|access_ram:inst18|addr_o[1]                                     ;
+; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |test_sistema_completo|Histograma:inst1|Mux7                                           ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 34 LEs               ; 17 LEs                 ; No         ; |test_sistema_completo|access_ram:inst20|data_o[4]                                     ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo|algo_3_final:inst2|Selector79                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -443,6 +600,15 @@ Encoding Type:  One-Hot
 
 
 +--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst7|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++--------------------------------------------------------------------------------------+
 ; Source assignments for ram:inst4|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
@@ -451,35 +617,13 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+------------------------+
 
 
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ram:inst7 ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; addr_width     ; 10    ; Signed Integer                ;
-; data_width     ; 14    ; Signed Integer                ;
-+----------------+-------+-------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Histograma:inst1 ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; num_bits       ; 13    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ram:inst6 ;
-+----------------+-------+-------------------------------+
-; Parameter Name ; Value ; Type                          ;
-+----------------+-------+-------------------------------+
-; addr_width     ; 11    ; Signed Integer                ;
-; data_width     ; 6     ; Signed Integer                ;
-+----------------+-------+-------------------------------+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_RX:inst9 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; g_clks_per_bit ; 104   ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -496,6 +640,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst6 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 11    ; Signed Integer                ;
+; data_width     ; 6     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: access_ram:inst20 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; addr_width     ; 11    ; Signed Integer                        ;
+; data_width     ; 6     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Histograma:inst1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; num_bits       ; 13    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: ram:inst5 ;
 +----------------+-------+-------------------------------+
 ; Parameter Name ; Value ; Type                          ;
@@ -503,6 +679,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; addr_width     ; 11    ; Signed Integer                ;
 ; data_width     ; 14    ; Signed Integer                ;
 +----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: access_ram:inst18 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; addr_width     ; 11    ; Signed Integer                        ;
+; data_width     ; 14    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -517,64 +704,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0 ;
-+------------------------------------+----------------------+---------------------+
-; Parameter Name                     ; Value                ; Type                ;
-+------------------------------------+----------------------+---------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
-; WIDTH_A                            ; 14                   ; Untyped             ;
-; WIDTHAD_A                          ; 10                   ; Untyped             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
-; WIDTH_B                            ; 1                    ; Untyped             ;
-; WIDTHAD_B                          ; 1                    ; Untyped             ;
-; NUMWORDS_B                         ; 1                    ; Untyped             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
-; BYTE_SIZE                          ; 8                    ; Untyped             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
-; INIT_FILE                          ; UNUSED               ; Untyped             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_eg81      ; Untyped             ;
-+------------------------------------+----------------------+---------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_tx:inst10 ;
++----------------+----------+---------------------------------+
+; Parameter Name ; Value    ; Type                            ;
++----------------+----------+---------------------------------+
+; PAYLOAD_BITS   ; 8        ; Signed Integer                  ;
+; CLK_HZ         ; 50000000 ; Signed Integer                  ;
+; BIT_RATE       ; 115200   ; Signed Integer                  ;
++----------------+----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst7 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 10    ; Signed Integer                ;
+; data_width     ; 14    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: access_ram:inst13 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; addr_width     ; 10    ; Signed Integer                        ;
+; data_width     ; 14    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -701,6 +861,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst7|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 14                   ; Untyped             ;
+; WIDTHAD_A                          ; 10                   ; Untyped             ;
+; NUMWORDS_A                         ; 1024                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_eg81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: ram:inst4|altsyncram:mem_rtl_0 ;
 +------------------------------------+----------------------+---------------------+
 ; Parameter Name                     ; Value                ; Type                ;
@@ -767,17 +988,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                          ;
 +-------------------------------------------+--------------------------------+
 ; Number of entity instances                ; 4                              ;
-; Entity Instance                           ; ram:inst7|altsyncram:mem_rtl_0 ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
-;     -- WIDTH_A                            ; 14                             ;
-;     -- NUMWORDS_A                         ; 1024                           ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
-;     -- WIDTH_B                            ; 1                              ;
-;     -- NUMWORDS_B                         ; 1                              ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
 ; Entity Instance                           ; ram:inst5|altsyncram:mem_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
 ;     -- WIDTH_A                            ; 14                             ;
@@ -793,6 +1003,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
 ;     -- WIDTH_A                            ; 6                              ;
 ;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
+; Entity Instance                           ; ram:inst7|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 14                             ;
+;     -- NUMWORDS_A                         ; 1024                           ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
 ;     -- WIDTH_B                            ; 1                              ;
 ;     -- NUMWORDS_B                         ; 1                              ;
@@ -819,30 +1040,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 41                          ;
-; cycloneiii_ff         ; 813                         ;
-;     CLR               ; 123                         ;
-;     ENA               ; 22                          ;
-;     ENA CLR           ; 620                         ;
-;     ENA CLR SCLR      ; 11                          ;
-;     ENA CLR SLD       ; 10                          ;
-;     ENA SCLR          ; 10                          ;
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 1033                        ;
+;     CLR               ; 181                         ;
+;     CLR SCLR          ; 28                          ;
+;     CLR SLD           ; 5                           ;
+;     ENA               ; 36                          ;
+;     ENA CLR           ; 651                         ;
+;     ENA CLR SCLR      ; 16                          ;
+;     ENA CLR SLD       ; 20                          ;
+;     ENA SCLR          ; 23                          ;
 ;     ENA SLD           ; 16                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 1370                        ;
-;     arith             ; 582                         ;
-;         2 data inputs ; 500                         ;
-;         3 data inputs ; 82                          ;
-;     normal            ; 788                         ;
+;     SCLR              ; 4                           ;
+;     SCLR SLD          ; 10                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 42                          ;
+; cycloneiii_io_obuf    ; 2                           ;
+; cycloneiii_lcell_comb ; 1735                        ;
+;     arith             ; 650                         ;
+;         2 data inputs ; 577                         ;
+;         3 data inputs ; 73                          ;
+;     normal            ; 1085                        ;
 ;         0 data inputs ; 5                           ;
-;         1 data inputs ; 48                          ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 95                          ;
-;         4 data inputs ; 561                         ;
+;         1 data inputs ; 59                          ;
+;         2 data inputs ; 103                         ;
+;         3 data inputs ; 166                         ;
+;         4 data inputs ; 752                         ;
 ; cycloneiii_ram_block  ; 45                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.23                        ;
+; Average LUT depth     ; 3.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -851,7 +1078,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -861,131 +1088,179 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Nov  5 16:12:05 2024
+    Info: Processing started: Sat Nov 16 09:35:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_sistema_completo -c test_sistema_completo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador/access_ram.vhd
+    Info (12022): Found design unit 1: access_ram-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/access_ram.vhd Line: 24
+    Info (12023): Found entity 1: access_ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/access_ram.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divisor_frecuencia/divisor.vhd
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/divisor_frecuencia/divisor.vhd Line: 11
+    Info (12023): Found entity 1: divisor File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/divisor_frecuencia/divisor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador/coordinador_mod_tes.vhd
+    Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 43
+    Info (12023): Found entity 1: coordinador_mod_tes File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file uart/uart_tx.v
+    Info (12023): Found entity 1: uart_tx File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/uart_tx.v Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file uart/uart_rx.vhd
+    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/UART_RX.vhd Line: 31
+    Info (12023): Found entity 1: UART_RX File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/UART_RX.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador/coordinador.vhd
+    Info (12022): Found design unit 1: coordinador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador.vhd Line: 40
+    Info (12023): Found entity 1: coordinador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador/decod_control.vhd
+    Info (12022): Found design unit 1: decod_control-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/decod_control.vhd Line: 20
+    Info (12023): Found entity 1: decod_control File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/decod_control.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file programador/programador_controlador_block.bdf
     Info (12023): Found entity 1: Programador_controlador_block
 Info (12021): Found 2 design units, including 1 entities, in source file programador/programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/programador.vhd Line: 48
-    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/programador.vhd Line: 30
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/programador.vhd Line: 48
+    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/programador.vhd Line: 30
 Info (12021): Found 2 design units, including 1 entities, in source file programador/controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/controlador.vhd Line: 42
-    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/controlador.vhd Line: 20
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/controlador.vhd Line: 42
+    Info (12023): Found entity 1: controlador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/programador/controlador.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file histograma/histograma.vhd
-    Info (12022): Found design unit 1: Histograma-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 56
-    Info (12023): Found entity 1: Histograma File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 32
+    Info (12022): Found design unit 1: Histograma-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 56
+    Info (12023): Found entity 1: Histograma File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 32
 Info (12021): Found 2 design units, including 1 entities, in source file capture_input_controller/captura_pixeles.vhd
-    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd Line: 30
-    Info (12023): Found entity 1: captura_pixeles File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd Line: 14
+    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd Line: 29
+    Info (12023): Found entity 1: captura_pixeles File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Capture_Input_controller/captura_pixeles.vhd Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file algoritmo/ram.v
-    Info (12023): Found entity 1: ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 1
+    Info (12023): Found entity 1: ram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 1
 Info (12021): Found 2 design units, including 1 entities, in source file algoritmo/algo_3_final.vhd
-    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 43
-    Info (12023): Found entity 1: algo_3_final File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 15
+    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 43
+    Info (12023): Found entity 1: algo_3_final File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file test_sistema_completo.bdf
     Info (12023): Found entity 1: test_sistema_completo
+Info (12021): Found 1 design units, including 1 entities, in source file test_sistema_completo_bak.bdf
+    Info (12023): Found entity 1: test_sistema_completo_bak
+Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/uart_tx.v Line: 42
 Info (12127): Elaborating entity "test_sistema_completo" for the top level hierarchy
-Info (12128): Elaborating entity "ram" for hierarchy "ram:inst7"
-Info (12128): Elaborating entity "Histograma" for hierarchy "Histograma:inst1"
-Info (12128): Elaborating entity "ram" for hierarchy "ram:inst6"
+Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst11"
+Info (12128): Elaborating entity "controlador" for hierarchy "Programador_controlador_block:inst11|controlador:inst"
+Info (12128): Elaborating entity "programador" for hierarchy "Programador_controlador_block:inst11|programador:inst1"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst14"
+Info (12128): Elaborating entity "coordinador_mod_tes" for hierarchy "coordinador_mod_tes:inst8"
+Info (12128): Elaborating entity "decod_control" for hierarchy "decod_control:inst"
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst9"
 Info (12128): Elaborating entity "algo_3_final" for hierarchy "algo_3_final:inst2"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst6"
+Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst20"
+Info (12128): Elaborating entity "Histograma" for hierarchy "Histograma:inst1"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst5"
+Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst18"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst4"
 Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst3"
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst10"
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(137): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/uart_tx.v Line: 137
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(139): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/UART/uart_tx.v Line: 139
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst7"
+Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst13"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "gdfx_temp1" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[10]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[9]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[8]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[7]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[6]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[5]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[4]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[3]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[2]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[1]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13048): Converted tri-state node "gdfx_temp0[0]" into a selector File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/ram.v Line: 9
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 36
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
-    Warning (13049): Converted tri-state buffer "Histograma:inst1|r_w_hist" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 48
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_data[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 46
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|hist_addr[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 47
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|r_w_hist" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 48
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|cant_ener_addr[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 49
+    Warning (13049): Converted tri-state buffer "Histograma:inst1|r_w_cant_ener" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 50
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_cantidad_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 35
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram_energia[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_energia_o[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|we" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 29
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|addr_ram[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "algo_3_final:inst2|data_ram_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|r_w_histograma" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 38
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
+    Warning (13049): Converted tri-state buffer "coordinador_mod_tes:inst8|addr_histograma[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 37
 Info (19000): Inferred 4 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst7|mem_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 14
-        Info (286033): Parameter WIDTHAD_A set to 10
-        Info (286033): Parameter NUMWORDS_A set to 1024
-        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
-        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst5|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 14
@@ -1008,6 +1283,17 @@ Info (19000): Inferred 4 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst7|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 14
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst4|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 11
@@ -1019,20 +1305,6 @@ Info (19000): Inferred 4 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "ram:inst7|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "ram:inst7|altsyncram:mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "14"
-    Info (12134): Parameter "WIDTHAD_A" = "10"
-    Info (12134): Parameter "NUMWORDS_A" = "1024"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eg81.tdf
-    Info (12023): Found entity 1: altsyncram_eg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_eg81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst5|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst5|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -1046,7 +1318,7 @@ Info (12133): Instantiated megafunction "ram:inst5|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mg81.tdf
-    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_mg81.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_mg81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst6|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst6|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -1060,7 +1332,21 @@ Info (12133): Instantiated megafunction "ram:inst6|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7f81.tdf
-    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_7f81.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_7f81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst7|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst7|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "14"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eg81.tdf
+    Info (12023): Found entity 1: altsyncram_eg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_eg81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst4|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst4|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -1074,33 +1360,35 @@ Info (12133): Instantiated megafunction "ram:inst4|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
-    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_jg81.tdf Line: 28
-Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Histograma/Histograma.vhd Line: 79
+    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/db/altsyncram_jg81.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 65
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register algo_3_final:inst2|dir_energia[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
-    Critical Warning (18010): Register algo_3_final:inst2|indice[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
-    Critical Warning (18010): Register algo_3_final:inst2|dir_mem[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/output_files/test_sistema_completo.map.smsg
+    Critical Warning (18010): Register coordinador_mod_tes:inst8|img[0] will power up to High File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/coordinador/coordinador_mod_tes.vhd Line: 65
+    Critical Warning (18010): Register algo_3_final:inst2|dir_energia[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
+    Critical Warning (18010): Register algo_3_final:inst2|indice[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
+    Critical Warning (18010): Register algo_3_final:inst2|dir_mem[0] will power up to Low File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/algoritmo/algo_3_final.vhd Line: 108
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/output_files/test_sistema_completo.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1646 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 1560 logic cells
+Info (21057): Implemented 2034 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 1958 logic cells
     Info (21064): Implemented 45 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Tue Nov  5 16:12:26 2024
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:43
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 4896 megabytes
+    Info: Processing ended: Sat Nov 16 09:36:06 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/output_files/test_sistema_completo.map.smsg.
+The suppressed messages can be found in C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/output_files/test_sistema_completo.map.smsg.
 
 

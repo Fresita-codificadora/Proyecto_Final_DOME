@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity access_ram is
+  generic (
+    addr_width : integer := 10;
+    data_width : integer := 16
+  )
+  port (
+    selector : in std_logic;
+    addr_1   : in std_logic_vector(addr_width - 1 downto 0);
+    data_1   : in std_logic_vector(data_width - 1 downto 0);
+    addr_2   : in std_logic_vector(addr_width - 1 downto 0);
+    data_2   : in std_logic_vector(data_width - 1 downto 0);
+    --salidas
+    addr_o : in std_logic_vector(addr_width - 1 downto 0);
+    data_o : in std_logic_vector(data_width - 1 downto 0)
+  );
+end entity access_ram;
+
+architecture rtl of access_ram is
+
+begin
+  process (all)
+  begin
+    if selector = '1' then
+      addr_o <= addr_2;
+      data_o <= data_2;
+    else
+      addr_o <= addr_2;
+      data_o <= data_2;
+    end if;
+  end process;
+end architecture;

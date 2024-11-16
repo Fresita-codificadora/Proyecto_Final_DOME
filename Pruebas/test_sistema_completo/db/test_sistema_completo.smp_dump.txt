@@ -1,4 +1,23 @@
 
+State Machine - |test_sistema_completo|uart_tx:inst10|fsm_state
+Name fsm_state.FSM_STOP fsm_state.FSM_SEND fsm_state.FSM_START fsm_state.FSM_IDLE 
+fsm_state.FSM_IDLE 0 0 0 0 
+fsm_state.FSM_START 0 0 1 1 
+fsm_state.FSM_SEND 0 1 0 1 
+fsm_state.FSM_STOP 1 0 0 1 
+
+State Machine - |test_sistema_completo|Histograma:inst1|state
+Name state.fin state.cambio_dir_escritura state.escritura_2 state.escritura_1 state.histograma state.filtro state.lectura state.direccion state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 
+state.direccion 0 0 0 0 0 0 0 1 1 
+state.lectura 0 0 0 0 0 0 1 0 1 
+state.filtro 0 0 0 0 0 1 0 0 1 
+state.histograma 0 0 0 0 1 0 0 0 1 
+state.escritura_1 0 0 0 1 0 0 0 0 1 
+state.escritura_2 0 0 1 0 0 0 0 0 1 
+state.cambio_dir_escritura 0 1 0 0 0 0 0 0 1 
+state.fin 1 0 0 0 0 0 0 0 1 
+
 State Machine - |test_sistema_completo|algo_3_final:inst2|state
 Name state.fin state.incremento_indice state.escritura_2 state.escritura_1 state.lectura_cantidad_energia state.dir_cantidad_energia state.casos state.lectura_ancho_3 state.dir_ancho_3 state.lectura_ancho_2 state.dir_ancho_2 state.lectura_ancho_1 state.dir_ancho_1 state.lectura_anterior state.dir_anterior state.nuevo_pix state.escritura_erase_2 state.escritura_erase_1 state.erase 
 state.erase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
@@ -21,14 +40,72 @@ state.escritura_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 state.incremento_indice 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state.fin 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |test_sistema_completo|Histograma:inst1|state
-Name state.fin state.cambio_dir_escritura state.escritura_2 state.escritura_1 state.histograma state.filtro state.lectura state.direccion state.idle 
-state.idle 0 0 0 0 0 0 0 0 0 
-state.direccion 0 0 0 0 0 0 0 1 1 
-state.lectura 0 0 0 0 0 0 1 0 1 
-state.filtro 0 0 0 0 0 1 0 0 1 
-state.histograma 0 0 0 0 1 0 0 0 1 
-state.escritura_1 0 0 0 1 0 0 0 0 1 
-state.escritura_2 0 0 1 0 0 0 0 0 1 
-state.cambio_dir_escritura 0 1 0 0 0 0 0 0 1 
-state.fin 1 0 0 0 0 0 0 0 1 
+State Machine - |test_sistema_completo|UART_RX:inst9|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_RX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
+
+State Machine - |test_sistema_completo|coordinador_mod_tes:inst8|state
+Name state.incremento_addr_histograma_envio state.envio_uart_4 state.envio_uart_3 state.envio_uart_2 state.envio_uart_1 state.lectura_histograma state.check_lectura state.reset_histograma state.esp_fin_escritura state.enable_histograma_escritura state.esp_fin_histograma state.enable_histograma state.esp_fin_algorimo state.trigger_cam state.esp_borrado_2 state.trigger_algorimo state.trigger_wait state.fin_prog state.esp_borrado_1 state.reset_todo 
+state.reset_todo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.esp_borrado_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.fin_prog 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.trigger_wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.trigger_algorimo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.esp_borrado_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.trigger_cam 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.esp_fin_algorimo 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.enable_histograma 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.esp_fin_histograma 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.enable_histograma_escritura 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.esp_fin_escritura 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.reset_histograma 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.check_lectura 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.lectura_histograma 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_4 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_addr_histograma_envio 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test_sistema_completo|Programador_controlador_block:inst11|programador:inst1|state
+Name state.stop_2 state.stop_1 state.idle_2 state.error state.ack_fin state.ack_3 state.ack_2 state.ack_1 state.b_write_3 state.b_write_2 state.b_write_1 state.b_trans state.start_2 state.start state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.start_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.b_trans 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.b_write_1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.b_write_2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.b_write_3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.ack_1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.ack_2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.ack_3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.ack_fin 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.error 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.idle_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test_sistema_completo|Programador_controlador_block:inst11|controlador:inst|state
+Name state.done state.stop_2 state.dw_00_2 state.dp_00_2 state.dw_81 state.dp_81 state.dw_1E state.dp_1E state.dp_BA_2 state.stop_1 state.dw_02 state.dp_02 state.dw_00 state.dp_00 state.dw_07 state.dp_07 state.dp_BA state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.dp_BA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.dp_07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.dw_07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.dp_00 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.dw_00 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dp_02 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.dw_02 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.stop_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.dp_BA_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.dp_1E 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.dw_1E 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.dp_81 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dw_81 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dp_00_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dw_00_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.stop_2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.done 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

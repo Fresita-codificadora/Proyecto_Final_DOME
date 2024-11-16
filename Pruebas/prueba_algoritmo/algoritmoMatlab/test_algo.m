@@ -92,10 +92,17 @@ for i=1:len
         indice = 1;
    end
 end
+%% filtrado
+for i=1:length(energia)
+    if energia(i)>1
+        energia2=energia;
+    end;
+end;
 figure
 imgTest=vector_a_imagen(datos_salida,ancho);
 imshow(imgTest,[]);
 colormap colorcube
+<<<<<<< Updated upstream
 % figure
 % bar(energia);
 % ylim([0,16000]);
@@ -119,3 +126,13 @@ end;
 % hist(energia2,32);
 % figure
 % histogram(energia2,'binwidth',32)
+=======
+figure
+bar(energia);
+ylim([0,16000]);
+figure
+bar(cantidad);
+ylim([0,64]);
+figure
+hist(energia,32768);
+>>>>>>> Stashed changes

@@ -4,123 +4,71 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "histo[13]",
+					"name" : "sca_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[12]",
+					"name" : "Uart_tx_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[11]",
+					"name" : "trigger_cam_out",
 					"strict" : false
 				},
 				{
-					"name" : "histo[10]",
+					"name" : "pix_clk_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[9]",
+					"name" : "frame_valid_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[8]",
+					"name" : "line_valid_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[7]",
+					"name" : "trigger_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[6]",
+					"name" : "clk_cam_o",
 					"strict" : false
 				},
 				{
-					"name" : "histo[5]",
+					"name" : "pix_data_o[7]",
 					"strict" : false
 				},
 				{
-					"name" : "histo[4]",
+					"name" : "pix_data_o[6]",
 					"strict" : false
 				},
 				{
-					"name" : "histo[3]",
+					"name" : "pix_data_o[5]",
 					"strict" : false
 				},
 				{
-					"name" : "histo[2]",
+					"name" : "pix_data_o[4]",
 					"strict" : false
 				},
 				{
-					"name" : "histo[1]",
+					"name" : "pix_data_o[3]",
 					"strict" : false
 				},
 				{
-					"name" : "histo[0]",
+					"name" : "pix_data_o[2]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "pix_data_o[1]",
 					"strict" : false
 				},
 				{
-					"name" : "vorrar3",
+					"name" : "pix_data_o[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dir[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dir[0]",
-					"strict" : false
-				},
-				{
-					"name" : "borrar",
-					"strict" : false
-				},
-				{
-					"name" : "borrar2",
-					"strict" : false
-				},
-				{
-					"name" : "puto2",
-					"strict" : false
-				},
-				{
-					"name" : "puto",
+					"name" : "sda_o",
 					"strict" : false
 				},
 				{
@@ -128,11 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "line_valid_i",
+					"name" : "frame_valid_i",
 					"strict" : false
 				},
 				{
-					"name" : "frame_valid_i",
+					"name" : "line_valid_i",
 					"strict" : false
 				},
 				{
@@ -165,6 +113,18 @@
 				},
 				{
 					"name" : "pix_data_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "Uart_rx_i",
 					"strict" : false
 				}
 			]

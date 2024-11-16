@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/output_files/") File("sram_cic_v2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/output_files/") File("sram_cic_v2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,5 +1,5 @@
 Flow report for sram_cic_v2
-Fri Sep  6 21:57:44 2024
+Sat Nov 16 12:46:31 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Sep  6 21:57:44 2024          ;
+; Flow Status                        ; Successful - Sat Nov 16 12:46:31 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram_cic_v2                                    ;
 ; Top-level Entity Name              ; sram_cic_v2_2                                  ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/06/2024 21:55:41 ;
+; Start date & time ; 11/16/2024 12:46:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sram_cic_v2         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 233654134201047.172567054105976        ; --            ; --            ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 238300918768197.173177196529640        ; --            ; --            ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_signal_integrity ;
@@ -104,12 +104,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4795 MB             ; 00:00:42                           ;
-; Fitter               ; 00:01:11     ; 1.0                     ; 5430 MB             ; 00:00:56                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 4701 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 4842 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4650 MB             ; 00:00:01                           ;
-; Total                ; 00:01:53     ; --                      ; --                  ; 00:01:53                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4857 MB             ; 00:00:08                           ;
+; Fitter               ; 00:00:12     ; 1.1                     ; 6315 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4705 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4960 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4655 MB             ; 00:00:00                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,11 +118,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-M6HRPVT  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-M6HRPVT  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-M6HRPVT  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-M6HRPVT  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-M6HRPVT  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-7HK4TPK  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

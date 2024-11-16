@@ -1,0 +1,34 @@
+
+State Machine - |test_sistema_completo|algo_3_final:inst2|state
+Name state.fin state.incremento_indice state.escritura_2 state.escritura_1 state.lectura_cantidad_energia state.dir_cantidad_energia state.casos state.lectura_ancho_3 state.dir_ancho_3 state.lectura_ancho_2 state.dir_ancho_2 state.lectura_ancho_1 state.dir_ancho_1 state.lectura_anterior state.dir_anterior state.nuevo_pix state.escritura_erase_2 state.escritura_erase_1 state.erase 
+state.erase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.escritura_erase_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.escritura_erase_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.nuevo_pix 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.dir_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.lectura_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dir_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.lectura_ancho_1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.dir_ancho_2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.lectura_ancho_2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.dir_ancho_3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.lectura_ancho_3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.casos 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dir_cantidad_energia 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.lectura_cantidad_energia 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_indice 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.fin 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |test_sistema_completo|Histograma:inst1|state
+Name state.fin state.cambio_dir_escritura state.escritura_2 state.escritura_1 state.histograma state.filtro state.lectura state.direccion state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 
+state.direccion 0 0 0 0 0 0 0 1 1 
+state.lectura 0 0 0 0 0 0 1 0 1 
+state.filtro 0 0 0 0 0 1 0 0 1 
+state.histograma 0 0 0 0 1 0 0 0 1 
+state.escritura_1 0 0 0 1 0 0 0 0 1 
+state.escritura_2 0 0 1 0 0 0 0 0 1 
+state.cambio_dir_escritura 0 1 0 0 0 0 0 0 1 
+state.fin 1 0 0 0 0 0 0 0 1 

@@ -792,82 +792,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 1608 288 1920 400)
-	(text "uart_tx" (rect 5 0 39 12)(font "Arial" ))
-	(text "inst6" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetn" (rect 0 0 30 12)(font "Arial" ))
-		(text "resetn" (rect 21 43 51 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "uart_tx_en" (rect 0 0 51 12)(font "Arial" ))
-		(text "uart_tx_en" (rect 21 59 72 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 0 0 179 12)(font "Arial" ))
-		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 21 75 200 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 312 32)
-		(output)
-		(text "uart_txd" (rect 0 0 40 12)(font "Arial" ))
-		(text "uart_txd" (rect 258 27 298 39)(font "Arial" ))
-		(line (pt 312 32)(pt 296 32))
-	)
-	(port
-		(pt 312 48)
-		(output)
-		(text "uart_tx_busy" (rect 0 0 64 12)(font "Arial" ))
-		(text "uart_tx_busy" (rect 237 43 301 55)(font "Arial" ))
-		(line (pt 312 48)(pt 296 48))
-	)
-	(parameter
-		"BIT_RATE"
-		"115200"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"CLK_HZ"
-		"50000000"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PAYLOAD_BITS"
-		"8"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"STOP_BITS"
-		"1"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"g_CLKS_PER_BIT"
-		"5208"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 296 96))
-	)
-	(annotation_block (parameter)(rect 1928 384 2160 498))
-)
-(symbol
 	(rect 816 -56 848 -24)
 	(text "GND" (rect 16 3 26 24)(font "Arial" (font_size 6))(vertical))
 	(text "inst5" (rect 21 7 38 29)(font "Intel Clear" )(vertical)(invisible))
@@ -1124,6 +1048,72 @@ https://fpgasoftware.intel.com/eula.
 	(drawing
 		(rectangle (rect 16 16 248 224))
 	)
+)
+(symbol
+	(rect 1608 288 1920 400)
+	(text "uart_tx" (rect 5 0 39 12)(font "Arial" ))
+	(text "inst6" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetn" (rect 0 0 30 12)(font "Arial" ))
+		(text "resetn" (rect 21 43 51 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "uart_tx_en" (rect 0 0 51 12)(font "Arial" ))
+		(text "uart_tx_en" (rect 21 59 72 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 0 0 179 12)(font "Arial" ))
+		(text "uart_tx_data[(PAYLOAD_BITS-1)..0]" (rect 21 75 200 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 312 32)
+		(output)
+		(text "uart_txd" (rect 0 0 40 12)(font "Arial" ))
+		(text "uart_txd" (rect 258 27 298 39)(font "Arial" ))
+		(line (pt 312 32)(pt 296 32))
+	)
+	(port
+		(pt 312 48)
+		(output)
+		(text "uart_tx_busy" (rect 0 0 64 12)(font "Arial" ))
+		(text "uart_tx_busy" (rect 237 43 301 55)(font "Arial" ))
+		(line (pt 312 48)(pt 296 48))
+	)
+	(parameter
+		"PAYLOAD_BITS"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CLK_HZ"
+		"50000000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"BIT_RATE"
+		"115200"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 296 96))
+	)
+	(annotation_block (parameter)(rect 1920 416 2143 492))
 )
 (connector
 	(pt 952 440)
@@ -1472,10 +1462,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 432 192)
 )
 (connector
-	(pt 832 472)
-	(pt 840 472)
-)
-(connector
 	(pt 840 472)
 	(pt 872 472)
 )
@@ -1739,7 +1725,6 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1128 424))
 (junction (pt 624 408))
 (junction (pt 88 192))
-(junction (pt 840 472))
 (junction (pt 1568 352))
 (junction (pt 904 496))
 (junction (pt 1928 8))
