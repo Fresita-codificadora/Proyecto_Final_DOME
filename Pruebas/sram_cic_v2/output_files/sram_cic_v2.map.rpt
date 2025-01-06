@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sram_cic_v2
-Sat Nov 16 12:46:11 2024
+Wed Dec 11 18:51:10 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,22 +10,8 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |sram_cic_v2_2|sram_CIC:inst1|state
-  9. State Machine - |sram_cic_v2_2|uart_tx:inst6|fsm_state
- 10. State Machine - |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|state
- 11. State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|state
- 12. State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst|state
- 13. Registers Removed During Synthesis
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Parameter Settings for User Entity Instance: uart_tx:inst6
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,20 +38,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 16 12:46:11 2024          ;
+; Analysis & Synthesis Status        ; Failed - Wed Dec 11 18:51:10 2024              ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; sram_cic_v2                                    ;
 ; Top-level Entity Name              ; sram_cic_v2_2                                  ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 478                                            ;
-;     Total combinational functions  ; 330                                            ;
-;     Dedicated logic registers      ; 346                                            ;
-; Total registers                    ; 346                                            ;
-; Total pins                         ; 94                                             ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -161,297 +147,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
-+-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                               ; Library ;
-+-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
-; captura_pixeles.vhd               ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd               ;         ;
-; prueba_1.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd                      ;         ;
-; uart_tx.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v                         ;         ;
-; sram_cic_v2_2.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_cic_v2_2.bdf                 ;         ;
-; divisor.vhd                       ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd                       ;         ;
-; sram.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd                          ;         ;
-; Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Programador_controlador_block.bdf ;         ;
-; controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd                   ;         ;
-; programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd                   ;         ;
-; sram_CIC.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd                      ;         ;
-; Controlador_sram_CIC_UART.vhd     ; yes             ; User VHDL File                     ; C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd     ;         ;
-+-----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 478          ;
-;                                             ;              ;
-; Total combinational functions               ; 330          ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 182          ;
-;     -- 3 input functions                    ; 43           ;
-;     -- <=2 input functions                  ; 105          ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 256          ;
-;     -- arithmetic mode                      ; 74           ;
-;                                             ;              ;
-; Total registers                             ; 346          ;
-;     -- Dedicated logic registers            ; 346          ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 94           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; clk_50~input ;
-; Maximum fan-out                             ; 262          ;
-; Total fan-out                               ; 2351         ;
-; Average fan-out                             ; 2.67         ;
-+---------------------------------------------+--------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                       ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name                   ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------------------------+--------------+
-; |sram_cic_v2_2                           ; 330 (1)             ; 346 (0)                   ; 0           ; 0            ; 0       ; 0         ; 94   ; 0            ; |sram_cic_v2_2                                                       ; sram_cic_v2_2                 ; work         ;
-;    |Controlador_sram_CIC_UART:inst7|     ; 106 (106)           ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7                       ; Controlador_sram_CIC_UART     ; work         ;
-;    |Programador_controlador_block:inst3| ; 81 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3                   ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                 ; 49 (49)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst  ; controlador                   ; work         ;
-;       |programador:inst1|                ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1 ; programador                   ; work         ;
-;    |captura_pixeles:inst|                ; 23 (23)             ; 87 (87)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|captura_pixeles:inst                                  ; captura_pixeles               ; work         ;
-;    |divisor:inst4|                       ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|divisor:inst4                                         ; divisor                       ; work         ;
-;    |prueba_1:inst2|                      ; 13 (13)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|prueba_1:inst2                                        ; prueba_1                      ; work         ;
-;    |sram:inst8|                          ; 1 (1)               ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|sram:inst8                                            ; sram                          ; work         ;
-;    |sram_CIC:inst1|                      ; 52 (52)             ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|sram_CIC:inst1                                        ; sram_CIC                      ; work         ;
-;    |uart_tx:inst6|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sram_cic_v2_2|uart_tx:inst6                                         ; uart_tx                       ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+-------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|sram_CIC:inst1|state                                                                       ;
-+----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
-; Name                 ; state.fin ; state.escritura_msb ; state.escritura_lsb ; state.add_increment ; state.espero_proximo ;
-+----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
-; state.espero_proximo ; 0         ; 0                   ; 0                   ; 0                   ; 0                    ;
-; state.add_increment  ; 0         ; 0                   ; 0                   ; 1                   ; 1                    ;
-; state.escritura_lsb  ; 0         ; 0                   ; 1                   ; 0                   ; 1                    ;
-; state.escritura_msb  ; 0         ; 1                   ; 0                   ; 0                   ; 1                    ;
-; state.fin            ; 1         ; 0                   ; 0                   ; 0                   ; 1                    ;
-+----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|uart_tx:inst6|fsm_state                                                   ;
-+---------------------+--------------------+--------------------+---------------------+--------------------+
-; Name                ; fsm_state.FSM_STOP ; fsm_state.FSM_SEND ; fsm_state.FSM_START ; fsm_state.FSM_IDLE ;
-+---------------------+--------------------+--------------------+---------------------+--------------------+
-; fsm_state.FSM_IDLE  ; 0                  ; 0                  ; 0                   ; 0                  ;
-; fsm_state.FSM_START ; 0                  ; 0                  ; 1                   ; 1                  ;
-; fsm_state.FSM_SEND  ; 0                  ; 1                  ; 0                   ; 1                  ;
-; fsm_state.FSM_STOP  ; 1                  ; 0                  ; 0                   ; 1                  ;
-+---------------------+--------------------+--------------------+---------------------+--------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|state                                                                                                                   ;
-+-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
-; Name                  ; state.UART_mandando ; state.UART_send_start ; state.UART_terminado ; state.escritura ; state.wait_done ; state.errase ; state.trigger_wait ; state.reset_state ;
-+-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
-; state.reset_state     ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 0                 ;
-; state.trigger_wait    ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 1                  ; 1                 ;
-; state.errase          ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 1            ; 0                  ; 1                 ;
-; state.wait_done       ; 0                   ; 0                     ; 0                    ; 0               ; 1               ; 0            ; 0                  ; 1                 ;
-; state.escritura       ; 0                   ; 0                     ; 0                    ; 1               ; 0               ; 0            ; 0                  ; 1                 ;
-; state.UART_terminado  ; 0                   ; 0                     ; 1                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
-; state.UART_send_start ; 0                   ; 1                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
-; state.UART_mandando   ; 1                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
-+-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|state                                                                                                                                                            ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-; Name            ; state.stop_2 ; state.stop_1 ; state.idle_2 ; state.error ; state.ack_fin ; state.ack_3 ; state.ack_2 ; state.ack_1 ; state.b_write_3 ; state.b_write_2 ; state.b_write_1 ; state.b_trans ; state.start_2 ; state.start ; state.idle ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-; state.idle      ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 0          ;
-; state.start     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 1           ; 1          ;
-; state.start_2   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 1             ; 0           ; 1          ;
-; state.b_trans   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 1             ; 0             ; 0           ; 1          ;
-; state.b_write_1 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 1               ; 0             ; 0             ; 0           ; 1          ;
-; state.b_write_2 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 1               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.b_write_3 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 1               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_1     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 1           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_2     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 1           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_3     ; 0            ; 0            ; 0            ; 0           ; 0             ; 1           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.ack_fin   ; 0            ; 0            ; 0            ; 0           ; 1             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.error     ; 0            ; 0            ; 0            ; 1           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.idle_2    ; 0            ; 0            ; 1            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.stop_1    ; 0            ; 1            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-; state.stop_2    ; 1            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
-+-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst|state                                                                                                                                                                                       ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
-; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
-; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
-; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
-; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                    ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; Register name                                                      ; Reason for Removal                                                               ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; Programador_controlador_block:inst3|programador:inst1|data[4]      ; Merged with Programador_controlador_block:inst3|programador:inst1|data[3]        ;
-; Programador_controlador_block:inst3|programador:inst1|data[6]      ; Stuck at GND due to stuck port data_in                                           ;
-; Controlador_sram_CIC_UART:inst7|cuenta_vueltas[1]                  ; Stuck at GND due to stuck port data_in                                           ;
-; uart_tx:inst6|fsm_state~2                                          ; Lost fanout                                                                      ;
-; uart_tx:inst6|fsm_state~3                                          ; Lost fanout                                                                      ;
-; uart_tx:inst6|fsm_state~4                                          ; Lost fanout                                                                      ;
-; Programador_controlador_block:inst3|controlador:inst|cuenta_int[0] ; Merged with Programador_controlador_block:inst3|controlador:inst|cuenta_int_2[0] ;
-; Total Number of Removed Registers = 7                              ;                                                                                  ;
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 346   ;
-; Number of registers using Synchronous Clear  ; 41    ;
-; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 208   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 130   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; sram:inst8|SRAM_UB_N                   ; 1       ;
-; sram:inst8|SRAM_LB_N                   ; 1       ;
-; prueba_1:inst2|trigger_prev            ; 1       ;
-; Total number of inverted registers = 3 ;         ;
-+----------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |sram_cic_v2_2|uart_tx:inst6|data_to_send[0]                                  ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |sram_cic_v2_2|uart_tx:inst6|cycle_counter[6]                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|count[2] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |sram_cic_v2_2|uart_tx:inst6|bit_counter[3]                                   ;
-; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |sram_cic_v2_2|sram_CIC:inst1|add_count[16]                                   ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|programador:inst1|data[2]  ;
-; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |sram_cic_v2_2|Controlador_sram_CIC_UART:inst7|count_mem[7]                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |sram_cic_v2_2|Programador_controlador_block:inst3|controlador:inst|count[1]  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |sram_cic_v2_2|sram_CIC:inst1|state                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: uart_tx:inst6 ;
-+----------------+----------+--------------------------------+
-; Parameter Name ; Value    ; Type                           ;
-+----------------+----------+--------------------------------+
-; PAYLOAD_BITS   ; 8        ; Signed Integer                 ;
-; CLK_HZ         ; 50000000 ; Signed Integer                 ;
-; BIT_RATE       ; 115200   ; Signed Integer                 ;
-+----------------+----------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 94                          ;
-; cycloneiii_ff         ; 346                         ;
-;     CLR               ; 140                         ;
-;     ENA               ; 55                          ;
-;     ENA CLR           ; 48                          ;
-;     ENA CLR SCLR      ; 20                          ;
-;     ENA SCLR          ; 7                           ;
-;     SCLR              ; 4                           ;
-;     SCLR SLD          ; 10                          ;
-;     SLD               ; 1                           ;
-;     plain             ; 61                          ;
-; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 337                         ;
-;     arith             ; 74                          ;
-;         2 data inputs ; 72                          ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 263                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 182                         ;
-;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.38                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -460,143 +164,88 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Nov 16 12:46:04 2024
+    Info: Processing started: Wed Dec 11 18:50:33 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram_cic_v2 -c sram_cic_v2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file catura_pixeles_2.vhd
+    Info (12022): Found design unit 1: captura_pixeles_2-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/catura_pixeles_2.vhd Line: 23
+    Info (12023): Found entity 1: captura_pixeles_2 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/catura_pixeles_2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file uart_rx.vhd
+    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/UART_RX.vhd Line: 31
+    Info (12023): Found entity 1: UART_RX File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/UART_RX.vhd Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/ram.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file histograma.vhd
+    Info (12022): Found design unit 1: Histograma-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Histograma.vhd Line: 56
+    Info (12023): Found entity 1: Histograma File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Histograma.vhd Line: 32
+Info (12021): Found 2 design units, including 1 entities, in source file decod_control.vhd
+    Info (12022): Found design unit 1: decod_control-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/decod_control.vhd Line: 20
+    Info (12023): Found entity 1: decod_control File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/decod_control.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador_mod_tes.vhd
+    Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/coordinador_mod_tes.vhd Line: 45
+    Info (12023): Found entity 1: coordinador_mod_tes File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/coordinador_mod_tes.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file algo_3_final.vhd
+    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/algo_3_final.vhd Line: 44
+    Info (12023): Found entity 1: algo_3_final File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/algo_3_final.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file access_ram.vhd
+    Info (12022): Found design unit 1: access_ram-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/access_ram.vhd Line: 24
+    Info (12023): Found entity 1: access_ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/access_ram.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file captura_pixeles.vhd
-    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 21
-    Info (12023): Found entity 1: captura_pixeles File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 5
+    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 21
+    Info (12023): Found entity 1: captura_pixeles File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/captura_pixeles.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file prueba_1.vhd
-    Info (12022): Found design unit 1: prueba_1-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd Line: 15
-    Info (12023): Found entity 1: prueba_1 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd Line: 5
+    Info (12022): Found design unit 1: prueba_1-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd Line: 15
+    Info (12023): Found entity 1: prueba_1 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/prueba_1.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file sram_cic_v2.bdf
     Info (12023): Found entity 1: sram_cic_v2
 Info (12021): Found 2 design units, including 1 entities, in source file cic_sram_controller_uart_basico.vhd
-    Info (12022): Found design unit 1: CIC_SRAM_controller_UART_basico-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/CIC_SRAM_controller_UART_basico.vhd Line: 46
-    Info (12023): Found entity 1: CIC_SRAM_controller_UART_basico File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/CIC_SRAM_controller_UART_basico.vhd Line: 15
+    Info (12022): Found design unit 1: CIC_SRAM_controller_UART_basico-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/CIC_SRAM_controller_UART_basico.vhd Line: 46
+    Info (12023): Found entity 1: CIC_SRAM_controller_UART_basico File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/CIC_SRAM_controller_UART_basico.vhd Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
-    Info (12023): Found entity 1: uart_tx File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 10
+    Info (12023): Found entity 1: uart_tx File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file dut.vhd
-    Info (12022): Found design unit 1: DUT-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 26
-    Info (12023): Found entity 1: DUT File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 12
+    Info (12022): Found design unit 1: DUT-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 26
+    Info (12023): Found entity 1: DUT File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT.vhd Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file sram_cic_v2_2.bdf
     Info (12023): Found entity 1: sram_cic_v2_2
 Info (12021): Found 2 design units, including 1 entities, in source file dut_2.vhd
-    Info (12022): Found design unit 1: DUT_2-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 44
-    Info (12023): Found entity 1: DUT_2 File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 15
+    Info (12022): Found design unit 1: DUT_2-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 44
+    Info (12023): Found entity 1: DUT_2 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/DUT_2.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
-    Info (12022): Found design unit 1: divisor-arch File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd Line: 11
-    Info (12023): Found entity 1: divisor File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd Line: 4
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd Line: 11
+    Info (12023): Found entity 1: divisor File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/divisor.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
-    Info (12022): Found design unit 1: sram-behav File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 28
-    Info (12023): Found entity 1: sram File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 6
+    Info (12022): Found design unit 1: sram-behav File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 28
+    Info (12023): Found entity 1: sram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file programador_controlador_block.bdf
     Info (12023): Found entity 1: Programador_controlador_block
 Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd Line: 42
-    Info (12023): Found entity 1: controlador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd Line: 20
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd Line: 42
+    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/controlador.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
-    Info (12022): Found design unit 1: programador-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 48
-    Info (12023): Found entity 1: programador File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 30
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 48
+    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/programador.vhd Line: 30
 Info (12021): Found 2 design units, including 1 entities, in source file sram_cic.vhd
-    Info (12022): Found design unit 1: sram_CIC-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 31
-    Info (12023): Found entity 1: sram_CIC File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 17
+    Info (12022): Found design unit 1: sram_CIC-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 31
+    Info (12023): Found entity 1: sram_CIC File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file controlador_sram_cic_uart.vhd
-    Info (12022): Found design unit 1: Controlador_sram_CIC_UART-rtl File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 43
-    Info (12023): Found entity 1: Controlador_sram_CIC_UART File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 15
-Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 42
-Info (12127): Elaborating entity "sram_cic_v2_2" for the top level hierarchy
-Warning (275011): Block or symbol "sram" of instance "inst8" overlaps another block or symbol
-Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst3"
-Info (12128): Elaborating entity "controlador" for hierarchy "Programador_controlador_block:inst3|controlador:inst"
-Info (12128): Elaborating entity "programador" for hierarchy "Programador_controlador_block:inst3|programador:inst1"
-Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
-Info (12128): Elaborating entity "prueba_1" for hierarchy "prueba_1:inst2"
-Info (12128): Elaborating entity "sram" for hierarchy "sram:inst8"
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 43
-Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 43
-Info (12128): Elaborating entity "Controlador_sram_CIC_UART" for hierarchy "Controlador_sram_CIC_UART:inst7"
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst6"
-Warning (10230): Verilog HDL assignment warning at uart_tx.v(137): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 137
-Warning (10230): Verilog HDL assignment warning at uart_tx.v(139): truncated value with size 10 to match size of target (4) File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/uart_tx.v Line: 139
-Info (12128): Elaborating entity "sram_CIC" for hierarchy "sram_CIC:inst1"
-Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst"
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|data_o[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 24
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|reset_o" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 26
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|r_w_O" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 26
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[16]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[17]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[18]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "sram_CIC:inst1|add[19]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram_CIC.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[10]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[9]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[8]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[7]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[6]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[5]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[4]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[3]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[2]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[1]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[0]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[11]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[12]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[13]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[14]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst7|data[15]" feeding internal logic into a wire File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 33
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Gaspar/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/sram.vhd Line: 22
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Sram_CE" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 576 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 62 output pins
-    Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 482 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Sat Nov 16 12:46:11 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:08
+    Info (12022): Found design unit 1: Controlador_sram_CIC_UART-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 43
+    Info (12023): Found entity 1: Controlador_sram_CIC_UART File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/Controlador_sram_CIC_UART.vhd Line: 15
+Error (10396): VHDL syntax error at access_UART.vhd(16): name used in construct must match previously specified name "access_UART" File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/access_UART.vhd Line: 16
+Error (10523): Ignored construct access_UART at access_UART.vhd(5) due to previous errors File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/access_UART.vhd Line: 5
+Info (12021): Found 0 design units, including 0 entities, in source file access_uart.vhd
+Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/output_files/sram_cic_v2.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 4792 megabytes
+    Error: Processing ended: Wed Dec 11 18:51:10 2024
+    Error: Elapsed time: 00:00:37
+    Error: Total CPU time (on all processors): 00:00:40
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/sram_cic_v2/output_files/sram_cic_v2.map.smsg.
 
 

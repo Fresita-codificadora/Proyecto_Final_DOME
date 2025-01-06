@@ -102,7 +102,7 @@ figure
 imgTest=vector_a_imagen(datos_salida,ancho);
 imshow(imgTest,[]);
 colormap colorcube
-<<<<<<< Updated upstream
+
 % figure
 % bar(energia);
 % ylim([0,16000]);
@@ -111,11 +111,11 @@ colormap colorcube
 % ylim([0,64]);
  ind=0;
 for i=1:length(cantidad)
-    if (cantidad(i)>1 & energia(i)<4400)
+    if (cantidad(i)>1 && energia(i)<4400)
         ind=ind+1;
         energia2(ind)=energia(i);
-    end;
-end;
+    end
+end
 % figure;
 % hist(energia,2^16);
 % figure;
@@ -126,7 +126,7 @@ end;
 % hist(energia2,32);
 % figure
 % histogram(energia2,'binwidth',32)
-=======
+
 figure
 bar(energia);
 ylim([0,16000]);
@@ -135,4 +135,4 @@ bar(cantidad);
 ylim([0,64]);
 figure
 hist(energia,32768);
->>>>>>> Stashed changes
+

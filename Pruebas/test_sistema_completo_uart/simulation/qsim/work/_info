@@ -1,0 +1,170 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/simulation/qsim
+T_opt
+!s110 1734044510
+Vj>PS53R=R`I@W`0j5ZPS[0
+04 22 15 work ack_sender_vhd_vec_tst ack_sender_arch 1
+=1-d481d7ab5ad7-675b6b5d-9a-37dc
+R1
+!s12b OEM100
+!s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Eack_sender
+Z3 w1734044505
+Z4 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JFD354ZMY?;ZG1UUQ_P^@1
+Z5 DPx10 cycloneive 21 cycloneive_components 0 22 :CA=Yg0R^TdJ3>^OGfeMR2
+Z6 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z7 DPx6 altera 11 dffeas_pack 0 22 mB4IFnUT3:DoZN@NS]Gzg0
+Z8 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z9 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z10 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z11 DPx6 altera 28 altera_primitives_components 0 22 >1_OP3SHemAi5ZBLF?7g43
+!i122 4
+R2
+Z12 8test_sistema_completo_uart.vho
+Z13 Ftest_sistema_completo_uart.vho
+l0
+L80 1
+V@]2FmkMcD;KfXI>CcO=@<2
+!s100 ke>7e5nmX^HQ3Wj>1XQL:3
+Z14 OL;C;2023.3;77
+32
+Z15 !s110 1734044507
+!i10b 1
+Z16 !s108 1734044507.000000
+Z17 !s90 -work|work|test_sistema_completo_uart.vho|
+Z18 !s107 test_sistema_completo_uart.vho|
+!i113 0
+Z19 o-work work
+Z20 tExplicit 1 CvgOpt 0
+Astructure
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+DEx4 work 10 ack_sender 0 22 @]2FmkMcD;KfXI>CcO=@<2
+!i122 4
+l245
+L107 1979
+VB7ZYRg?bzK5Pno^DnRA_l1
+!s100 LGZ5zXYGZlcU4e?QgU==V1
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+Eack_sender_vhd_vec_tst
+Z21 w1734044503
+R9
+R10
+!i122 5
+R2
+Z22 8Waveform.vwf.vht
+Z23 FWaveform.vwf.vht
+l0
+L32 1
+VTJ^GiaBKO7IgbL<`EZ@`D2
+!s100 6iCV:1;Sb;W@9bl?OS>V@0
+R14
+32
+Z24 !s110 1734044508
+!i10b 1
+Z25 !s108 1734044508.000000
+Z26 !s90 -work|work|Waveform.vwf.vht|
+Z27 !s107 Waveform.vwf.vht|
+!i113 0
+R19
+R20
+Aack_sender_arch
+R9
+R10
+DEx4 work 22 ack_sender_vhd_vec_tst 0 22 TJ^GiaBKO7IgbL<`EZ@`D2
+!i122 5
+l53
+L34 84
+VnQT13lk5md2gSjA?IJ>SJ1
+!s100 @hoNozS2YMnaSl0oG:GU;0
+R14
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R19
+R20
+Ehard_block
+R3
+R6
+R4
+R8
+R9
+R10
+R5
+!i122 4
+R2
+R12
+R13
+l0
+L35 1
+VO;cUSklm4Sig<`__bK=J@0
+!s100 0CTYib@dc:ObIVR9DRSK?2
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+Astructure
+R6
+R4
+R8
+R9
+R10
+R5
+DEx4 work 10 hard_block 0 22 O;cUSklm4Sig<`__bK=J@0
+!i122 4
+l65
+L51 20
+VGLY:g5RDEe^dIV`12>FYD3
+!s100 6LcB1AebN6j_bAmfc?Z:_0
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20

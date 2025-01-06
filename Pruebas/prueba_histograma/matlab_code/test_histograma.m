@@ -3,10 +3,11 @@ clc
 close all
 offset=-2;
 
-ancho = 1024;
+ancho = 97;
 umbral=100;
 
-vectordatos=imagen_a_vector('C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\algoritmoMatlab\images\frame-100.png');
+%%vectordatos=imagen_a_vector('C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\algoritmoMatlab\images\frame-100.png');
+vectordatos=imagen_a_vector('testPulenta.png');
 len=length(vectordatos);
 indice = 1;
 contador_pixel = 0;
@@ -14,7 +15,7 @@ fifo=uint32(zeros(1,ancho+2));
 energia=zeros(1,2047);
 cantidad=zeros(1,2047);
 eventos=1;
-datos_salida=zeros(1,1310720,'uint16');
+datos_salida=zeros(1,7081,'uint16');
 flag_ignorar = false;
 flag_ignorar_1 = false;
 
@@ -90,7 +91,7 @@ for i=1:len
    end
 end
 
-
+energia = mod(energia, 2^14);
 %% filtrado
 histo_8192 = 0;
 ind=0;
@@ -98,7 +99,7 @@ for i=1:length(cantidad)
     if (cantidad(i)>1 & energia(i)>0)
         ind=ind+1;
         energia2(ind)=energia(i);
-        histo_8192 = histo_8192 + histograma_manopla_1024(energia(i));
+        histo_8192 = histo_8192 + histograma_manopla_8192(energia(i));
     end;
 end;
 
@@ -117,4 +118,4 @@ end;
 % xlim([umbral max(energia2)])
 figure
 bar(histo_8192);
-title('histograma con paso 32');
+title('histograma con paso 512');

@@ -1,0 +1,113 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity histograma_chat is
+  generic (
+    BIN_WIDTH : integer := 256 -- Ancho de cada bin
+  );
+  port (
+    clk              : in std_logic;
+    rst              : in std_logic;
+    enable           : in std_logic;
+    energia_in       : in std_logic_vector(12 downto 0);
+    cantidad_in      : in std_logic_vector(13 downto 0);
+    dir_inicio       : in std_logic_vector(10 downto 0);
+    data_histograma  : out std_logic_vector(13 downto 0);
+    direccion_mem    : out std_logic_vector(10 downto 0);--direccion para las memorias de cantidad y energia y histograma
+    escritura_signal : out std_logic;--r/w de la memoria de histograma
+    fin_signal       : out std_logic
+  );
+end entity;
+
+architecture Behavioral of histograma_chat is
+  type hist_array is array (0 to 31) of integer range 0 to 2 ** 14 - 1;
+  signal histogram : hist_array := (others => 0);
+
+  signal dir_mem      : integer range 0 to 2047        := 0;
+  signal cuenta       : integer range 0 to 3           := 0;
+  signal reg_energia  : integer range 0 to 2 ** 13 - 1 := 0;
+  signal reg_cantidad : integer range 0 to 2 ** 14 - 1 := 0;
+  signal bin_index    : integer range 0 to 31          := 0;
+
+  type state_type is (idle, lectura, procesar, escritura_1, escritura_2, fin);
+  signal state : state_type := idle;
+
+begin
+
+  process (clk, rst)
+  begin
+    if rst = '1' then
+      state            <= idle;
+      dir_mem          <= 0;
+      histogram        <= (others => 0);
+      escritura_signal <= '0';
+      fin_signal       <= '0';
+    elsif rising_edge(clk) then
+      case state is
+
+        when idle =>
+          if enable = '1' then
+            state      <= lectura;
+            dir_mem    <= 0;
+            cuenta     <= 0;
+            fin_signal <= '0';
+          end if;
+
+        when lectura =>
+          direccion_mem <= std_logic_vector(to_unsigned(dir_mem, direccion_mem'length));
+          cuenta        <= cuenta + 1;
+
+          if cuenta = 2 then
+            reg_energia  <= to_integer(unsigned(energia_in));
+            reg_cantidad <= to_integer(unsigned(cantidad_in));
+            state        <= procesar;
+            cuenta       <= 0;
+          end if;
+
+        when procesar =>
+          if reg_energia /= 0 and reg_cantidad > 1 then
+            bin_index <= reg_energia / BIN_WIDTH;
+
+            if bin_index >= 0 and bin_index < 32 then
+              histogram(bin_index) <= histogram(bin_index) + reg_cantidad;
+            end if;
+          end if;
+
+          dir_mem <= dir_mem + 1;
+          if dir_mem = 2047 then
+            state   <= escritura_1;
+            dir_mem <= 0;
+          else
+            state <= lectura;
+          end if;
+
+        when escritura_1 =>
+          escritura_signal <= '1';
+          direccion_mem    <= std_logic_vector(to_unsigned(dir_mem + to_integer(unsigned(dir_inicio)), direccion_mem'length));
+          data_histograma  <= std_logic_vector(to_unsigned(histogram(dir_mem), data_histograma'length));
+          state            <= escritura_2;
+
+        when escritura_2 =>
+          escritura_signal <= '0';
+          dir_mem          <= dir_mem + 1;
+
+          if dir_mem = 32 then
+            state <= fin;
+          else
+            state <= escritura_1;
+          end if;
+
+        when fin =>
+          fin_signal <= '1';
+          if enable = '0' then
+            state <= idle;
+          end if;
+
+        when others =>
+          state <= idle;
+      end case;
+    end if;
+  end process;
+
+end architecture;
