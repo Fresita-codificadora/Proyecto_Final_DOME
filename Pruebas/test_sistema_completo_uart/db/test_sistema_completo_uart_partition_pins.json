@@ -36,6 +36,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "ignorar_energia[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ignorar_energia[0]",
+					"strict" : false
+				},
+				{
 					"name" : "led_energia[13]",
 					"strict" : false
 				},
@@ -101,6 +157,46 @@
 				},
 				{
 					"name" : "reset_btn",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "swtches[9]",
 					"strict" : false
 				},
 				{

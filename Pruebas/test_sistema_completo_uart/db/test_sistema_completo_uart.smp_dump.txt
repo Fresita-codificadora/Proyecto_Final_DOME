@@ -1,27 +1,18 @@
 
-State Machine - |test_sistema_completo_uart|ack_sender:inst14|state
+State Machine - |test_sistema_completo_uart_2|ack_sender:inst14|state
 Name state.WAIT_BUSY state.SEND state.IDLE 
 state.IDLE 0 0 0 
 state.SEND 0 1 1 
 state.WAIT_BUSY 1 0 1 
 
-State Machine - |test_sistema_completo_uart|uart_tx:inst12|fsm_state
+State Machine - |test_sistema_completo_uart_2|uart_tx:inst12|fsm_state
 Name fsm_state.FSM_STOP fsm_state.FSM_SEND fsm_state.FSM_START fsm_state.FSM_IDLE 
 fsm_state.FSM_IDLE 0 0 0 0 
 fsm_state.FSM_START 0 0 1 1 
 fsm_state.FSM_SEND 0 1 0 1 
 fsm_state.FSM_STOP 1 0 0 1 
 
-State Machine - |test_sistema_completo_uart|histograma_chat:inst15|state
-Name state.fin state.escritura_2 state.escritura_1 state.espera_habilitacion state.procesar state.idle 
-state.idle 0 0 0 0 0 0 
-state.procesar 0 0 0 0 1 1 
-state.espera_habilitacion 0 0 0 1 0 1 
-state.escritura_1 0 0 1 0 0 1 
-state.escritura_2 0 1 0 0 0 1 
-state.fin 1 0 0 0 0 1 
-
-State Machine - |test_sistema_completo_uart|UART_RX:inst11|r_SM_Main
+State Machine - |test_sistema_completo_uart_2|UART_RX:inst11|r_SM_Main
 Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
 r_SM_Main.s_Idle 0 0 0 0 0 
 r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
@@ -29,29 +20,35 @@ r_SM_Main.s_RX_Data_Bits 0 0 1 0 1
 r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
 r_SM_Main.s_Cleanup 1 0 0 0 1 
 
-State Machine - |test_sistema_completo_uart|algo_3_final:inst|state
-Name state.fin state.incremento_indice state.escritura_2 state.escritura_1 state.lectura_cantidad_energia state.dir_cantidad_energia state.casos state.lectura_ancho_3 state.dir_ancho_3 state.lectura_ancho_2 state.dir_ancho_2 state.lectura_ancho_1 state.dir_ancho_1 state.lectura_anterior state.dir_anterior state.nuevo_pix state.escritura_erase_2 state.escritura_erase_1 state.erase 
-state.erase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.escritura_erase_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.escritura_erase_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.nuevo_pix 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.dir_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.lectura_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.dir_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.lectura_ancho_1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.dir_ancho_2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.lectura_ancho_2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.dir_ancho_3 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.lectura_ancho_3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.casos 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.dir_cantidad_energia 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.lectura_cantidad_energia 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.escritura_1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.escritura_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.incremento_indice 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.fin 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - |test_sistema_completo_uart_2|algo_3_final:inst|state
+Name state.fin state.filtro state.incremento_dir_histograma state.escritura_histograma_2 state.escritura_histograma_1 state.lectura_memorias_histograma state.histogram_gen state.incremento_indice state.escritura_2 state.escritura_1 state.lectura_cantidad_energia state.dir_cantidad_energia state.casos state.lectura_ancho_3 state.dir_ancho_3 state.lectura_ancho_2 state.dir_ancho_2 state.lectura_ancho_1 state.dir_ancho_1 state.lectura_anterior state.dir_anterior state.nuevo_pix state.escritura_erase_2 state.escritura_erase_1 state.erase 
+state.erase 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.escritura_erase_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.escritura_erase_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.nuevo_pix 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.dir_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.lectura_anterior 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.dir_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.lectura_ancho_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.dir_ancho_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.lectura_ancho_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.dir_ancho_3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.lectura_ancho_3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.casos 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.dir_cantidad_energia 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.lectura_cantidad_energia 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_indice 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.histogram_gen 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.lectura_memorias_histograma 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_histograma_1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_histograma_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_dir_histograma 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.filtro 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.fin 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |test_sistema_completo_uart|coordinador_mod_tes:inst8|state
+State Machine - |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|state
 Name state.sw state.incremento_addr_histograma_envio state.envio_uart_4 state.envio_uart_3 state.envio_uart_2 state.envio_uart_1 state.lectura_histograma state.reset_histograma state.esp_fin_escritura state.enable_histograma_escritura state.esp_fin_histograma state.enable_histograma state.esp_fin_algorimo state.esp_borrado_2 state.trigger_algorimo state.fin_prog state.esp_borrado_1 state.reset_todo 
 state.reset_todo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 state.esp_borrado_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

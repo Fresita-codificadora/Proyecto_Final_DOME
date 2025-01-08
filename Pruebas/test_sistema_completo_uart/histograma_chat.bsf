@@ -74,6 +74,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "fin_algoritmo" (rect 0 0 50 12)(font "Arial" ))
+		(text "fin_algoritmo" (rect 21 139 71 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "direccion_mem[10..0]" (rect 0 0 84 12)(font "Arial" ))
@@ -104,9 +111,16 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 264 96)
 		(output)
-		(text "fin_procesado" (rect 0 0 56 12)(font "Arial" ))
-		(text "fin_procesado" (rect 187 91 243 103)(font "Arial" ))
+		(text "selector_ram" (rect 0 0 53 12)(font "Arial" ))
+		(text "selector_ram" (rect 190 91 243 103)(font "Arial" ))
 		(line (pt 264 96)(pt 248 96)(line_width 1))
+	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "fin_procesado" (rect 0 0 56 12)(font "Arial" ))
+		(text "fin_procesado" (rect 187 107 243 119)(font "Arial" ))
+		(line (pt 264 112)(pt 248 112)(line_width 1))
 	)
 	(parameter
 		"BIN_WIDTH"

@@ -93,11 +93,14 @@ for i=1:len
    end
 end
 %% filtrado
+indice = 0;
+energia2=0;
 for i=1:length(energia)
-    if energia(i)>1
-        energia2=energia;
-    end;
-end;
+    if energia(i)>0 && cantidad(i)>1
+        indice = indice + 1;
+        energia2(indice)=energia(i)
+    end
+end
 figure
 imgTest=vector_a_imagen(datos_salida,ancho);
 imshow(imgTest,[]);
