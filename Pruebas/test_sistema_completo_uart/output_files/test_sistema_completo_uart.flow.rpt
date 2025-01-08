@@ -1,5 +1,5 @@
 Flow report for test_sistema_completo_uart
-Tue Jan  7 21:45:43 2025
+Wed Jan  8 08:44:27 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan  7 21:45:43 2025          ;
+; Flow Status                        ; Successful - Wed Jan  8 08:44:27 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; test_sistema_completo_uart                     ;
 ; Top-level Entity Name              ; test_sistema_completo_uart_2                   ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 797 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 783 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 377 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 377                                            ;
+; Total logic elements               ; 1,573 / 114,480 ( 1 % )                        ;
+;     Total combinational functions  ; 1,562 / 114,480 ( 1 % )                        ;
+;     Dedicated logic registers      ; 826 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 826                                            ;
 ; Total pins                         ; 51 / 529 ( 10 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 77,824 / 3,981,312 ( 2 % )                     ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+----------------------------+
 ; Option            ; Setting                    ;
 +-------------------+----------------------------+
-; Start date & time ; 01/07/2025 21:44:30        ;
+; Start date & time ; 01/08/2025 08:43:11        ;
 ; Main task         ; Compilation                ;
 ; Revision Name     ; test_sistema_completo_uart ;
 +-------------------+----------------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+----------------------------+------------------------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value              ; Entity Name                  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+----------------------------+------------------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 233654134201047.173629706909256        ; --                         ; --                           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 233654134201047.173633659110400        ; --                         ; --                           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                         ; --                           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                         ; --                           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                         ; --                           ; eda_board_design_signal_integrity ;
@@ -104,12 +104,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:22     ; 1.0                     ; 4815 MB             ; 00:00:41                           ;
-; Fitter               ; 00:00:33     ; 1.0                     ; 5429 MB             ; 00:00:40                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4707 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4845 MB             ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
-; Total                ; 00:01:07     ; --                      ; --                  ; 00:01:31                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4819 MB             ; 00:00:45                           ;
+; Fitter               ; 00:00:35     ; 1.0                     ; 5443 MB             ; 00:00:46                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4698 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4856 MB             ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4659 MB             ; 00:00:02                           ;
+; Total                ; 00:01:11     ; --                      ; --                  ; 00:01:43                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

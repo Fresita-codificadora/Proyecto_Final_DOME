@@ -14,9 +14,10 @@ use IEEE.NUMERIC_STD.all; --libreria para cambios entre formatos
 
 entity algo_3_final is
   generic (
-    umbral : integer := 0; --energia minima para ser un pixel valido
-    pixels : integer := 7081; --cantidad total de pixeles activos de imagen / sensor
-    ancho  : integer := 97 -- ancho de los pixeles activos
+    umbral   : integer := 0; --energia minima para ser un pixel valido
+    pixels   : integer := 7081; --cantidad total de pixeles activos de imagen / sensor
+    ancho    : integer := 97; -- ancho de los pixeles activos
+    num_bits : integer := 13
   );
   port (
     clk        : in std_logic;
@@ -50,8 +51,8 @@ architecture rtl of algo_3_final is
   -- Build an enumerated type for the state machine
   type state_type is (erase, escritura_erase_1, escritura_erase_2, nuevo_pix, dir_anterior, lectura_anterior, dir_ancho_1, lectura_ancho_1
     , dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3, casos, dir_cantidad_energia, lectura_cantidad_energia, escritura_1,
-    escritura_2, incremento_indice, histogram_gen, lectura_memorias_histograma, escritura_histograma_1, escritura_histograma_2, incremento_dir_histograma,
-    filtro, fin);
+    escritura_2, incremento_indice, dir_memorias_energia_histograma, lectura_memorias_histograma, escritura_histograma_1, escritura_histograma_2, incremento_dir_histograma,
+    filtro, histograma_gen, fin);
 
   -- Register to hold the current state
   signal state : state_type;
@@ -71,7 +72,11 @@ architecture rtl of algo_3_final is
 
   -- señales para la memoria del histograma
   signal dir_histograma_int : integer range 0 to 1023 := 0;
+  constant ancho_bin        : integer                 := (2 ** num_bits)/32;
 
+  -- Definimos el histograma como un arreglo de 32 bins de 14 bits.
+  type hist_array is array (1 to 32) of integer range 0 to (2 ** 14 - 1);
+  signal histogram : hist_array := (others => 0); --lo iniciamos en cero
   procedure encontrar_maximo(
     signal reg1   : in integer;
     signal reg2   : in integer;
@@ -124,6 +129,7 @@ begin
       dir_energia        <= 0;
       pix_count_int      <= 0;
       dir_histograma_int <= 0;
+      histogram          <= (others => 0);-- ESTA CONDICION NO VA A ESTAR EN EL PROGRAMA FINAL DEBE HABER UN ESTADO ESPECIFICO QUE REINCIE
     elsif (rising_edge(clk)) then
       case state is
         when erase =>
@@ -163,7 +169,7 @@ begin
               state <= nuevo_pix;
             end if;
           else
-            state              <= histogram_gen;
+            state              <= dir_memorias_energia_histograma;
             dir_mem            <= 0; --inicializamos la dir de las memorias de energia y bla bla bla
             dir_histograma_int <= 0; -- iniciamos la primera direccion de la memoria del histograma ESTO POR AHI DESPUES SE BORRA
           end if;
@@ -258,14 +264,14 @@ begin
           ignorar_ancho_1  <= false;
           ignorar_anterior <= false;
           state            <= nuevo_pix;
-        when histogram_gen =>
+        when dir_memorias_energia_histograma =>
           if dir_mem < 2 ** 10 - 1 then --si no termine la memoria
             dir_mem <= dir_mem + 1; -- incrementamos la direccion a la que vamos a buscar el dato
             state   <= lectura_memorias_histograma;
           else
             dir_mem            <= 0;
             dir_histograma_int <= 0;
-            state              <= fin;
+            state              <= escritura_histograma_1;
           end if;
         when lectura_memorias_histograma =>
           cuenta := cuenta + 1;
@@ -277,18 +283,86 @@ begin
           end if;
         when filtro =>
           if energia_temp > 0 and cantidad_temp > 1 then --el filtro
-            state <= escritura_histograma_1;
+            state <= histograma_gen;
           else
-            state <= histogram_gen;
+            state <= dir_memorias_energia_histograma;
           end if;
+        when histograma_gen =>
+          if (energia_temp >= 0 and energia_temp < ancho_bin) then
+            histogram(1) <= histogram(1) + 1;
+          elsif (energia_temp >= ancho_bin and energia_temp < 2 * ancho_bin) then
+            histogram(2) <= histogram(2) + 1;
+          elsif (energia_temp >= 2 * ancho_bin and energia_temp < 3 * ancho_bin) then
+            histogram(3) <= histogram(3) + 1;
+          elsif (energia_temp >= 3 * ancho_bin and energia_temp < 4 * ancho_bin) then
+            histogram(4) <= histogram(4) + 1;
+          elsif (energia_temp >= 4 * ancho_bin and energia_temp < 5 * ancho_bin) then
+            histogram(5) <= histogram(5) + 1;
+          elsif (energia_temp >= 5 * ancho_bin and energia_temp < 6 * ancho_bin) then
+            histogram(6) <= histogram(6) + 1;
+          elsif (energia_temp >= 6 * ancho_bin and energia_temp < 7 * ancho_bin) then
+            histogram(7) <= histogram(7) + 1;
+          elsif (energia_temp >= 7 * ancho_bin and energia_temp < 8 * ancho_bin) then
+            histogram(8) <= histogram(8) + 1;
+          elsif (energia_temp >= 8 * ancho_bin and energia_temp < 9 * ancho_bin) then
+            histogram(9) <= histogram(9) + 1;
+          elsif (energia_temp >= 9 * ancho_bin and energia_temp < 10 * ancho_bin) then
+            histogram(10) <= histogram(10) + 1;
+          elsif (energia_temp >= 10 * ancho_bin and energia_temp < 11 * ancho_bin) then
+            histogram(11) <= histogram(11) + 1;
+          elsif (energia_temp >= 11 * ancho_bin and energia_temp < 12 * ancho_bin) then
+            histogram(12) <= histogram(12) + 1;
+          elsif (energia_temp >= 12 * ancho_bin and energia_temp < 13 * ancho_bin) then
+            histogram(13) <= histogram(13) + 1;
+          elsif (energia_temp >= 13 * ancho_bin and energia_temp < 14 * ancho_bin) then
+            histogram(14) <= histogram(14) + 1;
+          elsif (energia_temp >= 14 * ancho_bin and energia_temp < 15 * ancho_bin) then
+            histogram(15) <= histogram(15) + 1;
+          elsif (energia_temp >= 15 * ancho_bin and energia_temp < 16 * ancho_bin) then
+            histogram(16) <= histogram(16) + 1;
+          elsif (energia_temp >= 16 * ancho_bin and energia_temp < 17 * ancho_bin) then
+            histogram(17) <= histogram(17) + 1;
+          elsif (energia_temp >= 17 * ancho_bin and energia_temp < 18 * ancho_bin) then
+            histogram(18) <= histogram(18) + 1;
+          elsif (energia_temp >= 18 * ancho_bin and energia_temp < 19 * ancho_bin) then
+            histogram(19) <= histogram(19) + 1;
+          elsif (energia_temp >= 19 * ancho_bin and energia_temp < 20 * ancho_bin) then
+            histogram(20) <= histogram(20) + 1;
+          elsif (energia_temp >= 20 * ancho_bin and energia_temp < 21 * ancho_bin) then
+            histogram(21) <= histogram(21) + 1;
+          elsif (energia_temp >= 21 * ancho_bin and energia_temp < 22 * ancho_bin) then
+            histogram(22) <= histogram(22) + 1;
+          elsif (energia_temp >= 22 * ancho_bin and energia_temp < 23 * ancho_bin) then
+            histogram(23) <= histogram(23) + 1;
+          elsif (energia_temp >= 23 * ancho_bin and energia_temp < 24 * ancho_bin) then
+            histogram(24) <= histogram(24) + 1;
+          elsif (energia_temp >= 24 * ancho_bin and energia_temp < 25 * ancho_bin) then
+            histogram(25) <= histogram(25) + 1;
+          elsif (energia_temp >= 25 * ancho_bin and energia_temp < 26 * ancho_bin) then
+            histogram(26) <= histogram(26) + 1;
+          elsif (energia_temp >= 26 * ancho_bin and energia_temp < 27 * ancho_bin) then
+            histogram(27) <= histogram(27) + 1;
+          elsif (energia_temp >= 27 * ancho_bin and energia_temp < 28 * ancho_bin) then
+            histogram(28) <= histogram(28) + 1;
+          elsif (energia_temp >= 28 * ancho_bin and energia_temp < 29 * ancho_bin) then
+            histogram(29) <= histogram(29) + 1;
+          elsif (energia_temp >= 29 * ancho_bin and energia_temp < 30 * ancho_bin) then
+            histogram(30) <= histogram(30) + 1;
+          elsif (energia_temp >= 30 * ancho_bin and energia_temp < 31 * ancho_bin) then
+            histogram(31) <= histogram(31) + 1;
+          elsif (energia_temp >= 31 * ancho_bin and energia_temp < 32 * ancho_bin) then
+            histogram(32) <= histogram(32) + 1;
+          else
+          end if;
+          state <= dir_memorias_energia_histograma;
         when escritura_histograma_1 =>
           state <= escritura_histograma_2;
         when escritura_histograma_2 =>
           state <= incremento_dir_histograma;
         when incremento_dir_histograma =>
-          if dir_histograma_int < 2 ** 10 - 1 then
-            dir_histograma_int <= dir_histograma_int + 1;--incremento la direccion de memoria donde voy a escribir la data del histograma
-            state              <= histogram_gen;
+          if dir_histograma_int <= 32 then
+            dir_histograma_int    <= dir_histograma_int + 1;--incremento la direccion de memoria donde voy a escribir la data del histograma
+            state                 <= escritura_histograma_1;
           else
             dir_histograma_int <= 0;
             state              <= fin;
@@ -572,9 +646,9 @@ begin
         ----------------------------------------------------------------------------------------
         ---------------------EXPERIMENTAL-------------------------------------------------------
         ----------------------------------------------------------------------------------------
-      when histogram_gen                 =>
-        data_ram_o              <= (others => '0');
-        addr_ram                <= (others => '0');
+      when dir_memorias_energia_histograma =>
+        data_ram_o              <= (others   => '0');
+        addr_ram                <= (others   => '0');
         we                      <= '0'; --lectura
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
@@ -624,7 +698,7 @@ begin
         fin_signal              <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(energia_temp, data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '1';
@@ -638,7 +712,7 @@ begin
         fin_signal              <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(energia_temp, data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '1';
@@ -652,8 +726,22 @@ begin
         fin_signal              <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(energia_temp, data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
+        selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
+        we_histograma           <= '0';
+      when histograma_gen                 =>
+        data_ram_o              <= (others => '0');
+        addr_ram                <= (others => '0');
+        we                      <= '0'; --lectura
+        data_ram_energia_o      <= (others => '0');
+        addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
+        data_ram_cantidad_o     <= (others => '0');
+        fin_signal              <= '0';
+        fin_borrado             <= '0';
+        ack                     <= '0';
+        data_ram_histograma_o   <= (others => '0');
+        addr_ram_histograma_o   <= (others => '0');
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '0';
     end case;

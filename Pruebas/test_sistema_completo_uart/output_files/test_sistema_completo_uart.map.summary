@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Jan  7 21:44:52 2025
+Analysis & Synthesis Status : Successful - Wed Jan  8 08:43:34 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : test_sistema_completo_uart
 Top-level Entity Name : test_sistema_completo_uart_2
 Family : Cyclone IV E
-Total logic elements : 861
-    Total combinational functions : 783
-    Dedicated logic registers : 377
-Total registers : 377
+Total logic elements : 1,640
+    Total combinational functions : 1,562
+    Dedicated logic registers : 826
+Total registers : 826
 Total pins : 51
 Total virtual pins : 0
 Total memory bits : 77,824
