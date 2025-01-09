@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Jan  8 21:22:31 2025
+Fitter Status : Successful - Thu Jan  9 19:30:29 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : test_sistema_completo_uart
 Top-level Entity Name : test_sistema_completo_uart_2
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 1,634 / 114,480 ( 1 % )
-    Total combinational functions : 1,615 / 114,480 ( 1 % )
-    Dedicated logic registers : 835 / 114,480 ( < 1 % )
-Total registers : 835
-Total pins : 52 / 529 ( 10 % )
+Total logic elements : 1,647 / 114,480 ( 1 % )
+    Total combinational functions : 1,632 / 114,480 ( 1 % )
+    Dedicated logic registers : 834 / 114,480 ( < 1 % )
+Total registers : 834
+Total pins : 32 / 529 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 77,824 / 3,981,312 ( 2 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )

@@ -174,16 +174,23 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 304 208)
 		(output)
-		(text "selector_uart" (rect 0 0 51 12)(font "Arial" ))
-		(text "selector_uart" (rect 232 203 283 215)(font "Arial" ))
+		(text "we_histograma" (rect 0 0 60 12)(font "Arial" ))
+		(text "we_histograma" (rect 223 203 283 215)(font "Arial" ))
 		(line (pt 304 208)(pt 288 208)(line_width 1))
 	)
 	(port
 		(pt 304 224)
 		(output)
-		(text "trigger_wait_led" (rect 0 0 61 12)(font "Arial" ))
-		(text "trigger_wait_led" (rect 222 219 283 231)(font "Arial" ))
+		(text "selector_uart" (rect 0 0 51 12)(font "Arial" ))
+		(text "selector_uart" (rect 232 219 283 231)(font "Arial" ))
 		(line (pt 304 224)(pt 288 224)(line_width 1))
+	)
+	(port
+		(pt 304 240)
+		(output)
+		(text "trigger_wait_led" (rect 0 0 61 12)(font "Arial" ))
+		(text "trigger_wait_led" (rect 222 235 283 247)(font "Arial" ))
+		(line (pt 304 240)(pt 288 240)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 288 256)(line_width 1))

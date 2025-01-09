@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_sistema_completo_uart
-Wed Jan  8 21:21:56 2025
+Thu Jan  9 19:29:55 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -25,9 +25,9 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  17. Inverted Register Statistics
  18. Registers Packed Into Inferred Megafunctions
  19. Multiplexer Restructuring Statistics (Restructuring Performed)
- 20. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
+ 20. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
  21. Source assignments for ram:inst3|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated
- 22. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
+ 22. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
  23. Source assignments for ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
  24. Parameter Settings for User Entity Instance: algo_3_final:inst
  25. Parameter Settings for User Entity Instance: UART_RX:inst11
@@ -37,9 +37,9 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  29. Parameter Settings for User Entity Instance: uart_tx:inst12
  30. Parameter Settings for User Entity Instance: ram:inst6
  31. Parameter Settings for User Entity Instance: access_ram:inst7
- 32. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
+ 32. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
  33. Parameter Settings for Inferred Entity Instance: ram:inst3|altsyncram:mem_rtl_0
- 34. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
+ 34. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
  35. Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0
  36. altsyncram Parameter Settings by Entity Instance
  37. Post-Synthesis Netlist Statistics for Top Partition
@@ -72,16 +72,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan  8 21:21:56 2025          ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan  9 19:29:55 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; test_sistema_completo_uart                     ;
 ; Top-level Entity Name              ; test_sistema_completo_uart_2                   ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 1,692                                          ;
-;     Total combinational functions  ; 1,615                                          ;
-;     Dedicated logic registers      ; 835                                            ;
-; Total registers                    ; 835                                            ;
-; Total pins                         ; 52                                             ;
+; Total logic elements               ; 1,724                                          ;
+;     Total combinational functions  ; 1,632                                          ;
+;     Dedicated logic registers      ; 854                                            ;
+; Total registers                    ; 854                                            ;
+; Total pins                         ; 32                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 77,824                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -200,6 +200,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
 ; ack_sender.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/ack_sender.vhd                   ;         ;
 ; uart_algo_nuevo.vhd              ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/uart_algo_nuevo.vhd              ;         ;
+; access_UART.vhd                  ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/access_UART.vhd                  ;         ;
 ; uart_tx.v                        ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/uart_tx.v                        ;         ;
 ; UART_RX.vhd                      ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/UART_RX.vhd                      ;         ;
 ; ram.v                            ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/ram.v                            ;         ;
@@ -216,9 +217,9 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                    ;         ;
 ; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                    ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                  ;         ;
-; db/altsyncram_7f81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_7f81.tdf           ;         ;
-; db/altsyncram_mg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_mg81.tdf           ;         ;
 ; db/altsyncram_eg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_eg81.tdf           ;         ;
+; db/altsyncram_mg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_mg81.tdf           ;         ;
+; db/altsyncram_7f81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_7f81.tdf           ;         ;
 ; db/altsyncram_jg81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_jg81.tdf           ;         ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
 
@@ -228,31 +229,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 1,692        ;
+; Estimated Total logic elements              ; 1,724        ;
 ;                                             ;              ;
-; Total combinational functions               ; 1615         ;
+; Total combinational functions               ; 1632         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 696          ;
-;     -- 3 input functions                    ; 201          ;
-;     -- <=2 input functions                  ; 718          ;
+;     -- 4 input functions                    ; 689          ;
+;     -- 3 input functions                    ; 222          ;
+;     -- <=2 input functions                  ; 721          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 975          ;
+;     -- normal mode                          ; 992          ;
 ;     -- arithmetic mode                      ; 640          ;
 ;                                             ;              ;
-; Total registers                             ; 835          ;
-;     -- Dedicated logic registers            ; 835          ;
+; Total registers                             ; 854          ;
+;     -- Dedicated logic registers            ; 854          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 52           ;
+; I/O pins                                    ; 32           ;
 ; Total memory bits                           ; 77824        ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; clk_50~input ;
-; Maximum fan-out                             ; 880          ;
-; Total fan-out                               ; 8760         ;
-; Average fan-out                             ; 3.37         ;
+; Maximum fan-out                             ; 899          ;
+; Total fan-out                               ; 8836         ;
+; Average fan-out                             ; 3.41         ;
 +---------------------------------------------+--------------+
 
 
@@ -261,12 +262,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name                  ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------------------+--------------+
-; |test_sistema_completo_uart_2             ; 1615 (1)            ; 835 (0)                   ; 77824       ; 0            ; 0       ; 0         ; 52   ; 0            ; |test_sistema_completo_uart_2                                                               ; test_sistema_completo_uart_2 ; work         ;
+; |test_sistema_completo_uart_2             ; 1632 (1)            ; 854 (0)                   ; 77824       ; 0            ; 0       ; 0         ; 32   ; 0            ; |test_sistema_completo_uart_2                                                               ; test_sistema_completo_uart_2 ; work         ;
 ;    |UART_RX:inst11|                       ; 51 (51)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|UART_RX:inst11                                                ; UART_RX                      ; work         ;
-;    |access_ram:inst7|                     ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|access_ram:inst7                                              ; access_ram                   ; work         ;
+;    |access_UART:inst1|                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|access_UART:inst1                                             ; access_UART                  ; work         ;
+;    |access_ram:inst7|                     ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|access_ram:inst7                                              ; access_ram                   ; work         ;
 ;    |ack_sender:inst14|                    ; 53 (53)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ack_sender:inst14                                             ; ack_sender                   ; work         ;
-;    |algo_3_final:inst|                    ; 1362 (1362)         ; 695 (695)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|algo_3_final:inst                                             ; algo_3_final                 ; work         ;
-;    |coordinador_mod_tes:inst8|            ; 81 (81)             ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes          ; work         ;
+;    |algo_3_final:inst|                    ; 1357 (1357)         ; 695 (695)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|algo_3_final:inst                                             ; algo_3_final                 ; work         ;
+;    |coordinador_mod_tes:inst8|            ; 83 (83)             ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes          ; work         ;
 ;    |ram:inst2|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ram:inst2                                                     ; ram                          ; work         ;
 ;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ram:inst2|altsyncram:mem_rtl_0                                ; altsyncram                   ; work         ;
 ;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81              ; work         ;
@@ -280,7 +282,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ram:inst6|altsyncram:mem_rtl_0                                ; altsyncram                   ; work         ;
 ;          |altsyncram_eg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ; altsyncram_eg81              ; work         ;
 ;    |uart_algo_nuevo:inst10|               ; 2 (2)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|uart_algo_nuevo:inst10                                        ; uart_algo_nuevo              ; work         ;
-;    |uart_tx:inst12|                       ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|uart_tx:inst12                                                ; uart_tx                      ; work         ;
+;    |uart_tx:inst12|                       ; 52 (52)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test_sistema_completo_uart_2|uart_tx:inst12                                                ; uart_tx                      ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -373,28 +375,31 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|state                                                                                                                                                                                                                                                                                                                                                                  ;
-+----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
-; Name                                   ; state.incremento_addr_histograma_envio ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.lectura_histograma ; state.trigger_wait ; state.reset_histograma ; state.esp_fin_escritura ; state.enable_histograma_escritura ; state.esp_fin_histograma ; state.esp_borrado_2 ; state.trigger_algorimo ; state.fin_prog ; state.esp_borrado_1 ; state.reset_todo ;
-+----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
-; state.reset_todo                       ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 0                ;
-; state.esp_borrado_1                    ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 1                   ; 1                ;
-; state.fin_prog                         ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 1              ; 0                   ; 1                ;
-; state.trigger_algorimo                 ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 1                      ; 0              ; 0                   ; 1                ;
-; state.esp_borrado_2                    ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 1                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.esp_fin_histograma               ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 1                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.enable_histograma_escritura      ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 1                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.esp_fin_escritura                ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 1                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.reset_histograma                 ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 1                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.trigger_wait                     ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 1                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.lectura_histograma               ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 1                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.envio_uart_1                     ; 0                                      ; 0                  ; 0                  ; 0                  ; 1                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.envio_uart_2                     ; 0                                      ; 0                  ; 0                  ; 1                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.envio_uart_3                     ; 0                                      ; 0                  ; 1                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.envio_uart_4                     ; 0                                      ; 1                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-; state.incremento_addr_histograma_envio ; 1                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
-+----------------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
+; Name                                   ; state.escritura_borrado_hist_2 ; state.escritura_borrado_hist_1 ; state.borrado_mem_histograma ; state.incremento_addr_histograma_envio ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.lectura_histograma ; state.trigger_wait ; state.reset_histograma ; state.esp_fin_escritura ; state.enable_histograma_escritura ; state.esp_fin_histograma ; state.esp_borrado_2 ; state.trigger_algorimo ; state.fin_prog ; state.esp_borrado_1 ; state.reset_todo ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
+; state.reset_todo                       ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 0                ;
+; state.esp_borrado_1                    ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 1                   ; 1                ;
+; state.fin_prog                         ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 1              ; 0                   ; 1                ;
+; state.trigger_algorimo                 ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 1                      ; 0              ; 0                   ; 1                ;
+; state.esp_borrado_2                    ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 1                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.esp_fin_histograma               ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 1                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.enable_histograma_escritura      ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 1                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.esp_fin_escritura                ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 1                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.reset_histograma                 ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 1                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.trigger_wait                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 1                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.lectura_histograma               ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 1                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_1                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 1                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_2                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 1                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_3                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 1                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_4                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 1                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.incremento_addr_histograma_envio ; 0                              ; 0                              ; 0                            ; 1                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.borrado_mem_histograma           ; 0                              ; 0                              ; 1                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.escritura_borrado_hist_1         ; 0                              ; 1                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.escritura_borrado_hist_2         ; 1                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+---------------------+------------------------+----------------+---------------------+------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------+
@@ -406,16 +411,15 @@ Encoding Type:  One-Hot
 ; ack_sender:inst14|uart_byte[1,3,6,7]             ; Stuck at GND due to stuck port data_in                    ;
 ; coordinador_mod_tes:inst8|dir_mem_hist_int[1..4] ; Merged with coordinador_mod_tes:inst8|dir_mem_hist_int[0] ;
 ; ack_sender:inst14|uart_byte[2,4,5]               ; Merged with ack_sender:inst14|uart_byte[0]                ;
-; uart_tx:inst12|data_to_send[6,7]                 ; Stuck at GND due to stuck port data_in                    ;
 ; coordinador_mod_tes:inst8|dir_mem_hist_int[0]    ; Stuck at GND due to stuck port data_in                    ;
 ; coordinador_mod_tes:inst8|cuenta[6..11]          ; Stuck at GND due to stuck port data_in                    ;
 ; uart_tx:inst12|fsm_state~2                       ; Lost fanout                                               ;
 ; uart_tx:inst12|fsm_state~3                       ; Lost fanout                                               ;
 ; uart_tx:inst12|fsm_state~4                       ; Lost fanout                                               ;
 ; algo_3_final:inst|indice_histograma[5]           ; Lost fanout                                               ;
-; coordinador_mod_tes:inst8|cuenta[2..5]           ; Merged with coordinador_mod_tes:inst8|cuenta[1]           ;
-; coordinador_mod_tes:inst8|cuenta[1]              ; Stuck at GND due to stuck port data_in                    ;
-; Total Number of Removed Registers = 32           ;                                                           ;
+; coordinador_mod_tes:inst8|cuenta[1..4]           ; Merged with coordinador_mod_tes:inst8|cuenta[5]           ;
+; coordinador_mod_tes:inst8|cuenta[5]              ; Stuck at GND due to stuck port data_in                    ;
+; Total Number of Removed Registers = 30           ;                                                           ;
 +--------------------------------------------------+-----------------------------------------------------------+
 
 
@@ -425,11 +429,7 @@ Encoding Type:  One-Hot
 ; Register name                        ; Reason for Removal        ; Registers Removed due to This Register                                     ;
 +--------------------------------------+---------------------------+----------------------------------------------------------------------------+
 ; coordinador_mod_tes:inst8|cuenta[10] ; Stuck at GND              ; coordinador_mod_tes:inst8|cuenta[11], coordinador_mod_tes:inst8|cuenta[7], ;
-;                                      ; due to stuck port data_in ; coordinador_mod_tes:inst8|cuenta[6], coordinador_mod_tes:inst8|cuenta[1]   ;
-; ack_sender:inst14|uart_byte[7]       ; Stuck at GND              ; uart_tx:inst12|data_to_send[7]                                             ;
-;                                      ; due to stuck port data_in ;                                                                            ;
-; ack_sender:inst14|uart_byte[6]       ; Stuck at GND              ; uart_tx:inst12|data_to_send[6]                                             ;
-;                                      ; due to stuck port data_in ;                                                                            ;
+;                                      ; due to stuck port data_in ; coordinador_mod_tes:inst8|cuenta[6], coordinador_mod_tes:inst8|cuenta[5]   ;
 +--------------------------------------+---------------------------+----------------------------------------------------------------------------+
 
 
@@ -438,12 +438,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 835   ;
-; Number of registers using Synchronous Clear  ; 88    ;
-; Number of registers using Synchronous Load   ; 37    ;
-; Number of registers using Asynchronous Clear ; 738   ;
+; Total registers                              ; 854   ;
+; Number of registers using Synchronous Clear  ; 98    ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 755   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 729   ;
+; Number of registers using Clock Enable       ; 749   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -468,9 +468,9 @@ Encoding Type:  One-Hot
 +-----------------------+---------------------+------+
 ; Register Name         ; Megafunction        ; Type ;
 +-----------------------+---------------------+------+
-; ram:inst5|dout[0..5]  ; ram:inst5|mem_rtl_0 ; RAM  ;
-; ram:inst3|dout[0..13] ; ram:inst3|mem_rtl_0 ; RAM  ;
 ; ram:inst6|dout[0..13] ; ram:inst6|mem_rtl_0 ; RAM  ;
+; ram:inst3|dout[0..13] ; ram:inst3|mem_rtl_0 ; RAM  ;
+; ram:inst5|dout[0..5]  ; ram:inst5|mem_rtl_0 ; RAM  ;
 ; ram:inst2|dout[0..10] ; ram:inst2|mem_rtl_0 ; RAM  ;
 +-----------------------+---------------------+------+
 
@@ -480,31 +480,32 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|data_to_send[1]                   ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|data_to_send[0]                   ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|cycle_counter[9]                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|bit_counter[0]                    ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|indice[2]                      ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |test_sistema_completo_uart_2|ack_sender:inst14|tx_counter[20]                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|cycle_counter[4]                  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|bit_counter[2]                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|data_to_send[1]                   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |test_sistema_completo_uart_2|uart_tx:inst12|data_to_send[2]                   ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|indice[8]                      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |test_sistema_completo_uart_2|ack_sender:inst14|tx_counter[19]                 ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|dir_mem_hist_int[5]    ;
 ; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|dir_histograma_int[9]          ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|data_a_escribir[1]             ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |test_sistema_completo_uart_2|UART_RX:inst11|r_Clk_Count[1]                    ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|addr_histograma_int[7] ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|dir_mem[6]                     ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|cuenta[7]                      ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|data_a_escribir[10]            ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |test_sistema_completo_uart_2|UART_RX:inst11|r_Clk_Count[8]                    ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|dir_mem[3]                     ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|addr_histograma_int[8] ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |test_sistema_completo_uart_2|algo_3_final:inst|cuenta[4]                      ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|img                    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|access_ram:inst7|addr_o[9]                       ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|UART_RX:inst11|r_Bit_Index                       ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Selector86                     ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Selector96                     ;
-; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Mux0                           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|access_ram:inst7|addr_o[8]                       ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Selector92                     ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Selector93                     ;
+; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Mux9                           ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |test_sistema_completo_uart_2|ack_sender:inst14|Selector35                     ;
 ; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |test_sistema_completo_uart_2|algo_3_final:inst|Selector68                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
-; Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ;
+; Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
 +---------------------------------+--------------------+------+------------------------+
@@ -522,7 +523,7 @@ Encoding Type:  One-Hot
 
 
 +--------------------------------------------------------------------------------------+
-; Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ;
+; Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------+
 ; Assignment                      ; Value              ; From ; To                     ;
 +---------------------------------+--------------------+------+------------------------+
@@ -630,7 +631,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0 ;
+; Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0 ;
 +------------------------------------+----------------------+---------------------+
 ; Parameter Name                     ; Value                ; Type                ;
 +------------------------------------+----------------------+---------------------+
@@ -641,9 +642,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
-; WIDTH_A                            ; 6                    ; Untyped             ;
-; WIDTHAD_A                          ; 11                   ; Untyped             ;
-; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; WIDTH_A                            ; 14                   ; Untyped             ;
+; WIDTHAD_A                          ; 10                   ; Untyped             ;
+; NUMWORDS_A                         ; 1024                 ; Untyped             ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
@@ -685,7 +686,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_7f81      ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_eg81      ; Untyped             ;
 +------------------------------------+----------------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -752,7 +753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0 ;
+; Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0 ;
 +------------------------------------+----------------------+---------------------+
 ; Parameter Name                     ; Value                ; Type                ;
 +------------------------------------+----------------------+---------------------+
@@ -763,9 +764,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
-; WIDTH_A                            ; 14                   ; Untyped             ;
-; WIDTHAD_A                          ; 10                   ; Untyped             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped             ;
+; WIDTH_A                            ; 6                    ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
@@ -807,7 +808,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
-; CBXI_PARAMETER                     ; altsyncram_eg81      ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_7f81      ; Untyped             ;
 +------------------------------------+----------------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -879,10 +880,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                          ;
 +-------------------------------------------+--------------------------------+
 ; Number of entity instances                ; 4                              ;
-; Entity Instance                           ; ram:inst5|altsyncram:mem_rtl_0 ;
+; Entity Instance                           ; ram:inst6|altsyncram:mem_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
-;     -- WIDTH_A                            ; 6                              ;
-;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- WIDTH_A                            ; 14                             ;
+;     -- NUMWORDS_A                         ; 1024                           ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
 ;     -- WIDTH_B                            ; 1                              ;
 ;     -- NUMWORDS_B                         ; 1                              ;
@@ -901,10 +902,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
-; Entity Instance                           ; ram:inst6|altsyncram:mem_rtl_0 ;
+; Entity Instance                           ; ram:inst5|altsyncram:mem_rtl_0 ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
-;     -- WIDTH_A                            ; 14                             ;
-;     -- NUMWORDS_A                         ; 1024                           ;
+;     -- WIDTH_A                            ; 6                              ;
+;     -- NUMWORDS_A                         ; 2048                           ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
 ;     -- WIDTH_B                            ; 1                              ;
 ;     -- NUMWORDS_B                         ; 1                              ;
@@ -931,35 +932,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 835                         ;
-;     CLR               ; 60                          ;
-;     CLR SLD           ; 5                           ;
-;     ENA               ; 18                          ;
-;     ENA CLR           ; 616                         ;
-;     ENA CLR SCLR      ; 52                          ;
+; boundary_port         ; 32                          ;
+; cycloneiii_ff         ; 854                         ;
+;     CLR               ; 63                          ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 629                         ;
+;     ENA CLR SCLR      ; 58                          ;
 ;     ENA CLR SLD       ; 5                           ;
-;     ENA SCLR          ; 22                          ;
+;     ENA SCLR          ; 25                          ;
 ;     ENA SLD           ; 16                          ;
-;     SCLR              ; 4                           ;
+;     SCLR              ; 5                           ;
 ;     SCLR SLD          ; 10                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 26                          ;
-; cycloneiii_lcell_comb ; 1615                        ;
+; cycloneiii_lcell_comb ; 1632                        ;
 ;     arith             ; 640                         ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 562                         ;
 ;         3 data inputs ; 77                          ;
-;     normal            ; 975                         ;
+;     normal            ; 992                         ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 53                          ;
-;         2 data inputs ; 96                          ;
-;         3 data inputs ; 124                         ;
-;         4 data inputs ; 696                         ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 145                         ;
+;         4 data inputs ; 689                         ;
 ; cycloneiii_ram_block  ; 45                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.34                        ;
+; Average LUT depth     ; 3.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -968,7 +968,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -978,7 +978,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Jan  8 21:21:33 2025
+    Info: Processing started: Thu Jan  9 19:29:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_sistema_completo_uart -c test_sistema_completo_uart
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1032,12 +1032,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file test_si
 Info (12021): Found 1 design units, including 1 entities, in source file test_sistema_completo_uart.bdf
     Info (12023): Found entity 1: test_sistema_completo_uart
 Info (12021): Found 2 design units, including 1 entities, in source file coordinador_mod_tes.vhd
-    Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 44
+    Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 45
     Info (12023): Found entity 1: coordinador_mod_tes File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 8
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/uart_tx.v Line: 42
 Info (12127): Elaborating entity "test_sistema_completo_uart_2" for the top level hierarchy
+Warning (275009): Pin "swtches" not connected
 Info (12128): Elaborating entity "coordinador_mod_tes" for hierarchy "coordinador_mod_tes:inst8"
-Warning (10036): Verilog HDL or VHDL warning at coordinador_mod_tes.vhd(64): object "flag_esp_fin_algo" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at coordinador_mod_tes.vhd(66): object "flag_esp_fin_algo" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 66
 Info (12128): Elaborating entity "algo_3_final" for hierarchy "algo_3_final:inst"
 Info (12128): Elaborating entity "uart_algo_nuevo" for hierarchy "uart_algo_nuevo:inst10"
 Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst11"
@@ -1047,15 +1048,16 @@ Info (12128): Elaborating entity "ram" for hierarchy "ram:inst2"
 Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst12"
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(137): truncated value with size 10 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/uart_tx.v Line: 137
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(139): truncated value with size 10 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/uart_tx.v Line: 139
+Info (12128): Elaborating entity "access_UART" for hierarchy "access_UART:inst1"
 Info (12128): Elaborating entity "ack_sender" for hierarchy "ack_sender:inst14"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst6"
 Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst7"
 Info (19000): Inferred 4 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst5|mem_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst6|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 6
-        Info (286033): Parameter WIDTHAD_A set to 11
-        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter WIDTH_A set to 14
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
         Info (286033): Parameter ADDRESS_ACLR_A set to NONE
         Info (286033): Parameter OUTDATA_ACLR_A set to NONE
@@ -1073,11 +1075,11 @@ Info (19000): Inferred 4 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst6|mem_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst5|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
-        Info (286033): Parameter WIDTH_A set to 14
-        Info (286033): Parameter WIDTHAD_A set to 10
-        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_A set to 6
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
         Info (286033): Parameter ADDRESS_ACLR_A set to NONE
         Info (286033): Parameter OUTDATA_ACLR_A set to NONE
@@ -1095,34 +1097,6 @@ Info (19000): Inferred 4 megafunctions from design logic
         Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-Info (12130): Elaborated megafunction instantiation "ram:inst5|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "ram:inst5|altsyncram:mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "6"
-    Info (12134): Parameter "WIDTHAD_A" = "11"
-    Info (12134): Parameter "NUMWORDS_A" = "2048"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7f81.tdf
-    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_7f81.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "ram:inst3|altsyncram:mem_rtl_0"
-Info (12133): Instantiated megafunction "ram:inst3|altsyncram:mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
-    Info (12134): Parameter "WIDTH_A" = "14"
-    Info (12134): Parameter "WIDTHAD_A" = "11"
-    Info (12134): Parameter "NUMWORDS_A" = "2048"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mg81.tdf
-    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_mg81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst6|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst6|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -1137,6 +1111,34 @@ Info (12133): Instantiated megafunction "ram:inst6|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eg81.tdf
     Info (12023): Found entity 1: altsyncram_eg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_eg81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst3|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst3|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "14"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mg81.tdf
+    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_mg81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst5|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst5|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "6"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7f81.tdf
+    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_7f81.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "ram:inst2|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "ram:inst2|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
@@ -1151,30 +1153,40 @@ Info (12133): Instantiated megafunction "ram:inst2|altsyncram:mem_rtl_0" with th
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
     Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/db/altsyncram_jg81.tdf Line: 28
-Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 66
+Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 68
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register coordinador_mod_tes:inst8|img[0] will power up to High File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 66
+    Critical Warning (18010): Register coordinador_mod_tes:inst8|img[0] will power up to High File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/coordinador_mod_tes.vhd Line: 68
     Critical Warning (18010): Register algo_3_final:inst|dir_mem[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/algo_3_final.vhd Line: 127
-    Critical Warning (18010): Register algo_3_final:inst|dir_energia[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/algo_3_final.vhd Line: 127
     Critical Warning (18010): Register algo_3_final:inst|indice[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/algo_3_final.vhd Line: 127
+    Critical Warning (18010): Register algo_3_final:inst|dir_energia[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/algo_3_final.vhd Line: 127
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo_uart/output_files/test_sistema_completo_uart.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "swtches[10]"
-Info (21057): Implemented 1810 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "swtches[9]"
+    Warning (15610): No output dependent on input pin "swtches[8]"
+    Warning (15610): No output dependent on input pin "swtches[7]"
+    Warning (15610): No output dependent on input pin "swtches[6]"
+    Warning (15610): No output dependent on input pin "swtches[5]"
+    Warning (15610): No output dependent on input pin "swtches[4]"
+    Warning (15610): No output dependent on input pin "swtches[3]"
+    Warning (15610): No output dependent on input pin "swtches[2]"
+    Warning (15610): No output dependent on input pin "swtches[1]"
+    Warning (15610): No output dependent on input pin "swtches[0]"
+Info (21057): Implemented 1822 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
-    Info (21059): Implemented 36 output pins
-    Info (21061): Implemented 1713 logic cells
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 1745 logic cells
     Info (21064): Implemented 45 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Wed Jan  8 21:21:56 2025
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Thu Jan  9 19:29:55 2025
     Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:45
+    Info: Total CPU time (on all processors): 00:00:44
 
 
 +------------------------------------------+

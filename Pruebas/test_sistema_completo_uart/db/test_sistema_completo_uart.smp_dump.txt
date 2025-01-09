@@ -51,20 +51,23 @@ state.end_histograma 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 state.fin_escritura_histograma 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |test_sistema_completo_uart_2|coordinador_mod_tes:inst8|state
-Name state.incremento_addr_histograma_envio state.envio_uart_4 state.envio_uart_3 state.envio_uart_2 state.envio_uart_1 state.lectura_histograma state.trigger_wait state.reset_histograma state.esp_fin_escritura state.enable_histograma_escritura state.esp_fin_histograma state.esp_borrado_2 state.trigger_algorimo state.fin_prog state.esp_borrado_1 state.reset_todo 
-state.reset_todo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.esp_borrado_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.fin_prog 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.trigger_algorimo 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.esp_borrado_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.esp_fin_histograma 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.enable_histograma_escritura 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.esp_fin_escritura 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.reset_histograma 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.trigger_wait 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.lectura_histograma 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.envio_uart_1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.envio_uart_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.envio_uart_3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.envio_uart_4 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.incremento_addr_histograma_envio 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name state.escritura_borrado_hist_2 state.escritura_borrado_hist_1 state.borrado_mem_histograma state.incremento_addr_histograma_envio state.envio_uart_4 state.envio_uart_3 state.envio_uart_2 state.envio_uart_1 state.lectura_histograma state.trigger_wait state.reset_histograma state.esp_fin_escritura state.enable_histograma_escritura state.esp_fin_histograma state.esp_borrado_2 state.trigger_algorimo state.fin_prog state.esp_borrado_1 state.reset_todo 
+state.reset_todo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.esp_borrado_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.fin_prog 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.trigger_algorimo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.esp_borrado_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.esp_fin_histograma 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.enable_histograma_escritura 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.esp_fin_escritura 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.reset_histograma 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.trigger_wait 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.lectura_histograma 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.envio_uart_4 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.incremento_addr_histograma_envio 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.borrado_mem_histograma 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_borrado_hist_1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.escritura_borrado_hist_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
