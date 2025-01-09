@@ -11,36 +11,31 @@ entity coordinador_mod_tes is
     clk   : in std_logic; --clk de entrada, pensado en 50 MHz
     reset : in std_logic; -- reset asincronico
     -- entradas			
-    fin_programador  : in std_logic; -- señal proveniente del bloque programador_block indicando fin de la programacion de la camara
-    fin_algoritmo    : in std_logic; -- señal proveniente de algo_3_final indicando que las memorias de energia y cantidad ya son validas
-    fin_borrado_algo : in std_logic; -- señal proveniente de algo_3_final indicando que las memorias fueron borradas y ya esta listo para recibir info luego de un reset
-    fin_histograma   : in std_logic; -- señal proveniente del bloque que genera los histogramas, marcando que ya llego al final de los datos utiles
-    datos_histograma : in std_logic_vector(13 downto 0); -- señal de datos provenientes de la memoria ram donde se almacenan los histogramas
-    uart_tx_busy_i   : in std_logic;
+    fin_programador          : in std_logic; -- señal proveniente del bloque programador_block indicando fin de la programacion de la camara
+    fin_histograma           : in std_logic; -- señal proveniente de algo_3_final indicando que el histograma ya fue generado
+    fin_escritura_histograma : in std_logic;
+    fin_borrado_algo         : in std_logic; -- señal proveniente de algo_3_final indicando que las memorias fueron borradas y ya esta listo para recibir info luego de un reset
+    datos_histograma         : in std_logic_vector(13 downto 0); -- señal de datos provenientes de la memoria ram donde se almacenan los histogramas
+    uart_tx_busy_i           : in std_logic;
     --señales de control entrada
     cntrl_envio     : in std_logic; -- señal proveniente del bloque decod_control eneargado de marcar el envio de los histogramas solicitado por parte del satelite
-    --trigger_externo : in std_logic;--señal unicamente valida para el banco de pruebas
+    trigger_externo : in std_logic;--señal unicamente valida para el banco de pruebas
     --error           : in std_logic;
-	 -- salidas
-    selector_ram_energia_cantidad : out std_logic;-- señal que se utiliza para el selector de ram para ver que maquina de estados tiene acceso a la ram en que momento
-    selector_ram_histograma       : out std_logic;-- señal que se utiliza para el selector de ram para ver que maquina de estados tiene acceso a la ram en que momento
-    trigger_intern                : out std_logic; -- señal que se encarga de los triggers internos de las maquinas de estados
-    trigger_cam_o                 : out std_logic; -- señal enviada a la camara para que envie el frame
-    start_program                 : out std_logic; -- señal enviada al programador para que programe a la camara
-    reset_histogram               : out std_logic; -- señal encargada de reiniciar el histograma despues de haber escrito en memoria 
-    enable_hits                   : out std_logic; -- señal que se le envia al histograma cuando los datos de las memorias son validos y se quiere hacer el histograma
-    escritura_hist                : out std_logic; -- señal enviada al histograma para que vuelque los registros en memoria
-    dir_mem_hist                  : out std_logic_vector(9 downto 0); -- señal para el histograma para controlar en que pos de memoria se escribe el histograma actual
-    reset_decod                   : out std_logic;
-    uart_tx_en_o                  : out std_logic;
-    uart_byte_o                   : out std_logic_vector(7 downto 0);
+    -- salidas 
+    selector_ram_histograma : out std_logic;-- señal que se utiliza para el selector de ram para ver que maquina de estados tiene acceso a la ram en que momento
+    trigger_intern          : out std_logic; -- señal que se encarga de los triggers internos de las maquinas de estados
+    trigger_cam_o           : out std_logic; -- señal enviada a la camara para que envie el frame
+    start_program           : out std_logic; -- señal enviada al programador para que programe a la camara
+    escritura_hist          : out std_logic; -- señal enviada al histograma para que vuelque los registros en memoria
+    errase_histograma       : out std_logic; -- señal encargada de reiniciar el histograma despues de haber escrito en memoria
+    dir_mem_hist            : out std_logic_vector(9 downto 0); -- señal para el histograma para controlar en que pos de memoria se escribe el histograma actual
+    reset_decod             : out std_logic;
+    uart_tx_en_o            : out std_logic;
+    uart_byte_o             : out std_logic_vector(7 downto 0);
     -- menejo memoria de histograma
-    addr_histograma : out std_logic_vector(9 downto 0); --addrs que se va a mandar por el bus de datos de la memoria que guarda los histogramas
-    r_w_histograma  : out std_logic; --señal encargada de la lectura escritura de la memoria de histograma, en este caso solo lectura(0) y alta impedancia 
-    selector_uart   : out std_logic;
-    sw_state_led : out std_logic;
-	 swtches		: in std_logic_vector(10 downto 0);
-	 addr_mem	: out std_logic_vector(10 downto 0)
+    addr_histograma  : out std_logic_vector(9 downto 0); --addrs que se va a mandar por el bus de datos de la memoria que guarda los histogramas
+    selector_uart    : out std_logic; -- solo valido para el banco de pruebas
+    trigger_wait_led : out std_logic
     --error_led       : out std_logic
   );
 
@@ -49,9 +44,9 @@ end entity;
 architecture rtl of coordinador_mod_tes is
 
   -- Build an enumerated type for the state machine
-  type state_type is (reset_todo, esp_borrado_1, fin_prog, trigger_algorimo, esp_borrado_2, esp_fin_algorimo,
-    enable_histograma, esp_fin_histograma, enable_histograma_escritura, esp_fin_escritura, reset_histograma,
-    lectura_histograma, envio_uart_1, envio_uart_2, envio_uart_3, envio_uart_4, incremento_addr_histograma_envio,sw);
+  type state_type is (reset_todo, esp_borrado_1, fin_prog, trigger_algorimo, esp_borrado_2, esp_fin_histograma,
+    enable_histograma_escritura, esp_fin_escritura, reset_histograma, trigger_wait,
+    lectura_histograma, envio_uart_1, envio_uart_2, envio_uart_3, envio_uart_4, incremento_addr_histograma_envio);
 
   -- Register to hold the current state
   signal state : state_type;
@@ -78,8 +73,8 @@ begin
       flag_trigger_wait       := false;
       img              <= 1;
       dir_mem_hist_int <= 0;
---	 elsif error = '1' then
---		state <= error_state;
+      --	 elsif error = '1' then
+      --		state <= error_state;
     elsif (rising_edge(clk)) then
       case state is
         when reset_todo => -- en este estado se reinician todas las maquinas de estado 
@@ -110,12 +105,24 @@ begin
             state <= esp_borrado_1;-- eniamos nuevamente la señal de start, para que no se bloquee en este estado
             cuenta := 0;
           end if;
+        when trigger_wait =>
+          if cntrl_envio = '1' then
+            if trigger_externo = '0' then
+              state <= trigger_algorimo;
+            else
+              state <= trigger_wait;
+            end if;
+          else
+            state               <= lectura_histograma;
+            addr_histograma_int <= 0;
+            flag_trigger_wait := true;
+          end if;
         when trigger_algorimo => -- en este estado se envia la señal de trigger a las maquinas de estado internas
           state <= esp_borrado_2;
         when esp_borrado_2 =>
           if cntrl_envio = '1' then -- si el satelite no requiere que envie los histogramas
             if fin_borrado_algo = '1' then
-              state <= esp_fin_algorimo;
+              state <= esp_fin_histograma;
             else
               state <= esp_borrado_2;
             end if;
@@ -124,20 +131,6 @@ begin
             addr_histograma_int <= 0;
             flag_borrado_2 := true;
           end if;
-        when esp_fin_algorimo => -- en este estado se espera que el algoritmo finalice
-          if cntrl_envio = '1' then -- si el satelite no requiere que envie los histogramas
-            if fin_algoritmo = '1' then
-              state <= enable_histograma;
-            else
-              state <= esp_fin_algorimo;
-            end if;
-          else -- si el satelite requiere la data reiniciamos la dir de inicio y vamos a la primera lectura
-            state               <= lectura_histograma;
-            addr_histograma_int <= 0;
-            flag_esp_fin_algo := true;
-          end if;
-        when enable_histograma => --en este estado se le indica al histograma que los datos de las memorias son validos y ya puede realizar el histograma
-          state <= esp_fin_histograma;
         when esp_fin_histograma => -- en este estado se espera que el histograma termine de realizase para capturar una nueva imagen
           if cntrl_envio = '1' then -- si el satelite no requiere que envie los histogramas
             if fin_histograma = '1' then
@@ -146,8 +139,8 @@ begin
                 img   <= 1;
                 state <= enable_histograma_escritura;
               else
-                --state <= trigger_wait;
-					        state <= sw;
+                state <= trigger_wait;
+                --state <= sw;
               end if;
             else
               state <= esp_fin_histograma;
@@ -160,7 +153,7 @@ begin
         when enable_histograma_escritura => --en este estado se escribe el histograma en memoria
           state <= esp_fin_escritura;
         when esp_fin_escritura =>
-          if fin_histograma = '1' then
+          if fin_escritura_histograma = '1' then
             state <= reset_histograma;
           else
             state <= esp_fin_escritura;
@@ -168,10 +161,10 @@ begin
         when reset_histograma => -- en este estado se borra la informacion dentro de la maquina de estados histograma, para hacer un nuevo histograma
           if dir_mem_hist_int < 992 then
             dir_mem_hist_int <= dir_mem_hist_int + 32;
-            state            <= sw;
+            state            <= trigger_wait;
           else
             dir_mem_hist_int <= 0;
-            state            <= sw;
+            state            <= trigger_wait;
           end if;
         when lectura_histograma => -- en este estado leemos la informacion dentro de la memoria del histograma para enviarlo por UART
           cuenta := cuenta + 1;
@@ -206,25 +199,15 @@ begin
             if flag_borrado_2 then
               flag_borrado_2 := false;
               state <= esp_borrado_2;
-            elsif flag_esp_fin_algo then
-              flag_esp_fin_algo := false;
-              state <= esp_fin_algorimo;
             elsif flag_esp_fin_histograma then
               flag_esp_fin_histograma := false;
               state <= esp_fin_histograma;
             elsif flag_trigger_wait then
-              --flag_trigger_wait := false;
-              --state <= trigger_wait;
+              flag_trigger_wait := false;
+              state <= trigger_wait;
             else
               state <= reset_todo;
             end if;
-          end if;
-        when sw =>
-          if cntrl_envio = '1' then
-            state <= sw;
-          else -- si el satelite requiere la data reiniciamos la dir de inicio y vamos a la primera lectura
-            state               <= lectura_histograma;
-            addr_histograma_int <= 0;
           end if;
       end case;
     end if;
@@ -235,329 +218,231 @@ begin
   begin
     case state is
       when reset_todo => --Habria que agregar una salida que reinicie la camara como modulo 
-        trigger_intern                <= '1'; --reiniciamos las maquinas de estado internas
+        trigger_intern          <= '1'; --reiniciamos las maquinas de estado internas
+        trigger_cam_o           <= '0';
+        start_program           <= '0';
+        escritura_hist          <= '0';
+        errase_histograma        <= '1'; --reiniciamos el histograma 
+        dir_mem_hist            <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod             <= '1'; --reiniciamos la maquina de estado decod_control
+        uart_tx_en_o            <= '0';
+        uart_byte_o             <= (others => '0');
+        addr_histograma         <= (others => '0');
+        selector_ram_histograma <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
+        --error_led <= '0';
+        selector_uart    <= '0'; --en 0 el control lo tiene quien responde al ack
+        trigger_wait_led <= '0';
+      when esp_borrado_1 =>
+        trigger_intern          <= '0';
+        trigger_cam_o           <= '0';
+        start_program           <= '1'; --le mandamos el start al programador
+        escritura_hist          <= '0';
+        errase_histograma        <= '0';
+        dir_mem_hist            <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod             <= '0';
+        uart_tx_en_o            <= '0';
+        uart_byte_o             <= (others => '0');
+        addr_histograma         <= (others => '0');
+        selector_ram_histograma <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
+        --error_led <= '0';
+        selector_uart    <= '0'; --en 0 el control lo tiene quien responde al ack
+        trigger_wait_led <= '0';
+      when trigger_algorimo =>
+        trigger_intern          <= '1'; --enviamos el trigger a las maquinas internas 
+        trigger_cam_o           <= '0';
+        start_program           <= '0';
+        escritura_hist          <= '0';
+        errase_histograma        <= '0';
+        dir_mem_hist            <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod             <= '0';
+        uart_tx_en_o            <= '0';
+        uart_byte_o             <= (others => '0');
+        addr_histograma         <= (others => '0');
+        selector_ram_histograma <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
+        --error_led <= '0';
+        selector_uart    <= '0'; --en 0 el control lo tiene quien responde al ack
+        trigger_wait_led <= '0';
+      when esp_fin_histograma =>
+        trigger_intern          <= '0';
+        trigger_cam_o           <= '0';
+        start_program           <= '0';
+        escritura_hist          <= '0';
+        errase_histograma        <= '0';
+        dir_mem_hist            <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod             <= '0';
+        uart_tx_en_o            <= '0';
+        uart_byte_o             <= (others => '0');
+        addr_histograma         <= (others => '0');
+        selector_ram_histograma <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
+        --error_led <= '0';
+        selector_uart    <= '0'; --en 0 el control lo tiene quien responde al ack
+        trigger_wait_led <= '0';
+      when enable_histograma_escritura =>
+        trigger_intern          <= '0';
+        trigger_cam_o           <= '0';
+        start_program           <= '0';
+        escritura_hist          <= '1'; -- habilitamos la escritura asi se escribe el histograma a memoria 
+        errase_histograma        <= '0';
+        dir_mem_hist            <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod             <= '0';
+        uart_tx_en_o            <= '0';
+        uart_byte_o             <= (others => '0');
+        addr_histograma         <= (others => '0');
+        selector_ram_histograma <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
+        --error_led <= '0';
+        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
+        trigger_wait_led  <= '0';
+      when esp_fin_escritura   =>
+        trigger_intern                <= '0';
         trigger_cam_o                 <= '0';
         start_program                 <= '0';
-        enable_hits                   <= '0';
         escritura_hist                <= '0';
-        reset_histogram               <= '1'; --reiniciamos el histograma 
+        errase_histograma              <= '0';
         dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod                   <= '1'; --reiniciamos la maquina de estado decod_control
+        reset_decod                   <= '0';
         uart_tx_en_o                  <= '0';
         uart_byte_o                   <= (others => '0');
         addr_histograma               <= (others => '0');
-        r_w_histograma                <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-		  --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-    when esp_borrado_1 =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '1'; --le mandamos el start al programador
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
         selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when trigger_algorimo =>
-        trigger_intern  <= '1'; --enviamos el trigger a las maquinas internas 
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when reset_histograma    =>
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '1'; -- reiniciamos el histograma luego de haber escrito a memoria
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= (others => '0');
+        addr_histograma               <= (others => '0');
         selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when esp_fin_algorimo =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when enable_histograma =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '1'; -- ya la memoria de energia y cantidad es valida para hacer el histograma
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '1';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when esp_fin_histograma => 
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '1';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when enable_histograma_escritura =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '1'; -- lo habilitamos pero con la escritura tambien habilitada asi lo escribe en memoria 
-        escritura_hist  <= '1'; -- habilitamos la escritura asi se escribe el histograma a memoria 
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '1';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when esp_fin_escritura =>  
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '1';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when reset_histograma =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '1'; -- reiniciamos el histograma luego de haber escrito a memoria
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
-        selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
-        --error_led <= '0';
-        selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when lectura_histograma =>
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when lectura_histograma  =>
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= (others => '0');
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when envio_uart_1 => --envio parte alta
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '1';
-        uart_byte_o     <= "00" & reg_histograma(13 downto 8);
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when envio_uart_1        => --envio parte alta
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '1';
+        uart_byte_o                   <= "00" & reg_histograma(13 downto 8);
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when envio_uart_2 => --envio parte alta
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= "00" & reg_histograma(13 downto 8);
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when envio_uart_2        => --envio parte alta
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= "00" & reg_histograma(13 downto 8);
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when envio_uart_3 => --envio parte baja
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '1';
-        uart_byte_o     <= reg_histograma(7 downto 0);
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when envio_uart_3        => --envio parte baja
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '1';
+        uart_byte_o                   <= reg_histograma(7 downto 0);
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when envio_uart_4 => --envio parte baja
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= reg_histograma(7 downto 0);
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when envio_uart_4        => --envio parte baja
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= reg_histograma(7 downto 0);
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when incremento_addr_histograma_envio => --envio parte alta
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when incremento_addr_histograma_envio => --envio parte alta
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= (others => '0');
+        addr_histograma               <= std_logic_vector(to_unsigned(addr_histograma_int, 10));
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-		when sw =>
-		  trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= (others => '0');
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others=>'0');
-        r_w_histograma  <= '0';-- lectura
-        selector_ram_energia_cantidad <= '1';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '0';
+      when trigger_wait                  =>
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= (others => '0');
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= (others => '0');
+        addr_histograma               <= (others => '0');
         selector_ram_histograma       <= '1';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '1'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='1';
-		  addr_mem <= swtches;
-		when others => --estados que encajan fin_prog, esp_borrado_2, esp_fin_algoritmo
-        trigger_intern  <= '0';
-        trigger_cam_o   <= '0';
-        start_program   <= '0';
-        enable_hits     <= '0';
-        escritura_hist  <= '0';
-        reset_histogram <= '0';
-        dir_mem_hist    <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
-        reset_decod     <= '0';
-        uart_tx_en_o    <= '0';
-        uart_byte_o     <= (others => '0');
-        addr_histograma <= (others => '0');
-        r_w_histograma  <= '0';
-        selector_ram_energia_cantidad <= '0';-- cuando esta en 0 el control de las memorias lo tiene el algoritmo, si esta en 1 el control lo tiene histograma 
+        trigger_wait_led  <= '1';
+      when others => --estados que encajan fin_prog, esp_borrado_2, esp_fin_algoritmo
+        trigger_intern                <= '0';
+        trigger_cam_o                 <= '0';
+        start_program                 <= '0';
+        escritura_hist                <= '0';
+        errase_histograma              <= '0';
+        dir_mem_hist                  <= std_logic_vector(to_unsigned(dir_mem_hist_int, 10));
+        reset_decod                   <= '0';
+        uart_tx_en_o                  <= '0';
+        uart_byte_o                   <= (others => '0');
+        addr_histograma               <= (others => '0');
         selector_ram_histograma       <= '0';-- cuando esta en 0 el control de la memoria de histograma lo tiene el histograma, si esta en 1 el control lo tiene el cordinador
         --error_led <= '0';
         selector_uart <= '0'; --en 0 el control lo tiene quien responde al ack
-        sw_state_led <='0';
-		  addr_mem <=(others=>'0');
-	 end case;
+        trigger_wait_led  <= '0';
+    end case;
     if reset = '1' then
       reg_histograma <= (others => '0');
     elsif (rising_edge(clk)) then

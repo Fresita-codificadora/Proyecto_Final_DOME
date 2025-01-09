@@ -152,6 +152,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50",
 					"strict" : false
 				},

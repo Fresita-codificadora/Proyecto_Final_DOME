@@ -17,9 +17,9 @@ datos_a_enviar = imagen_a_vector('testPulenta.png');
 vector_recibido = enviar_y_recibir_datos(serial_port, datos_a_enviar);
 
 % Mostrar imagen recibida
-imgTest = vector_a_imagen(vector_recibido, 97);
-imshow(imgTest,[]);
-colormap colorcube
+%imgTest = vector_a_imagen(vector_recibido, 97);
+%imshow(imgTest,[]);
+%colormap colorcube
 
 % Cerrar el puerto serie
 clear serial_port;

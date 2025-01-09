@@ -22,12 +22,17 @@ entity algo_3_final is
   port (
     clk        : in std_logic;
     trigger    : in std_logic;
+    reset      : in std_logic;
     pix_data   : in std_logic_vector(7 downto 0);
     pix_valid  : in std_logic;
     data_ram_i : in std_logic_vector(10 downto 0);
     data_ram_o : out std_logic_vector(10 downto 0); --correspondiente a la FIFO
     addr_ram   : out std_logic_vector(10 downto 0);
     we         : out std_logic;
+    -- manejo de histograma
+    escritura_hist_signal : in std_logic;
+    errase_histograma     : in std_logic;
+    dir_escritura_hist    : in std_logic_vector(9 downto 0);
     --otras memorias
     data_ram_energia_i      : in std_logic_vector (13 downto 0);
     data_ram_energia_o      : out std_logic_vector (13 downto 0);
@@ -39,9 +44,10 @@ entity algo_3_final is
     selector_ram_histograma : out std_logic;
     we_histograma           : out std_logic;
     --
-    fin_borrado : out std_logic;
-    fin_signal  : out std_logic;
-    ack         : out std_logic
+    fin_borrado    : out std_logic;
+    fin_histograma : out std_logic;
+    fin_escritura  : out std_logic;
+    ack            : out std_logic
   );
 
 end entity;
@@ -52,7 +58,7 @@ architecture rtl of algo_3_final is
   type state_type is (erase, escritura_erase_1, escritura_erase_2, nuevo_pix, dir_anterior, lectura_anterior, dir_ancho_1, lectura_ancho_1
     , dir_ancho_2, lectura_ancho_2, dir_ancho_3, lectura_ancho_3, casos, dir_cantidad_energia, lectura_cantidad_energia, escritura_1,
     escritura_2, incremento_indice, dir_memorias_energia_histograma, lectura_memorias_histograma, escritura_histograma_1, escritura_histograma_2, incremento_dir_histograma,
-    filtro, histograma_gen, fin);
+    filtro, histograma_gen, end_histograma, fin_escritura_histograma);
 
   -- Register to hold the current state
   signal state : state_type;
@@ -73,6 +79,7 @@ architecture rtl of algo_3_final is
   -- señales para la memoria del histograma
   signal dir_histograma_int : integer range 0 to 1023 := 0;
   constant ancho_bin        : integer                 := (2 ** num_bits)/32;
+  signal indice_histograma  : integer range 1 to 32   := 1;
 
   -- Definimos el histograma como un arreglo de 32 bins de 14 bits.
   type hist_array is array (1 to 32) of integer range 0 to (2 ** 14 - 1);
@@ -117,7 +124,7 @@ begin
     variable cuenta_pixel : integer range 0 to 2047 := 0;
     variable eventos      : integer range 0 to 2047 := 1;
   begin
-    if trigger = '1' then
+    if reset = '0' then --CAMBIAR DESPUES A reset = '1'
       state <= erase;
       cuenta       := 0;
       cuenta_pixel := 0;
@@ -129,7 +136,23 @@ begin
       dir_energia        <= 0;
       pix_count_int      <= 0;
       dir_histograma_int <= 0;
-      histogram          <= (others => 0);-- ESTA CONDICION NO VA A ESTAR EN EL PROGRAMA FINAL DEBE HABER UN ESTADO ESPECIFICO QUE REINCIE
+      histogram          <= (others => 0);
+      indice_histograma  <= 1;
+    elsif trigger = '1' then
+      state <= erase;
+      cuenta       := 0;
+      cuenta_pixel := 0;
+      eventos      := 1;
+      indice             <= 0;
+      ignorar_ancho_1    <= false;
+      ignorar_anterior   <= false;
+      dir_mem            <= 0;
+      dir_energia        <= 0;
+      pix_count_int      <= 0;
+      dir_histograma_int <= 0;
+      indice_histograma  <= 1;
+    elsif errase_histograma = '1' then
+      histogram <= (others => 0);
     elsif (rising_edge(clk)) then
       case state is
         when erase =>
@@ -269,9 +292,7 @@ begin
             dir_mem <= dir_mem + 1; -- incrementamos la direccion a la que vamos a buscar el dato
             state   <= lectura_memorias_histograma;
           else
-            dir_mem            <= 0;
-            dir_histograma_int <= 0;
-            state              <= escritura_histograma_1;
+            state <= end_histograma;
           end if;
         when lectura_memorias_histograma =>
           cuenta := cuenta + 1;
@@ -282,7 +303,7 @@ begin
             state <= filtro;
           end if;
         when filtro =>
-          if energia_temp > 0 and cantidad_temp > 1 then --el filtro
+          if energia_temp > 0 and cantidad_temp > 1 then --el filtro (HAY QUE AGREGAR LA CONDICION DE QUE SI ENERGIA ES CERO YA TERMINAMOS DE PROCESAR)
             state <= histograma_gen;
           else
             state <= dir_memorias_energia_histograma;
@@ -355,20 +376,29 @@ begin
           else
           end if;
           state <= dir_memorias_energia_histograma;
+        when end_histograma =>
+          if escritura_hist_signal = '1' then -- si me llega la señal de escritura escribimos, si no me llega nos quedamos esperando a eso
+            dir_mem            <= 0;
+            dir_histograma_int <= to_integer(unsigned(dir_escritura_hist));
+            state              <= escritura_histograma_1;
+          else
+            state <= end_histograma;
+          end if;
         when escritura_histograma_1 =>
           state <= escritura_histograma_2;
         when escritura_histograma_2 =>
           state <= incremento_dir_histograma;
         when incremento_dir_histograma =>
-          if dir_histograma_int <= 32 then
+          if dir_histograma_int <= to_integer(unsigned(dir_escritura_hist)) + 32 then
             dir_histograma_int    <= dir_histograma_int + 1;--incremento la direccion de memoria donde voy a escribir la data del histograma
+            indice_histograma     <= indice_histograma + 1; -- incremento el indice de la barra de histograma que voy a escribir
             state                 <= escritura_histograma_1;
           else
-            dir_histograma_int <= 0;
-            state              <= fin;
+            indice_histograma <= 1;
+            state             <= fin_escritura_histograma;
           end if;
-        when fin =>
-          state <= fin;
+        when fin_escritura_histograma =>
+          state <= fin_escritura_histograma;
       end case;
     end if;
   end process;
@@ -384,7 +414,8 @@ begin
         data_ram_energia_o      <= std_logic_vector(to_unsigned(data_a_escribir, 14));
         addr_ram_energia        <= std_logic_vector(to_unsigned(indice, 11));
         data_ram_cantidad_o     <= std_logic_vector(to_unsigned(data_a_escribir, 6)); --data a escribir :=0;
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -398,7 +429,8 @@ begin
         data_ram_energia_o      <= std_logic_vector(to_unsigned(data_a_escribir, 14));
         addr_ram_energia        <= std_logic_vector(to_unsigned(indice, 11));
         data_ram_cantidad_o     <= std_logic_vector(to_unsigned(data_a_escribir, 6));
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -412,7 +444,8 @@ begin
         data_ram_energia_o      <= std_logic_vector(to_unsigned(data_a_escribir, 14));
         addr_ram_energia        <= std_logic_vector(to_unsigned(indice, 11));
         data_ram_cantidad_o     <= std_logic_vector(to_unsigned(data_a_escribir, 6));
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -426,7 +459,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '1';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -440,7 +474,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '1';
         data_ram_histograma_o   <= (others => '0');
@@ -454,7 +489,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -468,7 +504,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -482,7 +519,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -496,7 +534,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -510,7 +549,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -524,7 +564,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -538,7 +579,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -552,7 +594,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -566,7 +609,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_energia, 11));
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -580,7 +624,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_energia, 11));
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -594,7 +639,8 @@ begin
         data_ram_energia_o      <= std_logic_vector(to_unsigned(energia_temp + pix_data_reg, 14));
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_energia, 11));
         data_ram_cantidad_o     <= std_logic_vector(to_unsigned(cantidad_temp + 1, 6));
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '1';
         data_ram_histograma_o   <= (others => '0');
@@ -608,7 +654,8 @@ begin
         data_ram_energia_o      <= std_logic_vector(to_unsigned(energia_temp + pix_data_reg, 14));
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_energia, 11));
         data_ram_cantidad_o     <= std_logic_vector(to_unsigned(cantidad_temp + 1, 6));
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -622,26 +669,13 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
         addr_ram_histograma_o   <= (others => '0');
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
-        we_histograma           <= '0';
-      when fin                           =>
-        data_ram_o              <= (others => '0');
-        addr_ram                <= (others => '0');
-        we                      <= '0'; --lectura
-        data_ram_energia_o      <= (others => '0');
-        addr_ram_energia        <= (others => '0');
-        data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '1';
-        fin_borrado             <= '0';
-        ack                     <= '0';
-        data_ram_histograma_o   <= (others => '0');
-        addr_ram_histograma_o   <= (others => '0');
-        selector_ram_histograma <= '1'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '0';
         ----------------------------------------------------------------------------------------
         ---------------------EXPERIMENTAL-------------------------------------------------------
@@ -653,7 +687,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -667,7 +702,8 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -681,7 +717,38 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
+        fin_borrado             <= '0';
+        ack                     <= '0';
+        data_ram_histograma_o   <= (others => '0');
+        addr_ram_histograma_o   <= (others => '0');
+        selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
+        we_histograma           <= '0';
+      when histograma_gen                =>
+        data_ram_o              <= (others => '0');
+        addr_ram                <= (others => '0');
+        we                      <= '0'; --lectura
+        data_ram_energia_o      <= (others => '0');
+        addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
+        data_ram_cantidad_o     <= (others => '0');
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
+        fin_borrado             <= '0';
+        ack                     <= '0';
+        data_ram_histograma_o   <= (others => '0');
+        addr_ram_histograma_o   <= (others => '0');
+        selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
+        we_histograma           <= '0';
+      when end_histograma                =>
+        data_ram_o              <= (others => '0');
+        addr_ram                <= (others => '0');
+        we                      <= '0'; --lectura
+        data_ram_energia_o      <= (others => '0');
+        addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
+        data_ram_cantidad_o     <= (others => '0');
+        fin_escritura           <= '0';
+        fin_histograma          <= '1';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
@@ -695,10 +762,11 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(indice_histograma), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '1';
@@ -709,10 +777,11 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(indice_histograma), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '1';
@@ -723,26 +792,28 @@ begin
         data_ram_energia_o      <= (others => '0');
         addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '0';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
-        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(dir_histograma_int), data_ram_histograma_o'length));
+        data_ram_histograma_o   <= std_logic_vector(to_unsigned(histogram(indice_histograma), data_ram_histograma_o'length));
         addr_ram_histograma_o   <= std_logic_vector(to_unsigned(dir_histograma_int, addr_ram_histograma_o'length));
         selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '0';
-      when histograma_gen                 =>
+      when fin_escritura_histograma      =>
         data_ram_o              <= (others => '0');
         addr_ram                <= (others => '0');
         we                      <= '0'; --lectura
         data_ram_energia_o      <= (others => '0');
-        addr_ram_energia        <= std_logic_vector(to_unsigned(dir_mem, addr_ram_energia'length)); -- le doy la direccion de memoria a las memorias de enrgia 
+        addr_ram_energia        <= (others => '0');
         data_ram_cantidad_o     <= (others => '0');
-        fin_signal              <= '0';
+        fin_escritura           <= '1';
+        fin_histograma          <= '0';
         fin_borrado             <= '0';
         ack                     <= '0';
         data_ram_histograma_o   <= (others => '0');
         addr_ram_histograma_o   <= (others => '0');
-        selector_ram_histograma <= '0'; -- en cero el control lo tiene esta maquina de estados
+        selector_ram_histograma <= '1'; -- en cero el control lo tiene esta maquina de estados
         we_histograma           <= '0';
     end case;
     if trigger = '1' then

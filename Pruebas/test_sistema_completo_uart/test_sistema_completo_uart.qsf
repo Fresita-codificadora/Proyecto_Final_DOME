@@ -109,14 +109,15 @@ set_global_assignment -name VHDL_FILE programador.vhd
 set_global_assignment -name VHDL_FILE Histograma.vhd
 set_global_assignment -name VHDL_FILE divisor.vhd
 set_global_assignment -name VHDL_FILE decod_control.vhd
-set_global_assignment -name VHDL_FILE coordinador_mod_tes.vhd
 set_global_assignment -name VHDL_FILE catura_pixeles_2.vhd
 set_global_assignment -name VHDL_FILE algo_3_final.vhd
 set_global_assignment -name VHDL_FILE access_ram.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name BDF_FILE test_sistema_completo_uart_2.bdf
 set_global_assignment -name BDF_FILE test_sistema_completo_uart.bdf
+set_global_assignment -name VHDL_FILE coordinador_mod_tes.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R24 -to trigger_btn
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
