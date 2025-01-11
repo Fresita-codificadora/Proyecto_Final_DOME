@@ -1,0 +1,1355 @@
+Analysis & Synthesis report for banco_de_pruebas_simplificado
+Sat Jan 11 18:05:07 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |banco_de_pruebas_simplificado|UART_RX:inst11|r_SM_Main
+ 10. State Machine - |banco_de_pruebas_simplificado|sram_CIC:inst17|state
+ 11. State Machine - |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16|state
+ 12. State Machine - |banco_de_pruebas_simplificado|uart_tx:inst12|fsm_state
+ 13. State Machine - |banco_de_pruebas_simplificado|algo_3_final:inst|state
+ 14. State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|state
+ 15. State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|state
+ 16. State Machine - |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|state
+ 17. Registers Removed During Synthesis
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Registers Packed Into Inferred Megafunctions
+ 21. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 22. Source assignments for ram:inst3|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated
+ 23. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
+ 24. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
+ 25. Source assignments for ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
+ 26. Parameter Settings for User Entity Instance: algo_3_final:inst
+ 27. Parameter Settings for User Entity Instance: ram:inst5
+ 28. Parameter Settings for User Entity Instance: ram:inst3
+ 29. Parameter Settings for User Entity Instance: ram:inst2
+ 30. Parameter Settings for User Entity Instance: uart_tx:inst12
+ 31. Parameter Settings for User Entity Instance: UART_RX:inst11
+ 32. Parameter Settings for User Entity Instance: ram:inst6
+ 33. Parameter Settings for User Entity Instance: access_ram:inst7
+ 34. Parameter Settings for Inferred Entity Instance: ram:inst3|altsyncram:mem_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
+ 37. Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0
+ 38. altsyncram Parameter Settings by Entity Instance
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jan 11 18:05:07 2025          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; banco_de_pruebas_simplificado                  ;
+; Top-level Entity Name              ; banco_de_pruebas_simplificado                  ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 2,094                                          ;
+;     Total combinational functions  ; 1,941                                          ;
+;     Dedicated logic registers      ; 1,094                                          ;
+; Total registers                    ; 1094                                           ;
+; Total pins                         ; 72                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 77,824                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                    ;
++------------------------------------------------------------------+-------------------------------+-------------------------------+
+; Option                                                           ; Setting                       ; Default Value                 ;
++------------------------------------------------------------------+-------------------------------+-------------------------------+
+; Device                                                           ; EP4CE115F29C7                 ;                               ;
+; Top-level entity name                                            ; banco_de_pruebas_simplificado ; banco_de_pruebas_simplificado ;
+; Family name                                                      ; Cyclone IV E                  ; Cyclone V                     ;
+; VHDL Show LMF Mapping Messages                                   ; Off                           ;                               ;
+; VHDL Version                                                     ; VHDL_2008                     ; VHDL_1993                     ;
+; Use smart compilation                                            ; Off                           ; Off                           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                            ; On                            ;
+; Enable compact report table                                      ; Off                           ; Off                           ;
+; Restructure Multiplexers                                         ; Auto                          ; Auto                          ;
+; Create Debugging Nodes for IP Cores                              ; Off                           ; Off                           ;
+; Preserve fewer node names                                        ; On                            ; On                            ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable                        ; Enable                        ;
+; Verilog Version                                                  ; Verilog_2001                  ; Verilog_2001                  ;
+; State Machine Processing                                         ; Auto                          ; Auto                          ;
+; Safe State Machine                                               ; Off                           ; Off                           ;
+; Extract Verilog State Machines                                   ; On                            ; On                            ;
+; Extract VHDL State Machines                                      ; On                            ; On                            ;
+; Ignore Verilog initial constructs                                ; Off                           ; Off                           ;
+; Iteration limit for constant Verilog loops                       ; 5000                          ; 5000                          ;
+; Iteration limit for non-constant Verilog loops                   ; 250                           ; 250                           ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                            ; On                            ;
+; Infer RAMs from Raw Logic                                        ; On                            ; On                            ;
+; Parallel Synthesis                                               ; On                            ; On                            ;
+; DSP Block Balancing                                              ; Auto                          ; Auto                          ;
+; NOT Gate Push-Back                                               ; On                            ; On                            ;
+; Power-Up Don't Care                                              ; On                            ; On                            ;
+; Remove Redundant Logic Cells                                     ; Off                           ; Off                           ;
+; Remove Duplicate Registers                                       ; On                            ; On                            ;
+; Ignore CARRY Buffers                                             ; Off                           ; Off                           ;
+; Ignore CASCADE Buffers                                           ; Off                           ; Off                           ;
+; Ignore GLOBAL Buffers                                            ; Off                           ; Off                           ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                           ; Off                           ;
+; Ignore LCELL Buffers                                             ; Off                           ; Off                           ;
+; Ignore SOFT Buffers                                              ; On                            ; On                            ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                           ; Off                           ;
+; Optimization Technique                                           ; Balanced                      ; Balanced                      ;
+; Carry Chain Length                                               ; 70                            ; 70                            ;
+; Auto Carry Chains                                                ; On                            ; On                            ;
+; Auto Open-Drain Pins                                             ; On                            ; On                            ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                           ; Off                           ;
+; Auto ROM Replacement                                             ; On                            ; On                            ;
+; Auto RAM Replacement                                             ; On                            ; On                            ;
+; Auto DSP Block Replacement                                       ; On                            ; On                            ;
+; Auto Shift Register Replacement                                  ; Auto                          ; Auto                          ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                          ; Auto                          ;
+; Auto Clock Enable Replacement                                    ; On                            ; On                            ;
+; Strict RAM Replacement                                           ; Off                           ; Off                           ;
+; Allow Synchronous Control Signals                                ; On                            ; On                            ;
+; Force Use of Synchronous Clear Signals                           ; Off                           ; Off                           ;
+; Auto RAM Block Balancing                                         ; On                            ; On                            ;
+; Auto RAM to Logic Cell Conversion                                ; Off                           ; Off                           ;
+; Auto Resource Sharing                                            ; Off                           ; Off                           ;
+; Allow Any RAM Size For Recognition                               ; Off                           ; Off                           ;
+; Allow Any ROM Size For Recognition                               ; Off                           ; Off                           ;
+; Allow Any Shift Register Size For Recognition                    ; Off                           ; Off                           ;
+; Use LogicLock Constraints during Resource Balancing              ; On                            ; On                            ;
+; Ignore translate_off and synthesis_off directives                ; Off                           ; Off                           ;
+; Timing-Driven Synthesis                                          ; On                            ; On                            ;
+; Report Parameter Settings                                        ; On                            ; On                            ;
+; Report Source Assignments                                        ; On                            ; On                            ;
+; Report Connectivity Checks                                       ; On                            ; On                            ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                           ; Off                           ;
+; Synchronization Register Chain Length                            ; 2                             ; 2                             ;
+; Power Optimization During Synthesis                              ; Normal compilation            ; Normal compilation            ;
+; HDL message level                                                ; Level2                        ; Level2                        ;
+; Suppress Register Optimization Related Messages                  ; Off                           ; Off                           ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                          ; 5000                          ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                          ; 5000                          ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                           ; 100                           ;
+; Clock MUX Protection                                             ; On                            ; On                            ;
+; Auto Gated Clock Conversion                                      ; Off                           ; Off                           ;
+; Block Design Naming                                              ; Auto                          ; Auto                          ;
+; SDC constraint protection                                        ; Off                           ; Off                           ;
+; Synthesis Effort                                                 ; Auto                          ; Auto                          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                            ; On                            ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                           ; Off                           ;
+; Analysis & Synthesis Message Level                               ; Medium                        ; Medium                        ;
+; Disable Register Merging Across Hierarchies                      ; Auto                          ; Auto                          ;
+; Resource Aware Inference For Block RAM                           ; On                            ; On                            ;
++------------------------------------------------------------------+-------------------------------+-------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                 ;
++-----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                                      ; Library ;
++-----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sram_CIC.vhd                      ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd                      ;         ;
+; sram.vhd                          ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd                          ;         ;
+; prueba_1.vhd                      ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/prueba_1.vhd                      ;         ;
+; Controlador_sram_CIC_UART.vhd     ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/Controlador_sram_CIC_UART.vhd     ;         ;
+; access_UART.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_UART.vhd                   ;         ;
+; uart_tx.v                         ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v                         ;         ;
+; UART_RX.vhd                       ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/UART_RX.vhd                       ;         ;
+; ram.v                             ; yes             ; User Verilog HDL File              ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/ram.v                             ;         ;
+; Programador_controlador_block.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/Programador_controlador_block.bdf ;         ;
+; programador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/programador.vhd                   ;         ;
+; divisor.vhd                       ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/divisor.vhd                       ;         ;
+; decod_control.vhd                 ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/decod_control.vhd                 ;         ;
+; coordinador_mod_tes.vhd           ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd           ;         ;
+; controlador.vhd                   ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd                   ;         ;
+; catura_pixeles_2.vhd              ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/catura_pixeles_2.vhd              ;         ;
+; algo_3_final.vhd                  ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd                  ;         ;
+; access_ram.vhd                    ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_ram.vhd                    ;         ;
+; testigo_error.vhd                 ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/testigo_error.vhd                 ;         ;
+; banco_de_pruebas_simplificado.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/banco_de_pruebas_simplificado.bdf ;         ;
+; captura_pixeles.vhd               ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd               ;         ;
+; altsyncram.tdf                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                          ;         ;
+; stratix_ram_block.inc             ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                   ;         ;
+; lpm_mux.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                             ;         ;
+; lpm_decode.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                          ;         ;
+; aglobal231.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                                          ;         ;
+; a_rdenreg.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                           ;         ;
+; altrom.inc                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                                              ;         ;
+; altram.inc                        ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                                              ;         ;
+; altdpram.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                                            ;         ;
+; db/altsyncram_mg81.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_mg81.tdf            ;         ;
+; db/altsyncram_7f81.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_7f81.tdf            ;         ;
+; db/altsyncram_eg81.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_eg81.tdf            ;         ;
+; db/altsyncram_jg81.tdf            ; yes             ; Auto-Generated Megafunction        ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_jg81.tdf            ;         ;
++-----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 2,094        ;
+;                                             ;              ;
+; Total combinational functions               ; 1941         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 848          ;
+;     -- 3 input functions                    ; 272          ;
+;     -- <=2 input functions                  ; 821          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 1235         ;
+;     -- arithmetic mode                      ; 706          ;
+;                                             ;              ;
+; Total registers                             ; 1094         ;
+;     -- Dedicated logic registers            ; 1094         ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 72           ;
+; Total memory bits                           ; 77824        ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; clk_50~input ;
+; Maximum fan-out                             ; 1074         ;
+; Total fan-out                               ; 10612        ;
+; Average fan-out                             ; 3.27         ;
++---------------------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                   ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------------------+--------------+
+; |banco_de_pruebas_simplificado            ; 1941 (1)            ; 1094 (0)                  ; 77824       ; 0            ; 0       ; 0         ; 72   ; 0            ; |banco_de_pruebas_simplificado                                                               ; banco_de_pruebas_simplificado ; work         ;
+;    |Controlador_sram_CIC_UART:inst16|     ; 100 (100)           ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16                              ; Controlador_sram_CIC_UART     ; work         ;
+;    |Programador_controlador_block:inst1|  ; 81 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1                           ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                  ; 49 (49)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst          ; controlador                   ; work         ;
+;       |programador:inst1|                 ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1         ; programador                   ; work         ;
+;    |UART_RX:inst11|                       ; 51 (51)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|UART_RX:inst11                                                ; UART_RX                       ; work         ;
+;    |access_UART:inst20|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|access_UART:inst20                                            ; access_UART                   ; work         ;
+;    |access_ram:inst7|                     ; 27 (27)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|access_ram:inst7                                              ; access_ram                    ; work         ;
+;    |algo_3_final:inst|                    ; 1359 (1359)         ; 695 (695)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|algo_3_final:inst                                             ; algo_3_final                  ; work         ;
+;    |captura_pixeles_2:inst10|             ; 6 (6)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|captura_pixeles_2:inst10                                      ; captura_pixeles_2             ; work         ;
+;    |coordinador_mod_tes:inst8|            ; 126 (126)           ; 70 (70)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes           ; work         ;
+;    |decod_control:inst4|                  ; 43 (43)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|decod_control:inst4                                           ; decod_control                 ; work         ;
+;    |divisor:inst13|                       ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|divisor:inst13                                                ; divisor                       ; work         ;
+;    |prueba_1:inst15|                      ; 13 (13)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|prueba_1:inst15                                               ; prueba_1                      ; work         ;
+;    |ram:inst2|                            ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst2                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst2|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_jg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 22528       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ; altsyncram_jg81               ; work         ;
+;    |ram:inst3|                            ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst3                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst3|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_mg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst3|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ; altsyncram_mg81               ; work         ;
+;    |ram:inst5|                            ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst5                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst5|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_7f81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 12288       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ; altsyncram_7f81               ; work         ;
+;    |ram:inst6|                            ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst6                                                     ; ram                           ; work         ;
+;       |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst6|altsyncram:mem_rtl_0                                ; altsyncram                    ; work         ;
+;          |altsyncram_eg81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 14336       ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ; altsyncram_eg81               ; work         ;
+;    |sram:inst18|                          ; 1 (1)               ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|sram:inst18                                                   ; sram                          ; work         ;
+;    |sram_CIC:inst17|                      ; 61 (61)             ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|sram_CIC:inst17                                               ; sram_CIC                      ; work         ;
+;    |testigo_error:inst14|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|testigo_error:inst14                                          ; testigo_error                 ; work         ;
+;    |uart_tx:inst12|                       ; 64 (64)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|uart_tx:inst12                                                ; uart_tx                       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                         ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                     ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+; ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 11           ; --           ; --           ; 22528 ; None ;
+; ram:inst3|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 14           ; --           ; --           ; 28672 ; None ;
+; ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 6            ; --           ; --           ; 12288 ; None ;
+; ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 1024         ; 14           ; --           ; --           ; 14336 ; None ;
++--------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|UART_RX:inst11|r_SM_Main                                                                           ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; Name                     ; r_SM_Main.s_Cleanup ; r_SM_Main.s_RX_Stop_Bit ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_Idle ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+; r_SM_Main.s_Idle         ; 0                   ; 0                       ; 0                        ; 0                        ; 0                ;
+; r_SM_Main.s_RX_Start_Bit ; 0                   ; 0                       ; 0                        ; 1                        ; 1                ;
+; r_SM_Main.s_RX_Data_Bits ; 0                   ; 0                       ; 1                        ; 0                        ; 1                ;
+; r_SM_Main.s_RX_Stop_Bit  ; 0                   ; 1                       ; 0                        ; 0                        ; 1                ;
+; r_SM_Main.s_Cleanup      ; 1                   ; 0                       ; 0                        ; 0                        ; 1                ;
++--------------------------+---------------------+-------------------------+--------------------------+--------------------------+------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|sram_CIC:inst17|state                                                      ;
++----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
+; Name                 ; state.fin ; state.escritura_msb ; state.escritura_lsb ; state.add_increment ; state.espero_proximo ;
++----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
+; state.espero_proximo ; 0         ; 0                   ; 0                   ; 0                   ; 0                    ;
+; state.add_increment  ; 0         ; 0                   ; 0                   ; 1                   ; 1                    ;
+; state.escritura_lsb  ; 0         ; 0                   ; 1                   ; 0                   ; 1                    ;
+; state.escritura_msb  ; 0         ; 1                   ; 0                   ; 0                   ; 1                    ;
+; state.fin            ; 1         ; 0                   ; 0                   ; 0                   ; 1                    ;
++----------------------+-----------+---------------------+---------------------+---------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16|state                                                                                                  ;
++-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
+; Name                  ; state.UART_mandando ; state.UART_send_start ; state.UART_terminado ; state.escritura ; state.wait_done ; state.errase ; state.trigger_wait ; state.reset_state ;
++-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
+; state.reset_state     ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 0                 ;
+; state.trigger_wait    ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 1                  ; 1                 ;
+; state.errase          ; 0                   ; 0                     ; 0                    ; 0               ; 0               ; 1            ; 0                  ; 1                 ;
+; state.wait_done       ; 0                   ; 0                     ; 0                    ; 0               ; 1               ; 0            ; 0                  ; 1                 ;
+; state.escritura       ; 0                   ; 0                     ; 0                    ; 1               ; 0               ; 0            ; 0                  ; 1                 ;
+; state.UART_terminado  ; 0                   ; 0                     ; 1                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
+; state.UART_send_start ; 0                   ; 1                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
+; state.UART_mandando   ; 1                   ; 0                     ; 0                    ; 0               ; 0               ; 0            ; 0                  ; 1                 ;
++-----------------------+---------------------+-----------------------+----------------------+-----------------+-----------------+--------------+--------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|uart_tx:inst12|fsm_state                                  ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; Name                ; fsm_state.FSM_STOP ; fsm_state.FSM_SEND ; fsm_state.FSM_START ; fsm_state.FSM_IDLE ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+; fsm_state.FSM_IDLE  ; 0                  ; 0                  ; 0                   ; 0                  ;
+; fsm_state.FSM_START ; 0                  ; 0                  ; 1                   ; 1                  ;
+; fsm_state.FSM_SEND  ; 0                  ; 1                  ; 0                   ; 1                  ;
+; fsm_state.FSM_STOP  ; 1                  ; 0                  ; 0                   ; 1                  ;
++---------------------+--------------------+--------------------+---------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|algo_3_final:inst|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------+--------------------------------+----------------------+----------------------+--------------+---------------------------------+------------------------------+------------------------------+-----------------------------------+---------------------------------------+-------------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
+; Name                                  ; state.fin_escritura_histograma ; state.end_histograma ; state.histograma_gen ; state.filtro ; state.incremento_dir_histograma ; state.escritura_histograma_2 ; state.escritura_histograma_1 ; state.lectura_memorias_histograma ; state.dir_memorias_energia_histograma ; state.incremento_indice ; state.escritura_2 ; state.escritura_1 ; state.lectura_cantidad_energia ; state.dir_cantidad_energia ; state.casos ; state.lectura_ancho_3 ; state.dir_ancho_3 ; state.lectura_ancho_2 ; state.dir_ancho_2 ; state.lectura_ancho_1 ; state.dir_ancho_1 ; state.lectura_anterior ; state.dir_anterior ; state.nuevo_pix ; state.escritura_erase_2 ; state.escritura_erase_1 ; state.erase ;
++---------------------------------------+--------------------------------+----------------------+----------------------+--------------+---------------------------------+------------------------------+------------------------------+-----------------------------------+---------------------------------------+-------------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
+; state.erase                           ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 0           ;
+; state.escritura_erase_1               ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 1                       ; 1           ;
+; state.escritura_erase_2               ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 1                       ; 0                       ; 1           ;
+; state.nuevo_pix                       ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 1               ; 0                       ; 0                       ; 1           ;
+; state.dir_anterior                    ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 1                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_anterior                ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 1                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_1                     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 1                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_1                 ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 1                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_2                     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 1                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_2                 ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 1                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_ancho_3                     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 1                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_ancho_3                 ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 1                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.casos                           ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 1           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_cantidad_energia            ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 1                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_cantidad_energia        ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 1                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_1                     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 1                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_2                     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 1                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.incremento_indice               ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 1                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.dir_memorias_energia_histograma ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 1                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.lectura_memorias_histograma     ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 1                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_histograma_1          ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 1                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.escritura_histograma_2          ; 0                              ; 0                    ; 0                    ; 0            ; 0                               ; 1                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.incremento_dir_histograma       ; 0                              ; 0                    ; 0                    ; 0            ; 1                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.filtro                          ; 0                              ; 0                    ; 0                    ; 1            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.histograma_gen                  ; 0                              ; 0                    ; 1                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.end_histograma                  ; 0                              ; 1                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
+; state.fin_escritura_histograma        ; 1                              ; 0                    ; 0                    ; 0            ; 0                               ; 0                            ; 0                            ; 0                                 ; 0                                     ; 0                       ; 0                 ; 0                 ; 0                              ; 0                          ; 0           ; 0                     ; 0                 ; 0                     ; 0                 ; 0                     ; 0                 ; 0                      ; 0                  ; 0               ; 0                       ; 0                       ; 1           ;
++---------------------------------------+--------------------------------+----------------------+----------------------+--------------+---------------------------------+------------------------------+------------------------------+-----------------------------------+---------------------------------------+-------------------------+-------------------+-------------------+--------------------------------+----------------------------+-------------+-----------------------+-------------------+-----------------------+-------------------+-----------------------+-------------------+------------------------+--------------------+-----------------+-------------------------+-------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|state                                                                                                                                            ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+; Name            ; state.stop_2 ; state.stop_1 ; state.idle_2 ; state.error ; state.ack_fin ; state.ack_3 ; state.ack_2 ; state.ack_1 ; state.b_write_3 ; state.b_write_2 ; state.b_write_1 ; state.b_trans ; state.start_2 ; state.start ; state.idle ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+; state.idle      ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 0          ;
+; state.start     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 1           ; 1          ;
+; state.start_2   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 1             ; 0           ; 1          ;
+; state.b_trans   ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 1             ; 0             ; 0           ; 1          ;
+; state.b_write_1 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 1               ; 0             ; 0             ; 0           ; 1          ;
+; state.b_write_2 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 1               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.b_write_3 ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 1               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_1     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 1           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_2     ; 0            ; 0            ; 0            ; 0           ; 0             ; 0           ; 1           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_3     ; 0            ; 0            ; 0            ; 0           ; 0             ; 1           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.ack_fin   ; 0            ; 0            ; 0            ; 0           ; 1             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.error     ; 0            ; 0            ; 0            ; 1           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.idle_2    ; 0            ; 0            ; 1            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_1    ; 0            ; 1            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
+; state.stop_2    ; 1            ; 0            ; 0            ; 0           ; 0             ; 0           ; 0           ; 0           ; 0               ; 0               ; 0               ; 0             ; 0             ; 0           ; 1          ;
++-----------------+--------------+--------------+--------------+-------------+---------------+-------------+-------------+-------------+-----------------+-----------------+-----------------+---------------+---------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|state                                                                                                                                                                       ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
+; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
+; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
+; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
+; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
++---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------+---------------------+------------------------+----------------+---------------------+------------------+
+; Name                                   ; state.escritura_borrado_hist_2 ; state.escritura_borrado_hist_1 ; state.borrado_mem_histograma ; state.incremento_addr_histograma_envio ; state.envio_uart_4 ; state.envio_uart_3 ; state.envio_uart_2 ; state.envio_uart_1 ; state.lectura_histograma ; state.trigger_wait ; state.reset_histograma ; state.esp_fin_escritura ; state.enable_histograma_escritura ; state.esp_fin_histograma ; state.trigger_cam ; state.esp_borrado_2 ; state.trigger_algorimo ; state.fin_prog ; state.esp_borrado_1 ; state.reset_todo ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------+---------------------+------------------------+----------------+---------------------+------------------+
+; state.reset_todo                       ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 0                ;
+; state.esp_borrado_1                    ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 1                   ; 1                ;
+; state.fin_prog                         ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 1              ; 0                   ; 1                ;
+; state.trigger_algorimo                 ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 1                      ; 0              ; 0                   ; 1                ;
+; state.esp_borrado_2                    ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 1                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.trigger_cam                      ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 1                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.esp_fin_histograma               ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 1                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.enable_histograma_escritura      ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 1                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.esp_fin_escritura                ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 1                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.reset_histograma                 ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 1                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.trigger_wait                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 1                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.lectura_histograma               ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 1                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_1                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 1                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_2                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 1                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_3                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 1                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.envio_uart_4                     ; 0                              ; 0                              ; 0                            ; 0                                      ; 1                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.incremento_addr_histograma_envio ; 0                              ; 0                              ; 0                            ; 1                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.borrado_mem_histograma           ; 0                              ; 0                              ; 1                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.escritura_borrado_hist_1         ; 0                              ; 1                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
+; state.escritura_borrado_hist_2         ; 1                              ; 0                              ; 0                            ; 0                                      ; 0                  ; 0                  ; 0                  ; 0                  ; 0                        ; 0                  ; 0                      ; 0                       ; 0                                 ; 0                        ; 0                 ; 0                   ; 0                      ; 0              ; 0                   ; 1                ;
++----------------------------------------+--------------------------------+--------------------------------+------------------------------+----------------------------------------+--------------------+--------------------+--------------------+--------------------+--------------------------+--------------------+------------------------+-------------------------+-----------------------------------+--------------------------+-------------------+---------------------+------------------------+----------------+---------------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                    ;
++--------------------------------------------------------------------+----------------------------------------------------------------------------------+
+; Register name                                                      ; Reason for Removal                                                               ;
++--------------------------------------------------------------------+----------------------------------------------------------------------------------+
+; algo_3_final:inst|pix_data_reg[8..10]                              ; Stuck at GND due to stuck port data_in                                           ;
+; coordinador_mod_tes:inst8|dir_mem_hist_int[1..4]                   ; Merged with coordinador_mod_tes:inst8|dir_mem_hist_int[0]                        ;
+; Programador_controlador_block:inst1|programador:inst1|data[4]      ; Merged with Programador_controlador_block:inst1|programador:inst1|data[3]        ;
+; coordinador_mod_tes:inst8|dir_mem_hist_int[0]                      ; Stuck at GND due to stuck port data_in                                           ;
+; Programador_controlador_block:inst1|programador:inst1|data[6]      ; Stuck at GND due to stuck port data_in                                           ;
+; Controlador_sram_CIC_UART:inst16|cuenta_vueltas[1]                 ; Stuck at GND due to stuck port data_in                                           ;
+; uart_tx:inst12|fsm_state~2                                         ; Lost fanout                                                                      ;
+; uart_tx:inst12|fsm_state~3                                         ; Lost fanout                                                                      ;
+; uart_tx:inst12|fsm_state~4                                         ; Lost fanout                                                                      ;
+; Programador_controlador_block:inst1|controlador:inst|cuenta_int[0] ; Merged with Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[0] ;
+; algo_3_final:inst|indice_histograma[5]                             ; Lost fanout                                                                      ;
+; Total Number of Removed Registers = 16                             ;                                                                                  ;
++--------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1094  ;
+; Number of registers using Synchronous Clear  ; 113   ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 904   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 824   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; algo_3_final:inst|indice_histograma[0] ; 106     ;
+; sram:inst18|SRAM_UB_N                  ; 1       ;
+; sram:inst18|SRAM_LB_N                  ; 1       ;
+; coordinador_mod_tes:inst8|img[0]       ; 5       ;
+; prueba_1:inst15|trigger_prev           ; 1       ;
+; algo_3_final:inst|eventos[0]           ; 3       ;
+; algo_3_final:inst|dir_mem_3[0]         ; 1       ;
+; algo_3_final:inst|dir_mem_1[0]         ; 1       ;
+; algo_3_final:inst|dir_mem_2[0]         ; 1       ;
+; Total number of inverted registers = 9 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions       ;
++-----------------------+---------------------+------+
+; Register Name         ; Megafunction        ; Type ;
++-----------------------+---------------------+------+
+; ram:inst3|dout[0..13] ; ram:inst3|mem_rtl_0 ; RAM  ;
+; ram:inst5|dout[0..5]  ; ram:inst5|mem_rtl_0 ; RAM  ;
+; ram:inst6|dout[0..13] ; ram:inst6|mem_rtl_0 ; RAM  ;
+; ram:inst2|dout[0..10] ; ram:inst2|mem_rtl_0 ; RAM  ;
++-----------------------+---------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|captura_pixeles_2:inst10|error                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|cycle_counter[0]                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|count[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|bit_counter[0]                                  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|data_to_send[3]                                 ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|sram_CIC:inst17|add_count[14]                                  ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|data[0]  ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|indice[10]                                   ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|dir_mem_hist_int[9]                  ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_histograma_int[9]                        ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|data_a_escribir[3]                           ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|UART_RX:inst11|r_Clk_Count[3]                                  ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_mem[6]                                   ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16|count_mem[19]                 ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|addr_histograma_int[9]               ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 12 LEs               ; 60 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|cuenta[3]                            ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|cuenta[3]                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|count[0]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|state                                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|img                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|UART_RX:inst11|r_Bit_Index                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |banco_de_pruebas_simplificado|sram_CIC:inst17|state                                          ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|access_ram:inst7|addr_o[9]                                     ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector82                                   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector96                                   ;
+; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Mux11                                        ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector75                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst3|altsyncram:mem_rtl_0|altsyncram_mg81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated ;
++---------------------------------+--------------------+------+------------------------+
+; Assignment                      ; Value              ; From ; To                     ;
++---------------------------------+--------------------+------+------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                      ;
++---------------------------------+--------------------+------+------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: algo_3_final:inst ;
++----------------+---------+-------------------------------------+
+; Parameter Name ; Value   ; Type                                ;
++----------------+---------+-------------------------------------+
+; umbral         ; 80      ; Signed Integer                      ;
+; pixels         ; 1310720 ; Signed Integer                      ;
+; ancho          ; 1280    ; Signed Integer                      ;
+; num_bits       ; 13      ; Signed Integer                      ;
++----------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst5 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 11    ; Signed Integer                ;
+; data_width     ; 6     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst3 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 11    ; Signed Integer                ;
+; data_width     ; 14    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst2 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 11    ; Signed Integer                ;
+; data_width     ; 11    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_tx:inst12 ;
++----------------+----------+---------------------------------+
+; Parameter Name ; Value    ; Type                            ;
++----------------+----------+---------------------------------+
+; PAYLOAD_BITS   ; 8        ; Signed Integer                  ;
+; CLK_HZ         ; 50000000 ; Signed Integer                  ;
+; BIT_RATE       ; 115200   ; Signed Integer                  ;
++----------------+----------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_RX:inst11 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; g_clks_per_bit ; 434   ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:inst6 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; addr_width     ; 10    ; Signed Integer                ;
+; data_width     ; 14    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: access_ram:inst7 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; addr_width     ; 10    ; Signed Integer                       ;
+; data_width     ; 14    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst3|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 14                   ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_mg81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 6                    ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_7f81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 14                   ; Untyped             ;
+; WIDTHAD_A                          ; 10                   ; Untyped             ;
+; NUMWORDS_A                         ; 1024                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_eg81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+---------------------+
+; Parameter Name                     ; Value                ; Type                ;
++------------------------------------+----------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped             ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped             ;
+; WIDTH_A                            ; 11                   ; Untyped             ;
+; WIDTHAD_A                          ; 11                   ; Untyped             ;
+; NUMWORDS_A                         ; 2048                 ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped             ;
+; WIDTH_B                            ; 1                    ; Untyped             ;
+; WIDTHAD_B                          ; 1                    ; Untyped             ;
+; NUMWORDS_B                         ; 1                    ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped             ;
+; BYTE_SIZE                          ; 8                    ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped             ;
+; INIT_FILE                          ; UNUSED               ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_jg81      ; Untyped             ;
++------------------------------------+----------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                           ;
++-------------------------------------------+--------------------------------+
+; Name                                      ; Value                          ;
++-------------------------------------------+--------------------------------+
+; Number of entity instances                ; 4                              ;
+; Entity Instance                           ; ram:inst3|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 14                             ;
+;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
+; Entity Instance                           ; ram:inst5|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 6                              ;
+;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
+; Entity Instance                           ; ram:inst6|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 14                             ;
+;     -- NUMWORDS_A                         ; 1024                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
+; Entity Instance                           ; ram:inst2|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                    ;
+;     -- WIDTH_A                            ; 11                             ;
+;     -- NUMWORDS_A                         ; 2048                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                   ;
+;     -- WIDTH_B                            ; 1                              ;
+;     -- NUMWORDS_B                         ; 1                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ;
++-------------------------------------------+--------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 72                          ;
+; cycloneiii_ff         ; 1094                        ;
+;     CLR               ; 145                         ;
+;     CLR SCLR          ; 27                          ;
+;     ENA               ; 67                          ;
+;     ENA CLR           ; 681                         ;
+;     ENA CLR SCLR      ; 46                          ;
+;     ENA CLR SLD       ; 5                           ;
+;     ENA SCLR          ; 25                          ;
+;     SCLR              ; 5                           ;
+;     SCLR SLD          ; 10                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 82                          ;
+; cycloneiii_io_obuf    ; 18                          ;
+; cycloneiii_lcell_comb ; 1944                        ;
+;     arith             ; 706                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 627                         ;
+;         3 data inputs ; 78                          ;
+;     normal            ; 1238                        ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 66                          ;
+;         2 data inputs ; 125                         ;
+;         3 data inputs ; 194                         ;
+;         4 data inputs ; 848                         ;
+; cycloneiii_ram_block  ; 45                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 3.27                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Sat Jan 11 18:04:43 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off banco_de_pruebas_simplificado -c banco_de_pruebas_simplificado
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file sram_cic.vhd
+    Info (12022): Found design unit 1: sram_CIC-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 32
+    Info (12023): Found entity 1: sram_CIC File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
+    Info (12022): Found design unit 1: sram-behav File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 28
+    Info (12023): Found entity 1: sram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file prueba_1.vhd
+    Info (12022): Found design unit 1: prueba_1-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/prueba_1.vhd Line: 15
+    Info (12023): Found entity 1: prueba_1 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/prueba_1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file controlador_sram_cic_uart.vhd
+    Info (12022): Found design unit 1: Controlador_sram_CIC_UART-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/Controlador_sram_CIC_UART.vhd Line: 43
+    Info (12023): Found entity 1: Controlador_sram_CIC_UART File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/Controlador_sram_CIC_UART.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file access_uart.vhd
+    Info (12022): Found design unit 1: access_UART-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_UART.vhd Line: 18
+    Info (12023): Found entity 1: access_UART File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_UART.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: uart_tx File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file uart_rx.vhd
+    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/UART_RX.vhd Line: 31
+    Info (12023): Found entity 1: UART_RX File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/UART_RX.vhd Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/ram.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file programador_controlador_block.bdf
+    Info (12023): Found entity 1: Programador_controlador_block
+Info (12021): Found 2 design units, including 1 entities, in source file programador.vhd
+    Info (12022): Found design unit 1: programador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/programador.vhd Line: 48
+    Info (12023): Found entity 1: programador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/programador.vhd Line: 30
+Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
+    Info (12022): Found design unit 1: divisor-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/divisor.vhd Line: 11
+    Info (12023): Found entity 1: divisor File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/divisor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decod_control.vhd
+    Info (12022): Found design unit 1: decod_control-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/decod_control.vhd Line: 20
+    Info (12023): Found entity 1: decod_control File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/decod_control.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file coordinador_mod_tes.vhd
+    Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 46
+    Info (12023): Found entity 1: coordinador_mod_tes File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 42
+    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file catura_pixeles_2.vhd
+    Info (12022): Found design unit 1: captura_pixeles_2-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/catura_pixeles_2.vhd Line: 23
+    Info (12023): Found entity 1: captura_pixeles_2 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/catura_pixeles_2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file algo_3_final.vhd
+    Info (12022): Found design unit 1: algo_3_final-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd Line: 55
+    Info (12023): Found entity 1: algo_3_final File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file access_ram.vhd
+    Info (12022): Found design unit 1: access_ram-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_ram.vhd Line: 24
+    Info (12023): Found entity 1: access_ram File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_ram.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file test_sin_testigo_a_pc.bdf
+    Info (12023): Found entity 1: test_sin_testigo_a_pc
+Info (12021): Found 2 design units, including 1 entities, in source file testigo_error.vhd
+    Info (12022): Found design unit 1: testigo_error-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/testigo_error.vhd Line: 13
+    Info (12023): Found entity 1: testigo_error File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/testigo_error.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file banco_de_pruebas_simplificado.bdf
+    Info (12023): Found entity 1: banco_de_pruebas_simplificado
+Info (12021): Found 2 design units, including 1 entities, in source file captura_pixeles.vhd
+    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd Line: 22
+    Info (12023): Found entity 1: captura_pixeles File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd Line: 5
+Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v Line: 42
+Info (12127): Elaborating entity "banco_de_pruebas_simplificado" for the top level hierarchy
+Warning (275011): Block or symbol "algo_3_final" of instance "inst" overlaps another block or symbol
+Info (12128): Elaborating entity "coordinador_mod_tes" for hierarchy "coordinador_mod_tes:inst8"
+Warning (10036): Verilog HDL or VHDL warning at coordinador_mod_tes.vhd(67): object "flag_esp_fin_algo" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 67
+Info (12128): Elaborating entity "Programador_controlador_block" for hierarchy "Programador_controlador_block:inst1"
+Info (12128): Elaborating entity "controlador" for hierarchy "Programador_controlador_block:inst1|controlador:inst"
+Info (12128): Elaborating entity "programador" for hierarchy "Programador_controlador_block:inst1|programador:inst1"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst13"
+Info (12128): Elaborating entity "algo_3_final" for hierarchy "algo_3_final:inst"
+Info (12128): Elaborating entity "captura_pixeles_2" for hierarchy "captura_pixeles_2:inst10"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst5"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst3"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst2"
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:inst12"
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(137): truncated value with size 10 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v Line: 137
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(139): truncated value with size 10 to match size of target (4) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v Line: 139
+Info (12128): Elaborating entity "access_UART" for hierarchy "access_UART:inst20"
+Info (12128): Elaborating entity "Controlador_sram_CIC_UART" for hierarchy "Controlador_sram_CIC_UART:inst16"
+Info (12128): Elaborating entity "prueba_1" for hierarchy "prueba_1:inst15"
+Info (12128): Elaborating entity "sram_CIC" for hierarchy "sram_CIC:inst17"
+Info (12128): Elaborating entity "sram" for hierarchy "sram:inst18"
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(35): object "S_RAM_STATE" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at sram.vhd(38): object "S_READ" assigned a value but never read File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at sram.vhd(45): signal "RESET_N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at sram.vhd(43): inferring latch(es) for signal or variable "SRAM_CE_N", which holds its previous value in one or more paths through the process File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 43
+Info (10041): Inferred latch for "SRAM_CE_N" at sram.vhd(43) File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 43
+Info (12128): Elaborating entity "decod_control" for hierarchy "decod_control:inst4"
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst11"
+Info (12128): Elaborating entity "ram" for hierarchy "ram:inst6"
+Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst7"
+Info (12128): Elaborating entity "testigo_error" for hierarchy "testigo_error:inst14"
+Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst9"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|reset_o" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|r_w_O" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 27
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[16]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[17]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[18]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[19]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[10]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[9]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[8]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[7]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[6]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[5]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[4]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[3]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[2]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[1]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[11]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[12]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[13]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[14]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+    Warning (13049): Converted tri-state buffer "Controlador_sram_CIC_UART:inst16|data[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador_sram_cic_uart.vhd Line: 33
+Info (19000): Inferred 4 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst3|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 14
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst5|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 6
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst6|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 14
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram:inst2|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 11
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "ram:inst3|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst3|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "14"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mg81.tdf
+    Info (12023): Found entity 1: altsyncram_mg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_mg81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst5|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst5|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "6"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7f81.tdf
+    Info (12023): Found entity 1: altsyncram_7f81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_7f81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst6|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst6|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "14"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eg81.tdf
+    Info (12023): Found entity 1: altsyncram_eg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_eg81.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "ram:inst2|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "ram:inst2|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "11"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jg81.tdf
+    Info (12023): Found entity 1: altsyncram_jg81 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/db/altsyncram_jg81.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram.vhd Line: 22
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sram_ce_n" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register coordinador_mod_tes:inst8|img[0] will power up to High File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 69
+    Critical Warning (18010): Register algo_3_final:inst|dir_mem[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd Line: 128
+    Critical Warning (18010): Register algo_3_final:inst|indice[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd Line: 128
+    Critical Warning (18010): Register algo_3_final:inst|dir_energia[0] will power up to Low File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/algo_3_final.vhd Line: 128
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/output_files/banco_de_pruebas_simplificado.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2239 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21060): Implemented 17 bidirectional pins
+    Info (21061): Implemented 2122 logic cells
+    Info (21064): Implemented 45 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Sat Jan 11 18:05:07 2025
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:45
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/output_files/banco_de_pruebas_simplificado.map.smsg.
+
+

@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_sw",
+					"strict" : false
+				},
+				{
+					"name" : "uart_tx_o",
+					"strict" : false
+				},
+				{
+					"name" : "Trigger_camara",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_CAM",
+					"strict" : false
+				},
+				{
+					"name" : "sca_cam",
+					"strict" : false
+				},
+				{
+					"name" : "led_programador",
+					"strict" : false
+				},
+				{
+					"name" : "error_led",
+					"strict" : false
+				},
+				{
+					"name" : "sram_oe_n",
+					"strict" : false
+				},
+				{
+					"name" : "sram_we_n",
+					"strict" : false
+				},
+				{
+					"name" : "sram_ub_n",
+					"strict" : false
+				},
+				{
+					"name" : "sram_lb_n",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sda_cam",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sram_dq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset_btn",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "line_valid_i",
+					"strict" : false
+				},
+				{
+					"name" : "frame_valid_i",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "UART_RX_I",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

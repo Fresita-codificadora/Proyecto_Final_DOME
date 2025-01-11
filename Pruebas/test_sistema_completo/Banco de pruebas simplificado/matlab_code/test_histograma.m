@@ -1,6 +1,6 @@
 clear
 clc
-close all
+%%close all
 offset=-2;
 
 ancho = 1280;
