@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jan 11 12:23:52 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : test_sin_testigo_a_pc
+Top-level Entity Name : test_sin_testigo_a_pc
+Family : Cyclone IV E
+Total logic elements : 1,872
+    Total combinational functions : 1,769
+    Dedicated logic registers : 922
+Total registers : 922
+Total pins : 62
+Total virtual pins : 0
+Total memory bits : 77,824
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

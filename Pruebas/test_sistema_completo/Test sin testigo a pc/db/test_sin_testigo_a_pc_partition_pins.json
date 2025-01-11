@@ -1,0 +1,257 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_sw",
+					"strict" : false
+				},
+				{
+					"name" : "uart_tx_o",
+					"strict" : false
+				},
+				{
+					"name" : "Trigger_camara",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_CAM",
+					"strict" : false
+				},
+				{
+					"name" : "sca_cam",
+					"strict" : false
+				},
+				{
+					"name" : "led_programador",
+					"strict" : false
+				},
+				{
+					"name" : "error_led",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[20]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[19]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[18]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[17]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[16]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[15]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[14]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[13]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[12]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[11]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[10]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[9]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[8]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado_algo[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado_algo[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado_algo[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado_algo[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_estado_algo[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_pix[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sda_cam",
+					"strict" : false
+				},
+				{
+					"name" : "trigger_btn",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset_btn",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "line_valid_i",
+					"strict" : false
+				},
+				{
+					"name" : "frame_valid_i",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pix_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "UART_RX_I",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -2,7 +2,7 @@
 %clear
 %clc
 % Configuración del puerto serie
-port_name = 'COM13';  % Cambia este valor por el puerto serie correcto en tu sistema
+port_name = 'COM9';  % Cambia este valor por el puerto serie correcto en tu sistema
 baud_rate = 115200;    % Asegúrate de que coincida con la configuración del dispositivo
 % Crear objeto de puerto serie
 serial_port = serialport(port_name, baud_rate, 'Timeout', 10);  % Timeout de 10 segundos
