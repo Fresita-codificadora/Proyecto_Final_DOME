@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=D3 Old Footprint=D_LED_0805_2013 New Footprint=D_SOD-123
+Added Room: Name=FPGA Banks
+Added Room: Name=Periferic Supply
+Added Room: Name=Power
+Added Room: Name=Radiaton Sensor
+Added Room: Name=Sistema

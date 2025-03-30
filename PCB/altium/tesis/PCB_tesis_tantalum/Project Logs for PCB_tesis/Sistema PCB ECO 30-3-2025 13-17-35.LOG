@@ -1,0 +1,113 @@
+Removed Pin From Net: NetName=NetC2_1 Pin=C2-1
+Change Component Footprint: Designator=C1 Old Footprint=C_SMD_F12 New Footprint=C_2917
+Change Component Footprint: Designator=C2 Old Footprint=C_SMD_F12 New Footprint=C_2917
+Change Component Comment : Designator=C1 Old Comment=1000uF 16V New Comment=330uF_T
+Change Component Comment : Designator=C2 Old Comment=1000uF 16V New Comment=330uF_T
+Change component parameters: Designator = "C1" ("C1"); Footprint = "C_SMD_F12"; UniqueID = "\ZMMTFJDI\IIBLPKQH" ("\ZMMTFJDI\IIBLPKQH")
+Change component parameters (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2" ("C2"); Footprint = "C_SMD_F12"; UniqueID = "\ZMMTFJDI\ASLKMVOQ" ("\ZMMTFJDI\ASLKMVOQ")
+Change component parameters (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C5(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C6(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C46(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C47(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C48(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Component: Designator=C49(C_2917)
+Add component (AddParameter): Name = "Category"; Value = "Tantalum Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "TMCP1A106MTRF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,3, 10=0,152, 50=0,152, 100=0,098, 1000=0,082, 10000=0,067 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "7293"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "581-TPME337K016R0050"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330uF_T"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_1 Pin=C2-1
+Added Pin To Net: NetName=NetC1_1 Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=NetC1_1 Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C6-2
+Added Pin To Net: NetName=NetC2_1 Pin=C46-1
+Added Pin To Net: NetName=GND Pin=C46-2
+Added Pin To Net: NetName=NetC2_1 Pin=C47-1
+Added Pin To Net: NetName=GND Pin=C47-2
+Added Pin To Net: NetName=NetC2_1 Pin=C48-1
+Added Pin To Net: NetName=GND Pin=C48-2
+Added Pin To Net: NetName=NetC2_1 Pin=C49-1
+Added Pin To Net: NetName=GND Pin=C49-2
+Change Net Name : Old Net Name=NetC2_1 New Net Name=3V3_unprotected
+Added Member To Class: ClassName=Power Member=Component C5 330uF_T
+Added Member To Class: ClassName=Power Member=Component C6 330uF_T
+Added Member To Class: ClassName=Power Member=Component C46 330uF_T
+Added Member To Class: ClassName=Power Member=Component C47 330uF_T
+Added Member To Class: ClassName=Power Member=Component C48 330uF_T
+Added Member To Class: ClassName=Power Member=Component C49 330uF_T
