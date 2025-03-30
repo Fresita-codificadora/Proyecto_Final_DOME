@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Gpc\Documents\GitHub\Proyecto_Final_DOME\PCB\altium\tesis\PCB_tesis_tantalum\Sistema.PcbDoc
 Date     : 30/3/2025
-Time     : 13:36:25
+Time     : 14:26:07
 
 Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
 Rule Violations :0
@@ -134,6 +134,8 @@ Processing Rule : Silk To Solder Mask (Clearance=5mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (1.418mil < 5mil) Between Pad F1-2(4492.402mil,3670mil) on Top Layer And Track (4343.229mil,3704.882mil)(4486.929mil,3704.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.418mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.811mil < 5mil) Between Pad F1-2(4492.402mil,3670mil) on Top Layer And Track (4452mil,3670mil)(4458mil,3670mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.811mil]
    Violation between Silk To Solder Mask Clearance Constraint: (1.418mil < 5mil) Between Pad F1-2(4492.402mil,3670mil) on Top Layer And Track (4486.929mil,3704.882mil)(4496.772mil,3716.772mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.418mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (3.811mil < 5mil) Between Pad F2-1(4262.401mil,3780mil) on Top Layer And Track (4222mil,3780mil)(4228mil,3780mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.811mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (3.811mil < 5mil) Between Pad F2-2(4187.598mil,3780mil) on Top Layer And Track (4222mil,3780mil)(4228mil,3780mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.811mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.748mil < 5mil) Between Pad L1-1(2503.386mil,2640mil) on Top Layer And Track (2458mil,2640mil)(2472mil,2640mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.748mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.748mil < 5mil) Between Pad L1-2(2426.614mil,2640mil) on Top Layer And Track (2458mil,2640mil)(2472mil,2640mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.748mil]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 5mil) Between Pad L2-1(4330mil,3462.165mil) on Top Layer And Track (4193.48mil,3442.48mil)(4436.52mil,3442.48mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
@@ -192,7 +194,7 @@ Processing Rule : Silk To Solder Mask (Clearance=5mil) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (1.968mil < 5mil) Between Pad U10-7(1713.779mil,2349.409mil) on Top Layer And Track (1542.52mil,2329.724mil)(1701.968mil,2329.724mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.968mil]
    Violation between Silk To Solder Mask Clearance Constraint: (4.244mil < 5mil) Between Pad Y1-1(4018mil,3112.5mil) on Top Layer And Track (3894mil,3144.303mil)(4056mil,3144.303mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.244mil]
    Violation between Silk To Solder Mask Clearance Constraint: (3.591mil < 5mil) Between Pad Y1-3(3931mil,3047.5mil) on Top Layer And Track (3894mil,3016.35mil)(4056mil,3016.35mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [3.591mil]
-Rule Violations :156
+Rule Violations :158
 
 Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "+" (3255.039mil,3544.37mil) on Top Overlay And Track (3246.614mil,3559.567mil)(3246.614mil,3706.22mil) on Top Overlay Silk Text to Silk Clearance [0mil]
@@ -223,7 +225,6 @@ Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (9.001mil < 10mil) Between Text "330uF_T" (5142.504mil,4054.968mil) on Top Overlay And Track (5160mil,3805mil)(5160mil,3850mil) on Top Overlay Silk Text to Silk Clearance [9.001mil]
    Violation between Silk To Silk Clearance Constraint: (7.665mil < 10mil) Between Text "4k7" (2421mil,3151mil) on Top Overlay And Track (2411.614mil,3137.835mil)(2488.386mil,3137.835mil) on Top Overlay Silk Text to Silk Clearance [7.665mil]
    Violation between Silk To Silk Clearance Constraint: (5.722mil < 10mil) Between Text "4k7" (2636.159mil,3089.47mil) on Top Overlay And Track (2660mil,3070mil)(2660mil,3080mil) on Top Overlay Silk Text to Silk Clearance [5.722mil]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 10mil) Between Text "680uHr" (4139mil,3009mil) on Top Overlay And Text "L2" (4263.339mil,3025.003mil) on Top Overlay Silk Text to Silk Clearance [0mil]
    Violation between Silk To Silk Clearance Constraint: (8.463mil < 10mil) Between Text "C13" (3976mil,3494mil) on Top Overlay And Track (3955mil,3470mil)(3970mil,3485mil) on Top Overlay Silk Text to Silk Clearance [8.463mil]
    Violation between Silk To Silk Clearance Constraint: (5.488mil < 10mil) Between Text "C13" (3976mil,3494mil) on Top Overlay And Track (3970mil,3485mil)(3975mil,3485mil) on Top Overlay Silk Text to Silk Clearance [5.488mil]
    Violation between Silk To Silk Clearance Constraint: (9.5mil < 10mil) Between Text "C19" (3980mil,3404mil) on Top Overlay And Track (3950mil,3355mil)(3985mil,3390mil) on Top Overlay Silk Text to Silk Clearance [9.5mil]
@@ -238,7 +239,7 @@ Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (6.5mil < 10mil) Between Text "C42" (4066mil,3319mil) on Top Overlay And Track (4025mil,3330mil)(4055mil,3330mil) on Top Overlay Silk Text to Silk Clearance [6.5mil]
    Violation between Silk To Silk Clearance Constraint: (5.004mil < 10mil) Between Text "R6" (3078.339mil,2320.003mil) on Top Overlay And Track (3122.165mil,2286.614mil)(3122.165mil,2363.386mil) on Top Overlay Silk Text to Silk Clearance [5.004mil]
    Violation between Silk To Silk Clearance Constraint: (7.52mil < 10mil) Between Text "R9" (3033.339mil,2055.003mil) on Top Overlay And Track (3050mil,2085mil)(3050mil,2105mil) on Top Overlay Silk Text to Silk Clearance [7.52mil]
-Rule Violations :43
+Rule Violations :42
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
@@ -247,6 +248,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 
-Violations Detected : 204
+Violations Detected : 205
 Waived Violations : 0
 Time Elapsed        : 00:00:01
