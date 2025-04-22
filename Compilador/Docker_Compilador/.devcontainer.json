@@ -1,0 +1,13 @@
+{
+  "name": "fpga-dev-env",
+  "build": {
+    "dockerfile": "docker/Dockerfile",
+    "context": ".."
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/workspace/src,type=bind",
+    "source=${localWorkspaceFolder}/constraints,target=/workspace/constraints,type=bind",
+    "source=${localWorkspaceFolder}/output,target=/workspace/output,type=bind"
+  ],
+  "settings": {}
+}
