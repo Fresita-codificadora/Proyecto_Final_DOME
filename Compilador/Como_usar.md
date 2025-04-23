@@ -63,7 +63,7 @@ En VS Code, presioná `Ctrl+Shift+P` y elegí:
 - El **nombre del módulo top** (sin extensión)
 - El **archivo `.pcf`** correspondiente (sin `.pcf`)
 
--**importante el nombre del archivo debe coincidir con el nombre del componente**
+-**importante el nombre del archivo debe coincidir con el nombre del entity**
 ### 📦 Resultado
 
 El binario resultante se guarda como:
