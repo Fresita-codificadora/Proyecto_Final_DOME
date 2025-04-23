@@ -1,16 +1,34 @@
-all:
-	@read -p "🧠 Nombre del módulo top (sin .vhdl): " TOP_MODULE; \
+vhdl:
+	@make LANG=vhdl run
+
+verilog:
+	@make LANG=verilog run
+
+simulate:
+	@echo "🧪 (Simulación por implementar)"
+
+run:
+	@read -p "🧠 Nombre del módulo top (sin extensión): " TOP_MODULE; \
 	read -p "📎 Archivo de restricciones PCF (sin .pcf): " PCF_FILE; \
-	if [ ! -f src/$$TOP_MODULE.vhdl ]; then \
-		echo "❌ Error: src/$$TOP_MODULE.vhdl no existe."; exit 1; \
+	if [ "$$LANG" = "vhdl" ]; then \
+		SRC="src/$$TOP_MODULE.vhdl"; \
+	elif [ "$$LANG" = "verilog" ]; then \
+		SRC="src/$$TOP_MODULE.v"; \
+	else \
+		echo "❌ LANG no válido."; exit 1; \
+	fi; \
+	if [ ! -f $$SRC ]; then \
+		echo "❌ No existe $$SRC."; exit 1; \
 	fi; \
 	if [ ! -f constraints/$$PCF_FILE.pcf ]; then \
-		echo "❌ Error: constraints/$$PCF_FILE.pcf no existe."; exit 1; \
+		echo "❌ No existe constraints/$$PCF_FILE.pcf."; exit 1; \
 	fi; \
-	echo "🔧 Sintetizando $$TOP_MODULE..."; \
-	yosys -m ghdl -p "ghdl src/$$TOP_MODULE.vhdl -e $$TOP_MODULE; synth_ice40 -top $$TOP_MODULE -json $$TOP_MODULE.json"; \
-	echo "📦 Place & Route..."; \
+	echo "🔧 Sintetizando $$TOP_MODULE ($$LANG)..."; \
+	if [ "$$LANG" = "vhdl" ]; then \
+		yosys -m ghdl -p "ghdl $$SRC -e $$TOP_MODULE; synth_ice40 -top $$TOP_MODULE -json $$TOP_MODULE.json"; \
+	else \
+		yosys -p "read_verilog $$SRC; synth_ice40 -top $$TOP_MODULE -json $$TOP_MODULE.json"; \
+	fi; \
 	nextpnr-ice40 --hx4k --package tq144 --json $$TOP_MODULE.json --pcf constraints/$$PCF_FILE.pcf --asc $$TOP_MODULE.asc; \
-	echo "🔨 Generando bin..."; \
 	icepack $$TOP_MODULE.asc output/$$TOP_MODULE.bin; \
 	echo "✅ Listo: output/$$TOP_MODULE.bin"
