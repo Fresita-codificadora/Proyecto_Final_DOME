@@ -1,6 +1,6 @@
 # 💡 Proyecto OSS CAD con Docker + VS Code
 
-Este entorno te permite compilar automáticamente código VHDL o Verilog para una FPGA iCE40HX4K usando herramientas libres como Yosys, GHDL y NextPNR, sin tener que instalar nada en tu sistema.
+Este entorno te permite compilar automáticamente código VHDL para una FPGA iCE40HX4K usando herramientas libres como Yosys, GHDL y NextPNR, sin tener que instalar linux en tu sistema.
 
 ---
 
@@ -12,6 +12,7 @@ Antes de empezar, necesitás tener instalado:
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/)
 - 📦 Extensión de VS Code: **Dev Containers**  
   (Buscar en el marketplace como: `ms-vscode-remote.remote-containers`)
+-:floppy_disk: [**Programador de lattice**](https://www.latticesemi.com/view_document?document_id=54451)
 
 ---
 
@@ -20,8 +21,7 @@ Antes de empezar, necesitás tener instalado:
 1. **Cloná este repositorio**
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repo.git
-   cd tu-repo
+   git clone https://github.com/Fresita-codificadora/Proyecto_Final_DOME.git
    ```
 
 2. **Abrí la carpeta desde VS Code**
@@ -29,7 +29,12 @@ Antes de empezar, necesitás tener instalado:
 3. Cuando VS Code detecte el contenedor, hacé clic en:  
    `Reopen in Container` (Reabrir en contenedor)
 
-4. ¡Listo! Ya estás dentro del entorno con todas las herramientas listas.
+   si no aparece apreta ctrl+p y en los comandos `Reopen in Container`
+
+5. ¡Listo! Ya estás dentro del entorno.
+6. Ahora te recomiendo instalarte dentro del entorno unas extenciones
+   -:pager: [VHDL](puorc.awesome-vhdl)
+   -:vhs:  [TerosHDL](teros-technology.teroshdl)
 
 ---
 
