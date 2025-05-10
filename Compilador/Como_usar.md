@@ -1,6 +1,6 @@
 # 💡 Proyecto OSS CAD con Docker + VS Code
 
-Este entorno te permite compilar automáticamente código VHDL para una FPGA iCE40HX4K usando herramientas libres como Yosys, GHDL y NextPNR, sin tener que instalar linux en tu sistema.
+Este entorno te permite compilar automáticamente código VHDL o verilog para una FPGA iCE40HX4K usando herramientas libres como Yosys, GHDL y NextPNR, sin tener que instalar linux en tu sistema.
 
 ---
 
@@ -12,7 +12,8 @@ Antes de empezar, necesitás tener instalado:
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/)
 - 📦 Extensión de VS Code: **Dev Containers**  
   (Buscar en el marketplace como: `ms-vscode-remote.remote-containers`)
--:floppy_disk: [**Programador de lattice**](https://www.latticesemi.com/view_document?document_id=54451)
+  
+- :floppy_disk: [**Programador de lattice**](https://www.latticesemi.com/view_document?document_id=54451)
 
 ---
 
@@ -26,16 +27,16 @@ Antes de empezar, necesitás tener instalado:
 
 2. **Abrí la carpeta desde VS Code**
 
-3. Cuando VS Code detecte el contenedor, hacé clic en:  
+3. **Cuando VS Code detecte el contenedor, hacé clic en**:  
    `Reopen in Container` (Reabrir en contenedor)
 
    si no aparece apreta ctrl+p y en los comandos `Reopen in Container`
 
-5. ¡Listo! Ya estás dentro del entorno.
-6. Ahora te recomiendo instalarte dentro del entorno unas extenciones
-   -:pager: [VHDL](puorc.awesome-vhdl)
-   -:vhs:  [TerosHDL](teros-technology.teroshdl)
-
+5. **¡Listo! Ya estás dentro del entorno**.
+6. **Ahora te recomiendo instalarte dentro del entorno unas extenciones**
+   - :pager: **VHDL** (Buscar en el marketplace como: `puorc.awesome-vhdl`)
+   - :vhs:  **TerosHDL**(Buscar en el marketplace como: `teros-technology.teroshdl`)
+   - :cd: **Verilog-HDL**(Buscar en el marketplace como: `mshr-h.veriloghdl`)
 ---
 
 ## 📁 Estructura del proyecto
@@ -62,6 +63,7 @@ En VS Code, presioná `Ctrl+Shift+P` y elegí:
 - El **nombre del módulo top** (sin extensión)
 - El **archivo `.pcf`** correspondiente (sin `.pcf`)
 
+-**importante el nombre del archivo debe coincidir con el nombre del entity**
 ### 📦 Resultado
 
 El binario resultante se guarda como:
@@ -72,24 +74,17 @@ output/mi_modulo.bin
 
 ---
 
-## ⬆️ Subir el binario a la FPGA
+## ⬆️ Paso 2: Subir el binario a la FPGA
 
 Una vez compilado, podés usar tu programador preferido.
+te recomiendo 
+👉 [**Programador de lattice**](https://www.latticesemi.com/view_document?document_id=54451)
 
-👉 Para el programador oficial IceStorm, descargalo desde:
+si no el programador oficial IceStorm, descargalo desde:
 
 📥 [https://github.com/cliffordwolf/icestorm](https://github.com/cliffordwolf/icestorm)
 
 > Si usás otra herramienta como `iceprog`, `openFPGALoader` o similar, podés adaptarlo a tu flujo.
-
----
-
-## ✨ Extras
-
-Este entorno también soporta:
-- Proyectos mixtos **VHDL + Verilog**
-- Simulación básica con GHDL (en desarrollo)
-- Extensión con nuevos `make` targets personalizados
 
 ---
 
