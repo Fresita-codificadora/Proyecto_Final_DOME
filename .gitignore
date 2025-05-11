@@ -196,3 +196,5 @@ Pruebas/prueba_FIFO/tb_fifo_test.v.bak
 Pruebas/prueba_FIFO/Vhdl1.vhd
 Pruebas/prueba_FIFO/Waveform.vwf
 Pruebas/prueba_algoritmo/algoritmoMatlab/test_algo_2.m
+*.Zip
+/PCB/altium/tesis/PCB_tesis_tantalum/Project Logs for PCB_tesis
