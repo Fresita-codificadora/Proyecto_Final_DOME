@@ -1,6 +1,0 @@
-Added Component: Designator=P4(P_HDR1X3_3D)
-Add component (AddParameter): Name = "Value"; Value = "Header 3"; VariantName = "[No Variations]"
-Added Pin To Net: NetName=3V3 Pin=P4-1
-Added Pin To Net: NetName=GND Pin=P4-2
-Added Pin To Net: NetName=GND Pin=P4-3
-Added Member To Class: ClassName=Power Member=Component P4 Header 3

@@ -1,7 +1,0 @@
-Removed Pin From Net: NetName=NetC9_2 Pin=U7-38
-Removed Pin From Net: NetName=NetP3_A9 Pin=U7-55
-Removed Pin From Net: NetName=NetP3_A8 Pin=U7-56
-Change Component Comment : Designator=P2 Old Comment=PROGRAMADOR New Comment=BORNERA 6 ENCH
-Added Pin To Net: NetName=NetP3_A9 Pin=U7-114
-Added Pin To Net: NetName=NetP3_A8 Pin=U7-115
-Added Pin To Net: NetName=NetC9_2 Pin=U7-117
