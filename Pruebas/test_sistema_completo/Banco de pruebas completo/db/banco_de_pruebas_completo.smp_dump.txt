@@ -1,0 +1,26 @@
+
+State Machine - |Parte_DE2|sram_CIC:inst4|state
+Name state.fin state.escritura_msb state.escritura_lsb state.add_increment state.espero_proximo 
+state.espero_proximo 0 0 0 0 0 
+state.add_increment 0 0 0 1 1 
+state.escritura_lsb 0 0 1 0 1 
+state.escritura_msb 0 1 0 0 1 
+state.fin 1 0 0 0 1 
+
+State Machine - |Parte_DE2|Controlador_sram_CIC_UART:inst16|state
+Name state.UART_mandando state.UART_send_start state.UART_terminado state.escritura state.wait_done state.errase state.trigger_wait state.reset_state 
+state.reset_state 0 0 0 0 0 0 0 0 
+state.trigger_wait 0 0 0 0 0 0 1 1 
+state.errase 0 0 0 0 0 1 0 1 
+state.wait_done 0 0 0 0 1 0 0 1 
+state.escritura 0 0 0 1 0 0 0 1 
+state.UART_terminado 0 0 1 0 0 0 0 1 
+state.UART_send_start 0 1 0 0 0 0 0 1 
+state.UART_mandando 1 0 0 0 0 0 0 1 
+
+State Machine - |Parte_DE2|uart_tx:inst12|fsm_state
+Name fsm_state.FSM_STOP fsm_state.FSM_SEND fsm_state.FSM_START fsm_state.FSM_IDLE 
+fsm_state.FSM_IDLE 0 0 0 0 
+fsm_state.FSM_START 0 0 1 1 
+fsm_state.FSM_SEND 0 1 0 1 
+fsm_state.FSM_STOP 1 0 0 1 

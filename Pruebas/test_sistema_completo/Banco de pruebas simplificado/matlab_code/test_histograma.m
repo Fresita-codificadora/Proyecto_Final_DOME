@@ -4,7 +4,7 @@ clc
 offset=-2;
 
 ancho = 1280;
-umbral=80;
+umbral=75;
 
 %%vectordatos=imagen_a_vector('C:\Users\gazpa\Documents\GitHub\Proyecto_Final_DOME\Pruebas\prueba_algoritmo\algoritmoMatlab\images\frame-100.png');
 vectordatos=imagen_a_vector('captured_image.png');
@@ -80,7 +80,7 @@ for i=1:len
    flag_ignorar= false;
    flag_ignorar_1 = false;
    fifo(indice) = fifo_0;
-   if fifo_0 ~= 0    
+   if (fifo_0 ~= 0) && (fifo_0 <= 2047)    
         energia(fifo_0)=energia(fifo_0)+uint16(dato);
         cantidad(fifo_0)=uint16(cantidad(fifo_0))+1;
    end
@@ -89,12 +89,17 @@ for i=1:len
    if indice == (ancho+2) 
         indice = 1;
    end
+   if fifo_0 == 2047
+       fifo_0 = 1;
+       eventos = 1;
+   end 
 end
 figure
 imgTest=vector_a_imagen(datos_salida,ancho);
 imshow(imgTest,[]);
 colormap colorcube
-energia = mod(energia, 2^14);
+energia = mod(energia, 2^14); %%limitamos a 14 bits enegia
+cantidad = mod(cantidad, 2^6); %% limitamos a 6 bits cantidad 
 %% filtrado
 histo_8192 = 0;
 ind=0;

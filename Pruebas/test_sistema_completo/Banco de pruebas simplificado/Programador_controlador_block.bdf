@@ -289,9 +289,15 @@ https://fpgasoftware.intel.com/eula.
 		(text "data[7..0]" (rect 100 123 147 135)(font "Arial" ))
 		(line (pt 160 128)(pt 144 128)(line_width 3))
 	)
+	(parameter
+		"ganancia"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 144 160))
 	)
+	(annotation_block (parameter)(rect 272 24 441 62))
 )
 (connector
 	(pt 504 176)

@@ -59,14 +59,14 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_location_assignment PIN_AF15 -to CLK_CAM
-set_location_assignment PIN_AD19 -to pix_clk_i
-set_location_assignment PIN_Y17 -to Trigger_camara
+set_location_assignment PIN_AD22 -to CLK_CAM
+set_location_assignment PIN_AF22 -to pix_clk_i
+set_location_assignment PIN_AC15 -to Trigger_camara
 set_location_assignment PIN_AE16 -to UART_RX_I
 set_location_assignment PIN_Y2 -to clk_50
 set_location_assignment PIN_F17 -to error_led
-set_location_assignment PIN_AF16 -to frame_valid_i
-set_location_assignment PIN_AC19 -to line_valid_i
+set_location_assignment PIN_AG25 -to frame_valid_i
+set_location_assignment PIN_AD25 -to line_valid_i
 set_location_assignment PIN_E21 -to led_pix[0]
 set_location_assignment PIN_E22 -to led_pix[1]
 set_location_assignment PIN_E25 -to led_pix[2]
@@ -77,17 +77,17 @@ set_location_assignment PIN_G22 -to led_pix[6]
 set_location_assignment PIN_G21 -to led_pix[7]
 set_location_assignment PIN_H15 -to led_programador
 set_location_assignment PIN_G16 -to led_sw
-set_location_assignment PIN_AF24 -to pix_data[0]
-set_location_assignment PIN_AE21 -to pix_data[1]
-set_location_assignment PIN_AF25 -to pix_data[2]
-set_location_assignment PIN_AC22 -to pix_data[3]
-set_location_assignment PIN_AE22 -to pix_data[4]
-set_location_assignment PIN_AF21 -to pix_data[5]
-set_location_assignment PIN_AF22 -to pix_data[6]
-set_location_assignment PIN_AD22 -to pix_data[7]
+set_location_assignment PIN_AD19 -to pix_data[0]
+set_location_assignment PIN_AF15 -to pix_data[1]
+set_location_assignment PIN_AF24 -to pix_data[2]
+set_location_assignment PIN_AE21 -to pix_data[3]
+set_location_assignment PIN_AF25 -to pix_data[4]
+set_location_assignment PIN_AC22 -to pix_data[5]
+set_location_assignment PIN_AE22 -to pix_data[6]
+set_location_assignment PIN_AF21 -to pix_data[7]
 set_location_assignment PIN_M23 -to reset_btn
-set_location_assignment PIN_AB22 -to sca_cam
-set_location_assignment PIN_AC15 -to sda_cam
+set_location_assignment PIN_AE25 -to sca_cam
+set_location_assignment PIN_AH25 -to sda_cam
 set_location_assignment PIN_R24 -to trigger_btn
 set_location_assignment PIN_AE15 -to uart_tx_o
 set_instance_assignment -name IO_STANDARD "2.5 V" -to CLK_CAM
@@ -132,6 +132,10 @@ set_location_assignment PIN_AD5 -to sram_oe_n
 set_location_assignment PIN_AC4 -to sram_ub_n
 set_location_assignment PIN_AE8 -to sram_we_n
 set_location_assignment PIN_AF8 -to sram_ce_n
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE Parte_CIAA_pll.v
 set_global_assignment -name VHDL_FILE sram_CIC.vhd
 set_global_assignment -name VHDL_FILE sram.vhd
 set_global_assignment -name VHDL_FILE prueba_1.vhd
@@ -153,7 +157,5 @@ set_global_assignment -name BDF_FILE test_sin_testigo_a_pc.bdf
 set_global_assignment -name VHDL_FILE testigo_error.vhd
 set_global_assignment -name BDF_FILE banco_de_pruebas_simplificado.bdf
 set_global_assignment -name VHDL_FILE captura_pixeles.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name BDF_FILE banco_de_pruebas_CIAA.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

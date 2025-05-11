@@ -1,5 +1,8 @@
 -- ARCHIVO: controlador.vhd
 -- DESCRIPCION: maquina de estados, encargada de controlar al programador.vhd 
+-- en los estados dp(data present) se le manda la señal de escritura s_t al programador
+-- en los estados dw(data write) se espera a que termine la otra maquina de estados sin enviarle la señal de escritura s_t
+
 
 -- PUERTOS:
 --    clk: clock de entrada a x MHz
@@ -18,7 +21,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity controlador is
-
+	generic(
+				ganancia : integer := 4
+	);
 	port(
 	
 	--entradas
@@ -42,7 +47,8 @@ end entity;
 architecture rtl of controlador is
 
 	-- Build an enumerated type for the state machine
-	type state_type is (idle, dp_BA,    dp_07,dw_07,   dp_00,dw_00,    dp_02,dw_02    ,stop_1      ,dp_BA_2      ,dp_1E,dw_1E     ,dp_81,dw_81    ,dp_00_2,dw_00_2  ,stop_2,done);
+	type state_type is (idle, dp_BA,    dp_07,dw_07,   dp_00,dw_00,    dp_02,dw_02    ,stop_1      ,dp_BA_2      ,dp_1E,dw_1E     ,dp_81,dw_81    ,dp_00_2,dw_00_2  ,stop_2, dp_BA_3,    dp_35,dw_35,  
+								dp_00_3,dw_00_3,     dp_ganancia,dw_ganancia,     stop_3,done);
 
 	-- Register to hold the current state
 	signal state   : state_type;
@@ -211,15 +217,80 @@ begin
 					else
 						state <= dw_00_2;
 					end if;
-					
 -- segundo stop ya mostramos que terminamos la escritura del registro
 				when stop_2 => 
 					if buisy = '0' then 
-						state <= done;
+						state <= dp_BA_3;
 					else 
 						state <= stop_2;
 					end if;
+
+-------------------------------------------------------------------------------------------------
+--- tercera parte se va a escribir los registros que controlan la ganancia -------------
+-------------------------------------------------------------------------------------------------					
+-- escritura 0xBA para operacion de escritura
+				when dp_BA_3 =>
+					if buisy = '0' then
+						state <= dp_35;
+						count <=3;
+					else
+						state <= dp_BA_3;
+					end if;
 					
+--escritura 0x35 para indicar el registro 35, que maneja la ganancia global
+				when dp_35=>
+					if count-1 >=0 then
+						count <= count - 1;
+						state <= dp_35;
+					else 
+						count <=3;
+						state <= dw_35;
+					end if;
+				when dw_35 =>
+					if buisy = '0' then
+						state <= dp_00_3;
+					else
+						state <= dw_35;
+					end if;
+					
+-- escritura 0x00 primera parte del registro 0x35					
+				when dp_00_3=>
+					if  count-1 >=0 then
+						count <= count - 1;
+						state <= dp_00_3;
+					else 
+						count <=3;
+						state <= dw_00_3;
+					end if;
+				when dw_00_3 =>
+					if buisy = '0' then
+						state <= dp_ganancia;
+					else
+						state <= dw_00_3;
+					end if;
+-- escritura de la ganancia segunda parte del registrol 0x35 
+				when dp_ganancia=>
+					if count-1 >=0 then
+						count <= count - 1;
+						state <= dp_ganancia;
+					else 
+						count <=3;
+						state <= dw_ganancia;
+					end if;
+				when dw_ganancia =>
+					if buisy = '0' then
+						state <= stop_3;
+					else
+						state <= dw_ganancia;
+					end if;
+-- tercer stop ya mostramos que terminamos la escritura del registro
+				when stop_3 => 
+					if buisy = '0' then 
+						state <= done;
+					else 
+						state <= stop_3;
+					end if;
+
 -- estado de DONE
 				when done =>
 					state <= done;
@@ -353,6 +424,87 @@ begin
 --------------------FIN SEGUNDA PARTE--------------------
 ---------------------------------------------------------
 			when stop_2 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '0';
+				stop <='1';
+				data	 <=x"00";
+			when dp_BA_3 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '1';
+				w <= '0';
+				stop <='0';
+				data	 <=x"BA";
+			when dp_35 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '1';
+				stop <='0';
+				data	 <=x"35";
+			when dw_35 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '0';
+				stop <='0';
+				data	 <=x"35";
+			when dp_00_3 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '1';
+				stop <='0';
+				data	 <=x"00";
+			when dw_00_3 =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '0';
+				stop <='0';
+				data	 <=x"00";
+			when dp_ganancia =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '1';
+				stop <='0';
+				case ganancia is
+					when 1 =>
+						data <= x"08";
+					when 4 =>
+						data <= x"20"; -- ganancia de 4
+					when 8 =>
+						data <= x"60"; -- ganancia de 8
+					when 15 =>
+						data <= x"67"; -- ganancia de 15
+					when others =>
+						data <= x"08";
+					end case;
+			when dw_ganancia =>
+				r_s <= '0';
+				done_s <= '0';
+				s_t <= '0';
+				w <= '0';
+				stop <='0';
+				case ganancia is
+					when 1 =>
+						data <= x"08";
+					when 4 =>
+						data <= x"20"; -- ganancia de 4
+					when 8 =>
+						data <= x"60";-- ganancia de 8
+					when 15 =>
+						data <= x"67"; -- ganancia de 15
+					when others =>
+						data <= x"08";
+				end case;
+---------------------------------------------------------
+--------------------FIN TERCERA PARTE--------------------
+---------------------------------------------------------
+			when stop_3 =>
 				r_s <= '0';
 				done_s <= '0';
 				s_t <= '0';

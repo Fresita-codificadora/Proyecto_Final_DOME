@@ -60,3 +60,4 @@ clear s;
 datos_recibidos = datos_recibidos(1:32);
 figure
 bar(datos_recibidos);
+title('histograma con paso 512 de la FPGA');

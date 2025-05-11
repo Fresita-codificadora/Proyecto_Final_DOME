@@ -1,5 +1,5 @@
 Analysis & Synthesis report for banco_de_pruebas_simplificado
-Sat Jan 11 18:05:07 2025
+Tue Apr  8 14:54:57 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -31,23 +31,24 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  23. Source assignments for ram:inst5|altsyncram:mem_rtl_0|altsyncram_7f81:auto_generated
  24. Source assignments for ram:inst6|altsyncram:mem_rtl_0|altsyncram_eg81:auto_generated
  25. Source assignments for ram:inst2|altsyncram:mem_rtl_0|altsyncram_jg81:auto_generated
- 26. Parameter Settings for User Entity Instance: algo_3_final:inst
- 27. Parameter Settings for User Entity Instance: ram:inst5
- 28. Parameter Settings for User Entity Instance: ram:inst3
- 29. Parameter Settings for User Entity Instance: ram:inst2
- 30. Parameter Settings for User Entity Instance: uart_tx:inst12
- 31. Parameter Settings for User Entity Instance: UART_RX:inst11
- 32. Parameter Settings for User Entity Instance: ram:inst6
- 33. Parameter Settings for User Entity Instance: access_ram:inst7
- 34. Parameter Settings for Inferred Entity Instance: ram:inst3|altsyncram:mem_rtl_0
- 35. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
- 36. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
- 37. Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0
- 38. altsyncram Parameter Settings by Entity Instance
- 39. Post-Synthesis Netlist Statistics for Top Partition
- 40. Elapsed Time Per Partition
- 41. Analysis & Synthesis Messages
- 42. Analysis & Synthesis Suppressed Messages
+ 26. Parameter Settings for User Entity Instance: Programador_controlador_block:inst1|controlador:inst
+ 27. Parameter Settings for User Entity Instance: algo_3_final:inst
+ 28. Parameter Settings for User Entity Instance: ram:inst5
+ 29. Parameter Settings for User Entity Instance: ram:inst3
+ 30. Parameter Settings for User Entity Instance: ram:inst2
+ 31. Parameter Settings for User Entity Instance: uart_tx:inst12
+ 32. Parameter Settings for User Entity Instance: UART_RX:inst11
+ 33. Parameter Settings for User Entity Instance: ram:inst6
+ 34. Parameter Settings for User Entity Instance: access_ram:inst7
+ 35. Parameter Settings for Inferred Entity Instance: ram:inst3|altsyncram:mem_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: ram:inst5|altsyncram:mem_rtl_0
+ 37. Parameter Settings for Inferred Entity Instance: ram:inst6|altsyncram:mem_rtl_0
+ 38. Parameter Settings for Inferred Entity Instance: ram:inst2|altsyncram:mem_rtl_0
+ 39. altsyncram Parameter Settings by Entity Instance
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+ 43. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -74,15 +75,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jan 11 18:05:07 2025          ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr  8 14:54:57 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; banco_de_pruebas_simplificado                  ;
 ; Top-level Entity Name              ; banco_de_pruebas_simplificado                  ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 2,094                                          ;
-;     Total combinational functions  ; 1,941                                          ;
-;     Dedicated logic registers      ; 1,094                                          ;
-; Total registers                    ; 1094                                           ;
+; Total logic elements               ; 2,107                                          ;
+;     Total combinational functions  ; 1,952                                          ;
+;     Dedicated logic registers      ; 1,103                                          ;
+; Total registers                    ; 1103                                           ;
 ; Total pins                         ; 72                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 77,824                                         ;
@@ -191,7 +192,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -219,7 +220,6 @@ https://fpgasoftware.intel.com/eula.
 ; access_ram.vhd                    ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/access_ram.vhd                    ;         ;
 ; testigo_error.vhd                 ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/testigo_error.vhd                 ;         ;
 ; banco_de_pruebas_simplificado.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/banco_de_pruebas_simplificado.bdf ;         ;
-; captura_pixeles.vhd               ; yes             ; User VHDL File                     ; C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd               ;         ;
 ; altsyncram.tdf                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                          ;         ;
 ; stratix_ram_block.inc             ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                   ;         ;
 ; lpm_mux.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                             ;         ;
@@ -241,20 +241,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 2,094        ;
+; Estimated Total logic elements              ; 2,107        ;
 ;                                             ;              ;
-; Total combinational functions               ; 1941         ;
+; Total combinational functions               ; 1952         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 848          ;
-;     -- 3 input functions                    ; 272          ;
-;     -- <=2 input functions                  ; 821          ;
+;     -- 4 input functions                    ; 860          ;
+;     -- 3 input functions                    ; 273          ;
+;     -- <=2 input functions                  ; 819          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 1235         ;
-;     -- arithmetic mode                      ; 706          ;
+;     -- normal mode                          ; 1250         ;
+;     -- arithmetic mode                      ; 702          ;
 ;                                             ;              ;
-; Total registers                             ; 1094         ;
-;     -- Dedicated logic registers            ; 1094         ;
+; Total registers                             ; 1103         ;
+;     -- Dedicated logic registers            ; 1103         ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 72           ;
@@ -264,8 +264,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; clk_50~input ;
 ; Maximum fan-out                             ; 1074         ;
-; Total fan-out                               ; 10612        ;
-; Average fan-out                             ; 3.27         ;
+; Total fan-out                               ; 10681        ;
+; Average fan-out                             ; 3.28         ;
 +---------------------------------------------+--------------+
 
 
@@ -274,17 +274,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                   ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-------------------------------+--------------+
-; |banco_de_pruebas_simplificado            ; 1941 (1)            ; 1094 (0)                  ; 77824       ; 0            ; 0       ; 0         ; 72   ; 0            ; |banco_de_pruebas_simplificado                                                               ; banco_de_pruebas_simplificado ; work         ;
+; |banco_de_pruebas_simplificado            ; 1952 (1)            ; 1103 (0)                  ; 77824       ; 0            ; 0       ; 0         ; 72   ; 0            ; |banco_de_pruebas_simplificado                                                               ; banco_de_pruebas_simplificado ; work         ;
 ;    |Controlador_sram_CIC_UART:inst16|     ; 100 (100)           ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16                              ; Controlador_sram_CIC_UART     ; work         ;
-;    |Programador_controlador_block:inst1|  ; 81 (0)              ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1                           ; Programador_controlador_block ; work         ;
-;       |controlador:inst|                  ; 49 (49)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst          ; controlador                   ; work         ;
-;       |programador:inst1|                 ; 32 (32)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1         ; programador                   ; work         ;
+;    |Programador_controlador_block:inst1|  ; 88 (0)              ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1                           ; Programador_controlador_block ; work         ;
+;       |controlador:inst|                  ; 60 (60)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst          ; controlador                   ; work         ;
+;       |programador:inst1|                 ; 28 (28)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1         ; programador                   ; work         ;
 ;    |UART_RX:inst11|                       ; 51 (51)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|UART_RX:inst11                                                ; UART_RX                       ; work         ;
 ;    |access_UART:inst20|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|access_UART:inst20                                            ; access_UART                   ; work         ;
 ;    |access_ram:inst7|                     ; 27 (27)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|access_ram:inst7                                              ; access_ram                    ; work         ;
-;    |algo_3_final:inst|                    ; 1359 (1359)         ; 695 (695)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|algo_3_final:inst                                             ; algo_3_final                  ; work         ;
+;    |algo_3_final:inst|                    ; 1361 (1361)         ; 695 (695)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|algo_3_final:inst                                             ; algo_3_final                  ; work         ;
 ;    |captura_pixeles_2:inst10|             ; 6 (6)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|captura_pixeles_2:inst10                                      ; captura_pixeles_2             ; work         ;
-;    |coordinador_mod_tes:inst8|            ; 126 (126)           ; 70 (70)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes           ; work         ;
+;    |coordinador_mod_tes:inst8|            ; 128 (128)           ; 70 (70)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8                                     ; coordinador_mod_tes           ; work         ;
 ;    |decod_control:inst4|                  ; 43 (43)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|decod_control:inst4                                           ; decod_control                 ; work         ;
 ;    |divisor:inst13|                       ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|divisor:inst13                                                ; divisor                       ; work         ;
 ;    |prueba_1:inst15|                      ; 13 (13)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |banco_de_pruebas_simplificado|prueba_1:inst15                                               ; prueba_1                      ; work         ;
@@ -439,30 +439,38 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|state                                                                                                                                                                       ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; Name          ; state.done ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
-; state.idle    ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
-; state.dp_BA   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
-; state.dp_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
-; state.dw_07   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
-; state.dp_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_02   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_1  ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_BA_2 ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_1E   ; 0          ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_81   ; 0          ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_81   ; 0          ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dp_00_2 ; 0          ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.dw_00_2 ; 0          ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.stop_2  ; 0          ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-; state.done    ; 1          ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
-+---------------+------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|state                                                                                                                                                                                                                                                                                                              ;
++-------------------+------------+--------------+-------------------+-------------------+---------------+---------------+-------------+-------------+---------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; Name              ; state.done ; state.stop_3 ; state.dw_ganancia ; state.dp_ganancia ; state.dw_00_3 ; state.dp_00_3 ; state.dw_35 ; state.dp_35 ; state.dp_BA_3 ; state.stop_2 ; state.dw_00_2 ; state.dp_00_2 ; state.dw_81 ; state.dp_81 ; state.dw_1E ; state.dp_1E ; state.dp_BA_2 ; state.stop_1 ; state.dw_02 ; state.dp_02 ; state.dw_00 ; state.dp_00 ; state.dw_07 ; state.dp_07 ; state.dp_BA ; state.idle ;
++-------------------+------------+--------------+-------------------+-------------------+---------------+---------------+-------------+-------------+---------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
+; state.idle        ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0          ;
+; state.dp_BA       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1          ;
+; state.dp_07       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1          ;
+; state.dw_07       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1          ;
+; state.dp_00       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_02       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_02       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_1      ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_BA_2     ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_1E       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_1E       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_81       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_81       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_00_2     ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00_2     ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 1             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_2      ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 1            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_BA_3     ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 1             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_35       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 1           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_35       ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 1           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_00_3     ; 0          ; 0            ; 0                 ; 0                 ; 0             ; 1             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_00_3     ; 0          ; 0            ; 0                 ; 0                 ; 1             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dp_ganancia ; 0          ; 0            ; 0                 ; 1                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.dw_ganancia ; 0          ; 0            ; 1                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.stop_3      ; 0          ; 1            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
+; state.done        ; 1          ; 0            ; 0                 ; 0                 ; 0             ; 0             ; 0           ; 0           ; 0             ; 0            ; 0             ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1          ;
++-------------------+------------+--------------+-------------------+-------------------+---------------+---------------+-------------+-------------+---------------+--------------+---------------+---------------+-------------+-------------+-------------+-------------+---------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -501,7 +509,6 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 ; algo_3_final:inst|pix_data_reg[8..10]                              ; Stuck at GND due to stuck port data_in                                           ;
 ; coordinador_mod_tes:inst8|dir_mem_hist_int[1..4]                   ; Merged with coordinador_mod_tes:inst8|dir_mem_hist_int[0]                        ;
-; Programador_controlador_block:inst1|programador:inst1|data[4]      ; Merged with Programador_controlador_block:inst1|programador:inst1|data[3]        ;
 ; coordinador_mod_tes:inst8|dir_mem_hist_int[0]                      ; Stuck at GND due to stuck port data_in                                           ;
 ; Programador_controlador_block:inst1|programador:inst1|data[6]      ; Stuck at GND due to stuck port data_in                                           ;
 ; Controlador_sram_CIC_UART:inst16|cuenta_vueltas[1]                 ; Stuck at GND due to stuck port data_in                                           ;
@@ -510,7 +517,7 @@ Encoding Type:  One-Hot
 ; uart_tx:inst12|fsm_state~4                                         ; Lost fanout                                                                      ;
 ; Programador_controlador_block:inst1|controlador:inst|cuenta_int[0] ; Merged with Programador_controlador_block:inst1|controlador:inst|cuenta_int_2[0] ;
 ; algo_3_final:inst|indice_histograma[5]                             ; Lost fanout                                                                      ;
-; Total Number of Removed Registers = 16                             ;                                                                                  ;
+; Total Number of Removed Registers = 15                             ;                                                                                  ;
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 
@@ -519,12 +526,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1094  ;
+; Total registers                              ; 1103  ;
 ; Number of registers using Synchronous Clear  ; 113   ;
-; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 904   ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 912   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 824   ;
+; Number of registers using Clock Enable       ; 828   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -534,11 +541,11 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; algo_3_final:inst|indice_histograma[0] ; 106     ;
 ; sram:inst18|SRAM_UB_N                  ; 1       ;
 ; sram:inst18|SRAM_LB_N                  ; 1       ;
 ; coordinador_mod_tes:inst8|img[0]       ; 5       ;
 ; prueba_1:inst15|trigger_prev           ; 1       ;
+; algo_3_final:inst|indice_histograma[0] ; 107     ;
 ; algo_3_final:inst|eventos[0]           ; 3       ;
 ; algo_3_final:inst|dir_mem_3[0]         ; 1       ;
 ; algo_3_final:inst|dir_mem_1[0]         ; 1       ;
@@ -565,31 +572,32 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|captura_pixeles_2:inst10|error                                 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|cycle_counter[0]                                ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|cycle_counter[9]                                ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|count[0] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|bit_counter[0]                                  ;
 ; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|uart_tx:inst12|data_to_send[3]                                 ;
-; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|sram_CIC:inst17|add_count[14]                                  ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 0 LEs                ; 15 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|data[0]  ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|sram_CIC:inst17|add_count[19]                                  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 0 LEs                ; 21 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|programador:inst1|data[0]  ;
 ; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|indice[10]                                   ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|dir_mem_hist_int[9]                  ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_histograma_int[9]                        ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|data_a_escribir[3]                           ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|UART_RX:inst11|r_Clk_Count[3]                                  ;
-; 9:1                ; 10 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_mem[6]                                   ;
-; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16|count_mem[19]                 ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|addr_histograma_int[9]               ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|indice_histograma[1]                         ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|dir_mem_hist_int[6]                  ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_histograma_int[1]                        ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|data_a_escribir[7]                           ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|UART_RX:inst11|r_Clk_Count[7]                                  ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|dir_mem[8]                                   ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|Controlador_sram_CIC_UART:inst16|count_mem[18]                 ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|addr_histograma_int[8]               ;
 ; 9:1                ; 12 bits   ; 72 LEs        ; 12 LEs               ; 60 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|cuenta[3]                            ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|cuenta[3]                                    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|count[0]  ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |banco_de_pruebas_simplificado|algo_3_final:inst|cuenta[2]                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |banco_de_pruebas_simplificado|Programador_controlador_block:inst1|controlador:inst|count[1]  ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|state                                ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|coordinador_mod_tes:inst8|img                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|UART_RX:inst11|r_Bit_Index                                     ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |banco_de_pruebas_simplificado|sram_CIC:inst17|state                                          ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|access_ram:inst7|addr_o[9]                                     ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector82                                   ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector96                                   ;
-; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Mux11                                        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|access_ram:inst7|addr_o[4]                                     ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector115                                  ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector109                                  ;
+; 32:1               ; 14 bits   ; 294 LEs       ; 294 LEs              ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Mux2                                         ;
 ; 6:1                ; 11 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |banco_de_pruebas_simplificado|algo_3_final:inst|Selector75                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------+
 
@@ -630,12 +638,22 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+------------------------+
 
 
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Programador_controlador_block:inst1|controlador:inst ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; ganancia       ; 1     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: algo_3_final:inst ;
 +----------------+---------+-------------------------------------+
 ; Parameter Name ; Value   ; Type                                ;
 +----------------+---------+-------------------------------------+
-; umbral         ; 80      ; Signed Integer                      ;
+; umbral         ; 75      ; Signed Integer                      ;
 ; pixels         ; 1310720 ; Signed Integer                      ;
 ; ancho          ; 1280    ; Signed Integer                      ;
 ; num_bits       ; 13      ; Signed Integer                      ;
@@ -1023,34 +1041,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 72                          ;
-; cycloneiii_ff         ; 1094                        ;
-;     CLR               ; 145                         ;
+; cycloneiii_ff         ; 1103                        ;
+;     CLR               ; 151                         ;
 ;     CLR SCLR          ; 27                          ;
-;     ENA               ; 67                          ;
-;     ENA CLR           ; 681                         ;
+;     ENA               ; 69                          ;
+;     ENA CLR           ; 688                         ;
 ;     ENA CLR SCLR      ; 46                          ;
-;     ENA CLR SLD       ; 5                           ;
 ;     ENA SCLR          ; 25                          ;
 ;     SCLR              ; 5                           ;
 ;     SCLR SLD          ; 10                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 82                          ;
+;     plain             ; 81                          ;
 ; cycloneiii_io_obuf    ; 18                          ;
-; cycloneiii_lcell_comb ; 1944                        ;
-;     arith             ; 706                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 627                         ;
-;         3 data inputs ; 78                          ;
-;     normal            ; 1238                        ;
-;         0 data inputs ; 5                           ;
+; cycloneiii_lcell_comb ; 1955                        ;
+;     arith             ; 702                         ;
+;         2 data inputs ; 628                         ;
+;         3 data inputs ; 74                          ;
+;     normal            ; 1253                        ;
+;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 66                          ;
-;         2 data inputs ; 125                         ;
-;         3 data inputs ; 194                         ;
-;         4 data inputs ; 848                         ;
+;         2 data inputs ; 124                         ;
+;         3 data inputs ; 199                         ;
+;         4 data inputs ; 860                         ;
 ; cycloneiii_ram_block  ; 45                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.27                        ;
+; Max LUT depth         ; 7.80                        ;
+; Average LUT depth     ; 3.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1059,7 +1075,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -1069,10 +1085,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Jan 11 18:04:43 2025
+    Info: Processing started: Tue Apr  8 14:52:56 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off banco_de_pruebas_simplificado -c banco_de_pruebas_simplificado
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file parte_ciaa_pll.v
+    Info (12023): Found entity 1: Parte_CIAA_pll File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/Parte_CIAA_pll.v Line: 1
 Info (12021): Found 2 design units, including 1 entities, in source file sram_cic.vhd
     Info (12022): Found design unit 1: sram_CIC-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 32
     Info (12023): Found entity 1: sram_CIC File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 17
@@ -1110,8 +1128,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file coordin
     Info (12022): Found design unit 1: coordinador_mod_tes-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 46
     Info (12023): Found entity 1: coordinador_mod_tes File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/coordinador_mod_tes.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
-    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 42
-    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 20
+    Info (12022): Found design unit 1: controlador-rtl File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 47
+    Info (12023): Found entity 1: controlador File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/controlador.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file catura_pixeles_2.vhd
     Info (12022): Found design unit 1: captura_pixeles_2-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/catura_pixeles_2.vhd Line: 23
     Info (12023): Found entity 1: captura_pixeles_2 File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/catura_pixeles_2.vhd Line: 5
@@ -1128,9 +1146,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file testigo
     Info (12023): Found entity 1: testigo_error File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/testigo_error.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file banco_de_pruebas_simplificado.bdf
     Info (12023): Found entity 1: banco_de_pruebas_simplificado
-Info (12021): Found 2 design units, including 1 entities, in source file captura_pixeles.vhd
-    Info (12022): Found design unit 1: captura_pixeles-arch File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd Line: 22
-    Info (12023): Found entity 1: captura_pixeles File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/captura_pixeles.vhd Line: 5
+Warning (12019): Can't analyze file -- file captura_pixeles.vhd is missing
+Info (12021): Found 1 design units, including 1 entities, in source file banco_de_pruebas_ciaa.bdf
+    Info (12023): Found entity 1: banco_de_pruebas_CIAA
 Warning (10222): Verilog HDL Parameter Declaration warning at uart_tx.v(42): Parameter Declaration in module "uart_tx" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/uart_tx.v Line: 42
 Info (12127): Elaborating entity "banco_de_pruebas_simplificado" for the top level hierarchy
 Warning (275011): Block or symbol "algo_3_final" of instance "inst" overlaps another block or symbol
@@ -1163,7 +1181,6 @@ Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:inst11"
 Info (12128): Elaborating entity "ram" for hierarchy "ram:inst6"
 Info (12128): Elaborating entity "access_ram" for hierarchy "access_ram:inst7"
 Info (12128): Elaborating entity "testigo_error" for hierarchy "testigo_error:inst14"
-Info (12128): Elaborating entity "captura_pixeles" for hierarchy "captura_pixeles:inst9"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "sram_CIC:inst17|add[0]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 26
     Warning (13049): Converted tri-state buffer "sram_CIC:inst17|data_o[15]" feeding internal logic into a wire File: C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/sram_CIC.vhd Line: 25
@@ -1334,17 +1351,17 @@ Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/gazpa/Documents/GitHub/Proyecto_Final_DOME/Pruebas/test_sistema_completo/Banco de pruebas simplificado/output_files/banco_de_pruebas_simplificado.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2239 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2252 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 40 output pins
     Info (21060): Implemented 17 bidirectional pins
-    Info (21061): Implemented 2122 logic cells
+    Info (21061): Implemented 2135 logic cells
     Info (21064): Implemented 45 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sat Jan 11 18:05:07 2025
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:45
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Tue Apr  8 14:54:57 2025
+    Info: Elapsed time: 00:02:01
+    Info: Total CPU time (on all processors): 00:00:52
 
 
 +------------------------------------------+
